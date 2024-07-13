@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="coordinates__1d_8hpp" kind="file" language="C++">
     <compoundname>coordinates_1d.hpp</compoundname>
     <includes refid="point__1d_8hpp" local="yes">../topology/point_1d.hpp</includes>
@@ -8,26 +8,100 @@
     <includes local="no">cmath</includes>
     <includes local="no">iostream</includes>
     <includes local="no">string</includes>
+    <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
     <includedby refid="coordinates__1d_8cpp" local="yes">coordinates/coordinates_1d.cpp</includedby>
     <includedby refid="point__1d_8cpp" local="yes">topology/point_1d.cpp</includedby>
     <includedby refid="point__1d__impl_8hpp" local="yes">topology/point_1d_impl.hpp</includedby>
-    <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
     <incdepgraph>
-      <node id="1">
-        <label>coordinates/coordinates_1d.hpp</label>
-        <link refid="coordinates__1d_8hpp"/>
-        <childnode refid="2" relation="include">
+      <node id="30">
+        <label>list</label>
+      </node>
+      <node id="11">
+        <label>boost/algorithm/string.hpp</label>
+      </node>
+      <node id="29">
+        <label>functional</label>
+      </node>
+      <node id="25">
+        <label>boost/math/constants/constants.hpp</label>
+      </node>
+      <node id="5">
+        <label>../units/dimension.hpp</label>
+        <link refid="dimension_8hpp"/>
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>../units/scalar_unit.hpp</label>
+        <link refid="scalar__unit_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>../topology/point_1d.hpp</label>
+        <link refid="point__1d_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>cmath</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>map</label>
       </node>
       <node id="23">
         <label>../meca_number/angle.hpp</label>
@@ -73,119 +147,15 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="24">
-        <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp"/>
-        <childnode refid="25" relation="include">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
+      <node id="34">
+        <label>../util/types.hpp</label>
+        <link refid="types_8hpp"/>
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>../topology/point_1d.hpp</label>
-        <link refid="point__1d_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="31">
-        <label>../units/unit_basic.hpp</label>
-        <link refid="unit__basic_8hpp"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp"/>
+      <node id="28">
+        <label>../units/vector_unit_nd.hpp</label>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -196,9 +166,19 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="27">
@@ -233,9 +213,62 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="28">
-        <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp"/>
+      <node id="6">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>coordinates/coordinates_1d.hpp</label>
+        <link refid="coordinates__1d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>../topology/direction.hpp</label>
+        <link refid="direction_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>string_view</label>
+      </node>
+      <node id="18">
+        <label>vector</label>
+      </node>
+      <node id="19">
+        <label>../util/is_number.hpp</label>
+        <link refid="is__number_8hpp"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>sstream</label>
+      </node>
+      <node id="22">
+        <label>../units/vector_unit_2d.hpp</label>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -246,92 +279,63 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>../topology/constants.hpp</label>
+        <link refid="constants_8hpp"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>../units/unit_basic.hpp</label>
+        <link refid="unit__basic_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp"/>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="34">
-        <label>../util/types.hpp</label>
-        <link refid="types_8hpp"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>algorithm</label>
-      </node>
-      <node id="11">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="25">
-        <label>boost/math/constants/constants.hpp</label>
-      </node>
-      <node id="33">
-        <label>chrono</label>
-      </node>
-      <node id="15">
-        <label>cmath</label>
-      </node>
-      <node id="14">
-        <label>cstddef</label>
-      </node>
-      <node id="7">
-        <label>cstdint</label>
-      </node>
-      <node id="13">
-        <label>cstring</label>
-      </node>
-      <node id="29">
-        <label>functional</label>
       </node>
       <node id="8">
         <label>iostream</label>
       </node>
-      <node id="30">
-        <label>list</label>
+      <node id="14">
+        <label>cstddef</label>
       </node>
-      <node id="9">
-        <label>map</label>
-      </node>
-      <node id="16">
-        <label>set</label>
-      </node>
-      <node id="17">
-        <label>sstream</label>
-      </node>
-      <node id="10">
-        <label>string</label>
-      </node>
-      <node id="21">
-        <label>string_view</label>
+      <node id="33">
+        <label>chrono</label>
       </node>
       <node id="20">
         <label>type_traits</label>
       </node>
-      <node id="18">
-        <label>vector</label>
+      <node id="16">
+        <label>set</label>
+      </node>
+      <node id="12">
+        <label>algorithm</label>
+      </node>
+      <node id="13">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
+      <node id="3">
         <label>coordinates/coordinates_1d.cpp</label>
         <link refid="coordinates__1d_8cpp"/>
+      </node>
+      <node id="4">
+        <label>topology/point_1d.cpp</label>
+        <link refid="point__1d_8cpp"/>
       </node>
       <node id="1">
         <label>coordinates/coordinates_1d.hpp</label>
@@ -345,17 +349,13 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>topology/point_1d.cpp</label>
-        <link refid="point__1d_8cpp"/>
-      </node>
-      <node id="4">
+      <node id="5">
         <label>topology/point_1d_impl.hpp</label>
         <link refid="point__1d__impl_8hpp"/>
-        <childnode refid="5" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="5">
+      <node id="2">
         <label>units.hpp</label>
         <link refid="units_8hpp"/>
       </node>
@@ -363,7 +363,7 @@
     <innerclass refid="classscifir_1_1coordinates__1d" prot="public">scifir::coordinates_1d</innerclass>
     <innerclass refid="classscifir_1_1coordinates__1d_3_01float_01_4" prot="public">scifir::coordinates_1d&lt; float &gt;</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
-    <sectiondef kind="func">
+      <sectiondef kind="func">
       <memberdef kind="function" id="coordinates__1d_8hpp_1a0513cc68f7a654ca266ca78a00214f4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -720,14 +720,14 @@
         </inbodydescription>
         <location file="coordinates/coordinates_1d.hpp" line="337" column="8" bodyfile="coordinates/coordinates_1d.hpp" bodystart="337" bodyend="340"/>
       </memberdef>
-      <memberdef kind="function" id="coordinates__1d_8hpp_1a9eca791ce3f06c4881e6fcf5837dfd0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="coordinates__1d_8hpp_1adcdeacdd80693e3c52d8d6f82521ca2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::coordinates_1d&lt; T &gt; &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -746,9 +746,9 @@
         </inbodydescription>
         <location file="coordinates/coordinates_1d.hpp" line="343" column="1" bodyfile="coordinates/coordinates_1d.hpp" bodystart="343" bodyend="346"/>
       </memberdef>
-      <memberdef kind="function" id="coordinates__1d_8hpp_1ad4adafda9a0a853d2821f0cc10db00b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="coordinates__1d_8hpp_1aa88a2f6e66bf3515df786a3f60160c64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::coordinates_1d&lt; float &gt; &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -767,14 +767,14 @@
         </inbodydescription>
         <location file="coordinates/coordinates_1d.hpp" line="348" column="1" bodyfile="coordinates/coordinates_1d.cpp" bodystart="29" bodyend="32" declfile="coordinates/coordinates_1d.hpp" declline="348" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="coordinates__1d_8hpp_1a4789f4cf63bb66b34f1c5ffc51147147" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="coordinates__1d_8hpp_1a7fdef89b699947fb7d4745fee18d9519" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
         <type>istream &amp;</type>
-        <definition>istream &amp; operator&gt;&gt;</definition>
+        <definition>istream&amp; operator&gt;&gt;</definition>
         <argsstring>(istream &amp;is, scifir::coordinates_1d&lt; T &gt; &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
@@ -793,7 +793,7 @@
         </inbodydescription>
         <location file="coordinates/coordinates_1d.hpp" line="351" column="9" bodyfile="coordinates/coordinates_1d.hpp" bodystart="351" bodyend="359"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -818,225 +818,225 @@
 <codeline lineno="17" refid="classscifir_1_1coordinates__1d" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="20" refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">coordinates_1d</ref>()<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>()</highlight></codeline>
+<codeline lineno="20" refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">coordinates_1d</ref>()<sp/>:<sp/>x()</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="23" refid="classscifir_1_1coordinates__1d_1a583c37e5318852ed0aa5649b7572cc60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a583c37e5318852ed0aa5649b7572cc60" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>)</highlight></codeline>
+<codeline lineno="23" refid="classscifir_1_1coordinates__1d_1a583c37e5318852ed0aa5649b7572cc60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a583c37e5318852ed0aa5649b7572cc60" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x_coordinates)<sp/>:<sp/>x(x_coordinates.x)</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="classscifir_1_1coordinates__1d_1a2454aec4024420d7a96f793778f3b0e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a2454aec4024420d7a96f793778f3b0e2" kindref="member">coordinates_1d</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(std::<ref refid="classscifir_1_1coordinates__1d_1a1e9bc055c1ff52fa14fc38a90c630a23" kindref="member">move</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>))</highlight></codeline>
+<codeline lineno="26" refid="classscifir_1_1coordinates__1d_1a2454aec4024420d7a96f793778f3b0e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a2454aec4024420d7a96f793778f3b0e2" kindref="member">coordinates_1d</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;&amp;<sp/>x_coordinates)<sp/>:<sp/>x(std::move(x_coordinates.x))</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29" refid="classscifir_1_1coordinates__1d_1afae4112355c76a7dbca171a4b3106187" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1afae4112355c76a7dbca171a4b3106187" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_x</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_x</ref>)</highlight></codeline>
+<codeline lineno="29" refid="classscifir_1_1coordinates__1d_1afae4112355c76a7dbca171a4b3106187" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1afae4112355c76a7dbca171a4b3106187" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>new_x)<sp/>:<sp/>x(new_x)</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32" refid="classscifir_1_1coordinates__1d_1a5b60bf9a59727a6b6a09379b3a8376dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1a5b60bf9a59727a6b6a09379b3a8376dc" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_point</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_point</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>)</highlight></codeline>
+<codeline lineno="32" refid="classscifir_1_1coordinates__1d_1a5b60bf9a59727a6b6a09379b3a8376dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1a5b60bf9a59727a6b6a09379b3a8376dc" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;<sp/>new_point)<sp/>:<sp/>x(new_point.x)</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="classscifir_1_1coordinates__1d_1ae973f1ff8b97966c20b940bdd0fca2f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1ae973f1ff8b97966c20b940bdd0fca2f6" kindref="member">coordinates_1d</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_point</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(std::<ref refid="classscifir_1_1coordinates__1d_1a1e9bc055c1ff52fa14fc38a90c630a23" kindref="member">move</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_point</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>))</highlight></codeline>
+<codeline lineno="35" refid="classscifir_1_1coordinates__1d_1ae973f1ff8b97966c20b940bdd0fca2f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1ae973f1ff8b97966c20b940bdd0fca2f6" kindref="member">coordinates_1d</ref>(<ref refid="classscifir_1_1point__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;&amp;<sp/>new_point)<sp/>:<sp/>x(std::move(new_point.x))</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38" refid="classscifir_1_1coordinates__1d_1a55ca0541eb599da87a4bd6773380c278" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1a55ca0541eb599da87a4bd6773380c278" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref>()</highlight></codeline>
+<codeline lineno="38" refid="classscifir_1_1coordinates__1d_1a55ca0541eb599da87a4bd6773380c278" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1a55ca0541eb599da87a4bd6773380c278" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_coordinates_1d)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref>()</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a56c37a9529e15e75e48a74c81ffe25d2" kindref="member">initialize_from_string</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialize_from_string(init_coordinates_1d);</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="classscifir_1_1coordinates__1d_1a247a7223d60bfa400c1e3824637c5d60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_1a247a7223d60bfa400c1e3824637c5d60" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)</highlight></codeline>
+<codeline lineno="43" refid="classscifir_1_1coordinates__1d_1a955056814943e378b3c077c9ea664b39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x_coordinates)</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x_coordinates.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49" refid="classscifir_1_1coordinates__1d_1a99f259a53323777d8fc61debc4dd1570" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_1a99f259a53323777d8fc61debc4dd1570" kindref="member">operator=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)</highlight></codeline>
+<codeline lineno="49" refid="classscifir_1_1coordinates__1d_1abcf31a8c434ef8e4070de6173a74ff38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;&amp;<sp/>x_coordinates)</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/>std::move(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>std::move(x_coordinates.x);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55" refid="classscifir_1_1coordinates__1d_1a2111bfe4832fe6b80cdf91e02155751a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_1a2111bfe4832fe6b80cdf91e02155751a" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_point</ref>)</highlight></codeline>
+<codeline lineno="55" refid="classscifir_1_1coordinates__1d_1a10b3a9b2053d9e0f99e40d1ed0226fb3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;<sp/>x_point)</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_point</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x_point.<ref refid="classscifir_1_1point__1d_1ada6845ca9e3a02e9f4a0d79d67e51f4a" kindref="member">x</ref>;</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="classscifir_1_1coordinates__1d_1a4eb2519fa7647159fd02a77e5b6e835a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_1a4eb2519fa7647159fd02a77e5b6e835a" kindref="member">operator=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_point</ref>)</highlight></codeline>
+<codeline lineno="61" refid="classscifir_1_1coordinates__1d_1a810015faaa2679092d9178539dd6c9a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1point__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;&amp;<sp/>x_point)</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/>std::move(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_point</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>std::move(x_point.x);</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67" refid="classscifir_1_1coordinates__1d_1a1aa7d2d771dfd076507ab51f6121db36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_1a1aa7d2d771dfd076507ab51f6121db36" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>)</highlight></codeline>
+<codeline lineno="67" refid="classscifir_1_1coordinates__1d_1a1bab965fa5584ca7196e9ca69713b017" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_coordinates_1d)</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a56c37a9529e15e75e48a74c81ffe25d2" kindref="member">initialize_from_string</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialize_from_string(init_coordinates_1d);</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73" refid="classscifir_1_1coordinates__1d_1af242f8bd96fa822cae357fd139e104a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1af242f8bd96fa822cae357fd139e104a0" kindref="member">set_position</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_x</ref>)</highlight></codeline>
+<codeline lineno="73" refid="classscifir_1_1coordinates__1d_1af242f8bd96fa822cae357fd139e104a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1af242f8bd96fa822cae357fd139e104a0" kindref="member">set_position</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>new_x)</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">new_x</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>new_x;</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="classscifir_1_1coordinates__1d_1a1e9bc055c1ff52fa14fc38a90c630a23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1a1e9bc055c1ff52fa14fc38a90c630a23" kindref="member">move</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_value</ref>)</highlight></codeline>
+<codeline lineno="78" refid="classscifir_1_1coordinates__1d_1a1e9bc055c1ff52fa14fc38a90c630a23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1a1e9bc055c1ff52fa14fc38a90c630a23" kindref="member">move</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>x_value)</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>+=<sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">x_value</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>x_value;</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83" refid="classscifir_1_1coordinates__1d_1af484763f8bfa891e3e6bd9d136ca2107" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="classscifir_1_1coordinates__1d_1af484763f8bfa891e3e6bd9d136ca2107" kindref="member">distance_to_origin</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="84"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>T(std::abs(<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>.get_value()),<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>.get_dimensions());</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>T(<ref refid="namespacescifir_1a0fca35769fd130e4f6303660a24e6c83" kindref="member">std::abs</ref>(x.get_value()),x.get_dimensions());</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88" refid="classscifir_1_1coordinates__1d_1a489517850723c3862339dfae71a19276" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1a489517850723c3862339dfae71a19276" kindref="member">display_cartesian</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="89"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">ostringstream</ref><sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">out</ref>;</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">out</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>&lt;&lt;<sp/><sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">out</ref>.str();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ostringstream<sp/>out;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x<sp/>&lt;&lt;<sp/><sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out.str();</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
 <codeline lineno="95" refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>;</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="98" refid="classscifir_1_1coordinates__1d_1a56c37a9529e15e75e48a74c81ffe25d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1a56c37a9529e15e75e48a74c81ffe25d2" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>)</highlight></codeline>
+<codeline lineno="98" refid="classscifir_1_1coordinates__1d_1a56c37a9529e15e75e48a74c81ffe25d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1a56c37a9529e15e75e48a74c81ffe25d2" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>init_coordinates_1d)</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.front()<sp/>==<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(init_coordinates_1d.front()<sp/>==<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.erase(0,1);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>init_coordinates_1d.erase(0,1);</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.back()<sp/>==<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(init_coordinates_1d.back()<sp/>==<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.erase(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.size()-1,1);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/>T(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>T(init_coordinates_1d);</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"></highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
-<codeline lineno="113" refid="classscifir_1_1coordinates__1d_3_01float_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>&gt;</highlight></codeline>
+<codeline lineno="113" refid="classscifir_1_1coordinates__1d_3_01float_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref>&lt;float&gt;</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="116" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a0d77179e7711b6e3bb5c7eefe8516c30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a0d77179e7711b6e3bb5c7eefe8516c30" kindref="member">coordinates_1d</ref>()<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>()</highlight></codeline>
+<codeline lineno="116" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a0d77179e7711b6e3bb5c7eefe8516c30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a0d77179e7711b6e3bb5c7eefe8516c30" kindref="member">coordinates_1d</ref>()<sp/>:<sp/>x()</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="119" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a8da9f8159417e47cf052514cb2c92fe6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a8da9f8159417e47cf052514cb2c92fe6" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>)</highlight></codeline>
+<codeline lineno="119" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a8da9f8159417e47cf052514cb2c92fe6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a8da9f8159417e47cf052514cb2c92fe6" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/>x_coordinates)<sp/>:<sp/>x(x_coordinates.x)</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="122" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a6e726a1800ccccd3a22fce858a96ba45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a6e726a1800ccccd3a22fce858a96ba45" kindref="member">coordinates_1d</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(std::<ref refid="classscifir_1_1coordinates__1d_1a1e9bc055c1ff52fa14fc38a90c630a23" kindref="member">move</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>))</highlight></codeline>
+<codeline lineno="122" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a6e726a1800ccccd3a22fce858a96ba45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a6e726a1800ccccd3a22fce858a96ba45" kindref="member">coordinates_1d</ref>(<ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;&amp;<sp/>x_coordinates)<sp/>:<sp/>x(std::move(x_coordinates.x))</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a652c1607c2e059cb1f495fc912747f9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a652c1607c2e059cb1f495fc912747f9a" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_x</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_x</ref>)</highlight></codeline>
+<codeline lineno="125" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a652c1607c2e059cb1f495fc912747f9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a652c1607c2e059cb1f495fc912747f9a" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_x)<sp/>:<sp/>x(new_x)</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ad8db454726fa03cda1e352283c8132d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ad8db454726fa03cda1e352283c8132d2" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_point</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_point</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>)</highlight></codeline>
+<codeline lineno="128" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ad8db454726fa03cda1e352283c8132d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ad8db454726fa03cda1e352283c8132d2" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d_3_01float_01_4" kindref="compound">point_1d&lt;float&gt;</ref>&amp;<sp/>new_point)<sp/>:<sp/>x(new_point.x)</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1affb25d20dd1dab096745d5f8b0ca0655" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1affb25d20dd1dab096745d5f8b0ca0655" kindref="member">coordinates_1d</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;float&gt;</ref>&amp;&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_point</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>(std::<ref refid="classscifir_1_1coordinates__1d_1a1e9bc055c1ff52fa14fc38a90c630a23" kindref="member">move</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_point</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>))</highlight></codeline>
+<codeline lineno="131" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1affb25d20dd1dab096745d5f8b0ca0655" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1affb25d20dd1dab096745d5f8b0ca0655" kindref="member">coordinates_1d</ref>(<ref refid="classscifir_1_1point__1d_3_01float_01_4" kindref="compound">point_1d&lt;float&gt;</ref>&amp;&amp;<sp/>new_point)<sp/>:<sp/>x(std::move(new_point.x))</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a66fb9c85ee33dd673892c3584268835f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a66fb9c85ee33dd673892c3584268835f" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref>()</highlight></codeline>
+<codeline lineno="134" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a66fb9c85ee33dd673892c3584268835f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a66fb9c85ee33dd673892c3584268835f" kindref="member">coordinates_1d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_coordinates_1d)<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref>()</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a56c37a9529e15e75e48a74c81ffe25d2" kindref="member">initialize_from_string</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialize_from_string(init_coordinates_1d);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a87bc17b5b7b76cadbc392da3958ba43e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a87bc17b5b7b76cadbc392da3958ba43e" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)</highlight></codeline>
+<codeline lineno="139" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a71a810b3a879ec6834e28f0470cffe6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/>x_coordinates)</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x_coordinates.<ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ae3450357171507a8d946f885789144a9" kindref="member">x</ref>;</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a9e6014813446f34fa4261a5ed9f05beb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a9e6014813446f34fa4261a5ed9f05beb" kindref="member">operator=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)</highlight></codeline>
+<codeline lineno="145" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a02295cb7411452f4de890d7de01fe63d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;&amp;<sp/>x_coordinates)</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/>std::move(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>std::move(x_coordinates.x);</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="151" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a1a62c2d75f764ca16034e5610f8fdbda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a1a62c2d75f764ca16034e5610f8fdbda" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_point</ref>)</highlight></codeline>
+<codeline lineno="151" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ac2f8dc4f979d2d9457d9818554fc6f42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d_3_01float_01_4" kindref="compound">point_1d&lt;float&gt;</ref>&amp;<sp/>x_point)</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_point</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x_point.<ref refid="classscifir_1_1point__1d_3_01float_01_4_1a970635fef47ed2e3e8bd5fd2a4f982c8" kindref="member">x</ref>;</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"></highlight></codeline>
-<codeline lineno="157" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a2c88b1834ed3fd88bc90baf6f7f2dc7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a2c88b1834ed3fd88bc90baf6f7f2dc7b" kindref="member">operator=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;float&gt;</ref>&amp;&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_point</ref>)</highlight></codeline>
+<codeline lineno="157" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a9d06c5a500d1e59607fdfef01b675bc4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1point__1d_3_01float_01_4" kindref="compound">point_1d&lt;float&gt;</ref>&amp;&amp;<sp/>x_point)</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/>std::move(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_point</ref>.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>std::move(x_point.x);</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a52ead257a64a2df0bacf09dfc86c6170" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a52ead257a64a2df0bacf09dfc86c6170" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>)</highlight></codeline>
+<codeline lineno="163" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a4978040db50a52312aae2da63a88ed27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">coordinates_1d&lt;float&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_coordinates_1d)</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a56c37a9529e15e75e48a74c81ffe25d2" kindref="member">initialize_from_string</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialize_from_string(init_coordinates_1d);</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a762faeb30c7ef1e172a535a6bb96f949" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a762faeb30c7ef1e172a535a6bb96f949" kindref="member">set_position</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_x</ref>)</highlight></codeline>
+<codeline lineno="169" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a762faeb30c7ef1e172a535a6bb96f949" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a762faeb30c7ef1e172a535a6bb96f949" kindref="member">set_position</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_x)</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">new_x</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>new_x;</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1afce8540485ddac28f1570a38f97f457d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1afce8540485ddac28f1570a38f97f457d" kindref="member">move</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_value</ref>)</highlight></codeline>
+<codeline lineno="174" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1afce8540485ddac28f1570a38f97f457d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1afce8540485ddac28f1570a38f97f457d" kindref="member">move</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x_value)</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>+=<sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">x_value</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>x_value;</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"></highlight></codeline>
 <codeline lineno="179" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ad70a5241cc9677067f5a8b55a757f705" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ad70a5241cc9677067f5a8b55a757f705" kindref="member">distance_to_origin</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="180"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">float</ref>(std::abs(<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>));</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(<ref refid="namespacescifir_1a0fca35769fd130e4f6303660a24e6c83" kindref="member">std::abs</ref>(x));</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"></highlight></codeline>
 <codeline lineno="184" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a6f5a5d5c3000cd93bbd75b4f05082cc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1a6f5a5d5c3000cd93bbd75b4f05082cc0" kindref="member">display_cartesian</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="185"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">ostringstream</ref><sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">out</ref>;</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">out</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a6fc5f876bdd1abb1118fc73288152eb0" kindref="member">display_float</ref>(<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>)<sp/>&lt;&lt;<sp/><sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">out</ref>.str();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ostringstream<sp/>out;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a6fc5f876bdd1abb1118fc73288152eb0" kindref="member">display_float</ref>(x)<sp/>&lt;&lt;<sp/><sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out.str();</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"></highlight></codeline>
 <codeline lineno="191" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ae3450357171507a8d946f885789144a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ae3450357171507a8d946f885789144a9" kindref="member">x</ref>;</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="194" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ae3e995890865de3f122192adbcbe88ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ae3e995890865de3f122192adbcbe88ad" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>)</highlight></codeline>
+<codeline lineno="194" refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ae3e995890865de3f122192adbcbe88ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4_1ae3e995890865de3f122192adbcbe88ad" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>init_coordinates_1d)</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.front()<sp/>==<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(init_coordinates_1d.front()<sp/>==<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.erase(0,1);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>init_coordinates_1d.erase(0,1);</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.back()<sp/>==<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(init_coordinates_1d.back()<sp/>==<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.erase(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>.size()-1,1);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d_1af95d1d5fe25a8994332ba48762cdbe8e" kindref="member">stof</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_coordinates_1d</ref>);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>stof(init_coordinates_1d);</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"></highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="209" refid="namespacescifir_1a873067b76a922a9f96b18e5f10088988" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="209" refid="namespacescifir_1a873067b76a922a9f96b18e5f10088988" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a873067b76a922a9f96b18e5f10088988" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x.<ref refid="classscifir_1_1coordinates__1d_1a489517850723c3862339dfae71a19276" kindref="member">display_cartesian</ref>();</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"></highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a873067b76a922a9f96b18e5f10088988" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
-<codeline lineno="217" refid="namespacescifir_1a2fb72e54fe5c45caa0b44c241b7098c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespacescifir_1a5b44128227fa8f95625e0f4d51f3b783" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="217" refid="namespacescifir_1a2fb72e54fe5c45caa0b44c241b7098c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespacescifir_1a4033e59e7c870d523b93a36b78ee66d1" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1adeff4b825414d35ce963977f181f1b5c" kindref="member">scifir::sqrt</ref>(<ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">scifir::pow</ref>(x.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>-<sp/>y.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>,2));</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a5b44128227fa8f95625e0f4d51f3b783" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a4033e59e7c870d523b93a36b78ee66d1" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"></highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
-<codeline lineno="225" refid="namespacescifir_1ae1be00443180f9a4551e2c6c424455ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespacescifir_1a5b44128227fa8f95625e0f4d51f3b783" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="225" refid="namespacescifir_1ae1be00443180f9a4551e2c6c424455ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespacescifir_1a4033e59e7c870d523b93a36b78ee66d1" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d" kindref="compound">point_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1adeff4b825414d35ce963977f181f1b5c" kindref="member">scifir::sqrt</ref>(<ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">scifir::pow</ref>(x.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>-<sp/>y.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>,2));</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1adeff4b825414d35ce963977f181f1b5c" kindref="member">scifir::sqrt</ref>(<ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">scifir::pow</ref>(x.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>-<sp/>y.<ref refid="classscifir_1_1point__1d_1ada6845ca9e3a02e9f4a0d79d67e51f4a" kindref="member">x</ref>,2));</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"></highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a5b44128227fa8f95625e0f4d51f3b783" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point_1d&lt;float&gt;&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a4033e59e7c870d523b93a36b78ee66d1" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point_1d&lt;float&gt;&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
-<codeline lineno="233" refid="namespacescifir_1a4033e59e7c870d523b93a36b78ee66d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespacescifir_1a5b44128227fa8f95625e0f4d51f3b783" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="233" refid="namespacescifir_1a4033e59e7c870d523b93a36b78ee66d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespacescifir_1a4033e59e7c870d523b93a36b78ee66d1" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d" kindref="compound">point_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1adeff4b825414d35ce963977f181f1b5c" kindref="member">scifir::sqrt</ref>(<ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">scifir::pow</ref>(x.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>-<sp/>y.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>,2));</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1adeff4b825414d35ce963977f181f1b5c" kindref="member">scifir::sqrt</ref>(<ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">scifir::pow</ref>(x.<ref refid="classscifir_1_1point__1d_1ada6845ca9e3a02e9f4a0d79d67e51f4a" kindref="member">x</ref><sp/>-<sp/>y.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>,2));</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"></highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a5b44128227fa8f95625e0f4d51f3b783" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point_1d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a4033e59e7c870d523b93a36b78ee66d1" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point_1d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_1d&lt;float&gt;&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="239"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"></highlight></codeline>
 <codeline lineno="241"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
@@ -1059,9 +1059,9 @@
 <codeline lineno="258"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"></highlight></codeline>
 <codeline lineno="260"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
-<codeline lineno="261" refid="coordinates__1d_8hpp_1a99add2a45dd722ad53e4948157148873" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1a0513cc68f7a654ca266ca78a00214f4f" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::point_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="261" refid="coordinates__1d_8hpp_1a99add2a45dd722ad53e4948157148873" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1a0513cc68f7a654ca266ca78a00214f4f" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d" kindref="compound">scifir::point_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="262"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>==<sp/>y.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>==<sp/>y.<ref refid="classscifir_1_1point__1d_1ada6845ca9e3a02e9f4a0d79d67e51f4a" kindref="member">x</ref>)</highlight></codeline>
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1072,15 +1072,15 @@
 <codeline lineno="271"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"></highlight></codeline>
 <codeline lineno="273"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
-<codeline lineno="274" refid="coordinates__1d_8hpp_1a9f20aecb4f53e96b252dd24ec49aa81f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1aef1167d124fb568449c85903ca4fdc0b" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::point_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="274" refid="coordinates__1d_8hpp_1a9f20aecb4f53e96b252dd24ec49aa81f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1aef1167d124fb568449c85903ca4fdc0b" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d" kindref="compound">scifir::point_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="275"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(x<sp/>==<sp/>y);</highlight></codeline>
 <codeline lineno="277"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"></highlight></codeline>
 <codeline lineno="279"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
-<codeline lineno="280" refid="coordinates__1d_8hpp_1a4cbd83f42b3910b2af5f24fc3d08ec14" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1a0513cc68f7a654ca266ca78a00214f4f" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::point_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="280" refid="coordinates__1d_8hpp_1a4cbd83f42b3910b2af5f24fc3d08ec14" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1a0513cc68f7a654ca266ca78a00214f4f" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d" kindref="compound">scifir::point_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="281"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref><sp/>==<sp/>y.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x.<ref refid="classscifir_1_1point__1d_1ada6845ca9e3a02e9f4a0d79d67e51f4a" kindref="member">x</ref><sp/>==<sp/>y.<ref refid="classscifir_1_1coordinates__1d_1a4d69d622e18fc50173184e26a22c1274" kindref="member">x</ref>)</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1091,7 +1091,7 @@
 <codeline lineno="290"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="291"><highlight class="normal"></highlight></codeline>
 <codeline lineno="292"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
-<codeline lineno="293" refid="coordinates__1d_8hpp_1a5ea58146056981034b377be8b4d7230f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1aef1167d124fb568449c85903ca4fdc0b" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::point_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="293" refid="coordinates__1d_8hpp_1a5ea58146056981034b377be8b4d7230f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1aef1167d124fb568449c85903ca4fdc0b" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1point__1d" kindref="compound">scifir::point_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;U&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="294"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(x<sp/>==<sp/>y);</highlight></codeline>
 <codeline lineno="296"><highlight class="normal">}</highlight></codeline>
@@ -1125,31 +1125,31 @@
 <codeline lineno="324"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="325" refid="coordinates__1d_8hpp_1ac7c2ecc94183695d9329606cb3b3ef9f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1ac7c2ecc94183695d9329606cb3b3ef9f" kindref="member">operator +=</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="326"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>to_string(y);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>+=<sp/><ref refid="namespacescifir_1a873067b76a922a9f96b18e5f10088988" kindref="member">to_string</ref>(y);</highlight></codeline>
 <codeline lineno="328"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="329"><highlight class="normal"></highlight></codeline>
 <codeline lineno="330"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="331" refid="coordinates__1d_8hpp_1a6c87f73754f73ca629a72c0a58a0e124" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1a6c87f73754f73ca629a72c0a58a0e124" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="332"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>+<sp/>to_string(y);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>+<sp/><ref refid="namespacescifir_1a873067b76a922a9f96b18e5f10088988" kindref="member">to_string</ref>(y);</highlight></codeline>
 <codeline lineno="334"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="335"><highlight class="normal"></highlight></codeline>
 <codeline lineno="336"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="337" refid="coordinates__1d_8hpp_1a61ab554a83fa042de4cc2fab7d79a0d2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="coordinates__1d_8hpp_1a6c87f73754f73ca629a72c0a58a0e124" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="338"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>to_string(x)<sp/>+<sp/>y;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a873067b76a922a9f96b18e5f10088988" kindref="member">to_string</ref>(x)<sp/>+<sp/>y;</highlight></codeline>
 <codeline lineno="340"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="341"><highlight class="normal"></highlight></codeline>
 <codeline lineno="342"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="343" refid="coordinates__1d_8hpp_1a9eca791ce3f06c4881e6fcf5837dfd0a" refkind="member"><highlight class="normal">ostream&amp;<sp/><ref refid="coordinates__1d_8hpp_1a9eca791ce3f06c4881e6fcf5837dfd0a" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="343" refid="coordinates__1d_8hpp_1adcdeacdd80693e3c52d8d6f82521ca2d" refkind="member"><highlight class="normal">ostream&amp;<sp/><ref refid="coordinates__1d_8hpp_1adcdeacdd80693e3c52d8d6f82521ca2d" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="344"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>to_string(x);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a873067b76a922a9f96b18e5f10088988" kindref="member">to_string</ref>(x);</highlight></codeline>
 <codeline lineno="346"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="347"><highlight class="normal"></highlight></codeline>
-<codeline lineno="348"><highlight class="normal">ostream&amp;<sp/><ref refid="coordinates__1d_8hpp_1a9eca791ce3f06c4881e6fcf5837dfd0a" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;float&gt;</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal">ostream&amp;<sp/><ref refid="coordinates__1d_8hpp_1adcdeacdd80693e3c52d8d6f82521ca2d" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d_3_01float_01_4" kindref="compound">scifir::coordinates_1d&lt;float&gt;</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="349"><highlight class="normal"></highlight></codeline>
 <codeline lineno="350"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="351" refid="coordinates__1d_8hpp_1a4789f4cf63bb66b34f1c5ffc51147147" refkind="member"><highlight class="normal">istream&amp;<sp/><ref refid="coordinates__1d_8hpp_1a4789f4cf63bb66b34f1c5ffc51147147" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="351" refid="coordinates__1d_8hpp_1a7fdef89b699947fb7d4745fee18d9519" refkind="member"><highlight class="normal">istream&amp;<sp/><ref refid="coordinates__1d_8hpp_1a7fdef89b699947fb7d4745fee18d9519" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_1d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="352"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>a[256];</highlight></codeline>
 <codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>is.getline(a,<sp/>256);</highlight></codeline>

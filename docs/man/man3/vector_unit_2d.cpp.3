@@ -1,4 +1,4 @@
-.TH "units/vector_unit_2d.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "units/vector_unit_2d.cpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -19,7 +19,7 @@ units/vector_unit_2d.cpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -27,99 +27,127 @@ units/vector_unit_2d.cpp
 
 .in +1c
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::norm\fP (\fBconst\fP \fBvector_unit_2d\fP &x)"
+.RI "scalar_unit \fBscifir::norm\fP (const vector_unit_2d &x)"
 .br
+.RI "It returns the value of the vector in polar coordinates, p\&. "
 .ti -1c
-.RI "\fBvector_unit_2d\fP \fBscifir::sqrt\fP (\fBconst\fP \fBvector_unit_2d\fP &x)"
+.RI "vector_unit_2d \fBscifir::sqrt\fP (const vector_unit_2d &x)"
 .br
+.RI "It squares the vector, creating a \fBvector_unit_2d\fP with the value squared and always the same theta\&. The dimensions are squared with the same rules for the square of dimensions than \fBscalar_unit\fP classes\&. "
 .ti -1c
-.RI "\fBvector_unit_2d\fP \fBscifir::sqrt_nth\fP (\fBconst\fP \fBvector_unit_2d\fP &x, \fBint\fP index)"
+.RI "vector_unit_2d \fBscifir::sqrt_nth\fP (const vector_unit_2d &x, int index)"
 .br
+.RI "It takes the root of the vector with the index given, creating a \fBvector_unit_2d\fP with the value rooted to that index and always maintains the same theta\&. The dimensions are squared with the same rules for the square of dimensions than \fBscalar_unit\fP classes\&. "
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::dot_product\fP (\fBconst\fP \fBvector_unit_2d\fP &x, \fBconst\fP \fBvector_unit_2d\fP &y)"
+.RI "scalar_unit \fBscifir::dot_product\fP (const vector_unit_2d &x, const vector_unit_2d &y)"
 .br
+.RI "Creates a \fBscalar_unit\fP as the dot product of the two vectors x and y\&. "
 .ti -1c
-.RI "\fBangle\fP \fBscifir::angle_between\fP (\fBconst\fP \fBvector_unit_2d\fP &x, \fBconst\fP \fBvector_unit_2d\fP &y)"
+.RI "angle \fBscifir::angle_between\fP (const vector_unit_2d &x, const vector_unit_2d &y)"
 .br
+.RI "Returns the angle between two vectors x and y inside a 2D space\&. "
 .ti -1c
-.RI "\fBbool\fP \fBscifir::same_direction\fP (\fBconst\fP \fBvector_unit_2d\fP &x, \fBconst\fP \fBvector_unit_2d\fP &y)"
+.RI "bool \fBscifir::same_direction\fP (const vector_unit_2d &x, const vector_unit_2d &y)"
 .br
+.RI "Checks if two vectors x and y have the same direction\&. "
 .ti -1c
-.RI "\fBbool\fP \fBscifir::parallel\fP (\fBconst\fP \fBvector_unit_2d\fP &x, \fBconst\fP \fBvector_unit_2d\fP &y)"
+.RI "bool \fBscifir::parallel\fP (const vector_unit_2d &x, const vector_unit_2d &y)"
 .br
+.RI "Checks if two vectors x and y are parallel, which means that their direction is the same or the exact opposite\&. "
 .ti -1c
-.RI "\fBbool\fP \fBscifir::orthogonal\fP (\fBconst\fP \fBvector_unit_2d\fP &x, \fBconst\fP \fBvector_unit_2d\fP &y)"
+.RI "bool \fBscifir::orthogonal\fP (const vector_unit_2d &x, const vector_unit_2d &y)"
 .br
+.RI "Checks if two vectors x and y are orthogonal, that's, if they have 90 degrees of difference\&. "
 .ti -1c
 .RI "\fBscifir::vector_unit_2d\fP \fBoperator*\fP (const \fBscifir::scalar_unit\fP &x, const \fBscifir::vector_unit_2d\fP &y)"
 .br
+.RI "It creates a new vector_unit_3d scaling a vector_unit_3d by the scalar_unit x\&. "
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBscifir::vector_unit_2d\fP &x, const \fBscifir::vector_unit_2d\fP &y)"
 .br
+.RI "Comparison operator\&. Two vector_unit_2d are not equal if their value, dimensions or theta are different\&. "
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBscifir::vector_unit_2d\fP &x, const string &init_vector_2d)"
 .br
+.RI "Returns true if x is equal to the vector_unit_2d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. "
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBscifir::vector_unit_2d\fP &x, const string &init_vector_2d)"
 .br
+.RI "Returns true if x is not equal to the vector_unit_2d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. "
 .ti -1c
 .RI "bool \fBoperator==\fP (const string &init_vector_2d, const \fBscifir::vector_unit_2d\fP &x)"
 .br
+.RI "Returns true if x is equal to the vector_unit_2d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. "
 .ti -1c
 .RI "bool \fBoperator!=\fP (const string &init_vector_2d, const \fBscifir::vector_unit_2d\fP &x)"
 .br
+.RI "Returns true if x is not equal to the vector_unit_2d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. "
 .ti -1c
 .RI "void \fBoperator+=\fP (string &x, const \fBscifir::vector_unit_2d\fP &y)"
 .br
+.RI "Concatenates the string representation of the vector_unit_2d y to the string x\&. "
 .ti -1c
 .RI "string \fBoperator+\fP (const string &x, const \fBscifir::vector_unit_2d\fP &y)"
 .br
+.RI "Creates a new string as the concatenation of the string x with the representation string of the vector_unit_2d y\&. "
 .ti -1c
 .RI "string \fBoperator+\fP (const \fBscifir::vector_unit_2d\fP &y, const string &x)"
 .br
+.RI "Creates a new string as the concatenation of the string x with the representation string of the vector_unit_2d y\&. "
 .ti -1c
 .RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::vector_unit_2d\fP &x)"
 .br
+.RI "Adds the string representation of the vector_unit_2d x to an output stream os\&. "
 .ti -1c
 .RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::vector_unit_2d\fP &x)"
 .br
+.RI "Allows that an istream initializes by string a vector_unit_2d x\&. "
 .in -1c
 .SH "Function Documentation"
 .PP 
 .SS "bool operator!= (const \fBscifir::vector_unit_2d\fP & x, const \fBscifir::vector_unit_2d\fP & y)"
 
 .PP
-Definition at line \fB373\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Comparison operator\&. Two vector_unit_2d are not equal if their value, dimensions or theta are different\&. 
+.PP
+Definition at line 373 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 374 {
 375     return !(x == y);
 376 }
 .fi
-
 .SS "bool operator!= (const \fBscifir::vector_unit_2d\fP & x, const string & init_vector_2d)"
 
 .PP
-Definition at line \fB384\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Returns true if x is not equal to the vector_unit_2d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line 384 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 385 {
 386     return !(x == init_vector_2d);
 387 }
 .fi
-
 .SS "bool operator!= (const string & init_vector_2d, const \fBscifir::vector_unit_2d\fP & x)"
 
 .PP
-Definition at line \fB395\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Returns true if x is not equal to the vector_unit_2d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line 395 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 396 {
 397     return !(init_vector_2d == x);
 398 }
 .fi
-
 .SS "\fBscifir::vector_unit_2d\fP operator* (const \fBscifir::scalar_unit\fP & x, const \fBscifir::vector_unit_2d\fP & y)"
 
 .PP
-Definition at line \fB366\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+It creates a new vector_unit_3d scaling a vector_unit_3d by the scalar_unit x\&. 
+.PP
+Definition at line 366 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 367 {
 368     long double new_value = x\&.get_value() * y\&.get_value();
@@ -127,11 +155,13 @@ Definition at line \fB366\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
 370     return scifir::vector_unit_2d(float(new_value), new_dimensions, y\&.theta);
 371 }
 .fi
-
 .SS "string operator+ (const \fBscifir::vector_unit_2d\fP & y, const string & x)"
 
 .PP
-Definition at line \fB415\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Creates a new string as the concatenation of the string x with the representation string of the vector_unit_2d y\&. 
+.PP
+Definition at line 415 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 416 {
 417     ostringstream output;
@@ -140,11 +170,13 @@ Definition at line \fB415\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
 420     return output\&.str();
 421 }
 .fi
-
 .SS "string operator+ (const string & x, const \fBscifir::vector_unit_2d\fP & y)"
 
 .PP
-Definition at line \fB407\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Creates a new string as the concatenation of the string x with the representation string of the vector_unit_2d y\&. 
+.PP
+Definition at line 407 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 408 {
 409     ostringstream output;
@@ -153,11 +185,13 @@ Definition at line \fB407\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
 412     return output\&.str();
 413 }
 .fi
-
 .SS "void operator+= (string & x, const \fBscifir::vector_unit_2d\fP & y)"
 
 .PP
-Definition at line \fB400\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Concatenates the string representation of the vector_unit_2d y to the string x\&. 
+.PP
+Definition at line 400 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 401 {
 402     ostringstream output;
@@ -165,43 +199,51 @@ Definition at line \fB400\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
 404     x += output\&.str();
 405 }
 .fi
-
 .SS "ostream & operator<< (ostream & os, const \fBscifir::vector_unit_2d\fP & x)"
 
 .PP
-Definition at line \fB423\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Adds the string representation of the vector_unit_2d x to an output stream os\&. 
+.PP
+Definition at line 423 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 424 {
 425     return os << to_string(x);
 426 }
 .fi
-
 .SS "bool operator== (const \fBscifir::vector_unit_2d\fP & x, const string & init_vector_2d)"
 
 .PP
-Definition at line \fB378\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Returns true if x is equal to the vector_unit_2d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line 378 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 379 {
 380     scifir::vector_unit_2d y(init_vector_2d);
 381     return (x == y);
 382 }
 .fi
-
 .SS "bool operator== (const string & init_vector_2d, const \fBscifir::vector_unit_2d\fP & x)"
 
 .PP
-Definition at line \fB389\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Returns true if x is equal to the vector_unit_2d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line 389 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 390 {
 391     scifir::vector_unit_2d y(init_vector_2d);
 392     return (y == x);
 393 }
 .fi
-
 .SS "istream & operator>> (istream & is, \fBscifir::vector_unit_2d\fP & x)"
 
 .PP
-Definition at line \fB428\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
+Allows that an istream initializes by string a vector_unit_2d x\&. 
+.PP
+Definition at line 428 of file vector_unit_2d\&.cpp\&.
+.PP
 .nf
 429 {
 430     char a[256];
@@ -212,7 +254,6 @@ Definition at line \fB428\fP of file \fBvector_unit_2d\&.cpp\fP\&..PP
 435     return is;
 436 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

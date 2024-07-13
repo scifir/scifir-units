@@ -1,523 +1,626 @@
-\doxysection{scifir\+::prefix Class Reference}
-\hypertarget{classscifir_1_1prefix}{}\label{classscifir_1_1prefix}\index{scifir::prefix@{scifir::prefix}}
+\hypertarget{classscifir_1_1prefix}{}\doxysection{scifir\+::prefix Class Reference}
+\label{classscifir_1_1prefix}\index{scifir::prefix@{scifir::prefix}}
+
+
+Class that represents prefixes of the SI system of units. Each prefix sizes 1 byte.  
+
+
 
 
 {\ttfamily \#include $<$prefix.\+hpp$>$}
 
-\doxysubsubsection*{Public Types}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{type}} \+: int8\+\_\+t \{ \newline
-\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76}{no\+\_\+prefix}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de}{Y}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60}{Z}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8}{E}}
+\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711}{NONE}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a614051e388059a2e557389352c70dd41}{QUETTA}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a29023641d9e903305fc53c681946e62d}{RONNA}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9370c7ef21955be91159c30419b7365d}{YOTTA}}
 , \newline
-\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99}{P}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf}{T}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f}{G}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8}{M}}
+\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e}{ZETTA}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a5da2cbb97aec2a3144ac1301980eb8fb}{EXA}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8a6a0b234bac7482d0e679943f2efd14}{PETA}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5afac7e496810302f6c12e3dbf97268003}{TERA}}
 , \newline
-\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088}{k}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65}{h}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8}{da}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b}{d}}
+\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ab8981acb27b0aad108602c0f453b7f84}{GIGA}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a657d97af1c39a680a07e5bd7289e05f0}{MEGA}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8}{KILO}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6abce29e6411d0bf10f42bc1df906d82}{HECTO}}
 , \newline
-\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b}{c}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28}{m}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce}{u}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35}{n}}
+\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d04c72c39369ffcab0ecac67a1d5b02}{DECA}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9a285f2c3297e278e40a8b78eecfd5c7}{DECI}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8180701df54e1bc488751274349a825e}{CENTI}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a37764841864050a4aacc74d04110ed9f}{MILLI}}
 , \newline
-\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4}{p}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01}{f}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68}{a}}
-, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217}{z}}
+\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aa527806621222d666ec8cc624a28f1ce}{MICRO}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a36d34ff4b6f15a02332d7b6d9d4e4718}{NANO}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae337a7757abd20e76bd674ec39555082}{PICO}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a987d9f6664d9b718098813acd8a3c2ea}{FEMTO}}
 , \newline
-\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0}{y}}
+\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a084ca0815e65d79f91d8d421af3f9a6b}{ATTO}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56}{ZEPTO}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a1b091a53126330b28816e9025caa8e65}{YOCTO}}
+, \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8cb32856a820b941743975c53d4205ce}{RONTO}}
+, \newline
+\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abe13e3ef9b4914de0f3591b6043eb623}{QUECTO}}
  \}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactList}\small\item\em Represents a prefix of the SI system of units. All the prefixes of the SI system of units are supported. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1prefix_aa4fa5c6b2b9c6902748b0d921eef84f8}{prefix}} ()
-\item 
-\mbox{\hyperlink{classscifir_1_1prefix_a747e3945b7de0c8eff0915ceaef6bf4a}{prefix}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1prefix_add88c16e4117068ee8c2d2150193b4c2}{prefix}} (\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1prefix_aa87b72c98012be1d270810908538e1fc}{prefix}} (\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix\+::type}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+type}})
-\item 
-\mbox{\hyperlink{classscifir_1_1prefix_a3596b726a6aec15b0015ae43b9d234d5}{prefix}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+type}})
-\item 
-\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \& \mbox{\hyperlink{classscifir_1_1prefix_a0b9d5c30b77d71216588983bd3c97a14}{operator=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \& \mbox{\hyperlink{classscifir_1_1prefix_ac0f3c0844fe32fd87ddca55a18a1f996}{operator=}} (\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\+\_\+conversion\+\_\+factor}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{classscifir_1_1prefix_ab89ed3da9e955f242437b69ed4756294}{get\+\_\+name}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{classscifir_1_1prefix_adceb7b20c962d582c949849446827fad}{get\+\_\+symbol}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1prefix_a8deabe803a98512e9ffced9f36fb5536}{operator$<$}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
+\mbox{\hyperlink{classscifir_1_1prefix_a7da4f45d884b8dfd8a0d94a11fd08646}{prefix}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. The prefix\+\_\+type is set to NONE. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1prefix_a1b0e401fe9cafe203ef86e769cd4c3bb}{prefix}} (const \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&x)
+\begin{DoxyCompactList}\small\item\em Copy constructor. The prefix\+\_\+type is copied from the prefix x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1prefix_acc7af429a59bcdd7f7a58eff953b7981}{prefix}} (\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\&x)
+\begin{DoxyCompactList}\small\item\em Move constructor. The prefix\+\_\+type is moved from the prefix x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1prefix_aca20011a1a7569c0bfc573f453935e28}{prefix}} (\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix\+::type}} new\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Constructor. The prefix\+\_\+type is set to the new\+\_\+type given. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1prefix_a7c9f3b460defb1eb9456f634b7770218}{prefix}} (const string \&new\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Constructor. The prefix\+\_\+type is set to the new\+\_\+type specified in the string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \& \mbox{\hyperlink{classscifir_1_1prefix_ae9d352fc1d78fbe249cbf9fd8bea19db}{operator=}} (const \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&x)
+\begin{DoxyCompactList}\small\item\em Copy assignment. The prefix\+\_\+type is copied from the prefix x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \& \mbox{\hyperlink{classscifir_1_1prefix_ac63db0d7a0698245378dff3b6c43b15e}{operator=}} (\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\&x)
+\begin{DoxyCompactList}\small\item\em Move assignment. The prefix\+\_\+type is moved from the prefix x. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classscifir_1_1prefix_a045d058041cacaa09a2b4cf3954f706c}{get\+\_\+conversion\+\_\+factor}} () const
+\begin{DoxyCompactList}\small\item\em Returns the conversion factor of the prefix given the prefix\+\_\+type. It uses the SI system of units for the value of each conversion factor. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classscifir_1_1prefix_ad3806e8413ac92dfebc6847627727875}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Name of the prefix given the prefix\+\_\+type. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classscifir_1_1prefix_aa465d9bfb7c6cd8669ad545d616a2130}{get\+\_\+symbol}} () const
+\begin{DoxyCompactList}\small\item\em Symbol of the prefix given the prefix\+\_\+type. The symbol of micro is supported in his Unicode version. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classscifir_1_1prefix_afaa72bb0c8db0b236f193e395c45d480}{operator$<$}} (const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&x) const
+\begin{DoxyCompactList}\small\item\em This operator allows to order the prefixes from the lower to the greather. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix\+::type}} \mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\+\_\+type}}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix\+::type}} \mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em It stores the prefix type currently being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Class that represents prefixes of the SI system of units. Each prefix sizes 1 byte. 
 
-
-Definition at line \mbox{\hyperlink{prefix_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{prefix_8hpp_source}{prefix.\+hpp}}.
+Definition at line 13 of file prefix.\+hpp.
 
 
 
 \doxysubsection{Member Enumeration Documentation}
-\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5} 
+\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}} 
 \index{scifir::prefix@{scifir::prefix}!type@{type}}
 \index{type@{type}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{type}{type}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{enum}} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{scifir\+::prefix\+::type}} \+: \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int8\+\_\+t}}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{scifir\+::prefix\+::type}} \+: int8\+\_\+t}
+
+
+
+Represents a prefix of the SI system of units. All the prefixes of the SI system of units are supported. 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{no\_prefix@{no\_prefix}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!no\_prefix@{no\_prefix}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76} 
-no\+\_\+prefix&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!NONE@{NONE}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711}} 
+NONE&There is no prefix. Then, the dimension is not increased or decreased by some factor. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Y@{Y}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!Y@{Y}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de} 
-Y&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QUETTA@{QUETTA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!QUETTA@{QUETTA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a614051e388059a2e557389352c70dd41}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a614051e388059a2e557389352c70dd41}} 
+QUETTA&Prefix of a factor of 10$^\wedge$30. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Z@{Z}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!Z@{Z}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60} 
-Z&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RONNA@{RONNA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!RONNA@{RONNA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a29023641d9e903305fc53c681946e62d}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a29023641d9e903305fc53c681946e62d}} 
+RONNA&Prefix of a factor of 10$^\wedge$27. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{E@{E}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!E@{E}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8} 
-E&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YOTTA@{YOTTA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!YOTTA@{YOTTA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9370c7ef21955be91159c30419b7365d}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9370c7ef21955be91159c30419b7365d}} 
+YOTTA&Prefix of a factor of 10$^\wedge$24. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{P@{P}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!P@{P}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99} 
-P&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ZETTA@{ZETTA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!ZETTA@{ZETTA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e}} 
+ZETTA&Prefix of a factor of 10$^\wedge$21. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{T@{T}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!T@{T}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf} 
-T&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXA@{EXA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!EXA@{EXA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a5da2cbb97aec2a3144ac1301980eb8fb}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a5da2cbb97aec2a3144ac1301980eb8fb}} 
+EXA&Prefix of a factor of 10$^\wedge$18. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{G@{G}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!G@{G}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f} 
-G&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PETA@{PETA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!PETA@{PETA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8a6a0b234bac7482d0e679943f2efd14}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8a6a0b234bac7482d0e679943f2efd14}} 
+PETA&Prefix of a factor of 10$^\wedge$15. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{M@{M}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!M@{M}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8} 
-M&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TERA@{TERA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!TERA@{TERA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5afac7e496810302f6c12e3dbf97268003}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5afac7e496810302f6c12e3dbf97268003}} 
+TERA&Prefix of a factor of 10$^\wedge$12. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{k@{k}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!k@{k}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088} 
-k&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GIGA@{GIGA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!GIGA@{GIGA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ab8981acb27b0aad108602c0f453b7f84}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ab8981acb27b0aad108602c0f453b7f84}} 
+GIGA&Prefix of a factor of 10$^\wedge$9. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{h@{h}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!h@{h}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65} 
-h&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEGA@{MEGA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!MEGA@{MEGA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a657d97af1c39a680a07e5bd7289e05f0}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a657d97af1c39a680a07e5bd7289e05f0}} 
+MEGA&Prefix of a factor of 10$^\wedge$6. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{da@{da}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!da@{da}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8} 
-da&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KILO@{KILO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!KILO@{KILO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8}} 
+KILO&Prefix of a factor of 10$^\wedge$3. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{d@{d}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!d@{d}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b} 
-d&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HECTO@{HECTO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!HECTO@{HECTO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6abce29e6411d0bf10f42bc1df906d82}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6abce29e6411d0bf10f42bc1df906d82}} 
+HECTO&Prefix of a factor of 10$^\wedge$2. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{c@{c}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!c@{c}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b} 
-c&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DECA@{DECA}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!DECA@{DECA}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d04c72c39369ffcab0ecac67a1d5b02}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d04c72c39369ffcab0ecac67a1d5b02}} 
+DECA&Prefix of a factor of 10$^\wedge$1. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{m@{m}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!m@{m}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28} 
-m&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DECI@{DECI}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!DECI@{DECI}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9a285f2c3297e278e40a8b78eecfd5c7}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9a285f2c3297e278e40a8b78eecfd5c7}} 
+DECI&Prefix of a factor of 10$^\wedge$-\/1. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{u@{u}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!u@{u}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce} 
-u&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CENTI@{CENTI}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!CENTI@{CENTI}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8180701df54e1bc488751274349a825e}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8180701df54e1bc488751274349a825e}} 
+CENTI&Prefix of a factor of 10$^\wedge$-\/2. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{n@{n}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!n@{n}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35} 
-n&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MILLI@{MILLI}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!MILLI@{MILLI}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a37764841864050a4aacc74d04110ed9f}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a37764841864050a4aacc74d04110ed9f}} 
+MILLI&Prefix of a factor of 10$^\wedge$-\/3. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{p@{p}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!p@{p}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4} 
-p&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MICRO@{MICRO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!MICRO@{MICRO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aa527806621222d666ec8cc624a28f1ce}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aa527806621222d666ec8cc624a28f1ce}} 
+MICRO&Prefix of a factor of 10$^\wedge$-\/6. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{f@{f}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!f@{f}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01} 
-f&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NANO@{NANO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!NANO@{NANO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a36d34ff4b6f15a02332d7b6d9d4e4718}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a36d34ff4b6f15a02332d7b6d9d4e4718}} 
+NANO&Prefix of a factor of 10$^\wedge$-\/9. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{a@{a}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!a@{a}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68} 
-a&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PICO@{PICO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!PICO@{PICO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae337a7757abd20e76bd674ec39555082}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae337a7757abd20e76bd674ec39555082}} 
+PICO&Prefix of a factor of 10$^\wedge$-\/12. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{z@{z}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!z@{z}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217} 
-z&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FEMTO@{FEMTO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!FEMTO@{FEMTO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a987d9f6664d9b718098813acd8a3c2ea}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a987d9f6664d9b718098813acd8a3c2ea}} 
+FEMTO&Prefix of a factor of 10$^\wedge$-\/15. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{y@{y}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!y@{y}}}\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0} 
-y&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTO@{ATTO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!ATTO@{ATTO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a084ca0815e65d79f91d8d421af3f9a6b}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a084ca0815e65d79f91d8d421af3f9a6b}} 
+ATTO&Prefix of a factor of 10$^\wedge$-\/18. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ZEPTO@{ZEPTO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!ZEPTO@{ZEPTO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56}} 
+ZEPTO&Prefix of a factor of 10$^\wedge$-\/21. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YOCTO@{YOCTO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!YOCTO@{YOCTO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a1b091a53126330b28816e9025caa8e65}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a1b091a53126330b28816e9025caa8e65}} 
+YOCTO&Prefix of a factor of 10$^\wedge$-\/24. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RONTO@{RONTO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!RONTO@{RONTO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8cb32856a820b941743975c53d4205ce}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8cb32856a820b941743975c53d4205ce}} 
+RONTO&Prefix of a factor of 10$^\wedge$-\/27. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QUECTO@{QUECTO}!scifir::prefix@{scifir::prefix}}\index{scifir::prefix@{scifir::prefix}!QUECTO@{QUECTO}}}\mbox{\Hypertarget{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abe13e3ef9b4914de0f3591b6043eb623}\label{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abe13e3ef9b4914de0f3591b6043eb623}} 
+QUECTO&Prefix of a factor of 10$^\wedge$-\/30. \\
 \hline
 
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{prefix_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{prefix_8hpp_source}{prefix.\+hpp}}.
+Definition at line 16 of file prefix.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ :\ int8\_t\ \{\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76}{no\_prefix}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de}{Y}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60}{Z}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8}{E}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99}{P}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf}{T}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f}{G}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8}{M}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088}{k}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65}{h}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8}{da}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b}{d}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b}{c}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28}{m}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce}{u}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35}{n}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4}{p}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01}{f}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68}{a}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217}{z}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0}{y}}\};}
+\DoxyCodeLine{16 : int8\_t \{\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711}{NONE}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a614051e388059a2e557389352c70dd41}{QUETTA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a29023641d9e903305fc53c681946e62d}{RONNA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9370c7ef21955be91159c30419b7365d}{YOTTA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e}{ZETTA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a5da2cbb97aec2a3144ac1301980eb8fb}{EXA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8a6a0b234bac7482d0e679943f2efd14}{PETA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5afac7e496810302f6c12e3dbf97268003}{TERA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ab8981acb27b0aad108602c0f453b7f84}{GIGA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a657d97af1c39a680a07e5bd7289e05f0}{MEGA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8}{KILO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6abce29e6411d0bf10f42bc1df906d82}{HECTO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d04c72c39369ffcab0ecac67a1d5b02}{DECA}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9a285f2c3297e278e40a8b78eecfd5c7}{DECI}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8180701df54e1bc488751274349a825e}{CENTI}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a37764841864050a4aacc74d04110ed9f}{MILLI}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aa527806621222d666ec8cc624a28f1ce}{MICRO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a36d34ff4b6f15a02332d7b6d9d4e4718}{NANO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae337a7757abd20e76bd674ec39555082}{PICO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a987d9f6664d9b718098813acd8a3c2ea}{FEMTO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a084ca0815e65d79f91d8d421af3f9a6b}{ATTO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56}{ZEPTO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a1b091a53126330b28816e9025caa8e65}{YOCTO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8cb32856a820b941743975c53d4205ce}{RONTO}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abe13e3ef9b4914de0f3591b6043eb623}{QUECTO}}\};}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classscifir_1_1prefix_aa4fa5c6b2b9c6902748b0d921eef84f8}\label{classscifir_1_1prefix_aa4fa5c6b2b9c6902748b0d921eef84f8} 
+\mbox{\Hypertarget{classscifir_1_1prefix_a7da4f45d884b8dfd8a0d94a11fd08646}\label{classscifir_1_1prefix_a7da4f45d884b8dfd8a0d94a11fd08646}} 
 \index{scifir::prefix@{scifir::prefix}!prefix@{prefix}}
 \index{prefix@{prefix}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{prefix()}{prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
-{\footnotesize\ttfamily scifir\+::prefix\+::prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily prefix\+::prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Default constructor. The prefix\+\_\+type is set to NONE. 
+
+
+
+Definition at line 9 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}}(\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76}{prefix::no\_prefix}}) }
-\DoxyCodeLine{00010\ \ \ \ \ \{\}}
+\DoxyCodeLine{9                   : \mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}}(\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711}{prefix::NONE}}) }
+\DoxyCodeLine{10     \{\}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1prefix_a747e3945b7de0c8eff0915ceaef6bf4a}\label{classscifir_1_1prefix_a747e3945b7de0c8eff0915ceaef6bf4a} 
+\mbox{\Hypertarget{classscifir_1_1prefix_a1b0e401fe9cafe203ef86e769cd4c3bb}\label{classscifir_1_1prefix_a1b0e401fe9cafe203ef86e769cd4c3bb}} 
 \index{scifir::prefix@{scifir::prefix}!prefix@{prefix}}
 \index{prefix@{prefix}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{prefix()}{prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
-{\footnotesize\ttfamily scifir\+::prefix\+::prefix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily prefix\+::prefix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Copy constructor. The prefix\+\_\+type is copied from the prefix x. 
+
+
+
+Definition at line 12 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}}(x.prefix\_type) }
-\DoxyCodeLine{00013\ \ \ \ \ \{\}}
+\DoxyCodeLine{12                                   : \mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}}(x.prefix\_type) }
+\DoxyCodeLine{13     \{\}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1prefix_add88c16e4117068ee8c2d2150193b4c2}\label{classscifir_1_1prefix_add88c16e4117068ee8c2d2150193b4c2} 
+\mbox{\Hypertarget{classscifir_1_1prefix_acc7af429a59bcdd7f7a58eff953b7981}\label{classscifir_1_1prefix_acc7af429a59bcdd7f7a58eff953b7981}} 
 \index{scifir::prefix@{scifir::prefix}!prefix@{prefix}}
 \index{prefix@{prefix}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{prefix()}{prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
-{\footnotesize\ttfamily scifir\+::prefix\+::prefix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily prefix\+::prefix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Move constructor. The prefix\+\_\+type is moved from the prefix x. 
+
+
+
+Definition at line 15 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}}(std::move(x.prefix\_type)) }
-\DoxyCodeLine{00016\ \ \ \ \ \{\}}
+\DoxyCodeLine{15                              : \mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}}(std::move(x.prefix\_type)) }
+\DoxyCodeLine{16     \{\}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1prefix_aa87b72c98012be1d270810908538e1fc}\label{classscifir_1_1prefix_aa87b72c98012be1d270810908538e1fc} 
+\mbox{\Hypertarget{classscifir_1_1prefix_aca20011a1a7569c0bfc573f453935e28}\label{classscifir_1_1prefix_aca20011a1a7569c0bfc573f453935e28}} 
 \index{scifir::prefix@{scifir::prefix}!prefix@{prefix}}
 \index{prefix@{prefix}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{prefix()}{prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
-{\footnotesize\ttfamily scifir\+::prefix\+::prefix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix\+::type}}}]{new\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily prefix\+::prefix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix\+::type}}}]{new\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Constructor. The prefix\+\_\+type is set to the new\+\_\+type given. 
+
+
+
+Definition at line 18 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}}(new\_type) }
-\DoxyCodeLine{00019\ \ \ \ \ \{\}}
+\DoxyCodeLine{18                                       : \mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}}(new\_type) }
+\DoxyCodeLine{19     \{\}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1prefix_a3596b726a6aec15b0015ae43b9d234d5}\label{classscifir_1_1prefix_a3596b726a6aec15b0015ae43b9d234d5} 
+\mbox{\Hypertarget{classscifir_1_1prefix_a7c9f3b460defb1eb9456f634b7770218}\label{classscifir_1_1prefix_a7c9f3b460defb1eb9456f634b7770218}} 
 \index{scifir::prefix@{scifir::prefix}!prefix@{prefix}}
 \index{prefix@{prefix}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{prefix()}{prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
-{\footnotesize\ttfamily scifir\+::prefix\+::prefix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&}]{new\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily prefix\+::prefix (\begin{DoxyParamCaption}\item[{const string \&}]{new\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Constructor. The prefix\+\_\+type is set to the new\+\_\+type specified in the string. 
+
+
+
+Definition at line 21 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}}(\mbox{\hyperlink{namespacescifir_a2a2cc2c1b3a35da9fc1fff749a93a6f9}{prefix\_string}}(new\_type)) }
-\DoxyCodeLine{00022\ \ \ \ \ \{\}}
+\DoxyCodeLine{21                                          : \mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}}(\mbox{\hyperlink{namespacescifir_a2a2cc2c1b3a35da9fc1fff749a93a6f9}{prefix\_string}}(new\_type)) }
+\DoxyCodeLine{22     \{\}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}\label{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34} 
+\mbox{\Hypertarget{classscifir_1_1prefix_a045d058041cacaa09a2b4cf3954f706c}\label{classscifir_1_1prefix_a045d058041cacaa09a2b4cf3954f706c}} 
 \index{scifir::prefix@{scifir::prefix}!get\_conversion\_factor@{get\_conversion\_factor}}
 \index{get\_conversion\_factor@{get\_conversion\_factor}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{get\_conversion\_factor()}{get\_conversion\_factor()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} scifir\+::prefix\+::get\+\_\+conversion\+\_\+factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily int prefix\+::get\+\_\+conversion\+\_\+factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Returns the conversion factor of the prefix given the prefix\+\_\+type. It uses the SI system of units for the value of each conversion factor. 
+
+
+
+Definition at line 36 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}})}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de}{prefix::Y}}:}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 24;}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60}{prefix::Z}}:}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 21;}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8}{prefix::E}}:}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 18;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99}{prefix::P}}:}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 15;}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf}{prefix::T}}:}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 12;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f}{prefix::G}}:}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 9;}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8}{prefix::M}}:}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 6;}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088}{prefix::k}}:}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3;}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65}{prefix::h}}:}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8}{prefix::da}}:}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76}{prefix::no\_prefix}}:}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b}{prefix::d}}:}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b}{prefix::c}}:}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/2;}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28}{prefix::m}}:}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/3;}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce}{prefix::u}}:}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/6;}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35}{prefix::n}}:}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/9;}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4}{prefix::p}}:}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/12;}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01}{prefix::f}}:}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/15;}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68}{prefix::a}}:}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/18;}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217}{prefix::z}}:}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/21;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0}{prefix::y}}:}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/24;}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}})}
+\DoxyCodeLine{39         \{}
+\DoxyCodeLine{40             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a614051e388059a2e557389352c70dd41}{prefix::QUETTA}}:}
+\DoxyCodeLine{41                 \textcolor{keywordflow}{return} 30;}
+\DoxyCodeLine{42             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a29023641d9e903305fc53c681946e62d}{prefix::RONNA}}:}
+\DoxyCodeLine{43                 \textcolor{keywordflow}{return} 27;}
+\DoxyCodeLine{44             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9370c7ef21955be91159c30419b7365d}{prefix::YOTTA}}:}
+\DoxyCodeLine{45                 \textcolor{keywordflow}{return} 24;}
+\DoxyCodeLine{46             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e}{prefix::ZETTA}}:}
+\DoxyCodeLine{47                 \textcolor{keywordflow}{return} 21;}
+\DoxyCodeLine{48             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a5da2cbb97aec2a3144ac1301980eb8fb}{prefix::EXA}}:}
+\DoxyCodeLine{49                 \textcolor{keywordflow}{return} 18;}
+\DoxyCodeLine{50             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8a6a0b234bac7482d0e679943f2efd14}{prefix::PETA}}:}
+\DoxyCodeLine{51                 \textcolor{keywordflow}{return} 15;}
+\DoxyCodeLine{52             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5afac7e496810302f6c12e3dbf97268003}{prefix::TERA}}:}
+\DoxyCodeLine{53                 \textcolor{keywordflow}{return} 12;}
+\DoxyCodeLine{54             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ab8981acb27b0aad108602c0f453b7f84}{prefix::GIGA}}:}
+\DoxyCodeLine{55                 \textcolor{keywordflow}{return} 9;}
+\DoxyCodeLine{56             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a657d97af1c39a680a07e5bd7289e05f0}{prefix::MEGA}}:}
+\DoxyCodeLine{57                 \textcolor{keywordflow}{return} 6;}
+\DoxyCodeLine{58             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8}{prefix::KILO}}:}
+\DoxyCodeLine{59                 \textcolor{keywordflow}{return} 3;}
+\DoxyCodeLine{60             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6abce29e6411d0bf10f42bc1df906d82}{prefix::HECTO}}:}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{return} 2;}
+\DoxyCodeLine{62             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d04c72c39369ffcab0ecac67a1d5b02}{prefix::DECA}}:}
+\DoxyCodeLine{63                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{64             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711}{prefix::NONE}}:}
+\DoxyCodeLine{65                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{66             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9a285f2c3297e278e40a8b78eecfd5c7}{prefix::DECI}}:}
+\DoxyCodeLine{67                 \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{68             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8180701df54e1bc488751274349a825e}{prefix::CENTI}}:}
+\DoxyCodeLine{69                 \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{70             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a37764841864050a4aacc74d04110ed9f}{prefix::MILLI}}:}
+\DoxyCodeLine{71                 \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{72             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aa527806621222d666ec8cc624a28f1ce}{prefix::MICRO}}:}
+\DoxyCodeLine{73                 \textcolor{keywordflow}{return} -\/6;}
+\DoxyCodeLine{74             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a36d34ff4b6f15a02332d7b6d9d4e4718}{prefix::NANO}}:}
+\DoxyCodeLine{75                 \textcolor{keywordflow}{return} -\/9;}
+\DoxyCodeLine{76             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae337a7757abd20e76bd674ec39555082}{prefix::PICO}}:}
+\DoxyCodeLine{77                 \textcolor{keywordflow}{return} -\/12;}
+\DoxyCodeLine{78             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a987d9f6664d9b718098813acd8a3c2ea}{prefix::FEMTO}}:}
+\DoxyCodeLine{79                 \textcolor{keywordflow}{return} -\/15;}
+\DoxyCodeLine{80             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a084ca0815e65d79f91d8d421af3f9a6b}{prefix::ATTO}}:}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{return} -\/18;}
+\DoxyCodeLine{82             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56}{prefix::ZEPTO}}:}
+\DoxyCodeLine{83                 \textcolor{keywordflow}{return} -\/21;}
+\DoxyCodeLine{84             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a1b091a53126330b28816e9025caa8e65}{prefix::YOCTO}}:}
+\DoxyCodeLine{85                 \textcolor{keywordflow}{return} -\/24;}
+\DoxyCodeLine{86             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8cb32856a820b941743975c53d4205ce}{prefix::RONTO}}:}
+\DoxyCodeLine{87                 \textcolor{keywordflow}{return} -\/27;}
+\DoxyCodeLine{88             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abe13e3ef9b4914de0f3591b6043eb623}{prefix::QUECTO}}:}
+\DoxyCodeLine{89                 \textcolor{keywordflow}{return} -\/30;}
+\DoxyCodeLine{90         \}}
+\DoxyCodeLine{91         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{92     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1prefix_ab89ed3da9e955f242437b69ed4756294}\label{classscifir_1_1prefix_ab89ed3da9e955f242437b69ed4756294} 
+\mbox{\Hypertarget{classscifir_1_1prefix_ad3806e8413ac92dfebc6847627727875}\label{classscifir_1_1prefix_ad3806e8413ac92dfebc6847627727875}} 
 \index{scifir::prefix@{scifir::prefix}!get\_name@{get\_name}}
 \index{get\_name@{get\_name}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} scifir\+::prefix\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily string prefix\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Name of the prefix given the prefix\+\_\+type. 
+
+
+
+Definition at line 94 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00087\ \ \ \ \ \{}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}})}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de}{prefix::Y}}:}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}yotta"{}};}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60}{prefix::Z}}:}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}zetta"{}};}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8}{prefix::E}}:}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}exa"{}};}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99}{prefix::P}}:}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}peta"{}};}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf}{prefix::T}}:}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}tera"{}};}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f}{prefix::G}}:}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}giga"{}};}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8}{prefix::M}}:}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}mega"{}};}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088}{prefix::k}}:}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}kilo"{}};}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65}{prefix::h}}:}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}hecto"{}};}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8}{prefix::da}}:}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}deca"{}};}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76}{prefix::no\_prefix}}:}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b}{prefix::d}}:}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}deci"{}};}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b}{prefix::c}}:}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}centi"{}};}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28}{prefix::m}}:}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}milli"{}};}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce}{prefix::u}}:}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}micro"{}};}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35}{prefix::n}}:}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}nano"{}};}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4}{prefix::p}}:}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}pico"{}};}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01}{prefix::f}}:}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}femto"{}};}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68}{prefix::a}}:}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}atto"{}};}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217}{prefix::z}}:}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}zepto"{}};}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0}{prefix::y}}:}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}yocto"{}};}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{95     \{}
+\DoxyCodeLine{96         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}})}
+\DoxyCodeLine{97         \{}
+\DoxyCodeLine{98             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a614051e388059a2e557389352c70dd41}{prefix::QUETTA}}:}
+\DoxyCodeLine{99                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}quetta"{}};}
+\DoxyCodeLine{100             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a29023641d9e903305fc53c681946e62d}{prefix::RONNA}}:}
+\DoxyCodeLine{101                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ronna"{}};}
+\DoxyCodeLine{102             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9370c7ef21955be91159c30419b7365d}{prefix::YOTTA}}:}
+\DoxyCodeLine{103                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}yotta"{}};}
+\DoxyCodeLine{104             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e}{prefix::ZETTA}}:}
+\DoxyCodeLine{105                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}zetta"{}};}
+\DoxyCodeLine{106             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a5da2cbb97aec2a3144ac1301980eb8fb}{prefix::EXA}}:}
+\DoxyCodeLine{107                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}exa"{}};}
+\DoxyCodeLine{108             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8a6a0b234bac7482d0e679943f2efd14}{prefix::PETA}}:}
+\DoxyCodeLine{109                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}peta"{}};}
+\DoxyCodeLine{110             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5afac7e496810302f6c12e3dbf97268003}{prefix::TERA}}:}
+\DoxyCodeLine{111                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}tera"{}};}
+\DoxyCodeLine{112             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ab8981acb27b0aad108602c0f453b7f84}{prefix::GIGA}}:}
+\DoxyCodeLine{113                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}giga"{}};}
+\DoxyCodeLine{114             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a657d97af1c39a680a07e5bd7289e05f0}{prefix::MEGA}}:}
+\DoxyCodeLine{115                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}mega"{}};}
+\DoxyCodeLine{116             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8}{prefix::KILO}}:}
+\DoxyCodeLine{117                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}kilo"{}};}
+\DoxyCodeLine{118             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6abce29e6411d0bf10f42bc1df906d82}{prefix::HECTO}}:}
+\DoxyCodeLine{119                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}hecto"{}};}
+\DoxyCodeLine{120             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d04c72c39369ffcab0ecac67a1d5b02}{prefix::DECA}}:}
+\DoxyCodeLine{121                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}deca"{}};}
+\DoxyCodeLine{122             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711}{prefix::NONE}}:}
+\DoxyCodeLine{123                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{124             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9a285f2c3297e278e40a8b78eecfd5c7}{prefix::DECI}}:}
+\DoxyCodeLine{125                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}deci"{}};}
+\DoxyCodeLine{126             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8180701df54e1bc488751274349a825e}{prefix::CENTI}}:}
+\DoxyCodeLine{127                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}centi"{}};}
+\DoxyCodeLine{128             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a37764841864050a4aacc74d04110ed9f}{prefix::MILLI}}:}
+\DoxyCodeLine{129                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}milli"{}};}
+\DoxyCodeLine{130             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aa527806621222d666ec8cc624a28f1ce}{prefix::MICRO}}:}
+\DoxyCodeLine{131                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}micro"{}};}
+\DoxyCodeLine{132             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a36d34ff4b6f15a02332d7b6d9d4e4718}{prefix::NANO}}:}
+\DoxyCodeLine{133                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}nano"{}};}
+\DoxyCodeLine{134             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae337a7757abd20e76bd674ec39555082}{prefix::PICO}}:}
+\DoxyCodeLine{135                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}pico"{}};}
+\DoxyCodeLine{136             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a987d9f6664d9b718098813acd8a3c2ea}{prefix::FEMTO}}:}
+\DoxyCodeLine{137                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}femto"{}};}
+\DoxyCodeLine{138             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a084ca0815e65d79f91d8d421af3f9a6b}{prefix::ATTO}}:}
+\DoxyCodeLine{139                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}atto"{}};}
+\DoxyCodeLine{140             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56}{prefix::ZEPTO}}:}
+\DoxyCodeLine{141                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}zepto"{}};}
+\DoxyCodeLine{142             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a1b091a53126330b28816e9025caa8e65}{prefix::YOCTO}}:}
+\DoxyCodeLine{143                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}yocto"{}};}
+\DoxyCodeLine{144             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8cb32856a820b941743975c53d4205ce}{prefix::RONTO}}:}
+\DoxyCodeLine{145                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ronto"{}};}
+\DoxyCodeLine{146             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abe13e3ef9b4914de0f3591b6043eb623}{prefix::QUECTO}}:}
+\DoxyCodeLine{147                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}quecto"{}};}
+\DoxyCodeLine{148         \}}
+\DoxyCodeLine{149         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{150     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1prefix_adceb7b20c962d582c949849446827fad}\label{classscifir_1_1prefix_adceb7b20c962d582c949849446827fad} 
+\mbox{\Hypertarget{classscifir_1_1prefix_aa465d9bfb7c6cd8669ad545d616a2130}\label{classscifir_1_1prefix_aa465d9bfb7c6cd8669ad545d616a2130}} 
 \index{scifir::prefix@{scifir::prefix}!get\_symbol@{get\_symbol}}
 \index{get\_symbol@{get\_symbol}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{get\_symbol()}{get\_symbol()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} scifir\+::prefix\+::get\+\_\+symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily string prefix\+::get\+\_\+symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00136}{136}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Symbol of the prefix given the prefix\+\_\+type. The symbol of micro is supported in his Unicode version. 
+
+
+
+Definition at line 152 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00137\ \ \ \ \ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}})}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de}{prefix::Y}}:}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Y"{}};}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60}{prefix::Z}}:}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Z"{}};}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8}{prefix::E}}:}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}E"{}};}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99}{prefix::P}}:}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}P"{}};}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf}{prefix::T}}:}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}T"{}};}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f}{prefix::G}}:}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}G"{}};}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8}{prefix::M}}:}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}M"{}};}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088}{prefix::k}}:}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}k"{}};}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65}{prefix::h}}:}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}h"{}};}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8}{prefix::da}}:}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}da"{}};}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76}{prefix::no\_prefix}}:}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b}{prefix::d}}:}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}d"{}};}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b}{prefix::c}}:}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}c"{}};}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28}{prefix::m}}:}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}m"{}};}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce}{prefix::u}}:}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\(\backslash\)u00B5"{}};}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35}{prefix::n}}:}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}n"{}};}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4}{prefix::p}}:}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}p"{}};}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01}{prefix::f}}:}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}f"{}};}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68}{prefix::a}}:}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}a"{}};}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217}{prefix::z}}:}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}z"{}};}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0}{prefix::y}}:}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}y"{}};}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{153     \{}
+\DoxyCodeLine{154         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}})}
+\DoxyCodeLine{155         \{}
+\DoxyCodeLine{156             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a614051e388059a2e557389352c70dd41}{prefix::QUETTA}}:}
+\DoxyCodeLine{157                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Q"{}};}
+\DoxyCodeLine{158             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a29023641d9e903305fc53c681946e62d}{prefix::RONNA}}:}
+\DoxyCodeLine{159                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}R"{}};}
+\DoxyCodeLine{160             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9370c7ef21955be91159c30419b7365d}{prefix::YOTTA}}:}
+\DoxyCodeLine{161                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Y"{}};}
+\DoxyCodeLine{162             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e}{prefix::ZETTA}}:}
+\DoxyCodeLine{163                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Z"{}};}
+\DoxyCodeLine{164             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a5da2cbb97aec2a3144ac1301980eb8fb}{prefix::EXA}}:}
+\DoxyCodeLine{165                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}E"{}};}
+\DoxyCodeLine{166             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8a6a0b234bac7482d0e679943f2efd14}{prefix::PETA}}:}
+\DoxyCodeLine{167                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}P"{}};}
+\DoxyCodeLine{168             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5afac7e496810302f6c12e3dbf97268003}{prefix::TERA}}:}
+\DoxyCodeLine{169                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}T"{}};}
+\DoxyCodeLine{170             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ab8981acb27b0aad108602c0f453b7f84}{prefix::GIGA}}:}
+\DoxyCodeLine{171                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}G"{}};}
+\DoxyCodeLine{172             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a657d97af1c39a680a07e5bd7289e05f0}{prefix::MEGA}}:}
+\DoxyCodeLine{173                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}M"{}};}
+\DoxyCodeLine{174             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8}{prefix::KILO}}:}
+\DoxyCodeLine{175                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}k"{}};}
+\DoxyCodeLine{176             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a6abce29e6411d0bf10f42bc1df906d82}{prefix::HECTO}}:}
+\DoxyCodeLine{177                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}h"{}};}
+\DoxyCodeLine{178             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d04c72c39369ffcab0ecac67a1d5b02}{prefix::DECA}}:}
+\DoxyCodeLine{179                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}da"{}};}
+\DoxyCodeLine{180             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711}{prefix::NONE}}:}
+\DoxyCodeLine{181                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{182             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a9a285f2c3297e278e40a8b78eecfd5c7}{prefix::DECI}}:}
+\DoxyCodeLine{183                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}d"{}};}
+\DoxyCodeLine{184             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8180701df54e1bc488751274349a825e}{prefix::CENTI}}:}
+\DoxyCodeLine{185                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}c"{}};}
+\DoxyCodeLine{186             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a37764841864050a4aacc74d04110ed9f}{prefix::MILLI}}:}
+\DoxyCodeLine{187                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}m"{}};}
+\DoxyCodeLine{188             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aa527806621222d666ec8cc624a28f1ce}{prefix::MICRO}}:}
+\DoxyCodeLine{189                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}\(\backslash\)u00B5"{}};}
+\DoxyCodeLine{190             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a36d34ff4b6f15a02332d7b6d9d4e4718}{prefix::NANO}}:}
+\DoxyCodeLine{191                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}n"{}};}
+\DoxyCodeLine{192             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae337a7757abd20e76bd674ec39555082}{prefix::PICO}}:}
+\DoxyCodeLine{193                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}p"{}};}
+\DoxyCodeLine{194             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a987d9f6664d9b718098813acd8a3c2ea}{prefix::FEMTO}}:}
+\DoxyCodeLine{195                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}f"{}};}
+\DoxyCodeLine{196             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a084ca0815e65d79f91d8d421af3f9a6b}{prefix::ATTO}}:}
+\DoxyCodeLine{197                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}a"{}};}
+\DoxyCodeLine{198             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56}{prefix::ZEPTO}}:}
+\DoxyCodeLine{199                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}z"{}};}
+\DoxyCodeLine{200             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a1b091a53126330b28816e9025caa8e65}{prefix::YOCTO}}:}
+\DoxyCodeLine{201                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}y"{}};}
+\DoxyCodeLine{202             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a8cb32856a820b941743975c53d4205ce}{prefix::RONTO}}:}
+\DoxyCodeLine{203                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}r"{}};}
+\DoxyCodeLine{204             \textcolor{keywordflow}{case} \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abe13e3ef9b4914de0f3591b6043eb623}{prefix::QUECTO}}:}
+\DoxyCodeLine{205                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}q"{}};}
+\DoxyCodeLine{206         \}}
+\DoxyCodeLine{207         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{208     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1prefix_a8deabe803a98512e9ffced9f36fb5536}\label{classscifir_1_1prefix_a8deabe803a98512e9ffced9f36fb5536} 
+\mbox{\Hypertarget{classscifir_1_1prefix_afaa72bb0c8db0b236f193e395c45d480}\label{classscifir_1_1prefix_afaa72bb0c8db0b236f193e395c45d480}} 
 \index{scifir::prefix@{scifir::prefix}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} scifir\+::prefix\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{x }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool prefix\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{x }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00186}{186}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+This operator allows to order the prefixes from the lower to the greather. 
+
+
+
+Definition at line 210 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00187\ \ \ \ \ \{}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}()\ <\ x.\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}());}
-\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{211     \{}
+\DoxyCodeLine{212         \textcolor{keywordflow}{return} (\mbox{\hyperlink{classscifir_1_1prefix_a045d058041cacaa09a2b4cf3954f706c}{get\_conversion\_factor}}() < x.\mbox{\hyperlink{classscifir_1_1prefix_a045d058041cacaa09a2b4cf3954f706c}{get\_conversion\_factor}}());}
+\DoxyCodeLine{213     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1prefix_a0b9d5c30b77d71216588983bd3c97a14}\label{classscifir_1_1prefix_a0b9d5c30b77d71216588983bd3c97a14} 
+\mbox{\Hypertarget{classscifir_1_1prefix_ae9d352fc1d78fbe249cbf9fd8bea19db}\label{classscifir_1_1prefix_ae9d352fc1d78fbe249cbf9fd8bea19db}} 
 \index{scifir::prefix@{scifir::prefix}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \& scifir\+::prefix\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \& prefix\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Copy assignment. The prefix\+\_\+type is copied from the prefix x. 
+
+
+
+Definition at line 24 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00025\ \ \ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}}\ =\ x.prefix\_type;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}} = x.prefix\_type;}
+\DoxyCodeLine{27         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{28     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1prefix_ac0f3c0844fe32fd87ddca55a18a1f996}\label{classscifir_1_1prefix_ac0f3c0844fe32fd87ddca55a18a1f996} 
+\mbox{\Hypertarget{classscifir_1_1prefix_ac63db0d7a0698245378dff3b6c43b15e}\label{classscifir_1_1prefix_ac63db0d7a0698245378dff3b6c43b15e}} 
 \index{scifir::prefix@{scifir::prefix}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \& scifir\+::prefix\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \& prefix\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+Move assignment. The prefix\+\_\+type is moved from the prefix x. 
+
+
+
+Definition at line 30 of file prefix.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}}\ =\ std::move(x.prefix\_type);}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         \mbox{\hyperlink{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}{prefix\_type}} = std::move(x.prefix\_type);}
+\DoxyCodeLine{33         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{34     \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}\label{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a} 
+\mbox{\Hypertarget{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}\label{classscifir_1_1prefix_a63a47fb0d940fbe6e89549b0aa801287}} 
 \index{scifir::prefix@{scifir::prefix}!prefix\_type@{prefix\_type}}
 \index{prefix\_type@{prefix\_type}!scifir::prefix@{scifir::prefix}}
 \doxysubsubsection{\texorpdfstring{prefix\_type}{prefix\_type}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix\+::type}} scifir\+::prefix\+::prefix\+\_\+type}
+{\footnotesize\ttfamily prefix\+::prefix\+\_\+type}
 
 
 
-Definition at line \mbox{\hyperlink{prefix_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{prefix_8hpp_source}{prefix.\+hpp}}.
+It stores the prefix type currently being used. 
+
+
+
+Definition at line 33 of file prefix.\+hpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 units/\mbox{\hyperlink{prefix_8hpp}{prefix.\+hpp}}\item 
-units/\mbox{\hyperlink{prefix_8cpp}{prefix.\+cpp}}\end{DoxyCompactItemize}
+units/\mbox{\hyperlink{prefix_8cpp}{prefix.\+cpp}}\item 
+docs/dox/units/\mbox{\hyperlink{prefix_8dox}{prefix.\+dox}}\end{DoxyCompactItemize}

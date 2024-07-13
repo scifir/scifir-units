@@ -1,4 +1,4 @@
-.TH "coordinates/coordinates_3dr.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "coordinates/coordinates_3dr.hpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -35,7 +35,7 @@ coordinates/coordinates_3dr.hpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -43,40 +43,40 @@ coordinates/coordinates_3dr.hpp
 
 .in +1c
 .ti -1c
-.RI "template<\fBtypename\fP T > \fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBcoordinates_3dr\fP< T > &x)"
+.RI "template<typename T > string \fBscifir::to_string\fP (const coordinates_3dr< T > &x)"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBcoordinates_3dr\fP< \fBfloat\fP > &x)"
+.RI "string \fBscifir::to_string\fP (const coordinates_3dr< float > &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3dr\fP< T > &x, \fBconst\fP \fBcoordinates_3dr\fP< \fBU\fP > &y)"
+.RI "template<typename T , typename U > T \fBscifir::distance\fP (const coordinates_3dr< T > &x, const coordinates_3dr< U > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3dr\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_3dr\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const coordinates_3dr< float > &x, const coordinates_3dr< float > &y)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3dr\fP< T > &x, \fBconst\fP \fBcoordinates_3d\fP< \fBU\fP > &y)"
+.RI "template<typename T , typename U > T \fBscifir::distance\fP (const coordinates_3dr< T > &x, const coordinates_3d< U > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3dr\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_3d\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const coordinates_3dr< float > &x, const coordinates_3d< float > &y)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3d\fP< T > &x, \fBconst\fP \fBcoordinates_3dr\fP< \fBU\fP > &y)"
+.RI "template<typename T , typename U > T \fBscifir::distance\fP (const coordinates_3d< T > &x, const coordinates_3dr< U > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3d\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_3dr\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const coordinates_3d< float > &x, const coordinates_3dr< float > &y)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3dr\fP< T > &x, \fBconst\fP \fBpoint_3d\fP< \fBU\fP > &y)"
+.RI "template<typename T , typename U > T \fBscifir::distance\fP (const coordinates_3dr< T > &x, const point_3d< U > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3dr\fP< \fBfloat\fP > &x, \fBconst\fP \fBpoint_3d\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const coordinates_3dr< float > &x, const point_3d< float > &y)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBpoint_3d\fP< T > &x, \fBconst\fP \fBcoordinates_3dr\fP< \fBU\fP > &y)"
+.RI "template<typename T , typename U > T \fBscifir::distance\fP (const point_3d< T > &x, const coordinates_3dr< U > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBpoint_3d\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_3dr\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const point_3d< float > &x, const coordinates_3dr< float > &y)"
 .br
 .ti -1c
 .RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::coordinates_3dr\fP< T > &x, const \fBscifir::coordinates_3dr\fP< U > &y)"
@@ -144,127 +144,128 @@ coordinates/coordinates_3dr.hpp
 .SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_3d\fP< T > & x, const \fBscifir::coordinates_3dr\fP< U > & y)"
 
 .PP
-Definition at line \fB1032\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1032 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1033 {
 1034     return !(x == y);
 1035 }
 .fi
-
 .SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_3dr\fP< T > & x, const \fBscifir::coordinates_3d\fP< U > & y)"
 
 .PP
-Definition at line \fB1013\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1013 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1014 {
 1015     return !(x == y);
 1016 }
 .fi
-
 .SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_3dr\fP< T > & x, const \fBscifir::coordinates_3dr\fP< U > & y)"
 
 .PP
-Definition at line \fB994\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 994 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 995 {
 996     return !(x == y);
 997 }
 .fi
-
 .SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_3dr\fP< T > & x, const \fBscifir::point_3d\fP< U > & y)"
 
 .PP
-Definition at line \fB1051\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1051 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1052 {
 1053     return !(x == y);
 1054 }
 .fi
-
 .SS "template<typename T > bool operator!= (const \fBscifir::coordinates_3dr\fP< T > & x, const string & init_coordinates_3dr)"
 
 .PP
-Definition at line \fB1083\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1083 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1084 {
 1085     return !(x == init_coordinates_3dr);
 1086 }
 .fi
-
 .SS "template<typename T , typename U > bool operator!= (const \fBscifir::point_3d\fP< T > & x, const \fBscifir::coordinates_3dr\fP< U > & y)"
 
 .PP
-Definition at line \fB1070\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1070 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1071 {
 1072     return !(x == y);
 1073 }
 .fi
-
 .SS "template<typename T > bool operator!= (const string & init_coordinates_3dr, const \fBscifir::coordinates_3dr\fP< T > & x)"
 
 .PP
-Definition at line \fB1096\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1096 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1097 {
 1098     return !(init_coordinates_3dr == x);
 1099 }
 .fi
-
 .SS "template<typename T > string operator+ (const \fBscifir::coordinates_3dr\fP< T > & x, const string & y)"
 
 .PP
-Definition at line \fB1114\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1114 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1115 {
 1116     return to_string(x) + y;
 1117 }
 .fi
-
 .SS "template<typename T > string operator+ (const string & x, const \fBscifir::coordinates_3dr\fP< T > & y)"
 
 .PP
-Definition at line \fB1108\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1108 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1109 {
 1110     return x + to_string(y);
 1111 }
 .fi
-
 .SS "template<typename T > void operator+= (string & x, const \fBscifir::coordinates_3dr\fP< T > & y)"
 
 .PP
-Definition at line \fB1102\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1102 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1103 {
 1104     x += to_string(y);
 1105 }
 .fi
-
-.SS "ostream & operator<< (ostream & os, const \fBscifir::coordinates_3dr\fP< float > & x)"
+.SS "ostream& operator<< (ostream & os, const \fBscifir::coordinates_3dr\fP< float > & x)"
 
 .PP
-Definition at line \fB38\fP of file \fBcoordinates_3dr\&.cpp\fP\&..PP
+Definition at line 38 of file coordinates_3dr\&.cpp\&.
+.PP
 .nf
 39 {
 40     return os << scifir::to_string(x);
 41 }
 .fi
-
-.SS "template<typename T > ostream & operator<< (ostream & os, const \fBscifir::coordinates_3dr\fP< T > & x)"
+.SS "template<typename T > ostream& operator<< (ostream & os, const \fBscifir::coordinates_3dr\fP< T > & x)"
 
 .PP
-Definition at line \fB1120\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1120 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1121 {
 1122     return os << to_string(x);
 1123 }
 .fi
-
 .SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_3d\fP< T > & x, const \fBscifir::coordinates_3dr\fP< U > & y)"
 
 .PP
-Definition at line \fB1019\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1019 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1020 {
 1021     if (x\&.x == y\&.x and x\&.y == y\&.y and x\&.z == y\&.z)
@@ -277,11 +278,11 @@ Definition at line \fB1019\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
 1028     }
 1029 }
 .fi
-
 .SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_3dr\fP< T > & x, const \fBscifir::coordinates_3d\fP< U > & y)"
 
 .PP
-Definition at line \fB1000\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1000 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1001 {
 1002     if (x\&.x == y\&.x and x\&.y == y\&.y and x\&.z == y\&.z)
@@ -294,11 +295,11 @@ Definition at line \fB1000\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
 1009     }
 1010 }
 .fi
-
 .SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_3dr\fP< T > & x, const \fBscifir::coordinates_3dr\fP< U > & y)"
 
 .PP
-Definition at line \fB981\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 981 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 982 {
 983     if (x\&.x == y\&.x and x\&.y == y\&.y and x\&.z == y\&.z and x\&.theta == y\&.theta and x\&.phi == y\&.phi)
@@ -311,11 +312,11 @@ Definition at line \fB981\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
 990     }
 991 }
 .fi
-
 .SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_3dr\fP< T > & x, const \fBscifir::point_3d\fP< U > & y)"
 
 .PP
-Definition at line \fB1038\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1038 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1039 {
 1040     if (x\&.x == y\&.x and x\&.y == y\&.y and x\&.z == y\&.z)
@@ -328,22 +329,22 @@ Definition at line \fB1038\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
 1047     }
 1048 }
 .fi
-
 .SS "template<typename T > bool operator== (const \fBscifir::coordinates_3dr\fP< T > & x, const string & init_coordinates_3dr)"
 
 .PP
-Definition at line \fB1076\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1076 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1077 {
 1078     scifir::coordinates_3dr<T> y(init_coordinates_3dr);
 1079     return (x == y);
 1080 }
 .fi
-
 .SS "template<typename T , typename U > bool operator== (const \fBscifir::point_3d\fP< T > & x, const \fBscifir::coordinates_3dr\fP< U > & y)"
 
 .PP
-Definition at line \fB1057\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1057 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1058 {
 1059     if (x\&.x == y\&.x and x\&.y == y\&.y and x\&.z == y\&.z)
@@ -356,22 +357,22 @@ Definition at line \fB1057\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
 1066     }
 1067 }
 .fi
-
 .SS "template<typename T > bool operator== (const string & init_coordinates_3dr, const \fBscifir::coordinates_3dr\fP< T > & x)"
 
 .PP
-Definition at line \fB1089\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1089 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1090 {
 1091     scifir::coordinates_3dr<T> y(init_coordinates_3dr);
 1092     return (x == y);
 1093 }
 .fi
-
-.SS "template<typename T > istream & operator>> (istream & is, \fBscifir::coordinates_3dr\fP< T > & x)"
+.SS "template<typename T > istream& operator>> (istream & is, \fBscifir::coordinates_3dr\fP< T > & x)"
 
 .PP
-Definition at line \fB1128\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+Definition at line 1128 of file coordinates_3dr\&.hpp\&.
+.PP
 .nf
 1129 {
 1130     char a[256];
@@ -382,7 +383,6 @@ Definition at line \fB1128\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
 1135     return is;
 1136 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

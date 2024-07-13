@@ -1,4 +1,4 @@
-.TH "scifir::percentage" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::percentage" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -8,6 +8,13 @@ scifir::percentage
 .PP
 .PP
 \fC#include <percentage\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBtype\fP : int8_t { \fBPERCENTAGE\fP, \fBPARTS_PER_MILLION\fP, \fBPARTS_PER_BILLION\fP, \fBPARTS_PER_TRILLION\fP, \fBPARTS_PER_QUATRILLION\fP }"
+.br
+.in -1c
 .SS "Public Member Functions"
 
 .in +1c
@@ -15,865 +22,940 @@ scifir::percentage
 .RI "\fBpercentage\fP ()"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBconst\fP \fBpercentage\fP &x)"
+.RI "\fBpercentage\fP (const \fBpercentage\fP &x)"
 .br
 .ti -1c
 .RI "\fBpercentage\fP (\fBpercentage\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBfloat\fP \fBnew_value\fP)"
+.RI "\fBpercentage\fP (float new_value, \fBpercentage::type\fP init_type=\fBpercentage::PERCENTAGE\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBdouble\fP \fBnew_value\fP)"
+.RI "\fBpercentage\fP (double new_value, \fBpercentage::type\fP init_type=\fBpercentage::PERCENTAGE\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP)"
+.RI "\fBpercentage\fP (long double new_value, \fBpercentage::type\fP init_type=\fBpercentage::PERCENTAGE\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBint\fP \fBnew_value\fP)"
+.RI "\fBpercentage\fP (int new_value, \fBpercentage::type\fP init_type=\fBpercentage::PERCENTAGE\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
+.RI "\fBpercentage\fP (float new_value, const string &init_dimensions)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
+.RI "\fBpercentage\fP (double new_value, const string &init_dimensions)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
+.RI "\fBpercentage\fP (long double new_value, const string &init_dimensions)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
+.RI "\fBpercentage\fP (int new_value, const string &init_dimensions)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBconst\fP \fBstring\fP &\fBinit_percentage\fP)"
+.RI "\fBpercentage\fP (const string &init_percentage)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBpercentage\fP (const \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBconst\fP \fBpercentage\fP &x)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (const \fBpercentage\fP &x)"
 .br
 .ti -1c
 .RI "\fBpercentage\fP & \fBoperator=\fP (\fBpercentage\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBfloat\fP \fBnew_value\fP)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (float new_value)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBdouble\fP \fBnew_value\fP)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (double new_value)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (long double new_value)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBint\fP \fBnew_value\fP)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (int new_value)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_percentage\fP)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (const string &init_percentage)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (const \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBoperator float\fP () \fBconst\fP"
+.RI "\fBoperator float\fP () const"
 .br
 .ti -1c
-.RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
+.RI "const float & \fBget_value\fP () const"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator+\fP (\fBconst\fP \fBpercentage\fP &x) \fBconst\fP"
+.RI "\fBpercentage\fP \fBoperator+\fP (const \fBpercentage\fP &x) const"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator\-\fP (\fBconst\fP \fBpercentage\fP &x) \fBconst\fP"
+.RI "\fBpercentage\fP \fBoperator\-\fP (const \fBpercentage\fP &x) const"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator*\fP (\fBconst\fP \fBpercentage\fP &x) \fBconst\fP"
+.RI "\fBpercentage\fP \fBoperator*\fP (const \fBpercentage\fP &x) const"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator/\fP (\fBconst\fP \fBpercentage\fP &x) \fBconst\fP"
+.RI "\fBpercentage\fP \fBoperator/\fP (const \fBpercentage\fP &x) const"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBpercentage\fP &x)"
+.RI "void \fBoperator+=\fP (const \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBpercentage\fP &x)"
+.RI "void \fBoperator\-=\fP (const \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator*=\fP (\fBconst\fP \fBpercentage\fP &x)"
+.RI "void \fBoperator*=\fP (const \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator/=\fP (\fBconst\fP \fBpercentage\fP &x)"
+.RI "void \fBoperator/=\fP (const \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP \fBoperator+\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP \fBoperator+\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP \fBoperator\-\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP \fBoperator\-\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBfloat\fP \fBoperator*\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> float \fBoperator*\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBfloat\fP \fBoperator/\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> float \fBoperator/\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator+=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator\-=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator*=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator/=\fP (T x)"
 .br
 .ti -1c
 .RI "\fBpercentage\fP & \fBoperator++\fP ()"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator++\fP (\fBint\fP)"
+.RI "\fBpercentage\fP \fBoperator++\fP (int)"
 .br
 .ti -1c
 .RI "\fBpercentage\fP & \fBoperator\-\-\fP ()"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator\-\-\fP (\fBint\fP)"
+.RI "\fBpercentage\fP \fBoperator\-\-\fP (int)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBoperator*\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBoperator*\fP (const \fBscalar_unit\fP &x) const"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBoperator/\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBoperator/\fP (const \fBscalar_unit\fP &x) const"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBget_factor\fP () \fBconst\fP"
+.RI "float \fBget_factor\fP () const"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBget_ppm\fP () \fBconst\fP"
+.RI "float \fBget_ppm\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_percentage\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
+.RI "string \fBdisplay_percentage\fP (int number_of_decimals=2) const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_ppm\fP () \fBconst\fP"
+.RI "string \fBdisplay_ppm\fP () const"
 .br
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBconst\fP \fBstring\fP &\fBinit_percentage\fP)"
+.RI "void \fBinitialize_from_string\fP (const string &init_percentage)"
 .br
 .in -1c
 .SS "Private Attributes"
 
 .in +1c
 .ti -1c
-.RI "\fBfloat\fP \fBvalue\fP"
+.RI "float \fBvalue\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB17\fP of file \fBpercentage\&.hpp\fP\&.
+Definition at line 17 of file percentage\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBscifir::percentage::type\fP : int8_t"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPERCENTAGE \fP\fP
+.TP
+\fB\fIPARTS_PER_MILLION \fP\fP
+.TP
+\fB\fIPARTS_PER_BILLION \fP\fP
+.TP
+\fB\fIPARTS_PER_TRILLION \fP\fP
+.TP
+\fB\fIPARTS_PER_QUATRILLION \fP\fP
+.PP
+Definition at line 20 of file percentage\&.hpp\&.
+.PP
+.nf
+20 : int8_t {PERCENTAGE,PARTS_PER_MILLION,PARTS_PER_BILLION,PARTS_PER_TRILLION,PARTS_PER_QUATRILLION};
+.fi
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "scifir::percentage::percentage ()"
 
 .PP
-Definition at line \fB16\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 16 of file percentage\&.cpp\&.
+.PP
 .nf
 16                            : value(0)
 17     {}
 .fi
-
-.SS "scifir::percentage::percentage (\fBconst\fP \fBpercentage\fP & x)"
+.SS "scifir::percentage::percentage (const \fBpercentage\fP & x)"
 
 .PP
-Definition at line \fB19\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 19 of file percentage\&.cpp\&.
+.PP
 .nf
 19                                               : value(x\&.get_value())
 20     {}
 .fi
-
 .SS "scifir::percentage::percentage (\fBpercentage\fP && x)"
 
 .PP
-Definition at line \fB22\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 22 of file percentage\&.cpp\&.
+.PP
 .nf
 22                                          : value(std::move(x\&.get_value()))
 23     {}
 .fi
-
-.SS "scifir::percentage::percentage (\fBfloat\fP new_value)\fC [explicit]\fP"
+.SS "scifir::percentage::percentage (float new_value, \fBpercentage::type\fP init_type = \fC\fBpercentage::PERCENTAGE\fP\fP)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB25\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 25 of file percentage\&.cpp\&.
+.PP
 .nf
-25                                           : value(new_value)
-26     {}
+25                                                                    : value()
+26     {
+27         if (init_type == percentage::PERCENTAGE)
+28         {
+29             value = new_value;
+30         }
+31         else if (init_type == percentage::PARTS_PER_MILLION)
+32         {
+33             value = new_value / 10000\&.0f;
+34         }
+35         else
+36         {
+37             value = 0\&.0f;
+38         }
+39     }
 .fi
-
-.SS "scifir::percentage::percentage (\fBdouble\fP new_value)\fC [explicit]\fP"
-
-.PP
-Definition at line \fB28\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-28                                            : value(float(new_value))
-29     {}
-.fi
-
-.SS "scifir::percentage::percentage (\fBlong\fP \fBdouble\fP new_value)\fC [explicit]\fP"
+.SS "scifir::percentage::percentage (double new_value, \fBpercentage::type\fP init_type = \fC\fBpercentage::PERCENTAGE\fP\fP)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB31\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-31                                                 : value(float(new_value))
-32     {}
-.fi
-
-.SS "scifir::percentage::percentage (\fBint\fP new_value)\fC [explicit]\fP"
-
+Definition at line 41 of file percentage\&.cpp\&.
 .PP
-Definition at line \fB34\fP of file \fBpercentage\&.cpp\fP\&..PP
 .nf
-34                                         : value(float(new_value))
-35     {}
-.fi
-
-.SS "scifir::percentage::percentage (\fBfloat\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions)\fC [explicit]\fP"
-
-.PP
-Definition at line \fB37\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-38     {
-39         if (init_dimensions == "%")
-40         {
-41             value = new_value;
-42         }
-43         else if (init_dimensions == "ppm")
+41                                                                     : value(float(new_value))
+42     {
+43         if (init_type == percentage::PERCENTAGE)
 44         {
-45             value = new_value / 10000\&.0f;
+45             value = float(new_value);
 46         }
-47         else
+47         else if (init_type == percentage::PARTS_PER_MILLION)
 48         {
-49             value = 0\&.0f;
+49             value = float(new_value) / 10000\&.0f;
 50         }
-51         /*else if (init_dimensions == "ppb")
+51         else
 52         {
-53             value = new_value / 10000000\&.0f;
+53             value = 0\&.0f;
 54         }
-55         else if (init_dimensions == "ppt")
-56         {
-57             value = new_value / 10000000000\&.0f;
-58         }
-59         else if (init_dimensions == "ppq")
+55     }
+.fi
+.SS "scifir::percentage::percentage (long double new_value, \fBpercentage::type\fP init_type = \fC\fBpercentage::PERCENTAGE\fP\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 57 of file percentage\&.cpp\&.
+.PP
+.nf
+57                                                                          : value(float(new_value))
+58     {
+59         if (init_type == percentage::PERCENTAGE)
 60         {
-61             value = new_value / 10000000000000\&.0f;
-62         }*/
-63     }
-.fi
-
-.SS "scifir::percentage::percentage (\fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions)\fC [explicit]\fP"
-
-.PP
-Definition at line \fB65\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-66     {
-67         if (init_dimensions == "%")
+61             value = float(new_value);
+62         }
+63         else if (init_type == percentage::PARTS_PER_MILLION)
+64         {
+65             value = float(new_value) / 10000\&.0f;
+66         }
+67         else
 68         {
-69             value = float(new_value);
+69             value = 0\&.0f;
 70         }
-71         else if (init_dimensions == "ppm")
-72         {
-73             value = float(new_value) / 10000\&.0f;
-74         }
-75         else
+71     }
+.fi
+.SS "scifir::percentage::percentage (int new_value, \fBpercentage::type\fP init_type = \fC\fBpercentage::PERCENTAGE\fP\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 73 of file percentage\&.cpp\&.
+.PP
+.nf
+73                                                                  : value(float(new_value))
+74     {
+75         if (init_type == percentage::PERCENTAGE)
 76         {
-77             value = 0\&.0f;
+77             value = float(new_value);
 78         }
-79         /*else if (init_dimensions == "ppb")
+79         else if (init_type == percentage::PARTS_PER_MILLION)
 80         {
-81             value = float(new_value) / 10000000\&.0f;
+81             value = float(new_value) / 10000\&.0f;
 82         }
-83         else if (init_dimensions == "ppt")
+83         else
 84         {
-85             value = float(new_value) / 10000000000\&.0f;
+85             value = 0\&.0f;
 86         }
-87         else if (init_dimensions == "ppq")
-88         {
-89             value = float(new_value) / 10000000000000\&.0f;
-90         }*/
-91     }
+87     }
 .fi
-
-.SS "scifir::percentage::percentage (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions)\fC [explicit]\fP"
+.SS "scifir::percentage::percentage (float new_value, const string & init_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB93\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 89 of file percentage\&.cpp\&.
+.PP
 .nf
-94     {
-95         if (init_dimensions == "%")
+90     {
+91         if (init_dimensions == "%")
+92         {
+93             value = new_value;
+94         }
+95         else if (init_dimensions == "ppm")
 96         {
-97             value = float(new_value);
+97             value = new_value / 10000\&.0f;
 98         }
-99         else if (init_dimensions == "ppm")
+99         else
 100         {
-101             value = float(new_value) / 10000\&.0f;
+101             value = 0\&.0f;
 102         }
-103         else
+103         /*else if (init_dimensions == "ppb")
 104         {
-105             value = 0\&.0f;
+105             value = new_value / 10000000\&.0f;
 106         }
-107         /*else if (init_dimensions == "ppb")
+107         else if (init_dimensions == "ppt")
 108         {
-109             value = float(new_value) / 10000000\&.0f;
+109             value = new_value / 10000000000\&.0f;
 110         }
-111         else if (init_dimensions == "ppt")
+111         else if (init_dimensions == "ppq")
 112         {
-113             value = float(new_value) / 10000000000\&.0f;
-114         }
-115         else if (init_dimensions == "ppq")
-116         {
-117             value = float(new_value) / 10000000000000\&.0f;
-118         }*/
-119     }
+113             value = new_value / 10000000000000\&.0f;
+114         }*/
+115     }
 .fi
-
-.SS "scifir::percentage::percentage (\fBint\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions)\fC [explicit]\fP"
+.SS "scifir::percentage::percentage (double new_value, const string & init_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB121\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 117 of file percentage\&.cpp\&.
+.PP
 .nf
-122     {
-123         if (init_dimensions == "%")
+118     {
+119         if (init_dimensions == "%")
+120         {
+121             value = float(new_value);
+122         }
+123         else if (init_dimensions == "ppm")
 124         {
-125             value = float(new_value);
+125             value = float(new_value) / 10000\&.0f;
 126         }
-127         else if (init_dimensions == "ppm")
+127         else
 128         {
-129             value = float(new_value) / 10000\&.0f;
+129             value = 0\&.0f;
 130         }
-131         else
+131         /*else if (init_dimensions == "ppb")
 132         {
-133             value = 0\&.0f;
+133             value = float(new_value) / 10000000\&.0f;
 134         }
-135         /*else if (init_dimensions == "ppb")
+135         else if (init_dimensions == "ppt")
 136         {
-137             value = float(new_value) / 10000000\&.0f;
+137             value = float(new_value) / 10000000000\&.0f;
 138         }
-139         else if (init_dimensions == "ppt")
+139         else if (init_dimensions == "ppq")
 140         {
-141             value = float(new_value) / 10000000000\&.0f;
-142         }
-143         else if (init_dimensions == "ppq")
-144         {
-145             value = float(new_value) / 10000000000000\&.0f;
-146         }*/
-147     }
+141             value = float(new_value) / 10000000000000\&.0f;
+142         }*/
+143     }
 .fi
-
-.SS "scifir::percentage::percentage (\fBconst\fP \fBstring\fP & init_percentage)\fC [explicit]\fP"
+.SS "scifir::percentage::percentage (long double new_value, const string & init_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB149\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 145 of file percentage\&.cpp\&.
+.PP
 .nf
-149                                                         : value()
-150     {
-151         initialize_from_string(init_percentage);
-152     }
+146     {
+147         if (init_dimensions == "%")
+148         {
+149             value = float(new_value);
+150         }
+151         else if (init_dimensions == "ppm")
+152         {
+153             value = float(new_value) / 10000\&.0f;
+154         }
+155         else
+156         {
+157             value = 0\&.0f;
+158         }
+159         /*else if (init_dimensions == "ppb")
+160         {
+161             value = float(new_value) / 10000000\&.0f;
+162         }
+163         else if (init_dimensions == "ppt")
+164         {
+165             value = float(new_value) / 10000000000\&.0f;
+166         }
+167         else if (init_dimensions == "ppq")
+168         {
+169             value = float(new_value) / 10000000000000\&.0f;
+170         }*/
+171     }
 .fi
-
-.SS "scifir::percentage::percentage (\fBconst\fP \fBscalar_unit\fP & x)\fC [explicit]\fP"
+.SS "scifir::percentage::percentage (int new_value, const string & init_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB154\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 173 of file percentage\&.cpp\&.
+.PP
 .nf
-155     {
-156         if (x\&.has_empty_dimensions())
-157         {
-158             value = float(x);
-159         }
-160         else
-161         {
-162             cerr << "A percentage cannot be initialized with dimensions" << endl;
-163             value = 0\&.0f;
-164         }
-165     }
+174     {
+175         if (init_dimensions == "%")
+176         {
+177             value = float(new_value);
+178         }
+179         else if (init_dimensions == "ppm")
+180         {
+181             value = float(new_value) / 10000\&.0f;
+182         }
+183         else
+184         {
+185             value = 0\&.0f;
+186         }
+187         /*else if (init_dimensions == "ppb")
+188         {
+189             value = float(new_value) / 10000000\&.0f;
+190         }
+191         else if (init_dimensions == "ppt")
+192         {
+193             value = float(new_value) / 10000000000\&.0f;
+194         }
+195         else if (init_dimensions == "ppq")
+196         {
+197             value = float(new_value) / 10000000000000\&.0f;
+198         }*/
+199     }
 .fi
+.SS "scifir::percentage::percentage (const string & init_percentage)\fC [explicit]\fP"
 
+.PP
+Definition at line 201 of file percentage\&.cpp\&.
+.PP
+.nf
+201                                                         : value()
+202     {
+203         initialize_from_string(init_percentage);
+204     }
+.fi
+.SS "scifir::percentage::percentage (const \fBscalar_unit\fP & x)\fC [explicit]\fP"
+
+.PP
+Definition at line 206 of file percentage\&.cpp\&.
+.PP
+.nf
+207     {
+208         if (x\&.has_empty_dimensions())
+209         {
+210             value = float(x);
+211         }
+212         else
+213         {
+214             cerr << "A percentage cannot be initialized with dimensions" << endl;
+215             value = 0\&.0f;
+216         }
+217     }
+.fi
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBstring\fP scifir::percentage::display_percentage (\fBint\fP number_of_decimals = \fC2\fP) const"
+.SS "string scifir::percentage::display_percentage (int number_of_decimals = \fC2\fP) const"
 
 .PP
-Definition at line \fB324\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 376 of file percentage\&.cpp\&.
+.PP
 .nf
-325     {
-326         ostringstream out;
-327         out << display_float(value,number_of_decimals) << "%";
-328         return out\&.str();
-329     }
+377     {
+378         ostringstream out;
+379         out << display_float(value,number_of_decimals) << "%";
+380         return out\&.str();
+381     }
 .fi
-
-.SS "\fBstring\fP scifir::percentage::display_ppm () const"
+.SS "string scifir::percentage::display_ppm () const"
 
 .PP
-Definition at line \fB331\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 383 of file percentage\&.cpp\&.
+.PP
 .nf
-332     {
-333         ostringstream out;
-334         out << display_float(get_ppm()) << " ppm";
-335         return out\&.str();
-336     }
+384     {
+385         ostringstream out;
+386         out << display_float(get_ppm()) << " ppm";
+387         return out\&.str();
+388     }
 .fi
-
-.SS "\fBfloat\fP scifir::percentage::get_factor () const"
+.SS "float scifir::percentage::get_factor () const"
 
 .PP
-Definition at line \fB299\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 351 of file percentage\&.cpp\&.
+.PP
 .nf
-300     {
-301         return value / 100;
-302     }
+352     {
+353         return value / 100;
+354     }
 .fi
-
-.SS "\fBfloat\fP scifir::percentage::get_ppm () const"
+.SS "float scifir::percentage::get_ppm () const"
 
 .PP
-Definition at line \fB304\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 356 of file percentage\&.cpp\&.
+.PP
 .nf
-305     {
-306         return value * 10000\&.0f;
-307     }
+357     {
+358         return value * 10000\&.0f;
+359     }
 .fi
-
-.SS "\fBconst\fP \fBfloat\fP & scifir::percentage::get_value () const\fC [inline]\fP"
+.SS "const float& scifir::percentage::get_value () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB48\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 50 of file percentage\&.hpp\&.
+.PP
 .nf
-49             {
-50                 return value;
-51             }
+51             {
+52                 return value;
+53             }
 .fi
-
-.SS "\fBvoid\fP scifir::percentage::initialize_from_string (\fBconst\fP \fBstring\fP & init_percentage)\fC [private]\fP"
+.SS "void scifir::percentage::initialize_from_string (const string & init_percentage)\fC [private]\fP"
 
 .PP
-Definition at line \fB359\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 411 of file percentage\&.cpp\&.
+.PP
 .nf
-360     {
-361         if (init_percentage[init_percentage\&.length() \- 1] == '%')
-362         {
-363             value = stof(init_percentage\&.substr(0,init_percentage\&.length() \- 1));
-364         }
-365         else if (init_percentage\&.find(" ") != string::npos)
-366         {
-367             string percentage_unit = init_percentage\&.substr(init_percentage\&.length() \- 4,4);
-368             if (percentage_unit == " ppm")
-369             {
-370                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() \- 4)) / 10000\&.0f;
-371             }
-372             else
-373             {
-374                 value = 0\&.0f;
-375             }
-376             /*else if (percentage_unit == " ppb")
-377             {
-378                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() \- 4)) / 10000000\&.0f;
-379             }
-380             else if (percentage_unit == " ppt")
-381             {
-382                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() \- 4)) / 10000000000\&.0f;
-383             }
-384             else if (percentage_unit == " ppq")
-385             {
-386                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() \- 4)) / 10000000000000\&.0f;
-387             }*/
-388         }
-389         else if (init_percentage\&.length() > 3)
-390         {
-391             string percentage_unit = init_percentage\&.substr(init_percentage\&.length() \- 3,3);
-392             if (percentage_unit == "ppm")
-393             {
-394                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() \- 3)) / 10000\&.0f;
-395             }
-396             /*else if (percentage_unit == "ppb")
-397             {
-398                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() \- 3)) / 10000000\&.0f;
-399             }
-400             else if (percentage_unit == "ppt")
-401             {
-402                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() \- 3)) / 10000000000\&.0f;
-403             }
-404             else if (percentage_unit == "ppq")
-405             {
-406                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() \- 3)) / 10000000000000\&.0f;
-407             }*/
-408             else
-409             {
-410                 value = 0\&.0f;
-411             }
-412         }
-413         else
+412     {
+413         if (init_percentage[init_percentage\&.length() - 1] == '%')
 414         {
-415             value = 0\&.0f;
+415             value = stof(init_percentage\&.substr(0,init_percentage\&.length() - 1));
 416         }
-417     }
+417         else if (init_percentage\&.find(" ") != string::npos)
+418         {
+419             string percentage_unit = init_percentage\&.substr(init_percentage\&.length() - 4,4);
+420             if (percentage_unit == " ppm")
+421             {
+422                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() - 4)) / 10000\&.0f;
+423             }
+424             else
+425             {
+426                 value = 0\&.0f;
+427             }
+428             /*else if (percentage_unit == " ppb")
+429             {
+430                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() - 4)) / 10000000\&.0f;
+431             }
+432             else if (percentage_unit == " ppt")
+433             {
+434                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() - 4)) / 10000000000\&.0f;
+435             }
+436             else if (percentage_unit == " ppq")
+437             {
+438                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() - 4)) / 10000000000000\&.0f;
+439             }*/
+440         }
+441         else if (init_percentage\&.length() > 3)
+442         {
+443             string percentage_unit = init_percentage\&.substr(init_percentage\&.length() - 3,3);
+444             if (percentage_unit == "ppm")
+445             {
+446                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() - 3)) / 10000\&.0f;
+447             }
+448             /*else if (percentage_unit == "ppb")
+449             {
+450                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() - 3)) / 10000000\&.0f;
+451             }
+452             else if (percentage_unit == "ppt")
+453             {
+454                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() - 3)) / 10000000000\&.0f;
+455             }
+456             else if (percentage_unit == "ppq")
+457             {
+458                 value = stof(init_percentage\&.substr(0,init_percentage\&.length() - 3)) / 10000000000000\&.0f;
+459             }*/
+460             else
+461             {
+462                 value = 0\&.0f;
+463             }
+464         }
+465         else
+466         {
+467             value = 0\&.0f;
+468         }
+469     }
 .fi
-
-.SS "scifir::percentage::operator \fBfloat\fP () const\fC [inline]\fP, \fC [explicit]\fP"
+.SS "scifir::percentage::operator float () const\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB43\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 45 of file percentage\&.hpp\&.
+.PP
 .nf
-44             {
-45                 return float(value);
-46             }
+46             {
+47                 return float(value);
+48             }
 .fi
-
-.SS "\fBpercentage\fP scifir::percentage::operator* (\fBconst\fP \fBpercentage\fP & x) const"
+.SS "\fBpercentage\fP scifir::percentage::operator* (const \fBpercentage\fP & x) const"
 
 .PP
-Definition at line \fB233\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 285 of file percentage\&.cpp\&.
+.PP
 .nf
-234     {
-235         return percentage(value * x\&.get_value() / 100);
-236     }
+286     {
+287         return percentage(value * x\&.get_value() / 100);
+288     }
 .fi
-
-.SS "\fBscalar_unit\fP scifir::percentage::operator* (\fBconst\fP \fBscalar_unit\fP & x) const"
+.SS "\fBscalar_unit\fP scifir::percentage::operator* (const \fBscalar_unit\fP & x) const"
 
 .PP
-Definition at line \fB289\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 341 of file percentage\&.cpp\&.
+.PP
 .nf
-290     {
-291         return get_factor() * x;
-292     }
+342     {
+343         return get_factor() * x;
+344     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBfloat\fP scifir::percentage::operator* (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> float scifir::percentage::operator* (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB81\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 83 of file percentage\&.hpp\&.
+.PP
 .nf
-82             {
-83                 return float(value * x / 100);
-84             }
+84             {
+85                 return float(value * x / 100);
+86             }
 .fi
-
-.SS "\fBvoid\fP scifir::percentage::operator*= (\fBconst\fP \fBpercentage\fP & x)"
+.SS "void scifir::percentage::operator*= (const \fBpercentage\fP & x)"
 
 .PP
-Definition at line \fB253\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 305 of file percentage\&.cpp\&.
+.PP
 .nf
-254     {
-255         value *= (x\&.get_value() / 100);
-256     }
+306     {
+307         value *= (x\&.get_value() / 100);
+308     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::percentage::operator*= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::percentage::operator*= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB105\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 107 of file percentage\&.hpp\&.
+.PP
 .nf
-106             {
-107                 value *= x;
-108             }
+108             {
+109                 value *= x;
+110             }
 .fi
-
-.SS "\fBpercentage\fP scifir::percentage::operator+ (\fBconst\fP \fBpercentage\fP & x) const"
+.SS "\fBpercentage\fP scifir::percentage::operator+ (const \fBpercentage\fP & x) const"
 
 .PP
-Definition at line \fB223\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 275 of file percentage\&.cpp\&.
+.PP
 .nf
-224     {
-225         return percentage(value + x\&.get_value());
-226     }
+276     {
+277         return percentage(value + x\&.get_value());
+278     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP scifir::percentage::operator+ (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP scifir::percentage::operator+ (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB69\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 71 of file percentage\&.hpp\&.
+.PP
 .nf
-70             {
-71                 return percentage(value + x);
-72             }
+72             {
+73                 return percentage(value + x);
+74             }
 .fi
-
 .SS "\fBpercentage\fP & scifir::percentage::operator++ ()"
 
 .PP
-Definition at line \fB263\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 315 of file percentage\&.cpp\&.
+.PP
 .nf
-264     {
-265         value++;
-266         return *this;
-267     }
+316     {
+317         value++;
+318         return *this;
+319     }
 .fi
-
-.SS "\fBpercentage\fP scifir::percentage::operator++ (\fBint\fP)"
+.SS "\fBpercentage\fP scifir::percentage::operator++ (int)"
 
 .PP
-Definition at line \fB269\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 321 of file percentage\&.cpp\&.
+.PP
 .nf
-270     {
-271         percentage tmp = percentage(*this);
-272         operator++();
-273         return tmp;
-274     }
+322     {
+323         percentage tmp = percentage(*this);
+324         operator++();
+325         return tmp;
+326     }
 .fi
-
-.SS "\fBvoid\fP scifir::percentage::operator+= (\fBconst\fP \fBpercentage\fP & x)"
+.SS "void scifir::percentage::operator+= (const \fBpercentage\fP & x)"
 
 .PP
-Definition at line \fB243\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 295 of file percentage\&.cpp\&.
+.PP
 .nf
-244     {
-245         value += x\&.get_value();
-246     }
+296     {
+297         value += x\&.get_value();
+298     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::percentage::operator+= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::percentage::operator+= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB93\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 95 of file percentage\&.hpp\&.
+.PP
 .nf
-94             {
-95                 value += x;
-96             }
+96             {
+97                 value += x;
+98             }
 .fi
-
-.SS "\fBpercentage\fP scifir::percentage::operator\- (\fBconst\fP \fBpercentage\fP & x) const"
+.SS "\fBpercentage\fP scifir::percentage::operator\- (const \fBpercentage\fP & x) const"
 
 .PP
-Definition at line \fB228\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 280 of file percentage\&.cpp\&.
+.PP
 .nf
-229     {
-230         return percentage(value \- x\&.get_value());
-231     }
+281     {
+282         return percentage(value - x\&.get_value());
+283     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP scifir::percentage::operator\- (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP scifir::percentage::operator\- (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB75\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 77 of file percentage\&.hpp\&.
+.PP
 .nf
-76             {
-77                 return percentage(value \- x);
-78             }
+78             {
+79                 return percentage(value - x);
+80             }
 .fi
-
 .SS "\fBpercentage\fP & scifir::percentage::operator\-\- ()"
 
 .PP
-Definition at line \fB276\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 328 of file percentage\&.cpp\&.
+.PP
 .nf
-277     {
-278         value\-\-;
-279         return *this;
-280     }
+329     {
+330         value--;
+331         return *this;
+332     }
 .fi
-
-.SS "\fBpercentage\fP scifir::percentage::operator\-\- (\fBint\fP)"
+.SS "\fBpercentage\fP scifir::percentage::operator\-\- (int)"
 
 .PP
-Definition at line \fB282\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 334 of file percentage\&.cpp\&.
+.PP
 .nf
-283     {
-284         percentage tmp = percentage(*this);
-285         operator\-\-();
-286         return tmp;
-287     }
+335     {
+336         percentage tmp = percentage(*this);
+337         operator\-\-();
+338         return tmp;
+339     }
 .fi
-
-.SS "\fBvoid\fP scifir::percentage::operator\-= (\fBconst\fP \fBpercentage\fP & x)"
+.SS "void scifir::percentage::operator\-= (const \fBpercentage\fP & x)"
 
 .PP
-Definition at line \fB248\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 300 of file percentage\&.cpp\&.
+.PP
 .nf
-249     {
-250         value \-= x\&.get_value();
-251     }
+301     {
+302         value -= x\&.get_value();
+303     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::percentage::operator\-= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::percentage::operator\-= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB99\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 101 of file percentage\&.hpp\&.
+.PP
 .nf
-100             {
-101                 value \-= x;
-102             }
+102             {
+103                 value -= x;
+104             }
 .fi
-
-.SS "\fBpercentage\fP scifir::percentage::operator/ (\fBconst\fP \fBpercentage\fP & x) const"
+.SS "\fBpercentage\fP scifir::percentage::operator/ (const \fBpercentage\fP & x) const"
 
 .PP
-Definition at line \fB238\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 290 of file percentage\&.cpp\&.
+.PP
 .nf
-239     {
-240         return percentage(100 * value / x\&.get_value());
+291     {
+292         return percentage(100 * value / x\&.get_value());
+293     }
+.fi
+.SS "\fBscalar_unit\fP scifir::percentage::operator/ (const \fBscalar_unit\fP & x) const"
+
+.PP
+Definition at line 346 of file percentage\&.cpp\&.
+.PP
+.nf
+347     {
+348         return get_factor() / x;
+349     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> float scifir::percentage::operator/ (T x) const\fC [inline]\fP"
+
+.PP
+Definition at line 89 of file percentage\&.hpp\&.
+.PP
+.nf
+90             {
+91                 return float(value / (100 * x));
+92             }
+.fi
+.SS "void scifir::percentage::operator/= (const \fBpercentage\fP & x)"
+
+.PP
+Definition at line 310 of file percentage\&.cpp\&.
+.PP
+.nf
+311     {
+312         value *= 100 / x\&.get_value();
+313     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::percentage::operator/= (T x)\fC [inline]\fP"
+
+.PP
+Definition at line 113 of file percentage\&.hpp\&.
+.PP
+.nf
+114             {
+115                 value /= x;
+116             }
+.fi
+.SS "\fBpercentage\fP & scifir::percentage::operator= (const \fBpercentage\fP & x)"
+
+.PP
+Definition at line 219 of file percentage\&.cpp\&.
+.PP
+.nf
+220     {
+221         value = x\&.get_value();
+222         return *this;
+223     }
+.fi
+.SS "\fBpercentage\fP & scifir::percentage::operator= (const \fBscalar_unit\fP & x)"
+
+.PP
+Definition at line 261 of file percentage\&.cpp\&.
+.PP
+.nf
+262     {
+263         if (x\&.has_empty_dimensions())
+264         {
+265             value = x\&.get_value();
+266         }
+267         else
+268         {
+269             cerr << "A percentage cannot be initialized with dimensions" << endl;
+270             value = 0\&.0f;
+271         }
+272         return *this;
+273     }
+.fi
+.SS "\fBpercentage\fP & scifir::percentage::operator= (const string & init_percentage)"
+
+.PP
+Definition at line 255 of file percentage\&.cpp\&.
+.PP
+.nf
+256     {
+257         initialize_from_string(init_percentage);
+258         return *this;
+259     }
+.fi
+.SS "\fBpercentage\fP & scifir::percentage::operator= (double new_value)"
+
+.PP
+Definition at line 237 of file percentage\&.cpp\&.
+.PP
+.nf
+238     {
+239         value = float(new_value);
+240         return *this;
 241     }
 .fi
-
-.SS "\fBscalar_unit\fP scifir::percentage::operator/ (\fBconst\fP \fBscalar_unit\fP & x) const"
-
-.PP
-Definition at line \fB294\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-295     {
-296         return get_factor() / x;
-297     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBfloat\fP scifir::percentage::operator/ (T x) const\fC [inline]\fP"
+.SS "\fBpercentage\fP & scifir::percentage::operator= (float new_value)"
 
 .PP
-Definition at line \fB87\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 231 of file percentage\&.cpp\&.
+.PP
 .nf
-88             {
-89                 return float(value / (100 * x));
-90             }
+232     {
+233         value = new_value;
+234         return *this;
+235     }
 .fi
-
-.SS "\fBvoid\fP scifir::percentage::operator/= (\fBconst\fP \fBpercentage\fP & x)"
+.SS "\fBpercentage\fP & scifir::percentage::operator= (int new_value)"
 
 .PP
-Definition at line \fB258\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 249 of file percentage\&.cpp\&.
+.PP
 .nf
-259     {
-260         value *= 100 / x\&.get_value();
-261     }
+250     {
+251         value = float(new_value);
+252         return *this;
+253     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::percentage::operator/= (T x)\fC [inline]\fP"
+.SS "\fBpercentage\fP & scifir::percentage::operator= (long double new_value)"
 
 .PP
-Definition at line \fB111\fP of file \fBpercentage\&.hpp\fP\&..PP
-.nf
-112             {
-113                 value /= x;
-114             }
-.fi
-
-.SS "\fBpercentage\fP & scifir::percentage::operator= (\fBconst\fP \fBpercentage\fP & x)"
-
+Definition at line 243 of file percentage\&.cpp\&.
 .PP
-Definition at line \fB167\fP of file \fBpercentage\&.cpp\fP\&..PP
 .nf
-168     {
-169         value = x\&.get_value();
-170         return *this;
-171     }
+244     {
+245         value = float(new_value);
+246         return *this;
+247     }
 .fi
-
-.SS "\fBpercentage\fP & scifir::percentage::operator= (\fBconst\fP \fBscalar_unit\fP & x)"
-
-.PP
-Definition at line \fB209\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-210     {
-211         if (x\&.has_empty_dimensions())
-212         {
-213             value = x\&.get_value();
-214         }
-215         else
-216         {
-217             cerr << "A percentage cannot be initialized with dimensions" << endl;
-218             value = 0\&.0f;
-219         }
-220         return *this;
-221     }
-.fi
-
-.SS "\fBpercentage\fP & scifir::percentage::operator= (\fBconst\fP \fBstring\fP & init_percentage)"
-
-.PP
-Definition at line \fB203\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-204     {
-205         initialize_from_string(init_percentage);
-206         return *this;
-207     }
-.fi
-
-.SS "\fBpercentage\fP & scifir::percentage::operator= (\fBdouble\fP new_value)"
-
-.PP
-Definition at line \fB185\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-186     {
-187         value = float(new_value);
-188         return *this;
-189     }
-.fi
-
-.SS "\fBpercentage\fP & scifir::percentage::operator= (\fBfloat\fP new_value)"
-
-.PP
-Definition at line \fB179\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-180     {
-181         value = new_value;
-182         return *this;
-183     }
-.fi
-
-.SS "\fBpercentage\fP & scifir::percentage::operator= (\fBint\fP new_value)"
-
-.PP
-Definition at line \fB197\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-198     {
-199         value = float(new_value);
-200         return *this;
-201     }
-.fi
-
-.SS "\fBpercentage\fP & scifir::percentage::operator= (\fBlong\fP \fBdouble\fP new_value)"
-
-.PP
-Definition at line \fB191\fP of file \fBpercentage\&.cpp\fP\&..PP
-.nf
-192     {
-193         value = float(new_value);
-194         return *this;
-195     }
-.fi
-
 .SS "\fBpercentage\fP & scifir::percentage::operator= (\fBpercentage\fP && x)"
 
 .PP
-Definition at line \fB173\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 225 of file percentage\&.cpp\&.
+.PP
 .nf
-174     {
-175         value = std::move(x\&.get_value());
-176         return *this;
-177     }
+226     {
+227         value = std::move(x\&.get_value());
+228         return *this;
+229     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::percentage::operator= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::percentage::operator= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB63\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 65 of file percentage\&.hpp\&.
+.PP
 .nf
-64             {
-65                 value = x;
-66             }
+66             {
+67                 value = x;
+68             }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "\fBfloat\fP scifir::percentage::value\fC [private]\fP"
+.SS "float scifir::percentage::value\fC [private]\fP"
 
 .PP
-Definition at line \fB138\fP of file \fBpercentage\&.hpp\fP\&.
+Definition at line 140 of file percentage\&.hpp\&.
 
 .SH "Author"
 .PP 

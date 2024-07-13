@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['w_0',['W',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fbada9ccc349f5311acf67b1efc32f3fceb',1,'scifir::dimension']]],
-  ['walk_1',['WALK',['../namespacescifir.html#ad539180dc5ebdc1e9c73339aad091effabb2dfc184fa2e91373d3ff304cb01b8a',1,'scifir']]],
-  ['wavelength_2',['wavelength',['../namespacescifir.html#af9264eb6497586d15cc3fa361c136707',1,'scifir']]],
-  ['wb_3',['Wb',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba524e3d9a0d74fea5c38c8b00804357b7',1,'scifir::dimension']]],
-  ['width_4',['width',['../classscifir_1_1size__2d.html#a70d41a94d3d859315bf892358511af65',1,'scifir::size_2d::width'],['../classscifir_1_1size__2d_3_01float_01_4.html#a3299c67a6733aa8db5677db8bd32dbc5',1,'scifir::size_2d&lt; float &gt;::width'],['../classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb',1,'scifir::size_3d::width'],['../classscifir_1_1size__3d_3_01float_01_4.html#ad232bf592b2bbf6aaf2667763ea004c4',1,'scifir::size_3d&lt; float &gt;::width']]],
-  ['widths_5',['widths',['../classscifir_1_1size__nd.html#a9a52bb88267d31a606c42ae464c8914f',1,'scifir::size_nd::widths'],['../classscifir_1_1size__nd_3_01float_01_4.html#a4ccce5f1729e3b1ae9971a6dafbc6f08',1,'scifir::size_nd&lt; float &gt;::widths']]],
-  ['windows_6',['Windows',['../index.html#autotoc_md11',1,'']]]
+  ['z_1438',['z',['../classscifir_1_1coordinates__3d.html#a410c7cfcf3dc47e5594373ff23518af8',1,'scifir::coordinates_3d::z()'],['../classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72',1,'scifir::coordinates_3d&lt; float &gt;::z()'],['../classscifir_1_1coordinates__3dr.html#afe6d5507a03afd3aea4647aae67965d2',1,'scifir::coordinates_3dr::z()'],['../classscifir_1_1coordinates__3dr_3_01float_01_4.html#a97ae6762a84032bb4be22786dab4bb26',1,'scifir::coordinates_3dr&lt; float &gt;::z()'],['../classscifir_1_1point__3d.html#a2bf49970857ba45c16b2a9aa3338025c',1,'scifir::point_3d::z()'],['../classscifir_1_1point__3d_3_01float_01_4.html#a9fc6fa9560f8dc45d1438ff5531b7295',1,'scifir::point_3d&lt; float &gt;::z()']]],
+  ['z_5fprojection_1439',['z_projection',['../classscifir_1_1vector__unit__3d.html#a6684389d73257dc3c5bed913144b4083',1,'scifir::vector_unit_3d::z_projection()'],['../classscifir_1_1vector__unit__nd.html#abec97df3bc99e8fb83129dee8b39bd75',1,'scifir::vector_unit_nd::z_projection()']]],
+  ['zepto_1440',['ZEPTO',['../classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56',1,'scifir::prefix']]],
+  ['zetta_1441',['ZETTA',['../classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e',1,'scifir::prefix']]],
+  ['zid_1442',['zid',['../classscifir_1_1zid.html',1,'scifir::zid'],['../classscifir_1_1zid.html#a0a847289f85663f415cf896342620ae1',1,'scifir::zid::zid(const string &amp;init_zid_full)'],['../classscifir_1_1zid.html#a3373cd61f91001d2fbd0d41906f73921',1,'scifir::zid::zid()'],['../classscifir_1_1zid.html#a1946b1fd42cbbe0b2764ff9bb7922cd9',1,'scifir::zid::zid(const zid &amp;x)'],['../classscifir_1_1zid.html#a42b1578b6c42c7662b648e34df7a1c08',1,'scifir::zid::zid(zid &amp;&amp;x)'],['../classscifir_1_1zid.html#a2dd6a90683a044ff7e6ec19a5d1ddf09',1,'scifir::zid::zid(const scifir::aid &amp;new_aid, const string &amp;new_country, const vector&lt; string &gt; &amp;new_regions, const string &amp;new_zone)'],['../classscifir_1_1zid.html#a61aef7cc19022cde59e1f1c69a1d558b',1,'scifir::zid::zid(const scifir::aid &amp;new_aid, const string &amp;init_zid)']]],
+  ['zid_2ecpp_1443',['zid.cpp',['../zid_8cpp.html',1,'']]],
+  ['zid_2ehpp_1444',['zid.hpp',['../zid_8hpp.html',1,'']]],
+  ['zone_1445',['zone',['../classscifir_1_1zid.html#a3ef65cf7878c83b2222c2daf6f5f3f36',1,'scifir::zid']]]
 ];

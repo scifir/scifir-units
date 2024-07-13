@@ -1,4 +1,4 @@
-.TH "scifir::color" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::color" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,161 +15,161 @@ scifir::color
 .RI "\fBcolor\fP ()"
 .br
 .ti -1c
-.RI "\fBcolor\fP (\fBint\fP, \fBint\fP, \fBint\fP, \fBint\fP=255)"
+.RI "\fBcolor\fP (int, int, int, int=255)"
 .br
 .ti -1c
-.RI "\fBconst\fP \fBint\fP & \fBget_red\fP () \fBconst\fP"
+.RI "const int & \fBget_red\fP () const"
 .br
 .ti -1c
-.RI "\fBconst\fP \fBint\fP & \fBget_green\fP () \fBconst\fP"
+.RI "const int & \fBget_green\fP () const"
 .br
 .ti -1c
-.RI "\fBconst\fP \fBint\fP & \fBget_blue\fP () \fBconst\fP"
+.RI "const int & \fBget_blue\fP () const"
 .br
 .ti -1c
-.RI "\fBconst\fP \fBint\fP & \fBget_alpha\fP () \fBconst\fP"
+.RI "const int & \fBget_alpha\fP () const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBis_opaque\fP () \fBconst\fP"
+.RI "bool \fBis_opaque\fP () const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBis_transparent\fP () \fBconst\fP"
+.RI "bool \fBis_transparent\fP () const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBis_full_transparent\fP () \fBconst\fP"
+.RI "bool \fBis_full_transparent\fP () const"
 .br
 .in -1c
 .SS "Private Attributes"
 
 .in +1c
 .ti -1c
-.RI "\fBint\fP \fBred\fP"
+.RI "int \fBred\fP"
 .br
 .ti -1c
-.RI "\fBint\fP \fBblue\fP"
+.RI "int \fBblue\fP"
 .br
 .ti -1c
-.RI "\fBint\fP \fBgreen\fP"
+.RI "int \fBgreen\fP"
 .br
 .ti -1c
-.RI "\fBint\fP \fBalpha\fP"
+.RI "int \fBalpha\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB11\fP of file \fBcolor\&.hpp\fP\&.
+Definition at line 11 of file color\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "scifir::color::color ()"
 
 .PP
-Definition at line \fB7\fP of file \fBcolor\&.cpp\fP\&..PP
+Definition at line 7 of file color\&.cpp\&.
+.PP
 .nf
 7                  : red(),blue(),green(),alpha()
 8     {
 9     }
 .fi
-
-.SS "scifir::color::color (\fBint\fP new_red, \fBint\fP new_green, \fBint\fP new_blue, \fBint\fP new_alpha = \fC255\fP)"
+.SS "scifir::color::color (int new_red, int new_green, int new_blue, int new_alpha = \fC255\fP)"
 
 .PP
-Definition at line \fB11\fP of file \fBcolor\&.cpp\fP\&..PP
+Definition at line 11 of file color\&.cpp\&.
+.PP
 .nf
 11                                                                      : red(new_red),blue(new_blue),green(new_green),alpha(new_alpha)
 12     {
 13     }
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBconst\fP \fBint\fP & scifir::color::get_alpha () const\fC [inline]\fP"
+.SS "const int& scifir::color::get_alpha () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB32\fP of file \fBcolor\&.hpp\fP\&..PP
+Definition at line 32 of file color\&.hpp\&.
+.PP
 .nf
 33             {
 34                 return alpha;
 35             }
 .fi
-
-.SS "\fBconst\fP \fBint\fP & scifir::color::get_blue () const\fC [inline]\fP"
+.SS "const int& scifir::color::get_blue () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB27\fP of file \fBcolor\&.hpp\fP\&..PP
+Definition at line 27 of file color\&.hpp\&.
+.PP
 .nf
 28             {
 29                 return blue;
 30             }
 .fi
-
-.SS "\fBconst\fP \fBint\fP & scifir::color::get_green () const\fC [inline]\fP"
+.SS "const int& scifir::color::get_green () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB22\fP of file \fBcolor\&.hpp\fP\&..PP
+Definition at line 22 of file color\&.hpp\&.
+.PP
 .nf
 23             {
 24                 return green;
 25             }
 .fi
-
-.SS "\fBconst\fP \fBint\fP & scifir::color::get_red () const\fC [inline]\fP"
+.SS "const int& scifir::color::get_red () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB17\fP of file \fBcolor\&.hpp\fP\&..PP
+Definition at line 17 of file color\&.hpp\&.
+.PP
 .nf
 18             {
 19                 return red;
 20             }
 .fi
-
-.SS "\fBbool\fP scifir::color::is_full_transparent () const\fC [inline]\fP"
+.SS "bool scifir::color::is_full_transparent () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB47\fP of file \fBcolor\&.hpp\fP\&..PP
+Definition at line 47 of file color\&.hpp\&.
+.PP
 .nf
 48             {
 49                 return (alpha == 0);
 50             }
 .fi
-
-.SS "\fBbool\fP scifir::color::is_opaque () const\fC [inline]\fP"
+.SS "bool scifir::color::is_opaque () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB37\fP of file \fBcolor\&.hpp\fP\&..PP
+Definition at line 37 of file color\&.hpp\&.
+.PP
 .nf
 38             {
 39                 return (alpha == 255);
 40             }
 .fi
-
-.SS "\fBbool\fP scifir::color::is_transparent () const\fC [inline]\fP"
+.SS "bool scifir::color::is_transparent () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB42\fP of file \fBcolor\&.hpp\fP\&..PP
+Definition at line 42 of file color\&.hpp\&.
+.PP
 .nf
 43             {
 44                 return (alpha < 255);
 45             }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "\fBint\fP scifir::color::alpha\fC [private]\fP"
+.SS "int scifir::color::alpha\fC [private]\fP"
 
 .PP
-Definition at line \fB56\fP of file \fBcolor\&.hpp\fP\&.
-.SS "\fBint\fP scifir::color::blue\fC [private]\fP"
+Definition at line 56 of file color\&.hpp\&.
+.SS "int scifir::color::blue\fC [private]\fP"
 
 .PP
-Definition at line \fB54\fP of file \fBcolor\&.hpp\fP\&.
-.SS "\fBint\fP scifir::color::green\fC [private]\fP"
+Definition at line 54 of file color\&.hpp\&.
+.SS "int scifir::color::green\fC [private]\fP"
 
 .PP
-Definition at line \fB55\fP of file \fBcolor\&.hpp\fP\&.
-.SS "\fBint\fP scifir::color::red\fC [private]\fP"
+Definition at line 55 of file color\&.hpp\&.
+.SS "int scifir::color::red\fC [private]\fP"
 
 .PP
-Definition at line \fB53\fP of file \fBcolor\&.hpp\fP\&.
+Definition at line 53 of file color\&.hpp\&.
 
 .SH "Author"
 .PP 

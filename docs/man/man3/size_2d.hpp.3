@@ -1,4 +1,4 @@
-.TH "special_units/size_2d.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "special_units/size_2d.hpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,7 +29,7 @@ special_units/size_2d.hpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -37,10 +37,10 @@ special_units/size_2d.hpp
 
 .in +1c
 .ti -1c
-.RI "template<\fBtypename\fP T > \fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBsize_2d\fP< T > &x)"
+.RI "template<typename T > string \fBscifir::to_string\fP (const size_2d< T > &x)"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBsize_2d\fP< \fBfloat\fP > &x)"
+.RI "string \fBscifir::to_string\fP (const size_2d< float > &x)"
 .br
 .ti -1c
 .RI "template<typename T > bool \fBoperator==\fP (const \fBscifir::size_2d\fP< T > &x, const \fBscifir::size_2d\fP< T > &y)"
@@ -81,77 +81,78 @@ special_units/size_2d.hpp
 .SS "template<typename T > bool operator!= (const \fBscifir::size_2d\fP< T > & x, const \fBscifir::size_2d\fP< T > & y)"
 
 .PP
-Definition at line \fB230\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 230 of file size_2d\&.hpp\&.
+.PP
 .nf
 231 {
 232     return !(x == y);
 233 }
 .fi
-
 .SS "template<typename T > bool operator!= (const \fBscifir::size_2d\fP< T > & x, const string & init_size_2d)"
 
 .PP
-Definition at line \fB243\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 243 of file size_2d\&.hpp\&.
+.PP
 .nf
 244 {
 245     return !(x == init_size_2d);
 246 }
 .fi
-
 .SS "template<typename T > bool operator!= (const string & init_size_2d, const \fBscifir::size_2d\fP< T > & x)"
 
 .PP
-Definition at line \fB256\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 256 of file size_2d\&.hpp\&.
+.PP
 .nf
 257 {
 258     return !(init_size_2d == x);
 259 }
 .fi
-
 .SS "template<typename T > string operator+ (const \fBscifir::size_2d\fP< T > & x, const string & y)"
 
 .PP
-Definition at line \fB274\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 274 of file size_2d\&.hpp\&.
+.PP
 .nf
 275 {
 276     return to_string(x) + y;
 277 }
 .fi
-
 .SS "template<typename T > string operator+ (const string & x, const \fBscifir::size_2d\fP< T > & y)"
 
 .PP
-Definition at line \fB268\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 268 of file size_2d\&.hpp\&.
+.PP
 .nf
 269 {
 270     return x + to_string(y);
 271 }
 .fi
-
 .SS "template<typename T > void operator+= (string & x, const \fBscifir::size_2d\fP< T > & y)"
 
 .PP
-Definition at line \fB262\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 262 of file size_2d\&.hpp\&.
+.PP
 .nf
 263 {
 264     x += to_string(y);
 265 }
 .fi
-
-.SS "template<typename T > ostream & operator<< (ostream & os, const \fBscifir::size_2d\fP< T > & x)"
+.SS "template<typename T > ostream& operator<< (ostream & os, const \fBscifir::size_2d\fP< T > & x)"
 
 .PP
-Definition at line \fB280\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 280 of file size_2d\&.hpp\&.
+.PP
 .nf
 281 {
 282     return os << to_string(x);
 283 }
 .fi
-
 .SS "template<typename T > bool operator== (const \fBscifir::size_2d\fP< T > & x, const \fBscifir::size_2d\fP< T > & y)"
 
 .PP
-Definition at line \fB217\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 217 of file size_2d\&.hpp\&.
+.PP
 .nf
 218 {
 219     if (x\&.width == y\&.width and x\&.height == y\&.height)
@@ -164,33 +165,33 @@ Definition at line \fB217\fP of file \fBsize_2d\&.hpp\fP\&..PP
 226     }
 227 }
 .fi
-
 .SS "template<typename T > bool operator== (const \fBscifir::size_2d\fP< T > & x, const string & init_size_2d)"
 
 .PP
-Definition at line \fB236\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 236 of file size_2d\&.hpp\&.
+.PP
 .nf
 237 {
 238     scifir::size_2d<T> y(init_size_2d);
 239     return (x == y);
 240 }
 .fi
-
 .SS "template<typename T > bool operator== (const string & init_size_2d, const \fBscifir::size_2d\fP< T > & x)"
 
 .PP
-Definition at line \fB249\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 249 of file size_2d\&.hpp\&.
+.PP
 .nf
 250 {
 251     scifir::size_2d<T> y(init_size_2d);
 252     return (x == y);
 253 }
 .fi
-
-.SS "template<typename T > istream & operator>> (istream & is, \fBscifir::size_2d\fP< T > & x)"
+.SS "template<typename T > istream& operator>> (istream & is, \fBscifir::size_2d\fP< T > & x)"
 
 .PP
-Definition at line \fB286\fP of file \fBsize_2d\&.hpp\fP\&..PP
+Definition at line 286 of file size_2d\&.hpp\&.
+.PP
 .nf
 287 {
 288     char a[256];
@@ -200,7 +201,6 @@ Definition at line \fB286\fP of file \fBsize_2d\&.hpp\fP\&..PP
 292     return is;
 293 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

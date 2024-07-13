@@ -1,25 +1,26 @@
-\doxysection{special\+\_\+units/zid.cpp File Reference}
-\hypertarget{zid_8cpp}{}\label{zid_8cpp}\index{special\_units/zid.cpp@{special\_units/zid.cpp}}
-{\ttfamily \#include "{}./zid.\+hpp"{}}\newline
-{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+\hypertarget{zid_8cpp}{}\doxysection{special\+\_\+units/zid.cpp File Reference}
+\label{zid_8cpp}\index{special\_units/zid.cpp@{special\_units/zid.cpp}}
+{\ttfamily \#include \char`\"{}./zid.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}boost/algorithm/string.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
-Include dependency graph for zid.\+cpp\+:\nopagebreak
+Include dependency graph for zid.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{zid_8cpp__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Namespaces}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+ \mbox{\hyperlink{namespacescifir}{scifir}}
 \begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a4202fe607b159e40982128774853ed94}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1zid}{zid}} \&x)
+string \mbox{\hyperlink{namespacescifir_a4202fe607b159e40982128774853ed94}{scifir\+::to\+\_\+string}} (const zid \&x)
 \item 
 bool \mbox{\hyperlink{zid_8cpp_a093a778c207548419656659944a46ac4}{operator==}} (const \mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&x, const \mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&y)
 \item 
@@ -39,14 +40,14 @@ string \mbox{\hyperlink{zid_8cpp_ab1cad86185890407265a6af3b0275bc1}{operator+}} 
 \item 
 string \mbox{\hyperlink{zid_8cpp_a9404a9e73eeea7ef6240c04d1357d020}{operator+}} (const \mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&y, const string \&x)
 \item 
-ostream \& \mbox{\hyperlink{zid_8cpp_a2c06ffaf34cda3c37a5616423b4a15ac}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&x)
+ostream \& \mbox{\hyperlink{zid_8cpp_a9e1497520755f4304c06413199c69e2f}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&x)
 \item 
-istream \& \mbox{\hyperlink{zid_8cpp_a0bd7ef119f4e1870ffb481c3a5321902}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&x)
+istream \& \mbox{\hyperlink{zid_8cpp_ac46f218b28246a8266da3a3c41c2209d}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&x)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{zid_8cpp_aec3ac19e273a8f4792aa19975d46d5bc}\label{zid_8cpp_aec3ac19e273a8f4792aa19975d46d5bc} 
+\mbox{\Hypertarget{zid_8cpp_aec3ac19e273a8f4792aa19975d46d5bc}\label{zid_8cpp_aec3ac19e273a8f4792aa19975d46d5bc}} 
 \index{zid.cpp@{zid.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -54,16 +55,16 @@ istream \& \mbox{\hyperlink{zid_8cpp_a0bd7ef119f4e1870ffb481c3a5321902}{operator
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00210}{210}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 210 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00211\ \{}
-\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00213\ \}}
+\DoxyCodeLine{211 \{}
+\DoxyCodeLine{212     \textcolor{keywordflow}{return} !(x == y);}
+\DoxyCodeLine{213 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_a0c84efd3e3893b3331380c7aada89306}\label{zid_8cpp_a0c84efd3e3893b3331380c7aada89306} 
+\mbox{\Hypertarget{zid_8cpp_a0c84efd3e3893b3331380c7aada89306}\label{zid_8cpp_a0c84efd3e3893b3331380c7aada89306}} 
 \index{zid.cpp@{zid.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -71,16 +72,16 @@ Definition at line \mbox{\hyperlink{zid_8cpp_source_l00210}{210}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00221}{221}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 221 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00222\ \{}
-\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_zid\_full);}
-\DoxyCodeLine{00224\ \}}
+\DoxyCodeLine{222 \{}
+\DoxyCodeLine{223     \textcolor{keywordflow}{return} !(x == init\_zid\_full);}
+\DoxyCodeLine{224 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_a40c4d7f2051ffd77cda6729cce214976}\label{zid_8cpp_a40c4d7f2051ffd77cda6729cce214976} 
+\mbox{\Hypertarget{zid_8cpp_a40c4d7f2051ffd77cda6729cce214976}\label{zid_8cpp_a40c4d7f2051ffd77cda6729cce214976}} 
 \index{zid.cpp@{zid.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -88,16 +89,16 @@ Definition at line \mbox{\hyperlink{zid_8cpp_source_l00221}{221}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00232}{232}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 232 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00233\ \{}
-\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_zid\_full\ ==\ x);}
-\DoxyCodeLine{00235\ \}}
+\DoxyCodeLine{233 \{}
+\DoxyCodeLine{234     \textcolor{keywordflow}{return} !(init\_zid\_full == x);}
+\DoxyCodeLine{235 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_a9404a9e73eeea7ef6240c04d1357d020}\label{zid_8cpp_a9404a9e73eeea7ef6240c04d1357d020} 
+\mbox{\Hypertarget{zid_8cpp_a9404a9e73eeea7ef6240c04d1357d020}\label{zid_8cpp_a9404a9e73eeea7ef6240c04d1357d020}} 
 \index{zid.cpp@{zid.cpp}!operator+@{operator+}}
 \index{operator+@{operator+}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -105,19 +106,19 @@ Definition at line \mbox{\hyperlink{zid_8cpp_source_l00232}{232}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 252 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00253\ \{}
-\DoxyCodeLine{00254\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00255\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00256\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00258\ \}}
+\DoxyCodeLine{253 \{}
+\DoxyCodeLine{254     ostringstream output;}
+\DoxyCodeLine{255     output << y;}
+\DoxyCodeLine{256     output << x;}
+\DoxyCodeLine{257     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{258 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_ab1cad86185890407265a6af3b0275bc1}\label{zid_8cpp_ab1cad86185890407265a6af3b0275bc1} 
+\mbox{\Hypertarget{zid_8cpp_ab1cad86185890407265a6af3b0275bc1}\label{zid_8cpp_ab1cad86185890407265a6af3b0275bc1}} 
 \index{zid.cpp@{zid.cpp}!operator+@{operator+}}
 \index{operator+@{operator+}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -125,19 +126,19 @@ Definition at line \mbox{\hyperlink{zid_8cpp_source_l00252}{252}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00244}{244}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 244 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00245\ \{}
-\DoxyCodeLine{00246\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00247\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00248\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00250\ \}}
+\DoxyCodeLine{245 \{}
+\DoxyCodeLine{246     ostringstream output;}
+\DoxyCodeLine{247     output << x;}
+\DoxyCodeLine{248     output << y;}
+\DoxyCodeLine{249     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{250 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_a8172c8995c736ca5bd751e29b788c80b}\label{zid_8cpp_a8172c8995c736ca5bd751e29b788c80b} 
+\mbox{\Hypertarget{zid_8cpp_a8172c8995c736ca5bd751e29b788c80b}\label{zid_8cpp_a8172c8995c736ca5bd751e29b788c80b}} 
 \index{zid.cpp@{zid.cpp}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
@@ -145,35 +146,35 @@ Definition at line \mbox{\hyperlink{zid_8cpp_source_l00244}{244}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00237}{237}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 237 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00238\ \{}
-\DoxyCodeLine{00239\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00240\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00241\ \ \ \ \ x\ +=\ output.str();}
-\DoxyCodeLine{00242\ \}}
+\DoxyCodeLine{238 \{}
+\DoxyCodeLine{239     ostringstream output;}
+\DoxyCodeLine{240     output << y;}
+\DoxyCodeLine{241     x += output.str();}
+\DoxyCodeLine{242 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_a2c06ffaf34cda3c37a5616423b4a15ac}\label{zid_8cpp_a2c06ffaf34cda3c37a5616423b4a15ac} 
+\mbox{\Hypertarget{zid_8cpp_a9e1497520755f4304c06413199c69e2f}\label{zid_8cpp_a9e1497520755f4304c06413199c69e2f}} 
 \index{zid.cpp@{zid.cpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00260}{260}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 260 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00261\ \{}
-\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
-\DoxyCodeLine{00263\ \}}
+\DoxyCodeLine{261 \{}
+\DoxyCodeLine{262     \textcolor{keywordflow}{return} os << \mbox{\hyperlink{namespacescifir_a4202fe607b159e40982128774853ed94}{to\_string}}(x);}
+\DoxyCodeLine{263 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_a093a778c207548419656659944a46ac4}\label{zid_8cpp_a093a778c207548419656659944a46ac4} 
+\mbox{\Hypertarget{zid_8cpp_a093a778c207548419656659944a46ac4}\label{zid_8cpp_a093a778c207548419656659944a46ac4}} 
 \index{zid.cpp@{zid.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -181,44 +182,44 @@ Definition at line \mbox{\hyperlink{zid_8cpp_source_l00260}{260}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00177}{177}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 177 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00178\ \{}
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.\mbox{\hyperlink{classscifir_1_1zid_a64c51e9d7f9bfed4a45b463d8b45116b}{aid}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1zid_a64c51e9d7f9bfed4a45b463d8b45116b}{aid}})}
-\DoxyCodeLine{00180\ \ \ \ \ \{}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}})}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ x.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}.size();\ i++)}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}[i]\ !=\ y.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}[i])}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.\mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}})}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00203\ \ \ \ \ \}}
-\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00205\ \ \ \ \ \{}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00207\ \ \ \ \ \}}
-\DoxyCodeLine{00208\ \}}
+\DoxyCodeLine{178 \{}
+\DoxyCodeLine{179     \textcolor{keywordflow}{if} (x.\mbox{\hyperlink{classscifir_1_1zid_a64c51e9d7f9bfed4a45b463d8b45116b}{aid}} == y.\mbox{\hyperlink{classscifir_1_1zid_a64c51e9d7f9bfed4a45b463d8b45116b}{aid}})}
+\DoxyCodeLine{180     \{}
+\DoxyCodeLine{181         \textcolor{keywordflow}{if} (x.\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}} == y.\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}})}
+\DoxyCodeLine{182         \{}
+\DoxyCodeLine{183             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < x.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}.size(); i++)}
+\DoxyCodeLine{184             \{}
+\DoxyCodeLine{185                 \textcolor{keywordflow}{if} (x.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}[i] != y.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}[i])}
+\DoxyCodeLine{186                 \{}
+\DoxyCodeLine{187                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{188                 \}}
+\DoxyCodeLine{189             \}}
+\DoxyCodeLine{190             \textcolor{keywordflow}{if} (x.\mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}} == y.\mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}})}
+\DoxyCodeLine{191             \{}
+\DoxyCodeLine{192                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{193             \}}
+\DoxyCodeLine{194             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{195             \{}
+\DoxyCodeLine{196                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{197             \}}
+\DoxyCodeLine{198         \}}
+\DoxyCodeLine{199         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{200         \{}
+\DoxyCodeLine{201             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{202         \}}
+\DoxyCodeLine{203     \}}
+\DoxyCodeLine{204     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{205     \{}
+\DoxyCodeLine{206         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{207     \}}
+\DoxyCodeLine{208 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_aa59d8c03955794abaec412d34ee50110}\label{zid_8cpp_aa59d8c03955794abaec412d34ee50110} 
+\mbox{\Hypertarget{zid_8cpp_aa59d8c03955794abaec412d34ee50110}\label{zid_8cpp_aa59d8c03955794abaec412d34ee50110}} 
 \index{zid.cpp@{zid.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -226,17 +227,17 @@ Definition at line \mbox{\hyperlink{zid_8cpp_source_l00177}{177}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00215}{215}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 215 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00216\ \{}
-\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}(init\_zid\_full);}
-\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00219\ \}}
+\DoxyCodeLine{216 \{}
+\DoxyCodeLine{217     \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}} y = \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}(init\_zid\_full);}
+\DoxyCodeLine{218     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{219 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_afdb2451e9204dfe1db539d3b7015c35c}\label{zid_8cpp_afdb2451e9204dfe1db539d3b7015c35c} 
+\mbox{\Hypertarget{zid_8cpp_afdb2451e9204dfe1db539d3b7015c35c}\label{zid_8cpp_afdb2451e9204dfe1db539d3b7015c35c}} 
 \index{zid.cpp@{zid.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -244,35 +245,35 @@ Definition at line \mbox{\hyperlink{zid_8cpp_source_l00215}{215}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00226}{226}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 226 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00227\ \{}
-\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}(init\_zid\_full);}
-\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00230\ \}}
+\DoxyCodeLine{227 \{}
+\DoxyCodeLine{228     \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}} y = \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}(init\_zid\_full);}
+\DoxyCodeLine{229     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{230 \}}
 
 \end{DoxyCode}
-\Hypertarget{zid_8cpp_a0bd7ef119f4e1870ffb481c3a5321902}\label{zid_8cpp_a0bd7ef119f4e1870ffb481c3a5321902} 
+\mbox{\Hypertarget{zid_8cpp_ac46f218b28246a8266da3a3c41c2209d}\label{zid_8cpp_ac46f218b28246a8266da3a3c41c2209d}} 
 \index{zid.cpp@{zid.cpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!zid.cpp@{zid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
-{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{zid_8cpp_source_l00265}{265}} of file \mbox{\hyperlink{zid_8cpp_source}{zid.\+cpp}}.
+Definition at line 265 of file zid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00266\ \{}
-\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00268\ \ \ \ \ is.getline(a,\ 256);}
-\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
-\DoxyCodeLine{00270\ \ \ \ \ boost::trim(b);}
-\DoxyCodeLine{00271\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}(b);}
-\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{00273\ \}}
+\DoxyCodeLine{266 \{}
+\DoxyCodeLine{267     \textcolor{keywordtype}{char} a[256];}
+\DoxyCodeLine{268     is.getline(a, 256);}
+\DoxyCodeLine{269     \textcolor{keywordtype}{string} b(a);}
+\DoxyCodeLine{270     boost::trim(b);}
+\DoxyCodeLine{271     x = \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}(b);}
+\DoxyCodeLine{272     \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{273 \}}
 
 \end{DoxyCode}

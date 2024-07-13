@@ -1,4 +1,4 @@
-.TH "special_units/pOH.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "special_units/pOH.cpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,7 +25,7 @@ special_units/pOH.cpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -33,7 +33,7 @@ special_units/pOH.cpp
 
 .in +1c
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBpOH\fP &x)"
+.RI "string \fBscifir::to_string\fP (const pOH &x)"
 .br
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBscifir::pOH\fP &x, const \fBscifir::pOH\fP &y)"
@@ -86,37 +86,38 @@ special_units/pOH.cpp
 .SS "bool operator!= (const \fBscifir::pOH\fP & x, const \fBscifir::pOH\fP & y)"
 
 .PP
-Definition at line \fB216\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 216 of file pOH\&.cpp\&.
+.PP
 .nf
 217 {
 218     return !(x == y);
 219 }
 .fi
-
 .SS "bool operator!= (const \fBscifir::pOH\fP & x, const string & init_pOH)"
 
 .PP
-Definition at line \fB261\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 261 of file pOH\&.cpp\&.
+.PP
 .nf
 262 {
 263     return !(x == init_pOH);
 264 }
 .fi
-
 .SS "bool operator!= (const string & init_pOH, const \fBscifir::pOH\fP & x)"
 
 .PP
-Definition at line \fB272\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 272 of file pOH\&.cpp\&.
+.PP
 .nf
 273 {
 274     return !(init_pOH == x);
 275 }
 .fi
-
 .SS "string operator+ (const \fBscifir::pOH\fP & y, const string & x)"
 
 .PP
-Definition at line \fB292\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 292 of file pOH\&.cpp\&.
+.PP
 .nf
 293 {
 294     ostringstream output;
@@ -125,11 +126,11 @@ Definition at line \fB292\fP of file \fBpOH\&.cpp\fP\&..PP
 297     return output\&.str();
 298 }
 .fi
-
 .SS "string operator+ (const string & x, const \fBscifir::pOH\fP & y)"
 
 .PP
-Definition at line \fB284\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 284 of file pOH\&.cpp\&.
+.PP
 .nf
 285 {
 286     ostringstream output;
@@ -138,11 +139,11 @@ Definition at line \fB284\fP of file \fBpOH\&.cpp\fP\&..PP
 289     return output\&.str();
 290 }
 .fi
-
 .SS "void operator+= (string & x, const \fBscifir::pOH\fP & y)"
 
 .PP
-Definition at line \fB277\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 277 of file pOH\&.cpp\&.
+.PP
 .nf
 278 {
 279     ostringstream output;
@@ -150,11 +151,11 @@ Definition at line \fB277\fP of file \fBpOH\&.cpp\fP\&..PP
 281     x += output\&.str();
 282 }
 .fi
-
 .SS "bool operator< (const \fBscifir::pOH\fP & x, const \fBscifir::pOH\fP & y)"
 
 .PP
-Definition at line \fB221\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 221 of file pOH\&.cpp\&.
+.PP
 .nf
 222 {
 223     if(x\&.get_value() < y\&.get_value())
@@ -167,31 +168,31 @@ Definition at line \fB221\fP of file \fBpOH\&.cpp\fP\&..PP
 230     }
 231 }
 .fi
-
-.SS "ostream & operator<< (ostream & os, const \fBscifir::pOH\fP & x)"
+.SS "ostream& operator<< (ostream & os, const \fBscifir::pOH\fP & x)"
 
 .PP
-Definition at line \fB300\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 300 of file pOH\&.cpp\&.
+.PP
 .nf
 301 {
 302     return os << to_string(x);
 303 }
 .fi
-
 .SS "bool operator<= (const \fBscifir::pOH\fP & x, const \fBscifir::pOH\fP & y)"
 
 .PP
-Definition at line \fB245\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 245 of file pOH\&.cpp\&.
+.PP
 .nf
 246 {
 247     return !(x > y);
 248 }
 .fi
-
 .SS "bool operator== (const \fBscifir::pOH\fP & x, const \fBscifir::pOH\fP & y)"
 
 .PP
-Definition at line \fB204\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 204 of file pOH\&.cpp\&.
+.PP
 .nf
 205 {
 206     if(x\&.get_value() == y\&.get_value())
@@ -204,33 +205,33 @@ Definition at line \fB204\fP of file \fBpOH\&.cpp\fP\&..PP
 213     }
 214 }
 .fi
-
 .SS "bool operator== (const \fBscifir::pOH\fP & x, const string & init_pOH)"
 
 .PP
-Definition at line \fB255\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 255 of file pOH\&.cpp\&.
+.PP
 .nf
 256 {
 257     scifir::pOH y = scifir::pOH(init_pOH);
 258     return (x == y);
 259 }
 .fi
-
 .SS "bool operator== (const string & init_pOH, const \fBscifir::pOH\fP & x)"
 
 .PP
-Definition at line \fB266\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 266 of file pOH\&.cpp\&.
+.PP
 .nf
 267 {
 268     scifir::pOH y = scifir::pOH(init_pOH);
 269     return (x == y);
 270 }
 .fi
-
 .SS "bool operator> (const \fBscifir::pOH\fP & x, const \fBscifir::pOH\fP & y)"
 
 .PP
-Definition at line \fB233\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 233 of file pOH\&.cpp\&.
+.PP
 .nf
 234 {
 235     if(x\&.get_value() > y\&.get_value())
@@ -243,21 +244,21 @@ Definition at line \fB233\fP of file \fBpOH\&.cpp\fP\&..PP
 242     }
 243 }
 .fi
-
 .SS "bool operator>= (const \fBscifir::pOH\fP & x, const \fBscifir::pOH\fP & y)"
 
 .PP
-Definition at line \fB250\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 250 of file pOH\&.cpp\&.
+.PP
 .nf
 251 {
 252     return !(x < y);
 253 }
 .fi
-
-.SS "istream & operator>> (istream & is, \fBscifir::pOH\fP & x)"
+.SS "istream& operator>> (istream & is, \fBscifir::pOH\fP & x)"
 
 .PP
-Definition at line \fB305\fP of file \fBpOH\&.cpp\fP\&..PP
+Definition at line 305 of file pOH\&.cpp\&.
+.PP
 .nf
 306 {
 307     char a[256];
@@ -268,7 +269,6 @@ Definition at line \fB305\fP of file \fBpOH\&.cpp\fP\&..PP
 312     return is;
 313 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

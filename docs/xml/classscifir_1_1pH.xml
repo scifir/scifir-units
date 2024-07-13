@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1pH" kind="class" language="C++" prot="public">
     <compoundname>scifir::pH</compoundname>
     <includes refid="pH_8hpp" local="no">pH.hpp</includes>
-    <sectiondef kind="private-attrib">
+      <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classscifir_1_1pH_1a63db97e87ac75044a4f181b6e32c59e5" prot="private" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::pH::value</definition>
         <argsstring></argsstring>
         <name>value</name>
-        <qualifiedname>scifir::pH::value</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -18,14 +17,13 @@
         </inbodydescription>
         <location file="special_units/pH.hpp" line="92" column="7" bodyfile="special_units/pH.hpp" bodystart="92" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1pH_1a6c57298df0c721837fc60bc01bee6279" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::pH::pH</definition>
         <argsstring>()</argsstring>
         <name>pH</name>
-        <qualifiedname>scifir::pH::pH</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -39,9 +37,8 @@
         <definition>scifir::pH::pH</definition>
         <argsstring>(const pH &amp;x)</argsstring>
         <name>pH</name>
-        <qualifiedname>scifir::pH::pH</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -57,7 +54,6 @@
         <definition>scifir::pH::pH</definition>
         <argsstring>(pH &amp;&amp;x)</argsstring>
         <name>pH</name>
-        <qualifiedname>scifir::pH::pH</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -75,9 +71,8 @@
         <definition>scifir::pH::pH</definition>
         <argsstring>(float new_value)</argsstring>
         <name>pH</name>
-        <qualifiedname>scifir::pH::pH</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <briefdescription>
@@ -93,9 +88,8 @@
         <definition>scifir::pH::pH</definition>
         <argsstring>(const string &amp;init_pH)</argsstring>
         <name>pH</name>
-        <qualifiedname>scifir::pH::pH</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_pH</declname>
         </param>
         <briefdescription>
@@ -111,9 +105,8 @@
         <definition>scifir::pH::pH</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>pH</name>
-        <qualifiedname>scifir::pH::pH</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -129,9 +122,8 @@
         <definition>pH &amp; scifir::pH::operator=</definition>
         <argsstring>(const pH &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pH::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -147,7 +139,6 @@
         <definition>pH &amp; scifir::pH::operator=</definition>
         <argsstring>(pH &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pH::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -165,9 +156,8 @@
         <definition>pH &amp; scifir::pH::operator=</definition>
         <argsstring>(float new_value)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pH::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <briefdescription>
@@ -183,9 +173,8 @@
         <definition>pH &amp; scifir::pH::operator=</definition>
         <argsstring>(const string &amp;init_pH)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pH::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_pH</declname>
         </param>
         <briefdescription>
@@ -201,9 +190,8 @@
         <definition>pH &amp; scifir::pH::operator=</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pH::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -219,7 +207,6 @@
         <definition>scifir::pH::operator float</definition>
         <argsstring>() const</argsstring>
         <name>operator float</name>
-        <qualifiedname>scifir::pH::operator float</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -228,12 +215,11 @@
         </inbodydescription>
         <location file="special_units/pH.hpp" line="35" column="10" bodyfile="special_units/pH.hpp" bodystart="35" bodyend="38"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1pH_1a57bf5e87402d778ed7bc0ada69866650" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &amp;</type>
-        <definition>const float &amp; scifir::pH::get_value</definition>
+      <memberdef kind="function" id="classscifir_1_1pH_1aeb09c6bb743f7e904999ba0fe26884a9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const float &amp;</type>
+        <definition>const float&amp; scifir::pH::get_value</definition>
         <argsstring>() const</argsstring>
         <name>get_value</name>
-        <qualifiedname>scifir::pH::get_value</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -247,9 +233,8 @@
         <definition>pH scifir::pH::operator+</definition>
         <argsstring>(const pH &amp;x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::pH::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -265,9 +250,8 @@
         <definition>pH scifir::pH::operator-</definition>
         <argsstring>(const pH &amp;x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::pH::operator-</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -279,13 +263,12 @@
         <location file="special_units/pH.hpp" line="46" column="4" bodyfile="special_units/pH.cpp" bodystart="97" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pH_1a98cf166bd57411d5b022bf0e73a2c56c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pH::operator+=</definition>
         <argsstring>(const pH &amp;x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::pH::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -297,13 +280,12 @@
         <location file="special_units/pH.hpp" line="47" column="6" bodyfile="special_units/pH.cpp" bodystart="102" bodyend="106"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pH_1a6fbc4903944772b621a85a67a5efc792" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pH::operator-=</definition>
         <argsstring>(const pH &amp;x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::pH::operator-=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pH" kindref="compound">pH</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -317,18 +299,17 @@
       <memberdef kind="function" id="classscifir_1_1pH_1ae3bd82bd4143478c91277d66da967536" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pH_1a63db97e87ac75044a4f181b6e32c59e5" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pH_1a63db97e87ac75044a4f181b6e32c59e5" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1pH" kindref="compound">pH</ref></type>
         <definition>pH scifir::pH::operator+</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::pH::operator+</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -344,18 +325,17 @@
       <memberdef kind="function" id="classscifir_1_1pH_1a4094debb6810b43fb2f4ab873a832e2e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pH_1a63db97e87ac75044a4f181b6e32c59e5" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pH_1a63db97e87ac75044a4f181b6e32c59e5" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1pH" kindref="compound">pH</ref></type>
         <definition>pH scifir::pH::operator-</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::pH::operator-</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -371,18 +351,17 @@
       <memberdef kind="function" id="classscifir_1_1pH_1a904c978aa9e17bcf630ed841746cf959" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pH_1a63db97e87ac75044a4f181b6e32c59e5" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pH_1a63db97e87ac75044a4f181b6e32c59e5" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pH::operator+=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::pH::operator+=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -398,18 +377,17 @@
       <memberdef kind="function" id="classscifir_1_1pH_1aa0238e9ebbc8f6b8b257c4f243cf3d98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pH_1a63db97e87ac75044a4f181b6e32c59e5" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pH_1a63db97e87ac75044a4f181b6e32c59e5" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pH::operator-=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::pH::operator-=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -427,7 +405,6 @@
         <definition>pH &amp; scifir::pH::operator++</definition>
         <argsstring>()</argsstring>
         <name>operator++</name>
-        <qualifiedname>scifir::pH::operator++</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -441,9 +418,8 @@
         <definition>pH scifir::pH::operator++</definition>
         <argsstring>(int)</argsstring>
         <name>operator++</name>
-        <qualifiedname>scifir::pH::operator++</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -458,7 +434,6 @@
         <definition>pH &amp; scifir::pH::operator--</definition>
         <argsstring>()</argsstring>
         <name>operator--</name>
-        <qualifiedname>scifir::pH::operator--</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -472,9 +447,8 @@
         <definition>pH scifir::pH::operator--</definition>
         <argsstring>(int)</argsstring>
         <name>operator--</name>
-        <qualifiedname>scifir::pH::operator--</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -485,11 +459,10 @@
         <location file="special_units/pH.hpp" line="79" column="4" bodyfile="special_units/pH.cpp" bodystart="133" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pH_1a673ff40dd773e8afa4ce92f169cd8c59" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">molarity</ref></type>
+        <type>molarity</type>
         <definition>molarity scifir::pH::get_H</definition>
         <argsstring>() const</argsstring>
         <name>get_H</name>
-        <qualifiedname>scifir::pH::get_H</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -499,11 +472,10 @@
         <location file="special_units/pH.hpp" line="81" column="10" bodyfile="special_units/pH.cpp" bodystart="140" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pH_1abda4e9edb0c5abcdc5008f9bd916b325" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">molarity</ref></type>
+        <type>molarity</type>
         <definition>molarity scifir::pH::get_OH</definition>
         <argsstring>() const</argsstring>
         <name>get_OH</name>
-        <qualifiedname>scifir::pH::get_OH</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -517,7 +489,6 @@
         <definition>pOH scifir::pH::get_pOH</definition>
         <argsstring>() const</argsstring>
         <name>get_pOH</name>
-        <qualifiedname>scifir::pH::get_pOH</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -527,11 +498,10 @@
         <location file="special_units/pH.hpp" line="83" column="5" bodyfile="special_units/pH.cpp" bodystart="150" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pH_1a6ad94fa16c6d465e001326af208ea941" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::pH::is_acidic</definition>
         <argsstring>() const</argsstring>
         <name>is_acidic</name>
-        <qualifiedname>scifir::pH::is_acidic</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -541,11 +511,10 @@
         <location file="special_units/pH.hpp" line="85" column="6" bodyfile="special_units/pH.cpp" bodystart="156" bodyend="159"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pH_1ac0f8a4483cce06cf42098cc89440c3c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::pH::is_basic</definition>
         <argsstring>() const</argsstring>
         <name>is_basic</name>
-        <qualifiedname>scifir::pH::is_basic</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -555,11 +524,10 @@
         <location file="special_units/pH.hpp" line="86" column="6" bodyfile="special_units/pH.cpp" bodystart="161" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pH_1a4735637ac5dfac274b3a8064882a9947" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::pH::is_neutral</definition>
         <argsstring>() const</argsstring>
         <name>is_neutral</name>
-        <qualifiedname>scifir::pH::is_neutral</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -569,13 +537,12 @@
         <location file="special_units/pH.hpp" line="87" column="6" bodyfile="special_units/pH.cpp" bodystart="166" bodyend="169"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pH_1a2258df7b945d443a8faf741604943700" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::pH::display</definition>
         <argsstring>(int number_of_decimals=2) const</argsstring>
         <name>display</name>
-        <qualifiedname>scifir::pH::display</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
@@ -587,14 +554,13 @@
         </inbodydescription>
         <location file="special_units/pH.hpp" line="89" column="8" bodyfile="special_units/pH.cpp" bodystart="171" bodyend="183"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1pH_1a82a04cbd68d19c39b08c9920504ff36d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pH::normalize_value</definition>
         <argsstring>()</argsstring>
         <name>normalize_value</name>
-        <qualifiedname>scifir::pH::normalize_value</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -603,7 +569,7 @@
         </inbodydescription>
         <location file="special_units/pH.hpp" line="94" column="6" bodyfile="special_units/pH.cpp" bodystart="185" bodyend="198"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -614,7 +580,7 @@
       <member refid="classscifir_1_1pH_1a673ff40dd773e8afa4ce92f169cd8c59" prot="public" virt="non-virtual"><scope>scifir::pH</scope><name>get_H</name></member>
       <member refid="classscifir_1_1pH_1abda4e9edb0c5abcdc5008f9bd916b325" prot="public" virt="non-virtual"><scope>scifir::pH</scope><name>get_OH</name></member>
       <member refid="classscifir_1_1pH_1a45e403ca031215503b36f36a305f75c4" prot="public" virt="non-virtual"><scope>scifir::pH</scope><name>get_pOH</name></member>
-      <member refid="classscifir_1_1pH_1a57bf5e87402d778ed7bc0ada69866650" prot="public" virt="non-virtual"><scope>scifir::pH</scope><name>get_value</name></member>
+      <member refid="classscifir_1_1pH_1aeb09c6bb743f7e904999ba0fe26884a9" prot="public" virt="non-virtual"><scope>scifir::pH</scope><name>get_value</name></member>
       <member refid="classscifir_1_1pH_1a6ad94fa16c6d465e001326af208ea941" prot="public" virt="non-virtual"><scope>scifir::pH</scope><name>is_acidic</name></member>
       <member refid="classscifir_1_1pH_1ac0f8a4483cce06cf42098cc89440c3c3" prot="public" virt="non-virtual"><scope>scifir::pH</scope><name>is_basic</name></member>
       <member refid="classscifir_1_1pH_1a4735637ac5dfac274b3a8064882a9947" prot="public" virt="non-virtual"><scope>scifir::pH</scope><name>is_neutral</name></member>

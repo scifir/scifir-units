@@ -1,86 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="size__nd_8cpp" kind="file" language="C++">
     <compoundname>size_nd.cpp</compoundname>
     <includes refid="size__nd_8hpp" local="yes">./size_nd.hpp</includes>
     <incdepgraph>
-      <node id="24">
-        <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp"/>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
+      <node id="30">
+        <label>list</label>
       </node>
-      <node id="3">
-        <label>../predefined_units/space_units.hpp</label>
-        <link refid="space__units_8hpp"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
+      <node id="11">
+        <label>boost/algorithm/string.hpp</label>
       </node>
-      <node id="32">
-        <label>../special_units/percentage.hpp</label>
-        <link refid="percentage_8hpp"/>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
+      <node id="29">
+        <label>functional</label>
       </node>
-      <node id="1">
-        <label>special_units/size_nd.cpp</label>
-        <link refid="size__nd_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>./size_nd.hpp</label>
-        <link refid="size__nd_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp"/>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
+      <node id="26">
+        <label>boost/math/constants/constants.hpp</label>
       </node>
       <node id="5">
         <label>../units/dimension.hpp</label>
@@ -110,17 +44,8 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
+      <node id="7">
+        <label>cstdint</label>
       </node>
       <node id="4">
         <label>../units/scalar_unit.hpp</label>
@@ -146,25 +71,70 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="31">
-        <label>../units/unit_basic.hpp</label>
-        <link refid="unit__basic_8hpp"/>
-        <childnode refid="6" relation="include">
+      <node id="15">
+        <label>cmath</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>map</label>
+      </node>
+      <node id="24">
+        <label>../meca_number/angle.hpp</label>
+        <link refid="angle_8hpp"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="23">
-        <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp"/>
+      <node id="2">
+        <label>./size_nd.hpp</label>
+        <link refid="size__nd_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>../special_units/percentage.hpp</label>
+        <link refid="percentage_8hpp"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>../util/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>../units/vector_unit_nd.hpp</label>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
@@ -175,9 +145,19 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="22">
@@ -212,9 +192,52 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="28">
-        <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp"/>
+      <node id="6">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>../topology/direction.hpp</label>
+        <link refid="direction_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>string_view</label>
+      </node>
+      <node id="1">
+        <label>special_units/size_nd.cpp</label>
+        <link refid="size__nd_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>vector</label>
+      </node>
+      <node id="19">
+        <label>../util/is_number.hpp</label>
+        <link refid="is__number_8hpp"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>sstream</label>
+      </node>
+      <node id="23">
+        <label>../units/vector_unit_2d.hpp</label>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
@@ -225,86 +248,63 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>../topology/constants.hpp</label>
+        <link refid="constants_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>../units/unit_basic.hpp</label>
+        <link refid="unit__basic_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp"/>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="34">
-        <label>../util/types.hpp</label>
-        <link refid="types_8hpp"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>algorithm</label>
-      </node>
-      <node id="11">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="26">
-        <label>boost/math/constants/constants.hpp</label>
-      </node>
-      <node id="33">
-        <label>chrono</label>
-      </node>
-      <node id="15">
-        <label>cmath</label>
-      </node>
-      <node id="14">
-        <label>cstddef</label>
-      </node>
-      <node id="7">
-        <label>cstdint</label>
-      </node>
-      <node id="13">
-        <label>cstring</label>
-      </node>
-      <node id="29">
-        <label>functional</label>
       </node>
       <node id="8">
         <label>iostream</label>
       </node>
-      <node id="30">
-        <label>list</label>
+      <node id="14">
+        <label>cstddef</label>
       </node>
-      <node id="9">
-        <label>map</label>
+      <node id="33">
+        <label>chrono</label>
       </node>
-      <node id="16">
-        <label>set</label>
-      </node>
-      <node id="17">
-        <label>sstream</label>
-      </node>
-      <node id="10">
-        <label>string</label>
-      </node>
-      <node id="21">
-        <label>string_view</label>
+      <node id="3">
+        <label>../predefined_units/space_units.hpp</label>
+        <link refid="space__units_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
       </node>
       <node id="20">
         <label>type_traits</label>
       </node>
-      <node id="18">
-        <label>vector</label>
+      <node id="16">
+        <label>set</label>
+      </node>
+      <node id="12">
+        <label>algorithm</label>
+      </node>
+      <node id="13">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
@@ -319,9 +319,9 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="7" refid="namespacescifir_1a8a5b284ec2fbab5a2e1b41a8c4493a88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_nd&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="7" refid="namespacescifir_1a8a5b284ec2fbab5a2e1b41a8c4493a88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a8a5b284ec2fbab5a2e1b41a8c4493a88" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__nd_3_01float_01_4" kindref="compound">size_nd&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x.display();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x.<ref refid="classscifir_1_1size__nd_3_01float_01_4_1ac7862559b42c5accbaa3c7d17ae3e9e7" kindref="member">display</ref>();</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="11"><highlight class="normal">}</highlight></codeline>
     </programlisting>

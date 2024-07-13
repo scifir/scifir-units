@@ -1,20 +1,5 @@
 var searchData=
 [
-  ['u_0',['u',['../classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce',1,'scifir::prefix']]],
-  ['umbriel_1',['UMBRIEL',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36a7a047d3a72de0f299816bafc5b03ccb6',1,'scifir']]],
-  ['unit_5fabbreviation_2ecpp_2',['unit_abbreviation.cpp',['../unit__abbreviation_8cpp.html',1,'']]],
-  ['unit_5fabbreviation_2ehpp_3',['unit_abbreviation.hpp',['../unit__abbreviation_8hpp.html',1,'']]],
-  ['unit_5fbasic_2ecpp_4',['unit_basic.cpp',['../unit__basic_8cpp.html',1,'']]],
-  ['unit_5fbasic_2ehpp_5',['unit_basic.hpp',['../unit__basic_8hpp.html',1,'']]],
-  ['unit_5fto_6',['unit_to',['../classscifir_1_1conversion.html#a2fe2660535d03add9457e74ed66617d7',1,'scifir::conversion']]],
-  ['units_7',['units',['../index.html#autotoc_md36',1,'Scalar units'],['../md_HISTORY.html#autotoc_md3',1,'UNITS']]],
-  ['units_20in_202d_8',['Vector units in 2D',['../index.html#autotoc_md37',1,'']]],
-  ['units_20in_203d_9',['Vector units in 3D',['../index.html#autotoc_md38',1,'']]],
-  ['units_20in_20nd_10',['Vector units in ND',['../index.html#autotoc_md39',1,'']]],
-  ['units_20library_11',['scifir-units library',['../index.html',1,'']]],
-  ['units_2ehpp_12',['units.hpp',['../units_8hpp.html',1,'']]],
-  ['universe_13',['universe',['../classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6ae48fabf1f9782d6e0a0c04afb7df4040',1,'scifir::aid::UNIVERSE'],['../classscifir_1_1aid.html#a5b87d60fd368fcff5054e9d2107074b9',1,'scifir::aid::universe']]],
-  ['uranus_14',['URANUS',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36a7d10d97178e7bbd241a6561c570deb9d',1,'scifir']]],
-  ['use_20cases_15',['Use cases',['../index.html#autotoc_md24',1,'']]],
-  ['using_20the_20library_16',['Using the library',['../index.html#autotoc_md19',1,'']]]
+  ['x_1432',['x',['../classscifir_1_1coordinates__1d_3_01float_01_4.html#ae3450357171507a8d946f885789144a9',1,'scifir::coordinates_1d&lt; float &gt;::x()'],['../classscifir_1_1point__3d_3_01float_01_4.html#a41fe0b5961aa83b239cdf8a081cb724d',1,'scifir::point_3d&lt; float &gt;::x()'],['../classscifir_1_1point__3d.html#ab9c20bdb77ad24a6c81b4cba153194e9',1,'scifir::point_3d::x()'],['../classscifir_1_1point__2d_3_01float_01_4.html#ad962dac24836d45d0d25b1a21c0b291d',1,'scifir::point_2d&lt; float &gt;::x()'],['../classscifir_1_1point__2d.html#ae6a8265d8de1321967e525717e14d2f6',1,'scifir::point_2d::x()'],['../classscifir_1_1point__1d_3_01float_01_4.html#a970635fef47ed2e3e8bd5fd2a4f982c8',1,'scifir::point_1d&lt; float &gt;::x()'],['../classscifir_1_1point__1d.html#ada6845ca9e3a02e9f4a0d79d67e51f4a',1,'scifir::point_1d::x()'],['../classscifir_1_1coordinates__3dr_3_01float_01_4.html#a9752a2fd6cfedbd34714c1939afff84f',1,'scifir::coordinates_3dr&lt; float &gt;::x()'],['../classscifir_1_1coordinates__3dr.html#a72268769d4e4503baebd3c6fbc0361a9',1,'scifir::coordinates_3dr::x()'],['../classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf',1,'scifir::coordinates_3d&lt; float &gt;::x()'],['../classscifir_1_1coordinates__3d.html#a241a2364bcc034c3caa09fff95584a2b',1,'scifir::coordinates_3d::x()'],['../classscifir_1_1coordinates__2dr_3_01float_01_4.html#aa8ac9e898adcbbae90fddb93e7e8e583',1,'scifir::coordinates_2dr&lt; float &gt;::x()'],['../classscifir_1_1coordinates__2dr.html#a2435ed63f037e389eecd62482e2b8f40',1,'scifir::coordinates_2dr::x()'],['../classscifir_1_1coordinates__2d_3_01float_01_4.html#a52d2f6612725ef3077698721f465b34e',1,'scifir::coordinates_2d&lt; float &gt;::x()'],['../classscifir_1_1coordinates__2d.html#a6007f671b4a1ce956fece7f7317b458a',1,'scifir::coordinates_2d::x()'],['../classscifir_1_1coordinates__1d.html#a4d69d622e18fc50173184e26a22c1274',1,'scifir::coordinates_1d::x()']]],
+  ['x_5fprojection_1433',['x_projection',['../classscifir_1_1vector__unit__2d.html#acdf6a0b75cda1155bccf981da599f20c',1,'scifir::vector_unit_2d::x_projection()'],['../classscifir_1_1vector__unit__3d.html#a8104afd03dc49832c7a7152cc481e18b',1,'scifir::vector_unit_3d::x_projection()'],['../classscifir_1_1vector__unit__nd.html#a52b14ca9cb6f7ee2b8e8b9a8609f28eb',1,'scifir::vector_unit_nd::x_projection()']]]
 ];

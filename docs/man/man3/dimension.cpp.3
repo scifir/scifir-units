@@ -1,4 +1,4 @@
-.TH "units/dimension.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "units/dimension.cpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,7 +29,7 @@ units/dimension.cpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -37,95 +37,121 @@ units/dimension.cpp
 
 .in +1c
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBdimension\fP &x)"
+.RI "string \fBscifir::to_string\fP (const dimension &x)"
+.br
+.RI "Creates the string representation of a dimension\&. "
+.ti -1c
+.RI "string \fBscifir::to_string\fP (const vector< dimension > &x_dimensions, bool with_brackets)"
+.br
+.RI "Creates the string representation of a vector of dimensions\&. Used to display the dimensions of \fBscalar_unit\fP and all vector_unit classes\&. The dimensions can be displayed optionally between brackets like '[]' too\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::create_dimensions\fP (string init_dimensions)"
+.br
+.RI "Creates the dimensions from an initialization string of dimensions\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::create_derived_dimensions\fP (const string &init_dimensions)"
+.br
+.RI "Creates the derived dimensions from an initialization string of dimensions\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::create_derived_dimensions\fP (const vector< dimension > &x)"
+.br
+.RI "Creates all the derived dimensions from a vector of dimensions\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::create_derived_dimensions\fP (const vector< dimension > &x, long double &value)"
+.br
+.RI "Creates all the derived dimensions from a vector of dimensions, updating also the associated value related to those dimensions based on the prefix math and the conversion factor of the dimension, if that conversion factor is different than one\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::multiply_dimensions\fP (const vector< dimension > &x, const vector< dimension > &y)"
+.br
+.RI "Multiplies two vectors of dimensions\&. The result is normalized after, which means that equal dimensions at the numerator and at the denominator are cancelled\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::multiply_dimensions\fP (vector< dimension > x, const vector< dimension > &y, long double &value)"
+.br
+.RI "Multiplies two vectors of dimensions\&. The result is normalized after, which means that equal dimensions at the numerator and at the denominator are cancelled\&. It also updates the value associated with those two vectors of dimensions with the prefix m ath and the conversion factor of those dimensions\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::divide_dimensions\fP (vector< dimension > x, const vector< dimension > &y, long double &value)"
+.br
+.RI "Divides the first vector of dimensions with the other\&. The result is normalized after, which means that equal dimensions at the numerator and at the denominator are cancelled\&. It also updates the value associated with those two vectors of dimensions with the prefix m ath and the conversion factor of those dimensions\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::square_dimensions\fP (vector< dimension > x, long double &value, int index)"
+.br
+.RI "Squares a vector of dimensions by an index\&. The value is updated too related to the prefix math and the conversion factor of this operation\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::power_dimensions\fP (const vector< dimension > &x, int exponent)"
+.br
+.RI "Powers the dimensions by an exponent\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::normalize_dimensions\fP (const vector< dimension > &x)"
+.br
+.RI "Normalizes the dimensions, which means that repited dimensions at the numerator and at the denominator are cancelled\&. "
+.ti -1c
+.RI "vector< dimension > \fBscifir::normalize_dimensions\fP (const vector< dimension > &x, long double &value)"
+.br
+.RI "Normalizes the dimensions, which means that repited dimensions at the numerator and at the denominator are cancelled\&. The value is updated if there are dimensions cancelled\&. "
+.ti -1c
+.RI "bool \fBscifir::common_dimension\fP (const dimension &x, const dimension &y)"
+.br
+.RI "Checks if there's an equal basic dimension between the basic dimensions of those two dimensions\&. "
+.ti -1c
+.RI "bool \fBscifir::equal_dimensions\fP (const string &init_dimensions_x, const string &init_dimensions_y)"
+.br
+.RI "Checks if two initialization strings of dimensions initialize the same basic dimensions\&. "
+.ti -1c
+.RI "bool \fBscifir::equal_dimensions\fP (const vector< dimension > &x, const vector< dimension > &y)"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP vector< \fBdimension\fP > &\fBx_dimensions\fP, \fBbool\fP \fBwith_brackets\fP)"
+.RI "bool \fBscifir::equal_dimensions_and_prefixes\fP (const vector< dimension > &x, const vector< dimension > &y)"
 .br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::create_dimensions\fP (\fBstring\fP \fBinit_dimensions\fP)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::create_derived_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::create_derived_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::create_derived_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBlong\fP \fBdouble\fP &value)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::multiply_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBconst\fP vector< \fBdimension\fP > &y)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::multiply_dimensions\fP (vector< \fBdimension\fP > x, \fBconst\fP vector< \fBdimension\fP > &y, \fBlong\fP \fBdouble\fP &value)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::divide_dimensions\fP (vector< \fBdimension\fP > x, \fBconst\fP vector< \fBdimension\fP > &y, \fBlong\fP \fBdouble\fP &value)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::square_dimensions\fP (vector< \fBdimension\fP > x, \fBlong\fP \fBdouble\fP &value, \fBint\fP index)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::power_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBint\fP \fBexponent\fP)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::normalize_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x)"
-.br
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBscifir::normalize_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBlong\fP \fBdouble\fP &value)"
-.br
-.ti -1c
-.RI "\fBbool\fP \fBscifir::common_dimension\fP (\fBconst\fP \fBdimension\fP &x, \fBconst\fP \fBdimension\fP &y)"
-.br
-.ti -1c
-.RI "\fBbool\fP \fBscifir::equal_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions_x\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions_y\fP)"
-.br
-.ti -1c
-.RI "\fBbool\fP \fBscifir::equal_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBconst\fP vector< \fBdimension\fP > &y)"
-.br
-.ti -1c
-.RI "\fBbool\fP \fBscifir::equal_dimensions_and_prefixes\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBconst\fP vector< \fBdimension\fP > &y)"
-.br
+.RI "Checks if the derived dimensions of two vectors of dimensions are equal, and if they have also the same prefixes\&. "
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBscifir::dimension\fP &x, const \fBscifir::dimension\fP &y)"
 .br
+.RI "Checks if the dimension type and the position of two dimensions are the same\&. The prefix can possibly be different\&. "
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBscifir::dimension\fP &x, const \fBscifir::dimension\fP &y)"
 .br
+.RI "Checks if the dimension type and the position of two dimensions are any of them different\&. The prefix is not compared\&. "
 .ti -1c
 .RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::dimension\fP &x)"
 .br
+.RI "Adds the string representation of a dimension to an output stream\&. "
 .in -1c
 .SH "Function Documentation"
 .PP 
 .SS "bool operator!= (const \fBscifir::dimension\fP & x, const \fBscifir::dimension\fP & y)"
 
 .PP
-Definition at line \fB1741\fP of file \fBdimension\&.cpp\fP\&..PP
+Checks if the dimension type and the position of two dimensions are any of them different\&. The prefix is not compared\&. 
+.PP
+Definition at line 1741 of file dimension\&.cpp\&.
+.PP
 .nf
 1742 {
 1743     return !(x == y);
 1744 }
 .fi
-
 .SS "ostream & operator<< (ostream & os, const \fBscifir::dimension\fP & x)"
 
 .PP
-Definition at line \fB1746\fP of file \fBdimension\&.cpp\fP\&..PP
+Adds the string representation of a dimension to an output stream\&. 
+.PP
+Definition at line 1746 of file dimension\&.cpp\&.
+.PP
 .nf
 1747 {
 1748     return os << x\&.prefix\&.get_symbol() << x\&.get_symbol();
 1749 }
 .fi
-
 .SS "bool operator== (const \fBscifir::dimension\fP & x, const \fBscifir::dimension\fP & y)"
 
 .PP
-Definition at line \fB1729\fP of file \fBdimension\&.cpp\fP\&..PP
+Checks if the dimension type and the position of two dimensions are the same\&. The prefix can possibly be different\&. 
+.PP
+Definition at line 1729 of file dimension\&.cpp\&.
+.PP
 .nf
 1730 {
-1731     if (x\&.dimension_type == y\&.dimension_type and x\&.dimension_sign == y\&.dimension_sign)
+1731     if (x\&.dimension_type == y\&.dimension_type and x\&.dimension_position == y\&.dimension_position)
 1732     {
 1733         return true;
 1734     }
@@ -135,7 +161,6 @@ Definition at line \fB1729\fP of file \fBdimension\&.cpp\fP\&..PP
 1738     }
 1739 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

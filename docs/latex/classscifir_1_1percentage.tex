@@ -1,133 +1,185 @@
-\doxysection{scifir\+::percentage Class Reference}
-\hypertarget{classscifir_1_1percentage}{}\label{classscifir_1_1percentage}\index{scifir::percentage@{scifir::percentage}}
+\hypertarget{classscifir_1_1percentage}{}\doxysection{scifir\+::percentage Class Reference}
+\label{classscifir_1_1percentage}\index{scifir::percentage@{scifir::percentage}}
 
 
 {\ttfamily \#include $<$percentage.\+hpp$>$}
 
-\doxysubsubsection*{Public Member Functions}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{type}} \+: int8\+\_\+t \{ \newline
+\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{PERCENTAGE}}
+, \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa74d12b7be344b60c6fa4ef9d8d0c46f0}{PARTS\+\_\+\+PER\+\_\+\+MILLION}}
+, \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa9a2661f77145e151d8bca9525440ab1c}{PARTS\+\_\+\+PER\+\_\+\+BILLION}}
+, \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aae9cd4101bc5206cc681f2ea9ca600794}{PARTS\+\_\+\+PER\+\_\+\+TRILLION}}
+, \newline
+\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aac0f7bf98f267d73fa780eba116b2dc35}{PARTS\+\_\+\+PER\+\_\+\+QUATRILLION}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}} ()
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_a2c01f02d4b74d48fba8bd27bd4976ce5}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
+\mbox{\hyperlink{classscifir_1_1percentage_a2c01f02d4b74d48fba8bd27bd4976ce5}{percentage}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
 \item 
 \mbox{\hyperlink{classscifir_1_1percentage_a1710685f83c6dfb22cf0027590d47090}{percentage}} (\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&\&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_aca3d6e3ba0960825b161cc8dddf91db9}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}})
+\mbox{\hyperlink{classscifir_1_1percentage_a913faa07199ecaf04fc3f6087e59c1c5}{percentage}} (float new\+\_\+value, \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{percentage\+::type}} init\+\_\+type=\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage\+::\+PERCENTAGE}})
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_af1ca132169724c44756948e65c4eb7fa}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}})
+\mbox{\hyperlink{classscifir_1_1percentage_ac5d915bf796b129e29b1220ad5f9bf66}{percentage}} (double new\+\_\+value, \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{percentage\+::type}} init\+\_\+type=\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage\+::\+PERCENTAGE}})
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_aa1e8fca665495f8383a647d333954275}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}})
+\mbox{\hyperlink{classscifir_1_1percentage_a80be1d27d852868017c2285639782c59}{percentage}} (long double new\+\_\+value, \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{percentage\+::type}} init\+\_\+type=\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage\+::\+PERCENTAGE}})
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_a8f83b25ea8c690d92bc8e25deef77bba}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}})
+\mbox{\hyperlink{classscifir_1_1percentage_a9bacf8431f745cca287f6f9cc99b1460}{percentage}} (int new\+\_\+value, \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{percentage\+::type}} init\+\_\+type=\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage\+::\+PERCENTAGE}})
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_a0e557b96be6e32d2d7adf39a03cf57cf}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+dimensions}})
+\mbox{\hyperlink{classscifir_1_1percentage_a0e557b96be6e32d2d7adf39a03cf57cf}{percentage}} (float new\+\_\+value, const string \&init\+\_\+dimensions)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_a37056f1da6c4ccafc426aa3b1676c6ea}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+dimensions}})
+\mbox{\hyperlink{classscifir_1_1percentage_a37056f1da6c4ccafc426aa3b1676c6ea}{percentage}} (double new\+\_\+value, const string \&init\+\_\+dimensions)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_a36876d08e5d4ff4b01bacaa2ece7c632}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+dimensions}})
+\mbox{\hyperlink{classscifir_1_1percentage_a36876d08e5d4ff4b01bacaa2ece7c632}{percentage}} (long double new\+\_\+value, const string \&init\+\_\+dimensions)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_ae637c964c5674c6cc33c5e26e8bfa452}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+dimensions}})
+\mbox{\hyperlink{classscifir_1_1percentage_ae637c964c5674c6cc33c5e26e8bfa452}{percentage}} (int new\+\_\+value, const string \&init\+\_\+dimensions)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_a3c5f810ae0131c660db073954a6722cd}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+percentage}})
+\mbox{\hyperlink{classscifir_1_1percentage_a3c5f810ae0131c660db073954a6722cd}{percentage}} (const string \&init\+\_\+percentage)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_a2a28cc4a3b5a788b37133fd25d5ee7da}{percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x)
+\mbox{\hyperlink{classscifir_1_1percentage_a2a28cc4a3b5a788b37133fd25d5ee7da}{percentage}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
 \item 
 \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_a5d784189257cbd105ec47dfaeb7c06c2}{operator=}} (\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&\&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_af0535ce3870fb035058cfdccd1d6816c}{operator=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}})
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_af0535ce3870fb035058cfdccd1d6816c}{operator=}} (float new\+\_\+value)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_a67043cb05dd2934f15eaa090cee61c21}{operator=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}})
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_a67043cb05dd2934f15eaa090cee61c21}{operator=}} (double new\+\_\+value)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_abec5befaa64c16f466e9b542421fbef7}{operator=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}})
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_abec5befaa64c16f466e9b542421fbef7}{operator=}} (long double new\+\_\+value)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_a456f383883f9b9db1270009f66e5dc9a}{operator=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+value}})
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_a456f383883f9b9db1270009f66e5dc9a}{operator=}} (int new\+\_\+value)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_acad958cf807bfe6eda3868f6842f089d}{operator=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+percentage}})
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_acad958cf807bfe6eda3868f6842f089d}{operator=}} (const string \&init\+\_\+percentage)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_af429a976f5083bb40726479f4b8dff2d}{operator=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x)
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_af429a976f5083bb40726479f4b8dff2d}{operator=}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage_a64ba3202f386c17dde5605465857ed75}{operator float}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1percentage_a64ba3202f386c17dde5605465857ed75}{operator float}} () const
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \& \mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\+\_\+value}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+const float \& \mbox{\hyperlink{classscifir_1_1percentage_abfbf61303c0b91f5b1536a5ac2648408}{get\+\_\+value}} () const
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a997703d062db4bd8372c8f42b38ab0db}{operator+}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a997703d062db4bd8372c8f42b38ab0db}{operator+}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x) const
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a0063f46fae523dde05a08ff773aa0759}{operator-\/}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a0063f46fae523dde05a08ff773aa0759}{operator-\/}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x) const
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_ae1299386921e23b131a480c60313075c}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_ae1299386921e23b131a480c60313075c}{operator$\ast$}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x) const
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a2e068414854cad2217c5629c1136ebe2}{operator/}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a2e068414854cad2217c5629c1136ebe2}{operator/}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x) const
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_a415833910907612760930697acb7cabf}{operator+=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
+void \mbox{\hyperlink{classscifir_1_1percentage_a415833910907612760930697acb7cabf}{operator+=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_aed6d83ca9b41e280179470adbf729842}{operator-\/=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
+void \mbox{\hyperlink{classscifir_1_1percentage_aed6d83ca9b41e280179470adbf729842}{operator-\/=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_a154bffef5ed6e8cb63bcb39c9be4bcfe}{operator\texorpdfstring{$\ast$}{*}=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
+void \mbox{\hyperlink{classscifir_1_1percentage_a154bffef5ed6e8cb63bcb39c9be4bcfe}{operator$\ast$=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_a6c10cbe35b0236c4b549ac5bc4585212}{operator/=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
+void \mbox{\hyperlink{classscifir_1_1percentage_a6c10cbe35b0236c4b549ac5bc4585212}{operator/=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_ae618bce66176de9d3fe1e957a0caeaa9}{operator=}} (T x)
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\void \mbox{\hyperlink{classscifir_1_1percentage_ae618bce66176de9d3fe1e957a0caeaa9}{operator=}} (T x)
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a8226163901e8cc0938e65275aa1bd866}{operator+}} (T x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a8226163901e8cc0938e65275aa1bd866}{operator+}} (T x) const
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_aa2c7b90ae7a2c8e13455d58b629c9437}{operator-\/}} (T x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_aa2c7b90ae7a2c8e13455d58b629c9437}{operator-\/}} (T x) const
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{classscifir_1_1percentage_a44bc5cb70594fa5c455ba2a1d95f8ff6}{operator\texorpdfstring{$\ast$}{*}}} (T x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\float \mbox{\hyperlink{classscifir_1_1percentage_a44bc5cb70594fa5c455ba2a1d95f8ff6}{operator$\ast$}} (T x) const
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{classscifir_1_1percentage_acf02cbac75ad3b05102da26e4658b951}{operator/}} (T x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\float \mbox{\hyperlink{classscifir_1_1percentage_acf02cbac75ad3b05102da26e4658b951}{operator/}} (T x) const
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_a32ec16c589336fda397e779f421d863e}{operator+=}} (T x)
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\void \mbox{\hyperlink{classscifir_1_1percentage_a32ec16c589336fda397e779f421d863e}{operator+=}} (T x)
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_a5899f233d6c7bb9d364bec5bab09bdb5}{operator-\/=}} (T x)
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\void \mbox{\hyperlink{classscifir_1_1percentage_a5899f233d6c7bb9d364bec5bab09bdb5}{operator-\/=}} (T x)
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_a050f53ae43b117fec94385ddcfcaafac}{operator\texorpdfstring{$\ast$}{*}=}} (T x)
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\void \mbox{\hyperlink{classscifir_1_1percentage_a050f53ae43b117fec94385ddcfcaafac}{operator$\ast$=}} (T x)
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_a4f2549463e30f02b2ffc70a624ec7cfa}{operator/=}} (T x)
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\void \mbox{\hyperlink{classscifir_1_1percentage_a4f2549463e30f02b2ffc70a624ec7cfa}{operator/=}} (T x)
 \item 
 \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_addccf7ec453b14abc08f41c0c749b2c4}{operator++}} ()
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a650475402efd37dfeaaafd4339eae577}{operator++}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}})
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a650475402efd37dfeaaafd4339eae577}{operator++}} (int)
 \item 
 \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& \mbox{\hyperlink{classscifir_1_1percentage_aecbfdd6b63d0dd993056347042063f85}{operator-\/-\/}} ()
 \item 
-\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a994b72fe7e2e4f8d620c1046dd55f693}{operator-\/-\/}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}})
+\mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \mbox{\hyperlink{classscifir_1_1percentage_a994b72fe7e2e4f8d620c1046dd55f693}{operator-\/-\/}} (int)
 \item 
-\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{classscifir_1_1percentage_ad02e3d967e0188ff8012f37c9403e1ca}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{classscifir_1_1percentage_ad02e3d967e0188ff8012f37c9403e1ca}{operator$\ast$}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x) const
 \item 
-\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{classscifir_1_1percentage_aa3489f063b146327995e69721d8b9d6b}{operator/}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{classscifir_1_1percentage_aa3489f063b146327995e69721d8b9d6b}{operator/}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x) const
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}{get\+\_\+factor}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+float \mbox{\hyperlink{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}{get\+\_\+factor}} () const
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{classscifir_1_1percentage_a295c00367e72dc3e70800da792086373}{get\+\_\+ppm}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+float \mbox{\hyperlink{classscifir_1_1percentage_a295c00367e72dc3e70800da792086373}{get\+\_\+ppm}} () const
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{classscifir_1_1percentage_adbea0c300e66fdf2d82721583de0f7a1}{display\+\_\+percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\+\_\+of\+\_\+decimals}}=2) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+string \mbox{\hyperlink{classscifir_1_1percentage_adbea0c300e66fdf2d82721583de0f7a1}{display\+\_\+percentage}} (int number\+\_\+of\+\_\+decimals=2) const
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{classscifir_1_1percentage_a28516c470ce03a0c3a4c7c384480fc85}{display\+\_\+ppm}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+string \mbox{\hyperlink{classscifir_1_1percentage_a28516c470ce03a0c3a4c7c384480fc85}{display\+\_\+ppm}} () const
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Private Member Functions}
+\doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}{initialize\+\_\+from\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+percentage}})
+void \mbox{\hyperlink{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}{initialize\+\_\+from\+\_\+string}} (const string \&init\+\_\+percentage)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}
+float \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 17 of file percentage.\+hpp.
 
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}\label{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}} 
+\index{scifir::percentage@{scifir::percentage}!type@{type}}
+\index{type@{type}!scifir::percentage@{scifir::percentage}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{scifir\+::percentage\+::type}} \+: int8\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PERCENTAGE@{PERCENTAGE}!scifir::percentage@{scifir::percentage}}\index{scifir::percentage@{scifir::percentage}!PERCENTAGE@{PERCENTAGE}}}\mbox{\Hypertarget{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}\label{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}} 
+PERCENTAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PARTS\_PER\_MILLION@{PARTS\_PER\_MILLION}!scifir::percentage@{scifir::percentage}}\index{scifir::percentage@{scifir::percentage}!PARTS\_PER\_MILLION@{PARTS\_PER\_MILLION}}}\mbox{\Hypertarget{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa74d12b7be344b60c6fa4ef9d8d0c46f0}\label{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa74d12b7be344b60c6fa4ef9d8d0c46f0}} 
+PARTS\+\_\+\+PER\+\_\+\+MILLION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PARTS\_PER\_BILLION@{PARTS\_PER\_BILLION}!scifir::percentage@{scifir::percentage}}\index{scifir::percentage@{scifir::percentage}!PARTS\_PER\_BILLION@{PARTS\_PER\_BILLION}}}\mbox{\Hypertarget{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa9a2661f77145e151d8bca9525440ab1c}\label{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa9a2661f77145e151d8bca9525440ab1c}} 
+PARTS\+\_\+\+PER\+\_\+\+BILLION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PARTS\_PER\_TRILLION@{PARTS\_PER\_TRILLION}!scifir::percentage@{scifir::percentage}}\index{scifir::percentage@{scifir::percentage}!PARTS\_PER\_TRILLION@{PARTS\_PER\_TRILLION}}}\mbox{\Hypertarget{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aae9cd4101bc5206cc681f2ea9ca600794}\label{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aae9cd4101bc5206cc681f2ea9ca600794}} 
+PARTS\+\_\+\+PER\+\_\+\+TRILLION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PARTS\_PER\_QUATRILLION@{PARTS\_PER\_QUATRILLION}!scifir::percentage@{scifir::percentage}}\index{scifir::percentage@{scifir::percentage}!PARTS\_PER\_QUATRILLION@{PARTS\_PER\_QUATRILLION}}}\mbox{\Hypertarget{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aac0f7bf98f267d73fa780eba116b2dc35}\label{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aac0f7bf98f267d73fa780eba116b2dc35}} 
+PARTS\+\_\+\+PER\+\_\+\+QUATRILLION&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 20 of file percentage.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 : int8\_t \{\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{PERCENTAGE}},\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa74d12b7be344b60c6fa4ef9d8d0c46f0}{PARTS\_PER\_MILLION}},\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa9a2661f77145e151d8bca9525440ab1c}{PARTS\_PER\_BILLION}},\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aae9cd4101bc5206cc681f2ea9ca600794}{PARTS\_PER\_TRILLION}},\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aac0f7bf98f267d73fa780eba116b2dc35}{PARTS\_PER\_QUATRILLION}}\};}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}\label{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}\label{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/13]}}
@@ -135,31 +187,31 @@ Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00017}{17}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 16 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(0) }
-\DoxyCodeLine{00017\ \ \ \ \ \{\}}
+\DoxyCodeLine{16                            : \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(0) }
+\DoxyCodeLine{17     \{\}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a2c01f02d4b74d48fba8bd27bd4976ce5}\label{classscifir_1_1percentage_a2c01f02d4b74d48fba8bd27bd4976ce5} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a2c01f02d4b74d48fba8bd27bd4976ce5}\label{classscifir_1_1percentage_a2c01f02d4b74d48fba8bd27bd4976ce5}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 19 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(x.get\_value()) }
-\DoxyCodeLine{00020\ \ \ \ \ \{\}}
+\DoxyCodeLine{19                                               : \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(x.get\_value()) }
+\DoxyCodeLine{20     \{\}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a1710685f83c6dfb22cf0027590d47090}\label{classscifir_1_1percentage_a1710685f83c6dfb22cf0027590d47090} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a1710685f83c6dfb22cf0027590d47090}\label{classscifir_1_1percentage_a1710685f83c6dfb22cf0027590d47090}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/13]}}
@@ -167,585 +219,637 @@ Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00019}{19}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 22 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(std::move(x.get\_value())) }
-\DoxyCodeLine{00023\ \ \ \ \ \{\}}
+\DoxyCodeLine{22                                          : \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(std::move(x.get\_value())) }
+\DoxyCodeLine{23     \{\}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_aca3d6e3ba0960825b161cc8dddf91db9}\label{classscifir_1_1percentage_aca3d6e3ba0960825b161cc8dddf91db9} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a913faa07199ecaf04fc3f6087e59c1c5}\label{classscifir_1_1percentage_a913faa07199ecaf04fc3f6087e59c1c5}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [4/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}}]{new\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+value,  }\item[{\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{percentage\+::type}}}]{init\+\_\+type = {\ttfamily \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage\+::\+PERCENTAGE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 25 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(new\_value) }
-\DoxyCodeLine{00026\ \ \ \ \ \{\}}
+\DoxyCodeLine{25                                                                    : \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}() }
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \textcolor{keywordflow}{if} (init\_type == \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage::PERCENTAGE}})}
+\DoxyCodeLine{28         \{}
+\DoxyCodeLine{29             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = new\_value;}
+\DoxyCodeLine{30         \}}
+\DoxyCodeLine{31         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_type == \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa74d12b7be344b60c6fa4ef9d8d0c46f0}{percentage::PARTS\_PER\_MILLION}})}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = new\_value / 10000.0f;}
+\DoxyCodeLine{34         \}}
+\DoxyCodeLine{35         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{36         \{}
+\DoxyCodeLine{37             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_af1ca132169724c44756948e65c4eb7fa}\label{classscifir_1_1percentage_af1ca132169724c44756948e65c4eb7fa} 
+\mbox{\Hypertarget{classscifir_1_1percentage_ac5d915bf796b129e29b1220ad5f9bf66}\label{classscifir_1_1percentage_ac5d915bf796b129e29b1220ad5f9bf66}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [5/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}}}]{new\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+value,  }\item[{\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{percentage\+::type}}}]{init\+\_\+type = {\ttfamily \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage\+::\+PERCENTAGE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 41 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(\textcolor{keywordtype}{float}(new\_value)) }
-\DoxyCodeLine{00029\ \ \ \ \ \{\}}
+\DoxyCodeLine{41                                                                     : \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(\textcolor{keywordtype}{float}(new\_value)) }
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         \textcolor{keywordflow}{if} (init\_type == \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage::PERCENTAGE}})}
+\DoxyCodeLine{44         \{}
+\DoxyCodeLine{45             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value);}
+\DoxyCodeLine{46         \}}
+\DoxyCodeLine{47         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_type == \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa74d12b7be344b60c6fa4ef9d8d0c46f0}{percentage::PARTS\_PER\_MILLION}})}
+\DoxyCodeLine{48         \{}
+\DoxyCodeLine{49             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value) / 10000.0f;}
+\DoxyCodeLine{50         \}}
+\DoxyCodeLine{51         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{52         \{}
+\DoxyCodeLine{53             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_aa1e8fca665495f8383a647d333954275}\label{classscifir_1_1percentage_aa1e8fca665495f8383a647d333954275} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a80be1d27d852868017c2285639782c59}\label{classscifir_1_1percentage_a80be1d27d852868017c2285639782c59}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [6/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}}}]{new\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{long double}]{new\+\_\+value,  }\item[{\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{percentage\+::type}}}]{init\+\_\+type = {\ttfamily \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage\+::\+PERCENTAGE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 57 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(\textcolor{keywordtype}{float}(new\_value)) }
-\DoxyCodeLine{00032\ \ \ \ \ \{\}}
+\DoxyCodeLine{57                                                                          : \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(\textcolor{keywordtype}{float}(new\_value)) }
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59         \textcolor{keywordflow}{if} (init\_type == \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage::PERCENTAGE}})}
+\DoxyCodeLine{60         \{}
+\DoxyCodeLine{61             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value);}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_type == \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa74d12b7be344b60c6fa4ef9d8d0c46f0}{percentage::PARTS\_PER\_MILLION}})}
+\DoxyCodeLine{64         \{}
+\DoxyCodeLine{65             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value) / 10000.0f;}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{68         \{}
+\DoxyCodeLine{69             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{70         \}}
+\DoxyCodeLine{71     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a8f83b25ea8c690d92bc8e25deef77bba}\label{classscifir_1_1percentage_a8f83b25ea8c690d92bc8e25deef77bba} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a9bacf8431f745cca287f6f9cc99b1460}\label{classscifir_1_1percentage_a9bacf8431f745cca287f6f9cc99b1460}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [7/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{new\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+value,  }\item[{\mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79a}{percentage\+::type}}}]{init\+\_\+type = {\ttfamily \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage\+::\+PERCENTAGE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 73 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(\textcolor{keywordtype}{float}(new\_value)) }
-\DoxyCodeLine{00035\ \ \ \ \ \{\}}
+\DoxyCodeLine{73                                                                  : \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}(\textcolor{keywordtype}{float}(new\_value)) }
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{if} (init\_type == \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aaed401896b0b878584c821490ba693d5c}{percentage::PERCENTAGE}})}
+\DoxyCodeLine{76         \{}
+\DoxyCodeLine{77             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value);}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_type == \mbox{\hyperlink{classscifir_1_1percentage_a4df11500cbcd110e6656e3bfcc5ac79aa74d12b7be344b60c6fa4ef9d8d0c46f0}{percentage::PARTS\_PER\_MILLION}})}
+\DoxyCodeLine{80         \{}
+\DoxyCodeLine{81             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value) / 10000.0f;}
+\DoxyCodeLine{82         \}}
+\DoxyCodeLine{83         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{84         \{}
+\DoxyCodeLine{85             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{86         \}}
+\DoxyCodeLine{87     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a0e557b96be6e32d2d7adf39a03cf57cf}\label{classscifir_1_1percentage_a0e557b96be6e32d2d7adf39a03cf57cf} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a0e557b96be6e32d2d7adf39a03cf57cf}\label{classscifir_1_1percentage_a0e557b96be6e32d2d7adf39a03cf57cf}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [8/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}}]{new\+\_\+value,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&}]{init\+\_\+dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+value,  }\item[{const string \&}]{init\+\_\+dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 89 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00038\ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (init\_dimensions\ ==\ \textcolor{stringliteral}{"{}\%"{}})}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ new\_value;}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (init\_dimensions\ ==\ \textcolor{stringliteral}{"{}ppm"{}})}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ new\_value\ /\ 10000.0f;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ 0.0f;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*else\ if\ (init\_dimensions\ ==\ "{}ppb"{}) }}
-\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ new\_value\ /\ 10000000.0f; }}
-\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (init\_dimensions\ ==\ "{}ppt"{}) }}
-\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ new\_value\ /\ 10000000000.0f; }}
-\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (init\_dimensions\ ==\ "{}ppq"{}) }}
-\DoxyCodeLine{00060\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00061\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ new\_value\ /\ 10000000000000.0f; }}
-\DoxyCodeLine{00062\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}}
-\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{90     \{}
+\DoxyCodeLine{91         \textcolor{keywordflow}{if} (init\_dimensions == \textcolor{stringliteral}{"{}\%"{}})}
+\DoxyCodeLine{92         \{}
+\DoxyCodeLine{93             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = new\_value;}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_dimensions == \textcolor{stringliteral}{"{}ppm"{}})}
+\DoxyCodeLine{96         \{}
+\DoxyCodeLine{97             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = new\_value / 10000.0f;}
+\DoxyCodeLine{98         \}}
+\DoxyCodeLine{99         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{100         \{}
+\DoxyCodeLine{101             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{102         \}}
+\DoxyCodeLine{103         \textcolor{comment}{/*else if (init\_dimensions == "{}ppb"{}) }}
+\DoxyCodeLine{104 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{105 \textcolor{comment}{            value = new\_value / 10000000.0f; }}
+\DoxyCodeLine{106 \textcolor{comment}{        \} }}
+\DoxyCodeLine{107 \textcolor{comment}{        else if (init\_dimensions == "{}ppt"{}) }}
+\DoxyCodeLine{108 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{109 \textcolor{comment}{            value = new\_value / 10000000000.0f; }}
+\DoxyCodeLine{110 \textcolor{comment}{        \} }}
+\DoxyCodeLine{111 \textcolor{comment}{        else if (init\_dimensions == "{}ppq"{}) }}
+\DoxyCodeLine{112 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{113 \textcolor{comment}{            value = new\_value / 10000000000000.0f; }}
+\DoxyCodeLine{114 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{115     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a37056f1da6c4ccafc426aa3b1676c6ea}\label{classscifir_1_1percentage_a37056f1da6c4ccafc426aa3b1676c6ea} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a37056f1da6c4ccafc426aa3b1676c6ea}\label{classscifir_1_1percentage_a37056f1da6c4ccafc426aa3b1676c6ea}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [9/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}}}]{new\+\_\+value,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&}]{init\+\_\+dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+value,  }\item[{const string \&}]{init\+\_\+dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 117 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00066\ \ \ \ \ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (init\_dimensions\ ==\ \textcolor{stringliteral}{"{}\%"{}})}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(new\_value);}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (init\_dimensions\ ==\ \textcolor{stringliteral}{"{}ppm"{}})}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(new\_value)\ /\ 10000.0f;}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ 0.0f;}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*else\ if\ (init\_dimensions\ ==\ "{}ppb"{}) }}
-\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00081\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ float(new\_value)\ /\ 10000000.0f; }}
-\DoxyCodeLine{00082\ \textcolor{comment}{\ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (init\_dimensions\ ==\ "{}ppt"{}) }}
-\DoxyCodeLine{00084\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ float(new\_value)\ /\ 10000000000.0f; }}
-\DoxyCodeLine{00086\ \textcolor{comment}{\ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00087\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (init\_dimensions\ ==\ "{}ppq"{}) }}
-\DoxyCodeLine{00088\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00089\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ float(new\_value)\ /\ 10000000000000.0f; }}
-\DoxyCodeLine{00090\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}}
-\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{118     \{}
+\DoxyCodeLine{119         \textcolor{keywordflow}{if} (init\_dimensions == \textcolor{stringliteral}{"{}\%"{}})}
+\DoxyCodeLine{120         \{}
+\DoxyCodeLine{121             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value);}
+\DoxyCodeLine{122         \}}
+\DoxyCodeLine{123         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_dimensions == \textcolor{stringliteral}{"{}ppm"{}})}
+\DoxyCodeLine{124         \{}
+\DoxyCodeLine{125             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value) / 10000.0f;}
+\DoxyCodeLine{126         \}}
+\DoxyCodeLine{127         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{128         \{}
+\DoxyCodeLine{129             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{130         \}}
+\DoxyCodeLine{131         \textcolor{comment}{/*else if (init\_dimensions == "{}ppb"{}) }}
+\DoxyCodeLine{132 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{133 \textcolor{comment}{            value = float(new\_value) / 10000000.0f; }}
+\DoxyCodeLine{134 \textcolor{comment}{        \} }}
+\DoxyCodeLine{135 \textcolor{comment}{        else if (init\_dimensions == "{}ppt"{}) }}
+\DoxyCodeLine{136 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{137 \textcolor{comment}{            value = float(new\_value) / 10000000000.0f; }}
+\DoxyCodeLine{138 \textcolor{comment}{        \} }}
+\DoxyCodeLine{139 \textcolor{comment}{        else if (init\_dimensions == "{}ppq"{}) }}
+\DoxyCodeLine{140 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{141 \textcolor{comment}{            value = float(new\_value) / 10000000000000.0f; }}
+\DoxyCodeLine{142 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{143     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a36876d08e5d4ff4b01bacaa2ece7c632}\label{classscifir_1_1percentage_a36876d08e5d4ff4b01bacaa2ece7c632} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a36876d08e5d4ff4b01bacaa2ece7c632}\label{classscifir_1_1percentage_a36876d08e5d4ff4b01bacaa2ece7c632}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [10/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}}}]{new\+\_\+value,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&}]{init\+\_\+dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{long double}]{new\+\_\+value,  }\item[{const string \&}]{init\+\_\+dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 145 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00094\ \ \ \ \ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (init\_dimensions\ ==\ \textcolor{stringliteral}{"{}\%"{}})}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(new\_value);}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (init\_dimensions\ ==\ \textcolor{stringliteral}{"{}ppm"{}})}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(new\_value)\ /\ 10000.0f;}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ 0.0f;}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*else\ if\ (init\_dimensions\ ==\ "{}ppb"{}) }}
-\DoxyCodeLine{00108\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00109\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ float(new\_value)\ /\ 10000000.0f; }}
-\DoxyCodeLine{00110\ \textcolor{comment}{\ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00111\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (init\_dimensions\ ==\ "{}ppt"{}) }}
-\DoxyCodeLine{00112\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00113\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ float(new\_value)\ /\ 10000000000.0f; }}
-\DoxyCodeLine{00114\ \textcolor{comment}{\ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00115\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (init\_dimensions\ ==\ "{}ppq"{}) }}
-\DoxyCodeLine{00116\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00117\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ float(new\_value)\ /\ 10000000000000.0f; }}
-\DoxyCodeLine{00118\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}}
-\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{146     \{}
+\DoxyCodeLine{147         \textcolor{keywordflow}{if} (init\_dimensions == \textcolor{stringliteral}{"{}\%"{}})}
+\DoxyCodeLine{148         \{}
+\DoxyCodeLine{149             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value);}
+\DoxyCodeLine{150         \}}
+\DoxyCodeLine{151         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_dimensions == \textcolor{stringliteral}{"{}ppm"{}})}
+\DoxyCodeLine{152         \{}
+\DoxyCodeLine{153             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value) / 10000.0f;}
+\DoxyCodeLine{154         \}}
+\DoxyCodeLine{155         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{156         \{}
+\DoxyCodeLine{157             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{158         \}}
+\DoxyCodeLine{159         \textcolor{comment}{/*else if (init\_dimensions == "{}ppb"{}) }}
+\DoxyCodeLine{160 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{161 \textcolor{comment}{            value = float(new\_value) / 10000000.0f; }}
+\DoxyCodeLine{162 \textcolor{comment}{        \} }}
+\DoxyCodeLine{163 \textcolor{comment}{        else if (init\_dimensions == "{}ppt"{}) }}
+\DoxyCodeLine{164 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{165 \textcolor{comment}{            value = float(new\_value) / 10000000000.0f; }}
+\DoxyCodeLine{166 \textcolor{comment}{        \} }}
+\DoxyCodeLine{167 \textcolor{comment}{        else if (init\_dimensions == "{}ppq"{}) }}
+\DoxyCodeLine{168 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{169 \textcolor{comment}{            value = float(new\_value) / 10000000000000.0f; }}
+\DoxyCodeLine{170 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{171     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_ae637c964c5674c6cc33c5e26e8bfa452}\label{classscifir_1_1percentage_ae637c964c5674c6cc33c5e26e8bfa452} 
+\mbox{\Hypertarget{classscifir_1_1percentage_ae637c964c5674c6cc33c5e26e8bfa452}\label{classscifir_1_1percentage_ae637c964c5674c6cc33c5e26e8bfa452}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [11/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{new\+\_\+value,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&}]{init\+\_\+dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+value,  }\item[{const string \&}]{init\+\_\+dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 173 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00122\ \ \ \ \ \{}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (init\_dimensions\ ==\ \textcolor{stringliteral}{"{}\%"{}})}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(new\_value);}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (init\_dimensions\ ==\ \textcolor{stringliteral}{"{}ppm"{}})}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(new\_value)\ /\ 10000.0f;}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ 0.0f;}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*else\ if\ (init\_dimensions\ ==\ "{}ppb"{}) }}
-\DoxyCodeLine{00136\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00137\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ float(new\_value)\ /\ 10000000.0f; }}
-\DoxyCodeLine{00138\ \textcolor{comment}{\ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00139\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (init\_dimensions\ ==\ "{}ppt"{}) }}
-\DoxyCodeLine{00140\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00141\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ float(new\_value)\ /\ 10000000000.0f; }}
-\DoxyCodeLine{00142\ \textcolor{comment}{\ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00143\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (init\_dimensions\ ==\ "{}ppq"{}) }}
-\DoxyCodeLine{00144\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00145\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ float(new\_value)\ /\ 10000000000000.0f; }}
-\DoxyCodeLine{00146\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}}
-\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{174     \{}
+\DoxyCodeLine{175         \textcolor{keywordflow}{if} (init\_dimensions == \textcolor{stringliteral}{"{}\%"{}})}
+\DoxyCodeLine{176         \{}
+\DoxyCodeLine{177             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value);}
+\DoxyCodeLine{178         \}}
+\DoxyCodeLine{179         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_dimensions == \textcolor{stringliteral}{"{}ppm"{}})}
+\DoxyCodeLine{180         \{}
+\DoxyCodeLine{181             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value) / 10000.0f;}
+\DoxyCodeLine{182         \}}
+\DoxyCodeLine{183         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{184         \{}
+\DoxyCodeLine{185             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{186         \}}
+\DoxyCodeLine{187         \textcolor{comment}{/*else if (init\_dimensions == "{}ppb"{}) }}
+\DoxyCodeLine{188 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{189 \textcolor{comment}{            value = float(new\_value) / 10000000.0f; }}
+\DoxyCodeLine{190 \textcolor{comment}{        \} }}
+\DoxyCodeLine{191 \textcolor{comment}{        else if (init\_dimensions == "{}ppt"{}) }}
+\DoxyCodeLine{192 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{193 \textcolor{comment}{            value = float(new\_value) / 10000000000.0f; }}
+\DoxyCodeLine{194 \textcolor{comment}{        \} }}
+\DoxyCodeLine{195 \textcolor{comment}{        else if (init\_dimensions == "{}ppq"{}) }}
+\DoxyCodeLine{196 \textcolor{comment}{        \{ }}
+\DoxyCodeLine{197 \textcolor{comment}{            value = float(new\_value) / 10000000000000.0f; }}
+\DoxyCodeLine{198 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{199     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a3c5f810ae0131c660db073954a6722cd}\label{classscifir_1_1percentage_a3c5f810ae0131c660db073954a6722cd} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a3c5f810ae0131c660db073954a6722cd}\label{classscifir_1_1percentage_a3c5f810ae0131c660db073954a6722cd}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [12/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&}]{init\+\_\+percentage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+percentage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 201 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}() }
-\DoxyCodeLine{00150\ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}{initialize\_from\_string}}(init\_percentage);}
-\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{201                                                         : \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}() }
+\DoxyCodeLine{202     \{}
+\DoxyCodeLine{203         \mbox{\hyperlink{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}{initialize\_from\_string}}(init\_percentage);}
+\DoxyCodeLine{204     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a2a28cc4a3b5a788b37133fd25d5ee7da}\label{classscifir_1_1percentage_a2a28cc4a3b5a788b37133fd25d5ee7da} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a2a28cc4a3b5a788b37133fd25d5ee7da}\label{classscifir_1_1percentage_a2a28cc4a3b5a788b37133fd25d5ee7da}} 
 \index{scifir::percentage@{scifir::percentage}!percentage@{percentage}}
 \index{percentage@{percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{percentage()}{percentage()}\hspace{0.1cm}{\footnotesize\ttfamily [13/13]}}
-{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::percentage (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 206 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00155\ \ \ \ \ \{}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.has\_empty\_dimensions())}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(x);}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}A\ percentage\ cannot\ be\ initialized\ with\ dimensions"{}}\ <<\ endl;}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ 0.0f;}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{207     \{}
+\DoxyCodeLine{208         \textcolor{keywordflow}{if} (x.has\_empty\_dimensions())}
+\DoxyCodeLine{209         \{}
+\DoxyCodeLine{210             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(x);}
+\DoxyCodeLine{211         \}}
+\DoxyCodeLine{212         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{213         \{}
+\DoxyCodeLine{214             cerr << \textcolor{stringliteral}{"{}A percentage cannot be initialized with dimensions"{}} << endl;}
+\DoxyCodeLine{215             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{216         \}}
+\DoxyCodeLine{217     \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classscifir_1_1percentage_adbea0c300e66fdf2d82721583de0f7a1}\label{classscifir_1_1percentage_adbea0c300e66fdf2d82721583de0f7a1} 
+\mbox{\Hypertarget{classscifir_1_1percentage_adbea0c300e66fdf2d82721583de0f7a1}\label{classscifir_1_1percentage_adbea0c300e66fdf2d82721583de0f7a1}} 
 \index{scifir::percentage@{scifir::percentage}!display\_percentage@{display\_percentage}}
 \index{display\_percentage@{display\_percentage}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{display\_percentage()}{display\_percentage()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} scifir\+::percentage\+::display\+\_\+percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{number\+\_\+of\+\_\+decimals = {\ttfamily 2} }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily string scifir\+::percentage\+::display\+\_\+percentage (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+of\+\_\+decimals = {\ttfamily 2} }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00324}{324}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 376 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00325\ \ \ \ \ \{}
-\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ ostringstream\ out;}
-\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}{display\_float}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}},number\_of\_decimals)\ <<\ \textcolor{stringliteral}{"{}\%"{}};}
-\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
-\DoxyCodeLine{00329\ \ \ \ \ \}}
+\DoxyCodeLine{377     \{}
+\DoxyCodeLine{378         ostringstream out;}
+\DoxyCodeLine{379         out << \mbox{\hyperlink{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}{display\_float}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}},number\_of\_decimals) << \textcolor{stringliteral}{"{}\%"{}};}
+\DoxyCodeLine{380         \textcolor{keywordflow}{return} out.str();}
+\DoxyCodeLine{381     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a28516c470ce03a0c3a4c7c384480fc85}\label{classscifir_1_1percentage_a28516c470ce03a0c3a4c7c384480fc85} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a28516c470ce03a0c3a4c7c384480fc85}\label{classscifir_1_1percentage_a28516c470ce03a0c3a4c7c384480fc85}} 
 \index{scifir::percentage@{scifir::percentage}!display\_ppm@{display\_ppm}}
 \index{display\_ppm@{display\_ppm}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{display\_ppm()}{display\_ppm()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} scifir\+::percentage\+::display\+\_\+ppm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily string scifir\+::percentage\+::display\+\_\+ppm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00331}{331}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 383 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00332\ \ \ \ \ \{}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ ostringstream\ out;}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ out\ <<\ \mbox{\hyperlink{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}{display\_float}}(\mbox{\hyperlink{classscifir_1_1percentage_a295c00367e72dc3e70800da792086373}{get\_ppm}}())\ <<\ \textcolor{stringliteral}{"{}\ ppm"{}};}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out.str();}
-\DoxyCodeLine{00336\ \ \ \ \ \}}
+\DoxyCodeLine{384     \{}
+\DoxyCodeLine{385         ostringstream out;}
+\DoxyCodeLine{386         out << \mbox{\hyperlink{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}{display\_float}}(\mbox{\hyperlink{classscifir_1_1percentage_a295c00367e72dc3e70800da792086373}{get\_ppm}}()) << \textcolor{stringliteral}{"{} ppm"{}};}
+\DoxyCodeLine{387         \textcolor{keywordflow}{return} out.str();}
+\DoxyCodeLine{388     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}\label{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8} 
+\mbox{\Hypertarget{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}\label{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}} 
 \index{scifir::percentage@{scifir::percentage}!get\_factor@{get\_factor}}
 \index{get\_factor@{get\_factor}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{get\_factor()}{get\_factor()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} scifir\+::percentage\+::get\+\_\+factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily float scifir\+::percentage\+::get\+\_\+factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00299}{299}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 351 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00300\ \ \ \ \ \{}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ /\ 100;}
-\DoxyCodeLine{00302\ \ \ \ \ \}}
+\DoxyCodeLine{352     \{}
+\DoxyCodeLine{353         \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} / 100;}
+\DoxyCodeLine{354     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a295c00367e72dc3e70800da792086373}\label{classscifir_1_1percentage_a295c00367e72dc3e70800da792086373} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a295c00367e72dc3e70800da792086373}\label{classscifir_1_1percentage_a295c00367e72dc3e70800da792086373}} 
 \index{scifir::percentage@{scifir::percentage}!get\_ppm@{get\_ppm}}
 \index{get\_ppm@{get\_ppm}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{get\_ppm()}{get\_ppm()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} scifir\+::percentage\+::get\+\_\+ppm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily float scifir\+::percentage\+::get\+\_\+ppm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00304}{304}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 356 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00305\ \ \ \ \ \{}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ *\ 10000.0f;}
-\DoxyCodeLine{00307\ \ \ \ \ \}}
+\DoxyCodeLine{357     \{}
+\DoxyCodeLine{358         \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} * 10000.0f;}
+\DoxyCodeLine{359     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}\label{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c} 
+\mbox{\Hypertarget{classscifir_1_1percentage_abfbf61303c0b91f5b1536a5ac2648408}\label{classscifir_1_1percentage_abfbf61303c0b91f5b1536a5ac2648408}} 
 \index{scifir::percentage@{scifir::percentage}!get\_value@{get\_value}}
 \index{get\_value@{get\_value}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \& scifir\+::percentage\+::get\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const float\& scifir\+::percentage\+::get\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 50 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}};}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{51             \{}
+\DoxyCodeLine{52                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}};}
+\DoxyCodeLine{53             \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}\label{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43} 
+\mbox{\Hypertarget{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}\label{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}} 
 \index{scifir::percentage@{scifir::percentage}!initialize\_from\_string@{initialize\_from\_string}}
 \index{initialize\_from\_string@{initialize\_from\_string}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{initialize\_from\_string()}{initialize\_from\_string()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::initialize\+\_\+from\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&}]{init\+\_\+percentage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void scifir\+::percentage\+::initialize\+\_\+from\+\_\+string (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+percentage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00359}{359}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 411 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00360\ \ \ \ \ \{}
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (init\_percentage[init\_percentage.length()\ -\/\ 1]\ ==\ \textcolor{charliteral}{'\%'})}
-\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ stof(init\_percentage.substr(0,init\_percentage.length()\ -\/\ 1));}
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (init\_percentage.find(\textcolor{stringliteral}{"{}\ "{}})\ !=\ string::npos)}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ percentage\_unit\ =\ init\_percentage.substr(init\_percentage.length()\ -\/\ 4,4);}
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (percentage\_unit\ ==\ \textcolor{stringliteral}{"{}\ ppm"{}})}
-\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ stof(init\_percentage.substr(0,init\_percentage.length()\ -\/\ 4))\ /\ 10000.0f;}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ 0.0f;}
-\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*else\ if\ (percentage\_unit\ ==\ "{}\ ppb"{}) }}
-\DoxyCodeLine{00377\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00378\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ stof(init\_percentage.substr(0,init\_percentage.length()\ -\/\ 4))\ /\ 10000000.0f; }}
-\DoxyCodeLine{00379\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00380\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (percentage\_unit\ ==\ "{}\ ppt"{}) }}
-\DoxyCodeLine{00381\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00382\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ stof(init\_percentage.substr(0,init\_percentage.length()\ -\/\ 4))\ /\ 10000000000.0f; }}
-\DoxyCodeLine{00383\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00384\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (percentage\_unit\ ==\ "{}\ ppq"{}) }}
-\DoxyCodeLine{00385\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00386\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ stof(init\_percentage.substr(0,init\_percentage.length()\ -\/\ 4))\ /\ 10000000000000.0f; }}
-\DoxyCodeLine{00387\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}*/}}
-\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (init\_percentage.length()\ >\ 3)}
-\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ percentage\_unit\ =\ init\_percentage.substr(init\_percentage.length()\ -\/\ 3,3);}
-\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (percentage\_unit\ ==\ \textcolor{stringliteral}{"{}ppm"{}})}
-\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ stof(init\_percentage.substr(0,init\_percentage.length()\ -\/\ 3))\ /\ 10000.0f;}
-\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*else\ if\ (percentage\_unit\ ==\ "{}ppb"{}) }}
-\DoxyCodeLine{00397\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00398\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ stof(init\_percentage.substr(0,init\_percentage.length()\ -\/\ 3))\ /\ 10000000.0f; }}
-\DoxyCodeLine{00399\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00400\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (percentage\_unit\ ==\ "{}ppt"{}) }}
-\DoxyCodeLine{00401\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00402\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ stof(init\_percentage.substr(0,init\_percentage.length()\ -\/\ 3))\ /\ 10000000000.0f; }}
-\DoxyCodeLine{00403\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \} }}
-\DoxyCodeLine{00404\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (percentage\_unit\ ==\ "{}ppq"{}) }}
-\DoxyCodeLine{00405\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{ }}
-\DoxyCodeLine{00406\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ stof(init\_percentage.substr(0,init\_percentage.length()\ -\/\ 3))\ /\ 10000000000000.0f; }}
-\DoxyCodeLine{00407\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}*/}}
-\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ 0.0f;}
-\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ 0.0f;}
-\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00417\ \ \ \ \ \}}
+\DoxyCodeLine{412     \{}
+\DoxyCodeLine{413         \textcolor{keywordflow}{if} (init\_percentage[init\_percentage.length() -\/ 1] == \textcolor{charliteral}{'\%'})}
+\DoxyCodeLine{414         \{}
+\DoxyCodeLine{415             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = stof(init\_percentage.substr(0,init\_percentage.length() -\/ 1));}
+\DoxyCodeLine{416         \}}
+\DoxyCodeLine{417         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_percentage.find(\textcolor{stringliteral}{"{} "{}}) != string::npos)}
+\DoxyCodeLine{418         \{}
+\DoxyCodeLine{419             \textcolor{keywordtype}{string} percentage\_unit = init\_percentage.substr(init\_percentage.length() -\/ 4,4);}
+\DoxyCodeLine{420             \textcolor{keywordflow}{if} (percentage\_unit == \textcolor{stringliteral}{"{} ppm"{}})}
+\DoxyCodeLine{421             \{}
+\DoxyCodeLine{422                 \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = stof(init\_percentage.substr(0,init\_percentage.length() -\/ 4)) / 10000.0f;}
+\DoxyCodeLine{423             \}}
+\DoxyCodeLine{424             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{425             \{}
+\DoxyCodeLine{426                 \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{427             \}}
+\DoxyCodeLine{428             \textcolor{comment}{/*else if (percentage\_unit == "{} ppb"{}) }}
+\DoxyCodeLine{429 \textcolor{comment}{            \{ }}
+\DoxyCodeLine{430 \textcolor{comment}{                value = stof(init\_percentage.substr(0,init\_percentage.length() -\/ 4)) / 10000000.0f; }}
+\DoxyCodeLine{431 \textcolor{comment}{            \} }}
+\DoxyCodeLine{432 \textcolor{comment}{            else if (percentage\_unit == "{} ppt"{}) }}
+\DoxyCodeLine{433 \textcolor{comment}{            \{ }}
+\DoxyCodeLine{434 \textcolor{comment}{                value = stof(init\_percentage.substr(0,init\_percentage.length() -\/ 4)) / 10000000000.0f; }}
+\DoxyCodeLine{435 \textcolor{comment}{            \} }}
+\DoxyCodeLine{436 \textcolor{comment}{            else if (percentage\_unit == "{} ppq"{}) }}
+\DoxyCodeLine{437 \textcolor{comment}{            \{ }}
+\DoxyCodeLine{438 \textcolor{comment}{                value = stof(init\_percentage.substr(0,init\_percentage.length() -\/ 4)) / 10000000000000.0f; }}
+\DoxyCodeLine{439 \textcolor{comment}{            \}*/}}
+\DoxyCodeLine{440         \}}
+\DoxyCodeLine{441         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (init\_percentage.length() > 3)}
+\DoxyCodeLine{442         \{}
+\DoxyCodeLine{443             \textcolor{keywordtype}{string} percentage\_unit = init\_percentage.substr(init\_percentage.length() -\/ 3,3);}
+\DoxyCodeLine{444             \textcolor{keywordflow}{if} (percentage\_unit == \textcolor{stringliteral}{"{}ppm"{}})}
+\DoxyCodeLine{445             \{}
+\DoxyCodeLine{446                 \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = stof(init\_percentage.substr(0,init\_percentage.length() -\/ 3)) / 10000.0f;}
+\DoxyCodeLine{447             \}}
+\DoxyCodeLine{448             \textcolor{comment}{/*else if (percentage\_unit == "{}ppb"{}) }}
+\DoxyCodeLine{449 \textcolor{comment}{            \{ }}
+\DoxyCodeLine{450 \textcolor{comment}{                value = stof(init\_percentage.substr(0,init\_percentage.length() -\/ 3)) / 10000000.0f; }}
+\DoxyCodeLine{451 \textcolor{comment}{            \} }}
+\DoxyCodeLine{452 \textcolor{comment}{            else if (percentage\_unit == "{}ppt"{}) }}
+\DoxyCodeLine{453 \textcolor{comment}{            \{ }}
+\DoxyCodeLine{454 \textcolor{comment}{                value = stof(init\_percentage.substr(0,init\_percentage.length() -\/ 3)) / 10000000000.0f; }}
+\DoxyCodeLine{455 \textcolor{comment}{            \} }}
+\DoxyCodeLine{456 \textcolor{comment}{            else if (percentage\_unit == "{}ppq"{}) }}
+\DoxyCodeLine{457 \textcolor{comment}{            \{ }}
+\DoxyCodeLine{458 \textcolor{comment}{                value = stof(init\_percentage.substr(0,init\_percentage.length() -\/ 3)) / 10000000000000.0f; }}
+\DoxyCodeLine{459 \textcolor{comment}{            \}*/}}
+\DoxyCodeLine{460             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{461             \{}
+\DoxyCodeLine{462                 \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{463             \}}
+\DoxyCodeLine{464         \}}
+\DoxyCodeLine{465         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{466         \{}
+\DoxyCodeLine{467             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{468         \}}
+\DoxyCodeLine{469     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a64ba3202f386c17dde5605465857ed75}\label{classscifir_1_1percentage_a64ba3202f386c17dde5605465857ed75} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a64ba3202f386c17dde5605465857ed75}\label{classscifir_1_1percentage_a64ba3202f386c17dde5605465857ed75}} 
 \index{scifir::percentage@{scifir::percentage}!operator float@{operator float}}
 \index{operator float@{operator float}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator float()}{operator float()}}
-{\footnotesize\ttfamily scifir\+::percentage\+::operator \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily scifir\+::percentage\+::operator float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ float(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}});}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-
-\end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_ae1299386921e23b131a480c60313075c}\label{classscifir_1_1percentage_ae1299386921e23b131a480c60313075c} 
-\index{scifir::percentage@{scifir::percentage}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
-\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!scifir::percentage@{scifir::percentage}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption}) const}
-
-
-
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00233}{233}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 45 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00234\ \ \ \ \ \{}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ *\ x.get\_value()\ /\ 100);}
-\DoxyCodeLine{00236\ \ \ \ \ \}}
+\DoxyCodeLine{46             \{}
+\DoxyCodeLine{47                 \textcolor{keywordflow}{return} float(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}});}
+\DoxyCodeLine{48             \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_ad02e3d967e0188ff8012f37c9403e1ca}\label{classscifir_1_1percentage_ad02e3d967e0188ff8012f37c9403e1ca} 
-\index{scifir::percentage@{scifir::percentage}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
-\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!scifir::percentage@{scifir::percentage}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} scifir\+::percentage\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{classscifir_1_1percentage_ae1299386921e23b131a480c60313075c}\label{classscifir_1_1percentage_ae1299386921e23b131a480c60313075c}} 
+\index{scifir::percentage@{scifir::percentage}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!scifir::percentage@{scifir::percentage}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00289}{289}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 285 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00290\ \ \ \ \ \{}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}{get\_factor}}()\ *\ x;}
-\DoxyCodeLine{00292\ \ \ \ \ \}}
+\DoxyCodeLine{286     \{}
+\DoxyCodeLine{287         \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} * x.get\_value() / 100);}
+\DoxyCodeLine{288     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a44bc5cb70594fa5c455ba2a1d95f8ff6}\label{classscifir_1_1percentage_a44bc5cb70594fa5c455ba2a1d95f8ff6} 
-\index{scifir::percentage@{scifir::percentage}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
-\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!scifir::percentage@{scifir::percentage}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} scifir\+::percentage\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{classscifir_1_1percentage_ad02e3d967e0188ff8012f37c9403e1ca}\label{classscifir_1_1percentage_ad02e3d967e0188ff8012f37c9403e1ca}} 
+\index{scifir::percentage@{scifir::percentage}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!scifir::percentage@{scifir::percentage}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} scifir\+::percentage\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00081}{81}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 341 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ float(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ *\ x\ /\ 100);}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{342     \{}
+\DoxyCodeLine{343         \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}{get\_factor}}() * x;}
+\DoxyCodeLine{344     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a154bffef5ed6e8cb63bcb39c9be4bcfe}\label{classscifir_1_1percentage_a154bffef5ed6e8cb63bcb39c9be4bcfe} 
-\index{scifir::percentage@{scifir::percentage}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
-\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!scifir::percentage@{scifir::percentage}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classscifir_1_1percentage_a44bc5cb70594fa5c455ba2a1d95f8ff6}\label{classscifir_1_1percentage_a44bc5cb70594fa5c455ba2a1d95f8ff6}} 
+\index{scifir::percentage@{scifir::percentage}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!scifir::percentage@{scifir::percentage}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+float scifir\+::percentage\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 83 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00254\ \ \ \ \ \{}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ *=\ (x.get\_value()\ /\ 100);}
-\DoxyCodeLine{00256\ \ \ \ \ \}}
+\DoxyCodeLine{84             \{}
+\DoxyCodeLine{85                 \textcolor{keywordflow}{return} float(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} * x / 100);}
+\DoxyCodeLine{86             \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a050f53ae43b117fec94385ddcfcaafac}\label{classscifir_1_1percentage_a050f53ae43b117fec94385ddcfcaafac} 
-\index{scifir::percentage@{scifir::percentage}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
-\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!scifir::percentage@{scifir::percentage}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{classscifir_1_1percentage_a154bffef5ed6e8cb63bcb39c9be4bcfe}\label{classscifir_1_1percentage_a154bffef5ed6e8cb63bcb39c9be4bcfe}} 
+\index{scifir::percentage@{scifir::percentage}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!scifir::percentage@{scifir::percentage}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void scifir\+::percentage\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 305 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ *=\ x;}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{306     \{}
+\DoxyCodeLine{307         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} *= (x.get\_value() / 100);}
+\DoxyCodeLine{308     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a997703d062db4bd8372c8f42b38ab0db}\label{classscifir_1_1percentage_a997703d062db4bd8372c8f42b38ab0db} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a050f53ae43b117fec94385ddcfcaafac}\label{classscifir_1_1percentage_a050f53ae43b117fec94385ddcfcaafac}} 
+\index{scifir::percentage@{scifir::percentage}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!scifir::percentage@{scifir::percentage}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+void scifir\+::percentage\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 107 of file percentage.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108             \{}
+\DoxyCodeLine{109                 \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} *= x;}
+\DoxyCodeLine{110             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classscifir_1_1percentage_a997703d062db4bd8372c8f42b38ab0db}\label{classscifir_1_1percentage_a997703d062db4bd8372c8f42b38ab0db}} 
 \index{scifir::percentage@{scifir::percentage}!operator+@{operator+}}
 \index{operator+@{operator+}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00223}{223}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 275 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00224\ \ \ \ \ \{}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ +\ x.get\_value());}
-\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{276     \{}
+\DoxyCodeLine{277         \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} + x.get\_value());}
+\DoxyCodeLine{278     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a8226163901e8cc0938e65275aa1bd866}\label{classscifir_1_1percentage_a8226163901e8cc0938e65275aa1bd866} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a8226163901e8cc0938e65275aa1bd866}\label{classscifir_1_1percentage_a8226163901e8cc0938e65275aa1bd866}} 
 \index{scifir::percentage@{scifir::percentage}!operator+@{operator+}}
 \index{operator+@{operator+}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
 \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator+ (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 71 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ +\ x);}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{72             \{}
+\DoxyCodeLine{73                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} + x);}
+\DoxyCodeLine{74             \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_addccf7ec453b14abc08f41c0c749b2c4}\label{classscifir_1_1percentage_addccf7ec453b14abc08f41c0c749b2c4} 
+\mbox{\Hypertarget{classscifir_1_1percentage_addccf7ec453b14abc08f41c0c749b2c4}\label{classscifir_1_1percentage_addccf7ec453b14abc08f41c0c749b2c4}} 
 \index{scifir::percentage@{scifir::percentage}!operator++@{operator++}}
 \index{operator++@{operator++}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -753,106 +857,106 @@ Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00069}{69}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00263}{263}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 315 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00264\ \ \ \ \ \{}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}++;}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00267\ \ \ \ \ \}}
+\DoxyCodeLine{316     \{}
+\DoxyCodeLine{317         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}++;}
+\DoxyCodeLine{318         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{319     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a650475402efd37dfeaaafd4339eae577}\label{classscifir_1_1percentage_a650475402efd37dfeaaafd4339eae577} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a650475402efd37dfeaaafd4339eae577}\label{classscifir_1_1percentage_a650475402efd37dfeaaafd4339eae577}} 
 \index{scifir::percentage@{scifir::percentage}!operator++@{operator++}}
 \index{operator++@{operator++}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator++ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00269}{269}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 321 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00270\ \ \ \ \ \{}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}\ tmp\ =\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(*\textcolor{keyword}{this});}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_addccf7ec453b14abc08f41c0c749b2c4}{operator++}}();}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
-\DoxyCodeLine{00274\ \ \ \ \ \}}
+\DoxyCodeLine{322     \{}
+\DoxyCodeLine{323         \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}} tmp = \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{324         \mbox{\hyperlink{classscifir_1_1percentage_addccf7ec453b14abc08f41c0c749b2c4}{operator++}}();}
+\DoxyCodeLine{325         \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{326     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a415833910907612760930697acb7cabf}\label{classscifir_1_1percentage_a415833910907612760930697acb7cabf} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a415833910907612760930697acb7cabf}\label{classscifir_1_1percentage_a415833910907612760930697acb7cabf}} 
 \index{scifir::percentage@{scifir::percentage}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void scifir\+::percentage\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00243}{243}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 295 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00244\ \ \ \ \ \{}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ +=\ x.get\_value();}
-\DoxyCodeLine{00246\ \ \ \ \ \}}
+\DoxyCodeLine{296     \{}
+\DoxyCodeLine{297         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} += x.get\_value();}
+\DoxyCodeLine{298     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a32ec16c589336fda397e779f421d863e}\label{classscifir_1_1percentage_a32ec16c589336fda397e779f421d863e} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a32ec16c589336fda397e779f421d863e}\label{classscifir_1_1percentage_a32ec16c589336fda397e779f421d863e}} 
 \index{scifir::percentage@{scifir::percentage}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::operator+= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+void scifir\+::percentage\+::operator+= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 95 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ +=\ x;}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{96             \{}
+\DoxyCodeLine{97                 \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} += x;}
+\DoxyCodeLine{98             \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a0063f46fae523dde05a08ff773aa0759}\label{classscifir_1_1percentage_a0063f46fae523dde05a08ff773aa0759} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a0063f46fae523dde05a08ff773aa0759}\label{classscifir_1_1percentage_a0063f46fae523dde05a08ff773aa0759}} 
 \index{scifir::percentage@{scifir::percentage}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00228}{228}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 280 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00229\ \ \ \ \ \{}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ -\/\ x.get\_value());}
-\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{281     \{}
+\DoxyCodeLine{282         \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} -\/ x.get\_value());}
+\DoxyCodeLine{283     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_aa2c7b90ae7a2c8e13455d58b629c9437}\label{classscifir_1_1percentage_aa2c7b90ae7a2c8e13455d58b629c9437} 
+\mbox{\Hypertarget{classscifir_1_1percentage_aa2c7b90ae7a2c8e13455d58b629c9437}\label{classscifir_1_1percentage_aa2c7b90ae7a2c8e13455d58b629c9437}} 
 \index{scifir::percentage@{scifir::percentage}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
 \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator-\/ (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00075}{75}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 77 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ -\/\ x);}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{78             \{}
+\DoxyCodeLine{79                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} -\/ x);}
+\DoxyCodeLine{80             \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_aecbfdd6b63d0dd993056347042063f85}\label{classscifir_1_1percentage_aecbfdd6b63d0dd993056347042063f85} 
+\mbox{\Hypertarget{classscifir_1_1percentage_aecbfdd6b63d0dd993056347042063f85}\label{classscifir_1_1percentage_aecbfdd6b63d0dd993056347042063f85}} 
 \index{scifir::percentage@{scifir::percentage}!operator-\/-\/@{operator-\/-\/}}
 \index{operator-\/-\/@{operator-\/-\/}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -860,292 +964,292 @@ Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00075}{75}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00276}{276}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 328 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00277\ \ \ \ \ \{}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}-\/-\/;}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00280\ \ \ \ \ \}}
+\DoxyCodeLine{329     \{}
+\DoxyCodeLine{330         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}-\/-\/;}
+\DoxyCodeLine{331         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{332     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a994b72fe7e2e4f8d620c1046dd55f693}\label{classscifir_1_1percentage_a994b72fe7e2e4f8d620c1046dd55f693} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a994b72fe7e2e4f8d620c1046dd55f693}\label{classscifir_1_1percentage_a994b72fe7e2e4f8d620c1046dd55f693}} 
 \index{scifir::percentage@{scifir::percentage}!operator-\/-\/@{operator-\/-\/}}
 \index{operator-\/-\/@{operator-\/-\/}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00282}{282}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 334 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00283\ \ \ \ \ \{}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}\ tmp\ =\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(*\textcolor{keyword}{this});}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_aecbfdd6b63d0dd993056347042063f85}{operator-\/-\/}}();}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
-\DoxyCodeLine{00287\ \ \ \ \ \}}
+\DoxyCodeLine{335     \{}
+\DoxyCodeLine{336         \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}} tmp = \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{337         \mbox{\hyperlink{classscifir_1_1percentage_aecbfdd6b63d0dd993056347042063f85}{operator-\/-\/}}();}
+\DoxyCodeLine{338         \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{339     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_aed6d83ca9b41e280179470adbf729842}\label{classscifir_1_1percentage_aed6d83ca9b41e280179470adbf729842} 
+\mbox{\Hypertarget{classscifir_1_1percentage_aed6d83ca9b41e280179470adbf729842}\label{classscifir_1_1percentage_aed6d83ca9b41e280179470adbf729842}} 
 \index{scifir::percentage@{scifir::percentage}!operator-\/=@{operator-\/=}}
 \index{operator-\/=@{operator-\/=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void scifir\+::percentage\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00248}{248}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 300 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00249\ \ \ \ \ \{}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ -\/=\ x.get\_value();}
-\DoxyCodeLine{00251\ \ \ \ \ \}}
+\DoxyCodeLine{301     \{}
+\DoxyCodeLine{302         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} -\/= x.get\_value();}
+\DoxyCodeLine{303     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a5899f233d6c7bb9d364bec5bab09bdb5}\label{classscifir_1_1percentage_a5899f233d6c7bb9d364bec5bab09bdb5} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a5899f233d6c7bb9d364bec5bab09bdb5}\label{classscifir_1_1percentage_a5899f233d6c7bb9d364bec5bab09bdb5}} 
 \index{scifir::percentage@{scifir::percentage}!operator-\/=@{operator-\/=}}
 \index{operator-\/=@{operator-\/=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::operator-\/= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+void scifir\+::percentage\+::operator-\/= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 101 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ -\/=\ x;}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{102             \{}
+\DoxyCodeLine{103                 \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} -\/= x;}
+\DoxyCodeLine{104             \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a2e068414854cad2217c5629c1136ebe2}\label{classscifir_1_1percentage_a2e068414854cad2217c5629c1136ebe2} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a2e068414854cad2217c5629c1136ebe2}\label{classscifir_1_1percentage_a2e068414854cad2217c5629c1136ebe2}} 
 \index{scifir::percentage@{scifir::percentage}!operator/@{operator/}}
 \index{operator/@{operator/}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} scifir\+::percentage\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00238}{238}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 290 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00239\ \ \ \ \ \{}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(100\ *\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ /\ x.get\_value());}
-\DoxyCodeLine{00241\ \ \ \ \ \}}
+\DoxyCodeLine{291     \{}
+\DoxyCodeLine{292         \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(100 * \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} / x.get\_value());}
+\DoxyCodeLine{293     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_aa3489f063b146327995e69721d8b9d6b}\label{classscifir_1_1percentage_aa3489f063b146327995e69721d8b9d6b} 
+\mbox{\Hypertarget{classscifir_1_1percentage_aa3489f063b146327995e69721d8b9d6b}\label{classscifir_1_1percentage_aa3489f063b146327995e69721d8b9d6b}} 
 \index{scifir::percentage@{scifir::percentage}!operator/@{operator/}}
 \index{operator/@{operator/}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} scifir\+::percentage\+::operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} scifir\+::percentage\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00294}{294}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 346 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00295\ \ \ \ \ \{}
-\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}{get\_factor}}()\ /\ x;}
-\DoxyCodeLine{00297\ \ \ \ \ \}}
+\DoxyCodeLine{347     \{}
+\DoxyCodeLine{348         \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}{get\_factor}}() / x;}
+\DoxyCodeLine{349     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_acf02cbac75ad3b05102da26e4658b951}\label{classscifir_1_1percentage_acf02cbac75ad3b05102da26e4658b951} 
+\mbox{\Hypertarget{classscifir_1_1percentage_acf02cbac75ad3b05102da26e4658b951}\label{classscifir_1_1percentage_acf02cbac75ad3b05102da26e4658b951}} 
 \index{scifir::percentage@{scifir::percentage}!operator/@{operator/}}
 \index{operator/@{operator/}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} scifir\+::percentage\+::operator/ (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+float scifir\+::percentage\+::operator/ (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00087}{87}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 89 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ float(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ /\ (100\ *\ x));}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{90             \{}
+\DoxyCodeLine{91                 \textcolor{keywordflow}{return} float(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} / (100 * x));}
+\DoxyCodeLine{92             \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a6c10cbe35b0236c4b549ac5bc4585212}\label{classscifir_1_1percentage_a6c10cbe35b0236c4b549ac5bc4585212} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a6c10cbe35b0236c4b549ac5bc4585212}\label{classscifir_1_1percentage_a6c10cbe35b0236c4b549ac5bc4585212}} 
 \index{scifir::percentage@{scifir::percentage}!operator/=@{operator/=}}
 \index{operator/=@{operator/=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::operator/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void scifir\+::percentage\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 310 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00259\ \ \ \ \ \{}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ *=\ 100\ /\ x.get\_value();}
-\DoxyCodeLine{00261\ \ \ \ \ \}}
+\DoxyCodeLine{311     \{}
+\DoxyCodeLine{312         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} *= 100 / x.get\_value();}
+\DoxyCodeLine{313     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a4f2549463e30f02b2ffc70a624ec7cfa}\label{classscifir_1_1percentage_a4f2549463e30f02b2ffc70a624ec7cfa} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a4f2549463e30f02b2ffc70a624ec7cfa}\label{classscifir_1_1percentage_a4f2549463e30f02b2ffc70a624ec7cfa}} 
 \index{scifir::percentage@{scifir::percentage}!operator/=@{operator/=}}
 \index{operator/=@{operator/=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::operator/= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+void scifir\+::percentage\+::operator/= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00111}{111}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 113 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ /=\ x;}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{114             \{}
+\DoxyCodeLine{115                 \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} /= x;}
+\DoxyCodeLine{116             \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}\label{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572} 
+\mbox{\Hypertarget{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}\label{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}} 
 \index{scifir::percentage@{scifir::percentage}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 219 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00168\ \ \ \ \ \{}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ x.get\_value();}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{220     \{}
+\DoxyCodeLine{221         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = x.get\_value();}
+\DoxyCodeLine{222         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{223     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_af429a976f5083bb40726479f4b8dff2d}\label{classscifir_1_1percentage_af429a976f5083bb40726479f4b8dff2d} 
+\mbox{\Hypertarget{classscifir_1_1percentage_af429a976f5083bb40726479f4b8dff2d}\label{classscifir_1_1percentage_af429a976f5083bb40726479f4b8dff2d}} 
 \index{scifir::percentage@{scifir::percentage}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00209}{209}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 261 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00210\ \ \ \ \ \{}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.has\_empty\_dimensions())}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ x.get\_value();}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}A\ percentage\ cannot\ be\ initialized\ with\ dimensions"{}}\ <<\ endl;}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ 0.0f;}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00221\ \ \ \ \ \}}
+\DoxyCodeLine{262     \{}
+\DoxyCodeLine{263         \textcolor{keywordflow}{if} (x.has\_empty\_dimensions())}
+\DoxyCodeLine{264         \{}
+\DoxyCodeLine{265             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = x.get\_value();}
+\DoxyCodeLine{266         \}}
+\DoxyCodeLine{267         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{268         \{}
+\DoxyCodeLine{269             cerr << \textcolor{stringliteral}{"{}A percentage cannot be initialized with dimensions"{}} << endl;}
+\DoxyCodeLine{270             \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = 0.0f;}
+\DoxyCodeLine{271         \}}
+\DoxyCodeLine{272         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{273     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_acad958cf807bfe6eda3868f6842f089d}\label{classscifir_1_1percentage_acad958cf807bfe6eda3868f6842f089d} 
+\mbox{\Hypertarget{classscifir_1_1percentage_acad958cf807bfe6eda3868f6842f089d}\label{classscifir_1_1percentage_acad958cf807bfe6eda3868f6842f089d}} 
 \index{scifir::percentage@{scifir::percentage}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&}]{init\+\_\+percentage }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+percentage }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00203}{203}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 255 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00204\ \ \ \ \ \{}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}{initialize\_from\_string}}(init\_percentage);}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00207\ \ \ \ \ \}}
+\DoxyCodeLine{256     \{}
+\DoxyCodeLine{257         \mbox{\hyperlink{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}{initialize\_from\_string}}(init\_percentage);}
+\DoxyCodeLine{258         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{259     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a67043cb05dd2934f15eaa090cee61c21}\label{classscifir_1_1percentage_a67043cb05dd2934f15eaa090cee61c21} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a67043cb05dd2934f15eaa090cee61c21}\label{classscifir_1_1percentage_a67043cb05dd2934f15eaa090cee61c21}} 
 \index{scifir::percentage@{scifir::percentage}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}}}]{new\+\_\+value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+value }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00185}{185}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 237 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00186\ \ \ \ \ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(new\_value);}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{238     \{}
+\DoxyCodeLine{239         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value);}
+\DoxyCodeLine{240         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{241     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_af0535ce3870fb035058cfdccd1d6816c}\label{classscifir_1_1percentage_af0535ce3870fb035058cfdccd1d6816c} 
+\mbox{\Hypertarget{classscifir_1_1percentage_af0535ce3870fb035058cfdccd1d6816c}\label{classscifir_1_1percentage_af0535ce3870fb035058cfdccd1d6816c}} 
 \index{scifir::percentage@{scifir::percentage}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}}]{new\+\_\+value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+value }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00179}{179}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 231 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00180\ \ \ \ \ \{}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ new\_value;}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00183\ \ \ \ \ \}}
+\DoxyCodeLine{232     \{}
+\DoxyCodeLine{233         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = new\_value;}
+\DoxyCodeLine{234         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{235     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a456f383883f9b9db1270009f66e5dc9a}\label{classscifir_1_1percentage_a456f383883f9b9db1270009f66e5dc9a} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a456f383883f9b9db1270009f66e5dc9a}\label{classscifir_1_1percentage_a456f383883f9b9db1270009f66e5dc9a}} 
 \index{scifir::percentage@{scifir::percentage}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{new\+\_\+value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+value }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00197}{197}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 249 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00198\ \ \ \ \ \{}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(new\_value);}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00201\ \ \ \ \ \}}
+\DoxyCodeLine{250     \{}
+\DoxyCodeLine{251         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value);}
+\DoxyCodeLine{252         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{253     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_abec5befaa64c16f466e9b542421fbef7}\label{classscifir_1_1percentage_abec5befaa64c16f466e9b542421fbef7} 
+\mbox{\Hypertarget{classscifir_1_1percentage_abec5befaa64c16f466e9b542421fbef7}\label{classscifir_1_1percentage_abec5befaa64c16f466e9b542421fbef7}} 
 \index{scifir::percentage@{scifir::percentage}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}}}]{new\+\_\+value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \& scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{long double}]{new\+\_\+value }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00191}{191}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 243 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00192\ \ \ \ \ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ float(new\_value);}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{244     \{}
+\DoxyCodeLine{245         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = float(new\_value);}
+\DoxyCodeLine{246         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{247     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_a5d784189257cbd105ec47dfaeb7c06c2}\label{classscifir_1_1percentage_a5d784189257cbd105ec47dfaeb7c06c2} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a5d784189257cbd105ec47dfaeb7c06c2}\label{classscifir_1_1percentage_a5d784189257cbd105ec47dfaeb7c06c2}} 
 \index{scifir::percentage@{scifir::percentage}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
@@ -1153,46 +1257,46 @@ Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00191}{191}} of file
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+Definition at line 225 of file percentage.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00174\ \ \ \ \ \{}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ std::move(x.get\_value());}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{226     \{}
+\DoxyCodeLine{227         \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = std::move(x.get\_value());}
+\DoxyCodeLine{228         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{229     \}}
 
 \end{DoxyCode}
-\Hypertarget{classscifir_1_1percentage_ae618bce66176de9d3fe1e957a0caeaa9}\label{classscifir_1_1percentage_ae618bce66176de9d3fe1e957a0caeaa9} 
+\mbox{\Hypertarget{classscifir_1_1percentage_ae618bce66176de9d3fe1e957a0caeaa9}\label{classscifir_1_1percentage_ae618bce66176de9d3fe1e957a0caeaa9}} 
 \index{scifir::percentage@{scifir::percentage}!operator=@{operator=}}
 \index{operator=@{operator=}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+void scifir\+::percentage\+::operator= (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 65 of file percentage.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ x;}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{66             \{}
+\DoxyCodeLine{67                 \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}} = x;}
+\DoxyCodeLine{68             \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}\label{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21} 
+\mbox{\Hypertarget{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}\label{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}} 
 \index{scifir::percentage@{scifir::percentage}!value@{value}}
 \index{value@{value}!scifir::percentage@{scifir::percentage}}
 \doxysubsubsection{\texorpdfstring{value}{value}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} scifir\+::percentage\+::value\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily float scifir\+::percentage\+::value\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00138}{138}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+Definition at line 140 of file percentage.\+hpp.
 
 
 

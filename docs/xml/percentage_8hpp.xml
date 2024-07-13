@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="percentage_8hpp" kind="file" language="C++">
     <compoundname>percentage.hpp</compoundname>
     <includes refid="constants_8hpp" local="yes">../topology/constants.hpp</includes>
@@ -8,32 +8,16 @@
     <includes local="yes">boost/math/constants/constants.hpp</includes>
     <includes local="no">cmath</includes>
     <includes local="no">string</includes>
-    <includedby refid="percentage_8cpp" local="yes">special_units/percentage.cpp</includedby>
     <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
+    <includedby refid="percentage_8cpp" local="yes">special_units/percentage.cpp</includedby>
     <includedby refid="unit__abbreviation_8hpp" local="yes">units/unit_abbreviation.hpp</includedby>
     <includedby refid="unit__basic_8hpp" local="yes">units/unit_basic.hpp</includedby>
     <incdepgraph>
-      <node id="1">
-        <label>special_units/percentage.hpp</label>
-        <link refid="percentage_8hpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
+      <node id="13">
+        <label>boost/algorithm/string.hpp</label>
       </node>
-      <node id="2">
-        <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
+      <node id="3">
+        <label>boost/math/constants/constants.hpp</label>
       </node>
       <node id="7">
         <label>../units/dimension.hpp</label>
@@ -63,17 +47,8 @@
         <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
+      <node id="9">
+        <label>cstdint</label>
       </node>
       <node id="6">
         <label>../units/scalar_unit.hpp</label>
@@ -99,82 +74,197 @@
         <childnode refid="20" relation="include">
         </childnode>
       </node>
+      <node id="17">
+        <label>cmath</label>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="11">
+        <label>map</label>
+      </node>
+      <node id="1">
+        <label>special_units/percentage.hpp</label>
+        <link refid="percentage_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>string_view</label>
+      </node>
+      <node id="20">
+        <label>vector</label>
+      </node>
       <node id="4">
         <label>../util/is_number.hpp</label>
         <link refid="is__number_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>algorithm</label>
+      <node id="19">
+        <label>sstream</label>
       </node>
-      <node id="13">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="3">
-        <label>boost/math/constants/constants.hpp</label>
-      </node>
-      <node id="17">
-        <label>cmath</label>
-      </node>
-      <node id="16">
-        <label>cstddef</label>
-      </node>
-      <node id="9">
-        <label>cstdint</label>
-      </node>
-      <node id="15">
-        <label>cstring</label>
+      <node id="2">
+        <label>../topology/constants.hpp</label>
+        <link refid="constants_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="10">
         <label>iostream</label>
       </node>
-      <node id="11">
-        <label>map</label>
-      </node>
-      <node id="18">
-        <label>set</label>
-      </node>
-      <node id="19">
-        <label>sstream</label>
-      </node>
-      <node id="12">
-        <label>string</label>
-      </node>
-      <node id="21">
-        <label>string_view</label>
+      <node id="16">
+        <label>cstddef</label>
       </node>
       <node id="5">
         <label>type_traits</label>
       </node>
-      <node id="20">
-        <label>vector</label>
+      <node id="18">
+        <label>set</label>
+      </node>
+      <node id="14">
+        <label>algorithm</label>
+      </node>
+      <node id="15">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="8">
-        <label>coordinates/coordinates_1d.cpp</label>
-        <link refid="coordinates__1d_8cpp"/>
+      <node id="19">
+        <label>coordinates/coordinates_3d.hpp</label>
+        <link refid="coordinates__3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
       </node>
-      <node id="7">
-        <label>coordinates/coordinates_1d.hpp</label>
-        <link refid="coordinates__1d_8hpp"/>
-        <childnode refid="8" relation="include">
+      <node id="4">
+        <label>units/unit_abbreviation.hpp</label>
+        <link refid="unit__abbreviation_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>predefined_units/physics_units.cpp</label>
+        <link refid="physics__units_8cpp"/>
+      </node>
+      <node id="22">
+        <label>coordinates/coordinates_3dr.cpp</label>
+        <link refid="coordinates__3dr_8cpp"/>
+      </node>
+      <node id="42">
+        <label>special_units/size_3d.hpp</label>
+        <link refid="size__3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>special_units/size_2d.cpp</label>
+        <link refid="size__2d_8cpp"/>
+      </node>
+      <node id="16">
+        <label>topology/point_2d_impl.hpp</label>
+        <link refid="point__2d__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>units/vector_unit_nd.cpp</label>
+        <link refid="vector__unit__nd_8cpp"/>
+      </node>
+      <node id="35">
+        <label>topology/point_2d.hpp</label>
+        <link refid="point__2d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>topology/point_1d.hpp</label>
+        <link refid="point__1d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
+      </node>
+      <node id="25">
+        <label>units/vector_unit_3d.cpp</label>
+        <link refid="vector__unit__3d_8cpp"/>
+      </node>
+      <node id="31">
+        <label>topology/point_nd_impl.hpp</label>
+        <link refid="point__nd__impl_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="12">
-        <label>coordinates/coordinates_2d.cpp</label>
-        <link refid="coordinates__2d_8cpp"/>
+      <node id="24">
+        <label>topology/point_3d_impl.hpp</label>
+        <link refid="point__3d__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>topology/point_3d.cpp</label>
+        <link refid="point__3d_8cpp"/>
+      </node>
+      <node id="8">
+        <label>coordinates/coordinates_1d.cpp</label>
+        <link refid="coordinates__1d_8cpp"/>
       </node>
       <node id="11">
         <label>coordinates/coordinates_2d.hpp</label>
         <link refid="coordinates__2d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
         <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
@@ -183,107 +273,43 @@
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
         <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+      </node>
+      <node id="5">
+        <label>units/unit_abbreviation.cpp</label>
+        <link refid="unit__abbreviation_8cpp"/>
+      </node>
+      <node id="44">
+        <label>special_units/size_nd.hpp</label>
+        <link refid="size__nd_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>coordinates/coordinates_2dr.cpp</label>
-        <link refid="coordinates__2dr_8cpp"/>
+      <node id="43">
+        <label>special_units/size_3d.cpp</label>
+        <link refid="size__3d_8cpp"/>
       </node>
-      <node id="13">
-        <label>coordinates/coordinates_2dr.hpp</label>
-        <link refid="coordinates__2dr_8hpp"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>coordinates/coordinates_3d.cpp</label>
-        <link refid="coordinates__3d_8cpp"/>
-      </node>
-      <node id="20">
-        <label>coordinates/coordinates_3d.hpp</label>
-        <link refid="coordinates__3d_8hpp"/>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>coordinates/coordinates_3dr.cpp</label>
-        <link refid="coordinates__3dr_8cpp"/>
-      </node>
-      <node id="22">
-        <label>coordinates/coordinates_3dr.hpp</label>
-        <link refid="coordinates__3dr_8hpp"/>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>coordinates/coordinates_nd.cpp</label>
-        <link refid="coordinates__nd_8cpp"/>
-      </node>
-      <node id="27">
-        <label>coordinates/coordinates_nd.hpp</label>
-        <link refid="coordinates__nd_8hpp"/>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="30">
-        <label>coordinates/coordinates_ndr.cpp</label>
-        <link refid="coordinates__ndr_8cpp"/>
-      </node>
-      <node id="29">
-        <label>coordinates/coordinates_ndr.hpp</label>
-        <link refid="coordinates__ndr_8hpp"/>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="34">
-        <label>predefined_units/physics_units.cpp</label>
-        <link refid="physics__units_8cpp"/>
-      </node>
-      <node id="33">
+      <node id="32">
         <label>predefined_units/physics_units.hpp</label>
         <link refid="physics__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="34" relation="include">
         </childnode>
@@ -293,36 +319,12 @@
         </childnode>
         <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="39">
-        <label>predefined_units/space_units.cpp</label>
-        <link refid="space__units_8cpp"/>
-      </node>
-      <node id="40">
-        <label>predefined_units/space_units.hpp</label>
-        <link refid="space__units_8hpp"/>
-        <childnode refid="39" relation="include">
-        </childnode>
-        <childnode refid="41" relation="include">
-        </childnode>
-        <childnode refid="43" relation="include">
-        </childnode>
-        <childnode refid="45" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>special_units/percentage.cpp</label>
-        <link refid="percentage_8cpp"/>
+      <node id="17">
+        <label>units/vector_unit_2d.cpp</label>
+        <link refid="vector__unit__2d_8cpp"/>
       </node>
       <node id="1">
         <label>special_units/percentage.hpp</label>
@@ -336,188 +338,106 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="42">
-        <label>special_units/size_2d.cpp</label>
-        <link refid="size__2d_8cpp"/>
-      </node>
-      <node id="41">
-        <label>special_units/size_2d.hpp</label>
-        <link refid="size__2d_8hpp"/>
-        <childnode refid="39" relation="include">
+      <node id="13">
+        <label>coordinates/coordinates_2dr.hpp</label>
+        <link refid="coordinates__2dr_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="44">
-        <label>special_units/size_3d.cpp</label>
-        <link refid="size__3d_8cpp"/>
-      </node>
-      <node id="43">
-        <label>special_units/size_3d.hpp</label>
-        <link refid="size__3d_8hpp"/>
-        <childnode refid="39" relation="include">
-        </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="46">
-        <label>special_units/size_nd.cpp</label>
-        <link refid="size__nd_8cpp"/>
-      </node>
-      <node id="45">
-        <label>special_units/size_nd.hpp</label>
-        <link refid="size__nd_8hpp"/>
-        <childnode refid="46" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>topology/point_1d.cpp</label>
-        <link refid="point__1d_8cpp"/>
-      </node>
-      <node id="35">
-        <label>topology/point_1d.hpp</label>
-        <link refid="point__1d_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>topology/point_1d_impl.hpp</label>
-        <link refid="point__1d__impl_8hpp"/>
-        <childnode refid="3" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
       <node id="15">
         <label>topology/point_2d.cpp</label>
         <link refid="point__2d_8cpp"/>
       </node>
-      <node id="36">
-        <label>topology/point_2d.hpp</label>
-        <link refid="point__2d_8hpp"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
+      <node id="9">
+        <label>topology/point_1d.cpp</label>
+        <link refid="point__1d_8cpp"/>
       </node>
-      <node id="16">
-        <label>topology/point_2d_impl.hpp</label>
-        <link refid="point__2d__impl_8hpp"/>
-        <childnode refid="3" relation="include">
+      <node id="7">
+        <label>coordinates/coordinates_1d.hpp</label>
+        <link refid="coordinates__1d_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="24">
-        <label>topology/point_3d.cpp</label>
-        <link refid="point__3d_8cpp"/>
-      </node>
-      <node id="37">
-        <label>topology/point_3d.hpp</label>
-        <link refid="point__3d_8hpp"/>
-        <childnode refid="20" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>topology/point_3d_impl.hpp</label>
-        <link refid="point__3d__impl_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="31">
-        <label>topology/point_nd.cpp</label>
-        <link refid="point__nd_8cpp"/>
       </node>
       <node id="38">
+        <label>predefined_units/space_units.cpp</label>
+        <link refid="space__units_8cpp"/>
+      </node>
+      <node id="45">
+        <label>special_units/size_nd.cpp</label>
+        <link refid="size__nd_8cpp"/>
+      </node>
+      <node id="3">
+        <label>special_units/percentage.cpp</label>
+        <link refid="percentage_8cpp"/>
+      </node>
+      <node id="10">
+        <label>topology/point_1d_impl.hpp</label>
+        <link refid="point__1d__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>coordinates/coordinates_2dr.cpp</label>
+        <link refid="coordinates__2dr_8cpp"/>
+      </node>
+      <node id="37">
         <label>topology/point_nd.hpp</label>
         <link refid="point__nd_8hpp"/>
-        <childnode refid="27" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+      </node>
+      <node id="28">
+        <label>coordinates/coordinates_ndr.hpp</label>
+        <link refid="coordinates__ndr_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
       </node>
-      <node id="32">
-        <label>topology/point_nd_impl.hpp</label>
-        <link refid="point__nd__impl_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
+      <node id="2">
         <label>units.hpp</label>
         <link refid="units_8hpp"/>
-      </node>
-      <node id="17">
-        <label>units/material_vector_unit_2d.hpp</label>
-        <link refid="material__vector__unit__2d_8hpp"/>
-      </node>
-      <node id="47">
-        <label>units/scalar_unit.cpp</label>
-        <link refid="scalar__unit_8cpp"/>
-      </node>
-      <node id="5">
-        <label>units/unit_abbreviation.cpp</label>
-        <link refid="unit__abbreviation_8cpp"/>
-      </node>
-      <node id="4">
-        <label>units/unit_abbreviation.hpp</label>
-        <link refid="unit__abbreviation_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="48">
-        <label>units/unit_basic.cpp</label>
-        <link refid="unit__basic_8cpp"/>
       </node>
       <node id="6">
         <label>units/unit_basic.hpp</label>
         <link refid="unit__basic_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
         </childnode>
         <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="35" relation="include">
         </childnode>
@@ -525,35 +445,107 @@
         </childnode>
         <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="47" relation="include">
+        <childnode refid="46" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="48" relation="include">
+        <childnode refid="47" relation="include">
         </childnode>
       </node>
-      <node id="18">
-        <label>units/vector_unit_2d.cpp</label>
-        <link refid="vector__unit__2d_8cpp"/>
+      <node id="27">
+        <label>coordinates/coordinates_nd.cpp</label>
+        <link refid="coordinates__nd_8cpp"/>
+      </node>
+      <node id="20">
+        <label>coordinates/coordinates_3d.cpp</label>
+        <link refid="coordinates__3d_8cpp"/>
+      </node>
+      <node id="39">
+        <label>predefined_units/space_units.hpp</label>
+        <link refid="space__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>coordinates/coordinates_3dr.hpp</label>
+        <link refid="coordinates__3dr_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>units/scalar_unit.cpp</label>
+        <link refid="scalar__unit_8cpp"/>
+      </node>
+      <node id="40">
+        <label>special_units/size_2d.hpp</label>
+        <link refid="size__2d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>topology/point_3d.hpp</label>
+        <link refid="point__3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>topology/point_nd.cpp</label>
+        <link refid="point__nd_8cpp"/>
+      </node>
+      <node id="47">
+        <label>units/unit_basic.cpp</label>
+        <link refid="unit__basic_8cpp"/>
+      </node>
+      <node id="29">
+        <label>coordinates/coordinates_ndr.cpp</label>
+        <link refid="coordinates__ndr_8cpp"/>
       </node>
       <node id="26">
-        <label>units/vector_unit_3d.cpp</label>
-        <link refid="vector__unit__3d_8cpp"/>
+        <label>coordinates/coordinates_nd.hpp</label>
+        <link refid="coordinates__nd_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
       </node>
-      <node id="19">
-        <label>units/vector_unit_nd.cpp</label>
-        <link refid="vector__unit__nd_8cpp"/>
+      <node id="12">
+        <label>coordinates/coordinates_2d.cpp</label>
+        <link refid="coordinates__2d_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classscifir_1_1percentage" prot="public">scifir::percentage</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
-    <sectiondef kind="func">
+      <sectiondef kind="func">
       <memberdef kind="function" id="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -582,7 +574,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="149" column="20" bodyfile="special_units/percentage.hpp" bodystart="149" bodyend="152"/>
+        <location file="special_units/percentage.hpp" line="151" column="20" bodyfile="special_units/percentage.hpp" bodystart="151" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a66007c9d37b55e53c242333331e87ba5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -612,7 +604,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="155" column="20" bodyfile="special_units/percentage.hpp" bodystart="155" bodyend="158"/>
+        <location file="special_units/percentage.hpp" line="157" column="20" bodyfile="special_units/percentage.hpp" bodystart="157" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -642,7 +634,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="161" column="7" bodyfile="special_units/percentage.hpp" bodystart="161" bodyend="164"/>
+        <location file="special_units/percentage.hpp" line="163" column="7" bodyfile="special_units/percentage.hpp" bodystart="163" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -672,7 +664,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="167" column="7" bodyfile="special_units/percentage.hpp" bodystart="167" bodyend="170"/>
+        <location file="special_units/percentage.hpp" line="169" column="7" bodyfile="special_units/percentage.hpp" bodystart="169" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -702,7 +694,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="173" column="6" bodyfile="special_units/percentage.hpp" bodystart="173" bodyend="176"/>
+        <location file="special_units/percentage.hpp" line="175" column="6" bodyfile="special_units/percentage.hpp" bodystart="175" bodyend="178"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -732,7 +724,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="179" column="6" bodyfile="special_units/percentage.hpp" bodystart="179" bodyend="182"/>
+        <location file="special_units/percentage.hpp" line="181" column="6" bodyfile="special_units/percentage.hpp" bodystart="181" bodyend="184"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a574de9dce20427d48f6ca1d8584a6240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -762,7 +754,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="185" column="1" bodyfile="special_units/percentage.hpp" bodystart="185" bodyend="188"/>
+        <location file="special_units/percentage.hpp" line="187" column="1" bodyfile="special_units/percentage.hpp" bodystart="187" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a6b415c5b5748baa98dbefbb396ae89e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -792,7 +784,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="191" column="6" bodyfile="special_units/percentage.hpp" bodystart="191" bodyend="194"/>
+        <location file="special_units/percentage.hpp" line="193" column="6" bodyfile="special_units/percentage.hpp" bodystart="193" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a73ff3192ba19ac41efbfd8f398f5f366" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -822,7 +814,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="197" column="1" bodyfile="special_units/percentage.hpp" bodystart="197" bodyend="200"/>
+        <location file="special_units/percentage.hpp" line="199" column="1" bodyfile="special_units/percentage.hpp" bodystart="199" bodyend="202"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a7e6310928460a5719b50651fc2be3eac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -852,7 +844,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="203" column="6" bodyfile="special_units/percentage.hpp" bodystart="203" bodyend="206"/>
+        <location file="special_units/percentage.hpp" line="205" column="6" bodyfile="special_units/percentage.hpp" bodystart="205" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a51a03af2f765b23243eb5f5b3bc45d10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -882,7 +874,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="209" column="6" bodyfile="special_units/percentage.hpp" bodystart="209" bodyend="212"/>
+        <location file="special_units/percentage.hpp" line="211" column="6" bodyfile="special_units/percentage.hpp" bodystart="211" bodyend="214"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1ae4af34c0815f69a37ccad4d5126a0156" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -912,7 +904,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="215" column="6" bodyfile="special_units/percentage.hpp" bodystart="215" bodyend="218"/>
+        <location file="special_units/percentage.hpp" line="217" column="6" bodyfile="special_units/percentage.hpp" bodystart="217" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a5b4169ad95e6dcf61f61fdef31fb7bd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -942,7 +934,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="221" column="1" bodyfile="special_units/percentage.hpp" bodystart="221" bodyend="224"/>
+        <location file="special_units/percentage.hpp" line="223" column="1" bodyfile="special_units/percentage.hpp" bodystart="223" bodyend="226"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a3a5ded7241759a378378c435b20681ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -972,7 +964,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="227" column="6" bodyfile="special_units/percentage.hpp" bodystart="227" bodyend="230"/>
+        <location file="special_units/percentage.hpp" line="229" column="6" bodyfile="special_units/percentage.hpp" bodystart="229" bodyend="232"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1ad7fa29b48fb1e1df6e4af91a6e499b04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1002,7 +994,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="233" column="1" bodyfile="special_units/percentage.hpp" bodystart="233" bodyend="236"/>
+        <location file="special_units/percentage.hpp" line="235" column="1" bodyfile="special_units/percentage.hpp" bodystart="235" bodyend="238"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a2be04c40c9a65dba308f2b45d16de926" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1032,7 +1024,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="239" column="6" bodyfile="special_units/percentage.hpp" bodystart="239" bodyend="242"/>
+        <location file="special_units/percentage.hpp" line="241" column="6" bodyfile="special_units/percentage.hpp" bodystart="241" bodyend="244"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1aed57323fc5a09522f5de5547b2bdbd61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref></type>
@@ -1053,7 +1045,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="244" column="21" bodyfile="special_units/percentage.cpp" bodystart="474" bodyend="477" declfile="special_units/percentage.hpp" declline="244" declcolumn="21"/>
+        <location file="special_units/percentage.hpp" line="246" column="21" bodyfile="special_units/percentage.cpp" bodystart="526" bodyend="529" declfile="special_units/percentage.hpp" declline="246" declcolumn="21"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1ac374e9f61dfa39ac74eba10ea58024bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref></type>
@@ -1074,7 +1066,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="245" column="21" bodyfile="special_units/percentage.cpp" bodystart="479" bodyend="482" declfile="special_units/percentage.hpp" declline="245" declcolumn="21"/>
+        <location file="special_units/percentage.hpp" line="247" column="21" bodyfile="special_units/percentage.cpp" bodystart="531" bodyend="534" declfile="special_units/percentage.hpp" declline="247" declcolumn="21"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a11bae7a49331c9cb2ea9d88b85a68834" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1095,7 +1087,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="247" column="6" bodyfile="special_units/percentage.cpp" bodystart="484" bodyend="494" declfile="special_units/percentage.hpp" declline="247" declcolumn="6"/>
+        <location file="special_units/percentage.hpp" line="249" column="6" bodyfile="special_units/percentage.cpp" bodystart="536" bodyend="546" declfile="special_units/percentage.hpp" declline="249" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a3f0dd45499cf23ca6529bd2a5743387d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1116,7 +1108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="248" column="6" bodyfile="special_units/percentage.cpp" bodystart="496" bodyend="499" declfile="special_units/percentage.hpp" declline="248" declcolumn="6"/>
+        <location file="special_units/percentage.hpp" line="250" column="6" bodyfile="special_units/percentage.cpp" bodystart="548" bodyend="551" declfile="special_units/percentage.hpp" declline="250" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a36b532254f7dcb06fc7b4fd8e0abc983" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1137,7 +1129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="249" column="1" bodyfile="special_units/percentage.cpp" bodystart="501" bodyend="511" declfile="special_units/percentage.hpp" declline="249" declcolumn="1"/>
+        <location file="special_units/percentage.hpp" line="251" column="1" bodyfile="special_units/percentage.cpp" bodystart="553" bodyend="563" declfile="special_units/percentage.hpp" declline="251" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1aecc2a9b74352d6684d443e67b5ed189b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1158,7 +1150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="250" column="6" bodyfile="special_units/percentage.cpp" bodystart="513" bodyend="523" declfile="special_units/percentage.hpp" declline="250" declcolumn="6"/>
+        <location file="special_units/percentage.hpp" line="252" column="6" bodyfile="special_units/percentage.cpp" bodystart="565" bodyend="575" declfile="special_units/percentage.hpp" declline="252" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1ac96e6b3da426f6fd8e99e5256139bb37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1179,7 +1171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="251" column="1" bodyfile="special_units/percentage.cpp" bodystart="525" bodyend="528" declfile="special_units/percentage.hpp" declline="251" declcolumn="1"/>
+        <location file="special_units/percentage.hpp" line="253" column="1" bodyfile="special_units/percentage.cpp" bodystart="577" bodyend="580" declfile="special_units/percentage.hpp" declline="253" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1afd585d9ac19daf5bd309cd0f72c7e48e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1200,7 +1192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="252" column="6" bodyfile="special_units/percentage.cpp" bodystart="530" bodyend="533" declfile="special_units/percentage.hpp" declline="252" declcolumn="6"/>
+        <location file="special_units/percentage.hpp" line="254" column="6" bodyfile="special_units/percentage.cpp" bodystart="582" bodyend="585" declfile="special_units/percentage.hpp" declline="254" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1ab0e975f0b4116280542e459f2f22d1c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1221,7 +1213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="254" column="6" bodyfile="special_units/percentage.cpp" bodystart="535" bodyend="539" declfile="special_units/percentage.hpp" declline="254" declcolumn="6"/>
+        <location file="special_units/percentage.hpp" line="256" column="6" bodyfile="special_units/percentage.cpp" bodystart="587" bodyend="591" declfile="special_units/percentage.hpp" declline="256" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1afb656428378acc338b9e5148933483eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1242,7 +1234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="255" column="6" bodyfile="special_units/percentage.cpp" bodystart="541" bodyend="544" declfile="special_units/percentage.hpp" declline="255" declcolumn="6"/>
+        <location file="special_units/percentage.hpp" line="257" column="6" bodyfile="special_units/percentage.cpp" bodystart="593" bodyend="596" declfile="special_units/percentage.hpp" declline="257" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a06cda1228cab7ed2fbf45344666f81e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1263,7 +1255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="257" column="6" bodyfile="special_units/percentage.cpp" bodystart="546" bodyend="550" declfile="special_units/percentage.hpp" declline="257" declcolumn="6"/>
+        <location file="special_units/percentage.hpp" line="259" column="6" bodyfile="special_units/percentage.cpp" bodystart="598" bodyend="602" declfile="special_units/percentage.hpp" declline="259" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a1606375bd47d706bc818ed6606b72907" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1284,7 +1276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="258" column="6" bodyfile="special_units/percentage.cpp" bodystart="552" bodyend="555" declfile="special_units/percentage.hpp" declline="258" declcolumn="6"/>
+        <location file="special_units/percentage.hpp" line="260" column="6" bodyfile="special_units/percentage.cpp" bodystart="604" bodyend="607" declfile="special_units/percentage.hpp" declline="260" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1aca1d7475494064cd88fec5085fd4d5d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1305,7 +1297,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="260" column="6" bodyfile="special_units/percentage.cpp" bodystart="557" bodyend="562" declfile="special_units/percentage.hpp" declline="260" declcolumn="6"/>
+        <location file="special_units/percentage.hpp" line="262" column="6" bodyfile="special_units/percentage.cpp" bodystart="609" bodyend="614" declfile="special_units/percentage.hpp" declline="262" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1a29b3ec6917531dd25d30de6b1e87fc95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
@@ -1326,7 +1318,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="261" column="8" bodyfile="special_units/percentage.cpp" bodystart="564" bodyend="570" declfile="special_units/percentage.hpp" declline="261" declcolumn="8"/>
+        <location file="special_units/percentage.hpp" line="263" column="8" bodyfile="special_units/percentage.cpp" bodystart="616" bodyend="622" declfile="special_units/percentage.hpp" declline="263" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="percentage_8hpp_1aefa99cbb53117bea7135b341b1d66c9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
@@ -1347,11 +1339,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="262" column="8" bodyfile="special_units/percentage.cpp" bodystart="572" bodyend="578" declfile="special_units/percentage.hpp" declline="262" declcolumn="8"/>
+        <location file="special_units/percentage.hpp" line="264" column="8" bodyfile="special_units/percentage.cpp" bodystart="624" bodyend="630" declfile="special_units/percentage.hpp" declline="264" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="percentage_8hpp_1ababed7d7960d3fd02d45a9a3eab36be3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="percentage_8hpp_1ac11f56a9aac37ca1a0bbaacc2c534cc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::percentage &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -1368,11 +1360,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="264" column="1" bodyfile="special_units/percentage.cpp" bodystart="580" bodyend="583" declfile="special_units/percentage.hpp" declline="264" declcolumn="1"/>
+        <location file="special_units/percentage.hpp" line="266" column="1" bodyfile="special_units/percentage.cpp" bodystart="632" bodyend="635" declfile="special_units/percentage.hpp" declline="266" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="percentage_8hpp_1aebb6e808ff148cbf1258cfdf572f126d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="percentage_8hpp_1a96b17cd420d54c2c0cc876afc4330913" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>istream &amp;</type>
-        <definition>istream &amp; operator&gt;&gt;</definition>
+        <definition>istream&amp; operator&gt;&gt;</definition>
         <argsstring>(istream &amp;is, scifir::percentage &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
@@ -1389,9 +1381,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="265" column="9" bodyfile="special_units/percentage.cpp" bodystart="585" bodyend="593" declfile="special_units/percentage.hpp" declline="265" declcolumn="9"/>
+        <location file="special_units/percentage.hpp" line="267" column="9" bodyfile="special_units/percentage.cpp" bodystart="637" bodyend="645" declfile="special_units/percentage.hpp" declline="267" declcolumn="9"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -1416,254 +1408,256 @@
 <codeline lineno="17" refid="classscifir_1_1percentage" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>();</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(<ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_percentage</ref>);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" kindref="member">operator =</ref>(<ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" kindref="member">operator =</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" kindref="member">operator =</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" kindref="member">operator =</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" kindref="member">operator =</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_percentage</ref>);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="classscifir_1_1percentage_1a64ba3202f386c17dde5605465857ed75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="44"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(<ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="49"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref>;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="classscifir_1_1percentage_1a997703d062db4bd8372c8f42b38ab0db" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="classscifir_1_1percentage_1a0063f46fae523dde05a08ff773aa0759" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="classscifir_1_1percentage_1ae1299386921e23b131a480c60313075c" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="classscifir_1_1percentage_1a2e068414854cad2217c5629c1136ebe2" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a415833910907612760930697acb7cabf" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1aed6d83ca9b41e280179470adbf729842" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a154bffef5ed6e8cb63bcb39c9be4bcfe" kindref="member">operator *=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a6c10cbe35b0236c4b549ac5bc4585212" kindref="member">operator /=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="63" refid="classscifir_1_1percentage_1ae618bce66176de9d3fe1e957a0caeaa9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" kindref="member">operator =</ref>(T<sp/>x)</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref><sp/>=<sp/>x;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="69" refid="classscifir_1_1percentage_1a8226163901e8cc0938e65275aa1bd866" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="classscifir_1_1percentage_1a997703d062db4bd8372c8f42b38ab0db" kindref="member">operator +</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="70"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(<ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref><sp/>+<sp/>x);</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="75" refid="classscifir_1_1percentage_1aa2c7b90ae7a2c8e13455d58b629c9437" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="classscifir_1_1percentage_1a0063f46fae523dde05a08ff773aa0759" kindref="member">operator -</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="76"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" kindref="member">percentage</ref>(<ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref><sp/>-<sp/>x);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="81" refid="classscifir_1_1percentage_1a44bc5cb70594fa5c455ba2a1d95f8ff6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1ae1299386921e23b131a480c60313075c" kindref="member">operator *</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="82"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(<ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref><sp/>*<sp/>x<sp/>/<sp/>100);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="87" refid="classscifir_1_1percentage_1acf02cbac75ad3b05102da26e4658b951" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a2e068414854cad2217c5629c1136ebe2" kindref="member">operator /</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="88"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(<ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref><sp/>/<sp/>(100<sp/>*<sp/>x));</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="93" refid="classscifir_1_1percentage_1a32ec16c589336fda397e779f421d863e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a415833910907612760930697acb7cabf" kindref="member">operator +=</ref>(T<sp/>x)</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref><sp/>+=<sp/>x;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="99" refid="classscifir_1_1percentage_1a5899f233d6c7bb9d364bec5bab09bdb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1aed6d83ca9b41e280179470adbf729842" kindref="member">operator -=</ref>(T<sp/>x)</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref><sp/>-=<sp/>x;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="105" refid="classscifir_1_1percentage_1a050f53ae43b117fec94385ddcfcaafac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a154bffef5ed6e8cb63bcb39c9be4bcfe" kindref="member">operator *=</ref>(T<sp/>x)</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref><sp/>*=<sp/>x;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="111" refid="classscifir_1_1percentage_1a4f2549463e30f02b2ffc70a624ec7cfa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a6c10cbe35b0236c4b549ac5bc4585212" kindref="member">operator /=</ref>(T<sp/>x)</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref><sp/>/=<sp/>x;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1addccf7ec453b14abc08f41c0c749b2c4" kindref="member">operator++</ref>();</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="classscifir_1_1percentage_1addccf7ec453b14abc08f41c0c749b2c4" kindref="member">operator++</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/><ref refid="classscifir_1_1percentage_1aecbfdd6b63d0dd993056347042063f85" kindref="member">operator--</ref>();</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="classscifir_1_1percentage_1aecbfdd6b63d0dd993056347042063f85" kindref="member">operator--</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="classscifir_1_1percentage_1ae1299386921e23b131a480c60313075c" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="classscifir_1_1percentage_1a2e068414854cad2217c5629c1136ebe2" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1aff54f2d08cc05e3f5fd3aa5b374b3ed8" kindref="member">get_factor</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20" refid="classscifir_1_1percentage_1a4df11500cbcd110e6656e3bfcc5ac79aa9a2661f77145e151d8bca9525440ab1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a4df11500cbcd110e6656e3bfcc5ac79a" kindref="member">type</ref><sp/>:<sp/>int8_t<sp/>{PERCENTAGE,PARTS_PER_MILLION,<ref refid="classscifir_1_1percentage_1a4df11500cbcd110e6656e3bfcc5ac79aa9a2661f77145e151d8bca9525440ab1c" kindref="member">PARTS_PER_BILLION</ref>,PARTS_PER_TRILLION,PARTS_PER_QUATRILLION};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(<ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value,<ref refid="classscifir_1_1percentage_1a4df11500cbcd110e6656e3bfcc5ac79a" kindref="member">percentage::type</ref><sp/>init_type<sp/>=<sp/>percentage::PERCENTAGE);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,<ref refid="classscifir_1_1percentage_1a4df11500cbcd110e6656e3bfcc5ac79a" kindref="member">percentage::type</ref><sp/>init_type<sp/>=<sp/>percentage::PERCENTAGE);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,<ref refid="classscifir_1_1percentage_1a4df11500cbcd110e6656e3bfcc5ac79a" kindref="member">percentage::type</ref><sp/>init_type<sp/>=<sp/>percentage::PERCENTAGE);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_value,<ref refid="classscifir_1_1percentage_1a4df11500cbcd110e6656e3bfcc5ac79a" kindref="member">percentage::type</ref><sp/>init_type<sp/>=<sp/>percentage::PERCENTAGE);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classscifir_1_1percentage_1a64ba3202f386c17dde5605465857ed75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>float()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="46"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(value);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="51"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="percentage_8hpp_1a66007c9d37b55e53c242333331e87ba5" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1aca1d7475494064cd88fec5085fd4d5d1" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>*=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>/=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="65" refid="classscifir_1_1percentage_1ae618bce66176de9d3fe1e957a0caeaa9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>=(T<sp/>x)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="71" refid="classscifir_1_1percentage_1a8226163901e8cc0938e65275aa1bd866" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" kindref="member">operator +</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="72"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(value<sp/>+<sp/>x);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="77" refid="classscifir_1_1percentage_1aa2c7b90ae7a2c8e13455d58b629c9437" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/><ref refid="percentage_8hpp_1a66007c9d37b55e53c242333331e87ba5" kindref="member">operator -</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="78"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>(value<sp/>-<sp/>x);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="83" refid="classscifir_1_1percentage_1a44bc5cb70594fa5c455ba2a1d95f8ff6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" kindref="member">operator *</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="84"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(value<sp/>*<sp/>x<sp/>/<sp/>100);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="89" refid="classscifir_1_1percentage_1acf02cbac75ad3b05102da26e4658b951" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" kindref="member">operator /</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="90"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(value<sp/>/<sp/>(100<sp/>*<sp/>x));</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="95" refid="classscifir_1_1percentage_1a32ec16c589336fda397e779f421d863e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1aca1d7475494064cd88fec5085fd4d5d1" kindref="member">operator +=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>+=<sp/>x;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="101" refid="classscifir_1_1percentage_1a5899f233d6c7bb9d364bec5bab09bdb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>-=<sp/>x;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="107" refid="classscifir_1_1percentage_1a050f53ae43b117fec94385ddcfcaafac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>*=(T<sp/>x)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>*=<sp/>x;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="113" refid="classscifir_1_1percentage_1a4f2549463e30f02b2ffc70a624ec7cfa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>/=(T<sp/>x)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>/=<sp/>x;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator++();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/>operator++(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>operator--();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref><sp/>operator--(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a295c00367e72dc3e70800da792086373" kindref="member">get_ppm</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*float<sp/>get_ppb()<sp/>const;</highlight></codeline>
-<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>get_ppt()<sp/>const;</highlight></codeline>
-<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>get_ppq()<sp/>const;*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1adbea0c300e66fdf2d82721583de0f7a1" kindref="member">display_percentage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">number_of_decimals</ref><sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a28516c470ce03a0c3a4c7c384480fc85" kindref="member">display_ppm</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*string<sp/>display_ppb()<sp/>const;</highlight></codeline>
-<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>string<sp/>display_ppt()<sp/>const;</highlight></codeline>
-<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>string<sp/>display_ppq()<sp/>const;*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="138" refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref>;</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1ae59bbcaab856dd15c9918e26aadecb43" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_percentage</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>get_factor()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>get_ppm()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*float<sp/>get_ppb()<sp/>const;</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>get_ppt()<sp/>const;</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>get_ppq()<sp/>const;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>display_percentage(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number_of_decimals<sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>display_ppm()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*string<sp/>display_ppb()<sp/>const;</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>string<sp/>display_ppt()<sp/>const;</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>string<sp/>display_ppq()<sp/>const;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="140" refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize_from_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage);</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1acab1cb8bce8abe8946add3aee1f193b8" kindref="member">is_percentage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_percentage</ref>);</highlight></codeline>
-<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="149" refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref><sp/><ref refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" kindref="member">operator +</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="150"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>(x<sp/>+<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="155" refid="percentage_8hpp_1a66007c9d37b55e53c242333331e87ba5" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref><sp/><ref refid="percentage_8hpp_1a66007c9d37b55e53c242333331e87ba5" kindref="member">operator -</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="156"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>(x<sp/>-<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"></highlight></codeline>
-<codeline lineno="160"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="161" refid="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" kindref="member">operator *</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(x<sp/>*<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>()<sp/>/<sp/>100);</highlight></codeline>
-<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="167" refid="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" kindref="member">operator /</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="168"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(100<sp/>*<sp/>x<sp/>/<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"></highlight></codeline>
-<codeline lineno="172"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="173" refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="179" refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="180"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="185" refid="percentage_8hpp_1a574de9dce20427d48f6ca1d8584a6240" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a574de9dce20427d48f6ca1d8584a6240" kindref="member">operator &lt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="186"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"></highlight></codeline>
-<codeline lineno="190"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="191" refid="percentage_8hpp_1a6b415c5b5748baa98dbefbb396ae89e8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a6b415c5b5748baa98dbefbb396ae89e8" kindref="member">operator &gt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="192"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="197" refid="percentage_8hpp_1a73ff3192ba19ac41efbfd8f398f5f366" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a73ff3192ba19ac41efbfd8f398f5f366" kindref="member">operator &lt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="198"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;=<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"></highlight></codeline>
-<codeline lineno="202"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="203" refid="percentage_8hpp_1a7e6310928460a5719b50651fc2be3eac" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a7e6310928460a5719b50651fc2be3eac" kindref="member">operator &gt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="204"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;=<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"></highlight></codeline>
-<codeline lineno="208"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="209" refid="percentage_8hpp_1a51a03af2f765b23243eb5f5b3bc45d10" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
-<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"></highlight></codeline>
-<codeline lineno="214"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="215" refid="percentage_8hpp_1ae4af34c0815f69a37ccad4d5126a0156" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
-<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>());</highlight></codeline>
-<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"></highlight></codeline>
-<codeline lineno="220"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="221" refid="percentage_8hpp_1a5b4169ad95e6dcf61f61fdef31fb7bd7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a574de9dce20427d48f6ca1d8584a6240" kindref="member">operator &lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
-<codeline lineno="222"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>()<sp/>&lt;<sp/>x);</highlight></codeline>
-<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"></highlight></codeline>
-<codeline lineno="226"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="227" refid="percentage_8hpp_1a3a5ded7241759a378378c435b20681ae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a6b415c5b5748baa98dbefbb396ae89e8" kindref="member">operator &gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
-<codeline lineno="228"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>()<sp/>&gt;<sp/>x);</highlight></codeline>
-<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"></highlight></codeline>
-<codeline lineno="232"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="233" refid="percentage_8hpp_1ad7fa29b48fb1e1df6e4af91a6e499b04" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a73ff3192ba19ac41efbfd8f398f5f366" kindref="member">operator &lt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
-<codeline lineno="234"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>()<sp/>&lt;=<sp/>x);</highlight></codeline>
-<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"></highlight></codeline>
-<codeline lineno="238"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="239" refid="percentage_8hpp_1a2be04c40c9a65dba308f2b45d16de926" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a7e6310928460a5719b50651fc2be3eac" kindref="member">operator &gt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
-<codeline lineno="240"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" kindref="member">get_value</ref>()<sp/>&gt;=<sp/>x);</highlight></codeline>
-<codeline lineno="242"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"></highlight></codeline>
-<codeline lineno="244"><highlight class="normal"><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref><sp/><ref refid="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref><sp/><ref refid="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="246"><highlight class="normal"></highlight></codeline>
-<codeline lineno="247"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="248"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a574de9dce20427d48f6ca1d8584a6240" kindref="member">operator &lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="250"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a6b415c5b5748baa98dbefbb396ae89e8" kindref="member">operator &gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a73ff3192ba19ac41efbfd8f398f5f366" kindref="member">operator &lt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a7e6310928460a5719b50651fc2be3eac" kindref="member">operator &gt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="253"><highlight class="normal"></highlight></codeline>
-<codeline lineno="254"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage);</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage);</highlight></codeline>
-<codeline lineno="256"><highlight class="normal"></highlight></codeline>
-<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="258"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"></highlight></codeline>
-<codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1aca1d7475494064cd88fec5085fd4d5d1" kindref="member">operator +=</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="263"><highlight class="normal"></highlight></codeline>
-<codeline lineno="264"><highlight class="normal">ostream&amp;<sp/><ref refid="percentage_8hpp_1ababed7d7960d3fd02d45a9a3eab36be3" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="265"><highlight class="normal">istream&amp;<sp/><ref refid="percentage_8hpp_1aebb6e808ff148cbf1258cfdf572f126d" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"></highlight></codeline>
-<codeline lineno="267"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1acab1cb8bce8abe8946add3aee1f193b8" kindref="member">is_percentage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="151" refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref><sp/><ref refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" kindref="member">operator +</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>(x<sp/>+<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="157" refid="percentage_8hpp_1a66007c9d37b55e53c242333331e87ba5" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref><sp/><ref refid="percentage_8hpp_1a66007c9d37b55e53c242333331e87ba5" kindref="member">operator -</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>(x<sp/>-<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="163" refid="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" kindref="member">operator *</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(x<sp/>*<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>()<sp/>/<sp/>100);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="169" refid="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" kindref="member">operator /</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(100<sp/>*<sp/>x<sp/>/<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="175" refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="181" refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="187" refid="percentage_8hpp_1a574de9dce20427d48f6ca1d8584a6240" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a574de9dce20427d48f6ca1d8584a6240" kindref="member">operator &lt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="193" refid="percentage_8hpp_1a6b415c5b5748baa98dbefbb396ae89e8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a6b415c5b5748baa98dbefbb396ae89e8" kindref="member">operator &gt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="199" refid="percentage_8hpp_1a73ff3192ba19ac41efbfd8f398f5f366" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a73ff3192ba19ac41efbfd8f398f5f366" kindref="member">operator &lt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;=<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="205" refid="percentage_8hpp_1a7e6310928460a5719b50651fc2be3eac" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a7e6310928460a5719b50651fc2be3eac" kindref="member">operator &gt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;=<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="211" refid="percentage_8hpp_1a51a03af2f765b23243eb5f5b3bc45d10" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="217" refid="percentage_8hpp_1ae4af34c0815f69a37ccad4d5126a0156" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="223" refid="percentage_8hpp_1a5b4169ad95e6dcf61f61fdef31fb7bd7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a574de9dce20427d48f6ca1d8584a6240" kindref="member">operator &lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>()<sp/>&lt;<sp/>x);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="229" refid="percentage_8hpp_1a3a5ded7241759a378378c435b20681ae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a6b415c5b5748baa98dbefbb396ae89e8" kindref="member">operator &gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>()<sp/>&gt;<sp/>x);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="235" refid="percentage_8hpp_1ad7fa29b48fb1e1df6e4af91a6e499b04" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a73ff3192ba19ac41efbfd8f398f5f366" kindref="member">operator &lt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>()<sp/>&lt;=<sp/>x);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="241" refid="percentage_8hpp_1a2be04c40c9a65dba308f2b45d16de926" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a7e6310928460a5719b50651fc2be3eac" kindref="member">operator &gt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1percentage_1abfbf61303c0b91f5b1536a5ac2648408" kindref="member">get_value</ref>()<sp/>&gt;=<sp/>x);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref><sp/><ref refid="percentage_8hpp_1a2409cfb487e9ecac210e9d8fe8f37f71" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref><sp/><ref refid="percentage_8hpp_1ab27024a0e63bbcd0edc59d37776fa03a" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scifir::scalar_unit</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a574de9dce20427d48f6ca1d8584a6240" kindref="member">operator &lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a6b415c5b5748baa98dbefbb396ae89e8" kindref="member">operator &gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a73ff3192ba19ac41efbfd8f398f5f366" kindref="member">operator &lt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a7e6310928460a5719b50651fc2be3eac" kindref="member">operator &gt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1afa982eb3fef5c3edd8243966221615ec" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a568a364e20ead0b160cc24cbc8d830fa" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_percentage,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1aca1d7475494064cd88fec5085fd4d5d1" kindref="member">operator +=</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="percentage_8hpp_1a81f154358d49660f1b1a96953d15efd0" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal">ostream&amp;<sp/><ref refid="percentage_8hpp_1ac11f56a9aac37ca1a0bbaacc2c534cc7" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">istream&amp;<sp/><ref refid="percentage_8hpp_1a96b17cd420d54c2c0cc876afc4330913" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="special_units/percentage.hpp"/>
   </compounddef>

@@ -1,4 +1,4 @@
-.TH "coordinates/coordinates_3d.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "coordinates/coordinates_3d.hpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -37,7 +37,7 @@ coordinates/coordinates_3d.hpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -45,136 +45,136 @@ coordinates/coordinates_3d.hpp
 
 .in +1c
 .ti -1c
-.RI "template<\fBtypename\fP T > \fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBcoordinates_3d\fP< T > &x)"
+.RI "template<typename T > string \fBscifir::to_string\fP (const coordinates_3d< T > &x)"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBcoordinates_3d\fP< \fBfloat\fP > &x)"
+.RI "string \fBscifir::to_string\fP (const coordinates_3d< float > &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3d\fP< T > &x, \fBconst\fP \fBcoordinates_3d\fP< \fBU\fP > &y)"
+.RI "template<typename T , typename U > T \fBscifir::distance\fP (const coordinates_3d< T > &x, const coordinates_3d< U > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3d\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_3d\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const coordinates_3d< float > &x, const coordinates_3d< float > &y)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3d\fP< T > &x, \fBconst\fP \fBpoint_3d\fP< \fBU\fP > &y)"
+.RI "template<typename T , typename U > T \fBscifir::distance\fP (const coordinates_3d< T > &x, const point_3d< U > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_3d\fP< \fBfloat\fP > &x, \fBconst\fP \fBpoint_3d\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const coordinates_3d< float > &x, const point_3d< float > &y)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBpoint_3d\fP< T > &x, \fBconst\fP \fBcoordinates_3d\fP< \fBU\fP > &y)"
+.RI "template<typename T , typename U > T \fBscifir::distance\fP (const point_3d< T > &x, const coordinates_3d< U > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBpoint_3d\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_3d\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const point_3d< float > &x, const coordinates_3d< float > &y)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::cartesian_3d_to_cylindrical_p\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBscalar_unit\fP y, \fBconst\fP \fBscalar_unit\fP &z)"
+.RI "scalar_unit \fBscifir::cartesian_3d_to_cylindrical_p\fP (const scalar_unit &x, scalar_unit y, const scalar_unit &z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cartesian_3d_to_cylindrical_theta\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBscalar_unit\fP y, \fBconst\fP \fBscalar_unit\fP &z)"
+.RI "angle \fBscifir::cartesian_3d_to_cylindrical_theta\fP (const scalar_unit &x, scalar_unit y, const scalar_unit &z)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::cartesian_3d_to_cylindrical_z\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBconst\fP \fBscalar_unit\fP &y, \fBconst\fP \fBscalar_unit\fP &z)"
+.RI "scalar_unit \fBscifir::cartesian_3d_to_cylindrical_z\fP (const scalar_unit &x, const scalar_unit &y, const scalar_unit &z)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::cartesian_3d_to_spherical_r\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBscalar_unit\fP y, \fBscalar_unit\fP z)"
+.RI "scalar_unit \fBscifir::cartesian_3d_to_spherical_r\fP (const scalar_unit &x, scalar_unit y, scalar_unit z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cartesian_3d_to_spherical_theta\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBscalar_unit\fP y, \fBconst\fP \fBscalar_unit\fP &z)"
+.RI "angle \fBscifir::cartesian_3d_to_spherical_theta\fP (const scalar_unit &x, scalar_unit y, const scalar_unit &z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cartesian_3d_to_spherical_phi\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBscalar_unit\fP y, \fBscalar_unit\fP z)"
+.RI "angle \fBscifir::cartesian_3d_to_spherical_phi\fP (const scalar_unit &x, scalar_unit y, scalar_unit z)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::spherical_to_cartesian_3d_x\fP (\fBconst\fP \fBscalar_unit\fP &\fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "scalar_unit \fBscifir::spherical_to_cartesian_3d_x\fP (const scalar_unit &r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::spherical_to_cartesian_3d_y\fP (\fBconst\fP \fBscalar_unit\fP &\fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "scalar_unit \fBscifir::spherical_to_cartesian_3d_y\fP (const scalar_unit &r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::spherical_to_cartesian_3d_z\fP (\fBconst\fP \fBscalar_unit\fP &\fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "scalar_unit \fBscifir::spherical_to_cartesian_3d_z\fP (const scalar_unit &r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::spherical_to_cylindrical_p\fP (\fBconst\fP \fBscalar_unit\fP &\fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "scalar_unit \fBscifir::spherical_to_cylindrical_p\fP (const scalar_unit &r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::spherical_to_cylindrical_theta\fP (\fBconst\fP \fBscalar_unit\fP &\fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "angle \fBscifir::spherical_to_cylindrical_theta\fP (const scalar_unit &r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::spherical_to_cylindrical_z\fP (\fBconst\fP \fBscalar_unit\fP &\fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "scalar_unit \fBscifir::spherical_to_cylindrical_z\fP (const scalar_unit &r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::cylindrical_to_cartesian_3d_x\fP (\fBconst\fP \fBscalar_unit\fP &p, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBscalar_unit\fP &z)"
+.RI "scalar_unit \fBscifir::cylindrical_to_cartesian_3d_x\fP (const scalar_unit &p, const angle &theta, const scalar_unit &z)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::cylindrical_to_cartesian_3d_y\fP (\fBconst\fP \fBscalar_unit\fP &p, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBscalar_unit\fP &z)"
+.RI "scalar_unit \fBscifir::cylindrical_to_cartesian_3d_y\fP (const scalar_unit &p, const angle &theta, const scalar_unit &z)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::cylindrical_to_cartesian_3d_z\fP (\fBconst\fP \fBscalar_unit\fP &p, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBscalar_unit\fP &z)"
+.RI "scalar_unit \fBscifir::cylindrical_to_cartesian_3d_z\fP (const scalar_unit &p, const angle &theta, const scalar_unit &z)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::cylindrical_to_spherical_r\fP (\fBconst\fP \fBscalar_unit\fP &p, \fBconst\fP \fBangle\fP &theta, \fBscalar_unit\fP z)"
+.RI "scalar_unit \fBscifir::cylindrical_to_spherical_r\fP (const scalar_unit &p, const angle &theta, scalar_unit z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cylindrical_to_spherical_theta\fP (\fBconst\fP \fBscalar_unit\fP &p, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBscalar_unit\fP &z)"
+.RI "angle \fBscifir::cylindrical_to_spherical_theta\fP (const scalar_unit &p, const angle &theta, const scalar_unit &z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cylindrical_to_spherical_phi\fP (\fBconst\fP \fBscalar_unit\fP &p, \fBconst\fP \fBangle\fP &theta, \fBscalar_unit\fP z)"
+.RI "angle \fBscifir::cylindrical_to_spherical_phi\fP (const scalar_unit &p, const angle &theta, scalar_unit z)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::cartesian_3d_to_cylindrical_p\fP (\fBfloat\fP x, \fBfloat\fP y, \fBfloat\fP z)"
+.RI "float \fBscifir::cartesian_3d_to_cylindrical_p\fP (float x, float y, float z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cartesian_3d_to_cylindrical_theta\fP (\fBfloat\fP x, \fBfloat\fP y, \fBfloat\fP z)"
+.RI "angle \fBscifir::cartesian_3d_to_cylindrical_theta\fP (float x, float y, float z)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::cartesian_3d_to_cylindrical_z\fP (\fBfloat\fP x, \fBfloat\fP y, \fBfloat\fP z)"
+.RI "float \fBscifir::cartesian_3d_to_cylindrical_z\fP (float x, float y, float z)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::cartesian_3d_to_spherical_r\fP (\fBfloat\fP x, \fBfloat\fP y, \fBfloat\fP z)"
+.RI "float \fBscifir::cartesian_3d_to_spherical_r\fP (float x, float y, float z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cartesian_3d_to_spherical_theta\fP (\fBfloat\fP x, \fBfloat\fP y, \fBfloat\fP z)"
+.RI "angle \fBscifir::cartesian_3d_to_spherical_theta\fP (float x, float y, float z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cartesian_3d_to_spherical_phi\fP (\fBfloat\fP x, \fBfloat\fP y, \fBfloat\fP z)"
+.RI "angle \fBscifir::cartesian_3d_to_spherical_phi\fP (float x, float y, float z)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::spherical_to_cartesian_3d_x\fP (\fBfloat\fP \fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "float \fBscifir::spherical_to_cartesian_3d_x\fP (float r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::spherical_to_cartesian_3d_y\fP (\fBfloat\fP \fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "float \fBscifir::spherical_to_cartesian_3d_y\fP (float r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::spherical_to_cartesian_3d_z\fP (\fBfloat\fP \fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "float \fBscifir::spherical_to_cartesian_3d_z\fP (float r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::spherical_to_cylindrical_p\fP (\fBfloat\fP \fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "float \fBscifir::spherical_to_cylindrical_p\fP (float r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::spherical_to_cylindrical_theta\fP (\fBfloat\fP \fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "angle \fBscifir::spherical_to_cylindrical_theta\fP (float r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::spherical_to_cylindrical_z\fP (\fBfloat\fP \fBr\fP, \fBconst\fP \fBangle\fP &theta, \fBconst\fP \fBangle\fP &phi)"
+.RI "float \fBscifir::spherical_to_cylindrical_z\fP (float r, const angle &theta, const angle &phi)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::cylindrical_to_cartesian_3d_x\fP (\fBfloat\fP p, \fBconst\fP \fBangle\fP &theta, \fBfloat\fP z)"
+.RI "float \fBscifir::cylindrical_to_cartesian_3d_x\fP (float p, const angle &theta, float z)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::cylindrical_to_cartesian_3d_y\fP (\fBfloat\fP p, \fBconst\fP \fBangle\fP &theta, \fBfloat\fP z)"
+.RI "float \fBscifir::cylindrical_to_cartesian_3d_y\fP (float p, const angle &theta, float z)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::cylindrical_to_cartesian_3d_z\fP (\fBfloat\fP p, \fBconst\fP \fBangle\fP &theta, \fBfloat\fP z)"
+.RI "float \fBscifir::cylindrical_to_cartesian_3d_z\fP (float p, const angle &theta, float z)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::cylindrical_to_spherical_r\fP (\fBfloat\fP p, \fBconst\fP \fBangle\fP &theta, \fBfloat\fP z)"
+.RI "float \fBscifir::cylindrical_to_spherical_r\fP (float p, const angle &theta, float z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cylindrical_to_spherical_theta\fP (\fBfloat\fP p, \fBconst\fP \fBangle\fP &theta, \fBfloat\fP z)"
+.RI "angle \fBscifir::cylindrical_to_spherical_theta\fP (float p, const angle &theta, float z)"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBscifir::cylindrical_to_spherical_phi\fP (\fBfloat\fP p, \fBconst\fP \fBangle\fP &theta, \fBfloat\fP z)"
+.RI "angle \fBscifir::cylindrical_to_spherical_phi\fP (float p, const angle &theta, float z)"
 .br
 .ti -1c
 .RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::coordinates_3d\fP< T > &x, const \fBscifir::coordinates_3d\fP< U > &y)"
@@ -230,107 +230,108 @@ coordinates/coordinates_3d.hpp
 .SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_3d\fP< T > & x, const \fBscifir::coordinates_3d\fP< U > & y)"
 
 .PP
-Definition at line \fB820\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 820 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 821 {
 822     return !(x == y);
 823 }
 .fi
-
 .SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_3d\fP< T > & x, const \fBscifir::point_3d\fP< U > & y)"
 
 .PP
-Definition at line \fB839\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 839 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 840 {
 841     return !(x == y);
 842 }
 .fi
-
 .SS "template<typename T > bool operator!= (const \fBscifir::coordinates_3d\fP< T > & x, const string & init_coordinates_3d)"
 
 .PP
-Definition at line \fB871\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 871 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 872 {
 873     return !(x == init_coordinates_3d);
 874 }
 .fi
-
 .SS "template<typename T , typename U > bool operator!= (const \fBscifir::point_3d\fP< T > & x, const \fBscifir::coordinates_3d\fP< U > y)"
 
 .PP
-Definition at line \fB858\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 858 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 859 {
 860     return !(x == y);
 861 }
 .fi
-
 .SS "template<typename T > bool operator!= (const string & init_coordinates_3d, const \fBscifir::coordinates_3d\fP< T > & x)"
 
 .PP
-Definition at line \fB884\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 884 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 885 {
 886     return !(init_coordinates_3d == x);
 887 }
 .fi
-
 .SS "template<typename T > string operator+ (const \fBscifir::coordinates_3d\fP< T > & x, const string & y)"
 
 .PP
-Definition at line \fB902\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 902 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 903 {
 904     return to_string(x) + y;
 905 }
 .fi
-
 .SS "template<typename T > string operator+ (const string & x, const \fBscifir::coordinates_3d\fP< T > & y)"
 
 .PP
-Definition at line \fB896\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 896 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 897 {
 898     return x + to_string(y);
 899 }
 .fi
-
 .SS "template<typename T > void operator+= (string & x, const \fBscifir::coordinates_3d\fP< T > & y)"
 
 .PP
-Definition at line \fB890\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 890 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 891 {
 892     x += to_string(y);
 893 }
 .fi
-
-.SS "ostream & operator<< (ostream & os, const \fBscifir::coordinates_3d\fP< float > & x)"
+.SS "ostream& operator<< (ostream & os, const \fBscifir::coordinates_3d\fP< float > & x)"
 
 .PP
-Definition at line \fB28\fP of file \fBcoordinates_3d\&.cpp\fP\&..PP
+Definition at line 28 of file coordinates_3d\&.cpp\&.
+.PP
 .nf
 29 {
 30     return os << scifir::to_string(x);
 31 }
 .fi
-
-.SS "template<typename T > ostream & operator<< (ostream & os, const \fBscifir::coordinates_3d\fP< T > & x)"
+.SS "template<typename T > ostream& operator<< (ostream & os, const \fBscifir::coordinates_3d\fP< T > & x)"
 
 .PP
-Definition at line \fB908\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 908 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 909 {
 910     return os << to_string(x);
 911 }
 .fi
-
 .SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_3d\fP< T > & x, const \fBscifir::coordinates_3d\fP< U > & y)"
 
 .PP
-Definition at line \fB807\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 807 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 808 {
 809     if (x\&.x == y\&.x and x\&.y == y\&.y and x\&.z == y\&.z)
@@ -343,11 +344,11 @@ Definition at line \fB807\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 816     }
 817 }
 .fi
-
 .SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_3d\fP< T > & x, const \fBscifir::point_3d\fP< U > & y)"
 
 .PP
-Definition at line \fB826\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 826 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 827 {
 828     if (x\&.x == y\&.x and x\&.y == y\&.y and x\&.z == y\&.z)
@@ -360,22 +361,22 @@ Definition at line \fB826\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 835     }
 836 }
 .fi
-
 .SS "template<typename T > bool operator== (const \fBscifir::coordinates_3d\fP< T > & x, const string & init_coordinates_3d)"
 
 .PP
-Definition at line \fB864\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 864 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 865 {
 866     scifir::coordinates_3d<T> y(init_coordinates_3d);
 867     return (x == y);
 868 }
 .fi
-
 .SS "template<typename T , typename U > bool operator== (const \fBscifir::point_3d\fP< T > & x, const \fBscifir::coordinates_3d\fP< U > & y)"
 
 .PP
-Definition at line \fB845\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 845 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 846 {
 847     if (x\&.x == y\&.x and x\&.y == y\&.y and x\&.z == y\&.z)
@@ -388,22 +389,22 @@ Definition at line \fB845\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 854     }
 855 }
 .fi
-
 .SS "template<typename T > bool operator== (const string & init_coordinates_3d, const \fBscifir::coordinates_3d\fP< T > & x)"
 
 .PP
-Definition at line \fB877\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 877 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 878 {
 879     scifir::coordinates_3d<T> y(init_coordinates_3d);
 880     return (x == y);
 881 }
 .fi
-
-.SS "template<typename T > istream & operator>> (istream & is, \fBscifir::coordinates_3d\fP< T > & x)"
+.SS "template<typename T > istream& operator>> (istream & is, \fBscifir::coordinates_3d\fP< T > & x)"
 
 .PP
-Definition at line \fB916\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 916 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 917 {
 918     char a[256];
@@ -414,7 +415,6 @@ Definition at line \fB916\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 923     return is;
 924 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

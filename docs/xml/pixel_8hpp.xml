@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="pixel_8hpp" kind="file" language="C++">
     <compoundname>pixel.hpp</compoundname>
     <includes refid="constants_8hpp" local="yes">../topology/constants.hpp</includes>
@@ -8,30 +8,14 @@
     <includes local="yes">boost/math/constants/constants.hpp</includes>
     <includes local="no">cmath</includes>
     <includes local="no">string</includes>
-    <includedby refid="pixel_8cpp" local="yes">special_units/pixel.cpp</includedby>
     <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
+    <includedby refid="pixel_8cpp" local="yes">special_units/pixel.cpp</includedby>
     <incdepgraph>
-      <node id="1">
-        <label>special_units/pixel.hpp</label>
-        <link refid="pixel_8hpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
+      <node id="13">
+        <label>boost/algorithm/string.hpp</label>
       </node>
-      <node id="2">
-        <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
+      <node id="3">
+        <label>boost/math/constants/constants.hpp</label>
       </node>
       <node id="7">
         <label>../units/dimension.hpp</label>
@@ -61,17 +45,8 @@
         <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
+      <node id="9">
+        <label>cstdint</label>
       </node>
       <node id="6">
         <label>../units/scalar_unit.hpp</label>
@@ -97,62 +72,91 @@
         <childnode refid="20" relation="include">
         </childnode>
       </node>
+      <node id="17">
+        <label>cmath</label>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="11">
+        <label>map</label>
+      </node>
+      <node id="8">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>string_view</label>
+      </node>
+      <node id="20">
+        <label>vector</label>
+      </node>
       <node id="4">
         <label>../util/is_number.hpp</label>
         <link refid="is__number_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>algorithm</label>
+      <node id="19">
+        <label>sstream</label>
       </node>
-      <node id="13">
-        <label>boost/algorithm/string.hpp</label>
+      <node id="2">
+        <label>../topology/constants.hpp</label>
+        <link refid="constants_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
-      <node id="3">
-        <label>boost/math/constants/constants.hpp</label>
-      </node>
-      <node id="17">
-        <label>cmath</label>
-      </node>
-      <node id="16">
-        <label>cstddef</label>
-      </node>
-      <node id="9">
-        <label>cstdint</label>
-      </node>
-      <node id="15">
-        <label>cstring</label>
+      <node id="1">
+        <label>special_units/pixel.hpp</label>
+        <link refid="pixel_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
       <node id="10">
         <label>iostream</label>
       </node>
-      <node id="11">
-        <label>map</label>
-      </node>
-      <node id="18">
-        <label>set</label>
-      </node>
-      <node id="19">
-        <label>sstream</label>
-      </node>
-      <node id="12">
-        <label>string</label>
-      </node>
-      <node id="21">
-        <label>string_view</label>
+      <node id="16">
+        <label>cstddef</label>
       </node>
       <node id="5">
         <label>type_traits</label>
       </node>
-      <node id="20">
-        <label>vector</label>
+      <node id="18">
+        <label>set</label>
+      </node>
+      <node id="14">
+        <label>algorithm</label>
+      </node>
+      <node id="15">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
+      <node id="3">
         <label>special_units/pixel.cpp</label>
         <link refid="pixel_8cpp"/>
+      </node>
+      <node id="2">
+        <label>units.hpp</label>
+        <link refid="units_8hpp"/>
       </node>
       <node id="1">
         <label>special_units/pixel.hpp</label>
@@ -162,14 +166,10 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>units.hpp</label>
-        <link refid="units_8hpp"/>
-      </node>
     </invincdepgraph>
     <innerclass refid="classscifir_1_1pixel" prot="public">scifir::pixel</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
-    <sectiondef kind="func">
+      <sectiondef kind="func">
       <memberdef kind="function" id="pixel_8hpp_1a0e96af7acd7bf8018fa538be6855cc71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -953,9 +953,9 @@
         </inbodydescription>
         <location file="special_units/pixel.hpp" line="259" column="8" bodyfile="special_units/pixel.cpp" bodystart="327" bodyend="333" declfile="special_units/pixel.hpp" declline="259" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="pixel_8hpp_1abb79e5d6f80a12ec02ce7e11bb556b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="pixel_8hpp_1a063388b3125071bbbc2e16f9bde48486" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::pixel &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -974,9 +974,9 @@
         </inbodydescription>
         <location file="special_units/pixel.hpp" line="261" column="1" bodyfile="special_units/pixel.cpp" bodystart="335" bodyend="338" declfile="special_units/pixel.hpp" declline="261" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="pixel_8hpp_1aacae8ba2b77a579fee17f4c23256c79f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="pixel_8hpp_1a33b143b6258c36c9e89dc480fa838272" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>istream &amp;</type>
-        <definition>istream &amp; operator&gt;&gt;</definition>
+        <definition>istream&amp; operator&gt;&gt;</definition>
         <argsstring>(istream &amp;is, scifir::pixel &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
@@ -995,7 +995,7 @@
         </inbodydescription>
         <location file="special_units/pixel.hpp" line="262" column="9" bodyfile="special_units/pixel.cpp" bodystart="340" bodyend="348" declfile="special_units/pixel.hpp" declline="262" declcolumn="9"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -1020,123 +1020,123 @@
 <codeline lineno="17" refid="classscifir_1_1pixel" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>();</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(<ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_pixel</ref>);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(<ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_pixel);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/><ref refid="classscifir_1_1pixel_1a6dce4d29e8ce1fbf3736eab9f2066a58" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/><ref refid="classscifir_1_1pixel_1a6dce4d29e8ce1fbf3736eab9f2066a58" kindref="member">operator =</ref>(<ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/><ref refid="classscifir_1_1pixel_1a6dce4d29e8ce1fbf3736eab9f2066a58" kindref="member">operator =</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/><ref refid="classscifir_1_1pixel_1a6dce4d29e8ce1fbf3736eab9f2066a58" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_pixel</ref>);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/><ref refid="classscifir_1_1pixel_1a6dce4d29e8ce1fbf3736eab9f2066a58" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_pixel);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36" refid="classscifir_1_1pixel_1af31f373bcd06b57379209b717865af2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="36" refid="classscifir_1_1pixel_1af31f373bcd06b57379209b717865af2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>float()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="37"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(value);</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41" refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="41" refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="42"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1a84fda0e8c640bd82b4bed9e667389c5b" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1a5c466e43f8e9577d426032c1cb8e6bb8" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1a7bdb977977b49b98641803bfc474fc90" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1ae6ba4add2460ee98bd78bae5cfe9e4f1" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1a4cf650acdbb369026f3f9719a788b022" kindref="member">operator ^</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1a312914abb3a3b6d9335d62de77d88671" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1a81f7c10a478473e2e5eecce7b903e4c3" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ace97481b414b7afaebd71fe11745d565" kindref="member">operator *=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ad96bb7b4799ffae91706ffda7252f3eb" kindref="member">operator /=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1a0e39299acb673f7fa48d741260030d18" kindref="member">operator ^=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a0e96af7acd7bf8018fa538be6855cc71" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a2f44a5c8175a3e6af6ebcafde3cbc13f" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a18f835f157359bf6e13ea5ddf51b2133" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a479d9eb3523e8bca5936404fb2873ecd" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a7eec4b3efecc4ef2a3e3f466b134eaa8" kindref="member">operator ^</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1a62b9c52ff7c058ba3482a3616509567e" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>*=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>/=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>^=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="58" refid="classscifir_1_1pixel_1a9397fb4e2cea946f1473c7c33f0c6979" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1a6dce4d29e8ce1fbf3736eab9f2066a58" kindref="member">operator =</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="58" refid="classscifir_1_1pixel_1a9397fb4e2cea946f1473c7c33f0c6979" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>=(T<sp/>x)</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>x;</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="64" refid="classscifir_1_1pixel_1af0b0b0f77443358713ca5caff1ae5e36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1a84fda0e8c640bd82b4bed9e667389c5b" kindref="member">operator +</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="64" refid="classscifir_1_1pixel_1af0b0b0f77443358713ca5caff1ae5e36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a0e96af7acd7bf8018fa538be6855cc71" kindref="member">operator +</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="65"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>+<sp/>x);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(value<sp/>+<sp/>x);</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="70" refid="classscifir_1_1pixel_1a8d0bc5f7e3476695136a51c32e975217" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1a5c466e43f8e9577d426032c1cb8e6bb8" kindref="member">operator -</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="70" refid="classscifir_1_1pixel_1a8d0bc5f7e3476695136a51c32e975217" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a2f44a5c8175a3e6af6ebcafde3cbc13f" kindref="member">operator -</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="71"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>-<sp/>x);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(value<sp/>-<sp/>x);</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="76" refid="classscifir_1_1pixel_1a580b4e571e9889b86eae1f3f0d0a5a37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1a7bdb977977b49b98641803bfc474fc90" kindref="member">operator *</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="76" refid="classscifir_1_1pixel_1a580b4e571e9889b86eae1f3f0d0a5a37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a18f835f157359bf6e13ea5ddf51b2133" kindref="member">operator *</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="77"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>*<sp/>x);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(value<sp/>*<sp/>x);</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="82" refid="classscifir_1_1pixel_1abe385f8b70533e92650e2e6edcac2c97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1ae6ba4add2460ee98bd78bae5cfe9e4f1" kindref="member">operator /</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="82" refid="classscifir_1_1pixel_1abe385f8b70533e92650e2e6edcac2c97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a479d9eb3523e8bca5936404fb2873ecd" kindref="member">operator /</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="83"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>/<sp/>x);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(value<sp/>/<sp/>x);</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="88" refid="classscifir_1_1pixel_1a59a0cd976bf02506c32a40fe3b8cf477" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1a4cf650acdbb369026f3f9719a788b022" kindref="member">operator ^</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="88" refid="classscifir_1_1pixel_1a59a0cd976bf02506c32a40fe3b8cf477" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="pixel_8hpp_1a7eec4b3efecc4ef2a3e3f466b134eaa8" kindref="member">operator ^</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="89"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" kindref="member">pixel</ref>(std::pow(<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>,<sp/>x));</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>(<ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">std::pow</ref>(value,<sp/>x));</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="94" refid="classscifir_1_1pixel_1a37b2d2515a364e601020c06bb2dfe28a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1a312914abb3a3b6d9335d62de77d88671" kindref="member">operator +=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="94" refid="classscifir_1_1pixel_1a37b2d2515a364e601020c06bb2dfe28a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1a62b9c52ff7c058ba3482a3616509567e" kindref="member">operator +=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>+=<sp/>x;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>+=<sp/>x;</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="100" refid="classscifir_1_1pixel_1a58cf3c5c9e22dbe91d125e1066bb79ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1a81f7c10a478473e2e5eecce7b903e4c3" kindref="member">operator -=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="100" refid="classscifir_1_1pixel_1a58cf3c5c9e22dbe91d125e1066bb79ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>-=<sp/>x;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>-=<sp/>x;</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="106" refid="classscifir_1_1pixel_1a49b7b37296b834fc7dff47a6e3234d57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ace97481b414b7afaebd71fe11745d565" kindref="member">operator *=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="106" refid="classscifir_1_1pixel_1a49b7b37296b834fc7dff47a6e3234d57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>*=(T<sp/>x)</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>*=<sp/>x;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>*=<sp/>x;</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="112" refid="classscifir_1_1pixel_1aa6662fd9a26a9c3a21109b1cfea99ff1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1ad96bb7b4799ffae91706ffda7252f3eb" kindref="member">operator /=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="112" refid="classscifir_1_1pixel_1aa6662fd9a26a9c3a21109b1cfea99ff1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>/=(T<sp/>x)</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>/=<sp/>x;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>/=<sp/>x;</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="118" refid="classscifir_1_1pixel_1a2b7a78f168372bea43a23dd0c540a2b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1a0e39299acb673f7fa48d741260030d18" kindref="member">operator ^=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="118" refid="classscifir_1_1pixel_1a2b7a78f168372bea43a23dd0c540a2b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>^=(T<sp/>x)</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref><sp/>=<sp/>std::pow(<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>,<sp/>x);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/><ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">std::pow</ref>(value,<sp/>x);</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/><ref refid="classscifir_1_1pixel_1a4198e76869b1042d0e0cc89446efcd11" kindref="member">operator++</ref>();</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1a4198e76869b1042d0e0cc89446efcd11" kindref="member">operator++</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/><ref refid="classscifir_1_1pixel_1aa54be4b2c5933306414806b0b0c1ac74" kindref="member">operator--</ref>();</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="classscifir_1_1pixel_1aa54be4b2c5933306414806b0b0c1ac74" kindref="member">operator--</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>operator++();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/>operator++(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>operator--();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/>operator--(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"></highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="129" refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel_1aed5d65834bd7b28963950784fd60d534" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_pixel</ref>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize_from_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_pixel);</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"></highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a934fdfe1417bc9ea6bf5384af13c5576" kindref="member">is_pixel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_pixel</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a934fdfe1417bc9ea6bf5384af13c5576" kindref="member">is_pixel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_pixel);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="namespacescifir_1adeff4b825414d35ce963977f181f1b5c" kindref="member">sqrt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref><sp/><ref refid="namespacescifir_1a0b02e4d82f1d2253f6901264ff11ca38" kindref="member">sqrt_nth</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref>&amp;<sp/>x,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
@@ -1145,103 +1145,103 @@
 <codeline lineno="142"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="143" refid="pixel_8hpp_1a0e96af7acd7bf8018fa538be6855cc71" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref><sp/><ref refid="pixel_8hpp_1a0e96af7acd7bf8018fa538be6855cc71" kindref="member">operator +</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="144"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(x<sp/>+<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(x<sp/>+<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="146"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight></codeline>
 <codeline lineno="148"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="149" refid="pixel_8hpp_1a2f44a5c8175a3e6af6ebcafde3cbc13f" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref><sp/><ref refid="pixel_8hpp_1a2f44a5c8175a3e6af6ebcafde3cbc13f" kindref="member">operator -</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="150"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(x<sp/>-<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(x<sp/>-<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="152"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
 <codeline lineno="154"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="155" refid="pixel_8hpp_1a18f835f157359bf6e13ea5ddf51b2133" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref><sp/><ref refid="pixel_8hpp_1a18f835f157359bf6e13ea5ddf51b2133" kindref="member">operator *</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="156"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(x<sp/>*<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(x<sp/>*<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="158"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"></highlight></codeline>
 <codeline lineno="160"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="161" refid="pixel_8hpp_1a479d9eb3523e8bca5936404fb2873ecd" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref><sp/><ref refid="pixel_8hpp_1a479d9eb3523e8bca5936404fb2873ecd" kindref="member">operator /</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="162"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(x<sp/>/<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(x<sp/>/<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="164"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"></highlight></codeline>
 <codeline lineno="166"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="167" refid="pixel_8hpp_1a7eec4b3efecc4ef2a3e3f466b134eaa8" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref><sp/><ref refid="pixel_8hpp_1a7eec4b3efecc4ef2a3e3f466b134eaa8" kindref="member">operator ^</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="168"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(std::pow(x,<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>()));</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>(<ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">std::pow</ref>(x,<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>()));</highlight></codeline>
 <codeline lineno="170"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"></highlight></codeline>
 <codeline lineno="172"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="173" refid="pixel_8hpp_1a1d52a229b040509dc079022b95602c0b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1a1d52a229b040509dc079022b95602c0b" kindref="member">operator ==</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="174"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="176"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"></highlight></codeline>
 <codeline lineno="178"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="179" refid="pixel_8hpp_1a8ebcef8fc724b4121bb60e05ac7a3ffb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1a8ebcef8fc724b4121bb60e05ac7a3ffb" kindref="member">operator !=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="180"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="182"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"></highlight></codeline>
 <codeline lineno="184"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="185" refid="pixel_8hpp_1ad8cb90d85e30edf41a0f6d623fbcd679" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1ad8cb90d85e30edf41a0f6d623fbcd679" kindref="member">operator &lt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="186"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="188"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"></highlight></codeline>
 <codeline lineno="190"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="191" refid="pixel_8hpp_1aa00ce665cd5f36505538710a08fac022" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1aa00ce665cd5f36505538710a08fac022" kindref="member">operator &gt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="192"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="194"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"></highlight></codeline>
 <codeline lineno="196"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="197" refid="pixel_8hpp_1aa82b801bb92247bd0c5d0c6c6edf04b5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1aa82b801bb92247bd0c5d0c6c6edf04b5" kindref="member">operator &lt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="198"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;=<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;=<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="200"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="201"><highlight class="normal"></highlight></codeline>
 <codeline lineno="202"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="203" refid="pixel_8hpp_1ad17f0c40358a9fe8cf85764e99acc1aa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1ad17f0c40358a9fe8cf85764e99acc1aa" kindref="member">operator &gt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="204"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;=<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;=<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="206"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"></highlight></codeline>
 <codeline lineno="208"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="209" refid="pixel_8hpp_1a6464cd376fdb956202bfed3023cc6870" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1a1d52a229b040509dc079022b95602c0b" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="210"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="212"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"></highlight></codeline>
 <codeline lineno="214"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="215" refid="pixel_8hpp_1a223b13515035d79401f80ebb97b864e9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1a8ebcef8fc724b4121bb60e05ac7a3ffb" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="216"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="218"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"></highlight></codeline>
 <codeline lineno="220"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="221" refid="pixel_8hpp_1a833dcf33a10891912b1fa7c5a9414d69" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1ad8cb90d85e30edf41a0f6d623fbcd679" kindref="member">operator &lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="222"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>()<sp/>&lt;<sp/>x);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>()<sp/>&lt;<sp/>x);</highlight></codeline>
 <codeline lineno="224"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"></highlight></codeline>
 <codeline lineno="226"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="227" refid="pixel_8hpp_1ad5fae024b91d285be3c0b2c3c700e051" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1aa00ce665cd5f36505538710a08fac022" kindref="member">operator &gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="228"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>()<sp/>&gt;<sp/>x);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>()<sp/>&gt;<sp/>x);</highlight></codeline>
 <codeline lineno="230"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
 <codeline lineno="232"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="233" refid="pixel_8hpp_1ab6011fd7d65e727354ea104c7f439b01" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1aa82b801bb92247bd0c5d0c6c6edf04b5" kindref="member">operator &lt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="234"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>()<sp/>&lt;=<sp/>x);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>()<sp/>&lt;=<sp/>x);</highlight></codeline>
 <codeline lineno="236"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"></highlight></codeline>
 <codeline lineno="238"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="239" refid="pixel_8hpp_1a75ed75a94ce5ae19e5dfd12b93426988" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1ad17f0c40358a9fe8cf85764e99acc1aa" kindref="member">operator &gt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="240"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" kindref="member">get_value</ref>()<sp/>&gt;=<sp/>x);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" kindref="member">get_value</ref>()<sp/>&gt;=<sp/>x);</highlight></codeline>
 <codeline lineno="242"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="243"><highlight class="normal"></highlight></codeline>
 <codeline lineno="244"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1a1d52a229b040509dc079022b95602c0b" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y);</highlight></codeline>
@@ -1261,8 +1261,8 @@
 <codeline lineno="258"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1a0e96af7acd7bf8018fa538be6855cc71" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="pixel_8hpp_1a0e96af7acd7bf8018fa538be6855cc71" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"></highlight></codeline>
-<codeline lineno="261"><highlight class="normal">ostream&amp;<sp/><ref refid="pixel_8hpp_1abb79e5d6f80a12ec02ce7e11bb556b33" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="262"><highlight class="normal">istream&amp;<sp/><ref refid="pixel_8hpp_1aacae8ba2b77a579fee17f4c23256c79f" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">ostream&amp;<sp/><ref refid="pixel_8hpp_1a063388b3125071bbbc2e16f9bde48486" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">istream&amp;<sp/><ref refid="pixel_8hpp_1a33b143b6258c36c9e89dc480fa838272" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1pixel" kindref="compound">scifir::pixel</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="263"><highlight class="normal"></highlight></codeline>
 <codeline lineno="264"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>

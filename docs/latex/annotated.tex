@@ -1,7 +1,7 @@
 \doxysection{Class List}
 Here are the classes, structs, unions and interfaces with brief descriptions\+:\begin{DoxyCompactList}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} }{\pageref{classscifir_1_1aid}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \\*Class that allows to work with angles }{\pageref{classscifir_1_1angle}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \\*Class that allows to work with angles. Each angle sizes 4 bytes }{\pageref{classscifir_1_1angle}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1cas__number}{scifir\+::cas\+\_\+number}} }{\pageref{classscifir_1_1cas__number}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1color}{scifir\+::color}} }{\pageref{classscifir_1_1color}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number$<$ T $>$}} }{\pageref{classscifir_1_1complex__number}}{}
@@ -20,12 +20,11 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1coordinates__nd_3_01float_01_4}{scifir\+::coordinates\+\_\+nd$<$ float $>$}} }{\pageref{classscifir_1_1coordinates__nd_3_01float_01_4}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr$<$ T $>$}} }{\pageref{classscifir_1_1coordinates__ndr}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1coordinates__ndr_3_01float_01_4}{scifir\+::coordinates\+\_\+ndr$<$ float $>$}} }{\pageref{classscifir_1_1coordinates__ndr_3_01float_01_4}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} }{\pageref{classscifir_1_1dimension}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \\*Class that represents dimensions of the SI system of units. Each prefix sizes 6 bytes, 1 byte for the dimension type, 1 byte for the prefix, 1 byte for the position (which can be the NUMERATOR or the DENOMINATOR), and 3 bytes for the custom dimension (in case it\textquotesingle{}s used one) }{\pageref{classscifir_1_1dimension}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} }{\pageref{classscifir_1_1direction}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structscifir_1_1is__integer__number}{scifir\+::is\+\_\+integer\+\_\+number$<$ T $>$}} }{\pageref{structscifir_1_1is__integer__number}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structscifir_1_1is__number}{scifir\+::is\+\_\+number$<$ T $>$}} }{\pageref{structscifir_1_1is__number}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number$<$ T $>$}} }{\pageref{classscifir_1_1lab__number}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1material__vector__unit__2d}{scifir\+::material\+\_\+vector\+\_\+unit\+\_\+2d$<$ T, U $>$}} }{\pageref{classscifir_1_1material__vector__unit__2d}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix$<$ T, M, N $>$}} }{\pageref{classscifir_1_1matrix}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} }{\pageref{classscifir_1_1percentage}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} }{\pageref{classscifir_1_1pH}}{}
@@ -39,17 +38,16 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1point__3d_3_01float_01_4}{scifir\+::point\+\_\+3d$<$ float $>$}} }{\pageref{classscifir_1_1point__3d_3_01float_01_4}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1point__nd}{scifir\+::point\+\_\+nd$<$ T $>$}} }{\pageref{classscifir_1_1point__nd}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1point__nd_3_01float_01_4}{scifir\+::point\+\_\+nd$<$ float $>$}} }{\pageref{classscifir_1_1point__nd_3_01float_01_4}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} }{\pageref{classscifir_1_1prefix}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \\*Class that allows to create scalar units }{\pageref{classscifir_1_1scalar__unit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \\*Class that represents prefixes of the SI system of units. Each prefix sizes 1 byte }{\pageref{classscifir_1_1prefix}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \\*Class that allows to create scalar units, which are cmoposed of a value (as a float) and dimensions. The dimensions can be of any number, and be basic dimensions and/or abbreviations of dimensions }{\pageref{classscifir_1_1scalar__unit}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d$<$ T $>$}} }{\pageref{classscifir_1_1size__2d}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1size__2d_3_01float_01_4}{scifir\+::size\+\_\+2d$<$ float $>$}} }{\pageref{classscifir_1_1size__2d_3_01float_01_4}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1size__3d}{scifir\+::size\+\_\+3d$<$ T $>$}} }{\pageref{classscifir_1_1size__3d}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1size__3d_3_01float_01_4}{scifir\+::size\+\_\+3d$<$ float $>$}} }{\pageref{classscifir_1_1size__3d_3_01float_01_4}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1size__nd}{scifir\+::size\+\_\+nd$<$ T $>$}} }{\pageref{classscifir_1_1size__nd}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1size__nd_3_01float_01_4}{scifir\+::size\+\_\+nd$<$ float $>$}} }{\pageref{classscifir_1_1size__nd_3_01float_01_4}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit$<$ T $>$}} }{\pageref{classscifir_1_1tensor__unit}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} }{\pageref{classscifir_1_1vector__unit__2d}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} }{\pageref{classscifir_1_1vector__unit__3d}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \\*Class that creates a vector unit in 2D. The vector is in {\bfseries{polar coordinates}} with a value and dimensions of the \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}}, and an angle theta for his direction }{\pageref{classscifir_1_1vector__unit__2d}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \\*Class that creates a vector unit in 3D. The vector is in {\bfseries{spherical coordinates}} with a value and dimensions of the \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}}, and an angle theta and another angle phi for his direction }{\pageref{classscifir_1_1vector__unit__3d}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} }{\pageref{classscifir_1_1vector__unit__nd}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classscifir_1_1zid}{scifir\+::zid}} }{\pageref{classscifir_1_1zid}}{}
 \end{DoxyCompactList}

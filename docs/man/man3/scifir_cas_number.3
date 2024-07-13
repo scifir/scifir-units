@@ -1,4 +1,4 @@
-.TH "scifir::cas_number" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::cas_number" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,65 +12,65 @@ scifir::cas_number
 
 .in +1c
 .ti -1c
-.RI "\fBcas_number\fP (\fBstring\fP)"
+.RI "\fBcas_number\fP (string)"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBget_value\fP () \fBconst\fP"
+.RI "string \fBget_value\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay\fP () \fBconst\fP"
+.RI "string \fBdisplay\fP () const"
 .br
 .in -1c
 .SS "Private Attributes"
 
 .in +1c
 .ti -1c
-.RI "\fBstring\fP \fBvalue\fP"
+.RI "string \fBvalue\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB27\fP of file \fBchemistry_units\&.hpp\fP\&.
+Definition at line 27 of file chemistry_units\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "scifir::cas_number::cas_number (\fBstring\fP new_value)"
+.SS "scifir::cas_number::cas_number (string new_value)"
 
 .PP
-Definition at line \fB26\fP of file \fBchemistry_units\&.cpp\fP\&..PP
+Definition at line 26 of file chemistry_units\&.cpp\&.
+.PP
 .nf
 26                                            : value(new_value)
 27     {
 28     }
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBstring\fP scifir::cas_number::display () const"
+.SS "string scifir::cas_number::display () const"
 
 .PP
-Definition at line \fB30\fP of file \fBchemistry_units\&.cpp\fP\&..PP
+Definition at line 30 of file chemistry_units\&.cpp\&.
+.PP
 .nf
 31     {
 32         return value;
 33     }
 .fi
-
-.SS "\fBstring\fP scifir::cas_number::get_value () const\fC [inline]\fP"
+.SS "string scifir::cas_number::get_value () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB32\fP of file \fBchemistry_units\&.hpp\fP\&..PP
+Definition at line 32 of file chemistry_units\&.hpp\&.
+.PP
 .nf
 33             {
 34                 return value;
 35             }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "\fBstring\fP scifir::cas_number::value\fC [private]\fP"
+.SS "string scifir::cas_number::value\fC [private]\fP"
 
 .PP
-Definition at line \fB40\fP of file \fBchemistry_units\&.hpp\fP\&.
+Definition at line 40 of file chemistry_units\&.hpp\&.
 
 .SH "Author"
 .PP 

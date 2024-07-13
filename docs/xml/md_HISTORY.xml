@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="md_HISTORY" kind="page">
     <compoundname>md_HISTORY</compoundname>
     <title>TOPOLOGY</title>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para><anchor id="md_HISTORY_1autotoc_md0"/>The topology class has been very easy to create and to use. Besides his utility, it has a very simple design and hasn&apos;t been a problem to be created. The two classes it contains, point_2d and point_3d, have been added to msci_units, instead of msci_geometry, because of his utility and operation with the coordinates classes. Without them here, it&apos;s needed to cross-link with the library msci_geometry, which was making building harder.</para>
+<para>The topology class has been very easy to create and to use. Besides his utility, it has a very simple design and hasn&apos;t been a problem to be created. The two classes it contains, point_2d and point_3d, have been added to msci_units, instead of msci_geometry, because of his utility and operation with the coordinates classes. Without them here, it&apos;s needed to cross-link with the library msci_geometry, which was making building harder.</para>
 <sect1 id="md_HISTORY_1autotoc_md1">
 <title>COORDINATES</title>
 <para>The first version of the coordinates was with one coordinates class for each system of coordinates, all inheriting from an abstract coordinate class of the same dimensions. Following that logic, the abstract coordinates classes were coordinates_1d, coordinates_2d and coordinates_3d. The inheriting coordinates classes were then cartesian_coordinates_2d, polar_coordinates, cartesian_coordinates_3d, cylindrical_coordinates, spherical_coordinates. The coordinate classes were storing the data with the variables x, y, z, p, r, theta and phi. All the functions to calculate any coordinate variable of one system from another system were available.</para>

@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1vector__unit__3d" kind="class" language="C++" prot="public">
     <compoundname>scifir::vector_unit_3d</compoundname>
     <basecompoundref refid="classscifir_1_1scalar__unit" prot="public" virt="non-virtual">scifir::scalar_unit</basecompoundref>
     <includes refid="vector__unit__3d_8hpp" local="no">vector_unit_3d.hpp</includes>
-    <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="classscifir_1_1vector__unit__3d_1a70b25d4709874f44f1c99d2330cec56f" prot="public" static="no" mutable="no">
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classscifir_1_1vector__unit__3d_1aabbc544480e739a4d45fad2371f9caaa" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::vector_unit_3d::theta</definition>
+        <definition>angle vector_unit_3d::theta</definition>
         <argsstring></argsstring>
         <name>theta</name>
-        <qualifiedname>scifir::vector_unit_3d::theta</qualifiedname>
         <briefdescription>
+<para>Angle theta of the vector in 3D space, in spherical coordinates. As all angles of scifir-units, it&apos;s stored in degrees. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -19,13 +19,13 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="230" column="7" bodyfile="units/vector_unit_3d.hpp" bodystart="230" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classscifir_1_1vector__unit__3d_1a90099d68c23025849f059f10d2be4217" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classscifir_1_1vector__unit__3d_1aedcd4552b76ffdd4d0e9a53e1340985d" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::vector_unit_3d::phi</definition>
+        <definition>angle vector_unit_3d::phi</definition>
         <argsstring></argsstring>
         <name>phi</name>
-        <qualifiedname>scifir::vector_unit_3d::phi</qualifiedname>
         <briefdescription>
+<para>Angle phi of the vector in 3D space, in spherical coordinates. As all angles of scifir-units, it&apos;s stored in degrees. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -33,15 +33,15 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="231" column="7" bodyfile="units/vector_unit_3d.hpp" bodystart="231" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1af6d531f8562636587bc107dae2009c54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1aa032451e59ede864277d17a6a83b7d6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>()</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <briefdescription>
+<para>Default constructor. The value is set to 0, the dimensions are empty and theta and phi are 0. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -49,17 +49,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="75" column="1" bodyfile="units/vector_unit_3d.cpp" bodystart="10" bodyend="11"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a07d2e5e1cf5f452943158bdd664b3f02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a6b13d7fdc2f31c1c6b4adfa256f64350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(const vector_unit_3d &amp;x)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Copy constructor. The member-variables are copied from <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -67,17 +67,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="76" column="1" bodyfile="units/vector_unit_3d.cpp" bodystart="13" bodyend="14"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ad2241097e08233510641a57558120c8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a5237952cda38c23179b0dc7578911636" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(vector_unit_3d &amp;&amp;x)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Move constructor. The member-variables are moved from <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -85,29 +85,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="77" column="1" bodyfile="units/vector_unit_3d.cpp" bodystart="16" bodyend="17"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1aaee65f5a2024009a581860a15e7de5bc" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a7c953af231aacc14f03ffe68eaa1d7c0" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(float new_value, const string &amp;init_dimensions, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value, the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -115,29 +115,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="78" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="19" bodyend="20"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1abb00f54a6b1dadf23a7981977ec85e92" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1afe4a6725533eff2f42d297cc3c87f1f7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(float new_value, const string &amp;init_dimensions, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value, the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -145,29 +145,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="79" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="22" bodyend="23"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a72d4390c37eb056534eb0ee9256152a9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1afd17f7743553023d1d9c0da399cbb619" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(double new_value, const string &amp;init_dimensions, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -175,29 +175,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="80" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="25" bodyend="26"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a1cf074aa18988979faa71d74f09452ee" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1aaf3ff8c9833cbbe07e3344a02d5653eb" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(double new_value, const string &amp;init_dimensions, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -205,29 +205,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="81" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="28" bodyend="29"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ac72611d86f02307e2e4607fdacb770a9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a62410651151c3d68fcd919f383cfb803" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(long double new_value, const string &amp;init_dimensions, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>long double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -235,29 +235,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="82" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="31" bodyend="32"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a85f8aa2874cb614cc214f26ee61d6665" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a761b25992706e54f6f25b2473266bbcd" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(long double new_value, const string &amp;init_dimensions, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>long double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -265,29 +265,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="83" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="34" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a6f9020cb1aac00dc220afff1715fa6ac" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1aea0a0aea49ef671e6e6a291575acd153" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(int new_value, const string &amp;init_dimensions, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -295,29 +295,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="84" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="37" bodyend="38"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ae97e8cf80532e67fb26555d96e60a898" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a804d5f25dff01e7dc6eeb492d09e71b2" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(int new_value, const string &amp;init_dimensions, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -325,29 +325,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="85" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="40" bodyend="41"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a9e52e91e4608986014adfa201f693748" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a745e8c63394bb79d27946d216c92ab95" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(float new_value, const vector&lt; dimension &gt; &amp;new_dimensions, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value, the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -355,29 +355,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="86" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="43" bodyend="44"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a2849c776e6867f41cb440139ea801ff9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a72d5b304be55fa68f4ec6a661e968786" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(float new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value, the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -385,29 +385,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="87" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="46" bodyend="47"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a4d619367681f4ef519cb90b44e4b019b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a88116f75efcae4c37243c64f1a3bd833" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(double new_value, const vector&lt; dimension &gt; &amp;new_dimensions, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -415,29 +415,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="88" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="49" bodyend="50"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ab8c4a5d9ed3d1978042e1ae2d19714f0" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a5c377e4760d4d47280331f1452c0e5a8" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(double new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -445,29 +445,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="89" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="52" bodyend="53"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a0e0b1a85b8ac1885891a6d49d50d2953" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a79245eeb96c16f6acbd20102c9a5ff85" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(long double new_value, const vector&lt; dimension &gt; &amp;new_dimensions, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>long double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -475,29 +475,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="90" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="55" bodyend="56"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1aa69a6009fee07e72056797f1eca3c4d1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ab7288e59e749526eb93883799a1f7ea5" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(long double new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>long double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -505,29 +505,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="91" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="58" bodyend="59"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a51c6bd3334e7db82a30a484a593d1599" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a88a7396390ba23e6b405bceb0e703d27" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(int new_value, const vector&lt; dimension &gt; &amp;new_dimensions, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -535,29 +535,29 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="92" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="61" bodyend="62"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ad9a30a6a92e4b6a276fefe629dbdff65" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ae2c1e58cb85730932a33af3d72eefe6a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(int new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -565,25 +565,25 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="93" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="64" bodyend="65"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1abb906d1c6fccf961b203f58a1a0fd62e" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a5ffba9d52b084099a84a8d3ea60f97c6" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(const scalar_unit &amp;x, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value and the dimensions are copied from the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> x, theta is new_theta, phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -591,25 +591,25 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="94" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="67" bodyend="68"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ab8c6bb91cb857453ded866c72d7f6aab" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a7fd48192f22c36913231bdf988caa1d6" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(const scalar_unit &amp;x, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value and the dimensions are copied from the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> x, theta is new_theta, phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -617,25 +617,25 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="95" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="70" bodyend="71"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a2d549ccad28e374b801a0cae1630b3a6" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1add3324755760dd7a80a0f7d258e4473e" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(const string &amp;init_scalar, float new_theta, float new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_scalar</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value and the dimensions are copied from the initialization string of <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> init_scalar, theta is new_theta, phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -643,25 +643,25 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="96" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="73" bodyend="74"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a175f8a141d196272560a67fd97e000dd" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1abd724c6ca1df04979df77d47263792c3" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(const string &amp;init_scalar, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_scalar</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_phi</declname>
         </param>
         <briefdescription>
+<para>The value and the dimensions are copied from the initialization string of <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> init_scalar, theta is new_theta, phi is new_phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -669,17 +669,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="97" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="76" bodyend="77"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1afd3fe1d0372c8c693f8cdaf784f73ccf" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ac044880bdcebf0ce99d33e9c34a4225f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::vector_unit_3d::vector_unit_3d</definition>
+        <definition>vector_unit_3d::vector_unit_3d</definition>
         <argsstring>(const string &amp;init_vector_3d)</argsstring>
         <name>vector_unit_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::vector_unit_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_vector_3d</declname>
         </param>
         <briefdescription>
+<para>The value, the dimensions, theta and phi are initialized from the initialization string of <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> init_vector_3d. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -687,17 +687,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="98" column="10" bodyfile="units/vector_unit_3d.cpp" bodystart="79" bodyend="82"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ae779101ec798944a9d5c18ccbf57d634" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a9efe91396c6d7294b0c83ce6f3a0c090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
-        <definition>vector_unit_3d &amp; scifir::vector_unit_3d::operator=</definition>
+        <definition>vector_unit_3d &amp; vector_unit_3d::operator=</definition>
         <argsstring>(const vector_unit_3d &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Copy assignment. The member-variables are copied from the <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -705,17 +705,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="115" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="84" bodyend="90"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ad77d172e61045f216da9b8f3f8063e48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ab251aba0d8037d433a0e48643cdacfd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
-        <definition>vector_unit_3d &amp; scifir::vector_unit_3d::operator=</definition>
+        <definition>vector_unit_3d &amp; vector_unit_3d::operator=</definition>
         <argsstring>(vector_unit_3d &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Move assignment. The member-variables are moved from the <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -723,17 +723,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="116" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="92" bodyend="98"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a1f11005128fb2ffb6499961019826113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a5118383dab0ff9abd732e4380e023d54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
-        <definition>vector_unit_3d &amp; scifir::vector_unit_3d::operator=</definition>
+        <definition>vector_unit_3d &amp; vector_unit_3d::operator=</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>The value and the dimensions are copied from the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> x, theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -741,17 +741,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="117" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="100" bodyend="104"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1afc097c08aadee6a2e80a3e1d0e727ea6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a1e13bea254b41b088143989036455379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
-        <definition>vector_unit_3d &amp; scifir::vector_unit_3d::operator=</definition>
+        <definition>vector_unit_3d &amp; vector_unit_3d::operator=</definition>
         <argsstring>(scalar_unit &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>The value and the dimensions are moved from the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> x, theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -759,17 +759,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="118" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="106" bodyend="110"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a8cd071505fcae0b8d7cd07cc606a7d4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ab474e2fd4a2d8b821e0d7d81aa828222" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
-        <definition>vector_unit_3d &amp; scifir::vector_unit_3d::operator=</definition>
+        <definition>vector_unit_3d &amp; vector_unit_3d::operator=</definition>
         <argsstring>(const string &amp;init_vector_3d)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_vector_3d</declname>
         </param>
         <briefdescription>
+<para>The value, the dimensions, theta and phi are set from the initialization string init_vector_3d. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -777,17 +777,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="119" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="112" bodyend="116"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a6bdd0e37d9d006ab3cb929135021d58b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-        <definition>bool scifir::vector_unit_3d::operator==</definition>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1acaa01f05cdc757779023c1847e69e3d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool vector_unit_3d::operator==</definition>
         <argsstring>(vector_unit_3d x) const</argsstring>
         <name>operator==</name>
-        <qualifiedname>scifir::vector_unit_3d::operator==</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Comparison operator. Two <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> are equal if their value, dimensions, theta and phi are the same. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -795,17 +795,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="121" column="6" bodyfile="units/vector_unit_3d.cpp" bodystart="118" bodyend="129"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a85d69dbbab62fa2ad7eae51ea34aef86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::vector_unit_3d::point_to</definition>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a572d29da780eddb7c560c4bdb156e3fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vector_unit_3d::point_to</definition>
         <argsstring>(direction::name x)</argsstring>
         <name>point_to</name>
-        <qualifiedname>scifir::vector_unit_3d::point_to</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref></type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Theta is set to the direction specified in 3D. Possible values are LEFT, RIGHT, TOP, BOTTOM, LEFT_TOP, RIGHT_TOP, RIGHT_BOTTOM, LEFT_BOTTOM, FRONT, BACK, LEFT_FRONT, RIGHT_FRONT, TOP_FRONT, BOTTOM_FRONT, LEFT_BACK, RIGHT_BACK, TOP_BACK, BOTTOM_BACK, LEFT_TOP_FRONT, RIGHT_TOP_FRONT, LEFT_BOTTOM_FRONT, RIGHT_BOTTOM_FRONT, LEFT_TOP_BACK, RIGHT_TOP_BACK, LEFT_BOTTOM_BACK, RIGHT_BOTTOM_BACK. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -813,17 +813,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="123" column="6" bodyfile="units/vector_unit_3d.cpp" bodystart="131" bodyend="263"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1aeb9247d9725c2b50fdba4873c8b1a41c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::vector_unit_3d::operator+=</definition>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a10ab2717e963bfd0affe851a84fc8f96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vector_unit_3d::operator+=</definition>
         <argsstring>(const vector_unit_3d &amp;x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>The <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> is summed as vector, in spherical coordinates. The addition of vectors is used for the calculation. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -831,17 +831,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="125" column="6" bodyfile="units/vector_unit_3d.cpp" bodystart="265" bodyend="280"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1aa4c3b20b6c577a3db2635016b59ebedb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::vector_unit_3d::operator-=</definition>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a23a23f59bcabe3f947ba9e202263d767" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vector_unit_3d::operator-=</definition>
         <argsstring>(vector_unit_3d x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator-=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>The <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> is substracted as vector, in spherical coordinates. The substraction of vectors is used for the calculation. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -849,17 +849,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="126" column="6" bodyfile="units/vector_unit_3d.cpp" bodystart="282" bodyend="293"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ab1f8ecdcec05c43705fc733ea466fca9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ad55a52184825fac55a1c69e670f351d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator+</definition>
+        <definition>vector_unit_3d vector_unit_3d::operator+</definition>
         <argsstring>(const vector_unit_3d &amp;x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::vector_unit_3d::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Addition of vectors in 3D. It creates a new vector as the addition of the other two. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -867,17 +867,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="128" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="295" bodyend="311"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a99afa2d3bdb0d950955cd071e2ff5621" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ac1b459e7130d78f8890595f6dbdd5c6c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator-</definition>
+        <definition>vector_unit_3d vector_unit_3d::operator-</definition>
         <argsstring>(vector_unit_3d x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::vector_unit_3d::operator-</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Substraction of vectors in 3D. It creates a new vector as the difference of the other two. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -885,17 +885,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="129" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="313" bodyend="330"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a2ced821e1b89e0e61f16d95dd737dd98" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1adf6ede11956187485f3f1139913a5469" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator*</definition>
+        <definition>vector_unit_3d vector_unit_3d::operator*</definition>
         <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator*</name>
-        <qualifiedname>scifir::vector_unit_3d::operator*</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> scaling a <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> by the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -903,17 +903,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="131" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="332" bodyend="337"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ac18f21d86844cbc5c33f445fe0743efa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a2b04124a50a082a439bf9030c95eebfb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator/</definition>
+        <definition>vector_unit_3d vector_unit_3d::operator/</definition>
         <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator/</name>
-        <qualifiedname>scifir::vector_unit_3d::operator/</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> scaling a <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> by the inverse of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -921,17 +921,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="132" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="339" bodyend="344"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a4dffdcc7cdcf89f495678e9035f3b65d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a6437bfae8995d0be000074a181493c54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator^</definition>
+        <definition>vector_unit_3d vector_unit_3d::operator^</definition>
         <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator^</name>
-        <qualifiedname>scifir::vector_unit_3d::operator^</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It powers a vector by a <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> x if that <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> has empty dimensions. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -939,26 +939,26 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="133" column="16" bodyfile="units/vector_unit_3d.cpp" bodystart="346" bodyend="358"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a854a9648981966ba25e08f0c4fe495a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1aac4f541a87c559f1c5e29d5b16c0b5f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator+</definition>
-        <argsstring>(U x) const</argsstring>
+        <definition>vector_unit_3d vector_unit_3d::operator+</definition>
+        <argsstring>(T x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::vector_unit_3d::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new vector as the addition of the numeric type x to the value. Theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -966,26 +966,26 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="136" column="16" bodyfile="units/vector_unit_3d.hpp" bodystart="136" bodyend="141"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a02f7c0d477b04a7401294b429e1dfa1e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a14187517517cfc349de8bdce704555ad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator-</definition>
-        <argsstring>(U x) const</argsstring>
+        <definition>vector_unit_3d vector_unit_3d::operator-</definition>
+        <argsstring>(T x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::vector_unit_3d::operator-</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new vector as the substraction of the numeric type x to the value. Theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -993,26 +993,26 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="144" column="16" bodyfile="units/vector_unit_3d.hpp" bodystart="144" bodyend="149"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ac95d6ea01857abe6fff089e1692a91d4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a5a8d7c1967ab8e253e816d43fb155f79" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator*</definition>
-        <argsstring>(U x) const</argsstring>
+        <definition>vector_unit_3d vector_unit_3d::operator*</definition>
+        <argsstring>(T x) const</argsstring>
         <name>operator*</name>
-        <qualifiedname>scifir::vector_unit_3d::operator*</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new vector as the multiplication of the numeric type x to the value. Theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1020,26 +1020,26 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="152" column="16" bodyfile="units/vector_unit_3d.hpp" bodystart="152" bodyend="157"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a0e0a309267ba5945c537240be84bcd7a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1abae985e5e338498ec99f3c26647e2c90" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator/</definition>
-        <argsstring>(U x) const</argsstring>
+        <definition>vector_unit_3d vector_unit_3d::operator/</definition>
+        <argsstring>(T x) const</argsstring>
         <name>operator/</name>
-        <qualifiedname>scifir::vector_unit_3d::operator/</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new vector as the division of the value with the numeric type x. Theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1047,26 +1047,26 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="160" column="16" bodyfile="units/vector_unit_3d.hpp" bodystart="160" bodyend="165"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ab280246ec6cc8ee41b5f703aad883e85" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a96575a31a83885c96ee24e1ece0e329d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>vector_unit_3d scifir::vector_unit_3d::operator^</definition>
-        <argsstring>(U x) const</argsstring>
+        <definition>vector_unit_3d vector_unit_3d::operator^</definition>
+        <argsstring>(T x) const</argsstring>
         <name>operator^</name>
-        <qualifiedname>scifir::vector_unit_3d::operator^</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new vector as the power of the value with the numeric type x. Theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1074,26 +1074,26 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="168" column="16" bodyfile="units/vector_unit_3d.hpp" bodystart="168" bodyend="171"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a1cd4133b9c3eb81e6b0eda0caa36ad1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ad8af06602c852d4d504ae05082c2c8ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::vector_unit_3d::operator+=</definition>
-        <argsstring>(U x)</argsstring>
+        <type>void</type>
+        <definition>void vector_unit_3d::operator+=</definition>
+        <argsstring>(T x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It sums the numeric type x to the value. Theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1101,26 +1101,26 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="174" column="6" bodyfile="units/vector_unit_3d.hpp" bodystart="174" bodyend="177"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ad1a040b4df16156dcf99d52e82606b04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1abeeffb601d7f337bbf1d52ecc782798a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::vector_unit_3d::operator-=</definition>
-        <argsstring>(U x)</argsstring>
+        <type>void</type>
+        <definition>void vector_unit_3d::operator-=</definition>
+        <argsstring>(T x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator-=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It substracts the numeric type x to the value. Theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1128,26 +1128,26 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="180" column="6" bodyfile="units/vector_unit_3d.hpp" bodystart="180" bodyend="183"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1afe0ec9814d521d005cf7d20c93b75cad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ac7277f2cf9dca35e73116b1625ccea00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::vector_unit_3d::operator*=</definition>
-        <argsstring>(U x)</argsstring>
+        <type>void</type>
+        <definition>void vector_unit_3d::operator*=</definition>
+        <argsstring>(T x)</argsstring>
         <name>operator*=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator*=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It multiplies the numeric type x to the value. Theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1155,26 +1155,26 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="186" column="6" bodyfile="units/vector_unit_3d.hpp" bodystart="186" bodyend="193"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a368b2720a7dbaa01d6b36114c7da800d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a8e8d48137050c168b736090f403b0aa1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::vector_unit_3d::operator/=</definition>
-        <argsstring>(U x)</argsstring>
+        <type>void</type>
+        <definition>void vector_unit_3d::operator/=</definition>
+        <argsstring>(T x)</argsstring>
         <name>operator/=</name>
-        <qualifiedname>scifir::vector_unit_3d::operator/=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It divides the numeric type x to the value. Theta and phi are not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1182,13 +1182,13 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="196" column="6" bodyfile="units/vector_unit_3d.hpp" bodystart="196" bodyend="203"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a051be68cfab0732161c3984fb8916c60" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a8104afd03dc49832c7a7152cc481e18b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
-        <definition>scalar_unit scifir::vector_unit_3d::x_projection</definition>
+        <definition>scalar_unit vector_unit_3d::x_projection</definition>
         <argsstring>() const</argsstring>
         <name>x_projection</name>
-        <qualifiedname>scifir::vector_unit_3d::x_projection</qualifiedname>
         <briefdescription>
+<para>It creates the x projection of the vector, returning it as a <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> of the same dimensions, and the value corresponds to the projection. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1196,13 +1196,13 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="205" column="20" bodyfile="units/vector_unit_3d.hpp" bodystart="205" bodyend="208"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a57588d77299092e3754c81f946e1198b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a42fe2a209890638d8d526c6b1f0d7a76" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
-        <definition>scalar_unit scifir::vector_unit_3d::y_projection</definition>
+        <definition>scalar_unit vector_unit_3d::y_projection</definition>
         <argsstring>() const</argsstring>
         <name>y_projection</name>
-        <qualifiedname>scifir::vector_unit_3d::y_projection</qualifiedname>
         <briefdescription>
+<para>It creates the y projection of the vector, returning it as a <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> of the same dimensions, and the value corresponds to the projection. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1210,13 +1210,13 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="210" column="20" bodyfile="units/vector_unit_3d.hpp" bodystart="210" bodyend="213"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a1a50e9547b2350b7000e4be99940d2a9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a6684389d73257dc3c5bed913144b4083" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
-        <definition>scalar_unit scifir::vector_unit_3d::z_projection</definition>
+        <definition>scalar_unit vector_unit_3d::z_projection</definition>
         <argsstring>() const</argsstring>
         <name>z_projection</name>
-        <qualifiedname>scifir::vector_unit_3d::z_projection</qualifiedname>
         <briefdescription>
+<para>It creates the z projection of the vector, returning it as a <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> of the same dimensions, and the value corresponds to the projection. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1224,13 +1224,13 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="215" column="20" bodyfile="units/vector_unit_3d.hpp" bodystart="215" bodyend="218"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a787a747b7c787a08f17c186660744bd3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::vector_unit_3d::invert</definition>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a2ead70a460e06073383f6a990bbfa45c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void vector_unit_3d::invert</definition>
         <argsstring>()</argsstring>
         <name>invert</name>
-        <qualifiedname>scifir::vector_unit_3d::invert</qualifiedname>
         <briefdescription>
+<para>Changes the direction of the vector to the opposite direction. It does that by adding 180 degrees to theta and calculating the new phi as &quot;180 - phi&quot;. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1238,18 +1238,18 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="220" column="13" bodyfile="units/vector_unit_3d.hpp" bodystart="220" bodyend="224"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a6a2dfe7dcdf08f1963920a0a5bb82fe1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::vector_unit_3d::vectorial_display</definition>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ada38bc42325b20fe5f1d9d02ad329879" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string vector_unit_3d::vectorial_display</definition>
         <argsstring>(int number_of_decimals=2) const</argsstring>
         <name>vectorial_display</name>
-        <qualifiedname>scifir::vector_unit_3d::vectorial_display</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <briefdescription>
+<para>Displays the vector as the string representation of the scalar unit adding also the angle theta and the angle phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1257,18 +1257,18 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="226" column="8"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ae1a70119e3c195fc4b24df67c0ceabc8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::vector_unit_3d::vectorial_derived_display</definition>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a04849ac01c9c5439d1e71609c3086378" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string vector_unit_3d::vectorial_derived_display</definition>
         <argsstring>(int number_of_decimals=2) const</argsstring>
         <name>vectorial_derived_display</name>
-        <qualifiedname>scifir::vector_unit_3d::vectorial_derived_display</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <briefdescription>
+<para>Displays the vector as the string representation of the scalar unit adding also the angle theta and the angle phi. It displays the dimensions with its derived dimensions. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1276,22 +1276,22 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="227" column="8"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1af327b6558731ea37d942adbe21e52dc6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::vector_unit_3d::vectorial_custom_display</definition>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a7cf12bf79f23dabd5ef183679d3a9a16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string vector_unit_3d::vectorial_custom_display</definition>
         <argsstring>(const string &amp;init_dimensions, int number_of_decimals=2) const</argsstring>
         <name>vectorial_custom_display</name>
-        <qualifiedname>scifir::vector_unit_3d::vectorial_custom_display</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <briefdescription>
+<para>Displays the vector as the string representation of the scalar unit adding also the angle theta and the angle phi. It displays the vector in the dimensions specified in the initialization string of dimensions init_dimensions. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1299,31 +1299,31 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="228" column="8"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a22c160b0cd0ff032181f350ea28eba79" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ae47ee524809398fc162384b6694e68b7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>static vector_unit_3d scifir::vector_unit_3d::cartesian_3d</definition>
-        <argsstring>(const string &amp;new_dimensions, float new_x, float new_y, float new_z)</argsstring>
+        <definition>vector_unit_3d vector_unit_3d::cartesian_3d</definition>
+        <argsstring>(const string &amp;init_dimensions, float new_x, float new_y, float new_z)</argsstring>
         <name>cartesian_3d</name>
-        <qualifiedname>scifir::vector_unit_3d::cartesian_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <declname>new_dimensions</declname>
+          <type>const string &amp;</type>
+          <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_x</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_y</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_z</declname>
         </param>
         <briefdescription>
+<para>The dimensions are initialized from the initialization string of dimensions new_dimensions, the cartesian coordinates new_x, new_y and new_z are converted to spherical coordinates and then set the value, theta and phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1331,18 +1331,17 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="100" column="23" bodyfile="units/vector_unit_3d.hpp" bodystart="100" bodyend="106"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a96cc7e17061444a5d4463a7efb5278ca" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1af5ff268355038d752e811b091831e81b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
-        <definition>static vector_unit_3d scifir::vector_unit_3d::cylindrical</definition>
-        <argsstring>(const string &amp;new_dimensions, float new_p, angle new_theta, float new_z)</argsstring>
+        <definition>vector_unit_3d vector_unit_3d::cylindrical</definition>
+        <argsstring>(const string &amp;init_dimensions, float new_p, angle new_theta, float new_z)</argsstring>
         <name>cylindrical</name>
-        <qualifiedname>scifir::vector_unit_3d::cylindrical</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <declname>new_dimensions</declname>
+          <type>const string &amp;</type>
+          <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_p</declname>
         </param>
         <param>
@@ -1350,10 +1349,11 @@
           <declname>new_theta</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_z</declname>
         </param>
         <briefdescription>
+<para>The dimensions are initialized from the initialization string of dimensions new_dimensions, the cylindrical coordinates new_p, new_theta and new_z are converted to spherical coordinates and then set the value, theta and phi. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1361,19 +1361,19 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="108" column="23" bodyfile="units/vector_unit_3d.hpp" bodystart="108" bodyend="113"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
-      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1ab7eef0715d724ed15a90b2f0dd837b3f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::vector_unit_3d::initialize_from_string</definition>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__3d_1a5152301649558d388dc782b9d05a72f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vector_unit_3d::initialize_from_string</definition>
         <argsstring>(string init_vector_3d)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::vector_unit_3d::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <type>string</type>
           <declname>init_vector_3d</declname>
         </param>
         <briefdescription>
+<para>Initializes the member-variables with the initialization string of <ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref> init_vector_3d. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1381,8 +1381,9 @@
         </inbodydescription>
         <location file="units/vector_unit_3d.hpp" line="234" column="6" bodyfile="units/vector_unit_3d.cpp" bodystart="414" bodyend="424"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
+<para>Class that creates a vector unit in 3D. The vector is in <bold>spherical coordinates</bold> with a value and dimensions of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>, and an angle theta and another angle phi for his direction. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
@@ -1399,10 +1400,6 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
-        <label>scifir::angle</label>
-        <link refid="classscifir_1_1angle"/>
-      </node>
       <node id="2">
         <label>scifir::scalar_unit</label>
         <link refid="classscifir_1_1scalar__unit"/>
@@ -1417,15 +1414,19 @@
           <edgelabel>theta</edgelabel>
         </childnode>
       </node>
+      <node id="3">
+        <label>scifir::angle</label>
+        <link refid="classscifir_1_1angle"/>
+      </node>
     </collaborationgraph>
     <location file="units/vector_unit_3d.hpp" line="72" column="1" bodyfile="units/vector_unit_3d.hpp" bodystart="73" bodyend="235"/>
     <listofallmembers>
       <member refid="classscifir_1_1scalar__unit_1a28dc39e25122213c5d61cd56a260ef7b" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>add_dimension</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a22c160b0cd0ff032181f350ea28eba79" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>cartesian_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ae47ee524809398fc162384b6694e68b7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>cartesian_3d</name></member>
       <member refid="classscifir_1_1scalar__unit_1aaf48aa357423e1f65044190c27053657" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>change_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1adda2fd58d0782bb244251760978c853d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>change_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1acc46b7f3e73c08b61e4528bc3331fc60" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>custom_display</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a96cc7e17061444a5d4463a7efb5278ca" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>cylindrical</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1af5ff268355038d752e811b091831e81b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>cylindrical</name></member>
       <member refid="classscifir_1_1scalar__unit_1aacf2082b3224a8ded5798a0f1727b8a9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>derived_display</name></member>
       <member refid="classscifir_1_1scalar__unit_1a31051a01340ebcb0d2616491a41e3857" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1a5cec374081c39d864a7c3267b6edad09" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>display</name></member>
@@ -1437,53 +1438,44 @@
       <member refid="classscifir_1_1scalar__unit_1a08e62ce3092e91269286dda5b8178869" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1a83084c8cac8d4a018891588d2eded5fa" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1a0b736b31c71a1240704cda3300a45039" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_empty_dimensions</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ab7eef0715d724ed15a90b2f0dd837b3f" prot="private" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>initialize_from_string</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a787a747b7c787a08f17c186660744bd3" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>invert</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a5152301649558d388dc782b9d05a72f7" prot="private" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>initialize_from_string</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a2ead70a460e06073383f6a990bbfa45c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>invert</name></member>
       <member refid="classscifir_1_1scalar__unit_1aff58f1afa3fe9f5b034a7acf1e04c141" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator float</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a2ced821e1b89e0e61f16d95dd737dd98" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ac95d6ea01857abe6fff089e1692a91d4" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1adf6ede11956187485f3f1139913a5469" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a5a8d7c1967ab8e253e816d43fb155f79" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
       <member refid="classscifir_1_1scalar__unit_1a35658ee94f8a802aaa02188acf289d13" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a9b250120739fca9c027ea3929f31a555" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1afe0ec9814d521d005cf7d20c93b75cad" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a0b7780e065e19c2bbb3b918b0581ba27" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ab1f8ecdcec05c43705fc733ea466fca9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a854a9648981966ba25e08f0c4fe495a8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ac7277f2cf9dca35e73116b1625ccea00" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ad55a52184825fac55a1c69e670f351d8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1aac4f541a87c559f1c5e29d5b16c0b5f7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
       <member refid="classscifir_1_1scalar__unit_1a7aeafdb65fe4ab246c83c59b51efc731" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ac395d00e4b4abaeb037d75bd83a068c4" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
       <member refid="classscifir_1_1scalar__unit_1a7c2b17b498e1afd1110c4f3a0b76e7b1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator++</name></member>
       <member refid="classscifir_1_1scalar__unit_1a1ef5e9e16ffeb5990f253f617885c8aa" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator++</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1aeb9247d9725c2b50fdba4873c8b1a41c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a1cd4133b9c3eb81e6b0eda0caa36ad1f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a10ab2717e963bfd0affe851a84fc8f96" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ad8af06602c852d4d504ae05082c2c8ef" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
       <member refid="classscifir_1_1scalar__unit_1abbaf4dd62c32f8d16a6aaa1363430fd5" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a0d1abb8fa0e6feb7486033c4bc97bbe4" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a99afa2d3bdb0d950955cd071e2ff5621" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a02f7c0d477b04a7401294b429e1dfa1e" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ac1b459e7130d78f8890595f6dbdd5c6c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a14187517517cfc349de8bdce704555ad" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
       <member refid="classscifir_1_1scalar__unit_1a8897df8c59682cf3fe28e2fe52bc2519" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a5277a3985d9aa59cb23a2f4c461f3c30" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
       <member refid="classscifir_1_1scalar__unit_1a1ffcae0b6dceb9b188b0f3f0698a8aa8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator--</name></member>
       <member refid="classscifir_1_1scalar__unit_1a04f488f4b0a5d6bf423221c250f2e663" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator--</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1aa4c3b20b6c577a3db2635016b59ebedb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ad1a040b4df16156dcf99d52e82606b04" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a23a23f59bcabe3f947ba9e202263d767" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1abeeffb601d7f337bbf1d52ecc782798a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
       <member refid="classscifir_1_1scalar__unit_1acd9a736b50d0a914e043fc97b9323e90" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a17928a033e3292fea8ae8f4d087cac56" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ac18f21d86844cbc5c33f445fe0743efa" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a0e0a309267ba5945c537240be84bcd7a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a2b04124a50a082a439bf9030c95eebfb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1abae985e5e338498ec99f3c26647e2c90" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
       <member refid="classscifir_1_1scalar__unit_1a49db9492e36cfbde204ec4234888ad14" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a597ee369782cd285beec1a76f9794792" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a368b2720a7dbaa01d6b36114c7da800d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ab2e5d01cbd910afdad116d6c06739409" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ae779101ec798944a9d5c18ccbf57d634" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ad77d172e61045f216da9b8f3f8063e48" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a1f11005128fb2ffb6499961019826113" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1afc097c08aadee6a2e80a3e1d0e727ea6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a8cd071505fcae0b8d7cd07cc606a7d4c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a6bdd0e37d9d006ab3cb929135021d58b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator==</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a8e8d48137050c168b736090f403b0aa1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a9efe91396c6d7294b0c83ce6f3a0c090" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ab251aba0d8037d433a0e48643cdacfd4" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a5118383dab0ff9abd732e4380e023d54" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a1e13bea254b41b088143989036455379" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ab474e2fd4a2d8b821e0d7d81aa828222" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1acaa01f05cdc757779023c1847e69e3d0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator==</name></member>
       <member refid="classscifir_1_1scalar__unit_1a40e2dec78deafcf4c6ae24129a11fd5c" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator==</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a4dffdcc7cdcf89f495678e9035f3b65d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ab280246ec6cc8ee41b5f703aad883e85" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a1e7a6b741716f2a06116808cbc5b22a8" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a90099d68c23025849f059f10d2be4217" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>phi</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a85d69dbbab62fa2ad7eae51ea34aef86" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>point_to</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a6437bfae8995d0be000074a181493c54" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a96575a31a83885c96ee24e1ece0e329d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1aedcd4552b76ffdd4d0e9a53e1340985d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>phi</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a572d29da780eddb7c560c4bdb156e3fc" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>point_to</name></member>
       <member refid="classscifir_1_1scalar__unit_1ad78ee83a39d1d8a846545f4b3ff6339b" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>remove_dimension</name></member>
       <member refid="classscifir_1_1scalar__unit_1ab03d02ba63c30297b9739929659b38d5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
       <member refid="classscifir_1_1scalar__unit_1afc354cb981dec3a98c2fe5070ec136b8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
@@ -1497,38 +1489,38 @@
       <member refid="classscifir_1_1scalar__unit_1a915f798451bbdaec8a2682a7aaae3bc0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
       <member refid="classscifir_1_1scalar__unit_1aba1312368355c9e321cf2963ad05153b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
       <member refid="classscifir_1_1scalar__unit_1a53116c89f3815a1ade42cc335ef043f3" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a70b25d4709874f44f1c99d2330cec56f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>theta</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1aabbc544480e739a4d45fad2371f9caaa" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>theta</name></member>
       <member refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>value</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1af6d531f8562636587bc107dae2009c54" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a07d2e5e1cf5f452943158bdd664b3f02" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ad2241097e08233510641a57558120c8d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1aaee65f5a2024009a581860a15e7de5bc" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1abb00f54a6b1dadf23a7981977ec85e92" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a72d4390c37eb056534eb0ee9256152a9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a1cf074aa18988979faa71d74f09452ee" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ac72611d86f02307e2e4607fdacb770a9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a85f8aa2874cb614cc214f26ee61d6665" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a6f9020cb1aac00dc220afff1715fa6ac" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ae97e8cf80532e67fb26555d96e60a898" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a9e52e91e4608986014adfa201f693748" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a2849c776e6867f41cb440139ea801ff9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a4d619367681f4ef519cb90b44e4b019b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ab8c4a5d9ed3d1978042e1ae2d19714f0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a0e0b1a85b8ac1885891a6d49d50d2953" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1aa69a6009fee07e72056797f1eca3c4d1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a51c6bd3334e7db82a30a484a593d1599" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ad9a30a6a92e4b6a276fefe629dbdff65" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1abb906d1c6fccf961b203f58a1a0fd62e" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ab8c6bb91cb857453ded866c72d7f6aab" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a2d549ccad28e374b801a0cae1630b3a6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a175f8a141d196272560a67fd97e000dd" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1afd3fe1d0372c8c693f8cdaf784f73ccf" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1af327b6558731ea37d942adbe21e52dc6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vectorial_custom_display</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1ae1a70119e3c195fc4b24df67c0ceabc8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vectorial_derived_display</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a6a2dfe7dcdf08f1963920a0a5bb82fe1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vectorial_display</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a051be68cfab0732161c3984fb8916c60" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>x_projection</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a57588d77299092e3754c81f946e1198b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>y_projection</name></member>
-      <member refid="classscifir_1_1vector__unit__3d_1a1a50e9547b2350b7000e4be99940d2a9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>z_projection</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1aa032451e59ede864277d17a6a83b7d6f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a6b13d7fdc2f31c1c6b4adfa256f64350" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a5237952cda38c23179b0dc7578911636" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a7c953af231aacc14f03ffe68eaa1d7c0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1afe4a6725533eff2f42d297cc3c87f1f7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1afd17f7743553023d1d9c0da399cbb619" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1aaf3ff8c9833cbbe07e3344a02d5653eb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a62410651151c3d68fcd919f383cfb803" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a761b25992706e54f6f25b2473266bbcd" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1aea0a0aea49ef671e6e6a291575acd153" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a804d5f25dff01e7dc6eeb492d09e71b2" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a745e8c63394bb79d27946d216c92ab95" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a72d5b304be55fa68f4ec6a661e968786" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a88116f75efcae4c37243c64f1a3bd833" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a5c377e4760d4d47280331f1452c0e5a8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a79245eeb96c16f6acbd20102c9a5ff85" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ab7288e59e749526eb93883799a1f7ea5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a88a7396390ba23e6b405bceb0e703d27" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ae2c1e58cb85730932a33af3d72eefe6a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a5ffba9d52b084099a84a8d3ea60f97c6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a7fd48192f22c36913231bdf988caa1d6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1add3324755760dd7a80a0f7d258e4473e" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1abd724c6ca1df04979df77d47263792c3" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ac044880bdcebf0ce99d33e9c34a4225f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a7cf12bf79f23dabd5ef183679d3a9a16" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vectorial_custom_display</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a04849ac01c9c5439d1e71609c3086378" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vectorial_derived_display</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1ada38bc42325b20fe5f1d9d02ad329879" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vectorial_display</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a8104afd03dc49832c7a7152cc481e18b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>x_projection</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a42fe2a209890638d8d526c6b1f0d7a76" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>y_projection</name></member>
+      <member refid="classscifir_1_1vector__unit__3d_1a6684389d73257dc3c5bed913144b4083" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>z_projection</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -1,4 +1,4 @@
-.TH "special_units/percentage.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "special_units/percentage.hpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,7 +30,7 @@ special_units/percentage.hpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -38,10 +38,10 @@ special_units/percentage.hpp
 
 .in +1c
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBpercentage\fP &x)"
+.RI "string \fBscifir::to_string\fP (const percentage &x)"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBscifir::is_percentage\fP (\fBconst\fP \fBstring\fP &\fBinit_percentage\fP)"
+.RI "bool \fBscifir::is_percentage\fP (const string &init_percentage)"
 .br
 .ti -1c
 .RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::percentage\fP \fBoperator+\fP (T x, const \fBscifir::percentage\fP &y)"
@@ -148,369 +148,369 @@ special_units/percentage.hpp
 .SS "bool operator!= (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB496\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 548 of file percentage\&.cpp\&.
+.PP
 .nf
-497 {
-498     return !(x == y);
-499 }
+549 {
+550     return !(x == y);
+551 }
 .fi
-
 .SS "bool operator!= (const \fBscifir::percentage\fP & x, const string & init_percentage)"
 
 .PP
-Definition at line \fB541\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 593 of file percentage\&.cpp\&.
+.PP
 .nf
-542 {
-543     return !(x == init_percentage);
-544 }
+594 {
+595     return !(x == init_percentage);
+596 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator!= (const \fBscifir::percentage\fP & y, T x)"
 
 .PP
-Definition at line \fB215\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 217 of file percentage\&.hpp\&.
+.PP
 .nf
-216 {
-217     return (x != y\&.get_value());
-218 }
+218 {
+219     return (x != y\&.get_value());
+220 }
 .fi
-
 .SS "bool operator!= (const string & init_percentage, const \fBscifir::percentage\fP & x)"
 
 .PP
-Definition at line \fB552\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 604 of file percentage\&.cpp\&.
+.PP
 .nf
-553 {
-554     return !(init_percentage == x);
-555 }
+605 {
+606     return !(init_percentage == x);
+607 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator!= (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB179\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 181 of file percentage\&.hpp\&.
+.PP
 .nf
-180 {
-181     return (x != y\&.get_value());
-182 }
+182 {
+183     return (x != y\&.get_value());
+184 }
 .fi
-
 .SS "\fBscifir::scalar_unit\fP operator* (const \fBscifir::scalar_unit\fP & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB474\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 526 of file percentage\&.cpp\&.
+.PP
 .nf
-475 {
-476     return x * y\&.get_factor();
-477 }
+527 {
+528     return x * y\&.get_factor();
+529 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> float operator* (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB161\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 163 of file percentage\&.hpp\&.
+.PP
 .nf
-162 {
-163     return float(x * y\&.get_value() / 100);
-164 }
+164 {
+165     return float(x * y\&.get_value() / 100);
+166 }
 .fi
-
 .SS "string operator+ (const \fBscifir::percentage\fP & y, const string & x)"
 
 .PP
-Definition at line \fB572\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 624 of file percentage\&.cpp\&.
+.PP
 .nf
-573 {
-574     ostringstream output;
-575     output << y;
-576     output << x;
-577     return output\&.str();
-578 }
+625 {
+626     ostringstream output;
+627     output << y;
+628     output << x;
+629     return output\&.str();
+630 }
 .fi
-
 .SS "string operator+ (const string & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB564\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 616 of file percentage\&.cpp\&.
+.PP
 .nf
-565 {
-566     ostringstream output;
-567     output << x;
-568     output << y;
-569     return output\&.str();
-570 }
+617 {
+618     ostringstream output;
+619     output << x;
+620     output << y;
+621     return output\&.str();
+622 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::percentage\fP operator+ (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB149\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 151 of file percentage\&.hpp\&.
+.PP
 .nf
-150 {
-151     return scifir::percentage(x + y\&.get_value());
-152 }
+152 {
+153     return scifir::percentage(x + y\&.get_value());
+154 }
 .fi
-
 .SS "void operator+= (string & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB557\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 609 of file percentage\&.cpp\&.
+.PP
 .nf
-558 {
-559     ostringstream output;
-560     output << y;
-561     x += output\&.str();
-562 }
+610 {
+611     ostringstream output;
+612     output << y;
+613     x += output\&.str();
+614 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::percentage\fP operator\- (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB155\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 157 of file percentage\&.hpp\&.
+.PP
 .nf
-156 {
-157     return scifir::percentage(x \- y\&.get_value());
-158 }
+158 {
+159     return scifir::percentage(x - y\&.get_value());
+160 }
 .fi
-
 .SS "\fBscifir::scalar_unit\fP operator/ (const \fBscifir::scalar_unit\fP & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB479\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 531 of file percentage\&.cpp\&.
+.PP
 .nf
-480 {
-481     return x / y\&.get_factor();
-482 }
+532 {
+533     return x / y\&.get_factor();
+534 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> float operator/ (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB167\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 169 of file percentage\&.hpp\&.
+.PP
 .nf
-168 {
-169     return float(100 * x / y\&.get_value());
-170 }
+170 {
+171     return float(100 * x / y\&.get_value());
+172 }
 .fi
-
 .SS "bool operator< (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB501\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 553 of file percentage\&.cpp\&.
+.PP
 .nf
-502 {
-503     if(x\&.get_value() < y\&.get_value())
-504     {
-505         return true;
-506     }
-507     else
-508     {
-509         return false;
-510     }
-511 }
+554 {
+555     if(x\&.get_value() < y\&.get_value())
+556     {
+557         return true;
+558     }
+559     else
+560     {
+561         return false;
+562     }
+563 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator< (const \fBscifir::percentage\fP & y, T x)"
 
 .PP
-Definition at line \fB221\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 223 of file percentage\&.hpp\&.
+.PP
 .nf
-222 {
-223     return (y\&.get_value() < x);
-224 }
+224 {
+225     return (y\&.get_value() < x);
+226 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator< (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB185\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 187 of file percentage\&.hpp\&.
+.PP
 .nf
-186 {
-187     return (x < y\&.get_value());
-188 }
+188 {
+189     return (x < y\&.get_value());
+190 }
 .fi
-
-.SS "ostream & operator<< (ostream & os, const \fBscifir::percentage\fP & x)"
+.SS "ostream& operator<< (ostream & os, const \fBscifir::percentage\fP & x)"
 
 .PP
-Definition at line \fB580\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 632 of file percentage\&.cpp\&.
+.PP
 .nf
-581 {
-582     return os << to_string(x);
-583 }
+633 {
+634     return os << to_string(x);
+635 }
 .fi
-
 .SS "bool operator<= (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB525\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 577 of file percentage\&.cpp\&.
+.PP
 .nf
-526 {
-527     return !(x > y);
-528 }
+578 {
+579     return !(x > y);
+580 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator<= (const \fBscifir::percentage\fP & y, T x)"
 
 .PP
-Definition at line \fB233\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 235 of file percentage\&.hpp\&.
+.PP
 .nf
-234 {
-235     return (y\&.get_value() <= x);
-236 }
+236 {
+237     return (y\&.get_value() <= x);
+238 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator<= (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB197\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 199 of file percentage\&.hpp\&.
+.PP
 .nf
-198 {
-199     return (x <= y\&.get_value());
-200 }
+200 {
+201     return (x <= y\&.get_value());
+202 }
 .fi
-
 .SS "bool operator== (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB484\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 536 of file percentage\&.cpp\&.
+.PP
 .nf
-485 {
-486     if(x\&.get_value() == y\&.get_value())
-487     {
-488         return true;
-489     }
-490     else
-491     {
-492         return false;
-493     }
-494 }
+537 {
+538     if(x\&.get_value() == y\&.get_value())
+539     {
+540         return true;
+541     }
+542     else
+543     {
+544         return false;
+545     }
+546 }
 .fi
-
 .SS "bool operator== (const \fBscifir::percentage\fP & x, const string & init_percentage)"
 
 .PP
-Definition at line \fB535\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 587 of file percentage\&.cpp\&.
+.PP
 .nf
-536 {
-537     scifir::percentage y = scifir::percentage(init_percentage);
-538     return (x == y);
-539 }
+588 {
+589     scifir::percentage y = scifir::percentage(init_percentage);
+590     return (x == y);
+591 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator== (const \fBscifir::percentage\fP & y, T x)"
 
 .PP
-Definition at line \fB209\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 211 of file percentage\&.hpp\&.
+.PP
 .nf
-210 {
-211     return (x == y\&.get_value());
-212 }
+212 {
+213     return (x == y\&.get_value());
+214 }
 .fi
-
 .SS "bool operator== (const string & init_percentage, const \fBscifir::percentage\fP & x)"
 
 .PP
-Definition at line \fB546\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 598 of file percentage\&.cpp\&.
+.PP
 .nf
-547 {
-548     scifir::percentage y = scifir::percentage(init_percentage);
-549     return (x == y);
-550 }
+599 {
+600     scifir::percentage y = scifir::percentage(init_percentage);
+601     return (x == y);
+602 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator== (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB173\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 175 of file percentage\&.hpp\&.
+.PP
 .nf
-174 {
-175     return (x == y\&.get_value());
-176 }
+176 {
+177     return (x == y\&.get_value());
+178 }
 .fi
-
 .SS "bool operator> (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB513\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 565 of file percentage\&.cpp\&.
+.PP
 .nf
-514 {
-515     if(x\&.get_value() > y\&.get_value())
-516     {
-517         return true;
-518     }
-519     else
-520     {
-521         return false;
-522     }
-523 }
+566 {
+567     if(x\&.get_value() > y\&.get_value())
+568     {
+569         return true;
+570     }
+571     else
+572     {
+573         return false;
+574     }
+575 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator> (const \fBscifir::percentage\fP & y, T x)"
 
 .PP
-Definition at line \fB227\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 229 of file percentage\&.hpp\&.
+.PP
 .nf
-228 {
-229     return (y\&.get_value() > x);
-230 }
+230 {
+231     return (y\&.get_value() > x);
+232 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator> (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB191\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 193 of file percentage\&.hpp\&.
+.PP
 .nf
-192 {
-193     return (x > y\&.get_value());
-194 }
+194 {
+195     return (x > y\&.get_value());
+196 }
 .fi
-
 .SS "bool operator>= (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB530\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 582 of file percentage\&.cpp\&.
+.PP
 .nf
-531 {
-532     return !(x < y);
-533 }
+583 {
+584     return !(x < y);
+585 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator>= (const \fBscifir::percentage\fP & y, T x)"
 
 .PP
-Definition at line \fB239\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 241 of file percentage\&.hpp\&.
+.PP
 .nf
-240 {
-241     return (y\&.get_value() >= x);
-242 }
+242 {
+243     return (y\&.get_value() >= x);
+244 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator>= (T x, const \fBscifir::percentage\fP & y)"
 
 .PP
-Definition at line \fB203\fP of file \fBpercentage\&.hpp\fP\&..PP
+Definition at line 205 of file percentage\&.hpp\&.
+.PP
 .nf
-204 {
-205     return (x >= y\&.get_value());
-206 }
+206 {
+207     return (x >= y\&.get_value());
+208 }
 .fi
-
-.SS "istream & operator>> (istream & is, \fBscifir::percentage\fP & x)"
+.SS "istream& operator>> (istream & is, \fBscifir::percentage\fP & x)"
 
 .PP
-Definition at line \fB585\fP of file \fBpercentage\&.cpp\fP\&..PP
+Definition at line 637 of file percentage\&.cpp\&.
+.PP
 .nf
-586 {
-587     char a[256];
-588     is\&.getline(a, 256);
-589     string b(a);
-590     boost::trim(b);
-591     x = scifir::percentage(b);
-592     return is;
-593 }
+638 {
+639     char a[256];
+640     is\&.getline(a, 256);
+641     string b(a);
+642     boost::trim(b);
+643     x = scifir::percentage(b);
+644     return is;
+645 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="vector__unit__2d_8hpp" kind="file" language="C++">
     <compoundname>vector_unit_2d.hpp</compoundname>
     <includes refid="scalar__unit_8hpp" local="yes">../units/scalar_unit.hpp</includes>
@@ -9,43 +9,16 @@
     <includes local="yes">boost/algorithm/string.hpp</includes>
     <includes local="no">iostream</includes>
     <includes local="no">string</includes>
-    <includedby refid="physics__units_8hpp" local="yes">predefined_units/physics_units.hpp</includedby>
     <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
-    <includedby refid="material__vector__unit__2d_8hpp" local="yes">units/material_vector_unit_2d.hpp</includedby>
+    <includedby refid="physics__units_8hpp" local="yes">predefined_units/physics_units.hpp</includedby>
     <includedby refid="vector__unit__2d_8cpp" local="yes">units/vector_unit_2d.cpp</includedby>
     <includedby refid="vector__unit__3d_8hpp" local="yes">units/vector_unit_3d.hpp</includedby>
     <incdepgraph>
-      <node id="20">
-        <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp"/>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
+      <node id="9">
+        <label>boost/algorithm/string.hpp</label>
       </node>
-      <node id="21">
-        <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
+      <node id="22">
+        <label>boost/math/constants/constants.hpp</label>
       </node>
       <node id="3">
         <label>../units/dimension.hpp</label>
@@ -75,17 +48,8 @@
         <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
+      <node id="5">
+        <label>cstdint</label>
       </node>
       <node id="2">
         <label>../units/scalar_unit.hpp</label>
@@ -111,6 +75,68 @@
         <childnode refid="16" relation="include">
         </childnode>
       </node>
+      <node id="13">
+        <label>cmath</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>map</label>
+      </node>
+      <node id="20">
+        <label>../meca_number/angle.hpp</label>
+        <link refid="angle_8hpp"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>../topology/direction.hpp</label>
+        <link refid="direction_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>string_view</label>
+      </node>
+      <node id="16">
+        <label>vector</label>
+      </node>
+      <node id="17">
+        <label>../util/is_number.hpp</label>
+        <link refid="is__number_8hpp"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>sstream</label>
+      </node>
       <node id="1">
         <label>units/vector_unit_2d.hpp</label>
         <link refid="vector__unit__2d_8hpp"/>
@@ -129,82 +155,145 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="17">
-        <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp"/>
-        <childnode refid="18" relation="include">
+      <node id="21">
+        <label>../topology/constants.hpp</label>
+        <link refid="constants_8hpp"/>
+        <childnode refid="22" relation="include">
         </childnode>
-      </node>
-      <node id="10">
-        <label>algorithm</label>
-      </node>
-      <node id="9">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="22">
-        <label>boost/math/constants/constants.hpp</label>
-      </node>
-      <node id="13">
-        <label>cmath</label>
-      </node>
-      <node id="12">
-        <label>cstddef</label>
-      </node>
-      <node id="5">
-        <label>cstdint</label>
-      </node>
-      <node id="11">
-        <label>cstring</label>
       </node>
       <node id="6">
         <label>iostream</label>
       </node>
-      <node id="7">
-        <label>map</label>
-      </node>
-      <node id="14">
-        <label>set</label>
-      </node>
-      <node id="15">
-        <label>sstream</label>
-      </node>
-      <node id="8">
-        <label>string</label>
-      </node>
-      <node id="19">
-        <label>string_view</label>
+      <node id="12">
+        <label>cstddef</label>
       </node>
       <node id="18">
         <label>type_traits</label>
       </node>
-      <node id="16">
-        <label>vector</label>
+      <node id="14">
+        <label>set</label>
+      </node>
+      <node id="10">
+        <label>algorithm</label>
+      </node>
+      <node id="11">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="4">
-        <label>coordinates/coordinates_1d.cpp</label>
-        <link refid="coordinates__1d_8cpp"/>
-      </node>
-      <node id="3">
-        <label>coordinates/coordinates_1d.hpp</label>
-        <link refid="coordinates__1d_8hpp"/>
-        <childnode refid="4" relation="include">
+      <node id="16">
+        <label>coordinates/coordinates_3d.hpp</label>
+        <link refid="coordinates__3d_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>units/unit_abbreviation.hpp</label>
+        <link refid="unit__abbreviation_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>predefined_units/physics_units.cpp</label>
+        <link refid="physics__units_8cpp"/>
+      </node>
+      <node id="19">
+        <label>coordinates/coordinates_3dr.cpp</label>
+        <link refid="coordinates__3dr_8cpp"/>
+      </node>
+      <node id="47">
+        <label>special_units/size_3d.hpp</label>
+        <link refid="size__3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>special_units/size_2d.cpp</label>
+        <link refid="size__2d_8cpp"/>
+      </node>
+      <node id="13">
+        <label>topology/point_2d_impl.hpp</label>
+        <link refid="point__2d__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>units/vector_unit_nd.cpp</label>
+        <link refid="vector__unit__nd_8cpp"/>
+      </node>
+      <node id="31">
+        <label>topology/point_2d.hpp</label>
+        <link refid="point__2d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>topology/point_1d.hpp</label>
+        <link refid="point__1d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="9">
-        <label>coordinates/coordinates_2d.cpp</label>
-        <link refid="coordinates__2d_8cpp"/>
+      <node id="22">
+        <label>units/vector_unit_3d.cpp</label>
+        <link refid="vector__unit__3d_8cpp"/>
+      </node>
+      <node id="28">
+        <label>topology/point_nd_impl.hpp</label>
+        <link refid="point__nd__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>topology/point_3d_impl.hpp</label>
+        <link refid="point__3d__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>topology/point_3d.cpp</label>
+        <link refid="point__3d_8cpp"/>
+      </node>
+      <node id="5">
+        <label>coordinates/coordinates_1d.cpp</label>
+        <link refid="coordinates__1d_8cpp"/>
       </node>
       <node id="8">
         <label>coordinates/coordinates_2d.hpp</label>
         <link refid="coordinates__2d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
@@ -213,133 +302,51 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
         <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
       </node>
-      <node id="11">
-        <label>coordinates/coordinates_2dr.cpp</label>
-        <link refid="coordinates__2dr_8cpp"/>
-      </node>
-      <node id="10">
-        <label>coordinates/coordinates_2dr.hpp</label>
-        <link refid="coordinates__2dr_8hpp"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>coordinates/coordinates_3d.cpp</label>
-        <link refid="coordinates__3d_8cpp"/>
-      </node>
-      <node id="17">
-        <label>coordinates/coordinates_3d.hpp</label>
-        <link refid="coordinates__3d_8hpp"/>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>coordinates/coordinates_3dr.cpp</label>
-        <link refid="coordinates__3dr_8cpp"/>
-      </node>
-      <node id="19">
-        <label>coordinates/coordinates_3dr.hpp</label>
-        <link refid="coordinates__3dr_8hpp"/>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>coordinates/coordinates_nd.cpp</label>
-        <link refid="coordinates__nd_8cpp"/>
-      </node>
-      <node id="24">
-        <label>coordinates/coordinates_nd.hpp</label>
-        <link refid="coordinates__nd_8hpp"/>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>coordinates/coordinates_ndr.cpp</label>
-        <link refid="coordinates__ndr_8cpp"/>
-      </node>
-      <node id="26">
-        <label>coordinates/coordinates_ndr.hpp</label>
-        <link refid="coordinates__ndr_8hpp"/>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="39">
+      <node id="38">
         <label>predefined_units/astronomy_units.cpp</label>
         <link refid="astronomy__units_8cpp"/>
       </node>
-      <node id="38">
-        <label>predefined_units/astronomy_units.hpp</label>
-        <link refid="astronomy__units_8hpp"/>
-        <childnode refid="39" relation="include">
+      <node id="42">
+        <label>predefined_units/radiometry_units.cpp</label>
+        <link refid="radiometry__units_8cpp"/>
+      </node>
+      <node id="35">
+        <label>units/unit_abbreviation.cpp</label>
+        <link refid="unit__abbreviation_8cpp"/>
+      </node>
+      <node id="49">
+        <label>special_units/size_nd.hpp</label>
+        <link refid="size__nd_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="50" relation="include">
         </childnode>
       </node>
-      <node id="41">
-        <label>predefined_units/electronics_units.cpp</label>
-        <link refid="electronics__units_8cpp"/>
+      <node id="48">
+        <label>special_units/size_3d.cpp</label>
+        <link refid="size__3d_8cpp"/>
       </node>
-      <node id="40">
-        <label>predefined_units/electronics_units.hpp</label>
-        <link refid="electronics__units_8hpp"/>
-        <childnode refid="41" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-      </node>
-      <node id="30">
-        <label>predefined_units/physics_units.cpp</label>
-        <link refid="physics__units_8cpp"/>
-      </node>
-      <node id="2">
+      <node id="3">
         <label>predefined_units/physics_units.hpp</label>
         <link refid="physics__units_8hpp"/>
-        <childnode refid="3" relation="include">
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="30" relation="include">
         </childnode>
@@ -351,93 +358,49 @@
         </childnode>
         <childnode refid="34" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+      </node>
+      <node id="14">
+        <label>units/vector_unit_2d.cpp</label>
+        <link refid="vector__unit__2d_8cpp"/>
+      </node>
+      <node id="10">
+        <label>coordinates/coordinates_2dr.hpp</label>
+        <link refid="coordinates__2dr_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="43">
-        <label>predefined_units/radiometry_units.cpp</label>
-        <link refid="radiometry__units_8cpp"/>
+      <node id="12">
+        <label>topology/point_2d.cpp</label>
+        <link refid="point__2d_8cpp"/>
       </node>
-      <node id="42">
-        <label>predefined_units/radiometry_units.hpp</label>
-        <link refid="radiometry__units_8hpp"/>
-        <childnode refid="43" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-      </node>
-      <node id="45">
-        <label>predefined_units/space_units.cpp</label>
-        <link refid="space__units_8cpp"/>
-      </node>
-      <node id="44">
-        <label>predefined_units/space_units.hpp</label>
-        <link refid="space__units_8hpp"/>
-        <childnode refid="45" relation="include">
-        </childnode>
-        <childnode refid="46" relation="include">
-        </childnode>
-        <childnode refid="48" relation="include">
-        </childnode>
-        <childnode refid="50" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-      </node>
-      <node id="47">
-        <label>special_units/size_2d.cpp</label>
-        <link refid="size__2d_8cpp"/>
-      </node>
-      <node id="46">
-        <label>special_units/size_2d.hpp</label>
-        <link refid="size__2d_8hpp"/>
-        <childnode refid="45" relation="include">
-        </childnode>
-        <childnode refid="47" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="49">
-        <label>special_units/size_3d.cpp</label>
-        <link refid="size__3d_8cpp"/>
-      </node>
-      <node id="48">
-        <label>special_units/size_3d.hpp</label>
-        <link refid="size__3d_8hpp"/>
-        <childnode refid="45" relation="include">
-        </childnode>
-        <childnode refid="49" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="51">
-        <label>special_units/size_nd.cpp</label>
-        <link refid="size__nd_8cpp"/>
-      </node>
-      <node id="50">
-        <label>special_units/size_nd.hpp</label>
-        <link refid="size__nd_8hpp"/>
-        <childnode refid="51" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
+      <node id="6">
         <label>topology/point_1d.cpp</label>
         <link refid="point__1d_8cpp"/>
       </node>
-      <node id="31">
-        <label>topology/point_1d.hpp</label>
-        <link refid="point__1d_8hpp"/>
+      <node id="36">
+        <label>units/vector_unit_3d.hpp</label>
+        <link refid="vector__unit__3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>coordinates/coordinates_1d.hpp</label>
+        <link refid="coordinates__1d_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
@@ -446,152 +409,180 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>topology/point_1d_impl.hpp</label>
-        <link refid="point__1d__impl_8hpp"/>
-        <childnode refid="7" relation="include">
+      <node id="37">
+        <label>predefined_units/astronomy_units.hpp</label>
+        <link refid="astronomy__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
         </childnode>
       </node>
-      <node id="12">
-        <label>topology/point_2d.cpp</label>
-        <link refid="point__2d_8cpp"/>
+      <node id="44">
+        <label>predefined_units/space_units.cpp</label>
+        <link refid="space__units_8cpp"/>
       </node>
-      <node id="32">
-        <label>topology/point_2d.hpp</label>
-        <link refid="point__2d_8hpp"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
+      <node id="50">
+        <label>special_units/size_nd.cpp</label>
+        <link refid="size__nd_8cpp"/>
       </node>
-      <node id="13">
-        <label>topology/point_2d_impl.hpp</label>
-        <link refid="point__2d__impl_8hpp"/>
-        <childnode refid="7" relation="include">
+      <node id="41">
+        <label>predefined_units/radiometry_units.hpp</label>
+        <link refid="radiometry__units_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="21">
-        <label>topology/point_3d.cpp</label>
-        <link refid="point__3d_8cpp"/>
-      </node>
-      <node id="33">
-        <label>topology/point_3d.hpp</label>
-        <link refid="point__3d_8hpp"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>topology/point_3d_impl.hpp</label>
-        <link refid="point__3d__impl_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>topology/point_nd.cpp</label>
-        <link refid="point__nd_8cpp"/>
-      </node>
-      <node id="34">
-        <label>topology/point_nd.hpp</label>
-        <link refid="point__nd_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>topology/point_nd_impl.hpp</label>
-        <link refid="point__nd__impl_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>units.hpp</label>
-        <link refid="units_8hpp"/>
-      </node>
-      <node id="14">
-        <label>units/material_vector_unit_2d.hpp</label>
-        <link refid="material__vector__unit__2d_8hpp"/>
-      </node>
-      <node id="36">
-        <label>units/unit_abbreviation.cpp</label>
-        <link refid="unit__abbreviation_8cpp"/>
-      </node>
-      <node id="35">
-        <label>units/unit_abbreviation.hpp</label>
-        <link refid="unit__abbreviation_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>units/vector_unit_2d.cpp</label>
-        <link refid="vector__unit__2d_8cpp"/>
       </node>
       <node id="1">
         <label>units/vector_unit_2d.hpp</label>
         <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
-      <node id="23">
-        <label>units/vector_unit_3d.cpp</label>
-        <link refid="vector__unit__3d_8cpp"/>
-      </node>
-      <node id="37">
-        <label>units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp"/>
-        <childnode refid="38" relation="include">
-        </childnode>
-        <childnode refid="40" relation="include">
-        </childnode>
+      <node id="7">
+        <label>topology/point_1d_impl.hpp</label>
+        <link refid="point__1d__impl_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
+      </node>
+      <node id="11">
+        <label>coordinates/coordinates_2dr.cpp</label>
+        <link refid="coordinates__2dr_8cpp"/>
+      </node>
+      <node id="33">
+        <label>topology/point_nd.hpp</label>
+        <link refid="point__nd_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
       </node>
-      <node id="16">
-        <label>units/vector_unit_nd.cpp</label>
-        <link refid="vector__unit__nd_8cpp"/>
+      <node id="25">
+        <label>coordinates/coordinates_ndr.hpp</label>
+        <link refid="coordinates__ndr_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>units.hpp</label>
+        <link refid="units_8hpp"/>
+      </node>
+      <node id="40">
+        <label>predefined_units/electronics_units.cpp</label>
+        <link refid="electronics__units_8cpp"/>
+      </node>
+      <node id="24">
+        <label>coordinates/coordinates_nd.cpp</label>
+        <link refid="coordinates__nd_8cpp"/>
+      </node>
+      <node id="17">
+        <label>coordinates/coordinates_3d.cpp</label>
+        <link refid="coordinates__3d_8cpp"/>
+      </node>
+      <node id="43">
+        <label>predefined_units/space_units.hpp</label>
+        <link refid="space__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>coordinates/coordinates_3dr.hpp</label>
+        <link refid="coordinates__3dr_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>special_units/size_2d.hpp</label>
+        <link refid="size__2d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>topology/point_3d.hpp</label>
+        <link refid="point__3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>topology/point_nd.cpp</label>
+        <link refid="point__nd_8cpp"/>
+      </node>
+      <node id="39">
+        <label>predefined_units/electronics_units.hpp</label>
+        <link refid="electronics__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>coordinates/coordinates_ndr.cpp</label>
+        <link refid="coordinates__ndr_8cpp"/>
+      </node>
+      <node id="23">
+        <label>coordinates/coordinates_nd.hpp</label>
+        <link refid="coordinates__nd_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>coordinates/coordinates_2d.cpp</label>
+        <link refid="coordinates__2d_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classscifir_1_1vector__unit__2d" prot="public">scifir::vector_unit_2d</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
-    <sectiondef kind="define">
+      <sectiondef kind="define">
       <memberdef kind="define" id="vector__unit__2d_8hpp_1a42170f6a536a9bbe43cdad71d6d3933f" prot="public" static="no">
         <name>VECTOR_UNIT_2D_HPP_BEGIN</name>
         <param><defname>name</defname></param>
@@ -602,7 +593,7 @@
 			name##_2d(); \
 			name##_2d(const name##_2d&amp;); \
 			name##_2d(name##_2d&amp;&amp;); \
-			using vector_unit_2d::operator=; \
+			using vector_unit_2d::operator =; \
 			using vector_unit_2d::operator+=; \
 			using vector_unit_2d::operator-=</initializer>
         <briefdescription>
@@ -611,7 +602,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_2d.hpp" line="14" column="9" bodyfile="units/vector_unit_2d.hpp" bodystart="14" bodyend="23"/>
+        <location file="units/vector_unit_2d.hpp" line="14" column="9" bodyfile="units/vector_unit_2d.hpp" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="vector__unit__2d_8hpp_1ab1027ac6a73f1bb38c0d4a2711bae9b4" prot="public" static="no">
         <name>VECTOR_UNIT_2D_HPP_END</name>
@@ -626,7 +617,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_2d.hpp" line="25" column="9" bodyfile="units/vector_unit_2d.hpp" bodystart="25" bodyend="28"/>
+        <location file="units/vector_unit_2d.hpp" line="25" column="9" bodyfile="units/vector_unit_2d.hpp" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="vector__unit__2d_8hpp_1acb3982558481721777eaae0344d9679d" prot="public" static="no">
         <name>VECTOR_UNIT_2D_HPP</name>
@@ -638,7 +629,7 @@
 			name##_2d(); \
 			name##_2d(const name##_2d&amp;); \
 			name##_2d(name##_2d&amp;&amp;); \
-			using vector_unit_2d::operator=; \
+			using vector_unit_2d::operator =; \
 			using vector_unit_2d::operator+=; \
 			using vector_unit_2d::operator-=; \
 \
@@ -651,7 +642,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_2d.hpp" line="30" column="9" bodyfile="units/vector_unit_2d.hpp" bodystart="30" bodyend="43"/>
+        <location file="units/vector_unit_2d.hpp" line="30" column="9" bodyfile="units/vector_unit_2d.hpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="vector__unit__2d_8hpp_1ae7f9d1df950ca7407875bd404c70f49c" prot="public" static="no">
         <name>VECTOR_UNIT_2D_CPP</name>
@@ -668,10 +659,10 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_2d.hpp" line="45" column="9" bodyfile="units/vector_unit_2d.hpp" bodystart="45" bodyend="49"/>
+        <location file="units/vector_unit_2d.hpp" line="45" column="9" bodyfile="units/vector_unit_2d.hpp" bodystart="45" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="func">
+      </sectiondef>
+      <sectiondef kind="func">
       <memberdef kind="function" id="vector__unit__2d_8hpp_1a2ae8e8a9e1778d997d383a9cc351b2ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref></type>
         <definition>scifir::vector_unit_2d operator*</definition>
@@ -686,6 +677,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>y</declname>
         </param>
         <briefdescription>
+<para>It creates a new vector_unit_3d scaling a vector_unit_3d by the scalar_unit x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -716,6 +708,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new vector as the addition of the numeric type x to the value. Theta is not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -746,6 +739,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Substraction of vectors in 2D. It creates a new vector as the difference of the other two. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -776,6 +770,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new vector as the multiplication of the numeric type x to the value. Theta is not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -806,6 +801,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>It creates a new vector as the division of the value x to the numeric type. Theta is not changed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -827,6 +823,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>y</declname>
         </param>
         <briefdescription>
+<para>Comparison operator. Two vector_unit_2d are not equal if their value, dimensions or theta are different. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -834,10 +831,10 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
         </inbodydescription>
         <location file="units/vector_unit_2d.hpp" line="251" column="6" bodyfile="units/vector_unit_2d.cpp" bodystart="373" bodyend="376" declfile="units/vector_unit_2d.hpp" declline="251" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="vector__unit__2d_8hpp_1ac528ed009d0c3e14833c32035cb01c03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="vector__unit__2d_8hpp_1a7beb80c4a3dc367661dd40ac75ca8c45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
-        <argsstring>(const scifir::vector_unit_2d &amp;, const string &amp;init_vector_2d)</argsstring>
+        <argsstring>(const scifir::vector_unit_2d &amp;x, const string &amp;init_vector_2d)</argsstring>
         <name>operator==</name>
         <param>
           <type>const <ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref> &amp;</type>
@@ -848,6 +845,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>init_vector_2d</declname>
         </param>
         <briefdescription>
+<para>Returns true if x is equal to the vector_unit_2d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -855,10 +853,10 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
         </inbodydescription>
         <location file="units/vector_unit_2d.hpp" line="253" column="6" bodyfile="units/vector_unit_2d.cpp" bodystart="378" bodyend="382" declfile="units/vector_unit_2d.hpp" declline="253" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="vector__unit__2d_8hpp_1a86b203179be1345e7622802d65559379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="vector__unit__2d_8hpp_1a06df10f5b6a5e4aeba37364026a456fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator!=</definition>
-        <argsstring>(const scifir::vector_unit_2d &amp;, const string &amp;init_vector_2d)</argsstring>
+        <argsstring>(const scifir::vector_unit_2d &amp;x, const string &amp;init_vector_2d)</argsstring>
         <name>operator!=</name>
         <param>
           <type>const <ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref> &amp;</type>
@@ -869,6 +867,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>init_vector_2d</declname>
         </param>
         <briefdescription>
+<para>Returns true if x is not equal to the vector_unit_2d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -876,10 +875,10 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
         </inbodydescription>
         <location file="units/vector_unit_2d.hpp" line="254" column="6" bodyfile="units/vector_unit_2d.cpp" bodystart="384" bodyend="387" declfile="units/vector_unit_2d.hpp" declline="254" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="vector__unit__2d_8hpp_1a12c90fe681ff8049ae091634822ffb1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="vector__unit__2d_8hpp_1a68f30e517a133a6ffc4031435f2e085e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
-        <argsstring>(const string &amp;init_vector_2d, const scifir::vector_unit_2d &amp;)</argsstring>
+        <argsstring>(const string &amp;init_vector_2d, const scifir::vector_unit_2d &amp;x)</argsstring>
         <name>operator==</name>
         <param>
           <type>const string &amp;</type>
@@ -890,6 +889,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Returns true if x is equal to the vector_unit_2d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -897,10 +897,10 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
         </inbodydescription>
         <location file="units/vector_unit_2d.hpp" line="256" column="6" bodyfile="units/vector_unit_2d.cpp" bodystart="389" bodyend="393" declfile="units/vector_unit_2d.hpp" declline="256" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="vector__unit__2d_8hpp_1a49230577b1b8eb0456af39d36c4f307d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="vector__unit__2d_8hpp_1ae129f3fc0a6a287df5016e0b78638f66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator!=</definition>
-        <argsstring>(const string &amp;init_vector_2d, const scifir::vector_unit_2d &amp;)</argsstring>
+        <argsstring>(const string &amp;init_vector_2d, const scifir::vector_unit_2d &amp;x)</argsstring>
         <name>operator!=</name>
         <param>
           <type>const string &amp;</type>
@@ -911,6 +911,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Returns true if x is not equal to the vector_unit_2d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -932,6 +933,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>y</declname>
         </param>
         <briefdescription>
+<para>Concatenates the string representation of the vector_unit_2d y to the string x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -953,6 +955,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>y</declname>
         </param>
         <briefdescription>
+<para>Creates a new string as the concatenation of the string x with the representation string of the vector_unit_2d y. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -974,6 +977,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new string as the concatenation of the string x with the representation string of the vector_unit_2d y. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -981,9 +985,9 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
         </inbodydescription>
         <location file="units/vector_unit_2d.hpp" line="261" column="8" bodyfile="units/vector_unit_2d.cpp" bodystart="415" bodyend="421" declfile="units/vector_unit_2d.hpp" declline="261" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="vector__unit__2d_8hpp_1aca0d184f1ac3b4e92c6ca6fa8a66ca89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="vector__unit__2d_8hpp_1ae9230b29d26eabf2c86d0fb583b79e3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::vector_unit_2d &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -995,6 +999,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Adds the string representation of the vector_unit_2d x to an output stream os. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1002,9 +1007,9 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
         </inbodydescription>
         <location file="units/vector_unit_2d.hpp" line="263" column="1" bodyfile="units/vector_unit_2d.cpp" bodystart="423" bodyend="426" declfile="units/vector_unit_2d.hpp" declline="263" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="vector__unit__2d_8hpp_1a7d02e223fcca3ec68666c3d62032914d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="vector__unit__2d_8hpp_1ae3d6da1dbc345f3626436eda70f233ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>istream &amp;</type>
-        <definition>istream &amp; operator&gt;&gt;</definition>
+        <definition>istream&amp; operator&gt;&gt;</definition>
         <argsstring>(istream &amp;is, scifir::vector_unit_2d &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
@@ -1016,6 +1021,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Allows that an istream initializes by string a vector_unit_2d x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1023,7 +1029,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
         </inbodydescription>
         <location file="units/vector_unit_2d.hpp" line="264" column="9" bodyfile="units/vector_unit_2d.cpp" bodystart="428" bodyend="436" declfile="units/vector_unit_2d.hpp" declline="264" declcolumn="9"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -1049,7 +1055,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
 <codeline lineno="18"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name##_2d();<sp/>\</highlight></codeline>
 <codeline lineno="19"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name##_2d(const<sp/>name##_2d&amp;);<sp/>\</highlight></codeline>
 <codeline lineno="20"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name##_2d(name##_2d&amp;&amp;);<sp/>\</highlight></codeline>
-<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>vector_unit_2d::operator=;<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>vector_unit_2d::operator<sp/>=;<sp/>\</highlight></codeline>
 <codeline lineno="22"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>vector_unit_2d::operator+=;<sp/>\</highlight></codeline>
 <codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>vector_unit_2d::operator-=</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
@@ -1065,7 +1071,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
 <codeline lineno="34"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name##_2d();<sp/>\</highlight></codeline>
 <codeline lineno="35"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name##_2d(const<sp/>name##_2d&amp;);<sp/>\</highlight></codeline>
 <codeline lineno="36"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name##_2d(name##_2d&amp;&amp;);<sp/>\</highlight></codeline>
-<codeline lineno="37"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>vector_unit_2d::operator=;<sp/>\</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>vector_unit_2d::operator<sp/>=;<sp/>\</highlight></codeline>
 <codeline lineno="38"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>vector_unit_2d::operator+=;<sp/>\</highlight></codeline>
 <codeline lineno="39"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>vector_unit_2d::operator-=;<sp/>\</highlight></codeline>
 <codeline lineno="40"><highlight class="preprocessor">\</highlight></codeline>
@@ -1086,154 +1092,154 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
 <codeline lineno="55" refid="classscifir_1_1vector__unit__2d" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>();</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>(10,&quot;N&quot;,50)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>(10,&quot;N&quot;,50ª)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>(10,&quot;N&quot;,50)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>(10,&quot;N&quot;,50)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;dimension&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;dimension&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;dimension&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;dimension&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;dimension&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;dimension&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;dimension&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;dimension&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_scalar</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_scalar</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_vector_2d</ref>);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>string<sp/>&quot;1N<sp/>50º&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>(10,&quot;N&quot;,50)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>(10,&quot;N&quot;,50ª)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>(10,&quot;N&quot;,50)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>(10,&quot;N&quot;,50)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;dimension&gt;&amp;<sp/>new_dimensions,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;dimension&gt;&amp;<sp/>new_dimensions,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;dimension&gt;&amp;<sp/>new_dimensions,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;dimension&gt;&amp;<sp/>new_dimensions,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;dimension&gt;&amp;<sp/>new_dimensions,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;dimension&gt;&amp;<sp/>new_dimensions,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;dimension&gt;&amp;<sp/>new_dimensions,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_value,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;dimension&gt;&amp;<sp/>new_dimensions,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_scalar,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_scalar,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>new_theta);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d);<sp/></highlight><highlight class="comment">//<sp/>Example<sp/>of<sp/>initialization<sp/>string<sp/>&quot;1N<sp/>50º&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83" refid="classscifir_1_1vector__unit__2d_1a07e373b19dd644dd5f2a50b03c7af829" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a07e373b19dd644dd5f2a50b03c7af829" kindref="member">cartesian_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_x</ref>,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_y</ref>)</highlight></codeline>
+<codeline lineno="83" refid="classscifir_1_1vector__unit__2d_1ae269acfefd99fdb287876901866c8b43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae269acfefd99fdb287876901866c8b43" kindref="member">cartesian_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_x,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_y)</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(std::sqrt(std::pow(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_x</ref>,2)<sp/>+<sp/>std::pow(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_y</ref>,2)));</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref><sp/>=<sp/><ref refid="namespacescifir_1ab26866c5f85571fb48783ebee102d01d" kindref="member">scifir::atan_grade</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_y</ref><sp/>/<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_x</ref>);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>,<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_dimensions</ref>,<ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_theta</ref>));</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value<sp/>=<sp/>float(<ref refid="namespacescifir_1adeff4b825414d35ce963977f181f1b5c" kindref="member">std::sqrt</ref>(<ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">std::pow</ref>(new_x,2)<sp/>+<sp/><ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">std::pow</ref>(new_y,2)));</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_theta<sp/>=<sp/><ref refid="namespacescifir_1a4f9e2e4c610d0caaeaeb057eba2d0ab9" kindref="member">scifir::atan_degree</ref>(new_y<sp/>/<sp/>new_x);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(new_value,init_dimensions,<ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(new_theta));</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/><ref refid="classscifir_1_1vector__unit__2d_1a168ab49d6dedb5bd399a7ac7537deb5e" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/><ref refid="classscifir_1_1vector__unit__2d_1a168ab49d6dedb5bd399a7ac7537deb5e" kindref="member">operator =</ref>(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/><ref refid="classscifir_1_1vector__unit__2d_1a168ab49d6dedb5bd399a7ac7537deb5e" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/><ref refid="classscifir_1_1vector__unit__2d_1a168ab49d6dedb5bd399a7ac7537deb5e" kindref="member">operator =</ref>(<ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/><ref refid="classscifir_1_1vector__unit__2d_1a168ab49d6dedb5bd399a7ac7537deb5e" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_vector_2d</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d);</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a8911a8ef8ca2186381b5f2eb8934f0ae" kindref="member">operator ==</ref>(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1a7beb80c4a3dc367661dd40ac75ca8c45" kindref="member">operator ==</ref>(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a202d405ec4efe8e105b2e1eabb050ed7" kindref="member">point_to</ref>(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/>x);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>point_to(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/>x);</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a040180b3b18ed8778e00d08f28a091bd" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1aa729124b53b6f5850bcf5f8fe2c6e567" kindref="member">operator -=</ref>(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>x);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1aa9d7a5f47057cf5e212fdc56d9682e86" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>x);</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a48087760b026954027ae46a1a09b63a5" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a93e5d91920b06e7ba9c0caedb850cd3c" kindref="member">operator -</ref>(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="vector__unit__2d_8hpp_1ac15df444cc7dce7064cc85e27da69da6" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="vector__unit__2d_8hpp_1afa24cce357d0ca976449dc0cf3c7a1bb" kindref="member">operator -</ref>(<ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a305dbbc4e9609ed938c7b87a5d2af63b" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a679d2f2546db4fc1359a8d190e6d5b97" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1ab8c695aa4d45964dcdb51aab249c4b79" kindref="member">operator ^</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="vector__unit__2d_8hpp_1a2ae8e8a9e1778d997d383a9cc351b2ec" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="vector__unit__2d_8hpp_1a429e86a1fc4a3e23e2389c4950253453" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="angle_8hpp_1a1dc90f302050f4f63fac2eb49b60f431" kindref="member">operator ^</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename U, typename = typename enable_if&lt;scifir::is_number&lt;U&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="111" refid="classscifir_1_1vector__unit__2d_1a7bb41cd99c3246ecca935e9a642345a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a48087760b026954027ae46a1a09b63a5" kindref="member">operator +</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref><sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="111" refid="classscifir_1_1vector__unit__2d_1aedc23a6bcb4fcdf8faa676a6c9241570" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="vector__unit__2d_8hpp_1ac15df444cc7dce7064cc85e27da69da6" kindref="member">operator +</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="112"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>y<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>+=<sp/>x;</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename U, typename = typename enable_if&lt;scifir::is_number&lt;U&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="119" refid="classscifir_1_1vector__unit__2d_1a067b4fd5f457ed07a163594f0e3991f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a93e5d91920b06e7ba9c0caedb850cd3c" kindref="member">operator -</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref><sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="119" refid="classscifir_1_1vector__unit__2d_1a39bb1c3c47dbb000e49d3dc31571d7d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="vector__unit__2d_8hpp_1afa24cce357d0ca976449dc0cf3c7a1bb" kindref="member">operator -</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="120"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>y<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>-=<sp/>x;</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename U, typename = typename enable_if&lt;scifir::is_number&lt;U&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="127" refid="classscifir_1_1vector__unit__2d_1a9dbca5e97b2346831125117acc17d10e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a305dbbc4e9609ed938c7b87a5d2af63b" kindref="member">operator *</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref><sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="127" refid="classscifir_1_1vector__unit__2d_1a25d74254940cbb8ff91e800193f0e98b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="vector__unit__2d_8hpp_1a2ae8e8a9e1778d997d383a9cc351b2ec" kindref="member">operator *</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="128"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>y<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>*=<sp/>x;</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename U, typename = typename enable_if&lt;scifir::is_number&lt;U&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="135" refid="classscifir_1_1vector__unit__2d_1a48fb493c9a2c5990b0723c0a1ca34cfa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a679d2f2546db4fc1359a8d190e6d5b97" kindref="member">operator /</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref><sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="135" refid="classscifir_1_1vector__unit__2d_1a3c16243dc9bdea7ea3624569cbdb3a07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="vector__unit__2d_8hpp_1a429e86a1fc4a3e23e2389c4950253453" kindref="member">operator /</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="136"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/>y<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>/=<sp/>x;</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename U, typename = typename enable_if&lt;is_integer_number&lt;U&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="143" refid="classscifir_1_1vector__unit__2d_1a8b8196d1e5fd01123eee9975faa30fbd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1ab8c695aa4d45964dcdb51aab249c4b79" kindref="member">operator ^</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref><sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;is_integer_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="143" refid="classscifir_1_1vector__unit__2d_1a9206f7713713485706c052a7a9d48620" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="angle_8hpp_1a1dc90f302050f4f63fac2eb49b60f431" kindref="member">operator ^</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="144"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1ae6e0657b5f795ed9aec61a79438a26d8" kindref="member">vector_unit_2d</ref>(std::pow(<ref refid="classscifir_1_1scalar__unit_1aeb2d34ea9de078b70babda80182e677a" kindref="member">get_value</ref>(),x),<ref refid="namespacescifir_1ae7853fedb943915449a496bc373fc449" kindref="member">power_dimensions</ref>(<ref refid="classscifir_1_1scalar__unit_1a39ed9ef8729a155b1a54ab848e8576c0" kindref="member">get_dimensions</ref>(),x),<ref refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" kindref="member">theta</ref>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>(<ref refid="namespacescifir_1a44533727ef4f03e8303664cdd665c2bc" kindref="member">std::pow</ref>(get_value(),x),<ref refid="namespacescifir_1ae7853fedb943915449a496bc373fc449" kindref="member">power_dimensions</ref>(get_dimensions(),x),theta);</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename U, typename = typename enable_if&lt;scifir::is_number&lt;U&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="149" refid="classscifir_1_1vector__unit__2d_1aea8def22d2fdd0f93e05d2e2cfa77c02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a040180b3b18ed8778e00d08f28a091bd" kindref="member">operator +=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref><sp/>x)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="149" refid="classscifir_1_1vector__unit__2d_1a4f8a74f1222468df82aad30d12bc9ffc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1aa9d7a5f47057cf5e212fdc56d9682e86" kindref="member">operator +=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">scalar_unit::value</ref><sp/>+=<sp/>x;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scalar_unit::value<sp/>+=<sp/>x;</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename U, typename = typename enable_if&lt;scifir::is_number&lt;U&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="155" refid="classscifir_1_1vector__unit__2d_1adcb875c10ef45aa8795f02fd03035593" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1aa729124b53b6f5850bcf5f8fe2c6e567" kindref="member">operator -=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref><sp/>x)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="155" refid="classscifir_1_1vector__unit__2d_1a82d0f9691103ea34372291cbfbd078a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">scalar_unit::value</ref><sp/>-=<sp/>x;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scalar_unit::value<sp/>-=<sp/>x;</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"></highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename U, typename = typename enable_if&lt;scifir::is_number&lt;U&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="161" refid="classscifir_1_1vector__unit__2d_1a59d046f3120a7e1db975fee1c8b2eae1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a59d046f3120a7e1db975fee1c8b2eae1" kindref="member">operator *=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref><sp/>x)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="161" refid="classscifir_1_1vector__unit__2d_1a6d7b9d4ed2ee9c9538ebebf54c15a0f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>*=(T<sp/>x)</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">scalar_unit::value</ref><sp/>*=<sp/>std::abs(x);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scalar_unit::value<sp/>*=<sp/><ref refid="namespacescifir_1a0fca35769fd130e4f6303660a24e6c83" kindref="member">std::abs</ref>(x);</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(x<sp/>&lt;<sp/>0)</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" kindref="member">theta</ref>.<ref refid="classscifir_1_1angle_1ace0d6e31f63c9c375ca18124a75b08bd" kindref="member">invert</ref>();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>theta.invert();</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"></highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename U, typename = typename enable_if&lt;scifir::is_number&lt;U&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="171" refid="classscifir_1_1vector__unit__2d_1a1d21a03998ad0ee9061d8331aff6f8c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a1d21a03998ad0ee9061d8331aff6f8c3" kindref="member">operator /=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref><sp/>x)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="171" refid="classscifir_1_1vector__unit__2d_1a00cc2416eab24bad153984c840c366f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>/=(T<sp/>x)</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">scalar_unit::value</ref><sp/>/=<sp/>std::abs(x);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scalar_unit::value<sp/>/=<sp/><ref refid="namespacescifir_1a0fca35769fd130e4f6303660a24e6c83" kindref="member">std::abs</ref>(x);</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(x<sp/>&lt;<sp/>0)</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" kindref="member">theta</ref>.<ref refid="classscifir_1_1angle_1ace0d6e31f63c9c375ca18124a75b08bd" kindref="member">invert</ref>();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>theta.invert();</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="179"><highlight class="normal"></highlight></codeline>
-<codeline lineno="180" refid="classscifir_1_1vector__unit__2d_1a6c322e23ba49e7b7bf7478dc51c2d36e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a6c322e23ba49e7b7bf7478dc51c2d36e" kindref="member">x_projection</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="180" refid="classscifir_1_1vector__unit__2d_1acdf6a0b75cda1155bccf981da599f20c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1acdf6a0b75cda1155bccf981da599f20c" kindref="member">x_projection</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="181"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit_1ab03d02ba63c30297b9739929659b38d5" kindref="member">scalar_unit</ref>(<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">scalar_unit::value</ref><sp/>*<sp/><ref refid="namespacescifir_1a36d6ffb762d9c276b4229a2bedf3bca9" kindref="member">scifir::cos</ref>(<ref refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" kindref="member">theta</ref>),<ref refid="classscifir_1_1scalar__unit_1a39ed9ef8729a155b1a54ab848e8576c0" kindref="member">get_dimensions</ref>());</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>(scalar_unit::value<sp/>*<sp/><ref refid="namespacescifir_1a36d6ffb762d9c276b4229a2bedf3bca9" kindref="member">scifir::cos</ref>(theta),get_dimensions());</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"></highlight></codeline>
-<codeline lineno="185" refid="classscifir_1_1vector__unit__2d_1abf7fa4c19f437340a7c3a217fe624145" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1abf7fa4c19f437340a7c3a217fe624145" kindref="member">y_projection</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="185" refid="classscifir_1_1vector__unit__2d_1a1574afedce50ac207826d867cc415f00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a1574afedce50ac207826d867cc415f00" kindref="member">y_projection</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="186"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit_1ab03d02ba63c30297b9739929659b38d5" kindref="member">scalar_unit</ref>(<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">scalar_unit::value</ref><sp/>*<sp/><ref refid="namespacescifir_1ad3b92cdb628eeec991c326c1727fdd9e" kindref="member">scifir::sin</ref>(<ref refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" kindref="member">theta</ref>),<ref refid="classscifir_1_1scalar__unit_1a39ed9ef8729a155b1a54ab848e8576c0" kindref="member">get_dimensions</ref>());</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>(scalar_unit::value<sp/>*<sp/><ref refid="namespacescifir_1ad3b92cdb628eeec991c326c1727fdd9e" kindref="member">scifir::sin</ref>(theta),get_dimensions());</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"></highlight></codeline>
-<codeline lineno="190" refid="classscifir_1_1vector__unit__2d_1afa0620bca6cb5609f6cb1d29440ffbf1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1afa0620bca6cb5609f6cb1d29440ffbf1" kindref="member">invert</ref>()</highlight></codeline>
+<codeline lineno="190" refid="classscifir_1_1vector__unit__2d_1abb5c5c11869ef8674557e06e6c1bd3c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1abb5c5c11869ef8674557e06e6c1bd3c1" kindref="member">invert</ref>()</highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" kindref="member">theta</ref>.<ref refid="classscifir_1_1angle_1ace0d6e31f63c9c375ca18124a75b08bd" kindref="member">invert</ref>();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>theta.invert();</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"></highlight></codeline>
-<codeline lineno="195" refid="classscifir_1_1vector__unit__2d_1abb4b20585631cd1059a68898e872450e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1abb4b20585631cd1059a68898e872450e" kindref="member">vectorial_display</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">number_of_decimals</ref><sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="196" refid="classscifir_1_1vector__unit__2d_1aaa396df0414ce3deebb0997cb964ba04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1aaa396df0414ce3deebb0997cb964ba04" kindref="member">vectorial_derived_display</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">number_of_decimals</ref><sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="197" refid="classscifir_1_1vector__unit__2d_1a3d8adb9eabc0513690bb6c4ade13e0f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a3d8adb9eabc0513690bb6c4ade13e0f9" kindref="member">vectorial_custom_display</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_dimensions</ref>,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">number_of_decimals</ref><sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="195" refid="classscifir_1_1vector__unit__2d_1a5a12fe06d16211c60c47faa694ccb87e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a5a12fe06d16211c60c47faa694ccb87e" kindref="member">vectorial_display</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number_of_decimals<sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="196" refid="classscifir_1_1vector__unit__2d_1a555862a2c3fde976d43f98b018d43579" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a555862a2c3fde976d43f98b018d43579" kindref="member">vectorial_derived_display</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number_of_decimals<sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197" refid="classscifir_1_1vector__unit__2d_1a529c2ef49018fde4ac27b5158e7b2e9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a529c2ef49018fde4ac27b5158e7b2e9a" kindref="member">vectorial_custom_display</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_dimensions,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number_of_decimals<sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"></highlight></codeline>
-<codeline lineno="199" refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" kindref="member">theta</ref>;</highlight></codeline>
+<codeline lineno="199" refid="classscifir_1_1vector__unit__2d_1a02e717020c5a56aca57f0be3515ee2f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1vector__unit__2d_1a02e717020c5a56aca57f0be3515ee2f9" kindref="member">theta</ref>;</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d_1a0c4710dd288e49874da5ab054fe7f431" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_vector_2d</ref>);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize_from_string(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>init_vector_2d);</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"></highlight></codeline>
-<codeline lineno="205" refid="namespacescifir_1a1c22395b3d9929cd1dada3955dc6d7b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="205" refid="namespacescifir_1a1c22395b3d9929cd1dada3955dc6d7b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a1c22395b3d9929cd1dada3955dc6d7b8" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="namespacescifir_1accc56ab405831f217868c125f41d18d0" kindref="member">norm</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="namespacescifir_1adeff4b825414d35ce963977f181f1b5c" kindref="member">sqrt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref><sp/><ref refid="namespacescifir_1a0b02e4d82f1d2253f6901264ff11ca38" kindref="member">sqrt_nth</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">vector_unit_2d</ref>&amp;<sp/>x,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
@@ -1257,7 +1263,7 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
 <codeline lineno="226"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="227" refid="vector__unit__2d_8hpp_1afa24cce357d0ca976449dc0cf3c7a1bb" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref><sp/><ref refid="vector__unit__2d_8hpp_1afa24cce357d0ca976449dc0cf3c7a1bb" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>y,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="228"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>(y<sp/>-<sp/>x.<ref refid="classscifir_1_1scalar__unit_1aeb2d34ea9de078b70babda80182e677a" kindref="member">get_value</ref>(),x.<ref refid="classscifir_1_1scalar__unit_1a39ed9ef8729a155b1a54ab848e8576c0" kindref="member">get_dimensions</ref>(),x.<ref refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" kindref="member">theta</ref>);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>(y<sp/>-<sp/>x.<ref refid="classscifir_1_1scalar__unit_1aeb2d34ea9de078b70babda80182e677a" kindref="member">get_value</ref>(),x.<ref refid="classscifir_1_1scalar__unit_1a39ed9ef8729a155b1a54ab848e8576c0" kindref="member">get_dimensions</ref>(),x.<ref refid="classscifir_1_1vector__unit__2d_1a02e717020c5a56aca57f0be3515ee2f9" kindref="member">theta</ref>);</highlight></codeline>
 <codeline lineno="230"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
 <codeline lineno="232"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
@@ -1276,23 +1282,23 @@ const vector&lt;dimension&gt; name##_2d::real_dimensions = create_derived_dimens
 <codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_dimension.invert();</highlight></codeline>
 <codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>(y<sp/>/<sp/>x.<ref refid="classscifir_1_1scalar__unit_1aeb2d34ea9de078b70babda80182e677a" kindref="member">get_value</ref>(),new_dimensions,x.<ref refid="classscifir_1_1vector__unit__2d_1a30fe14e1861d1d49905e6bc07e941107" kindref="member">theta</ref>);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>(y<sp/>/<sp/>x.<ref refid="classscifir_1_1scalar__unit_1aeb2d34ea9de078b70babda80182e677a" kindref="member">get_value</ref>(),new_dimensions,x.<ref refid="classscifir_1_1vector__unit__2d_1a02e717020c5a56aca57f0be3515ee2f9" kindref="member">theta</ref>);</highlight></codeline>
 <codeline lineno="249"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1ab7074eadbf3f68f6dc5fffc915983935" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight></codeline>
-<codeline lineno="253"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1ac528ed009d0c3e14833c32035cb01c03" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d);</highlight></codeline>
-<codeline lineno="254"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1ab7074eadbf3f68f6dc5fffc915983935" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1a7beb80c4a3dc367661dd40ac75ca8c45" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1ab7074eadbf3f68f6dc5fffc915983935" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d);</highlight></codeline>
 <codeline lineno="255"><highlight class="normal"></highlight></codeline>
-<codeline lineno="256"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1ac528ed009d0c3e14833c32035cb01c03" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;);</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1ab7074eadbf3f68f6dc5fffc915983935" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1a7beb80c4a3dc367661dd40ac75ca8c45" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1ab7074eadbf3f68f6dc5fffc915983935" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_vector_2d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"></highlight></codeline>
 <codeline lineno="259"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1aa9d7a5f47057cf5e212fdc56d9682e86" kindref="member">operator +=</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1ac15df444cc7dce7064cc85e27da69da6" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="vector__unit__2d_8hpp_1ac15df444cc7dce7064cc85e27da69da6" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"></highlight></codeline>
-<codeline lineno="263"><highlight class="normal">ostream&amp;<sp/><ref refid="vector__unit__2d_8hpp_1aca0d184f1ac3b4e92c6ca6fa8a66ca89" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="264"><highlight class="normal">istream&amp;<sp/><ref refid="vector__unit__2d_8hpp_1a7d02e223fcca3ec68666c3d62032914d" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">ostream&amp;<sp/><ref refid="vector__unit__2d_8hpp_1ae9230b29d26eabf2c86d0fb583b79e3b" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">istream&amp;<sp/><ref refid="vector__unit__2d_8hpp_1ae3d6da1dbc345f3626436eda70f233ad" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1vector__unit__2d" kindref="compound">scifir::vector_unit_2d</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="265"><highlight class="normal"></highlight></codeline>
 <codeline lineno="266"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>

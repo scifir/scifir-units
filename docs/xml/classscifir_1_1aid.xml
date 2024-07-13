@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1aid" kind="class" language="C++" prot="public">
     <compoundname>scifir::aid</compoundname>
     <includes refid="aid_8hpp" local="no">aid.hpp</includes>
-    <sectiondef kind="public-type">
+      <sectiondef kind="public-type">
       <memberdef kind="enum" id="classscifir_1_1aid_1aef81e5d08382b7a56fe5f99f00417be6" prot="public" static="no" strong="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
+        <type>int8_t</type>
         <name>type</name>
-        <qualifiedname>scifir::aid::type</qualifiedname>
         <enumvalue id="classscifir_1_1aid_1aef81e5d08382b7a56fe5f99f00417be6aac068589e020caf7a44e35db07dfa23c" prot="public">
           <name>NONE</name>
           <briefdescription>
@@ -79,14 +78,13 @@
         </inbodydescription>
         <location file="special_units/aid.hpp" line="16" column="1" bodyfile="special_units/aid.hpp" bodystart="16" bodyend="16"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-attrib">
+      </sectiondef>
+      <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1aid_1a5b87d60fd368fcff5054e9d2107074b9" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::aid::universe</definition>
         <argsstring></argsstring>
         <name>universe</name>
-        <qualifiedname>scifir::aid::universe</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -96,11 +94,10 @@
         <location file="special_units/aid.hpp" line="41" column="8" bodyfile="special_units/aid.hpp" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1aid_1a8d4499965704178bf289177c0fa76b0a" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::aid::galaxy</definition>
         <argsstring></argsstring>
         <name>galaxy</name>
-        <qualifiedname>scifir::aid::galaxy</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -110,11 +107,10 @@
         <location file="special_units/aid.hpp" line="42" column="8" bodyfile="special_units/aid.hpp" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1aid_1a344984185dd7cbf41273831e76bad529" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::aid::solar_system</definition>
         <argsstring></argsstring>
         <name>solar_system</name>
-        <qualifiedname>scifir::aid::solar_system</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -124,11 +120,10 @@
         <location file="special_units/aid.hpp" line="43" column="8" bodyfile="special_units/aid.hpp" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1aid_1a758a8e1c39b9e644bc7ae21fb1d96782" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::aid::astronomical_body</definition>
         <argsstring></argsstring>
         <name>astronomical_body</name>
-        <qualifiedname>scifir::aid::astronomical_body</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -142,7 +137,6 @@
         <definition>aid::type scifir::aid::astronomical_type</definition>
         <argsstring></argsstring>
         <name>astronomical_type</name>
-        <qualifiedname>scifir::aid::astronomical_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -151,14 +145,13 @@
         </inbodydescription>
         <location file="special_units/aid.hpp" line="45" column="11" bodyfile="special_units/aid.hpp" bodystart="45" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1aid_1aa4a2ab9d9ec2e793c2a44656e6463e1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::aid::aid</definition>
         <argsstring>()</argsstring>
         <name>aid</name>
-        <qualifiedname>scifir::aid::aid</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -172,9 +165,8 @@
         <definition>scifir::aid::aid</definition>
         <argsstring>(const aid &amp;x)</argsstring>
         <name>aid</name>
-        <qualifiedname>scifir::aid::aid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1aid" kindref="compound">aid</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1aid" kindref="compound">aid</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -190,7 +182,6 @@
         <definition>scifir::aid::aid</definition>
         <argsstring>(aid &amp;&amp;x)</argsstring>
         <name>aid</name>
-        <qualifiedname>scifir::aid::aid</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1aid" kindref="compound">aid</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -208,9 +199,8 @@
         <definition>scifir::aid::aid</definition>
         <argsstring>(const astronomical_body &amp;predefined_astronomical_body)</argsstring>
         <name>aid</name>
-        <qualifiedname>scifir::aid::aid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="namespacescifir_1a20683521b4e3fde1fac96fee7ca39e36" kindref="member">astronomical_body</ref> &amp;</type>
+          <type>const <ref refid="namespacescifir_1a20683521b4e3fde1fac96fee7ca39e36" kindref="member">astronomical_body</ref> &amp;</type>
           <declname>predefined_astronomical_body</declname>
         </param>
         <briefdescription>
@@ -226,13 +216,12 @@
         <definition>scifir::aid::aid</definition>
         <argsstring>(const string &amp;new_universe, const string &amp;new_galaxy)</argsstring>
         <name>aid</name>
-        <qualifiedname>scifir::aid::aid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_universe</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_galaxy</declname>
         </param>
         <briefdescription>
@@ -248,17 +237,16 @@
         <definition>scifir::aid::aid</definition>
         <argsstring>(const string &amp;new_universe, const string &amp;new_galaxy, const string &amp;new_solar_system)</argsstring>
         <name>aid</name>
-        <qualifiedname>scifir::aid::aid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_universe</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_galaxy</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_solar_system</declname>
         </param>
         <briefdescription>
@@ -274,25 +262,24 @@
         <definition>scifir::aid::aid</definition>
         <argsstring>(const aid::type &amp;new_astronomical_type, const string &amp;new_universe, const string &amp;new_galaxy, const string &amp;new_solar_system, const string &amp;new_astronomical_body)</argsstring>
         <name>aid</name>
-        <qualifiedname>scifir::aid::aid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1aid_1aef81e5d08382b7a56fe5f99f00417be6" kindref="member">aid::type</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1aid_1aef81e5d08382b7a56fe5f99f00417be6" kindref="member">aid::type</ref> &amp;</type>
           <declname>new_astronomical_type</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_universe</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_galaxy</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_solar_system</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_astronomical_body</declname>
         </param>
         <briefdescription>
@@ -308,9 +295,8 @@
         <definition>scifir::aid::aid</definition>
         <argsstring>(const string &amp;init_aid)</argsstring>
         <name>aid</name>
-        <qualifiedname>scifir::aid::aid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_aid</declname>
         </param>
         <briefdescription>
@@ -326,9 +312,8 @@
         <definition>aid &amp; scifir::aid::operator=</definition>
         <argsstring>(const aid &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::aid::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1aid" kindref="compound">aid</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1aid" kindref="compound">aid</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -344,7 +329,6 @@
         <definition>aid &amp; scifir::aid::operator=</definition>
         <argsstring>(aid &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::aid::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1aid" kindref="compound">aid</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -362,9 +346,8 @@
         <definition>aid &amp; scifir::aid::operator=</definition>
         <argsstring>(const string &amp;init_aid)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::aid::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_aid</declname>
         </param>
         <briefdescription>
@@ -376,11 +359,10 @@
         <location file="special_units/aid.hpp" line="29" column="5" bodyfile="special_units/aid.cpp" bodystart="346" bodyend="350"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1aid_1ab0eb1c7b318863da41b96fb2566f32e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::aid::has_unknown_universe</definition>
         <argsstring>() const</argsstring>
         <name>has_unknown_universe</name>
-        <qualifiedname>scifir::aid::has_unknown_universe</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -390,11 +372,10 @@
         <location file="special_units/aid.hpp" line="31" column="6" bodyfile="special_units/aid.cpp" bodystart="352" bodyend="355"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1aid_1aad931504fdd4c3627ee94a4009ba5155" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::aid::has_unknown_galaxy</definition>
         <argsstring>() const</argsstring>
         <name>has_unknown_galaxy</name>
-        <qualifiedname>scifir::aid::has_unknown_galaxy</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -404,11 +385,10 @@
         <location file="special_units/aid.hpp" line="32" column="6" bodyfile="special_units/aid.cpp" bodystart="357" bodyend="360"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1aid_1adc36d460fbc26952e348b8ae3bbb1719" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::aid::has_unknown_solar_system</definition>
         <argsstring>() const</argsstring>
         <name>has_unknown_solar_system</name>
-        <qualifiedname>scifir::aid::has_unknown_solar_system</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -418,11 +398,10 @@
         <location file="special_units/aid.hpp" line="33" column="6" bodyfile="special_units/aid.cpp" bodystart="362" bodyend="365"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1aid_1a4a68ff0b40520bf0c59181c7c0005c50" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::aid::has_unknown_planet</definition>
         <argsstring>() const</argsstring>
         <name>has_unknown_planet</name>
-        <qualifiedname>scifir::aid::has_unknown_planet</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -432,11 +411,10 @@
         <location file="special_units/aid.hpp" line="34" column="6" bodyfile="special_units/aid.cpp" bodystart="367" bodyend="370"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1aid_1ab2437b1834232230bde314c5959e7195" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::aid::has_unknown_moon</definition>
         <argsstring>() const</argsstring>
         <name>has_unknown_moon</name>
-        <qualifiedname>scifir::aid::has_unknown_moon</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -446,11 +424,10 @@
         <location file="special_units/aid.hpp" line="35" column="6" bodyfile="special_units/aid.cpp" bodystart="372" bodyend="375"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1aid_1adfdaf5ac06bc15b86e5b21c6ec0b8b97" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::aid::has_unknown_star</definition>
         <argsstring>() const</argsstring>
         <name>has_unknown_star</name>
-        <qualifiedname>scifir::aid::has_unknown_star</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -460,11 +437,10 @@
         <location file="special_units/aid.hpp" line="36" column="6" bodyfile="special_units/aid.cpp" bodystart="377" bodyend="380"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1aid_1a9984b49449639cfbc87a4607c39588cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::aid::has_unknown_asteroid</definition>
         <argsstring>() const</argsstring>
         <name>has_unknown_asteroid</name>
-        <qualifiedname>scifir::aid::has_unknown_asteroid</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -474,11 +450,10 @@
         <location file="special_units/aid.hpp" line="37" column="6" bodyfile="special_units/aid.cpp" bodystart="382" bodyend="385"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1aid_1aaec2c4d7e2ebfab436e4ad4892118119" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::aid::display</definition>
         <argsstring>() const</argsstring>
         <name>display</name>
-        <qualifiedname>scifir::aid::display</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -487,16 +462,15 @@
         </inbodydescription>
         <location file="special_units/aid.hpp" line="39" column="8" bodyfile="special_units/aid.cpp" bodystart="436" bodyend="468"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1aid_1a04b94abd64317254325776daff0e6733" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::aid::initialize_from_string</definition>
         <argsstring>(const string &amp;init_aid)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::aid::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_aid</declname>
         </param>
         <briefdescription>
@@ -507,7 +481,7 @@
         </inbodydescription>
         <location file="special_units/aid.hpp" line="48" column="6" bodyfile="special_units/aid.cpp" bodystart="387" bodyend="434"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

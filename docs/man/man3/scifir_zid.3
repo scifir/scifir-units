@@ -1,4 +1,4 @@
-.TH "scifir::zid" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::zid" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,40 +15,40 @@ scifir::zid
 .RI "\fBzid\fP ()"
 .br
 .ti -1c
-.RI "\fBzid\fP (\fBconst\fP \fBzid\fP &x)"
+.RI "\fBzid\fP (const \fBzid\fP &x)"
 .br
 .ti -1c
 .RI "\fBzid\fP (\fBzid\fP &&x)"
 .br
 .ti -1c
-.RI "\fBzid\fP (\fBconst\fP \fBscifir::aid\fP &\fBnew_aid\fP, \fBconst\fP \fBstring\fP &\fBnew_country\fP, \fBconst\fP vector< \fBstring\fP > &\fBnew_regions\fP, \fBconst\fP \fBstring\fP &\fBnew_zone\fP)"
+.RI "\fBzid\fP (const \fBscifir::aid\fP &new_aid, const string &new_country, const vector< string > &new_regions, const string &new_zone)"
 .br
 .ti -1c
-.RI "\fBzid\fP (\fBconst\fP \fBscifir::aid\fP &\fBnew_aid\fP, \fBconst\fP \fBstring\fP &\fBinit_zid\fP)"
+.RI "\fBzid\fP (const \fBscifir::aid\fP &new_aid, const string &init_zid)"
 .br
 .ti -1c
-.RI "\fBzid\fP (\fBconst\fP \fBstring\fP &\fBinit_zid_full\fP)"
+.RI "\fBzid\fP (const string &init_zid_full)"
 .br
 .ti -1c
-.RI "\fBzid\fP & \fBoperator=\fP (\fBconst\fP \fBzid\fP &x)"
+.RI "\fBzid\fP & \fBoperator=\fP (const \fBzid\fP &x)"
 .br
 .ti -1c
 .RI "\fBzid\fP & \fBoperator=\fP (\fBzid\fP &&x)"
 .br
 .ti -1c
-.RI "\fBzid\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_zid_full\fP)"
+.RI "\fBzid\fP & \fBoperator=\fP (const string &init_zid_full)"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBhas_no_country\fP () \fBconst\fP"
+.RI "bool \fBhas_no_country\fP () const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBhas_unknown_country\fP () \fBconst\fP"
+.RI "bool \fBhas_unknown_country\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay\fP () \fBconst\fP"
+.RI "string \fBdisplay\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBpartial_display\fP () \fBconst\fP"
+.RI "string \fBpartial_display\fP () const"
 .br
 .in -1c
 .SS "Public Attributes"
@@ -58,67 +58,68 @@ scifir::zid
 .RI "\fBscifir::aid\fP \fBaid\fP"
 .br
 .ti -1c
-.RI "vector< \fBstring\fP > \fBregions\fP"
+.RI "vector< string > \fBregions\fP"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBcountry\fP"
+.RI "string \fBcountry\fP"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBzone\fP"
+.RI "string \fBzone\fP"
 .br
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBconst\fP \fBstring\fP &\fBinit_zid_full\fP)"
+.RI "void \fBinitialize_from_string\fP (const string &init_zid_full)"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB13\fP of file \fBzid\&.hpp\fP\&.
+Definition at line 13 of file zid\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "scifir::zid::zid ()"
 
 .PP
-Definition at line \fB12\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 12 of file zid\&.cpp\&.
+.PP
 .nf
 12              : aid(),regions(),country(),zone()
 13     {}
 .fi
-
-.SS "scifir::zid::zid (\fBconst\fP \fBzid\fP & x)"
+.SS "scifir::zid::zid (const \fBzid\fP & x)"
 
 .PP
-Definition at line \fB15\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 15 of file zid\&.cpp\&.
+.PP
 .nf
 15                          : aid(x\&.aid),regions(x\&.regions),country(x\&.country),zone(x\&.zone)
 16     {}
 .fi
-
 .SS "scifir::zid::zid (\fBzid\fP && x)"
 
 .PP
-Definition at line \fB18\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 18 of file zid\&.cpp\&.
+.PP
 .nf
 18                     : aid(std::move(x\&.aid)),regions(std::move(x\&.regions)),country(std::move(x\&.country)),zone(std::move(x\&.zone))
 19     {}
 .fi
-
-.SS "scifir::zid::zid (\fBconst\fP \fBscifir::aid\fP & new_aid, \fBconst\fP \fBstring\fP & new_country, \fBconst\fP vector< \fBstring\fP > & new_regions, \fBconst\fP \fBstring\fP & new_zone)\fC [explicit]\fP"
+.SS "scifir::zid::zid (const \fBscifir::aid\fP & new_aid, const string & new_country, const vector< string > & new_regions, const string & new_zone)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB21\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 21 of file zid\&.cpp\&.
+.PP
 .nf
 21                                                                                                                         : aid(new_aid),country(new_country),regions(new_regions),zone(new_zone)
 22     {}
 .fi
-
-.SS "scifir::zid::zid (\fBconst\fP \fBscifir::aid\fP & new_aid, \fBconst\fP \fBstring\fP & init_zid)\fC [explicit]\fP"
+.SS "scifir::zid::zid (const \fBscifir::aid\fP & new_aid, const string & init_zid)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB24\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 24 of file zid\&.cpp\&.
+.PP
 .nf
 24                                                             : aid(new_aid),regions(),country(),zone()
 25     {
@@ -129,7 +130,7 @@ Definition at line \fB24\fP of file \fBzid\&.cpp\fP\&..PP
 30             country = values[0];
 31             if (values\&.size() > 2)
 32             {
-33                 int total_for_values = int(values\&.size()) \- 1;
+33                 int total_for_values = int(values\&.size()) - 1;
 34                 for (int i = 1; i < total_for_values; i++)
 35                 {
 36                     regions\&.push_back(values[i]);
@@ -142,24 +143,24 @@ Definition at line \fB24\fP of file \fBzid\&.cpp\fP\&..PP
 43         }
 44     }
 .fi
-
-.SS "scifir::zid::zid (\fBconst\fP \fBstring\fP & init_zid_full)\fC [explicit]\fP"
+.SS "scifir::zid::zid (const string & init_zid_full)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB46\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 46 of file zid\&.cpp\&.
+.PP
 .nf
 46                                         : zid()
 47     {
 48         initialize_from_string(init_zid_full);
 49     }
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBstring\fP scifir::zid::display () const"
+.SS "string scifir::zid::display () const"
 
 .PP
-Definition at line \fB85\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 85 of file zid\&.cpp\&.
+.PP
 .nf
 86     {
 87         if (country != "")
@@ -179,31 +180,31 @@ Definition at line \fB85\fP of file \fBzid\&.cpp\fP\&..PP
 101         }
 102     }
 .fi
-
-.SS "\fBbool\fP scifir::zid::has_no_country () const"
+.SS "bool scifir::zid::has_no_country () const"
 
 .PP
-Definition at line \fB75\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 75 of file zid\&.cpp\&.
+.PP
 .nf
 76     {
-77         return (country == "no\-country");
+77         return (country == "no-country");
 78     }
 .fi
-
-.SS "\fBbool\fP scifir::zid::has_unknown_country () const"
+.SS "bool scifir::zid::has_unknown_country () const"
 
 .PP
-Definition at line \fB80\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 80 of file zid\&.cpp\&.
+.PP
 .nf
 81     {
-82         return (country == "unknown\-country");
+82         return (country == "unknown-country");
 83     }
 .fi
-
-.SS "\fBvoid\fP scifir::zid::initialize_from_string (\fBconst\fP \fBstring\fP & init_zid_full)\fC [private]\fP"
+.SS "void scifir::zid::initialize_from_string (const string & init_zid_full)\fC [private]\fP"
 
 .PP
-Definition at line \fB123\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 123 of file zid\&.cpp\&.
+.PP
 .nf
 124     {
 125         if (init_zid_full != "")
@@ -220,7 +221,7 @@ Definition at line \fB123\fP of file \fBzid\&.cpp\fP\&..PP
 136                 country = values[0];
 137                 if (values\&.size() > 2)
 138                 {
-139                     int total_for_values = int(values\&.size()) \- 1;
+139                     int total_for_values = int(values\&.size()) - 1;
 140                     for (int i = 1; i < total_for_values; i++)
 141                     {
 142                         regions\&.push_back(values[i]);
@@ -238,7 +239,7 @@ Definition at line \fB123\fP of file \fBzid\&.cpp\fP\&..PP
 154                 country = values[0];
 155                 if (values\&.size() > 2)
 156                 {
-157                     int total_for_values = int(values\&.size()) \- 1;
+157                     int total_for_values = int(values\&.size()) - 1;
 158                     for (int i = 1; i < total_for_values; i++)
 159                     {
 160                         regions\&.push_back(values[i]);
@@ -252,22 +253,22 @@ Definition at line \fB123\fP of file \fBzid\&.cpp\fP\&..PP
 168         }
 169     }
 .fi
-
-.SS "\fBzid\fP & scifir::zid::operator= (\fBconst\fP \fBstring\fP & init_zid_full)"
+.SS "\fBzid\fP & scifir::zid::operator= (const string & init_zid_full)"
 
 .PP
-Definition at line \fB69\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 69 of file zid\&.cpp\&.
+.PP
 .nf
 70     {
 71         initialize_from_string(init_zid_full);
 72         return *this;
 73     }
 .fi
-
-.SS "\fBzid\fP & scifir::zid::operator= (\fBconst\fP \fBzid\fP & x)"
+.SS "\fBzid\fP & scifir::zid::operator= (const \fBzid\fP & x)"
 
 .PP
-Definition at line \fB51\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 51 of file zid\&.cpp\&.
+.PP
 .nf
 52     {
 53         aid = x\&.aid;
@@ -277,11 +278,11 @@ Definition at line \fB51\fP of file \fBzid\&.cpp\fP\&..PP
 57         return *this;
 58     }
 .fi
-
 .SS "\fBzid\fP & scifir::zid::operator= (\fBzid\fP && x)"
 
 .PP
-Definition at line \fB60\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 60 of file zid\&.cpp\&.
+.PP
 .nf
 61     {
 62         aid = std::move(x\&.aid);
@@ -291,11 +292,11 @@ Definition at line \fB60\fP of file \fBzid\&.cpp\fP\&..PP
 66         return *this;
 67     }
 .fi
-
-.SS "\fBstring\fP scifir::zid::partial_display () const"
+.SS "string scifir::zid::partial_display () const"
 
 .PP
-Definition at line \fB104\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 104 of file zid\&.cpp\&.
+.PP
 .nf
 105     {
 106         if (country != "")
@@ -315,25 +316,24 @@ Definition at line \fB104\fP of file \fBzid\&.cpp\fP\&..PP
 120         }
 121     }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBscifir::aid\fP scifir::zid::aid"
 
 .PP
-Definition at line \fB33\fP of file \fBzid\&.hpp\fP\&.
-.SS "\fBstring\fP scifir::zid::country"
+Definition at line 33 of file zid\&.hpp\&.
+.SS "string scifir::zid::country"
 
 .PP
-Definition at line \fB35\fP of file \fBzid\&.hpp\fP\&.
-.SS "vector<\fBstring\fP> scifir::zid::regions"
+Definition at line 35 of file zid\&.hpp\&.
+.SS "vector<string> scifir::zid::regions"
 
 .PP
-Definition at line \fB34\fP of file \fBzid\&.hpp\fP\&.
-.SS "\fBstring\fP scifir::zid::zone"
+Definition at line 34 of file zid\&.hpp\&.
+.SS "string scifir::zid::zone"
 
 .PP
-Definition at line \fB36\fP of file \fBzid\&.hpp\fP\&.
+Definition at line 36 of file zid\&.hpp\&.
 
 .SH "Author"
 .PP 

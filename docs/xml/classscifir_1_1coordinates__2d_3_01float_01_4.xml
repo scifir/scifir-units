@@ -1,17 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1coordinates__2d_3_01float_01_4" kind="class" language="C++" prot="public">
     <compoundname>scifir::coordinates_2d&lt; float &gt;</compoundname>
     <includes refid="coordinates__2d_8hpp" local="no">coordinates_2d.hpp</includes>
     <templateparamlist>
     </templateparamlist>
-    <sectiondef kind="public-attrib">
+      <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a52d2f6612725ef3077698721f465b34e" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::coordinates_2d&lt; float &gt;::x</definition>
         <argsstring></argsstring>
         <name>x</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::x</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,11 +20,10 @@
         <location file="coordinates/coordinates_2d.hpp" line="312" column="7" bodyfile="coordinates/coordinates_2d.hpp" bodystart="312" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a154f271badd246cfa930717e95325756" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::coordinates_2d&lt; float &gt;::y</definition>
         <argsstring></argsstring>
         <name>y</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::y</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -34,14 +32,13 @@
         </inbodydescription>
         <location file="coordinates/coordinates_2d.hpp" line="313" column="7" bodyfile="coordinates/coordinates_2d.hpp" bodystart="313" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a1014c73dabe6a620b1190cda956c55d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</definition>
         <argsstring>()</argsstring>
         <name>coordinates_2d</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -55,9 +52,8 @@
         <definition>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</definition>
         <argsstring>(const coordinates_2d&lt; float &gt; &amp;x_coordinates)</argsstring>
         <name>coordinates_2d</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x_coordinates</declname>
         </param>
         <briefdescription>
@@ -73,9 +69,8 @@
         <definition>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</definition>
         <argsstring>(coordinates_2d&lt; float &gt; &amp;&amp;x_coordinates)</argsstring>
         <name>coordinates_2d</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x_coordinates</declname>
         </param>
         <briefdescription>
@@ -91,13 +86,12 @@
         <definition>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</definition>
         <argsstring>(float new_x, float new_y)</argsstring>
         <name>coordinates_2d</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_x</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_y</declname>
         </param>
         <briefdescription>
@@ -113,13 +107,12 @@
         <definition>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</definition>
         <argsstring>(float new_p, const angle &amp;new_theta)</argsstring>
         <name>coordinates_2d</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_p</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <briefdescription>
@@ -135,9 +128,8 @@
         <definition>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</definition>
         <argsstring>(const scifir::point_2d&lt; float &gt; &amp;new_point)</argsstring>
         <name>coordinates_2d</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1point__2d" kindref="compound">scifir::point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1point__2d" kindref="compound">scifir::point_2d</ref>&lt; float &gt; &amp;</type>
           <declname>new_point</declname>
         </param>
         <briefdescription>
@@ -153,9 +145,8 @@
         <definition>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</definition>
         <argsstring>(scifir::point_2d&lt; float &gt; &amp;&amp;new_point)</argsstring>
         <name>coordinates_2d</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1point__2d" kindref="compound">scifir::point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1point__2d" kindref="compound">scifir::point_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>new_point</declname>
         </param>
         <briefdescription>
@@ -171,9 +162,8 @@
         <definition>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</definition>
         <argsstring>(const string &amp;init_coordinates_2d)</argsstring>
         <name>coordinates_2d</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::coordinates_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_coordinates_2d</declname>
         </param>
         <briefdescription>
@@ -184,14 +174,13 @@
         </inbodydescription>
         <location file="coordinates/coordinates_2d.hpp" line="206" column="10" bodyfile="coordinates/coordinates_2d.hpp" bodystart="206" bodyend="209"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1acc7cba0263cbbb2804c659c3e0d62d19" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>coordinates_2d&lt; float &gt; &amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a486dab65f915032eabf60e893d8425c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>coordinates_2d&lt;float&gt;&amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
         <argsstring>(const coordinates_2d&lt; float &gt; &amp;x_coordinates)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x_coordinates</declname>
         </param>
         <briefdescription>
@@ -202,14 +191,13 @@
         </inbodydescription>
         <location file="coordinates/coordinates_2d.hpp" line="211" column="16" bodyfile="coordinates/coordinates_2d.hpp" bodystart="211" bodyend="216"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1af9fc41ed1c86b2c27e2e8c9062b613ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>coordinates_2d&lt; float &gt; &amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a1f715c360df9f93d643abdc87fa1e8c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>coordinates_2d&lt;float&gt;&amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
         <argsstring>(coordinates_2d&lt; float &gt; &amp;&amp;x_coordinates)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x_coordinates</declname>
         </param>
         <briefdescription>
@@ -220,14 +208,13 @@
         </inbodydescription>
         <location file="coordinates/coordinates_2d.hpp" line="218" column="16" bodyfile="coordinates/coordinates_2d.hpp" bodystart="218" bodyend="223"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a6d7aab620fc21e2807a0fb24814170bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>coordinates_2d&lt; float &gt; &amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a6b627bbac87a314eb19888042c8e95ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>coordinates_2d&lt;float&gt;&amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
         <argsstring>(const point_2d&lt; float &gt; &amp;x_point)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x_point</declname>
         </param>
         <briefdescription>
@@ -238,14 +225,13 @@
         </inbodydescription>
         <location file="coordinates/coordinates_2d.hpp" line="225" column="16" bodyfile="coordinates/coordinates_2d.hpp" bodystart="225" bodyend="230"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a223748040fe95a8025ad7a47383d9a28" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>coordinates_2d&lt; float &gt; &amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a7053bbd1f182857a65a9959e6b470147" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>coordinates_2d&lt;float&gt;&amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
         <argsstring>(point_2d&lt; float &gt; &amp;&amp;x_point)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x_point</declname>
         </param>
         <briefdescription>
@@ -256,14 +242,13 @@
         </inbodydescription>
         <location file="coordinates/coordinates_2d.hpp" line="232" column="16" bodyfile="coordinates/coordinates_2d.hpp" bodystart="232" bodyend="237"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1aa555d2ab705d268148265b27068eb6ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>coordinates_2d&lt; float &gt; &amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a3c7d3c68d1485ca4a7a2b25dc62628dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>coordinates_2d&lt;float&gt;&amp; scifir::coordinates_2d&lt; float &gt;::operator=</definition>
         <argsstring>(const string &amp;init_coordinates_2d)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_coordinates_2d</declname>
         </param>
         <briefdescription>
@@ -275,11 +260,10 @@
         <location file="coordinates/coordinates_2d.hpp" line="239" column="16" bodyfile="coordinates/coordinates_2d.hpp" bodystart="239" bodyend="243"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a33f13cd9702347098d3c593689e4c0e4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::coordinates_2d&lt; float &gt;::get_p</definition>
         <argsstring>() const</argsstring>
         <name>get_p</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::get_p</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -293,7 +277,6 @@
         <definition>angle scifir::coordinates_2d&lt; float &gt;::get_theta</definition>
         <argsstring>() const</argsstring>
         <name>get_theta</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::get_theta</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -303,17 +286,16 @@
         <location file="coordinates/coordinates_2d.hpp" line="250" column="7" bodyfile="coordinates/coordinates_2d.hpp" bodystart="250" bodyend="253"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1abde07b01300a3ed9edbba339cc9dcf95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::coordinates_2d&lt; float &gt;::set_position</definition>
         <argsstring>(float new_x, float new_y)</argsstring>
         <name>set_position</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::set_position</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_x</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_y</declname>
         </param>
         <briefdescription>
@@ -325,17 +307,16 @@
         <location file="coordinates/coordinates_2d.hpp" line="255" column="6" bodyfile="coordinates/coordinates_2d.hpp" bodystart="255" bodyend="259"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1aaae89984120ffef5ea84b7067b38b5a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::coordinates_2d&lt; float &gt;::set_position</definition>
         <argsstring>(float new_p, const angle &amp;new_theta)</argsstring>
         <name>set_position</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::set_position</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_p</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <briefdescription>
@@ -347,13 +328,12 @@
         <location file="coordinates/coordinates_2d.hpp" line="261" column="6" bodyfile="coordinates/coordinates_2d.hpp" bodystart="261" bodyend="265"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a798001a049b6e00808a7c9e35ffb7409" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::coordinates_2d&lt; float &gt;::rotate</definition>
         <argsstring>(const angle &amp;x_angle)</argsstring>
         <name>rotate</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::rotate</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x_angle</declname>
         </param>
         <briefdescription>
@@ -365,13 +345,12 @@
         <location file="coordinates/coordinates_2d.hpp" line="267" column="6" bodyfile="coordinates/coordinates_2d.hpp" bodystart="267" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a758a47e2d931b72d3f8aa308cb1c41f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::coordinates_2d&lt; float &gt;::move</definition>
         <argsstring>(const displacement_2d &amp;x_displacement)</argsstring>
         <name>move</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::move</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement_2d</ref> &amp;</type>
+          <type>const displacement_2d &amp;</type>
           <declname>x_displacement</declname>
         </param>
         <briefdescription>
@@ -383,17 +362,16 @@
         <location file="coordinates/coordinates_2d.hpp" line="275" column="6" bodyfile="coordinates/coordinates_2d.hpp" bodystart="275" bodyend="279"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1aedbd1735e27e9d1f70c71b12eeab8078" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::coordinates_2d&lt; float &gt;::move</definition>
         <argsstring>(float new_x, float new_y)</argsstring>
         <name>move</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::move</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_x</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_y</declname>
         </param>
         <briefdescription>
@@ -405,17 +383,16 @@
         <location file="coordinates/coordinates_2d.hpp" line="281" column="6" bodyfile="coordinates/coordinates_2d.hpp" bodystart="281" bodyend="285"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a2c67dbf40f1cc7bdacf79cbb14f8f67a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::coordinates_2d&lt; float &gt;::move</definition>
         <argsstring>(float new_p, const angle &amp;new_theta)</argsstring>
         <name>move</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::move</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_p</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <briefdescription>
@@ -427,11 +404,10 @@
         <location file="coordinates/coordinates_2d.hpp" line="287" column="6" bodyfile="coordinates/coordinates_2d.hpp" bodystart="287" bodyend="291"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1abf92617a2f677fd945bd0d953e6e4691" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::coordinates_2d&lt; float &gt;::distance_to_origin</definition>
         <argsstring>() const</argsstring>
         <name>distance_to_origin</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::distance_to_origin</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -441,11 +417,10 @@
         <location file="coordinates/coordinates_2d.hpp" line="293" column="7" bodyfile="coordinates/coordinates_2d.hpp" bodystart="293" bodyend="296"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1ada1c014dba38e4252826ab5c9c5f7ba1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::coordinates_2d&lt; float &gt;::display_cartesian</definition>
         <argsstring>() const</argsstring>
         <name>display_cartesian</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::display_cartesian</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -455,11 +430,10 @@
         <location file="coordinates/coordinates_2d.hpp" line="298" column="8" bodyfile="coordinates/coordinates_2d.hpp" bodystart="298" bodyend="303"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1ab91ed761144bdf7a26522d174e02412e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::coordinates_2d&lt; float &gt;::display_polar</definition>
         <argsstring>() const</argsstring>
         <name>display_polar</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::display_polar</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -468,16 +442,15 @@
         </inbodydescription>
         <location file="coordinates/coordinates_2d.hpp" line="305" column="8" bodyfile="coordinates/coordinates_2d.hpp" bodystart="305" bodyend="310"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1coordinates__2d_3_01float_01_4_1a10ffabcff80fb3327b6604af5197be2c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::coordinates_2d&lt; float &gt;::initialize_from_string</definition>
         <argsstring>(string init_coordinates_2d)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::coordinates_2d&lt; float &gt;::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <type>string</type>
           <declname>init_coordinates_2d</declname>
         </param>
         <briefdescription>
@@ -488,7 +461,7 @@
         </inbodydescription>
         <location file="coordinates/coordinates_2d.hpp" line="316" column="6" bodyfile="coordinates/coordinates_2d.hpp" bodystart="316" bodyend="339"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -512,11 +485,11 @@
       <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a758a47e2d931b72d3f8aa308cb1c41f6" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>move</name></member>
       <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1aedbd1735e27e9d1f70c71b12eeab8078" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>move</name></member>
       <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a2c67dbf40f1cc7bdacf79cbb14f8f67a" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>move</name></member>
-      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1acc7cba0263cbbb2804c659c3e0d62d19" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1af9fc41ed1c86b2c27e2e8c9062b613ee" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a6d7aab620fc21e2807a0fb24814170bf" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a223748040fe95a8025ad7a47383d9a28" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1aa555d2ab705d268148265b27068eb6ad" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a486dab65f915032eabf60e893d8425c6" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a1f715c360df9f93d643abdc87fa1e8c0" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a6b627bbac87a314eb19888042c8e95ac" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a7053bbd1f182857a65a9959e6b470147" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a3c7d3c68d1485ca4a7a2b25dc62628dd" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>operator=</name></member>
       <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1a798001a049b6e00808a7c9e35ffb7409" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>rotate</name></member>
       <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1abde07b01300a3ed9edbba339cc9dcf95" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>set_position</name></member>
       <member refid="classscifir_1_1coordinates__2d_3_01float_01_4_1aaae89984120ffef5ea84b7067b38b5a2" prot="public" virt="non-virtual"><scope>scifir::coordinates_2d&lt; float &gt;</scope><name>set_position</name></member>

@@ -1,4 +1,4 @@
-.TH "special_units/size_3d.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "special_units/size_3d.hpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,7 +29,7 @@ special_units/size_3d.hpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -37,10 +37,10 @@ special_units/size_3d.hpp
 
 .in +1c
 .ti -1c
-.RI "template<\fBtypename\fP T > \fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBsize_3d\fP< T > &x)"
+.RI "template<typename T > string \fBscifir::to_string\fP (const size_3d< T > &x)"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBsize_3d\fP< \fBfloat\fP > &x)"
+.RI "string \fBscifir::to_string\fP (const size_3d< float > &x)"
 .br
 .ti -1c
 .RI "template<typename T > bool \fBoperator==\fP (const \fBscifir::size_3d\fP< T > &x, const \fBscifir::size_3d\fP< T > &y)"
@@ -81,77 +81,78 @@ special_units/size_3d.hpp
 .SS "template<typename T > bool operator!= (const \fBscifir::size_3d\fP< T > & x, const \fBscifir::size_3d\fP< T > & y)"
 
 .PP
-Definition at line \fB244\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 244 of file size_3d\&.hpp\&.
+.PP
 .nf
 245 {
 246     return !(x == y);
 247 }
 .fi
-
 .SS "template<typename T > bool operator!= (const \fBscifir::size_3d\fP< T > & x, const string & init_size_3d)"
 
 .PP
-Definition at line \fB257\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 257 of file size_3d\&.hpp\&.
+.PP
 .nf
 258 {
 259     return !(x == init_size_3d);
 260 }
 .fi
-
 .SS "template<typename T > bool operator!= (const string & init_size_3d, const \fBscifir::size_3d\fP< T > & x)"
 
 .PP
-Definition at line \fB270\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 270 of file size_3d\&.hpp\&.
+.PP
 .nf
 271 {
 272     return !(init_size_3d == x);
 273 }
 .fi
-
 .SS "template<typename T > string operator+ (const \fBscifir::size_3d\fP< T > & x, const string & y)"
 
 .PP
-Definition at line \fB288\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 288 of file size_3d\&.hpp\&.
+.PP
 .nf
 289 {
 290     return to_string(x) + y;
 291 }
 .fi
-
 .SS "template<typename T > string operator+ (const string & x, const \fBscifir::size_3d\fP< T > & y)"
 
 .PP
-Definition at line \fB282\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 282 of file size_3d\&.hpp\&.
+.PP
 .nf
 283 {
 284     return x + to_string(y);
 285 }
 .fi
-
 .SS "template<typename T > void operator+= (string & x, const \fBscifir::size_3d\fP< T > & y)"
 
 .PP
-Definition at line \fB276\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 276 of file size_3d\&.hpp\&.
+.PP
 .nf
 277 {
 278     x += to_string(y);
 279 }
 .fi
-
-.SS "template<typename T > ostream & operator<< (ostream & os, const \fBscifir::size_3d\fP< T > & x)"
+.SS "template<typename T > ostream& operator<< (ostream & os, const \fBscifir::size_3d\fP< T > & x)"
 
 .PP
-Definition at line \fB294\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 294 of file size_3d\&.hpp\&.
+.PP
 .nf
 295 {
 296     return os << to_string(x);
 297 }
 .fi
-
 .SS "template<typename T > bool operator== (const \fBscifir::size_3d\fP< T > & x, const \fBscifir::size_3d\fP< T > & y)"
 
 .PP
-Definition at line \fB231\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 231 of file size_3d\&.hpp\&.
+.PP
 .nf
 232 {
 233     if (x\&.width == y\&.width and x\&.height == y\&.height and x\&.depth == y\&.depth)
@@ -164,33 +165,33 @@ Definition at line \fB231\fP of file \fBsize_3d\&.hpp\fP\&..PP
 240     }
 241 }
 .fi
-
 .SS "template<typename T > bool operator== (const \fBscifir::size_3d\fP< T > & x, const string & init_size_3d)"
 
 .PP
-Definition at line \fB250\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 250 of file size_3d\&.hpp\&.
+.PP
 .nf
 251 {
 252     scifir::size_3d<T> y(init_size_3d);
 253     return (x == y);
 254 }
 .fi
-
 .SS "template<typename T > bool operator== (const string & init_size_3d, const \fBscifir::size_3d\fP< T > & x)"
 
 .PP
-Definition at line \fB263\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 263 of file size_3d\&.hpp\&.
+.PP
 .nf
 264 {
 265     scifir::size_3d<T> y(init_size_3d);
 266     return (x == y);
 267 }
 .fi
-
-.SS "template<typename T > istream & operator>> (istream & is, \fBscifir::size_3d\fP< T > & x)"
+.SS "template<typename T > istream& operator>> (istream & is, \fBscifir::size_3d\fP< T > & x)"
 
 .PP
-Definition at line \fB300\fP of file \fBsize_3d\&.hpp\fP\&..PP
+Definition at line 300 of file size_3d\&.hpp\&.
+.PP
 .nf
 301 {
 302     char a[256];
@@ -200,7 +201,6 @@ Definition at line \fB300\fP of file \fBsize_3d\&.hpp\fP\&..PP
 306     return is;
 307 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

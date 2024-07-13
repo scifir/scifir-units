@@ -1,4 +1,4 @@
-.TH "scifir::coordinates_ndr< float >" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::coordinates_ndr< float >" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,243 +15,243 @@ scifir::coordinates_ndr< float >
 .RI "\fBcoordinates_ndr\fP ()"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &x)"
+.RI "\fBcoordinates_ndr\fP (const \fBcoordinates_ndr\fP< float > &x)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBcoordinates_ndr\fP< \fBfloat\fP > &&x)"
+.RI "\fBcoordinates_ndr\fP (\fBcoordinates_ndr\fP< float > &&x)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (const vector< float > &new_values, const vector< float > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (const vector< float > &new_values, const vector< \fBangle\fP > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_x\fP)"
+.RI "\fBcoordinates_ndr\fP (float new_x)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBcoordinates_ndr\fP (float new_x, float new_y, const \fBangle\fP &new_theta)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_polar_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBcoordinates_ndr\fP (float new_p, const \fBangle\fP &new_polar_theta, const \fBangle\fP &new_theta)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_ndr\fP (float new_x, float new_y, float new_z, const \fBangle\fP &new_theta, const \fBangle\fP &new_phi)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_cylindrical_theta\fP, \fBfloat\fP \fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_ndr\fP (float new_p, const \fBangle\fP &new_cylindrical_theta, float new_z, const \fBangle\fP &new_theta, const \fBangle\fP &new_phi)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_phi\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_ndr\fP (float new_r, const \fBangle\fP &new_spherical_theta, const \fBangle\fP &new_spherical_phi, const \fBangle\fP &new_theta, const \fBangle\fP &new_phi)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBfloat\fP \fBnew_altitude\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_ndr\fP (const \fBangle\fP &new_latitude, const \fBangle\fP &new_longitude, float new_altitude, const \fBangle\fP &new_theta, const \fBangle\fP &new_phi)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > &\fBnew_point\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (const \fBpoint_nd\fP< float > &new_point, const vector< float > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBpoint_nd\fP< \fBfloat\fP > &&\fBnew_point\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBpoint_nd\fP< float > &&new_point, const vector< float > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > &\fBnew_point\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (const \fBpoint_nd\fP< float > &new_point, const vector< \fBangle\fP > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBpoint_nd\fP< \fBfloat\fP > &&\fBnew_point\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBpoint_nd\fP< float > &&new_point, const vector< \fBangle\fP > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > &\fBnew_coordinates\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (const \fBcoordinates_nd\fP< float > &new_coordinates, const vector< float > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBcoordinates_nd\fP< \fBfloat\fP > &&\fBnew_coordinates\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBcoordinates_nd\fP< float > &&new_coordinates, const vector< float > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > &\fBnew_coordinates\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (const \fBcoordinates_nd\fP< float > &new_coordinates, const vector< \fBangle\fP > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBcoordinates_nd\fP< \fBfloat\fP > &&\fBnew_coordinates\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBcoordinates_nd\fP< float > &&new_coordinates, const vector< \fBangle\fP > &new_angles)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_ndr\fP)"
+.RI "\fBcoordinates_ndr\fP (const string &init_coordinates_ndr)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
+.RI "\fBcoordinates_ndr\fP< float > & \fBoperator=\fP (const \fBcoordinates_ndr\fP< float > &x_coordinates)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBcoordinates_ndr\fP< \fBfloat\fP > &&\fBx_coordinates\fP)"
+.RI "\fBcoordinates_ndr\fP< float > & \fBoperator=\fP (\fBcoordinates_ndr\fP< float > &&x_coordinates)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > &\fBx_point\fP)"
+.RI "\fBcoordinates_ndr\fP< float > & \fBoperator=\fP (const \fBpoint_nd\fP< float > &x_point)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBpoint_nd\fP< \fBfloat\fP > &&\fBx_point\fP)"
+.RI "\fBcoordinates_ndr\fP< float > & \fBoperator=\fP (\fBpoint_nd\fP< float > &&x_point)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
+.RI "\fBcoordinates_ndr\fP< float > & \fBoperator=\fP (const \fBcoordinates_nd\fP< float > &x_coordinates)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBcoordinates_nd\fP< \fBfloat\fP > &&\fBx_coordinates\fP)"
+.RI "\fBcoordinates_ndr\fP< float > & \fBoperator=\fP (\fBcoordinates_nd\fP< float > &&x_coordinates)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_ndr\fP)"
+.RI "\fBcoordinates_ndr\fP< float > & \fBoperator=\fP (const string &init_coordinates_ndr)"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBis_nd\fP (\fBunsigned\fP \fBint\fP \fBi\fP) \fBconst\fP"
+.RI "bool \fBis_nd\fP (unsigned int i) const"
 .br
 .ti -1c
-.RI "\fBint\fP \fBget_nd\fP () \fBconst\fP"
+.RI "int \fBget_nd\fP () const"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBchange_nd\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "void \fBchange_nd\fP (const vector< float > &new_values, const vector< float > &new_angles)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBchange_nd\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "void \fBchange_nd\fP (const vector< float > &new_values, const vector< \fBangle\fP > &new_angles)"
 .br
 .ti -1c
-.RI "\fBconst\fP vector< \fBfloat\fP > & \fBget_values\fP () \fBconst\fP"
+.RI "const vector< float > & \fBget_values\fP () const"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_values\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP)"
+.RI "void \fBset_values\fP (const vector< float > &new_values)"
 .br
 .ti -1c
-.RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP (\fBunsigned\fP \fBint\fP \fBi\fP) \fBconst\fP"
+.RI "const float & \fBget_value\fP (unsigned int i) const"
 .br
 .ti -1c
-.RI "\fBfloat\fP & \fBget_value\fP (\fBunsigned\fP \fBint\fP \fBi\fP)"
+.RI "float & \fBget_value\fP (unsigned int i)"
 .br
 .ti -1c
-.RI "\fBconst\fP vector< \fBangle\fP > & \fBget_angles\fP () \fBconst\fP"
+.RI "const vector< \fBangle\fP > & \fBget_angles\fP () const"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_angles\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "void \fBset_angles\fP (const vector< float > &new_angles)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_angles\fP (\fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "void \fBset_angles\fP (const vector< \fBangle\fP > &new_angles)"
 .br
 .ti -1c
-.RI "\fBconst\fP \fBangle\fP & \fBget_angle\fP (\fBunsigned\fP \fBint\fP \fBi\fP) \fBconst\fP"
+.RI "const \fBangle\fP & \fBget_angle\fP (unsigned int i) const"
 .br
 .ti -1c
-.RI "\fBangle\fP & \fBget_angle\fP (\fBunsigned\fP \fBint\fP \fBi\fP)"
+.RI "\fBangle\fP & \fBget_angle\fP (unsigned int i)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBget_p\fP () \fBconst\fP"
+.RI "float \fBget_p\fP () const"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBget_spherical_theta\fP () \fBconst\fP"
+.RI "\fBangle\fP \fBget_spherical_theta\fP () const"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBget_r\fP () \fBconst\fP"
+.RI "float \fBget_r\fP () const"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBget_spherical_phi\fP () \fBconst\fP"
+.RI "\fBangle\fP \fBget_spherical_phi\fP () const"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBget_latitude\fP () \fBconst\fP"
+.RI "\fBangle\fP \fBget_latitude\fP () const"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBget_longitude\fP () \fBconst\fP"
+.RI "\fBangle\fP \fBget_longitude\fP () const"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBget_altitude\fP () \fBconst\fP"
+.RI "float \fBget_altitude\fP () const"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBpoint_to\fP (\fBdirection::name\fP x)"
+.RI "void \fBpoint_to\fP (\fBdirection::name\fP x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP)"
+.RI "void \fBset_position\fP (float new_x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP)"
+.RI "void \fBset_position\fP (float new_x, float new_y)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "void \fBset_position\fP (float new_p, const \fBangle\fP &new_theta)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP)"
+.RI "void \fBset_position\fP (float new_x, float new_y, float new_z)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBfloat\fP \fBnew_z\fP)"
+.RI "void \fBset_position\fP (float new_p, const \fBangle\fP &new_theta, float new_z)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "void \fBset_position\fP (float new_r, const \fBangle\fP &new_theta, const \fBangle\fP &new_phi)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBfloat\fP \fBnew_altitude\fP)"
+.RI "void \fBset_position\fP (const \fBangle\fP &new_latitude, const \fBangle\fP &new_longitude, float new_altitude)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP)"
+.RI "void \fBset_position\fP (const vector< float > &new_values)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBrotate_in_2d\fP (\fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "void \fBrotate_in_2d\fP (const \fBangle\fP &new_theta)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBrotate_in_3d\fP (\fBint\fP \fBaxis\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "void \fBrotate_in_3d\fP (int axis, const \fBangle\fP &new_theta)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_x\fP)"
+.RI "void \fBmove\fP (float new_x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_2d\fP &\fBx_displacement\fP)"
+.RI "void \fBmove\fP (const displacement_2d &x_displacement)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP)"
+.RI "void \fBmove\fP (float new_x, float new_y)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "void \fBmove\fP (float new_p, const \fBangle\fP &new_theta)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_3d\fP &\fBx_displacement\fP)"
+.RI "void \fBmove\fP (const displacement_3d &x_displacement)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP)"
+.RI "void \fBmove\fP (float new_x, float new_y, float new_z)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBfloat\fP \fBnew_z\fP)"
+.RI "void \fBmove\fP (float new_p, const \fBangle\fP &new_theta, float new_z)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "void \fBmove\fP (float new_r, const \fBangle\fP &new_theta, const \fBangle\fP &new_phi)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_nd\fP &\fBx_displacement\fP)"
+.RI "void \fBmove\fP (const displacement_nd &x_displacement)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "void \fBmove\fP (float new_r, const vector< \fBangle\fP > &new_angles)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBdistance_to_origin\fP () \fBconst\fP"
+.RI "float \fBdistance_to_origin\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_cartesian_2d\fP () \fBconst\fP"
+.RI "string \fBdisplay_cartesian_2d\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_polar\fP () \fBconst\fP"
+.RI "string \fBdisplay_polar\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_cartesian_3d\fP () \fBconst\fP"
+.RI "string \fBdisplay_cartesian_3d\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_cylindrical\fP () \fBconst\fP"
+.RI "string \fBdisplay_cylindrical\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_spherical\fP () \fBconst\fP"
+.RI "string \fBdisplay_spherical\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_geographical\fP () \fBconst\fP"
+.RI "string \fBdisplay_geographical\fP () const"
 .br
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_coordinates_ndr\fP)"
+.RI "void \fBinitialize_from_string\fP (string init_coordinates_ndr)"
 .br
 .in -1c
 .SS "Private Attributes"
 
 .in +1c
 .ti -1c
-.RI "vector< \fBfloat\fP > \fBvalues\fP"
+.RI "vector< float > \fBvalues\fP"
 .br
 .ti -1c
 .RI "vector< \fBangle\fP > \fBangles\fP"
@@ -261,27 +261,28 @@ scifir::coordinates_ndr< float >
 
 .in +1c
 .ti -1c
-.RI "\fBstatic\fP \fBfloat\fP \fBno_value\fP = 0"
+.RI "static float \fBno_value\fP = 0"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB1087\fP of file \fBcoordinates_ndr\&.hpp\fP\&.
+Definition at line 1087 of file coordinates_ndr\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr ()\fC [inline]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP ()\fC [inline]\fP"
 
 .PP
-Definition at line \fB1090\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1090 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1090                               : values(),angles()
 1091             {}
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (const \fBcoordinates_ndr\fP< float > & x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1093\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1093 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1093                                                              : values(),angles()
 1094             {
@@ -292,11 +293,11 @@ Definition at line \fB1093\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1099                 }
 1100             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBcoordinates_ndr\fP< \fBfloat\fP > && x)\fC [inline]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (\fBcoordinates_ndr\fP< float > && x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1102\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1102 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1102                                                         : values(),angles()
 1103             {
@@ -307,11 +308,11 @@ Definition at line \fB1102\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1108                 }
 1109             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP vector< \fBfloat\fP > & new_values, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (const vector< float > & new_values, const vector< float > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1111\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1111 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1111                                                                                                       : values(),angles()
 1112             {
@@ -325,11 +326,11 @@ Definition at line \fB1111\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1120                 }
 1121             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP vector< \fBfloat\fP > & new_values, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (const vector< float > & new_values, const vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1123\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1123 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1123                                                                                                       : values(),angles()
 1124             {
@@ -340,22 +341,22 @@ Definition at line \fB1123\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1129                 }
 1130             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_x)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (float new_x)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1132\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1132 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1132                                                   : values(),angles()
 1133             {
 1134                 values\&.push_back(new_x);
 1135             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_x, \fBfloat\fP new_y, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (float new_x, float new_y, const \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1137\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1137 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1137                                                                                      : values(),angles()
 1138             {
@@ -364,11 +365,11 @@ Definition at line \fB1137\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1141                 angles\&.push_back(new_theta);
 1142             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_polar_theta, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (float new_p, const \fBangle\fP & new_polar_theta, const \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1144\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1144 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1144                                                                                                       : values(),angles()
 1145             {
@@ -377,11 +378,11 @@ Definition at line \fB1144\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1148                 angles\&.push_back(new_theta);
 1149             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_x, \fBfloat\fP new_y, \fBfloat\fP new_z, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (float new_x, float new_y, float new_z, const \fBangle\fP & new_theta, const \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1151\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1151 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1151                                                                                                                       : values(),angles()
 1152             {
@@ -392,11 +393,11 @@ Definition at line \fB1151\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1157                 angles\&.push_back(new_phi);
 1158             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_cylindrical_theta, \fBfloat\fP new_z, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (float new_p, const \fBangle\fP & new_cylindrical_theta, float new_z, const \fBangle\fP & new_theta, const \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1160\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1160 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1160                                                                                                                                              : values(),angles()
 1161             {
@@ -407,11 +408,11 @@ Definition at line \fB1160\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1166                 angles\&.push_back(new_phi);
 1167             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_r, \fBconst\fP \fBangle\fP & new_spherical_theta, \fBconst\fP \fBangle\fP & new_spherical_phi, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (float new_r, const \fBangle\fP & new_spherical_theta, const \fBangle\fP & new_spherical_phi, const \fBangle\fP & new_theta, const \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1169\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1169 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1169                                                                                                                                                               : values(),angles()
 1170             {
@@ -422,11 +423,11 @@ Definition at line \fB1169\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1175                 angles\&.push_back(new_phi);
 1176             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBfloat\fP new_altitude, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (const \fBangle\fP & new_latitude, const \fBangle\fP & new_longitude, float new_altitude, const \fBangle\fP & new_theta, const \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1178\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1178 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1178                                                                                                                                                           : values(),angles()
 1179             {
@@ -437,11 +438,11 @@ Definition at line \fB1178\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1184                 angles\&.push_back(new_phi);
 1185             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > & new_point, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (const \fBpoint_nd\fP< float > & new_point, const vector< float > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1187\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1187 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1187                                                                                                        : values(),angles()
 1188             {
@@ -455,11 +456,11 @@ Definition at line \fB1187\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1196                 }
 1197             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBpoint_nd\fP< \fBfloat\fP > && new_point, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (\fBpoint_nd\fP< float > && new_point, const vector< float > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1199\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1199 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1199                                                                                                   : values(),angles()
 1200             {
@@ -473,11 +474,11 @@ Definition at line \fB1199\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1208                 }
 1209             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > & new_point, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (const \fBpoint_nd\fP< float > & new_point, const vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1211\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1211 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1211                                                                                                        : values(),angles()
 1212             {
@@ -488,11 +489,11 @@ Definition at line \fB1211\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1217                 }
 1218             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBpoint_nd\fP< \fBfloat\fP > && new_point, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (\fBpoint_nd\fP< float > && new_point, const vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1220\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1220 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1220                                                                                                   : values(),angles()
 1221             {
@@ -503,11 +504,11 @@ Definition at line \fB1220\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1226                 }
 1227             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > & new_coordinates, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (const \fBcoordinates_nd\fP< float > & new_coordinates, const vector< float > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1229\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1229 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1229                                                                                                                    : values(),angles()
 1230             {
@@ -521,11 +522,11 @@ Definition at line \fB1229\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1238                 }
 1239             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBcoordinates_nd\fP< \fBfloat\fP > && new_coordinates, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (\fBcoordinates_nd\fP< float > && new_coordinates, const vector< float > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1241\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1241 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1241                                                                                                               : values(),angles()
 1242             {
@@ -539,11 +540,11 @@ Definition at line \fB1241\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1250                 }
 1251             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > & new_coordinates, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (const \fBcoordinates_nd\fP< float > & new_coordinates, const vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1253\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1253 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1253                                                                                                                    : values(),angles()
 1254             {
@@ -554,11 +555,11 @@ Definition at line \fB1253\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1259                 }
 1260             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBcoordinates_nd\fP< \fBfloat\fP > && new_coordinates, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (\fBcoordinates_nd\fP< float > && new_coordinates, const vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1262\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1262 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1262                                                                                                               : values(),angles()
 1263             {
@@ -569,24 +570,24 @@ Definition at line \fB1262\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1268                 }
 1269             }
 .fi
-
-.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBstring\fP & init_coordinates_ndr)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "\fBscifir::coordinates_ndr\fP< float >::\fBcoordinates_ndr\fP (const string & init_coordinates_ndr)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB1271\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1271 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1271                                                                          : values(),angles()
 1272             {
 1273                 initialize_from_string(init_coordinates_ndr);
 1274             }
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::change_nd (\fBconst\fP vector< \fBfloat\fP > & new_values, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::change_nd (const vector< float > & new_values, const vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1361\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1361 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1362             {
 1363                 if (new_values\&.size() == (new_angles\&.size() + 1))
@@ -596,11 +597,11 @@ Definition at line \fB1361\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1367                 }
 1368             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::change_nd (\fBconst\fP vector< \fBfloat\fP > & new_values, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::change_nd (const vector< float > & new_values, const vector< float > & new_angles)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1348\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1348 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1349             {
 1350                 if (new_values\&.size() == (new_angles\&.size() + 1))
@@ -614,11 +615,11 @@ Definition at line \fB1348\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1358                 }
 1359             }
 .fi
-
-.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_cartesian_2d () const\fC [inline]\fP"
+.SS "string \fBscifir::coordinates_ndr\fP< float >::display_cartesian_2d () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1928\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1928 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1929             {
 1930                 if (values\&.size() == 2 and angles\&.size() == 1)
@@ -634,15 +635,15 @@ Definition at line \fB1928\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1940                 }
 1941                 else
 1942                 {
-1943                     return "[no\-2d]";
+1943                     return "[no-2d]";
 1944                 }
 1945             }
 .fi
-
-.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_cartesian_3d () const\fC [inline]\fP"
+.SS "string \fBscifir::coordinates_ndr\fP< float >::display_cartesian_3d () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1966\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1966 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1967             {
 1968                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -658,15 +659,15 @@ Definition at line \fB1966\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1978                 }
 1979                 else
 1980                 {
-1981                     return "[no\-3d]";
+1981                     return "[no-3d]";
 1982                 }
 1983             }
 .fi
-
-.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_cylindrical () const\fC [inline]\fP"
+.SS "string \fBscifir::coordinates_ndr\fP< float >::display_cylindrical () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1985\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1985 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1986             {
 1987                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -682,15 +683,15 @@ Definition at line \fB1985\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1997                 }
 1998                 else
 1999                 {
-2000                     return "[no\-3d]";
+2000                     return "[no-3d]";
 2001                 }
 2002             }
 .fi
-
-.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_geographical () const\fC [inline]\fP"
+.SS "string \fBscifir::coordinates_ndr\fP< float >::display_geographical () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB2023\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 2023 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 2024             {
 2025                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -706,15 +707,15 @@ Definition at line \fB2023\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 2035                 }
 2036                 else
 2037                 {
-2038                     return "[no\-3d]";
+2038                     return "[no-3d]";
 2039                 }
 2040             }
 .fi
-
-.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_polar () const\fC [inline]\fP"
+.SS "string \fBscifir::coordinates_ndr\fP< float >::display_polar () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1947\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1947 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1948             {
 1949                 if (values\&.size() == 2 and angles\&.size() == 1)
@@ -730,15 +731,15 @@ Definition at line \fB1947\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1959                 }
 1960                 else
 1961                 {
-1962                     return "[no\-2d]";
+1962                     return "[no-2d]";
 1963                 }
 1964             }
 .fi
-
-.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_spherical () const\fC [inline]\fP"
+.SS "string \fBscifir::coordinates_ndr\fP< float >::display_spherical () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB2004\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 2004 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 2005             {
 2006                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -754,15 +755,15 @@ Definition at line \fB2004\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 2016                 }
 2017                 else
 2018                 {
-2019                     return "[no\-3d]";
+2019                     return "[no-3d]";
 2020                 }
 2021             }
 .fi
-
-.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::distance_to_origin () const\fC [inline]\fP"
+.SS "float \fBscifir::coordinates_ndr\fP< float >::distance_to_origin () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1918\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1918 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1919             {
 1920                 float x_T = 0;
@@ -773,24 +774,24 @@ Definition at line \fB1918\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1925                 return std::sqrt(x_T);
 1926             }
 .fi
-
-.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_altitude () const\fC [inline]\fP"
+.SS "float \fBscifir::coordinates_ndr\fP< float >::get_altitude () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1514\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1514 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1515             {
 1516                 return float();
 1517             }
 .fi
-
-.SS "\fBangle\fP & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_angle (\fBunsigned\fP \fBint\fP i)\fC [inline]\fP"
+.SS "\fBangle\fP& \fBscifir::coordinates_ndr\fP< float >::get_angle (unsigned int i)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1444\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1444 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1445             {
-1446                 if (i < (values\&.size() \- 1))
+1446                 if (i < (values\&.size() - 1))
 1447                 {
 1448                     return angles[i];
 1449                 }
@@ -800,14 +801,14 @@ Definition at line \fB1444\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1453                 }
 1454             }
 .fi
-
-.SS "\fBconst\fP \fBangle\fP & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_angle (\fBunsigned\fP \fBint\fP i) const\fC [inline]\fP"
+.SS "const \fBangle\fP& \fBscifir::coordinates_ndr\fP< float >::get_angle (unsigned int i) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1432\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1432 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1433             {
-1434                 if (i < (values\&.size() \- 1))
+1434                 if (i < (values\&.size() - 1))
 1435                 {
 1436                     return angles[i];
 1437                 }
@@ -817,51 +818,51 @@ Definition at line \fB1432\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1441                 }
 1442             }
 .fi
-
-.SS "\fBconst\fP vector< \fBangle\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_angles () const\fC [inline]\fP"
+.SS "const vector<\fBangle\fP>& \fBscifir::coordinates_ndr\fP< float >::get_angles () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1407\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1407 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1408             {
 1409                 return angles;
 1410             }
 .fi
-
-.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_latitude () const\fC [inline]\fP"
+.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< float >::get_latitude () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1504\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1504 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1505             {
 1506                 return scifir::asin(float(values[2]/6317));
 1507             }
 .fi
-
-.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_longitude () const\fC [inline]\fP"
+.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< float >::get_longitude () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1509\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1509 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1510             {
 1511                 return scifir::atan(float(values[1]/values[0]));
 1512             }
 .fi
-
-.SS "\fBint\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_nd () const\fC [inline]\fP"
+.SS "int \fBscifir::coordinates_ndr\fP< float >::get_nd () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1343\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1343 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1344             {
 1345                 return values\&.size();
 1346             }
 .fi
-
-.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_p () const\fC [inline]\fP"
+.SS "float \fBscifir::coordinates_ndr\fP< float >::get_p () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1456\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1456 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1457             {
 1458                 if (get_nd() == 2 or get_nd() == 3)
@@ -874,11 +875,11 @@ Definition at line \fB1456\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1465                 }
 1466             }
 .fi
-
-.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_r () const\fC [inline]\fP"
+.SS "float \fBscifir::coordinates_ndr\fP< float >::get_r () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1480\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1480 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1481             {
 1482                 if (get_nd() == 2 or get_nd() == 3)
@@ -891,16 +892,16 @@ Definition at line \fB1480\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1489                 }
 1490             }
 .fi
-
-.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_spherical_phi () const\fC [inline]\fP"
+.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< float >::get_spherical_phi () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1492\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1492 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1493             {
 1494                 if (get_nd() == 3)
 1495                 {
-1496                     return angle(scifir::acos_grade(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
+1496                     return angle(scifir::acos_degree(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
 1497                 }
 1498                 else
 1499                 {
@@ -908,16 +909,16 @@ Definition at line \fB1492\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1501                 }
 1502             }
 .fi
-
-.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_spherical_theta () const\fC [inline]\fP"
+.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< float >::get_spherical_theta () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1468\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1468 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1469             {
 1470                 if (get_nd() == 2 or get_nd() == 3)
 1471                 {
-1472                     return angle(scifir::atan_grade(float(values[1]/values[0])));
+1472                     return angle(scifir::atan_degree(float(values[1]/values[0])));
 1473                 }
 1474                 else
 1475                 {
@@ -925,11 +926,11 @@ Definition at line \fB1468\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1477                 }
 1478             }
 .fi
-
-.SS "\fBfloat\fP & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_value (\fBunsigned\fP \fBint\fP i)\fC [inline]\fP"
+.SS "float& \fBscifir::coordinates_ndr\fP< float >::get_value (unsigned int i)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1395\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1395 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1396             {
 1397                 if (i < (values\&.size()))
@@ -942,11 +943,11 @@ Definition at line \fB1395\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1404                 }
 1405             }
 .fi
-
-.SS "\fBconst\fP \fBfloat\fP & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_value (\fBunsigned\fP \fBint\fP i) const\fC [inline]\fP"
+.SS "const float& \fBscifir::coordinates_ndr\fP< float >::get_value (unsigned int i) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1383\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1383 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1384             {
 1385                 if (i < (values\&.size()))
@@ -959,21 +960,21 @@ Definition at line \fB1383\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1392                 }
 1393             }
 .fi
-
-.SS "\fBconst\fP vector< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_values () const\fC [inline]\fP"
+.SS "const vector<float>& \fBscifir::coordinates_ndr\fP< float >::get_values () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1370\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1370 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1371             {
 1372                 return values;
 1373             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::initialize_from_string (\fBstring\fP init_coordinates_ndr)\fC [inline]\fP, \fC [private]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::initialize_from_string (string init_coordinates_ndr)\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line \fB2047\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 2047 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 2048             {
 2049                 vector<string> init_coordinates;
@@ -985,7 +986,7 @@ Definition at line \fB2047\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 2055                 }
 2056                 if (init_coordinates_ndr\&.back() == ')')
 2057                 {
-2058                     init_coordinates_ndr\&.erase(init_coordinates_ndr\&.size()\-1,1);
+2058                     init_coordinates_ndr\&.erase(init_coordinates_ndr\&.size()-1,1);
 2059                 }
 2060                 boost::split(init_coordinates,init_coordinates_ndr,boost::is_any_of(";"));
 2061                 if (init_coordinates\&.size() > 0)
@@ -1070,21 +1071,21 @@ Definition at line \fB2047\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 2140                 }
 2141             }
 .fi
-
-.SS "\fBbool\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::is_nd (\fBunsigned\fP \fBint\fP i) const\fC [inline]\fP"
+.SS "bool \fBscifir::coordinates_ndr\fP< float >::is_nd (unsigned int i) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB1338\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1338 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1339             {
 1340                 return values\&.size() == i;
 1341             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBconst\fP \fBdisplacement_2d\fP & x_displacement)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (const displacement_2d & x_displacement)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1834\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1834 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1835             {
 1836                 if (values\&.size() == 2 and angles\&.size() == 1)
@@ -1094,11 +1095,11 @@ Definition at line \fB1834\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1840                 }
 1841             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBconst\fP \fBdisplacement_3d\fP & x_displacement)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (const displacement_3d & x_displacement)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1861\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1861 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1862             {
 1863                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -1109,11 +1110,11 @@ Definition at line \fB1861\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1868                 }
 1869             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBconst\fP \fBdisplacement_nd\fP & x_displacement)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (const displacement_nd & x_displacement)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1901\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1901 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1902             {
 1903                 if (x_displacement\&.get_nd() == get_nd())
@@ -1125,11 +1126,11 @@ Definition at line \fB1901\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1909                 }
 1910             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (float new_p, const \fBangle\fP & new_theta)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1852\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1852 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1853             {
 1854                 if (values\&.size() == 2 and angles\&.size() == 1)
@@ -1139,11 +1140,11 @@ Definition at line \fB1852\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1858                 }
 1859             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta, \fBfloat\fP new_z)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (float new_p, const \fBangle\fP & new_theta, float new_z)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1881\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1881 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1882             {
 1883                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -1154,11 +1155,11 @@ Definition at line \fB1881\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1888                 }
 1889             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (float new_r, const \fBangle\fP & new_theta, const \fBangle\fP & new_phi)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1891\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1891 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1892             {
 1893                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -1169,22 +1170,22 @@ Definition at line \fB1891\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1898                 }
 1899             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_r, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (float new_r, const vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1912\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1912 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1913             {
 1914                 displacement_nd x_displacement = displacement_nd(new_r,"m",new_angles);
 1915                 move(x_displacement);
 1916             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_x)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (float new_x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1826\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1826 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1827             {
 1828                 if (values\&.size() == 1 and angles\&.size() == 0)
@@ -1193,11 +1194,11 @@ Definition at line \fB1826\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1831                 }
 1832             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (float new_x, float new_y)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1843\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1843 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1844             {
 1845                 if (values\&.size() == 2 and angles\&.size() == 1)
@@ -1207,11 +1208,11 @@ Definition at line \fB1843\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1849                 }
 1850             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_x, \fBfloat\fP new_y, \fBfloat\fP new_z)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::move (float new_x, float new_y, float new_z)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1871\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1871 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1872             {
 1873                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -1222,11 +1223,11 @@ Definition at line \fB1871\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1878                 }
 1879             }
 .fi
-
-.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > & x_coordinates)\fC [inline]\fP"
+.SS "\fBcoordinates_ndr\fP<float>& \fBscifir::coordinates_ndr\fP< float >::operator= (const \fBcoordinates_nd\fP< float > & x_coordinates)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1314\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1314 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1315             {
 1316                 if (x_coordinates\&.values\&.size() == (angles\&.size() + 1))
@@ -1236,11 +1237,11 @@ Definition at line \fB1314\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1320                 return *this;
 1321             }
 .fi
-
-.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > & x_coordinates)\fC [inline]\fP"
+.SS "\fBcoordinates_ndr\fP<float>& \fBscifir::coordinates_ndr\fP< float >::operator= (const \fBcoordinates_ndr\fP< float > & x_coordinates)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1276\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1276 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1277             {
 1278                 if (x_coordinates\&.values\&.size() == (x_coordinates\&.angles\&.size() + 1))
@@ -1251,11 +1252,11 @@ Definition at line \fB1276\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1283                 return *this;
 1284             }
 .fi
-
-.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > & x_point)\fC [inline]\fP"
+.SS "\fBcoordinates_ndr\fP<float>& \fBscifir::coordinates_ndr\fP< float >::operator= (const \fBpoint_nd\fP< float > & x_point)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1296\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1296 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1297             {
 1298                 if (x_point\&.values\&.size() == (angles\&.size() + 1))
@@ -1265,22 +1266,22 @@ Definition at line \fB1296\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1302                 return *this;
 1303             }
 .fi
-
-.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBstring\fP & init_coordinates_ndr)\fC [inline]\fP"
+.SS "\fBcoordinates_ndr\fP<float>& \fBscifir::coordinates_ndr\fP< float >::operator= (const string & init_coordinates_ndr)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1332\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1332 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1333             {
 1334                 initialize_from_string(init_coordinates_ndr);
 1335                 return *this;
 1336             }
 .fi
-
-.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBcoordinates_nd\fP< \fBfloat\fP > && x_coordinates)\fC [inline]\fP"
+.SS "\fBcoordinates_ndr\fP<float>& \fBscifir::coordinates_ndr\fP< float >::operator= (\fBcoordinates_nd\fP< float > && x_coordinates)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1323\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1323 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1324             {
 1325                 if (x_coordinates\&.values\&.size() == (angles\&.size() + 1))
@@ -1290,11 +1291,11 @@ Definition at line \fB1323\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1329                 return *this;
 1330             }
 .fi
-
-.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBcoordinates_ndr\fP< \fBfloat\fP > && x_coordinates)\fC [inline]\fP"
+.SS "\fBcoordinates_ndr\fP<float>& \fBscifir::coordinates_ndr\fP< float >::operator= (\fBcoordinates_ndr\fP< float > && x_coordinates)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1286\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1286 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1287             {
 1288                 if (x_coordinates\&.values\&.size() == (x_coordinates\&.angles\&.size() + 1))
@@ -1305,11 +1306,11 @@ Definition at line \fB1286\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1293                 return *this;
 1294             }
 .fi
-
-.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBpoint_nd\fP< \fBfloat\fP > && x_point)\fC [inline]\fP"
+.SS "\fBcoordinates_ndr\fP<float>& \fBscifir::coordinates_ndr\fP< float >::operator= (\fBpoint_nd\fP< float > && x_point)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1305\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1305 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1306             {
 1307                 if (x_point\&.values\&.size() == (angles\&.size() + 1))
@@ -1319,11 +1320,11 @@ Definition at line \fB1305\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1311                 return *this;
 1312             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::point_to (\fBdirection::name\fP x)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::point_to (\fBdirection::name\fP x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1519\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1519 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1520             {
 1521                 if (is_nd(1))
@@ -1332,14 +1333,14 @@ Definition at line \fB1519\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1524                     {
 1525                         if (values[0] > 0)
 1526                         {
-1527                             values[0] *= \-1;
+1527                             values[0] *= -1;
 1528                         }
 1529                     }
 1530                     else if(x == direction::RIGHT)
 1531                     {
 1532                         if (values[0] < 0)
 1533                         {
-1534                             values[0] *= \-1;
+1534                             values[0] *= -1;
 1535                         }
 1536                     }
 1537                 }
@@ -1513,27 +1514,27 @@ Definition at line \fB1519\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1705                 }
 1706             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::rotate_in_2d (\fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::rotate_in_2d (const \fBangle\fP & new_theta)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1787\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1787 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1788             {
 1789                 if (get_nd() == 2)
 1790                 {
 1791                     float x_coord = values[0];
 1792                     float y_coord = values[1];
-1793                     values[0] = x_coord * scifir::cos(new_theta) \- y_coord * scifir::sin(new_theta);
+1793                     values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
 1794                     values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
 1795                 }
 1796             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::rotate_in_3d (\fBint\fP axis, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::rotate_in_3d (int axis, const \fBangle\fP & new_theta)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1798\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1798 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1799             {
 1800                 if (get_nd() == 3)
@@ -1542,31 +1543,31 @@ Definition at line \fB1798\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1803                     {
 1804                         float y_coord = values[1];
 1805                         float z_coord = values[2];
-1806                         values[1] = y_coord * scifir::cos(new_theta) \- z_coord * scifir::sin(new_theta);
+1806                         values[1] = y_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
 1807                         values[2] = y_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
 1808                     }
 1809                     else if (axis == 2)
 1810                     {
 1811                         float x_coord = values[0];
 1812                         float z_coord = values[2];
-1813                         values[0] = x_coord * scifir::cos(new_theta) \- z_coord * scifir::sin(new_theta);
+1813                         values[0] = x_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
 1814                         values[2] = x_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
 1815                     }
 1816                     else if (axis == 3)
 1817                     {
 1818                         float x_coord = values[0];
 1819                         float y_coord = values[1];
-1820                         values[0] = x_coord * scifir::cos(new_theta) \- y_coord * scifir::sin(new_theta);
+1820                         values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
 1821                         values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
 1822                     }
 1823                 }
 1824             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_angles (\fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_angles (const vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1424\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1424 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1425             {
 1426                 if (values\&.size() == (new_angles\&.size() + 1))
@@ -1575,11 +1576,11 @@ Definition at line \fB1424\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1429                 }
 1430             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_angles (\fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_angles (const vector< float > & new_angles)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1412\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1412 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1413             {
 1414                 if (values\&.size() == (new_angles\&.size() + 1))
@@ -1592,11 +1593,11 @@ Definition at line \fB1412\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1421                 }
 1422             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBfloat\fP new_altitude)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_position (const \fBangle\fP & new_latitude, const \fBangle\fP & new_longitude, float new_altitude)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1770\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1770 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1771             {
 1772                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -1608,22 +1609,22 @@ Definition at line \fB1770\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1778                 }
 1779             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBconst\fP vector< \fBfloat\fP > & new_values)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_position (const vector< float > & new_values)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1781\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1781 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1782             {
 1783                 values\&.clear();
 1784                 values = new_values;
 1785             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_position (float new_p, const \fBangle\fP & new_theta)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1727\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1727 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1728             {
 1729                 if (values\&.size() == 2 and angles\&.size() == 1)
@@ -1634,11 +1635,11 @@ Definition at line \fB1727\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1734                 }
 1735             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta, \fBfloat\fP new_z)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_position (float new_p, const \fBangle\fP & new_theta, float new_z)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1748\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1748 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1749             {
 1750                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -1650,11 +1651,11 @@ Definition at line \fB1748\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1756                 }
 1757             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_position (float new_r, const \fBangle\fP & new_theta, const \fBangle\fP & new_phi)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1759\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1759 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1760             {
 1761                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -1666,11 +1667,11 @@ Definition at line \fB1759\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1767                 }
 1768             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_x)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_position (float new_x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1708\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1708 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1709             {
 1710                 if (values\&.size() == 1 and angles\&.size() == 0)
@@ -1680,11 +1681,11 @@ Definition at line \fB1708\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1714                 }
 1715             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_position (float new_x, float new_y)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1717\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1717 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1718             {
 1719                 if (values\&.size() == 2 and angles\&.size() == 1)
@@ -1695,11 +1696,11 @@ Definition at line \fB1717\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1724                 }
 1725             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_x, \fBfloat\fP new_y, \fBfloat\fP new_z)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_position (float new_x, float new_y, float new_z)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1737\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1737 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1738             {
 1739                 if (values\&.size() == 3 and angles\&.size() == 2)
@@ -1711,11 +1712,11 @@ Definition at line \fB1737\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1745                 }
 1746             }
 .fi
-
-.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_values (\fBconst\fP vector< \fBfloat\fP > & new_values)\fC [inline]\fP"
+.SS "void \fBscifir::coordinates_ndr\fP< float >::set_values (const vector< float > & new_values)\fC [inline]\fP"
 
 .PP
-Definition at line \fB1375\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+Definition at line 1375 of file coordinates_ndr\&.hpp\&.
+.PP
 .nf
 1376             {
 1377                 if (values\&.size() == new_values\&.size())
@@ -1724,21 +1725,20 @@ Definition at line \fB1375\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
 1380                 }
 1381             }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "vector<\fBangle\fP> \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::angles\fC [private]\fP"
+.SS "vector<\fBangle\fP> \fBscifir::coordinates_ndr\fP< float >::angles\fC [private]\fP"
 
 .PP
-Definition at line \fB2044\fP of file \fBcoordinates_ndr\&.hpp\fP\&.
-.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::no_value = 0\fC [static]\fP, \fC [private]\fP"
+Definition at line 2044 of file coordinates_ndr\&.hpp\&.
+.SS "float \fBscifir::coordinates_ndr\fP< float >::no_value = 0\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line \fB2045\fP of file \fBcoordinates_ndr\&.hpp\fP\&.
-.SS "vector<\fBfloat\fP> \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::values\fC [private]\fP"
+Definition at line 2045 of file coordinates_ndr\&.hpp\&.
+.SS "vector<float> \fBscifir::coordinates_ndr\fP< float >::values\fC [private]\fP"
 
 .PP
-Definition at line \fB2043\fP of file \fBcoordinates_ndr\&.hpp\fP\&.
+Definition at line 2043 of file coordinates_ndr\&.hpp\&.
 
 .SH "Author"
 .PP 

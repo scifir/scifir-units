@@ -1,737 +1,927 @@
-.TH "scifir::angle" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::angle" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-scifir::angle \- Class that allows to work with angles\&.  
+scifir::angle \- Class that allows to work with angles\&. Each angle sizes 4 bytes\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
 \fC#include <angle\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBtype\fP : int8_t { \fBDEGREE\fP, \fBRADIAN\fP }"
+.br
+.RI "Represents an type of angle, which can be a degree or a radian\&. The value of the angle inside the angle class is always stored in degrees, but can be get in radian if it's needed\&. "
+.in -1c
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBangle\fP ()"
 .br
+.RI "Default constructor of angle\&. The value is set to 0\&. "
 .ti -1c
-.RI "\fBangle\fP (\fBconst\fP \fBangle\fP &x)"
+.RI "\fBangle\fP (const \fBangle\fP &x)"
 .br
+.RI "Copy constructor of angle\&. The value is copied from the angle x\&. "
 .ti -1c
 .RI "\fBangle\fP (\fBangle\fP &&x)"
 .br
+.RI "Move constructor of angle\&. The value is moved from the angle x\&. "
 .ti -1c
-.RI "\fBangle\fP (\fBfloat\fP \fBnew_value\fP)"
+.RI "\fBangle\fP (float new_value, \fBangle::type\fP init_type=\fBangle::DEGREE\fP)"
 .br
 .ti -1c
-.RI "\fBangle\fP (\fBdouble\fP \fBnew_value\fP)"
+.RI "\fBangle\fP (double new_value, \fBangle::type\fP init_type=\fBangle::DEGREE\fP)"
 .br
 .ti -1c
-.RI "\fBangle\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP)"
+.RI "\fBangle\fP (long double new_value, \fBangle::type\fP init_type=\fBangle::DEGREE\fP)"
 .br
 .ti -1c
-.RI "\fBangle\fP (\fBint\fP \fBnew_value\fP)"
+.RI "\fBangle\fP (int new_value, \fBangle::type\fP init_type=\fBangle::DEGREE\fP)"
 .br
 .ti -1c
-.RI "\fBangle\fP (\fBconst\fP \fBstring\fP &\fBinit_angle\fP)"
+.RI "\fBangle\fP (const string &init_angle)"
 .br
+.RI "Constructor of angle\&. The value is initialized from the initialization string of angle, which uses the character 00B0 or the character 00BA to represent degrees\&. "
 .ti -1c
-.RI "\fBangle\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBangle\fP (const \fBscalar_unit\fP &x)"
 .br
+.RI "Constructor of angle\&. The value is initialized from the \fBscalar_unit\fP x, if the \fBscalar_unit\fP has empty dimensions\&. "
 .ti -1c
-.RI "\fBangle\fP & \fBoperator=\fP (\fBconst\fP \fBangle\fP &x)"
+.RI "\fBangle\fP & \fBoperator=\fP (const \fBangle\fP &x)"
 .br
+.RI "Copy assignment of angle\&. The value is copied to the value of angle x\&. "
 .ti -1c
 .RI "\fBangle\fP & \fBoperator=\fP (\fBangle\fP &&x)"
 .br
+.RI "Move assignment of angle\&. The value is moved from the value of angle x\&. "
 .ti -1c
-.RI "\fBangle\fP & \fBoperator=\fP (\fBfloat\fP \fBnew_value\fP)"
+.RI "\fBangle\fP & \fBoperator=\fP (float new_value)"
 .br
+.RI "Assignment operator\&. The value is copied from the float\&. "
 .ti -1c
-.RI "\fBangle\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_angle\fP)"
+.RI "\fBangle\fP & \fBoperator=\fP (const string &init_angle)"
 .br
+.RI "Assignment operator\&. An initialization string is used to set the value, which contains the character 00B0 or the character 00BA to represent degrees\&. "
 .ti -1c
-.RI "\fBangle\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBangle\fP & \fBoperator=\fP (const \fBscalar_unit\fP &x)"
 .br
+.RI "Assignment operator\&. The value of the angle is set to the value of the \fBscalar_unit\fP x, only if the \fBscalar_unit\fP has empty dimensions\&. "
 .ti -1c
-.RI "\fBoperator float\fP () \fBconst\fP"
+.RI "\fBoperator float\fP () const"
 .br
+.RI "Cast angle to a float\&. "
 .ti -1c
-.RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
+.RI "const float & \fBget_value\fP () const"
 .br
+.RI "Gets the value of the angle, in degrees\&. "
 .ti -1c
-.RI "\fBangle\fP \fBoperator+\fP (\fBconst\fP \fBangle\fP &x) \fBconst\fP"
+.RI "\fBangle\fP \fBoperator+\fP (const \fBangle\fP &x) const"
 .br
+.RI "Creates a new angle as the sum of other two\&. "
 .ti -1c
-.RI "\fBangle\fP \fBoperator\-\fP (\fBconst\fP \fBangle\fP &x) \fBconst\fP"
+.RI "\fBangle\fP \fBoperator\-\fP (const \fBangle\fP &x) const"
 .br
+.RI "Creates a new angle as the substraction of this angle and another angle x\&. "
 .ti -1c
-.RI "\fBangle\fP \fBoperator*\fP (\fBconst\fP \fBangle\fP &x) \fBconst\fP"
+.RI "\fBangle\fP \fBoperator*\fP (const \fBangle\fP &x) const"
 .br
+.RI "Creates a new angle as the multiplication of other two\&. "
 .ti -1c
-.RI "\fBangle\fP \fBoperator/\fP (\fBconst\fP \fBangle\fP &x) \fBconst\fP"
+.RI "\fBangle\fP \fBoperator/\fP (const \fBangle\fP &x) const"
 .br
+.RI "Creates a new angle as the division of this angle and another angle x\&. "
 .ti -1c
-.RI "\fBangle\fP \fBoperator^\fP (\fBconst\fP \fBangle\fP &x) \fBconst\fP"
+.RI "\fBangle\fP \fBoperator^\fP (const \fBangle\fP &x) const"
 .br
+.RI "Creates a new angle by powering the angle class with the value of another angle x\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBangle\fP &x)"
+.RI "void \fBoperator+=\fP (const \fBangle\fP &x)"
 .br
+.RI "Sums the value of the angle x to the value of this angle\&. The value is normalized after\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBangle\fP &x)"
+.RI "void \fBoperator\-=\fP (const \fBangle\fP &x)"
 .br
+.RI "Substract the value of the angle x to the value of this angle\&. The value is normalized after\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBoperator*=\fP (\fBconst\fP \fBangle\fP &x)"
+.RI "void \fBoperator*=\fP (const \fBangle\fP &x)"
 .br
+.RI "Multiplies the value of this angle with the value of angle x\&. The value is normalized after\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBoperator/=\fP (\fBconst\fP \fBangle\fP &x)"
+.RI "void \fBoperator/=\fP (const \fBangle\fP &x)"
 .br
+.RI "Divides the value of this angle with the value of angle x\&. The value is normalized after\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBoperator^=\fP (\fBconst\fP \fBangle\fP &x)"
+.RI "void \fBoperator^=\fP (const \fBangle\fP &x)"
 .br
+.RI "Powers the value of this angle with the value of angle x\&. The value is normalized after\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator=\fP (T \fBnew_value\fP)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator=\fP (T new_value)"
 .br
+.RI "Sets the value to the value of some numeric type, casting it to a float first, and normalizing the value after that\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator+\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator+\fP (T x) const"
 .br
+.RI "Creates a new angle as the sum of a numeric type with the value of this angle\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator\-\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator\-\fP (T x) const"
 .br
+.RI "Creates a new angle as the substraction of the value of this angle with a numeric type\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator*\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator*\fP (T x) const"
 .br
+.RI "Creates a new angle as the multiplication of a numeric type with the value of this angle\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator/\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator/\fP (T x) const"
 .br
+.RI "Creates a new angle as the division of a numeric type with the value of this angle\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator^\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator^\fP (T x) const"
 .br
+.RI "Creates a new angle as the power of the value of this angle with a numeric type\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator+=\fP (T x)"
 .br
+.RI "Sums a numeric type to the value of this angle\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator\-=\fP (T x)"
 .br
+.RI "Substracts a numeric type to the value of this angle\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator*=\fP (T x)"
 .br
+.RI "Multiplies a numeric type to the value of this angle\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator/=\fP (T x)"
 .br
+.RI "Divides a numeric type to the value of this angle\&. "
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator^=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator^=\fP (T x)"
 .br
+.RI "Powers a numeric type to the value of this angle\&. "
 .ti -1c
 .RI "\fBangle\fP & \fBoperator++\fP ()"
 .br
+.RI "Increments the value by one\&. "
 .ti -1c
-.RI "\fBangle\fP \fBoperator++\fP (\fBint\fP)"
+.RI "\fBangle\fP \fBoperator++\fP (int)"
 .br
+.RI "Increments the value by one\&. "
 .ti -1c
 .RI "\fBangle\fP & \fBoperator\-\-\fP ()"
 .br
+.RI "Decrements the value by one\&. "
 .ti -1c
-.RI "\fBangle\fP \fBoperator\-\-\fP (\fBint\fP)"
+.RI "\fBangle\fP \fBoperator\-\-\fP (int)"
 .br
+.RI "Decrements the value by one\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBinvert\fP ()"
+.RI "void \fBinvert\fP ()"
 .br
+.RI "Inverts the angle to the opposite direction in a 2D plane, which is to add 180 degrees\&. The value is normalized after\&. "
 .ti -1c
-.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
+.RI "string \fBdisplay\fP (int number_of_decimals=2) const"
 .br
+.RI "Creates an string from the angle, with the value and the degrees symbol\&. "
 .ti -1c
-.RI "\fBfloat\fP \fBget_grade\fP () \fBconst\fP"
+.RI "float \fBget_degree\fP () const"
 .br
+.RI "Gets the value of the angle in degrees\&. "
 .ti -1c
-.RI "\fBfloat\fP \fBget_radian\fP () \fBconst\fP"
+.RI "float \fBget_radian\fP () const"
 .br
+.RI "Gets the value of the angle in radians\&. "
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBvoid\fP \fBnormalize_value\fP ()"
+.RI "void \fBnormalize_value\fP ()"
 .br
+.RI "\fBInternal function\fP\&. Normalizes the value, which means to maintain the same angle within 0 and 360\&. If the value is lower or greather it gets converted to their equivalent counterpart within this range\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_angle\fP)"
+.RI "void \fBinitialize_from_string\fP (string init_angle)"
 .br
+.RI "\fBInternal function\fP\&. Sets the value of the angle to a new value using the initialization string of angles\&. "
 .in -1c
 .SS "Private Attributes"
 
 .in +1c
 .ti -1c
-.RI "\fBfloat\fP \fBvalue\fP"
+.RI "float \fBvalue\fP"
 .br
-.RI "Value of the angle\&. It is stored always in grades\&. "
+.RI "Value of the angle\&. It is stored in degrees\&. "
 .in -1c
 .SH "Detailed Description"
 .PP 
-Class that allows to work with angles\&. 
+Class that allows to work with angles\&. Each angle sizes 4 bytes\&. 
 
-angle is a class that allows to work with angles, more in grades than in radians\&. The value of the angle is always stored inside the class in grades, and it can be get in radians with the to_radian() function\&. 
+angle is a class that allows to work with angles, more in degrees than in radians\&. The value of the angle is always stored inside the class in degrees, and it can be get in radians with the to_radian() function\&. 
 .PP
-Definition at line \fB27\fP of file \fBangle\&.hpp\fP\&.
+Definition at line 27 of file angle\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBscifir::angle::type\fP : int8_t"
+
+.PP
+Represents an type of angle, which can be a degree or a radian\&. The value of the angle inside the angle class is always stored in degrees, but can be get in radian if it's needed\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDEGREE \fP\fP
+The angle is in DEGREE\&. A degree is defined as a 1/360 part of a circle\&. The entire circle corresponds to 360 degrees\&. 
+.TP
+\fB\fIRADIAN \fP\fP
+The angle is in RADIAN\&. A radian is defined as the length of the perimeter of the circle that conforms an angle\&. 
+.PP
+Definition at line 30 of file angle\&.hpp\&.
+.PP
+.nf
+30 : int8_t {DEGREE,RADIAN};
+.fi
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "scifir::angle::angle ()"
+.SS "angle::angle ()"
 
 .PP
-Definition at line \fB18\fP of file \fBangle\&.cpp\fP\&..PP
+Default constructor of angle\&. The value is set to 0\&. 
+.PP
+Definition at line 18 of file angle\&.cpp\&.
+.PP
 .nf
-18                  : value(0)
+18                  : value(0\&.0f)
 19     {}
 .fi
-
-.SS "scifir::angle::angle (\fBconst\fP \fBangle\fP & x)"
+.SS "angle::angle (const \fBangle\fP & x)"
 
 .PP
-Definition at line \fB21\fP of file \fBangle\&.cpp\fP\&..PP
+Copy constructor of angle\&. The value is copied from the angle x\&. 
+.PP
+Definition at line 21 of file angle\&.cpp\&.
+.PP
 .nf
 21                                : value(x\&.get_value())
 22     {}
 .fi
-
-.SS "scifir::angle::angle (\fBangle\fP && x)"
+.SS "angle::angle (\fBangle\fP && x)"
 
 .PP
-Definition at line \fB24\fP of file \fBangle\&.cpp\fP\&..PP
+Move constructor of angle\&. The value is moved from the angle x\&. 
+.PP
+Definition at line 24 of file angle\&.cpp\&.
+.PP
 .nf
 24                           : value(std::move(x\&.get_value()))
 25     {}
 .fi
-
-.SS "scifir::angle::angle (\fBfloat\fP new_value)\fC [explicit]\fP"
+.SS "scifir::angle::angle (float new_value, \fBangle::type\fP init_type = \fC\fBangle::DEGREE\fP\fP)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB27\fP of file \fBangle\&.cpp\fP\&..PP
+Definition at line 27 of file angle\&.cpp\&.
+.PP
 .nf
-27                                 : value(new_value)
+27                                                     : value()
 28     {
-29         normalize_value();
-30     }
+29         if (init_type == angle::DEGREE)
+30         {
+31             value = new_value;
+32         }
+33         else if (init_type == angle::RADIAN)
+34         {
+35             value = radian_to_degree(new_value);
+36         }
+37         normalize_value();
+38     }
 .fi
-
-.SS "scifir::angle::angle (\fBdouble\fP new_value)\fC [explicit]\fP"
+.SS "scifir::angle::angle (double new_value, \fBangle::type\fP init_type = \fC\fBangle::DEGREE\fP\fP)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB32\fP of file \fBangle\&.cpp\fP\&..PP
+Definition at line 40 of file angle\&.cpp\&.
+.PP
 .nf
-32                                  : value(float(new_value))
-33     {
-34         normalize_value();
-35     }
+40                                                      : value()
+41     {
+42         if (init_type == angle::DEGREE)
+43         {
+44             value = float(new_value);
+45         }
+46         else if (init_type == angle::RADIAN)
+47         {
+48             value = radian_to_degree(float(new_value));
+49         }
+50         normalize_value();
+51     }
 .fi
-
-.SS "scifir::angle::angle (\fBlong\fP \fBdouble\fP new_value)\fC [explicit]\fP"
+.SS "scifir::angle::angle (long double new_value, \fBangle::type\fP init_type = \fC\fBangle::DEGREE\fP\fP)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB37\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-37                                       : value(float(new_value))
-38     {
-39         normalize_value();
-40     }
-.fi
-
-.SS "scifir::angle::angle (\fBint\fP new_value)\fC [explicit]\fP"
-
+Definition at line 53 of file angle\&.cpp\&.
 .PP
-Definition at line \fB42\fP of file \fBangle\&.cpp\fP\&..PP
 .nf
-42                               : value(float(new_value))
-43     {
-44         normalize_value();
-45     }
-.fi
-
-.SS "scifir::angle::angle (\fBconst\fP \fBstring\fP & init_angle)\fC [explicit]\fP"
-
-.PP
-Definition at line \fB47\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-47                                          : value()
-48     {
-49         initialize_from_string(init_angle);
-50     }
-.fi
-
-.SS "scifir::angle::angle (\fBconst\fP \fBscalar_unit\fP & x)\fC [explicit]\fP"
-
-.PP
-Definition at line \fB52\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-53     {
-54         if (x\&.has_empty_dimensions())
-55         {
-56             value = float(x);
-57             normalize_value();
+53                                                           : value()
+54     {
+55         if (init_type == angle::DEGREE)
+56         {
+57             value = float(new_value);
 58         }
-59         else
+59         else if (init_type == angle::RADIAN)
 60         {
-61             cerr << "An angle cannot be initialized with dimensions" << endl;
-62             value = 0;
-63         }
+61             value = radian_to_degree(float(new_value));
+62         }
+63         normalize_value();
 64     }
 .fi
+.SS "scifir::angle::angle (int new_value, \fBangle::type\fP init_type = \fC\fBangle::DEGREE\fP\fP)\fC [explicit]\fP"
 
+.PP
+Definition at line 66 of file angle\&.cpp\&.
+.PP
+.nf
+66                                                   : value()
+67     {
+68         if (init_type == angle::DEGREE)
+69         {
+70             value = float(new_value);
+71         }
+72         else if (init_type == angle::RADIAN)
+73         {
+74             value = radian_to_degree(float(new_value));
+75         }
+76         normalize_value();
+77     }
+.fi
+.SS "angle::angle (const string & init_angle)\fC [explicit]\fP"
+
+.PP
+Constructor of angle\&. The value is initialized from the initialization string of angle, which uses the character 00B0 or the character 00BA to represent degrees\&. 
+.PP
+Definition at line 79 of file angle\&.cpp\&.
+.PP
+.nf
+79                                          : value()
+80     {
+81         initialize_from_string(init_angle);
+82     }
+.fi
+.SS "angle::angle (const \fBscalar_unit\fP & x)\fC [explicit]\fP"
+
+.PP
+Constructor of angle\&. The value is initialized from the \fBscalar_unit\fP x, if the \fBscalar_unit\fP has empty dimensions\&. 
+.PP
+Definition at line 84 of file angle\&.cpp\&.
+.PP
+.nf
+85     {
+86         if (x\&.has_empty_dimensions())
+87         {
+88             value = float(x);
+89             normalize_value();
+90         }
+91         else
+92         {
+93             cerr << "An angle cannot be initialized with dimensions" << endl;
+94             value = 0\&.0f;
+95         }
+96     }
+.fi
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBstring\fP scifir::angle::display (\fBint\fP number_of_decimals = \fC2\fP) const"
+.SS "string angle::display (int number_of_decimals = \fC2\fP) const"
 
 .PP
-Definition at line \fB192\fP of file \fBangle\&.cpp\fP\&..PP
+Creates an string from the angle, with the value and the degrees symbol\&. 
+.PP
+Definition at line 224 of file angle\&.cpp\&.
+.PP
+.nf
+225     {
+226         ostringstream output;
+227         if (get_value() == -0)
+228         {
+229             output << 0;
+230         }
+231         else
+232         {
+233             output << display_float(get_value(),number_of_decimals);
+234         }
+235         output << "\u00B0";
+236         return output\&.str();
+237     }
+.fi
+.SS "float angle::get_degree () const\fC [inline]\fP"
+
+.PP
+Gets the value of the angle in degrees\&. 
+.PP
+Definition at line 150 of file angle\&.hpp\&.
+.PP
+.nf
+151             {
+152                 return value;
+153             }
+.fi
+.SS "float angle::get_radian () const\fC [inline]\fP"
+
+.PP
+Gets the value of the angle in radians\&. 
+.PP
+Definition at line 155 of file angle\&.hpp\&.
+.PP
+.nf
+156             {
+157                 return degree_to_radian(value);
+158             }
+.fi
+.SS "const float & angle::get_value () const\fC [inline]\fP"
+
+.PP
+Gets the value of the angle, in degrees\&. 
+.PP
+Definition at line 53 of file angle\&.hpp\&.
+.PP
+.nf
+54             {
+55                 return value;
+56             }
+.fi
+.SS "void angle::initialize_from_string (string init_angle)\fC [private]\fP"
+
+.PP
+\fBInternal function\fP\&. Sets the value of the angle to a new value using the initialization string of angles\&. 
+.PP
+Definition at line 260 of file angle\&.cpp\&.
+.PP
+.nf
+261     {
+262         icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle\&.c_str());
+263         if (init_angle_unicode\&.endsWith(0x00B0) or init_angle_unicode\&.endsWith(0x00BA))
+264         {
+265             init_angle_unicode = init_angle_unicode\&.tempSubString(0,init_angle_unicode\&.countChar32() - 1);
+266         }
+267         init_angle\&.clear();
+268         init_angle_unicode\&.toUTF8String(init_angle);
+269         value = stof(init_angle);
+270         normalize_value();
+271     }
+.fi
+.SS "void angle::invert ()"
+
+.PP
+Inverts the angle to the opposite direction in a 2D plane, which is to add 180 degrees\&. The value is normalized after\&. 
+.PP
+Definition at line 218 of file angle\&.cpp\&.
+.PP
+.nf
+219     {
+220         value += 180\&.0f;
+221         normalize_value();
+222     }
+.fi
+.SS "void angle::normalize_value ()\fC [private]\fP"
+
+.PP
+\fBInternal function\fP\&. Normalizes the value, which means to maintain the same angle within 0 and 360\&. If the value is lower or greather it gets converted to their equivalent counterpart within this range\&. 
+.PP
+Definition at line 239 of file angle\&.cpp\&.
+.PP
+.nf
+240     {
+241         if(isfinite(value))
+242         {
+243             if (value >= 360\&.0f)
+244             {
+245                 while (value >= 360\&.0f)
+246                 {
+247                     value -= 360\&.0f;
+248                 }
+249             }
+250             else if (value < 0\&.0f)
+251             {
+252                 while (value < 0\&.0f)
+253                 {
+254                     value += 360\&.0f;
+255                 }
+256             }
+257         }
+258     }
+.fi
+.SS "angle::operator float () const\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Cast angle to a float\&. 
+.PP
+Definition at line 48 of file angle\&.hpp\&.
+.PP
+.nf
+49             {
+50                 return float(value);
+51             }
+.fi
+.SS "\fBangle\fP angle::operator* (const \fBangle\fP & x) const"
+
+.PP
+Creates a new angle as the multiplication of other two\&. 
+.PP
+Definition at line 147 of file angle\&.cpp\&.
+.PP
+.nf
+148     {
+149         return angle(value * x\&.get_value());
+150     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP angle::operator* (T x) const\fC [inline]\fP"
+
+.PP
+Creates a new angle as the multiplication of a numeric type with the value of this angle\&. 
+.PP
+Definition at line 89 of file angle\&.hpp\&.
+.PP
+.nf
+90             {
+91                 return angle(value * x);
+92             }
+.fi
+.SS "void angle::operator*= (const \fBangle\fP & x)"
+
+.PP
+Multiplies the value of this angle with the value of angle x\&. The value is normalized after\&. 
+.PP
+Definition at line 174 of file angle\&.cpp\&.
+.PP
+.nf
+175     {
+176         value *= x\&.get_value();
+177         normalize_value();
+178     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void angle::operator*= (T x)\fC [inline]\fP"
+
+.PP
+Multiplies a numeric type to the value of this angle\&. 
+.PP
+Definition at line 121 of file angle\&.hpp\&.
+.PP
+.nf
+122             {
+123                 value *= x;
+124                 normalize_value();
+125             }
+.fi
+.SS "\fBangle\fP angle::operator+ (const \fBangle\fP & x) const"
+
+.PP
+Creates a new angle as the sum of other two\&. 
+.PP
+Definition at line 137 of file angle\&.cpp\&.
+.PP
+.nf
+138     {
+139         return angle(value + x\&.get_value());
+140     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP angle::operator+ (T x) const\fC [inline]\fP"
+
+.PP
+Creates a new angle as the sum of a numeric type with the value of this angle\&. 
+.PP
+Definition at line 77 of file angle\&.hpp\&.
+.PP
+.nf
+78             {
+79                 return angle(value + x);
+80             }
+.fi
+.SS "\fBangle\fP & angle::operator++ ()"
+
+.PP
+Increments the value by one\&. 
+.PP
+Definition at line 192 of file angle\&.cpp\&.
+.PP
 .nf
 193     {
-194         ostringstream output;
-195         if (get_value() == \-0)
-196         {
-197             output << 0;
-198         }
-199         else
-200         {
-201             output << display_float(get_value(),number_of_decimals);
-202         }
-203         output << "\\u00B0";
-204         return output\&.str();
-205     }
+194         value++;
+195         return *this;
+196     }
 .fi
-
-.SS "\fBfloat\fP scifir::angle::get_grade () const\fC [inline]\fP"
+.SS "\fBangle\fP angle::operator++ (int)"
 
 .PP
-Definition at line \fB148\fP of file \fBangle\&.hpp\fP\&..PP
+Increments the value by one\&. 
+.PP
+Definition at line 198 of file angle\&.cpp\&.
+.PP
 .nf
-149             {
-150                 return value;
-151             }
+199     {
+200         angle tmp = angle(*this);
+201         operator++();
+202         return tmp;
+203     }
 .fi
-
-.SS "\fBfloat\fP scifir::angle::get_radian () const\fC [inline]\fP"
+.SS "void angle::operator+= (const \fBangle\fP & x)"
 
 .PP
-Definition at line \fB153\fP of file \fBangle\&.hpp\fP\&..PP
+Sums the value of the angle x to the value of this angle\&. The value is normalized after\&. 
+.PP
+Definition at line 162 of file angle\&.cpp\&.
+.PP
 .nf
-154             {
-155                 return grade_to_radian(value);
-156             }
+163     {
+164         value += x\&.get_value();
+165         normalize_value();
+166     }
 .fi
-
-.SS "\fBconst\fP \fBfloat\fP & scifir::angle::get_value () const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void angle::operator+= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB51\fP of file \fBangle\&.hpp\fP\&..PP
+Sums a numeric type to the value of this angle\&. 
+.PP
+Definition at line 107 of file angle\&.hpp\&.
+.PP
 .nf
-52             {
-53                 return value;
-54             }
+108             {
+109                 value += x;
+110                 normalize_value();
+111             }
 .fi
-
-.SS "\fBvoid\fP scifir::angle::initialize_from_string (\fBstring\fP init_angle)\fC [private]\fP"
+.SS "\fBangle\fP angle::operator\- (const \fBangle\fP & x) const"
 
 .PP
-Definition at line \fB228\fP of file \fBangle\&.cpp\fP\&..PP
+Creates a new angle as the substraction of this angle and another angle x\&. 
+.PP
+Definition at line 142 of file angle\&.cpp\&.
+.PP
 .nf
-229     {
-230         icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle\&.c_str());
-231         if (init_angle_unicode\&.endsWith(0x00B0) or init_angle_unicode\&.endsWith(0x00BA))
-232         {
-233             init_angle_unicode = init_angle_unicode\&.tempSubString(0,init_angle_unicode\&.countChar32() \- 1);
-234         }
-235         init_angle\&.clear();
-236         init_angle_unicode\&.toUTF8String(init_angle);
-237         value = stof(init_angle);
-238         normalize_value();
-239     }
+143     {
+144         return angle(value - x\&.get_value());
+145     }
 .fi
-
-.SS "\fBvoid\fP scifir::angle::invert ()"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP angle::operator\- (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB186\fP of file \fBangle\&.cpp\fP\&..PP
+Creates a new angle as the substraction of the value of this angle with a numeric type\&. 
+.PP
+Definition at line 83 of file angle\&.hpp\&.
+.PP
+.nf
+84             {
+85                 return angle(value - x);
+86             }
+.fi
+.SS "\fBangle\fP & angle::operator\-\- ()"
+
+.PP
+Decrements the value by one\&. 
+.PP
+Definition at line 205 of file angle\&.cpp\&.
+.PP
+.nf
+206     {
+207         value--;
+208         return *this;
+209     }
+.fi
+.SS "\fBangle\fP angle::operator\-\- (int)"
+
+.PP
+Decrements the value by one\&. 
+.PP
+Definition at line 211 of file angle\&.cpp\&.
+.PP
+.nf
+212     {
+213         angle tmp = angle(*this);
+214         operator\-\-();
+215         return tmp;
+216     }
+.fi
+.SS "void angle::operator\-= (const \fBangle\fP & x)"
+
+.PP
+Substract the value of the angle x to the value of this angle\&. The value is normalized after\&. 
+.PP
+Definition at line 168 of file angle\&.cpp\&.
+.PP
+.nf
+169     {
+170         value -= x\&.get_value();
+171         normalize_value();
+172     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void angle::operator\-= (T x)\fC [inline]\fP"
+
+.PP
+Substracts a numeric type to the value of this angle\&. 
+.PP
+Definition at line 114 of file angle\&.hpp\&.
+.PP
+.nf
+115             {
+116                 value -= x;
+117                 normalize_value();
+118             }
+.fi
+.SS "\fBangle\fP angle::operator/ (const \fBangle\fP & x) const"
+
+.PP
+Creates a new angle as the division of this angle and another angle x\&. 
+.PP
+Definition at line 152 of file angle\&.cpp\&.
+.PP
+.nf
+153     {
+154         return angle(value / x\&.get_value());
+155     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP angle::operator/ (T x) const\fC [inline]\fP"
+
+.PP
+Creates a new angle as the division of a numeric type with the value of this angle\&. 
+.PP
+Definition at line 95 of file angle\&.hpp\&.
+.PP
+.nf
+96             {
+97                 return angle(value / x);
+98             }
+.fi
+.SS "void angle::operator/= (const \fBangle\fP & x)"
+
+.PP
+Divides the value of this angle with the value of angle x\&. The value is normalized after\&. 
+.PP
+Definition at line 180 of file angle\&.cpp\&.
+.PP
+.nf
+181     {
+182         value /= x\&.get_value();
+183         normalize_value();
+184     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void angle::operator/= (T x)\fC [inline]\fP"
+
+.PP
+Divides a numeric type to the value of this angle\&. 
+.PP
+Definition at line 128 of file angle\&.hpp\&.
+.PP
+.nf
+129             {
+130                 value /= x;
+131                 normalize_value();
+132             }
+.fi
+.SS "\fBangle\fP & angle::operator= (\fBangle\fP && x)"
+
+.PP
+Move assignment of angle\&. The value is moved from the value of angle x\&. 
+.PP
+Definition at line 104 of file angle\&.cpp\&.
+.PP
+.nf
+105     {
+106         value = std::move(x\&.get_value());
+107         return *this;
+108     }
+.fi
+.SS "\fBangle\fP & angle::operator= (const \fBangle\fP & x)"
+
+.PP
+Copy assignment of angle\&. The value is copied to the value of angle x\&. 
+.PP
+Definition at line 98 of file angle\&.cpp\&.
+.PP
+.nf
+99     {
+100         value = x\&.get_value();
+101         return *this;
+102     }
+.fi
+.SS "\fBangle\fP & angle::operator= (const \fBscalar_unit\fP & x)"
+
+.PP
+Assignment operator\&. The value of the angle is set to the value of the \fBscalar_unit\fP x, only if the \fBscalar_unit\fP has empty dimensions\&. 
+.PP
+Definition at line 123 of file angle\&.cpp\&.
+.PP
+.nf
+124     {
+125         if (x\&.has_empty_dimensions())
+126         {
+127             value = x\&.get_value();
+128             normalize_value();
+129         }
+130         else
+131         {
+132             cerr << "An angle cannot be initialized with dimensions" << endl;
+133         }
+134         return *this;
+135     }
+.fi
+.SS "\fBangle\fP & angle::operator= (const string & init_angle)"
+
+.PP
+Assignment operator\&. An initialization string is used to set the value, which contains the character 00B0 or the character 00BA to represent degrees\&. 
+.PP
+Definition at line 117 of file angle\&.cpp\&.
+.PP
+.nf
+118     {
+119         initialize_from_string(init_angle);
+120         return *this;
+121     }
+.fi
+.SS "\fBangle\fP & angle::operator= (float new_value)"
+
+.PP
+Assignment operator\&. The value is copied from the float\&. 
+.PP
+Definition at line 110 of file angle\&.cpp\&.
+.PP
+.nf
+111     {
+112         value = new_value;
+113         normalize_value();
+114         return *this;
+115     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void angle::operator= (T new_value)\fC [inline]\fP"
+
+.PP
+Sets the value to the value of some numeric type, casting it to a float first, and normalizing the value after that\&. 
+.PP
+Definition at line 70 of file angle\&.hpp\&.
+.PP
+.nf
+71             {
+72                 value = float(new_value);
+73                 normalize_value();
+74             }
+.fi
+.SS "\fBangle\fP angle::operator^ (const \fBangle\fP & x) const"
+
+.PP
+Creates a new angle by powering the angle class with the value of another angle x\&. 
+.PP
+Definition at line 157 of file angle\&.cpp\&.
+.PP
+.nf
+158     {
+159         return angle(std::pow(value,x\&.get_value()));
+160     }
+.fi
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP angle::operator^ (T x) const\fC [inline]\fP"
+
+.PP
+Creates a new angle as the power of the value of this angle with a numeric type\&. 
+.PP
+Definition at line 101 of file angle\&.hpp\&.
+.PP
+.nf
+102             {
+103                 return angle(std::pow(value, x));
+104             }
+.fi
+.SS "void angle::operator^= (const \fBangle\fP & x)"
+
+.PP
+Powers the value of this angle with the value of angle x\&. The value is normalized after\&. 
+.PP
+Definition at line 186 of file angle\&.cpp\&.
+.PP
 .nf
 187     {
-188         value += 180;
+188         value = std::pow(value,x\&.get_value());
 189         normalize_value();
 190     }
 .fi
-
-.SS "\fBvoid\fP scifir::angle::normalize_value ()\fC [private]\fP"
-
-.PP
-Definition at line \fB207\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-208     {
-209         if(isfinite(value))
-210         {
-211             if (value >= 360\&.0f)
-212             {
-213                 while (value >= 360\&.0f)
-214                 {
-215                     value \-= 360\&.0f;
-216                 }
-217             }
-218             else if (value < 0\&.0f)
-219             {
-220                 while (value < 0\&.0f)
-221                 {
-222                     value += 360\&.0f;
-223                 }
-224             }
-225         }
-226     }
-.fi
-
-.SS "scifir::angle::operator \fBfloat\fP () const\fC [inline]\fP, \fC [explicit]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void angle::operator^= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB46\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-47             {
-48                 return float(value);
-49             }
-.fi
-
-.SS "\fBangle\fP scifir::angle::operator* (\fBconst\fP \fBangle\fP & x) const"
-
+Powers a numeric type to the value of this angle\&. 
 .PP
-Definition at line \fB115\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-116     {
-117         return angle(value * x\&.get_value());
-118     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP scifir::angle::operator* (T x) const\fC [inline]\fP"
-
+Definition at line 135 of file angle\&.hpp\&.
 .PP
-Definition at line \fB87\fP of file \fBangle\&.hpp\fP\&..PP
 .nf
-88             {
-89                 return angle(value * x);
-90             }
+136             {
+137                 value = std::pow(value, x);
+138                 normalize_value();
+139             }
 .fi
-
-.SS "\fBvoid\fP scifir::angle::operator*= (\fBconst\fP \fBangle\fP & x)"
-
-.PP
-Definition at line \fB142\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-143     {
-144         value *= x\&.get_value();
-145         normalize_value();
-146     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::angle::operator*= (T x)\fC [inline]\fP"
-
-.PP
-Definition at line \fB119\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-120             {
-121                 value *= x;
-122                 normalize_value();
-123             }
-.fi
-
-.SS "\fBangle\fP scifir::angle::operator+ (\fBconst\fP \fBangle\fP & x) const"
-
-.PP
-Definition at line \fB105\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-106     {
-107         return angle(value + x\&.get_value());
-108     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP scifir::angle::operator+ (T x) const\fC [inline]\fP"
-
-.PP
-Definition at line \fB75\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-76             {
-77                 return angle(value + x);
-78             }
-.fi
-
-.SS "\fBangle\fP & scifir::angle::operator++ ()"
-
-.PP
-Definition at line \fB160\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-161     {
-162         value++;
-163         return *this;
-164     }
-.fi
-
-.SS "\fBangle\fP scifir::angle::operator++ (\fBint\fP)"
-
-.PP
-Definition at line \fB166\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-167     {
-168         angle tmp = angle(*this);
-169         operator++();
-170         return tmp;
-171     }
-.fi
-
-.SS "\fBvoid\fP scifir::angle::operator+= (\fBconst\fP \fBangle\fP & x)"
-
-.PP
-Definition at line \fB130\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-131     {
-132         value += x\&.get_value();
-133         normalize_value();
-134     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::angle::operator+= (T x)\fC [inline]\fP"
-
-.PP
-Definition at line \fB105\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-106             {
-107                 value += x;
-108                 normalize_value();
-109             }
-.fi
-
-.SS "\fBangle\fP scifir::angle::operator\- (\fBconst\fP \fBangle\fP & x) const"
-
-.PP
-Definition at line \fB110\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-111     {
-112         return angle(value \- x\&.get_value());
-113     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP scifir::angle::operator\- (T x) const\fC [inline]\fP"
-
-.PP
-Definition at line \fB81\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-82             {
-83                 return angle(value \- x);
-84             }
-.fi
-
-.SS "\fBangle\fP & scifir::angle::operator\-\- ()"
-
-.PP
-Definition at line \fB173\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-174     {
-175         value\-\-;
-176         return *this;
-177     }
-.fi
-
-.SS "\fBangle\fP scifir::angle::operator\-\- (\fBint\fP)"
-
-.PP
-Definition at line \fB179\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-180     {
-181         angle tmp = angle(*this);
-182         operator\-\-();
-183         return tmp;
-184     }
-.fi
-
-.SS "\fBvoid\fP scifir::angle::operator\-= (\fBconst\fP \fBangle\fP & x)"
-
-.PP
-Definition at line \fB136\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-137     {
-138         value \-= x\&.get_value();
-139         normalize_value();
-140     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::angle::operator\-= (T x)\fC [inline]\fP"
-
-.PP
-Definition at line \fB112\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-113             {
-114                 value \-= x;
-115                 normalize_value();
-116             }
-.fi
-
-.SS "\fBangle\fP scifir::angle::operator/ (\fBconst\fP \fBangle\fP & x) const"
-
-.PP
-Definition at line \fB120\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-121     {
-122         return angle(value / x\&.get_value());
-123     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP scifir::angle::operator/ (T x) const\fC [inline]\fP"
-
-.PP
-Definition at line \fB93\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-94             {
-95                 return angle(value / x);
-96             }
-.fi
-
-.SS "\fBvoid\fP scifir::angle::operator/= (\fBconst\fP \fBangle\fP & x)"
-
-.PP
-Definition at line \fB148\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-149     {
-150         value /= x\&.get_value();
-151         normalize_value();
-152     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::angle::operator/= (T x)\fC [inline]\fP"
-
-.PP
-Definition at line \fB126\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-127             {
-128                 value /= x;
-129                 normalize_value();
-130             }
-.fi
-
-.SS "\fBangle\fP & scifir::angle::operator= (\fBangle\fP && x)"
-
-.PP
-Definition at line \fB72\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-73     {
-74         value = std::move(x\&.get_value());
-75         return *this;
-76     }
-.fi
-
-.SS "\fBangle\fP & scifir::angle::operator= (\fBconst\fP \fBangle\fP & x)"
-
-.PP
-Definition at line \fB66\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-67     {
-68         value = x\&.get_value();
-69         return *this;
-70     }
-.fi
-
-.SS "\fBangle\fP & scifir::angle::operator= (\fBconst\fP \fBscalar_unit\fP & x)"
-
-.PP
-Definition at line \fB91\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-92     {
-93         if (x\&.has_empty_dimensions())
-94         {
-95             value = x\&.get_value();
-96             normalize_value();
-97         }
-98         else
-99         {
-100             cerr << "An angle cannot be initialized with dimensions" << endl;
-101         }
-102         return *this;
-103     }
-.fi
-
-.SS "\fBangle\fP & scifir::angle::operator= (\fBconst\fP \fBstring\fP & init_angle)"
-
-.PP
-Definition at line \fB85\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-86     {
-87         initialize_from_string(init_angle);
-88         return *this;
-89     }
-.fi
-
-.SS "\fBangle\fP & scifir::angle::operator= (\fBfloat\fP new_value)"
-
-.PP
-Definition at line \fB78\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-79     {
-80         value = new_value;
-81         normalize_value();
-82         return *this;
-83     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::angle::operator= (T new_value)\fC [inline]\fP"
-
-.PP
-Definition at line \fB68\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-69             {
-70                 value = float(new_value);
-71                 normalize_value();
-72             }
-.fi
-
-.SS "\fBangle\fP scifir::angle::operator^ (\fBconst\fP \fBangle\fP & x) const"
-
-.PP
-Definition at line \fB125\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-126     {
-127         return angle(std::pow(value,x\&.get_value()));
-128     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP scifir::angle::operator^ (T x) const\fC [inline]\fP"
-
-.PP
-Definition at line \fB99\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-100             {
-101                 return angle(std::pow(value, x));
-102             }
-.fi
-
-.SS "\fBvoid\fP scifir::angle::operator^= (\fBconst\fP \fBangle\fP & x)"
-
-.PP
-Definition at line \fB154\fP of file \fBangle\&.cpp\fP\&..PP
-.nf
-155     {
-156         value = std::pow(value,x\&.get_value());
-157         normalize_value();
-158     }
-.fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::angle::operator^= (T x)\fC [inline]\fP"
-
-.PP
-Definition at line \fB133\fP of file \fBangle\&.hpp\fP\&..PP
-.nf
-134             {
-135                 value = std::pow(value, x);
-136                 normalize_value();
-137             }
-.fi
-
 .SH "Member Data Documentation"
 .PP 
 .SS "angle::value\fC [private]\fP"
 
 .PP
-Value of the angle\&. It is stored always in grades\&. 
+Value of the angle\&. It is stored in degrees\&. 
 .PP
-Definition at line \fB159\fP of file \fBangle\&.hpp\fP\&.
+Definition at line 161 of file angle\&.hpp\&.
 
 .SH "Author"
 .PP 

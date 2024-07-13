@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['installation_0',['Installation',['../md_INSTALL.html',1,'']]]
+  ['news_2936',['NEWS',['../md_NEWS.html',1,'']]]
 ];

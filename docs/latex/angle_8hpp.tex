@@ -1,158 +1,160 @@
-\doxysection{meca\+\_\+number/angle.hpp File Reference}
-\hypertarget{angle_8hpp}{}\label{angle_8hpp}\index{meca\_number/angle.hpp@{meca\_number/angle.hpp}}
-{\ttfamily \#include "{}../topology/constants.\+hpp"{}}\newline
-{\ttfamily \#include "{}../util/is\+\_\+number.\+hpp"{}}\newline
-{\ttfamily \#include "{}../units/scalar\+\_\+unit.\+hpp"{}}\newline
-{\ttfamily \#include "{}boost/math/constants/constants.\+hpp"{}}\newline
+\hypertarget{angle_8hpp}{}\doxysection{meca\+\_\+number/angle.hpp File Reference}
+\label{angle_8hpp}\index{meca\_number/angle.hpp@{meca\_number/angle.hpp}}
+{\ttfamily \#include \char`\"{}../topology/constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/is\+\_\+number.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../units/scalar\+\_\+unit.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}boost/math/constants/constants.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
-Include dependency graph for angle.\+hpp\+:\nopagebreak
+Include dependency graph for angle.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{angle_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{angle_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Classes}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}}
-\begin{DoxyCompactList}\small\item\em Class that allows to work with angles. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactList}\small\item\em Class that allows to work with angles. Each angle sizes 4 bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+ \mbox{\hyperlink{namespacescifir}{scifir}}
 \begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_acb875290bc71514ed24892a956635afb}{scifir\+::radian\+\_\+to\+\_\+grade}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a1ab2a3eb607941d5b2519da7382540ba}{scifir\+::grade\+\_\+to\+\_\+radian}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a69478e727622b137c8c584a42e02aab7}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_af5a4683671f496fe4aaa2d378c81d0b1}{scifir\+::is\+\_\+angle}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+angle}})
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_ae4beaddada9427f8c7a53e3381c5b796}{scifir\+::parallel}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&y)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a3ea95ad2c4137768f1e541e77db8a97a}{scifir\+::orthogonal}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&y)
-\item 
-\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir\+::sqrt}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_a0b02e4d82f1d2253f6901264ff11ca38}{scifir\+::sqrt\+\_\+nth}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} index)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir\+::sin}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir\+::cos}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_af04388d6eae86667f93b8f8b347b92f4}{scifir\+::tan}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_a1f303936f1ea7ec91375b8d707a51a90}{scifir\+::asin}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_ad107726d553b98dd1061fa75b7f9cc60}{scifir\+::acos}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_a6238e1d28db776a5d6497d463cc18a24}{scifir\+::atan}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a4707b4683c6bef04243c9affcdbe0a63}{scifir\+::sinh}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a770ad7122728e4dfa85221c2c372e54c}{scifir\+::cosh}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a3f2de7afed6fb51c22c9b81346a6642c}{scifir\+::tanh}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1angle}{angle}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_ac003e3c2113237706f4c4c50164a4024}{scifir\+::asinh}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_a83266adde7a9639563d4ab6ae9090a7a}{scifir\+::acosh}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_acb80729ddcfa267023fefe9d39abac38}{scifir\+::atanh}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a6461914f5055daf6492d116126e74d55}{scifir\+::asin\+\_\+grade}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_aa8db9e933de432ea65f7f41ef2b99e0c}{scifir\+::acos\+\_\+grade}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_ab26866c5f85571fb48783ebee102d01d}{scifir\+::atan\+\_\+grade}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_af0c9433bbb798d0d48cea30847a17925}{scifir\+::asinh\+\_\+grade}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a0cf2b5498c31442be9452ae103faf3e0}{scifir\+::acosh\+\_\+grade}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a856fa6916a5c045acc422a08ef19bd19}{scifir\+::atanh\+\_\+grade}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} x)
-\item 
+float \mbox{\hyperlink{namespacescifir_a4279b6b5a8b758d99f7f94f0ed400977}{scifir\+::radian\+\_\+to\+\_\+degree}} (float x)
+\begin{DoxyCompactList}\small\item\em Converts a radian to degree. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_a5f6a331e2ea05821aad3167e2b42b626}{scifir\+::degree\+\_\+to\+\_\+radian}} (float x)
+\begin{DoxyCompactList}\small\item\em Converts a degree to a radian. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{namespacescifir_a69478e727622b137c8c584a42e02aab7}{scifir\+::to\+\_\+string}} (const angle \&x)
+\begin{DoxyCompactList}\small\item\em Converts an angle to their string representation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacescifir_af5a4683671f496fe4aaa2d378c81d0b1}{scifir\+::is\+\_\+angle}} (const string \&init\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Checks if some string is an initialization string of an angle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacescifir_ae4beaddada9427f8c7a53e3381c5b796}{scifir\+::parallel}} (const angle \&x, const angle \&y)
+\begin{DoxyCompactList}\small\item\em Checks if two angles in a 2D correspond to parallel lines (or parallel vectors). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacescifir_a3ea95ad2c4137768f1e541e77db8a97a}{scifir\+::orthogonal}} (const angle \&x, const angle \&y)
+\begin{DoxyCompactList}\small\item\em Checks if two angles in a 2D correspond to orthogonal lines (or orthogonal vectors). \end{DoxyCompactList}\item 
+angle \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir\+::sqrt}} (const angle \&x)
+\begin{DoxyCompactList}\small\item\em Calculates the square root of the angle x and returns that new angle. \end{DoxyCompactList}\item 
+angle \mbox{\hyperlink{namespacescifir_a0b02e4d82f1d2253f6901264ff11ca38}{scifir\+::sqrt\+\_\+nth}} (const angle \&x, int index)
+\begin{DoxyCompactList}\small\item\em Calculates the nth root of the angle x and returns that new angle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir\+::sin}} (const angle \&x)
+\begin{DoxyCompactList}\small\item\em Calculates the sin of angle x. It uses the \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{sin()}} function of the standard library of C++, the difference is that angle is in degrees, not in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir\+::cos}} (const angle \&x)
+\begin{DoxyCompactList}\small\item\em Calculates the cos of angle x. It uses the \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{cos()}} function of the standard library of C++, the difference is that angle is in degrees, not in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_af04388d6eae86667f93b8f8b347b92f4}{scifir\+::tan}} (const angle \&x)
+\begin{DoxyCompactList}\small\item\em Calculates the tan of angle x. It uses the \mbox{\hyperlink{namespacescifir_af04388d6eae86667f93b8f8b347b92f4}{tan()}} function of the standard library of C++, the difference is that angle is in degrees, not in radians. \end{DoxyCompactList}\item 
+angle \mbox{\hyperlink{namespacescifir_a1f303936f1ea7ec91375b8d707a51a90}{scifir\+::asin}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the asin of some value x and returns the result as angle in degrees. \end{DoxyCompactList}\item 
+angle \mbox{\hyperlink{namespacescifir_ad107726d553b98dd1061fa75b7f9cc60}{scifir\+::acos}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the acos of some value x and returns the result as angle in degrees. \end{DoxyCompactList}\item 
+angle \mbox{\hyperlink{namespacescifir_a6238e1d28db776a5d6497d463cc18a24}{scifir\+::atan}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the atan of some value x and returns the result as angle in degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_a4707b4683c6bef04243c9affcdbe0a63}{scifir\+::sinh}} (const angle \&x)
+\begin{DoxyCompactList}\small\item\em Calculates the sinh of angle x. It uses the \mbox{\hyperlink{namespacescifir_a4707b4683c6bef04243c9affcdbe0a63}{sinh()}} function of the standard library of C++, the difference is that angle is in degrees, not in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_a770ad7122728e4dfa85221c2c372e54c}{scifir\+::cosh}} (const angle \&x)
+\begin{DoxyCompactList}\small\item\em Calculates the cosh of angle x. It uses the \mbox{\hyperlink{namespacescifir_a770ad7122728e4dfa85221c2c372e54c}{cosh()}} function of the standard library of C++, the difference is that angle is in degrees, not in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_a3f2de7afed6fb51c22c9b81346a6642c}{scifir\+::tanh}} (const angle \&x)
+\begin{DoxyCompactList}\small\item\em Calculates the tanh of angle x. It uses the \mbox{\hyperlink{namespacescifir_a3f2de7afed6fb51c22c9b81346a6642c}{tanh()}} function of the standard library of C++, the difference is that angle is in degrees, not in radians. \end{DoxyCompactList}\item 
+angle \mbox{\hyperlink{namespacescifir_ac003e3c2113237706f4c4c50164a4024}{scifir\+::asinh}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the asinh of some value x and returns the result as angle in degrees. \end{DoxyCompactList}\item 
+angle \mbox{\hyperlink{namespacescifir_a83266adde7a9639563d4ab6ae9090a7a}{scifir\+::acosh}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the acosh of some value x and returns the result as angle in degrees. \end{DoxyCompactList}\item 
+angle \mbox{\hyperlink{namespacescifir_acb80729ddcfa267023fefe9d39abac38}{scifir\+::atanh}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the atanh of some value x and returns the result as angle in degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_ab782cb5f71f809b8001c676db39ae105}{scifir\+::asin\+\_\+degree}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the asin receiving x in degrees. It uses the \mbox{\hyperlink{namespacescifir_a1f303936f1ea7ec91375b8d707a51a90}{asin()}} function of the standard library of C++, but the difference is that the argument is in degrees, not in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_a73055e45327c72e4bc3f1e392c3c019e}{scifir\+::acos\+\_\+degree}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the acos receiving x in degrees. It uses the \mbox{\hyperlink{namespacescifir_ad107726d553b98dd1061fa75b7f9cc60}{acos()}} function of the standard library of C++, but the difference is that the argument is in degrees, not in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_a4f9e2e4c610d0caaeaeb057eba2d0ab9}{scifir\+::atan\+\_\+degree}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the atan receiving x in degrees. It uses the \mbox{\hyperlink{namespacescifir_a6238e1d28db776a5d6497d463cc18a24}{atan()}} function of the standard library of C++, but the difference is that the argument is in degrees, not in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_add12c2189775431391a01da44451c555}{scifir\+::asinh\+\_\+degree}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the asinh receiving x in degrees. It uses the \mbox{\hyperlink{namespacescifir_ac003e3c2113237706f4c4c50164a4024}{asinh()}} function of the standard library of C++, but the difference is that the argument is in degrees, not in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_aa30920e8c4e52f3c9f1087b97b053585}{scifir\+::acosh\+\_\+degree}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the acosh receiving x in degrees. It uses the \mbox{\hyperlink{namespacescifir_a83266adde7a9639563d4ab6ae9090a7a}{acosh()}} function of the standard library of C++, but the difference is that the argument is in degrees, not in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacescifir_a18598f24883d62e6686b822fd43451b8}{scifir\+::atanh\+\_\+degree}} (float x)
+\begin{DoxyCompactList}\small\item\em Calculates the atanh receiving x in degrees. It uses the \mbox{\hyperlink{namespacescifir_acb80729ddcfa267023fefe9d39abac38}{atanh()}} function of the standard library of C++, but the difference is that the argument is in degrees, not in radians. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \mbox{\hyperlink{angle_8hpp_a24405fc1fdf065543346a4b96efc737f}{operator+}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new angle as the sum of a numeric type with the value of this angle. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \mbox{\hyperlink{angle_8hpp_a0962f28ca147b65932f14efcba2d6456}{operator-\/}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
-{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \mbox{\hyperlink{angle_8hpp_ac3b72e0356c0f211031603d2f6fcce21}{operator\texorpdfstring{$\ast$}{*}}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new angle as the substraction of the numeric type with the value of this angle. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \mbox{\hyperlink{angle_8hpp_ac3b72e0356c0f211031603d2f6fcce21}{operator$\ast$}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
+\begin{DoxyCompactList}\small\item\em Creates a new angle as the multiplication of a numeric type with the value of this angle. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \mbox{\hyperlink{angle_8hpp_a59c4fb09633884237c429669e1a00599}{operator/}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
-{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \mbox{\hyperlink{angle_8hpp_a1dc90f302050f4f63fac2eb49b60f431}{operator\texorpdfstring{$^\wedge$}{\string^}}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new angle as the division of the value of this angle with the numeric type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \mbox{\hyperlink{angle_8hpp_a1dc90f302050f4f63fac2eb49b60f431}{operator$^\wedge$}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
+\begin{DoxyCompactList}\small\item\em Creates a new angle as the power of a numeric type with the value of this angle. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_af0536e61a5aa61b01e4b261b0366f667}{operator==}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is equal to a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_ae1d2f1bedcb72ef5fc0bfced4316ecc2}{operator!=}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is not equal to a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_add64f0c17e44e287024623f2f0209a9e}{operator$<$}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is greather to a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_aac64783c181a770b790e577dcf8d531d}{operator$>$}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is lower to a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_a777abbd039cbbb7470ca1252962a85d7}{operator$<$=}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is equal or greather than a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_a1f1de769691bb494d02de921059d06b9}{operator$>$=}} (T x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is lower or equal than a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_acb5bc28ff191c4a072d78a56b2c509f2}{operator==}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y, T x)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is equal to a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_ab4f3e92470c478bd3c6ac1f8311361e4}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y, T x)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is not equal to a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_a3663ec48daf70f254b09ec57cea30d22}{operator$<$}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y, T x)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is lower to a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_a368478a0c68650f34ec7bf36783c460e}{operator$>$}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y, T x)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is greather to a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_a35d2363989efff6a928cb48a7592209a}{operator$<$=}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y, T x)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is lower or equal than a numeric type x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{angle_8hpp_a004b28327bddcb78dd7df84f1d381d78}{operator$>$=}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y, T x)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle y is equal or greather than a numeric type x. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_a403c125e0eb9086121d11d020f78c0c3}{operator==}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if two angles have equal value. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_a3f4ef9933f79fc79eda3ea263e1fd679}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if two angles have not equal value. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_a1ab87d7f0fd4ec88b62af8ed20aa000c}{operator$<$}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle x is lower than the value of angle y. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_a40cc7c890e50fc4601c5841711ebea90}{operator$>$}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle x is greather than the value of angle y. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_ade9441e95f2ee04d45c9d499138ecc67}{operator$<$=}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle x is lower or equal than the value of angle y. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_aa6c69360367103f831ddf2e2ef15cae4}{operator$>$=}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the value of angle x is equal or greather than the value of angle y. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_addb2eba1a507c677898d41bbfe501560}{operator==}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x, const string \&init\+\_\+angle)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the angle x is equal than the angle initialized with the initialization string of angle init\+\_\+angle. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_a08447059da8d150091b248d4e80b7449}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x, const string \&init\+\_\+angle)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the angle x is not equal than the angle initialized with the initialization string of angle init\+\_\+angle. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_a9acd4355fb3fac59d5c88321ce22093b}{operator==}} (const string \&init\+\_\+angle, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the angle x is equal than the angle initialized with the initialization string of angle init\+\_\+angle. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{angle_8hpp_a89a0b1aec65425b16ac0c4133acab0a3}{operator!=}} (const string \&init\+\_\+angle, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the angle x is not equal than the angle initialized with the initialization string of angle init\+\_\+angle. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{angle_8hpp_af5134978a1a12312809a2b7d552618a8}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Concatenates to string x the string representation of angle y. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{angle_8hpp_af3432d1643944e783e1254bccff7dce2}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Concatenates the string x with the string representation of angle y into a new string. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{angle_8hpp_a6b664feed583adf5460fe6804677ac14}{operator+}} (const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&y, const string \&x)
-\item 
-ostream \& \mbox{\hyperlink{angle_8hpp_a758611aa7ceee457df3ea3f38b0b45ef}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x)
-\item 
-istream \& \mbox{\hyperlink{angle_8hpp_a007692097861c15724bc7cea58ce071c}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Concatenates the string x with the string representation of angle y into a new string. \end{DoxyCompactList}\item 
+ostream \& \mbox{\hyperlink{angle_8hpp_a1979fb0d7a01ed175bd7f7f18a3e6070}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x)
+\begin{DoxyCompactList}\small\item\em Sends the string representation of angle x to an output stream. \end{DoxyCompactList}\item 
+istream \& \mbox{\hyperlink{angle_8hpp_a2f47db1e2f5018a35c1230c9eb6a581a}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&x)
+\begin{DoxyCompactList}\small\item\em Initializes an angle with an initialization string obtained from an input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{angle_8hpp_a3f4ef9933f79fc79eda3ea263e1fd679}\label{angle_8hpp_a3f4ef9933f79fc79eda3ea263e1fd679} 
+\mbox{\Hypertarget{angle_8hpp_a3f4ef9933f79fc79eda3ea263e1fd679}\label{angle_8hpp_a3f4ef9933f79fc79eda3ea263e1fd679}} 
 \index{angle.hpp@{angle.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
@@ -160,16 +162,20 @@ istream \& \mbox{\hyperlink{angle_8hpp_a007692097861c15724bc7cea58ce071c}{operat
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00387}{387}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if two angles have not equal value. 
+
+
+
+Definition at line 419 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00388\ \{}
-\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00390\ \}}
+\DoxyCodeLine{420 \{}
+\DoxyCodeLine{421     \textcolor{keywordflow}{return} !(x == y);}
+\DoxyCodeLine{422 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a08447059da8d150091b248d4e80b7449}\label{angle_8hpp_a08447059da8d150091b248d4e80b7449} 
+\mbox{\Hypertarget{angle_8hpp_a08447059da8d150091b248d4e80b7449}\label{angle_8hpp_a08447059da8d150091b248d4e80b7449}} 
 \index{angle.hpp@{angle.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
@@ -177,16 +183,20 @@ Definition at line \mbox{\hyperlink{angle_8cpp_source_l00387}{387}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00432}{432}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if the angle x is not equal than the angle initialized with the initialization string of angle init\+\_\+angle. 
+
+
+
+Definition at line 464 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00433\ \{}
-\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_angle);}
-\DoxyCodeLine{00435\ \}}
+\DoxyCodeLine{465 \{}
+\DoxyCodeLine{466     \textcolor{keywordflow}{return} !(x == init\_angle);}
+\DoxyCodeLine{467 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_ab4f3e92470c478bd3c6ac1f8311361e4}\label{angle_8hpp_ab4f3e92470c478bd3c6ac1f8311361e4} 
+\mbox{\Hypertarget{angle_8hpp_ab4f3e92470c478bd3c6ac1f8311361e4}\label{angle_8hpp_ab4f3e92470c478bd3c6ac1f8311361e4}} 
 \index{angle.hpp@{angle.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
@@ -195,16 +205,20 @@ bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscif
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00290}{290}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is not equal to a numeric type x. 
+
+
+
+Definition at line 292 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00291\ \{}
-\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00293\ \}}
+\DoxyCodeLine{293 \{}
+\DoxyCodeLine{294     \textcolor{keywordflow}{return} (x != y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{295 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a89a0b1aec65425b16ac0c4133acab0a3}\label{angle_8hpp_a89a0b1aec65425b16ac0c4133acab0a3} 
+\mbox{\Hypertarget{angle_8hpp_a89a0b1aec65425b16ac0c4133acab0a3}\label{angle_8hpp_a89a0b1aec65425b16ac0c4133acab0a3}} 
 \index{angle.hpp@{angle.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
@@ -212,16 +226,20 @@ Definition at line \mbox{\hyperlink{angle_8hpp_source_l00290}{290}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00443}{443}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if the angle x is not equal than the angle initialized with the initialization string of angle init\+\_\+angle. 
+
+
+
+Definition at line 475 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00444\ \{}
-\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_angle\ ==\ x);}
-\DoxyCodeLine{00446\ \}}
+\DoxyCodeLine{476 \{}
+\DoxyCodeLine{477     \textcolor{keywordflow}{return} !(init\_angle == x);}
+\DoxyCodeLine{478 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_ae1d2f1bedcb72ef5fc0bfced4316ecc2}\label{angle_8hpp_ae1d2f1bedcb72ef5fc0bfced4316ecc2} 
+\mbox{\Hypertarget{angle_8hpp_ae1d2f1bedcb72ef5fc0bfced4316ecc2}\label{angle_8hpp_ae1d2f1bedcb72ef5fc0bfced4316ecc2}} 
 \index{angle.hpp@{angle.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
@@ -230,34 +248,42 @@ bool operator!= (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyp
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00254}{254}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is not equal to a numeric type x. 
+
+
+
+Definition at line 256 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00255\ \{}
-\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00257\ \}}
+\DoxyCodeLine{257 \{}
+\DoxyCodeLine{258     \textcolor{keywordflow}{return} (x != y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{259 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_ac3b72e0356c0f211031603d2f6fcce21}\label{angle_8hpp_ac3b72e0356c0f211031603d2f6fcce21} 
-\index{angle.hpp@{angle.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
-\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!angle.hpp@{angle.hpp}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+\mbox{\Hypertarget{angle_8hpp_ac3b72e0356c0f211031603d2f6fcce21}\label{angle_8hpp_ac3b72e0356c0f211031603d2f6fcce21}} 
+\index{angle.hpp@{angle.hpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!angle.hpp@{angle.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
 {\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&}]{y }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} operator$\ast$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&}]{y }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00230}{230}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Creates a new angle as the multiplication of a numeric type with the value of this angle. 
+
+
+
+Definition at line 232 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00231\ \{}
-\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(x\ *\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00233\ \}}
+\DoxyCodeLine{233 \{}
+\DoxyCodeLine{234     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(x * y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{235 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a6b664feed583adf5460fe6804677ac14}\label{angle_8hpp_a6b664feed583adf5460fe6804677ac14} 
+\mbox{\Hypertarget{angle_8hpp_a6b664feed583adf5460fe6804677ac14}\label{angle_8hpp_a6b664feed583adf5460fe6804677ac14}} 
 \index{angle.hpp@{angle.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -265,19 +291,23 @@ Definition at line \mbox{\hyperlink{angle_8hpp_source_l00230}{230}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00463}{463}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Concatenates the string x with the string representation of angle y into a new string. 
+
+
+
+Definition at line 495 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00464\ \{}
-\DoxyCodeLine{00465\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00466\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00467\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00468\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00469\ \}}
+\DoxyCodeLine{496 \{}
+\DoxyCodeLine{497     ostringstream output;}
+\DoxyCodeLine{498     output << y;}
+\DoxyCodeLine{499     output << x;}
+\DoxyCodeLine{500     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{501 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_af3432d1643944e783e1254bccff7dce2}\label{angle_8hpp_af3432d1643944e783e1254bccff7dce2} 
+\mbox{\Hypertarget{angle_8hpp_af3432d1643944e783e1254bccff7dce2}\label{angle_8hpp_af3432d1643944e783e1254bccff7dce2}} 
 \index{angle.hpp@{angle.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -285,19 +315,23 @@ Definition at line \mbox{\hyperlink{angle_8cpp_source_l00463}{463}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00455}{455}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Concatenates the string x with the string representation of angle y into a new string. 
+
+
+
+Definition at line 487 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00456\ \{}
-\DoxyCodeLine{00457\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00458\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00459\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00461\ \}}
+\DoxyCodeLine{488 \{}
+\DoxyCodeLine{489     ostringstream output;}
+\DoxyCodeLine{490     output << x;}
+\DoxyCodeLine{491     output << y;}
+\DoxyCodeLine{492     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{493 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a24405fc1fdf065543346a4b96efc737f}\label{angle_8hpp_a24405fc1fdf065543346a4b96efc737f} 
+\mbox{\Hypertarget{angle_8hpp_a24405fc1fdf065543346a4b96efc737f}\label{angle_8hpp_a24405fc1fdf065543346a4b96efc737f}} 
 \index{angle.hpp@{angle.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -306,16 +340,20 @@ Definition at line \mbox{\hyperlink{angle_8cpp_source_l00455}{455}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00218}{218}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Creates a new angle as the sum of a numeric type with the value of this angle. 
+
+
+
+Definition at line 220 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00219\ \{}
-\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(x\ +\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00221\ \}}
+\DoxyCodeLine{221 \{}
+\DoxyCodeLine{222     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(x + y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{223 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_af5134978a1a12312809a2b7d552618a8}\label{angle_8hpp_af5134978a1a12312809a2b7d552618a8} 
+\mbox{\Hypertarget{angle_8hpp_af5134978a1a12312809a2b7d552618a8}\label{angle_8hpp_af5134978a1a12312809a2b7d552618a8}} 
 \index{angle.hpp@{angle.hpp}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
@@ -323,18 +361,22 @@ Definition at line \mbox{\hyperlink{angle_8hpp_source_l00218}{218}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00448}{448}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Concatenates to string x the string representation of angle y. 
+
+
+
+Definition at line 480 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00449\ \{}
-\DoxyCodeLine{00450\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00451\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00452\ \ \ \ \ x\ +=\ output.str();}
-\DoxyCodeLine{00453\ \}}
+\DoxyCodeLine{481 \{}
+\DoxyCodeLine{482     ostringstream output;}
+\DoxyCodeLine{483     output << y;}
+\DoxyCodeLine{484     x += output.str();}
+\DoxyCodeLine{485 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a0962f28ca147b65932f14efcba2d6456}\label{angle_8hpp_a0962f28ca147b65932f14efcba2d6456} 
+\mbox{\Hypertarget{angle_8hpp_a0962f28ca147b65932f14efcba2d6456}\label{angle_8hpp_a0962f28ca147b65932f14efcba2d6456}} 
 \index{angle.hpp@{angle.hpp}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
@@ -343,16 +385,20 @@ Definition at line \mbox{\hyperlink{angle_8cpp_source_l00448}{448}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00224}{224}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Creates a new angle as the substraction of the numeric type with the value of this angle. 
+
+
+
+Definition at line 226 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00225\ \{}
-\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(x\ -\/\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00227\ \}}
+\DoxyCodeLine{227 \{}
+\DoxyCodeLine{228     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(x -\/ y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{229 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a59c4fb09633884237c429669e1a00599}\label{angle_8hpp_a59c4fb09633884237c429669e1a00599} 
+\mbox{\Hypertarget{angle_8hpp_a59c4fb09633884237c429669e1a00599}\label{angle_8hpp_a59c4fb09633884237c429669e1a00599}} 
 \index{angle.hpp@{angle.hpp}!operator/@{operator/}}
 \index{operator/@{operator/}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
@@ -361,16 +407,20 @@ Definition at line \mbox{\hyperlink{angle_8hpp_source_l00224}{224}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00236}{236}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Creates a new angle as the division of the value of this angle with the numeric type. 
+
+
+
+Definition at line 238 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00237\ \{}
-\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(x\ /\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00239\ \}}
+\DoxyCodeLine{239 \{}
+\DoxyCodeLine{240     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(x / y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{241 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a1ab87d7f0fd4ec88b62af8ed20aa000c}\label{angle_8hpp_a1ab87d7f0fd4ec88b62af8ed20aa000c} 
+\mbox{\Hypertarget{angle_8hpp_a1ab87d7f0fd4ec88b62af8ed20aa000c}\label{angle_8hpp_a1ab87d7f0fd4ec88b62af8ed20aa000c}} 
 \index{angle.hpp@{angle.hpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -378,23 +428,27 @@ Definition at line \mbox{\hyperlink{angle_8hpp_source_l00236}{236}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00392}{392}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if the value of angle x is lower than the value of angle y. 
+
+
+
+Definition at line 424 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00393\ \{}
-\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}()\ <\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}())}
-\DoxyCodeLine{00395\ \ \ \ \ \{}
-\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00397\ \ \ \ \ \}}
-\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00399\ \ \ \ \ \{}
-\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00401\ \ \ \ \ \}}
-\DoxyCodeLine{00402\ \}}
+\DoxyCodeLine{425 \{}
+\DoxyCodeLine{426     \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}() < y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}())}
+\DoxyCodeLine{427     \{}
+\DoxyCodeLine{428         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{429     \}}
+\DoxyCodeLine{430     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{431     \{}
+\DoxyCodeLine{432         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{433     \}}
+\DoxyCodeLine{434 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a3663ec48daf70f254b09ec57cea30d22}\label{angle_8hpp_a3663ec48daf70f254b09ec57cea30d22} 
+\mbox{\Hypertarget{angle_8hpp_a3663ec48daf70f254b09ec57cea30d22}\label{angle_8hpp_a3663ec48daf70f254b09ec57cea30d22}} 
 \index{angle.hpp@{angle.hpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -403,16 +457,20 @@ bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsci
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00296}{296}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is lower to a numeric type x. 
+
+
+
+Definition at line 298 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00297\ \{}
-\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}()\ <\ x);}
-\DoxyCodeLine{00299\ \}}
+\DoxyCodeLine{299 \{}
+\DoxyCodeLine{300     \textcolor{keywordflow}{return} (y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}() < x);}
+\DoxyCodeLine{301 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_add64f0c17e44e287024623f2f0209a9e}\label{angle_8hpp_add64f0c17e44e287024623f2f0209a9e} 
+\mbox{\Hypertarget{angle_8hpp_add64f0c17e44e287024623f2f0209a9e}\label{angle_8hpp_add64f0c17e44e287024623f2f0209a9e}} 
 \index{angle.hpp@{angle.hpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -421,33 +479,41 @@ bool operator$<$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hy
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00260}{260}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is greather to a numeric type x. 
+
+
+
+Definition at line 262 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00261\ \{}
-\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00263\ \}}
+\DoxyCodeLine{263 \{}
+\DoxyCodeLine{264     \textcolor{keywordflow}{return} (x < y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{265 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a758611aa7ceee457df3ea3f38b0b45ef}\label{angle_8hpp_a758611aa7ceee457df3ea3f38b0b45ef} 
+\mbox{\Hypertarget{angle_8hpp_a1979fb0d7a01ed175bd7f7f18a3e6070}\label{angle_8hpp_a1979fb0d7a01ed175bd7f7f18a3e6070}} 
 \index{angle.hpp@{angle.hpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00471}{471}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Sends the string representation of angle x to an output stream. 
+
+
+
+Definition at line 503 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00472\ \{}
-\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
-\DoxyCodeLine{00474\ \}}
+\DoxyCodeLine{504 \{}
+\DoxyCodeLine{505     \textcolor{keywordflow}{return} os << \mbox{\hyperlink{namespacescifir_a69478e727622b137c8c584a42e02aab7}{to\_string}}(x);}
+\DoxyCodeLine{506 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_ade9441e95f2ee04d45c9d499138ecc67}\label{angle_8hpp_ade9441e95f2ee04d45c9d499138ecc67} 
+\mbox{\Hypertarget{angle_8hpp_ade9441e95f2ee04d45c9d499138ecc67}\label{angle_8hpp_ade9441e95f2ee04d45c9d499138ecc67}} 
 \index{angle.hpp@{angle.hpp}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -455,16 +521,20 @@ Definition at line \mbox{\hyperlink{angle_8cpp_source_l00471}{471}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00416}{416}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if the value of angle x is lower or equal than the value of angle y. 
+
+
+
+Definition at line 448 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00417\ \{}
-\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ >\ y);}
-\DoxyCodeLine{00419\ \}}
+\DoxyCodeLine{449 \{}
+\DoxyCodeLine{450     \textcolor{keywordflow}{return} !(x > y);}
+\DoxyCodeLine{451 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a35d2363989efff6a928cb48a7592209a}\label{angle_8hpp_a35d2363989efff6a928cb48a7592209a} 
+\mbox{\Hypertarget{angle_8hpp_a35d2363989efff6a928cb48a7592209a}\label{angle_8hpp_a35d2363989efff6a928cb48a7592209a}} 
 \index{angle.hpp@{angle.hpp}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -473,16 +543,20 @@ bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsc
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00308}{308}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is lower or equal than a numeric type x. 
+
+
+
+Definition at line 310 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00309\ \{}
-\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}()\ <=\ x);}
-\DoxyCodeLine{00311\ \}}
+\DoxyCodeLine{311 \{}
+\DoxyCodeLine{312     \textcolor{keywordflow}{return} (y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}() <= x);}
+\DoxyCodeLine{313 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a777abbd039cbbb7470ca1252962a85d7}\label{angle_8hpp_a777abbd039cbbb7470ca1252962a85d7} 
+\mbox{\Hypertarget{angle_8hpp_a777abbd039cbbb7470ca1252962a85d7}\label{angle_8hpp_a777abbd039cbbb7470ca1252962a85d7}} 
 \index{angle.hpp@{angle.hpp}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -491,16 +565,20 @@ bool operator$<$= (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00272}{272}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is equal or greather than a numeric type x. 
+
+
+
+Definition at line 274 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00273\ \{}
-\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <=\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00275\ \}}
+\DoxyCodeLine{275 \{}
+\DoxyCodeLine{276     \textcolor{keywordflow}{return} (x <= y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{277 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a403c125e0eb9086121d11d020f78c0c3}\label{angle_8hpp_a403c125e0eb9086121d11d020f78c0c3} 
+\mbox{\Hypertarget{angle_8hpp_a403c125e0eb9086121d11d020f78c0c3}\label{angle_8hpp_a403c125e0eb9086121d11d020f78c0c3}} 
 \index{angle.hpp@{angle.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
@@ -508,23 +586,27 @@ Definition at line \mbox{\hyperlink{angle_8hpp_source_l00272}{272}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00375}{375}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if two angles have equal value. 
+
+
+
+Definition at line 407 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00376\ \{}
-\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}()\ ==\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}())}
-\DoxyCodeLine{00378\ \ \ \ \ \{}
-\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00380\ \ \ \ \ \}}
-\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00382\ \ \ \ \ \{}
-\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00384\ \ \ \ \ \}}
-\DoxyCodeLine{00385\ \}}
+\DoxyCodeLine{408 \{}
+\DoxyCodeLine{409     \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}() == y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}())}
+\DoxyCodeLine{410     \{}
+\DoxyCodeLine{411         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{412     \}}
+\DoxyCodeLine{413     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{414     \{}
+\DoxyCodeLine{415         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{416     \}}
+\DoxyCodeLine{417 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_addb2eba1a507c677898d41bbfe501560}\label{angle_8hpp_addb2eba1a507c677898d41bbfe501560} 
+\mbox{\Hypertarget{angle_8hpp_addb2eba1a507c677898d41bbfe501560}\label{angle_8hpp_addb2eba1a507c677898d41bbfe501560}} 
 \index{angle.hpp@{angle.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
@@ -532,17 +614,21 @@ Definition at line \mbox{\hyperlink{angle_8cpp_source_l00375}{375}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00426}{426}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if the angle x is equal than the angle initialized with the initialization string of angle init\+\_\+angle. 
+
+
+
+Definition at line 458 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00427\ \{}
-\DoxyCodeLine{00428\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(init\_angle);}
-\DoxyCodeLine{00429\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00430\ \}}
+\DoxyCodeLine{459 \{}
+\DoxyCodeLine{460     \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}} y = \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(init\_angle);}
+\DoxyCodeLine{461     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{462 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_acb5bc28ff191c4a072d78a56b2c509f2}\label{angle_8hpp_acb5bc28ff191c4a072d78a56b2c509f2} 
+\mbox{\Hypertarget{angle_8hpp_acb5bc28ff191c4a072d78a56b2c509f2}\label{angle_8hpp_acb5bc28ff191c4a072d78a56b2c509f2}} 
 \index{angle.hpp@{angle.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
@@ -551,16 +637,20 @@ bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscif
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00284}{284}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is equal to a numeric type x. 
+
+
+
+Definition at line 286 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00285\ \{}
-\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00287\ \}}
+\DoxyCodeLine{287 \{}
+\DoxyCodeLine{288     \textcolor{keywordflow}{return} (x == y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{289 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a9acd4355fb3fac59d5c88321ce22093b}\label{angle_8hpp_a9acd4355fb3fac59d5c88321ce22093b} 
+\mbox{\Hypertarget{angle_8hpp_a9acd4355fb3fac59d5c88321ce22093b}\label{angle_8hpp_a9acd4355fb3fac59d5c88321ce22093b}} 
 \index{angle.hpp@{angle.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
@@ -568,17 +658,21 @@ Definition at line \mbox{\hyperlink{angle_8hpp_source_l00284}{284}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00437}{437}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if the angle x is equal than the angle initialized with the initialization string of angle init\+\_\+angle. 
+
+
+
+Definition at line 469 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00438\ \{}
-\DoxyCodeLine{00439\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(init\_angle);}
-\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00441\ \}}
+\DoxyCodeLine{470 \{}
+\DoxyCodeLine{471     \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}} y = \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(init\_angle);}
+\DoxyCodeLine{472     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{473 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_af0536e61a5aa61b01e4b261b0366f667}\label{angle_8hpp_af0536e61a5aa61b01e4b261b0366f667} 
+\mbox{\Hypertarget{angle_8hpp_af0536e61a5aa61b01e4b261b0366f667}\label{angle_8hpp_af0536e61a5aa61b01e4b261b0366f667}} 
 \index{angle.hpp@{angle.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
@@ -587,16 +681,20 @@ bool operator== (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyp
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00248}{248}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is equal to a numeric type x. 
+
+
+
+Definition at line 250 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00249\ \{}
-\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00251\ \}}
+\DoxyCodeLine{251 \{}
+\DoxyCodeLine{252     \textcolor{keywordflow}{return} (x == y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{253 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a40cc7c890e50fc4601c5841711ebea90}\label{angle_8hpp_a40cc7c890e50fc4601c5841711ebea90} 
+\mbox{\Hypertarget{angle_8hpp_a40cc7c890e50fc4601c5841711ebea90}\label{angle_8hpp_a40cc7c890e50fc4601c5841711ebea90}} 
 \index{angle.hpp@{angle.hpp}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -604,23 +702,27 @@ Definition at line \mbox{\hyperlink{angle_8hpp_source_l00248}{248}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00404}{404}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if the value of angle x is greather than the value of angle y. 
+
+
+
+Definition at line 436 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00405\ \{}
-\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}()\ >\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}())}
-\DoxyCodeLine{00407\ \ \ \ \ \{}
-\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00409\ \ \ \ \ \}}
-\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00411\ \ \ \ \ \{}
-\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00413\ \ \ \ \ \}}
-\DoxyCodeLine{00414\ \}}
+\DoxyCodeLine{437 \{}
+\DoxyCodeLine{438     \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}() > y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}())}
+\DoxyCodeLine{439     \{}
+\DoxyCodeLine{440         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{441     \}}
+\DoxyCodeLine{442     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{443     \{}
+\DoxyCodeLine{444         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{445     \}}
+\DoxyCodeLine{446 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a368478a0c68650f34ec7bf36783c460e}\label{angle_8hpp_a368478a0c68650f34ec7bf36783c460e} 
+\mbox{\Hypertarget{angle_8hpp_a368478a0c68650f34ec7bf36783c460e}\label{angle_8hpp_a368478a0c68650f34ec7bf36783c460e}} 
 \index{angle.hpp@{angle.hpp}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -629,16 +731,20 @@ bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsci
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00302}{302}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is greather to a numeric type x. 
+
+
+
+Definition at line 304 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00303\ \{}
-\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}()\ >\ x);}
-\DoxyCodeLine{00305\ \}}
+\DoxyCodeLine{305 \{}
+\DoxyCodeLine{306     \textcolor{keywordflow}{return} (y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}() > x);}
+\DoxyCodeLine{307 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_aac64783c181a770b790e577dcf8d531d}\label{angle_8hpp_aac64783c181a770b790e577dcf8d531d} 
+\mbox{\Hypertarget{angle_8hpp_aac64783c181a770b790e577dcf8d531d}\label{angle_8hpp_aac64783c181a770b790e577dcf8d531d}} 
 \index{angle.hpp@{angle.hpp}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -647,16 +753,20 @@ bool operator$>$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hy
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00266}{266}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is lower to a numeric type x. 
+
+
+
+Definition at line 268 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00267\ \{}
-\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00269\ \}}
+\DoxyCodeLine{269 \{}
+\DoxyCodeLine{270     \textcolor{keywordflow}{return} (x > y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{271 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_aa6c69360367103f831ddf2e2ef15cae4}\label{angle_8hpp_aa6c69360367103f831ddf2e2ef15cae4} 
+\mbox{\Hypertarget{angle_8hpp_aa6c69360367103f831ddf2e2ef15cae4}\label{angle_8hpp_aa6c69360367103f831ddf2e2ef15cae4}} 
 \index{angle.hpp@{angle.hpp}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -664,16 +774,20 @@ Definition at line \mbox{\hyperlink{angle_8hpp_source_l00266}{266}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00421}{421}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Checks if the value of angle x is equal or greather than the value of angle y. 
+
+
+
+Definition at line 453 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00422\ \{}
-\DoxyCodeLine{00423\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ <\ y);}
-\DoxyCodeLine{00424\ \}}
+\DoxyCodeLine{454 \{}
+\DoxyCodeLine{455     \textcolor{keywordflow}{return} !(x < y);}
+\DoxyCodeLine{456 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a004b28327bddcb78dd7df84f1d381d78}\label{angle_8hpp_a004b28327bddcb78dd7df84f1d381d78} 
+\mbox{\Hypertarget{angle_8hpp_a004b28327bddcb78dd7df84f1d381d78}\label{angle_8hpp_a004b28327bddcb78dd7df84f1d381d78}} 
 \index{angle.hpp@{angle.hpp}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -682,16 +796,20 @@ bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsc
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00314}{314}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is equal or greather than a numeric type x. 
+
+
+
+Definition at line 316 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00315\ \{}
-\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}()\ >=\ x);}
-\DoxyCodeLine{00317\ \}}
+\DoxyCodeLine{317 \{}
+\DoxyCodeLine{318     \textcolor{keywordflow}{return} (y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}() >= x);}
+\DoxyCodeLine{319 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a1f1de769691bb494d02de921059d06b9}\label{angle_8hpp_a1f1de769691bb494d02de921059d06b9} 
+\mbox{\Hypertarget{angle_8hpp_a1f1de769691bb494d02de921059d06b9}\label{angle_8hpp_a1f1de769691bb494d02de921059d06b9}} 
 \index{angle.hpp@{angle.hpp}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -700,52 +818,64 @@ bool operator$>$= (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00278}{278}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Checks if the value of angle y is lower or equal than a numeric type x. 
+
+
+
+Definition at line 280 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00279\ \{}
-\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}());}
-\DoxyCodeLine{00281\ \}}
+\DoxyCodeLine{281 \{}
+\DoxyCodeLine{282     \textcolor{keywordflow}{return} (x >= y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}());}
+\DoxyCodeLine{283 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a007692097861c15724bc7cea58ce071c}\label{angle_8hpp_a007692097861c15724bc7cea58ce071c} 
+\mbox{\Hypertarget{angle_8hpp_a2f47db1e2f5018a35c1230c9eb6a581a}\label{angle_8hpp_a2f47db1e2f5018a35c1230c9eb6a581a}} 
 \index{angle.hpp@{angle.hpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!angle.hpp@{angle.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
-{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{angle_8cpp_source_l00476}{476}} of file \mbox{\hyperlink{angle_8cpp_source}{angle.\+cpp}}.
+Initializes an angle with an initialization string obtained from an input stream. 
+
+
+
+Definition at line 508 of file angle.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00477\ \{}
-\DoxyCodeLine{00478\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00479\ \ \ \ \ is.getline(a,\ 256);}
-\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
-\DoxyCodeLine{00481\ \ \ \ \ boost::trim(b);}
-\DoxyCodeLine{00482\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(b);}
-\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{00484\ \}}
+\DoxyCodeLine{509 \{}
+\DoxyCodeLine{510     \textcolor{keywordtype}{char} a[256];}
+\DoxyCodeLine{511     is.getline(a, 256);}
+\DoxyCodeLine{512     \textcolor{keywordtype}{string} b(a);}
+\DoxyCodeLine{513     boost::trim(b);}
+\DoxyCodeLine{514     x = \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(b);}
+\DoxyCodeLine{515     \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{516 \}}
 
 \end{DoxyCode}
-\Hypertarget{angle_8hpp_a1dc90f302050f4f63fac2eb49b60f431}\label{angle_8hpp_a1dc90f302050f4f63fac2eb49b60f431} 
-\index{angle.hpp@{angle.hpp}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
-\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!angle.hpp@{angle.hpp}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}}
+\mbox{\Hypertarget{angle_8hpp_a1dc90f302050f4f63fac2eb49b60f431}\label{angle_8hpp_a1dc90f302050f4f63fac2eb49b60f431}} 
+\index{angle.hpp@{angle.hpp}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!angle.hpp@{angle.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$^\wedge$()}{operator^()}}
 {\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&}]{y }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} operator$^\wedge$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1angle}{scifir\+::angle}} \&}]{y }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{angle_8hpp_source_l00242}{242}} of file \mbox{\hyperlink{angle_8hpp_source}{angle.\+hpp}}.
+Creates a new angle as the power of a numeric type with the value of this angle. 
+
+
+
+Definition at line 244 of file angle.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00243\ \{}
-\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(\mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{pow}}(x,\ y.\mbox{\hyperlink{classscifir_1_1angle_a61e436c1eb66a6ed10924e641a4a4ba3}{get\_value}}()));}
-\DoxyCodeLine{00245\ \}}
+\DoxyCodeLine{245 \{}
+\DoxyCodeLine{246     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1angle}{scifir::angle}}(\mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{pow}}(x, y.\mbox{\hyperlink{classscifir_1_1angle_a0ee2dddd2d514a707cc3f98e496cf8a1}{get\_value}}()));}
+\DoxyCodeLine{247 \}}
 
 \end{DoxyCode}

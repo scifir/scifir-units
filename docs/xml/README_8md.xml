@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="README_8md" kind="file" language="Markdown">
     <compoundname>README.md</compoundname>
     <briefdescription>
@@ -406,7 +406,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">###<sp/>Angle</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">An<sp/>angle<sp/>object<sp/>manages<sp/>angles.<sp/>It<sp/>stores<sp/>angles<sp/>in<sp/>grades,<sp/>rather<sp/>than<sp/>in<sp/>radians.<sp/>It<sp/>can<sp/>be<sp/>initialized<sp/>to<sp/>any<sp/>grade<sp/>between<sp/>0<sp/>and<sp/>360<sp/>(without<sp/>including<sp/>360,<sp/>cause<sp/>this<sp/>is<sp/>identical<sp/>to<sp/>0<sp/>in<sp/>meaning),<sp/>and<sp/>any<sp/>initialization<sp/>that&apos;s<sp/>not<sp/>inside<sp/>this<sp/>range<sp/>of<sp/>values<sp/>gets<sp/>automatically<sp/>converted<sp/>inside<sp/>it,<sp/>to<sp/>his<sp/>equivalent<sp/>value<sp/>between<sp/>the<sp/>range.</highlight></codeline>
+<codeline><highlight class="normal">An<sp/>angle<sp/>object<sp/>manages<sp/>angles.<sp/>It<sp/>stores<sp/>angles<sp/>in<sp/>degrees,<sp/>rather<sp/>than<sp/>in<sp/>radians.<sp/>It<sp/>can<sp/>be<sp/>initialized<sp/>to<sp/>any<sp/>degree<sp/>between<sp/>0<sp/>and<sp/>360<sp/>(without<sp/>including<sp/>360,<sp/>cause<sp/>this<sp/>is<sp/>identical<sp/>to<sp/>0<sp/>in<sp/>meaning),<sp/>and<sp/>any<sp/>initialization<sp/>that&apos;s<sp/>not<sp/>inside<sp/>this<sp/>range<sp/>of<sp/>values<sp/>gets<sp/>automatically<sp/>converted<sp/>inside<sp/>it,<sp/>to<sp/>his<sp/>equivalent<sp/>value<sp/>between<sp/>the<sp/>range.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">An<sp/>example<sp/>of<sp/>use<sp/>of<sp/>angle<sp/>is<sp/>the<sp/>following:</highlight></codeline>
 <codeline></codeline>
@@ -444,8 +444,8 @@
 <codeline><highlight class="normal">++x;</highlight></codeline>
 <codeline><highlight class="normal">x--;</highlight></codeline>
 <codeline><highlight class="normal">--x;</highlight></codeline>
-<codeline><highlight class="normal">float<sp/>a_grade<sp/>=<sp/>x.get_grade();</highlight></codeline>
-<codeline><highlight class="normal">float<sp/>a_radians<sp/>=<sp/>x.get_radian();</highlight></codeline>
+<codeline><highlight class="normal">float<sp/>a_degree<sp/>=<sp/>x.get_degree();</highlight></codeline>
+<codeline><highlight class="normal">float<sp/>a_radian<sp/>=<sp/>x.get_radian();</highlight></codeline>
 <codeline><highlight class="normal">x.invert();<sp/>//<sp/>Inverts<sp/>the<sp/>angle,<sp/>the<sp/>orientation<sp/>described<sp/>by<sp/>this<sp/>angle<sp/>points<sp/>now<sp/>in<sp/>the<sp/>opposite<sp/>direction</highlight></codeline>
 <codeline><highlight class="normal">float<sp/>y<sp/>=<sp/>float(x);<sp/>//<sp/>Angles<sp/>can<sp/>be<sp/>converted<sp/>to<sp/>float</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>

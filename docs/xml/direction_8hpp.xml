@@ -1,17 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="direction_8hpp" kind="file" language="C++">
     <compoundname>direction.hpp</compoundname>
     <includes local="no">cstdint</includes>
     <includes local="no">iostream</includes>
     <includes local="no">string</includes>
+    <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
     <includedby refid="coordinates__2dr_8hpp" local="yes">coordinates/coordinates_2dr.hpp</includedby>
     <includedby refid="direction_8cpp" local="yes">topology/direction.cpp</includedby>
-    <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
     <includedby refid="vector__unit__2d_8hpp" local="yes">units/vector_unit_2d.hpp</includedby>
     <includedby refid="vector__unit__3d_8hpp" local="yes">units/vector_unit_3d.hpp</includedby>
     <includedby refid="vector__unit__nd_8hpp" local="yes">units/vector_unit_nd.hpp</includedby>
     <incdepgraph>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
       <node id="1">
         <label>topology/direction.hpp</label>
         <link refid="direction_8hpp"/>
@@ -22,175 +28,181 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>cstdint</label>
-      </node>
       <node id="3">
         <label>iostream</label>
       </node>
-      <node id="4">
-        <label>string</label>
-      </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="9">
-        <label>coordinates/coordinates_1d.cpp</label>
-        <link refid="coordinates__1d_8cpp"/>
-      </node>
-      <node id="8">
-        <label>coordinates/coordinates_1d.hpp</label>
-        <link refid="coordinates__1d_8hpp"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>coordinates/coordinates_2d.cpp</label>
-        <link refid="coordinates__2d_8cpp"/>
-      </node>
-      <node id="12">
-        <label>coordinates/coordinates_2d.hpp</label>
-        <link refid="coordinates__2d_8hpp"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>coordinates/coordinates_2dr.cpp</label>
-        <link refid="coordinates__2dr_8cpp"/>
-      </node>
-      <node id="2">
-        <label>coordinates/coordinates_2dr.hpp</label>
-        <link refid="coordinates__2dr_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>coordinates/coordinates_3d.cpp</label>
-        <link refid="coordinates__3d_8cpp"/>
-      </node>
-      <node id="19">
+      <node id="18">
         <label>coordinates/coordinates_3d.hpp</label>
         <link refid="coordinates__3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="22">
-        <label>coordinates/coordinates_3dr.cpp</label>
-        <link refid="coordinates__3dr_8cpp"/>
-      </node>
-      <node id="21">
-        <label>coordinates/coordinates_3dr.hpp</label>
-        <link refid="coordinates__3dr_8hpp"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>coordinates/coordinates_nd.cpp</label>
-        <link refid="coordinates__nd_8cpp"/>
-      </node>
-      <node id="26">
-        <label>coordinates/coordinates_nd.hpp</label>
-        <link refid="coordinates__nd_8hpp"/>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>coordinates/coordinates_ndr.cpp</label>
-        <link refid="coordinates__ndr_8cpp"/>
-      </node>
-      <node id="28">
-        <label>coordinates/coordinates_ndr.hpp</label>
-        <link refid="coordinates__ndr_8hpp"/>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="41">
-        <label>predefined_units/astronomy_units.cpp</label>
-        <link refid="astronomy__units_8cpp"/>
-      </node>
-      <node id="40">
-        <label>predefined_units/astronomy_units.hpp</label>
-        <link refid="astronomy__units_8hpp"/>
-        <childnode refid="41" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="43">
-        <label>predefined_units/electronics_units.cpp</label>
-        <link refid="electronics__units_8cpp"/>
-      </node>
-      <node id="42">
-        <label>predefined_units/electronics_units.hpp</label>
-        <link refid="electronics__units_8hpp"/>
-        <childnode refid="43" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
+      <node id="36">
+        <label>units/unit_abbreviation.hpp</label>
+        <link refid="unit__abbreviation_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="37" relation="include">
         </childnode>
       </node>
-      <node id="32">
+      <node id="31">
         <label>predefined_units/physics_units.cpp</label>
         <link refid="physics__units_8cpp"/>
+      </node>
+      <node id="21">
+        <label>coordinates/coordinates_3dr.cpp</label>
+        <link refid="coordinates__3dr_8cpp"/>
+      </node>
+      <node id="49">
+        <label>special_units/size_3d.hpp</label>
+        <link refid="size__3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>special_units/size_2d.cpp</label>
+        <link refid="size__2d_8cpp"/>
+      </node>
+      <node id="15">
+        <label>topology/point_2d_impl.hpp</label>
+        <link refid="point__2d__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>units/vector_unit_nd.cpp</label>
+        <link refid="vector__unit__nd_8cpp"/>
+      </node>
+      <node id="33">
+        <label>topology/point_2d.hpp</label>
+        <link refid="point__2d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>topology/point_1d.hpp</label>
+        <link refid="point__1d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>units/vector_unit_3d.cpp</label>
+        <link refid="vector__unit__3d_8cpp"/>
+      </node>
+      <node id="30">
+        <label>topology/point_nd_impl.hpp</label>
+        <link refid="point__nd__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>topology/point_3d_impl.hpp</label>
+        <link refid="point__3d__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>topology/point_3d.cpp</label>
+        <link refid="point__3d_8cpp"/>
+      </node>
+      <node id="9">
+        <label>coordinates/coordinates_1d.cpp</label>
+        <link refid="coordinates__1d_8cpp"/>
+      </node>
+      <node id="12">
+        <label>coordinates/coordinates_2d.hpp</label>
+        <link refid="coordinates__2d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>topology/direction.cpp</label>
+        <link refid="direction_8cpp"/>
+      </node>
+      <node id="40">
+        <label>predefined_units/astronomy_units.cpp</label>
+        <link refid="astronomy__units_8cpp"/>
+      </node>
+      <node id="44">
+        <label>predefined_units/radiometry_units.cpp</label>
+        <link refid="radiometry__units_8cpp"/>
+      </node>
+      <node id="37">
+        <label>units/unit_abbreviation.cpp</label>
+        <link refid="unit__abbreviation_8cpp"/>
+      </node>
+      <node id="51">
+        <label>special_units/size_nd.hpp</label>
+        <link refid="size__nd_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>special_units/size_3d.cpp</label>
+        <link refid="size__3d_8cpp"/>
       </node>
       <node id="7">
         <label>predefined_units/physics_units.hpp</label>
         <link refid="physics__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
@@ -202,277 +214,257 @@
         </childnode>
         <childnode refid="36" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
       </node>
-      <node id="45">
-        <label>predefined_units/radiometry_units.cpp</label>
-        <link refid="radiometry__units_8cpp"/>
+      <node id="16">
+        <label>units/vector_unit_2d.cpp</label>
+        <link refid="vector__unit__2d_8cpp"/>
       </node>
-      <node id="44">
-        <label>predefined_units/radiometry_units.hpp</label>
-        <link refid="radiometry__units_8hpp"/>
-        <childnode refid="45" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
-      </node>
-      <node id="47">
-        <label>predefined_units/space_units.cpp</label>
-        <link refid="space__units_8cpp"/>
-      </node>
-      <node id="46">
-        <label>predefined_units/space_units.hpp</label>
-        <link refid="space__units_8hpp"/>
-        <childnode refid="47" relation="include">
-        </childnode>
-        <childnode refid="48" relation="include">
-        </childnode>
-        <childnode refid="50" relation="include">
-        </childnode>
-        <childnode refid="52" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
-      </node>
-      <node id="49">
-        <label>special_units/size_2d.cpp</label>
-        <link refid="size__2d_8cpp"/>
-      </node>
-      <node id="48">
-        <label>special_units/size_2d.hpp</label>
-        <link refid="size__2d_8hpp"/>
-        <childnode refid="47" relation="include">
-        </childnode>
-        <childnode refid="49" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="51">
-        <label>special_units/size_3d.cpp</label>
-        <link refid="size__3d_8cpp"/>
-      </node>
-      <node id="50">
-        <label>special_units/size_3d.hpp</label>
-        <link refid="size__3d_8hpp"/>
-        <childnode refid="47" relation="include">
-        </childnode>
-        <childnode refid="51" relation="include">
+      <node id="3">
+        <label>coordinates/coordinates_2dr.hpp</label>
+        <link refid="coordinates__2dr_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="53">
-        <label>special_units/size_nd.cpp</label>
-        <link refid="size__nd_8cpp"/>
-      </node>
-      <node id="52">
-        <label>special_units/size_nd.hpp</label>
-        <link refid="size__nd_8hpp"/>
-        <childnode refid="53" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>topology/direction.cpp</label>
-        <link refid="direction_8cpp"/>
-      </node>
-      <node id="1">
-        <label>topology/direction.hpp</label>
-        <link refid="direction_8hpp"/>
+        <label>units/vector_unit_nd.hpp</label>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
-        </childnode>
-        <childnode refid="54" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>topology/point_1d.cpp</label>
-        <link refid="point__1d_8cpp"/>
-      </node>
-      <node id="33">
-        <label>topology/point_1d.hpp</label>
-        <link refid="point__1d_8hpp"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>topology/point_1d_impl.hpp</label>
-        <link refid="point__1d__impl_8hpp"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="14">
         <label>topology/point_2d.cpp</label>
         <link refid="point__2d_8cpp"/>
       </node>
-      <node id="34">
-        <label>topology/point_2d.hpp</label>
-        <link refid="point__2d_8hpp"/>
-        <childnode refid="12" relation="include">
-        </childnode>
+      <node id="10">
+        <label>topology/point_1d.cpp</label>
+        <link refid="point__1d_8cpp"/>
+      </node>
+      <node id="38">
+        <label>units/vector_unit_3d.hpp</label>
+        <link refid="vector__unit__3d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-      </node>
-      <node id="15">
-        <label>topology/point_2d_impl.hpp</label>
-        <link refid="point__2d__impl_8hpp"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
-      </node>
-      <node id="23">
-        <label>topology/point_3d.cpp</label>
-        <link refid="point__3d_8cpp"/>
-      </node>
-      <node id="35">
-        <label>topology/point_3d.hpp</label>
-        <link refid="point__3d_8hpp"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+      </node>
+      <node id="8">
+        <label>coordinates/coordinates_1d.hpp</label>
+        <link refid="coordinates__1d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="24">
-        <label>topology/point_3d_impl.hpp</label>
-        <link refid="point__3d__impl_8hpp"/>
-        <childnode refid="4" relation="include">
+      <node id="1">
+        <label>topology/direction.hpp</label>
+        <link refid="direction_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="30">
-        <label>topology/point_nd.cpp</label>
-        <link refid="point__nd_8cpp"/>
-      </node>
-      <node id="36">
-        <label>topology/point_nd.hpp</label>
-        <link refid="point__nd_8hpp"/>
-        <childnode refid="26" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="31">
-        <label>topology/point_nd_impl.hpp</label>
-        <link refid="point__nd__impl_8hpp"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>units.hpp</label>
-        <link refid="units_8hpp"/>
-      </node>
-      <node id="16">
-        <label>units/material_vector_unit_2d.hpp</label>
-        <link refid="material__vector__unit__2d_8hpp"/>
-      </node>
-      <node id="38">
-        <label>units/unit_abbreviation.cpp</label>
-        <link refid="unit__abbreviation_8cpp"/>
-      </node>
-      <node id="37">
-        <label>units/unit_abbreviation.hpp</label>
-        <link refid="unit__abbreviation_8hpp"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="38" relation="include">
         </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
       </node>
-      <node id="17">
-        <label>units/vector_unit_2d.cpp</label>
-        <link refid="vector__unit__2d_8cpp"/>
+      <node id="39">
+        <label>predefined_units/astronomy_units.hpp</label>
+        <link refid="astronomy__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>predefined_units/space_units.cpp</label>
+        <link refid="space__units_8cpp"/>
+      </node>
+      <node id="52">
+        <label>special_units/size_nd.cpp</label>
+        <link refid="size__nd_8cpp"/>
+      </node>
+      <node id="43">
+        <label>predefined_units/radiometry_units.hpp</label>
+        <link refid="radiometry__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
       </node>
       <node id="6">
         <label>units/vector_unit_2d.hpp</label>
         <link refid="vector__unit__2d_8hpp"/>
-        <childnode refid="7" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
       </node>
-      <node id="25">
-        <label>units/vector_unit_3d.cpp</label>
-        <link refid="vector__unit__3d_8cpp"/>
+      <node id="11">
+        <label>topology/point_1d_impl.hpp</label>
+        <link refid="point__1d__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
       </node>
-      <node id="39">
-        <label>units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp"/>
-        <childnode refid="40" relation="include">
-        </childnode>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="46" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
+      <node id="4">
+        <label>coordinates/coordinates_2dr.cpp</label>
+        <link refid="coordinates__2dr_8cpp"/>
+      </node>
+      <node id="35">
+        <label>topology/point_nd.hpp</label>
+        <link refid="point__nd_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
-      </node>
-      <node id="18">
-        <label>units/vector_unit_nd.cpp</label>
-        <link refid="vector__unit__nd_8cpp"/>
-      </node>
-      <node id="54">
-        <label>units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>coordinates/coordinates_ndr.hpp</label>
+        <link refid="coordinates__ndr_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>units.hpp</label>
+        <link refid="units_8hpp"/>
+      </node>
+      <node id="42">
+        <label>predefined_units/electronics_units.cpp</label>
+        <link refid="electronics__units_8cpp"/>
+      </node>
+      <node id="26">
+        <label>coordinates/coordinates_nd.cpp</label>
+        <link refid="coordinates__nd_8cpp"/>
+      </node>
+      <node id="19">
+        <label>coordinates/coordinates_3d.cpp</label>
+        <link refid="coordinates__3d_8cpp"/>
+      </node>
+      <node id="45">
+        <label>predefined_units/space_units.hpp</label>
+        <link refid="space__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>coordinates/coordinates_3dr.hpp</label>
+        <link refid="coordinates__3dr_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>special_units/size_2d.hpp</label>
+        <link refid="size__2d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>topology/point_3d.hpp</label>
+        <link refid="point__3d_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>topology/point_nd.cpp</label>
+        <link refid="point__nd_8cpp"/>
+      </node>
+      <node id="41">
+        <label>predefined_units/electronics_units.hpp</label>
+        <link refid="electronics__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>coordinates/coordinates_ndr.cpp</label>
+        <link refid="coordinates__ndr_8cpp"/>
+      </node>
+      <node id="25">
+        <label>coordinates/coordinates_nd.hpp</label>
+        <link refid="coordinates__nd_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>coordinates/coordinates_2d.cpp</label>
+        <link refid="coordinates__2d_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classscifir_1_1direction" prot="public">scifir::direction</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
-    <sectiondef kind="func">
+      <sectiondef kind="func">
       <memberdef kind="function" id="direction_8hpp_1a0f6558c733aefa110323a011e9a61bf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
@@ -746,9 +738,9 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="57" column="8" bodyfile="topology/direction.cpp" bodystart="428" bodyend="434" declfile="topology/direction.hpp" declline="57" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="direction_8hpp_1a260343da55a8be132aea79ad914e115f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="direction_8hpp_1a33880479bcbf35c6a291573a506ecb18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::direction &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -767,9 +759,9 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="59" column="1" bodyfile="topology/direction.cpp" bodystart="436" bodyend="439" declfile="topology/direction.hpp" declline="59" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="direction_8hpp_1a1447436d910eb95522dd783dae07f6ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="direction_8hpp_1ad35bc1228399426cbb3f5d0679c7429a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>istream &amp;</type>
-        <definition>istream &amp; operator&gt;&gt;</definition>
+        <definition>istream&amp; operator&gt;&gt;</definition>
         <argsstring>(istream &amp;is, scifir::direction &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
@@ -788,7 +780,7 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="60" column="9" bodyfile="topology/direction.cpp" bodystart="441" bodyend="449" declfile="topology/direction.hpp" declline="60" declcolumn="9"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -810,20 +802,20 @@
 <codeline lineno="14" refid="classscifir_1_1direction" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1direction" kindref="compound">direction</ref></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="17" refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a6f375fea0f3d26c57072608359d509dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">name</ref><sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref><sp/>{<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ae81470f38b5ec641cb6204c70738bd3a" kindref="member">NONE</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319aeb4f3e61e6fafa6c467b82ee242eb51c" kindref="member">LEFT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ae8f2b1d045628d57b4b8c562d2ebfc02" kindref="member">RIGHT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ab2805b188b82e0c05c4e737e3d8d6831" kindref="member">TOP</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a98f9679e7fcaa201ea32ecad8be036b8" kindref="member">BOTTOM</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a3abb69462df2b2c0241c781d3701ecea" kindref="member">FRONT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a6f375fea0f3d26c57072608359d509dc" kindref="member">BACK</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ac4b30e39230d69500b780b0c7e42fbd4" kindref="member">LEFT_TOP</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a8a727b85c337390c844e1782ca8fe29c" kindref="member">LEFT_BOTTOM</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a0e0beffa8560687faae66351c01efec5" kindref="member">RIGHT_TOP</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319af550920f7123c3d59dc0b0372733220f" kindref="member">RIGHT_BOTTOM</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a52a472b707489e9aeb225e164131b00f" kindref="member">LEFT_FRONT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a19ca484a501de12a3905c8ac2cd95c22" kindref="member">LEFT_BACK</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a979ae4388623540264f860f5a509761e" kindref="member">RIGHT_FRONT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a8ee62fbd05c5583d1b24d4c31c2d7023" kindref="member">RIGHT_BACK</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a3a7f4b7a2b6e5c97a3c75be6f790cb03" kindref="member">TOP_FRONT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319adfbb23a8474d3def4dab015ed3fff44a" kindref="member">TOP_BACK</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319acc5900251cd00271c33ea49e71c0586d" kindref="member">BOTTOM_FRONT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319af9efb3ea2745425d431a0171b134d8ec" kindref="member">BOTTOM_BACK</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ae972f247233b7808a4d00ee49904065b" kindref="member">LEFT_TOP_FRONT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a0538028688f618f912a6cd7be679ba78" kindref="member">LEFT_TOP_BACK</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a743411405d7ab23e476f8d3ea8d45bbf" kindref="member">LEFT_BOTTOM_FRONT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ae7d293719b6c7aeb70190fc55590b137" kindref="member">LEFT_BOTTOM_BACK</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ad27e31622675d229bc1e65bd899f382b" kindref="member">RIGHT_TOP_FRONT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319aeece56abc14d563afd73ffda94e39381" kindref="member">RIGHT_TOP_BACK</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a87453e62afcaa50ae7169b0943f31029" kindref="member">RIGHT_BOTTOM_FRONT</ref>,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a4dda968da1997b1f46f5a49979e7cd07" kindref="member">RIGHT_BOTTOM_BACK</ref>};</highlight></codeline>
+<codeline lineno="17" refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a6f375fea0f3d26c57072608359d509dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">name</ref><sp/>:<sp/>int8_t<sp/>{<ref refid="namespacescifir_1a20683521b4e3fde1fac96fee7ca39e36ab50339a10e1de285ac99d4c3990b8693" kindref="member">NONE</ref>,<sp/>LEFT,<sp/>RIGHT,<sp/>TOP,<sp/>BOTTOM,<sp/>FRONT,<sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a6f375fea0f3d26c57072608359d509dc" kindref="member">BACK</ref>,<sp/>LEFT_TOP,<sp/>LEFT_BOTTOM,<sp/>RIGHT_TOP,<sp/>RIGHT_BOTTOM,<sp/>LEFT_FRONT,<sp/>LEFT_BACK,<sp/>RIGHT_FRONT,<sp/>RIGHT_BACK,<sp/>TOP_FRONT,<sp/>TOP_BACK,<sp/>BOTTOM_FRONT,<sp/>BOTTOM_BACK,<sp/>LEFT_TOP_FRONT,<sp/>LEFT_TOP_BACK,<sp/>LEFT_BOTTOM_FRONT,<sp/>LEFT_BOTTOM_BACK,<sp/>RIGHT_TOP_FRONT,<sp/>RIGHT_TOP_BACK,<sp/>RIGHT_BOTTOM_FRONT,<sp/>RIGHT_BOTTOM_BACK};</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction</ref>();</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction</ref>(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction</ref>(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_direction</ref>);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_direction</ref>);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/>new_direction);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_direction);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">operator=</ref>(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">operator=</ref>(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_direction</ref>);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_direction</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/>new_direction);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_direction);</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction_1a16c2b4878a6ac2bdd7225e52c2dfc6ff" kindref="member">invert</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a0dccca47be7b8a3781d743c46394dd20" kindref="member">invert</ref>();</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
 <codeline lineno="32" refid="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/><ref refid="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
@@ -852,8 +844,8 @@
 <codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="direction_8hpp_1af02ec01815eb0e233bb5bb7e8573ff54" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="direction_8hpp_1af02ec01815eb0e233bb5bb7e8573ff54" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal">ostream&amp;<sp/><ref refid="direction_8hpp_1a260343da55a8be132aea79ad914e115f" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal">istream&amp;<sp/><ref refid="direction_8hpp_1a1447436d910eb95522dd783dae07f6ad" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">ostream&amp;<sp/><ref refid="direction_8hpp_1a33880479bcbf35c6a291573a506ecb18" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">istream&amp;<sp/><ref refid="direction_8hpp_1ad35bc1228399426cbb3f5d0679c7429a" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>

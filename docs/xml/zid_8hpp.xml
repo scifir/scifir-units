@@ -1,20 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="zid_8hpp" kind="file" language="C++">
     <compoundname>zid.hpp</compoundname>
     <includes refid="aid_8hpp" local="yes">../special_units/aid.hpp</includes>
     <includes local="no">string</includes>
     <includes local="no">vector</includes>
-    <includedby refid="zid_8cpp" local="yes">special_units/zid.cpp</includedby>
     <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
+    <includedby refid="zid_8cpp" local="yes">special_units/zid.cpp</includedby>
     <incdepgraph>
-      <node id="2">
-        <label>../special_units/aid.hpp</label>
-        <link refid="aid_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
       </node>
       <node id="1">
         <label>special_units/zid.hpp</label>
@@ -26,21 +27,16 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>cstdint</label>
-      </node>
-      <node id="4">
-        <label>string</label>
-      </node>
-      <node id="5">
-        <label>vector</label>
+      <node id="2">
+        <label>../special_units/aid.hpp</label>
+        <link refid="aid_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
-        <label>special_units/zid.cpp</label>
-        <link refid="zid_8cpp"/>
-      </node>
       <node id="1">
         <label>special_units/zid.hpp</label>
         <link refid="zid_8hpp"/>
@@ -49,14 +45,18 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="3">
+      <node id="2">
         <label>units.hpp</label>
         <link refid="units_8hpp"/>
+      </node>
+      <node id="3">
+        <label>special_units/zid.cpp</label>
+        <link refid="zid_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classscifir_1_1zid" prot="public">scifir::zid</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
-    <sectiondef kind="func">
+      <sectiondef kind="func">
       <memberdef kind="function" id="zid_8hpp_1a093a778c207548419656659944a46ac4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
@@ -246,9 +246,9 @@
         </inbodydescription>
         <location file="special_units/zid.hpp" line="56" column="8" bodyfile="special_units/zid.cpp" bodystart="252" bodyend="258" declfile="special_units/zid.hpp" declline="56" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1a2c06ffaf34cda3c37a5616423b4a15ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1a9e1497520755f4304c06413199c69e2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::zid &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -267,9 +267,9 @@
         </inbodydescription>
         <location file="special_units/zid.hpp" line="58" column="1" bodyfile="special_units/zid.cpp" bodystart="260" bodyend="263" declfile="special_units/zid.hpp" declline="58" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1a0bd7ef119f4e1870ffb481c3a5321902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1ac46f218b28246a8266da3a3c41c2209d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>istream &amp;</type>
-        <definition>istream &amp; operator&gt;&gt;</definition>
+        <definition>istream&amp; operator&gt;&gt;</definition>
         <argsstring>(istream &amp;is, scifir::zid &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
@@ -288,7 +288,7 @@
         </inbodydescription>
         <location file="special_units/zid.hpp" line="59" column="9" bodyfile="special_units/zid.cpp" bodystart="265" bodyend="273" declfile="special_units/zid.hpp" declline="59" declcolumn="9"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -309,30 +309,30 @@
 <codeline lineno="13" refid="classscifir_1_1zid" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1zid" kindref="compound">zid</ref></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid_1a3373cd61f91001d2fbd0d41906f73921" kindref="member">zid</ref>();</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid_1a3373cd61f91001d2fbd0d41906f73921" kindref="member">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid_1a3373cd61f91001d2fbd0d41906f73921" kindref="member">zid</ref>(<ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1a3373cd61f91001d2fbd0d41906f73921" kindref="member">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_aid</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_country</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;string&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_regions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_zone</ref>);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1a3373cd61f91001d2fbd0d41906f73921" kindref="member">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_aid</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_zid</ref>);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1a3373cd61f91001d2fbd0d41906f73921" kindref="member">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_zid_full</ref>);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(<ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>new_aid,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_country,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;string&gt;&amp;<sp/>new_regions,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_zone);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>new_aid,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_zid);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_zid_full);</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/><ref refid="classscifir_1_1zid_1a9d6b62154c3fffa6e10bd7a4f8d9a03c" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/><ref refid="classscifir_1_1zid_1a9d6b62154c3fffa6e10bd7a4f8d9a03c" kindref="member">operator =</ref>(<ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/><ref refid="classscifir_1_1zid_1a9d6b62154c3fffa6e10bd7a4f8d9a03c" kindref="member">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_zid_full</ref>);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_zid_full);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1a22ea002ba3cd88eaf33fe807e15bdbf8" kindref="member">has_no_country</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1a954f08f912dd187108588aacbc5ad3c2" kindref="member">has_unknown_country</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_no_country()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_unknown_country()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1abb2467d428ccaa5ad0ad8be47f8a35cd" kindref="member">display</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1ad9af6fe963a20b2f1afd43cac25c33e1" kindref="member">partial_display</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>display()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>partial_display()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33" refid="classscifir_1_1zid_1a64c51e9d7f9bfed4a45b463d8b45116b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref><sp/><ref refid="classscifir_1_1zid_1a64c51e9d7f9bfed4a45b463d8b45116b" kindref="member">aid</ref>;</highlight></codeline>
-<codeline lineno="34" refid="classscifir_1_1zid_1a312733eaed75956e815a5422e70b6d5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;string&gt;</ref><sp/><ref refid="classscifir_1_1zid_1a312733eaed75956e815a5422e70b6d5d" kindref="member">regions</ref>;</highlight></codeline>
+<codeline lineno="34" refid="classscifir_1_1zid_1a312733eaed75956e815a5422e70b6d5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classscifir_1_1zid_1a312733eaed75956e815a5422e70b6d5d" kindref="member">regions</ref>;</highlight></codeline>
 <codeline lineno="35" refid="classscifir_1_1zid_1a3202ef05c7c725b58e0e413e329fd590" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1a3202ef05c7c725b58e0e413e329fd590" kindref="member">country</ref>;</highlight></codeline>
 <codeline lineno="36" refid="classscifir_1_1zid_1a3ef65cf7878c83b2222c2daf6f5f3f36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1a3ef65cf7878c83b2222c2daf6f5f3f36" kindref="member">zone</ref>;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid_1af59da9725af73b58fa85058665a94957" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_zid_full</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize_from_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_zid_full);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>x);</highlight></codeline>
@@ -351,8 +351,8 @@
 <codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="zid_8hpp_1ab1cad86185890407265a6af3b0275bc1" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="zid_8hpp_1ab1cad86185890407265a6af3b0275bc1" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal">ostream&amp;<sp/><ref refid="zid_8hpp_1a2c06ffaf34cda3c37a5616423b4a15ac" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal">istream&amp;<sp/><ref refid="zid_8hpp_1a0bd7ef119f4e1870ffb481c3a5321902" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">ostream&amp;<sp/><ref refid="zid_8hpp_1a9e1497520755f4304c06413199c69e2f" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">istream&amp;<sp/><ref refid="zid_8hpp_1ac46f218b28246a8266da3a3c41c2209d" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>

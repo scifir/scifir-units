@@ -1,18 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1scalar__unit" kind="class" language="C++" prot="public">
     <compoundname>scifir::scalar_unit</compoundname>
     <derivedcompoundref refid="classscifir_1_1vector__unit__2d" prot="public" virt="non-virtual">scifir::vector_unit_2d</derivedcompoundref>
     <derivedcompoundref refid="classscifir_1_1vector__unit__3d" prot="public" virt="non-virtual">scifir::vector_unit_3d</derivedcompoundref>
     <derivedcompoundref refid="classscifir_1_1vector__unit__nd" prot="public" virt="non-virtual">scifir::vector_unit_nd</derivedcompoundref>
     <includes refid="scalar__unit_8hpp" local="no">scalar_unit.hpp</includes>
-    <sectiondef kind="protected-attrib">
+      <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="classscifir_1_1scalar__unit_1a31051a01340ebcb0d2616491a41e3857" prot="protected" static="no" mutable="no">
         <type>vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt;</type>
         <definition>scalar_unit::dimensions</definition>
         <argsstring></argsstring>
         <name>dimensions</name>
-        <qualifiedname>scifir::scalar_unit::dimensions</qualifiedname>
         <briefdescription>
 <para>Dimensions of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>. They can be basic dimensions or abbreviations. </para>
         </briefdescription>
@@ -23,11 +22,10 @@
         <location file="units/scalar_unit.hpp" line="203" column="8" bodyfile="units/scalar_unit.hpp" bodystart="203" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" prot="protected" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>scalar_unit::value</definition>
         <argsstring></argsstring>
         <name>value</name>
-        <qualifiedname>scifir::scalar_unit::value</qualifiedname>
         <briefdescription>
 <para>Value of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>. It changes automatically when the dimensions change. </para>
         </briefdescription>
@@ -37,14 +35,13 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="204" column="7" bodyfile="units/scalar_unit.hpp" bodystart="204" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1ab03d02ba63c30297b9739929659b38d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>()</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <briefdescription>
 <para>Default constructor, the value is 0 and the dimensions are empty. </para>
         </briefdescription>
@@ -59,9 +56,8 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -88,7 +84,6 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(scalar_unit &amp;&amp;x)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -117,13 +112,12 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(float new_value, const string &amp;init_dimensions)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <briefdescription>
@@ -140,13 +134,12 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(double new_value, const string &amp;init_dimensions)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <briefdescription>
@@ -163,13 +156,12 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(long double new_value, const string &amp;init_dimensions)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>long double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <briefdescription>
@@ -186,13 +178,12 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(int new_value, const string &amp;init_dimensions)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <briefdescription>
@@ -209,13 +200,12 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(float new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <briefdescription>
@@ -232,13 +222,12 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(double new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <briefdescription>
@@ -255,13 +244,12 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(long double new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>long double</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <briefdescription>
@@ -278,13 +266,12 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(int new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>new_dimensions</declname>
         </param>
         <briefdescription>
@@ -301,9 +288,8 @@
         <definition>scalar_unit::scalar_unit</definition>
         <argsstring>(const string &amp;init_scalar)</argsstring>
         <name>scalar_unit</name>
-        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_scalar</declname>
         </param>
         <briefdescription>
@@ -320,9 +306,8 @@
         <definition>scalar_unit &amp; scalar_unit::operator=</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::scalar_unit::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -339,7 +324,6 @@
         <definition>scalar_unit &amp; scalar_unit::operator=</definition>
         <argsstring>(scalar_unit &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::scalar_unit::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -358,9 +342,8 @@
         <definition>scalar_unit &amp; scalar_unit::operator=</definition>
         <argsstring>(const string &amp;init_scalar)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::scalar_unit::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_scalar</declname>
         </param>
         <briefdescription>
@@ -377,7 +360,6 @@
         <definition>scalar_unit::operator float</definition>
         <argsstring>() const</argsstring>
         <name>operator float</name>
-        <qualifiedname>scifir::scalar_unit::operator float</qualifiedname>
         <briefdescription>
 <para>Cast the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> to their float equivalent, it discards the dimensions and copies the value to a float. </para>
         </briefdescription>
@@ -388,11 +370,10 @@
         <location file="units/scalar_unit.hpp" line="98" column="10" bodyfile="units/scalar_unit.cpp" bodystart="96" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a40e2dec78deafcf4c6ae24129a11fd5c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scalar_unit::operator==</definition>
         <argsstring>(scalar_unit x) const</argsstring>
         <name>operator==</name>
-        <qualifiedname>scifir::scalar_unit::operator==</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
           <declname>x</declname>
@@ -411,7 +392,6 @@
         <definition>scalar_unit scalar_unit::operator+</definition>
         <argsstring>(scalar_unit x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::scalar_unit::operator+</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
           <declname>x</declname>
@@ -430,7 +410,6 @@
         <definition>scalar_unit scalar_unit::operator-</definition>
         <argsstring>(scalar_unit x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::scalar_unit::operator-</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
           <declname>x</declname>
@@ -449,7 +428,6 @@
         <definition>scalar_unit scalar_unit::operator*</definition>
         <argsstring>(scalar_unit x) const</argsstring>
         <name>operator*</name>
-        <qualifiedname>scifir::scalar_unit::operator*</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
           <declname>x</declname>
@@ -468,7 +446,6 @@
         <definition>scalar_unit scalar_unit::operator/</definition>
         <argsstring>(scalar_unit x) const</argsstring>
         <name>operator/</name>
-        <qualifiedname>scifir::scalar_unit::operator/</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
           <declname>x</declname>
@@ -487,9 +464,8 @@
         <definition>scalar_unit scalar_unit::operator^</definition>
         <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator^</name>
-        <qualifiedname>scifir::scalar_unit::operator^</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -502,11 +478,10 @@
         <location file="units/scalar_unit.hpp" line="106" column="13" bodyfile="units/scalar_unit.cpp" bodystart="162" bodyend="173"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1abbaf4dd62c32f8d16a6aaa1363430fd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::operator+=</definition>
         <argsstring>(scalar_unit x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::scalar_unit::operator+=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
           <declname>x</declname>
@@ -521,11 +496,10 @@
         <location file="units/scalar_unit.hpp" line="107" column="6" bodyfile="units/scalar_unit.cpp" bodystart="175" bodyend="184"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1acd9a736b50d0a914e043fc97b9323e90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::operator-=</definition>
         <argsstring>(scalar_unit x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::scalar_unit::operator-=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
           <declname>x</declname>
@@ -542,18 +516,17 @@
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1ac395d00e4b4abaeb037d75bd83a068c4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scalar_unit::operator+</definition>
         <argsstring>(T y) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::scalar_unit::operator+</qualifiedname>
         <param>
           <type>T</type>
           <declname>y</declname>
@@ -570,18 +543,17 @@
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a5277a3985d9aa59cb23a2f4c461f3c30" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scalar_unit::operator-</definition>
         <argsstring>(T y) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::scalar_unit::operator-</qualifiedname>
         <param>
           <type>T</type>
           <declname>y</declname>
@@ -598,18 +570,17 @@
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a9b250120739fca9c027ea3929f31a555" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scalar_unit::operator*</definition>
         <argsstring>(T y) const</argsstring>
         <name>operator*</name>
-        <qualifiedname>scifir::scalar_unit::operator*</qualifiedname>
         <param>
           <type>T</type>
           <declname>y</declname>
@@ -626,18 +597,17 @@
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a597ee369782cd285beec1a76f9794792" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scalar_unit::operator/</definition>
         <argsstring>(T y) const</argsstring>
         <name>operator/</name>
-        <qualifiedname>scifir::scalar_unit::operator/</qualifiedname>
         <param>
           <type>T</type>
           <declname>y</declname>
@@ -654,18 +624,17 @@
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a1e7a6b741716f2a06116808cbc5b22a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;T&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scalar_unit::operator^</definition>
         <argsstring>(T y) const</argsstring>
         <name>operator^</name>
-        <qualifiedname>scifir::scalar_unit::operator^</qualifiedname>
         <param>
           <type>T</type>
           <declname>y</declname>
@@ -682,18 +651,17 @@
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a0d1abb8fa0e6feb7486033c4bc97bbe4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::operator+=</definition>
         <argsstring>(T y)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::scalar_unit::operator+=</qualifiedname>
         <param>
           <type>T</type>
           <declname>y</declname>
@@ -710,18 +678,17 @@
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a17928a033e3292fea8ae8f4d087cac56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::operator-=</definition>
         <argsstring>(T y)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::scalar_unit::operator-=</qualifiedname>
         <param>
           <type>T</type>
           <declname>y</declname>
@@ -738,18 +705,17 @@
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a0b7780e065e19c2bbb3b918b0581ba27" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::operator*=</definition>
         <argsstring>(T y)</argsstring>
         <name>operator*=</name>
-        <qualifiedname>scifir::scalar_unit::operator*=</qualifiedname>
         <param>
           <type>T</type>
           <declname>y</declname>
@@ -766,18 +732,17 @@
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1ab2e5d01cbd910afdad116d6c06739409" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::operator/=</definition>
         <argsstring>(T y)</argsstring>
         <name>operator/=</name>
-        <qualifiedname>scifir::scalar_unit::operator/=</qualifiedname>
         <param>
           <type>T</type>
           <declname>y</declname>
@@ -796,7 +761,6 @@
         <definition>scalar_unit &amp; scalar_unit::operator++</definition>
         <argsstring>()</argsstring>
         <name>operator++</name>
-        <qualifiedname>scifir::scalar_unit::operator++</qualifiedname>
         <briefdescription>
 <para>Increment operator, it increases the value by one. </para>
         </briefdescription>
@@ -811,9 +775,8 @@
         <definition>scalar_unit &amp; scalar_unit::operator++</definition>
         <argsstring>(int)</argsstring>
         <name>operator++</name>
-        <qualifiedname>scifir::scalar_unit::operator++</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
         </param>
         <briefdescription>
 <para>Increment operator, it increases the value by one. </para>
@@ -829,7 +792,6 @@
         <definition>scalar_unit &amp; scalar_unit::operator--</definition>
         <argsstring>()</argsstring>
         <name>operator--</name>
-        <qualifiedname>scifir::scalar_unit::operator--</qualifiedname>
         <briefdescription>
 <para>Decrement operator, it decreases the value by one. </para>
         </briefdescription>
@@ -844,9 +806,8 @@
         <definition>scalar_unit &amp; scalar_unit::operator--</definition>
         <argsstring>(int)</argsstring>
         <name>operator--</name>
-        <qualifiedname>scifir::scalar_unit::operator--</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
         </param>
         <briefdescription>
 <para>Decrement operator, it decreases the value by one. </para>
@@ -858,13 +819,12 @@
         <location file="units/scalar_unit.hpp" line="175" column="13" bodyfile="units/scalar_unit.cpp" bodystart="216" bodyend="221"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1aaf48aa357423e1f65044190c27053657" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::change_dimensions</definition>
         <argsstring>(const string &amp;init_dimensions)</argsstring>
         <name>change_dimensions</name>
-        <qualifiedname>scifir::scalar_unit::change_dimensions</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <briefdescription>
@@ -877,13 +837,12 @@
         <location file="units/scalar_unit.hpp" line="177" column="6" bodyfile="units/scalar_unit.cpp" bodystart="223" bodyend="263"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1adda2fd58d0782bb244251760978c853d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::change_dimensions</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>change_dimensions</name>
-        <qualifiedname>scifir::scalar_unit::change_dimensions</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -896,13 +855,12 @@
         <location file="units/scalar_unit.hpp" line="178" column="6" bodyfile="units/scalar_unit.cpp" bodystart="265" bodyend="304"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a4c076490a43430ad72b9443bb2d68fb7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scalar_unit::has_dimensions</definition>
         <argsstring>(const string &amp;init_dimensions) const</argsstring>
         <name>has_dimensions</name>
-        <qualifiedname>scifir::scalar_unit::has_dimensions</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <briefdescription>
@@ -915,13 +873,12 @@
         <location file="units/scalar_unit.hpp" line="179" column="6" bodyfile="units/scalar_unit.cpp" bodystart="306" bodyend="310"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a08e62ce3092e91269286dda5b8178869" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scalar_unit::has_dimensions</definition>
         <argsstring>(const vector&lt; dimension &gt; &amp;x_dimensions) const</argsstring>
         <name>has_dimensions</name>
-        <qualifiedname>scifir::scalar_unit::has_dimensions</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
           <declname>x_dimensions</declname>
         </param>
         <briefdescription>
@@ -934,13 +891,12 @@
         <location file="units/scalar_unit.hpp" line="180" column="6" bodyfile="units/scalar_unit.cpp" bodystart="312" bodyend="315"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a83084c8cac8d4a018891588d2eded5fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scalar_unit::has_dimensions</definition>
         <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>has_dimensions</name>
-        <qualifiedname>scifir::scalar_unit::has_dimensions</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -953,11 +909,10 @@
         <location file="units/scalar_unit.hpp" line="181" column="6" bodyfile="units/scalar_unit.cpp" bodystart="317" bodyend="320"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a0b736b31c71a1240704cda3300a45039" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scalar_unit::has_empty_dimensions</definition>
         <argsstring>() const</argsstring>
         <name>has_empty_dimensions</name>
-        <qualifiedname>scifir::scalar_unit::has_empty_dimensions</qualifiedname>
         <briefdescription>
 <para>Checks if there aren&apos;t basic dimensions. </para>
         </briefdescription>
@@ -968,11 +923,10 @@
         <location file="units/scalar_unit.hpp" line="182" column="6" bodyfile="units/scalar_unit.cpp" bodystart="322" bodyend="333"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a14efad80e22f77b77b3b82de4c0c72ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scalar_unit::display_dimensions</definition>
         <argsstring>() const</argsstring>
         <name>display_dimensions</name>
-        <qualifiedname>scifir::scalar_unit::display_dimensions</qualifiedname>
         <briefdescription>
 <para>Generates an string of the dimensions of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>, with the same format as the initialization string of dimensions. </para>
         </briefdescription>
@@ -987,7 +941,6 @@
         <definition>vector&lt; dimension &gt; scalar_unit::get_derived_dimensions</definition>
         <argsstring>() const</argsstring>
         <name>get_derived_dimensions</name>
-        <qualifiedname>scifir::scalar_unit::get_derived_dimensions</qualifiedname>
         <briefdescription>
 <para>Generates a set of the derived dimensions of the dimensions of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>. </para>
         </briefdescription>
@@ -998,11 +951,10 @@
         <location file="units/scalar_unit.hpp" line="186" column="8" bodyfile="units/scalar_unit.cpp" bodystart="345" bodyend="348"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a39ed9ef8729a155b1a54ab848e8576c0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+        <type>const vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
         <definition>const vector&lt; dimension &gt; &amp; scalar_unit::get_dimensions</definition>
         <argsstring>() const</argsstring>
         <name>get_dimensions</name>
-        <qualifiedname>scifir::scalar_unit::get_dimensions</qualifiedname>
         <briefdescription>
 <para>Read-only getter of the dimensions. </para>
         </briefdescription>
@@ -1013,11 +965,10 @@
         <location file="units/scalar_unit.hpp" line="188" column="21" bodyfile="units/scalar_unit.hpp" bodystart="188" bodyend="191"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1aeb2d34ea9de078b70babda80182e677a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &amp;</type>
+        <type>const float &amp;</type>
         <definition>const float &amp; scalar_unit::get_value</definition>
         <argsstring>() const</argsstring>
         <name>get_value</name>
-        <qualifiedname>scifir::scalar_unit::get_value</qualifiedname>
         <briefdescription>
 <para>Read-only getter of the value. </para>
         </briefdescription>
@@ -1028,28 +979,27 @@
         <location file="units/scalar_unit.hpp" line="193" column="20" bodyfile="units/scalar_unit.hpp" bodystart="193" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a5cec374081c39d864a7c3267b6edad09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scalar_unit::display</definition>
         <argsstring>(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const</argsstring>
         <name>display</name>
-        <qualifiedname>scifir::scalar_unit::display</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+          <type>bool</type>
           <declname>with_brackets</declname>
-          <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
+          <defval>false</defval>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+          <type>bool</type>
           <declname>use_close_prefix</declname>
-          <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
+          <defval>false</defval>
         </param>
         <briefdescription>
-<para>Generates an string of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>, with the value and the dimensions. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix. </para>
+<para>Generates an string representation of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>, with the value and the dimensions. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1058,28 +1008,27 @@
         <location file="units/scalar_unit.hpp" line="198" column="8" bodyfile="units/scalar_unit.cpp" bodystart="350" bodyend="377"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1aacf2082b3224a8ded5798a0f1727b8a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scalar_unit::derived_display</definition>
         <argsstring>(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const</argsstring>
         <name>derived_display</name>
-        <qualifiedname>scifir::scalar_unit::derived_display</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+          <type>bool</type>
           <declname>with_brackets</declname>
-          <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
+          <defval>false</defval>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+          <type>bool</type>
           <declname>use_close_prefix</declname>
-          <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
+          <defval>false</defval>
         </param>
         <briefdescription>
-<para>Generates an string of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>, with all dimensions converted to their derived counterpart. </para>
+<para>Generates an string representation of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>, with all dimensions converted to their derived counterpart. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1088,27 +1037,26 @@
         <location file="units/scalar_unit.hpp" line="199" column="8" bodyfile="units/scalar_unit.cpp" bodystart="379" bodyend="399"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1acc46b7f3e73c08b61e4528bc3331fc60" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scalar_unit::custom_display</definition>
         <argsstring>(const string &amp;init_dimensions, int number_of_decimals=2, bool with_brackets=false) const</argsstring>
         <name>custom_display</name>
-        <qualifiedname>scifir::scalar_unit::custom_display</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+          <type>bool</type>
           <declname>with_brackets</declname>
-          <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
+          <defval>false</defval>
         </param>
         <briefdescription>
-<para>Generates an string of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions. </para>
+<para>Generates an string representation of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1116,20 +1064,19 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="200" column="8" bodyfile="units/scalar_unit.cpp" bodystart="401" bodyend="472"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="protected-func">
+      </sectiondef>
+      <sectiondef kind="protected-func">
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a28dc39e25122213c5d61cd56a260ef7b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::add_dimension</definition>
         <argsstring>(const dimension &amp;new_dimension)</argsstring>
         <name>add_dimension</name>
-        <qualifiedname>scifir::scalar_unit::add_dimension</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
           <declname>new_dimension</declname>
         </param>
         <briefdescription>
-<para>Internal function. It adds a dimension, changing the value according to the conversion factor of the added dimension and the prefix. </para>
+<para><bold>Internal function</bold>. It adds a dimension, changing the value according to the conversion factor of the added dimension and the prefix. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1138,17 +1085,16 @@
         <location file="units/scalar_unit.hpp" line="206" column="6" bodyfile="units/scalar_unit.cpp" bodystart="474" bodyend="486"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1ad78ee83a39d1d8a846545f4b3ff6339b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::remove_dimension</definition>
         <argsstring>(const dimension &amp;old_dimension)</argsstring>
         <name>remove_dimension</name>
-        <qualifiedname>scifir::scalar_unit::remove_dimension</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
           <declname>old_dimension</declname>
         </param>
         <briefdescription>
-<para>Internal function. It removes a dimension, changing the value according to the conversion factor of the removed dimension and the prefix. </para>
+<para><bold>Internal function</bold>. It removes a dimension, changing the value according to the conversion factor of the removed dimension and the prefix. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1157,17 +1103,16 @@
         <location file="units/scalar_unit.hpp" line="207" column="6" bodyfile="units/scalar_unit.cpp" bodystart="488" bodyend="500"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a05dcfa5468b6d3700ec90bc60bc3f26e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scalar_unit::initialize_from_string</definition>
         <argsstring>(string init_scalar)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::scalar_unit::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <type>string</type>
           <declname>init_scalar</declname>
         </param>
         <briefdescription>
-<para>Internal function. It sets the value and the dimensions of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> to the value and dimensions specified by the initialization string of <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>. </para>
+<para><bold>Internal function</bold>. It sets the value and the dimensions of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> to the value and dimensions specified by the initialization string of <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1175,21 +1120,21 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="208" column="6" bodyfile="units/scalar_unit.cpp" bodystart="502" bodyend="535"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
-<para>Class that allows to create scalar units. </para>
+<para>Class that allows to create scalar units, which are cmoposed of a value (as a float) and dimensions. The dimensions can be of any number, and be basic dimensions and/or abbreviations of dimensions. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its abbreviations. The abbreviations can be converted to its derived dimensions, too. <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its derived dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly. </para>
+<para><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its abbreviations. The abbreviations can be converted to its derived dimensions, too. <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its derived dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly. POSSIBLE FEATURES At the present <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> classes use a vector&lt;dimension&gt; to allow to have any number of dimensions, which can be basic or abbreviations. In order to size less, it&apos;s possible for some <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> classes to have only one dimension, instead of a vector, that saves memory. With that approach, the dimension needs only 3 bytes. The possibility to switch between a single dimension and a vector&lt;dimension&gt; doesn&apos;t yet exists in C++, and so this important feature has been postposed. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
         <label>scifir::scalar_unit</label>
         <link refid="classscifir_1_1scalar__unit"/>
       </node>
-      <node id="2">
-        <label>scifir::vector_unit_2d</label>
-        <link refid="classscifir_1_1vector__unit__2d"/>
+      <node id="4">
+        <label>scifir::vector_unit_nd</label>
+        <link refid="classscifir_1_1vector__unit__nd"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -1199,9 +1144,9 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>scifir::vector_unit_nd</label>
-        <link refid="classscifir_1_1vector__unit__nd"/>
+      <node id="2">
+        <label>scifir::vector_unit_2d</label>
+        <link refid="classscifir_1_1vector__unit__2d"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>

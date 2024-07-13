@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1zid" kind="class" language="C++" prot="public">
     <compoundname>scifir::zid</compoundname>
     <includes refid="zid_8hpp" local="no">zid.hpp</includes>
-    <sectiondef kind="public-attrib">
+      <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1zid_1a64c51e9d7f9bfed4a45b463d8b45116b" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref></type>
         <definition>scifir::aid scifir::zid::aid</definition>
         <argsstring></argsstring>
         <name>aid</name>
-        <qualifiedname>scifir::zid::aid</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -19,11 +18,10 @@
         <location file="special_units/zid.hpp" line="33" column="13" bodyfile="special_units/zid.hpp" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1zid_1a312733eaed75956e815a5422e70b6d5d" prot="public" static="no" mutable="no">
-        <type>vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &gt;</type>
+        <type>vector&lt; string &gt;</type>
         <definition>vector&lt;string&gt; scifir::zid::regions</definition>
         <argsstring></argsstring>
         <name>regions</name>
-        <qualifiedname>scifir::zid::regions</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -33,11 +31,10 @@
         <location file="special_units/zid.hpp" line="34" column="8" bodyfile="special_units/zid.hpp" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1zid_1a3202ef05c7c725b58e0e413e329fd590" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::zid::country</definition>
         <argsstring></argsstring>
         <name>country</name>
-        <qualifiedname>scifir::zid::country</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -47,11 +44,10 @@
         <location file="special_units/zid.hpp" line="35" column="8" bodyfile="special_units/zid.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1zid_1a3ef65cf7878c83b2222c2daf6f5f3f36" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::zid::zone</definition>
         <argsstring></argsstring>
         <name>zone</name>
-        <qualifiedname>scifir::zid::zone</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -60,14 +56,13 @@
         </inbodydescription>
         <location file="special_units/zid.hpp" line="36" column="8" bodyfile="special_units/zid.hpp" bodystart="36" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1zid_1a3373cd61f91001d2fbd0d41906f73921" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::zid::zid</definition>
         <argsstring>()</argsstring>
         <name>zid</name>
-        <qualifiedname>scifir::zid::zid</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -81,9 +76,8 @@
         <definition>scifir::zid::zid</definition>
         <argsstring>(const zid &amp;x)</argsstring>
         <name>zid</name>
-        <qualifiedname>scifir::zid::zid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -99,7 +93,6 @@
         <definition>scifir::zid::zid</definition>
         <argsstring>(zid &amp;&amp;x)</argsstring>
         <name>zid</name>
-        <qualifiedname>scifir::zid::zid</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -117,21 +110,20 @@
         <definition>scifir::zid::zid</definition>
         <argsstring>(const scifir::aid &amp;new_aid, const string &amp;new_country, const vector&lt; string &gt; &amp;new_regions, const string &amp;new_zone)</argsstring>
         <name>zid</name>
-        <qualifiedname>scifir::zid::zid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
           <declname>new_aid</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_country</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &gt; &amp;</type>
+          <type>const vector&lt; string &gt; &amp;</type>
           <declname>new_regions</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_zone</declname>
         </param>
         <briefdescription>
@@ -147,13 +139,12 @@
         <definition>scifir::zid::zid</definition>
         <argsstring>(const scifir::aid &amp;new_aid, const string &amp;init_zid)</argsstring>
         <name>zid</name>
-        <qualifiedname>scifir::zid::zid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
           <declname>new_aid</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_zid</declname>
         </param>
         <briefdescription>
@@ -169,9 +160,8 @@
         <definition>scifir::zid::zid</definition>
         <argsstring>(const string &amp;init_zid_full)</argsstring>
         <name>zid</name>
-        <qualifiedname>scifir::zid::zid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_zid_full</declname>
         </param>
         <briefdescription>
@@ -187,9 +177,8 @@
         <definition>zid &amp; scifir::zid::operator=</definition>
         <argsstring>(const zid &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::zid::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -205,7 +194,6 @@
         <definition>zid &amp; scifir::zid::operator=</definition>
         <argsstring>(zid &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::zid::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -223,9 +211,8 @@
         <definition>zid &amp; scifir::zid::operator=</definition>
         <argsstring>(const string &amp;init_zid_full)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::zid::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_zid_full</declname>
         </param>
         <briefdescription>
@@ -237,11 +224,10 @@
         <location file="special_units/zid.hpp" line="25" column="5" bodyfile="special_units/zid.cpp" bodystart="69" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1zid_1a22ea002ba3cd88eaf33fe807e15bdbf8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::zid::has_no_country</definition>
         <argsstring>() const</argsstring>
         <name>has_no_country</name>
-        <qualifiedname>scifir::zid::has_no_country</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -251,11 +237,10 @@
         <location file="special_units/zid.hpp" line="27" column="6" bodyfile="special_units/zid.cpp" bodystart="75" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1zid_1a954f08f912dd187108588aacbc5ad3c2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::zid::has_unknown_country</definition>
         <argsstring>() const</argsstring>
         <name>has_unknown_country</name>
-        <qualifiedname>scifir::zid::has_unknown_country</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -265,11 +250,10 @@
         <location file="special_units/zid.hpp" line="28" column="6" bodyfile="special_units/zid.cpp" bodystart="80" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1zid_1abb2467d428ccaa5ad0ad8be47f8a35cd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::zid::display</definition>
         <argsstring>() const</argsstring>
         <name>display</name>
-        <qualifiedname>scifir::zid::display</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -279,11 +263,10 @@
         <location file="special_units/zid.hpp" line="30" column="8" bodyfile="special_units/zid.cpp" bodystart="85" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1zid_1ad9af6fe963a20b2f1afd43cac25c33e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::zid::partial_display</definition>
         <argsstring>() const</argsstring>
         <name>partial_display</name>
-        <qualifiedname>scifir::zid::partial_display</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -292,16 +275,15 @@
         </inbodydescription>
         <location file="special_units/zid.hpp" line="31" column="8" bodyfile="special_units/zid.cpp" bodystart="104" bodyend="121"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1zid_1af59da9725af73b58fa85058665a94957" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::zid::initialize_from_string</definition>
         <argsstring>(const string &amp;init_zid_full)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::zid::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_zid_full</declname>
         </param>
         <briefdescription>
@@ -312,22 +294,22 @@
         </inbodydescription>
         <location file="special_units/zid.hpp" line="39" column="6" bodyfile="special_units/zid.cpp" bodystart="123" bodyend="169"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
-        <label>scifir::aid</label>
-        <link refid="classscifir_1_1aid"/>
-      </node>
       <node id="1">
         <label>scifir::zid</label>
         <link refid="classscifir_1_1zid"/>
         <childnode refid="2" relation="usage">
           <edgelabel>aid</edgelabel>
         </childnode>
+      </node>
+      <node id="2">
+        <label>scifir::aid</label>
+        <link refid="classscifir_1_1aid"/>
       </node>
     </collaborationgraph>
     <location file="special_units/zid.hpp" line="13" column="1" bodyfile="special_units/zid.hpp" bodystart="14" bodyend="40"/>

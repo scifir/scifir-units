@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['k_0',['k',['../classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088',1,'scifir::prefix::k'],['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba4db984fefed27fc13de75e8130e2feeb',1,'scifir::dimension::K']]],
-  ['kat_1',['kat',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba0d7b0f1ae447a0025df9d16b96fa6c40',1,'scifir::dimension']]]
+  ['katal_2793',['KATAL',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba174c0c300e040de5e902daa9939c9618',1,'scifir::dimension']]],
+  ['kelvin_2794',['KELVIN',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fbad74cc26e453a701ae6ec4d71a73feca9',1,'scifir::dimension']]],
+  ['kilo_2795',['KILO',['../classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8',1,'scifir::prefix']]]
 ];

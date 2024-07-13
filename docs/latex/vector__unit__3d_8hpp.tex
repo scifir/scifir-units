@@ -1,12 +1,12 @@
-\doxysection{units/vector\+\_\+unit\+\_\+3d.hpp File Reference}
-\hypertarget{vector__unit__3d_8hpp}{}\label{vector__unit__3d_8hpp}\index{units/vector\_unit\_3d.hpp@{units/vector\_unit\_3d.hpp}}
-{\ttfamily \#include "{}../units/scalar\+\_\+unit.\+hpp"{}}\newline
-{\ttfamily \#include "{}../units/vector\+\_\+unit\+\_\+2d.\+hpp"{}}\newline
-{\ttfamily \#include "{}../units/vector\+\_\+unit\+\_\+nd.\+hpp"{}}\newline
-{\ttfamily \#include "{}../meca\+\_\+number/angle.\+hpp"{}}\newline
-{\ttfamily \#include "{}../util/is\+\_\+number.\+hpp"{}}\newline
-{\ttfamily \#include "{}../topology/direction.\+hpp"{}}\newline
-{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+\hypertarget{vector__unit__3d_8hpp}{}\doxysection{units/vector\+\_\+unit\+\_\+3d.hpp File Reference}
+\label{vector__unit__3d_8hpp}\index{units/vector\_unit\_3d.hpp@{units/vector\_unit\_3d.hpp}}
+{\ttfamily \#include \char`\"{}../units/scalar\+\_\+unit.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../units/vector\+\_\+unit\+\_\+2d.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../units/vector\+\_\+unit\+\_\+nd.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../meca\+\_\+number/angle.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/is\+\_\+number.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../topology/direction.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}boost/algorithm/string.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include $<$functional$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
@@ -14,31 +14,33 @@
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-Include dependency graph for vector\+\_\+unit\+\_\+3d.\+hpp\+:\nopagebreak
+Include dependency graph for vector\+\_\+unit\+\_\+3d.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{vector__unit__3d_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{vector__unit__3d_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Classes}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactList}\small\item\em Class that creates a vector unit in 3D. The vector is in {\bfseries{spherical coordinates}} with a value and dimensions of the \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}}, and an angle theta and another angle phi for his direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+ \mbox{\hyperlink{namespacescifir}{scifir}}
 \begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Macros}
+\doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{vector__unit__3d_8hpp_a2332808b28d1b1173761447c5b9f2519}{VECTOR\+\_\+\+UNIT\+\_\+3\+D\+\_\+\+HPP\+\_\+\+BEGIN}}(name)
@@ -53,63 +55,63 @@ namespace \mbox{\hyperlink{namespacescifir}{scifir}}
 \item 
 \#define \mbox{\hyperlink{vector__unit__3d_8hpp_a5a3e70edc911522e41fd4926f4cedcb7}{VECTOR\+\_\+\+UNIT\+\_\+\+CPP}}(name,  init\+\_\+dimensions)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_ab7fb5bd7e3dce0357a306ef1bc16fd0e}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{namespacescifir_a12256ad91a09112ae1515d2532d5b721}{scifir\+::norm}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{namespacescifir_aff302ba57190c50495faa737867c4512}{scifir\+::sqrt}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
-\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{namespacescifir_a0106c7b5d5258ea53513935964d08e8d}{scifir\+::sqrt\+\_\+nth}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} index)
-\item 
-\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{namespacescifir_ace0edee40a69737f575bd80df8dca9c4}{scifir\+::dot\+\_\+product}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
-\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{namespacescifir_ac62851b9d931d02184edca7f3db3f1a7}{scifir\+::cross\+\_\+product}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
-\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_ac860ed2437193ce73676374430236859}{scifir\+::angle\+\_\+between}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a19f08ffa79111f8085d509dc14c2f1e3}{scifir\+::same\+\_\+direction}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_ab9afa8da4d4995163fdc49332dea029e}{scifir\+::parallel}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_afc6f9fc2154dce1fc4819d1e2333342a}{scifir\+::orthogonal}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
-\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{vector__unit__3d_8hpp_a4c6d9f8da6712bb19e4985c7518ddcd9}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
+string \mbox{\hyperlink{namespacescifir_ab7fb5bd7e3dce0357a306ef1bc16fd0e}{scifir\+::to\+\_\+string}} (const vector\+\_\+unit\+\_\+3d \&x)
+\begin{DoxyCompactList}\small\item\em It generates a string representation of \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}}. \end{DoxyCompactList}\item 
+scalar\+\_\+unit \mbox{\hyperlink{namespacescifir_a12256ad91a09112ae1515d2532d5b721}{scifir\+::norm}} (const vector\+\_\+unit\+\_\+3d \&x)
+\begin{DoxyCompactList}\small\item\em It returns the value of the vector in spherical coordinates, r. \end{DoxyCompactList}\item 
+vector\+\_\+unit\+\_\+3d \mbox{\hyperlink{namespacescifir_aff302ba57190c50495faa737867c4512}{scifir\+::sqrt}} (const vector\+\_\+unit\+\_\+3d \&x)
+\begin{DoxyCompactList}\small\item\em It squares the vector, creating a \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} with the value squared and always the same theta and the same phi. The dimensions are squared with the same rules for the square of dimensions than \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} classes. \end{DoxyCompactList}\item 
+vector\+\_\+unit\+\_\+3d \mbox{\hyperlink{namespacescifir_a0106c7b5d5258ea53513935964d08e8d}{scifir\+::sqrt\+\_\+nth}} (const vector\+\_\+unit\+\_\+3d \&x, int index)
+\begin{DoxyCompactList}\small\item\em It takes the root of the vector with the index given, creating a \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} with the value rooted to that index and always maintains the same theta and the same phi. The dimensions are squared with the same rules for the square of dimensions than \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} classes. \end{DoxyCompactList}\item 
+scalar\+\_\+unit \mbox{\hyperlink{namespacescifir_ace0edee40a69737f575bd80df8dca9c4}{scifir\+::dot\+\_\+product}} (const vector\+\_\+unit\+\_\+3d \&x, const vector\+\_\+unit\+\_\+3d \&y)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} as the dot product of the two vectors x and y. \end{DoxyCompactList}\item 
+vector\+\_\+unit\+\_\+3d \mbox{\hyperlink{namespacescifir_ac62851b9d931d02184edca7f3db3f1a7}{scifir\+::cross\+\_\+product}} (const vector\+\_\+unit\+\_\+3d \&x, const vector\+\_\+unit\+\_\+3d \&y)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\+\_\+unit\+\_\+3d}} as the cross product of the two vectors x and y. \end{DoxyCompactList}\item 
+angle \mbox{\hyperlink{namespacescifir_ac860ed2437193ce73676374430236859}{scifir\+::angle\+\_\+between}} (const vector\+\_\+unit\+\_\+3d \&x, const vector\+\_\+unit\+\_\+3d \&y)
+\begin{DoxyCompactList}\small\item\em Returns the angle between two vectors x and y inside a 3D space. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacescifir_a19f08ffa79111f8085d509dc14c2f1e3}{scifir\+::same\+\_\+direction}} (const vector\+\_\+unit\+\_\+3d \&x, const vector\+\_\+unit\+\_\+3d \&y)
+\begin{DoxyCompactList}\small\item\em Checks if two vectors x and y have the same direction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacescifir_ab9afa8da4d4995163fdc49332dea029e}{scifir\+::parallel}} (const vector\+\_\+unit\+\_\+3d \&x, const vector\+\_\+unit\+\_\+3d \&y)
+\begin{DoxyCompactList}\small\item\em Checks if two vectors x and y are parallel, which means that their direction is the same or the exact opposite. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacescifir_afc6f9fc2154dce1fc4819d1e2333342a}{scifir\+::orthogonal}} (const vector\+\_\+unit\+\_\+3d \&x, const vector\+\_\+unit\+\_\+3d \&y)
+\begin{DoxyCompactList}\small\item\em Checks if two vectors x and y are orthogonal, that\textquotesingle{}s, if they have 90 degrees between them. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{vector__unit__3d_8hpp_a4c6d9f8da6712bb19e4985c7518ddcd9}{operator$\ast$}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&y)
+\begin{DoxyCompactList}\small\item\em It creates a new vector\+\_\+unit\+\_\+3d scaling a vector\+\_\+unit\+\_\+3d by the scalar\+\_\+unit x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{vector__unit__3d_8hpp_a40667e66dd6ebd0f8ad3500ac33360e7}{operator+}} (const T y, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
+\begin{DoxyCompactList}\small\item\em It creates a new vector as the addition of the numeric type x to the value. Theta and phi are not changed. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{vector__unit__3d_8hpp_a101c145e0d4d3ed4c82bbbb97b6b9b13}{operator-\/}} (const T y, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
-{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{vector__unit__3d_8hpp_a6cafbf3b0356494bc33e527bb650eb65}{operator\texorpdfstring{$\ast$}{*}}} (const T y, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
+\begin{DoxyCompactList}\small\item\em It creates a new vector as the substraction of the numeric type x with the value. Theta and phi are not changed. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{vector__unit__3d_8hpp_a6cafbf3b0356494bc33e527bb650eb65}{operator$\ast$}} (const T y, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
+\begin{DoxyCompactList}\small\item\em It creates a new vector as the multiplication of the numeric type x to the value. Theta and phi are not changed. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \mbox{\hyperlink{vector__unit__3d_8hpp_a68f53ea993f49c7e3fe11b6d289b8201}{operator/}} (const T y, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
+\begin{DoxyCompactList}\small\item\em It creates a new vector as the division of the numeric type x with the value. Theta and phi are not changed. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{vector__unit__3d_8hpp_aa589e78de56758ac784ac996a564cdc7}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Comparison operator. Two vector\+\_\+unit\+\_\+3d are not equal if their value, dimensions, theta or phi are different. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{vector__unit__3d_8hpp_a42f3ca37252f0b895098df93814d7569}{operator==}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x, const string \&init\+\_\+vector\+\_\+3d)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns true if x is equal to the vector\+\_\+unit\+\_\+3d initialized with the string being compared. The vectorial\+\_\+display() function is not used, and so the values are compared with all its decimal numbers. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{vector__unit__3d_8hpp_aa403c6557f7f52d7c4accdf865775cf3}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x, const string \&init\+\_\+vector\+\_\+3d)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns true if x is not equal to the vector\+\_\+unit\+\_\+3d initialized with the string being compared. The vectorial\+\_\+display() function is not used, and so the values are compared with all its decimal numbers. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{vector__unit__3d_8hpp_a02fc9cbed6b20dc6eb7befefebbd95c7}{operator==}} (const string \&init\+\_\+vector\+\_\+3d, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns true if x is equal to the vector\+\_\+unit\+\_\+3d initialized with the string being compared. The vectorial\+\_\+display() function is not used, and so the values are compared with all its decimal numbers. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{vector__unit__3d_8hpp_a66e84e427fff0aa3b23be55c4fc16d20}{operator!=}} (const string \&init\+\_\+vector\+\_\+3d, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns true if x is not equal to the vector\+\_\+unit\+\_\+3d initialized with the string being compared. The vectorial\+\_\+display() function is not used, and so the values are compared with all its decimal numbers. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{vector__unit__3d_8hpp_ab01a99178d6b0f2f38e5273626fe22d4}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Concatenates the string representation of the vector\+\_\+unit\+\_\+3d y to the string x. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{vector__unit__3d_8hpp_aa8270aa46b6f04f367bfd660ef89a72c}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new string as the concatenation of the string x with the representation string of the vector\+\_\+unit\+\_\+3d y. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{vector__unit__3d_8hpp_ad2fbb36d987ad11a95ccc42b25b06072}{operator+}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&y, const string \&x)
-\item 
-ostream \& \mbox{\hyperlink{vector__unit__3d_8hpp_a7a7f117501b6fdfeb462b147d2239c3a}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
-\item 
-istream \& \mbox{\hyperlink{vector__unit__3d_8hpp_a761af8b75a156be9a599fd2b55ab8417}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Creates a new string as the concatenation of the string x with the representation string of the vector\+\_\+unit\+\_\+3d y. \end{DoxyCompactList}\item 
+ostream \& \mbox{\hyperlink{vector__unit__3d_8hpp_a6311698b1e622a7e32d5466e1775b84f}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
+\begin{DoxyCompactList}\small\item\em Adds the string representation of the vector\+\_\+unit\+\_\+3d x to an output stream os. \end{DoxyCompactList}\item 
+istream \& \mbox{\hyperlink{vector__unit__3d_8hpp_abe7a1e329668ae7c61378c29c4361046}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&x)
+\begin{DoxyCompactList}\small\item\em Allows that an istream initializes by string a vector\+\_\+unit\+\_\+3d x. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{vector__unit__3d_8hpp_aa3ffdde49aad5570ad3c0867cf990d11}\label{vector__unit__3d_8hpp_aa3ffdde49aad5570ad3c0867cf990d11} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_aa3ffdde49aad5570ad3c0867cf990d11}\label{vector__unit__3d_8hpp_aa3ffdde49aad5570ad3c0867cf990d11}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!VECTOR\_UNIT\_3D\_CPP@{VECTOR\_UNIT\_3D\_CPP}}
 \index{VECTOR\_UNIT\_3D\_CPP@{VECTOR\_UNIT\_3D\_CPP}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_3D\_CPP}{VECTOR\_UNIT\_3D\_CPP}}
@@ -117,27 +119,18 @@ istream \& \mbox{\hyperlink{vector__unit__3d_8hpp_a761af8b75a156be9a599fd2b55ab8
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ name\#\#\_3d::name\#\#\_3d()\ :\ vector\_unit\_3d()\ \{\}\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ name\#\#\_3d::name\#\#\_3d(\textcolor{keyword}{const}\ name\#\#\_3d\&\ x)\ :\ vector\_unit\_3d(x)\ \{\}\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ name\#\#\_3d::name\#\#\_3d(name\#\#\_3d\&\&\ x)\ :\ vector\_unit\_3d(std::move(x))\ \{\}\ \(\backslash\)}
-\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ name\#\#\_3d::dimensions\_match\ =\ init\_dimensions;\ \(\backslash\)}
-\DoxyCodeLine{\textcolor{keyword}{const}\ vector<dimension>\ name\#\#\_3d::real\_dimensions\ =\ \mbox{\hyperlink{namespacescifir_ad696791ef9fa1f8d1694f54e6a38dace}{create\_derived\_dimensions}}(init\_dimensions)}
+\DoxyCodeLine{    name\#\#\_3d::name\#\#\_3d() : vector\_unit\_3d() \{\} \(\backslash\)}
+\DoxyCodeLine{    name\#\#\_3d::name\#\#\_3d(\textcolor{keyword}{const} name\#\#\_3d\& x) : vector\_unit\_3d(x) \{\} \(\backslash\)}
+\DoxyCodeLine{    name\#\#\_3d::name\#\#\_3d(name\#\#\_3d\&\& x) : vector\_unit\_3d(std::move(x)) \{\} \(\backslash\)}
+\DoxyCodeLine{const \textcolor{keywordtype}{string} name\#\#\_3d::dimensions\_match = init\_dimensions; \(\backslash\)}
+\DoxyCodeLine{const vector<dimension> name\#\#\_3d::real\_dimensions = \mbox{\hyperlink{namespacescifir_ad696791ef9fa1f8d1694f54e6a38dace}{create\_derived\_dimensions}}(init\_dimensions)}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+Definition at line 52 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ vector\_unit\_3d()\ \{\}\ \(\backslash\)}
-\DoxyCodeLine{00053\ \ \ \ \ name\#\#\_3d::name\#\#\_3d(\textcolor{keyword}{const}\ name\#\#\_3d\&\ x)\ :\ vector\_unit\_3d(x)\ \{\}\ \(\backslash\)}
-\DoxyCodeLine{00054\ \ \ \ \ name\#\#\_3d::name\#\#\_3d(name\#\#\_3d\&\&\ x)\ :\ vector\_unit\_3d(std::move(x))\ \{\}\ \(\backslash\)}
-\DoxyCodeLine{00055\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ name\#\#\_3d::dimensions\_match\ =\ init\_dimensions;\ \(\backslash\)}
-\DoxyCodeLine{00056\ \textcolor{keyword}{const}\ vector<dimension>\ name\#\#\_3d::real\_dimensions\ =\ \mbox{\hyperlink{namespacescifir_ad696791ef9fa1f8d1694f54e6a38dace}{create\_derived\_dimensions}}(init\_dimensions)}
-
-\end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_aa8221e4dd2ee9cb41e53866cd3f97111}\label{vector__unit__3d_8hpp_aa8221e4dd2ee9cb41e53866cd3f97111} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_aa8221e4dd2ee9cb41e53866cd3f97111}\label{vector__unit__3d_8hpp_aa8221e4dd2ee9cb41e53866cd3f97111}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!VECTOR\_UNIT\_3D\_HPP@{VECTOR\_UNIT\_3D\_HPP}}
 \index{VECTOR\_UNIT\_3D\_HPP@{VECTOR\_UNIT\_3D\_HPP}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_3D\_HPP}{VECTOR\_UNIT\_3D\_HPP}}
@@ -145,45 +138,27 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00052}{52}} of
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{class\ }name\#\#\_3d\ :\ \textcolor{keyword}{public}\ vector\_unit\_3d\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \{\ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::vector\_unit\_3d;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d();\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d(\textcolor{keyword}{const}\ name\#\#\_3d\&);\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d(name\#\#\_3d\&\&);\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator=;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator+=;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator-\/=;\ \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{class }name\#\#\_3d : \textcolor{keyword}{public} vector\_unit\_3d \(\backslash\)}
+\DoxyCodeLine{    \{   \(\backslash\)}
+\DoxyCodeLine{        public: \(\backslash\)}
+\DoxyCodeLine{            using vector\_unit\_3d::vector\_unit\_3d; \(\backslash\)}
+\DoxyCodeLine{            name\#\#\_3d(); \(\backslash\)}
+\DoxyCodeLine{            name\#\#\_3d(\textcolor{keyword}{const} name\#\#\_3d\&); \(\backslash\)}
+\DoxyCodeLine{            name\#\#\_3d(name\#\#\_3d\&\&); \(\backslash\)}
+\DoxyCodeLine{            using vector\_unit\_3d::operator =; \(\backslash\)}
+\DoxyCodeLine{            using vector\_unit\_3d::operator+=; \(\backslash\)}
+\DoxyCodeLine{            using vector\_unit\_3d::operator-\/=; \(\backslash\)}
 \DoxyCodeLine{\(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ dimensions\_match;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{            static \textcolor{keyword}{const} \textcolor{keywordtype}{string} dimensions\_match; \(\backslash\)}
+\DoxyCodeLine{            static \textcolor{keyword}{const} vector<dimension> real\_dimensions; \(\backslash\)}
+\DoxyCodeLine{    \}}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+Definition at line 37 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ vector\_unit\_3d\ \(\backslash\)}
-\DoxyCodeLine{00038\ \ \ \ \ \{\ \ \ \(\backslash\)}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::vector\_unit\_3d;\ \(\backslash\)}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d();\ \(\backslash\)}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d(\textcolor{keyword}{const}\ name\#\#\_3d\&);\ \(\backslash\)}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d(name\#\#\_3d\&\&);\ \(\backslash\)}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator=;\ \(\backslash\)}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator+=;\ \(\backslash\)}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator-\/=;\ \(\backslash\)}
-\DoxyCodeLine{00047\ \(\backslash\)}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ dimensions\_match;\ \(\backslash\)}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}
-\DoxyCodeLine{00050\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a2332808b28d1b1173761447c5b9f2519}\label{vector__unit__3d_8hpp_a2332808b28d1b1173761447c5b9f2519} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a2332808b28d1b1173761447c5b9f2519}\label{vector__unit__3d_8hpp_a2332808b28d1b1173761447c5b9f2519}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!VECTOR\_UNIT\_3D\_HPP\_BEGIN@{VECTOR\_UNIT\_3D\_HPP\_BEGIN}}
 \index{VECTOR\_UNIT\_3D\_HPP\_BEGIN@{VECTOR\_UNIT\_3D\_HPP\_BEGIN}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_3D\_HPP\_BEGIN}{VECTOR\_UNIT\_3D\_HPP\_BEGIN}}
@@ -191,37 +166,23 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00037}{37}} of
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{class\ }name\#\#\_3d\ :\ \textcolor{keyword}{public}\ vector\_unit\_3d\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \{\ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::vector\_unit\_3d;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d();\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d(\textcolor{keyword}{const}\ name\#\#\_3d\&);\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d(name\#\#\_3d\&\&);\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator=;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator+=;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator-\/=}
+\DoxyCodeLine{    \textcolor{keyword}{class }name\#\#\_3d : \textcolor{keyword}{public} vector\_unit\_3d \(\backslash\)}
+\DoxyCodeLine{    \{   \(\backslash\)}
+\DoxyCodeLine{        public: \(\backslash\)}
+\DoxyCodeLine{            using vector\_unit\_3d::vector\_unit\_3d; \(\backslash\)}
+\DoxyCodeLine{            name\#\#\_3d(); \(\backslash\)}
+\DoxyCodeLine{            name\#\#\_3d(\textcolor{keyword}{const} name\#\#\_3d\&); \(\backslash\)}
+\DoxyCodeLine{            name\#\#\_3d(name\#\#\_3d\&\&); \(\backslash\)}
+\DoxyCodeLine{            using vector\_unit\_3d::operator =; \(\backslash\)}
+\DoxyCodeLine{            using vector\_unit\_3d::operator+=; \(\backslash\)}
+\DoxyCodeLine{            using vector\_unit\_3d::operator-\/=}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+Definition at line 21 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ vector\_unit\_3d\ \(\backslash\)}
-\DoxyCodeLine{00022\ \ \ \ \ \{\ \ \ \(\backslash\)}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::vector\_unit\_3d;\ \(\backslash\)}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d();\ \(\backslash\)}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d(\textcolor{keyword}{const}\ name\#\#\_3d\&);\ \(\backslash\)}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_3d(name\#\#\_3d\&\&);\ \(\backslash\)}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator=;\ \(\backslash\)}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator+=;\ \(\backslash\)}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_3d::operator-\/=}
-
-\end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a0ddbf3b52e66c530f251d812591bd6fb}\label{vector__unit__3d_8hpp_a0ddbf3b52e66c530f251d812591bd6fb} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a0ddbf3b52e66c530f251d812591bd6fb}\label{vector__unit__3d_8hpp_a0ddbf3b52e66c530f251d812591bd6fb}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!VECTOR\_UNIT\_3D\_HPP\_END@{VECTOR\_UNIT\_3D\_HPP\_END}}
 \index{VECTOR\_UNIT\_3D\_HPP\_END@{VECTOR\_UNIT\_3D\_HPP\_END}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_3D\_HPP\_END}{VECTOR\_UNIT\_3D\_HPP\_END}}
@@ -229,25 +190,17 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00021}{21}} of
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ dimensions\_match;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{        \textcolor{keyword}{public}: \(\backslash\)}
+\DoxyCodeLine{        static \textcolor{keyword}{const} \textcolor{keywordtype}{string} dimensions\_match; \(\backslash\)}
+\DoxyCodeLine{        static \textcolor{keyword}{const} vector<dimension> real\_dimensions; \(\backslash\)}
+\DoxyCodeLine{    \}}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+Definition at line 32 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \(\backslash\)}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ dimensions\_match;\ \(\backslash\)}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}
-\DoxyCodeLine{00035\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a5a3e70edc911522e41fd4926f4cedcb7}\label{vector__unit__3d_8hpp_a5a3e70edc911522e41fd4926f4cedcb7} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a5a3e70edc911522e41fd4926f4cedcb7}\label{vector__unit__3d_8hpp_a5a3e70edc911522e41fd4926f4cedcb7}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!VECTOR\_UNIT\_CPP@{VECTOR\_UNIT\_CPP}}
 \index{VECTOR\_UNIT\_CPP@{VECTOR\_UNIT\_CPP}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_CPP}{VECTOR\_UNIT\_CPP}}
@@ -255,17 +208,17 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00032}{32}} of
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{scalar__unit_8hpp_a48bd90c088a02ab6e4f599383a5009c3}{SCALAR\_UNIT\_CPP}}(name,init\_dimensions);\ \(\backslash\)}
-\DoxyCodeLine{VECTOR\_UNIT\_2D\_CPP(name,init\_dimensions);\ \(\backslash\)}
-\DoxyCodeLine{VECTOR\_UNIT\_3D\_CPP(name,init\_dimensions);\ \(\backslash\)}
+\DoxyCodeLine{\mbox{\hyperlink{scalar__unit_8hpp_a48bd90c088a02ab6e4f599383a5009c3}{SCALAR\_UNIT\_CPP}}(name,init\_dimensions); \(\backslash\)}
+\DoxyCodeLine{VECTOR\_UNIT\_2D\_CPP(name,init\_dimensions); \(\backslash\)}
+\DoxyCodeLine{VECTOR\_UNIT\_3D\_CPP(name,init\_dimensions); \(\backslash\)}
 \DoxyCodeLine{VECTOR\_UNIT\_ND\_CPP(name,init\_dimensions)}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+Definition at line 63 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
-\Hypertarget{vector__unit__3d_8hpp_afd0d0f018241895d8203a88fb8768e33}\label{vector__unit__3d_8hpp_afd0d0f018241895d8203a88fb8768e33} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_afd0d0f018241895d8203a88fb8768e33}\label{vector__unit__3d_8hpp_afd0d0f018241895d8203a88fb8768e33}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!VECTOR\_UNIT\_HPP@{VECTOR\_UNIT\_HPP}}
 \index{VECTOR\_UNIT\_HPP@{VECTOR\_UNIT\_HPP}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_HPP}{VECTOR\_UNIT\_HPP}}
@@ -273,20 +226,20 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00063}{63}} of
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{scalar__unit_8hpp_ab2113e04286d6bffb113bb62617c0cec}{SCALAR\_UNIT\_HPP}}(name);\ \(\backslash\)}
-\DoxyCodeLine{VECTOR\_UNIT\_2D\_HPP(name);\ \(\backslash\)}
-\DoxyCodeLine{VECTOR\_UNIT\_3D\_HPP(name);\ \(\backslash\)}
+\DoxyCodeLine{\mbox{\hyperlink{scalar__unit_8hpp_ab2113e04286d6bffb113bb62617c0cec}{SCALAR\_UNIT\_HPP}}(name); \(\backslash\)}
+\DoxyCodeLine{VECTOR\_UNIT\_2D\_HPP(name); \(\backslash\)}
+\DoxyCodeLine{VECTOR\_UNIT\_3D\_HPP(name); \(\backslash\)}
 \DoxyCodeLine{VECTOR\_UNIT\_ND\_HPP(name)}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+Definition at line 58 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{vector__unit__3d_8hpp_aa589e78de56758ac784ac996a564cdc7}\label{vector__unit__3d_8hpp_aa589e78de56758ac784ac996a564cdc7} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_aa589e78de56758ac784ac996a564cdc7}\label{vector__unit__3d_8hpp_aa589e78de56758ac784ac996a564cdc7}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -294,16 +247,20 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00058}{58}} of
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00515}{515}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Comparison operator. Two vector\+\_\+unit\+\_\+3d are not equal if their value, dimensions, theta or phi are different. 
+
+
+
+Definition at line 515 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00516\ \{}
-\DoxyCodeLine{00517\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00518\ \}}
+\DoxyCodeLine{516 \{}
+\DoxyCodeLine{517     \textcolor{keywordflow}{return} !(x == y);}
+\DoxyCodeLine{518 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_aa403c6557f7f52d7c4accdf865775cf3}\label{vector__unit__3d_8hpp_aa403c6557f7f52d7c4accdf865775cf3} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_aa403c6557f7f52d7c4accdf865775cf3}\label{vector__unit__3d_8hpp_aa403c6557f7f52d7c4accdf865775cf3}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -311,16 +268,20 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00515}{515}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00526}{526}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Returns true if x is not equal to the vector\+\_\+unit\+\_\+3d initialized with the string being compared. The vectorial\+\_\+display() function is not used, and so the values are compared with all its decimal numbers. 
+
+
+
+Definition at line 526 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00527\ \{}
-\DoxyCodeLine{00528\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_vector\_3d);}
-\DoxyCodeLine{00529\ \}}
+\DoxyCodeLine{527 \{}
+\DoxyCodeLine{528     \textcolor{keywordflow}{return} !(x == init\_vector\_3d);}
+\DoxyCodeLine{529 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a66e84e427fff0aa3b23be55c4fc16d20}\label{vector__unit__3d_8hpp_a66e84e427fff0aa3b23be55c4fc16d20} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a66e84e427fff0aa3b23be55c4fc16d20}\label{vector__unit__3d_8hpp_a66e84e427fff0aa3b23be55c4fc16d20}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -328,55 +289,67 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00526}{526}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00537}{537}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Returns true if x is not equal to the vector\+\_\+unit\+\_\+3d initialized with the string being compared. The vectorial\+\_\+display() function is not used, and so the values are compared with all its decimal numbers. 
+
+
+
+Definition at line 537 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00538\ \{}
-\DoxyCodeLine{00539\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_vector\_3d\ ==\ y);}
-\DoxyCodeLine{00540\ \}}
+\DoxyCodeLine{538 \{}
+\DoxyCodeLine{539     \textcolor{keywordflow}{return} !(init\_vector\_3d == y);}
+\DoxyCodeLine{540 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a4c6d9f8da6712bb19e4985c7518ddcd9}\label{vector__unit__3d_8hpp_a4c6d9f8da6712bb19e4985c7518ddcd9} 
-\index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
-\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&}]{y }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a4c6d9f8da6712bb19e4985c7518ddcd9}\label{vector__unit__3d_8hpp_a4c6d9f8da6712bb19e4985c7518ddcd9}} 
+\index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&}]{y }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00508}{508}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+It creates a new vector\+\_\+unit\+\_\+3d scaling a vector\+\_\+unit\+\_\+3d by the scalar\+\_\+unit x. 
+
+
+
+Definition at line 508 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00509\ \{}
-\DoxyCodeLine{00510\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ new\_value\ =\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ *\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}();}
-\DoxyCodeLine{00511\ \ \ \ \ vector<scifir::dimension>\ new\_dimensions\ =\ \mbox{\hyperlink{namespacescifir_a9ffe4ce909247f67cb6d4a4eebf64be1}{multiply\_dimensions}}(x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),new\_value);}
-\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}(\textcolor{keywordtype}{float}(new\_value),\ new\_dimensions,\ y.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_a70b25d4709874f44f1c99d2330cec56f}{theta}},\ y.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_a90099d68c23025849f059f10d2be4217}{phi}});}
-\DoxyCodeLine{00513\ \}}
+\DoxyCodeLine{509 \{}
+\DoxyCodeLine{510     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} new\_value = x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}() * y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}();}
+\DoxyCodeLine{511     vector<scifir::dimension> new\_dimensions = \mbox{\hyperlink{namespacescifir_a9ffe4ce909247f67cb6d4a4eebf64be1}{multiply\_dimensions}}(x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(), y.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),new\_value);}
+\DoxyCodeLine{512     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}(\textcolor{keywordtype}{float}(new\_value), new\_dimensions, y.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_aabbc544480e739a4d45fad2371f9caaa}{theta}}, y.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_aedcd4552b76ffdd4d0e9a53e1340985d}{phi}});}
+\DoxyCodeLine{513 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a6cafbf3b0356494bc33e527bb650eb65}\label{vector__unit__3d_8hpp_a6cafbf3b0356494bc33e527bb650eb65} 
-\index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
-\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a6cafbf3b0356494bc33e527bb650eb65}\label{vector__unit__3d_8hpp_a6cafbf3b0356494bc33e527bb650eb65}} 
+\index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const T}]{y,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&}]{x }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} operator$\ast$ (\begin{DoxyParamCaption}\item[{const T}]{y,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00266}{266}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+It creates a new vector as the multiplication of the numeric type x to the value. Theta and phi are not changed. 
+
+
+
+Definition at line 266 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00267\ \{}
-\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}\ z\ =\ x;}
-\DoxyCodeLine{00269\ \ \ \ \ z\ *=\ y;}
-\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00271\ \}}
+\DoxyCodeLine{267 \{}
+\DoxyCodeLine{268     \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}} z = x;}
+\DoxyCodeLine{269     z *= y;}
+\DoxyCodeLine{270     \textcolor{keywordflow}{return} z;}
+\DoxyCodeLine{271 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_ad2fbb36d987ad11a95ccc42b25b06072}\label{vector__unit__3d_8hpp_ad2fbb36d987ad11a95ccc42b25b06072} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_ad2fbb36d987ad11a95ccc42b25b06072}\label{vector__unit__3d_8hpp_ad2fbb36d987ad11a95ccc42b25b06072}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -384,19 +357,23 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00266}{266}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00557}{557}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Creates a new string as the concatenation of the string x with the representation string of the vector\+\_\+unit\+\_\+3d y. 
+
+
+
+Definition at line 557 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00558\ \{}
-\DoxyCodeLine{00559\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00560\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00561\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00563\ \}}
+\DoxyCodeLine{558 \{}
+\DoxyCodeLine{559     ostringstream output;}
+\DoxyCodeLine{560     output << y;}
+\DoxyCodeLine{561     output << x;}
+\DoxyCodeLine{562     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{563 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_aa8270aa46b6f04f367bfd660ef89a72c}\label{vector__unit__3d_8hpp_aa8270aa46b6f04f367bfd660ef89a72c} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_aa8270aa46b6f04f367bfd660ef89a72c}\label{vector__unit__3d_8hpp_aa8270aa46b6f04f367bfd660ef89a72c}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -404,19 +381,23 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00557}{557}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00549}{549}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Creates a new string as the concatenation of the string x with the representation string of the vector\+\_\+unit\+\_\+3d y. 
+
+
+
+Definition at line 549 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00550\ \{}
-\DoxyCodeLine{00551\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00552\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00553\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00554\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00555\ \}}
+\DoxyCodeLine{550 \{}
+\DoxyCodeLine{551     ostringstream output;}
+\DoxyCodeLine{552     output << x;}
+\DoxyCodeLine{553     output << y;}
+\DoxyCodeLine{554     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{555 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a40667e66dd6ebd0f8ad3500ac33360e7}\label{vector__unit__3d_8hpp_a40667e66dd6ebd0f8ad3500ac33360e7} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a40667e66dd6ebd0f8ad3500ac33360e7}\label{vector__unit__3d_8hpp_a40667e66dd6ebd0f8ad3500ac33360e7}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -425,18 +406,22 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00549}{549}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00252}{252}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+It creates a new vector as the addition of the numeric type x to the value. Theta and phi are not changed. 
+
+
+
+Definition at line 252 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00253\ \{}
-\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}\ z\ =\ x;}
-\DoxyCodeLine{00255\ \ \ \ \ z\ +=\ y;}
-\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00257\ \}}
+\DoxyCodeLine{253 \{}
+\DoxyCodeLine{254     \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}} z = x;}
+\DoxyCodeLine{255     z += y;}
+\DoxyCodeLine{256     \textcolor{keywordflow}{return} z;}
+\DoxyCodeLine{257 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_ab01a99178d6b0f2f38e5273626fe22d4}\label{vector__unit__3d_8hpp_ab01a99178d6b0f2f38e5273626fe22d4} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_ab01a99178d6b0f2f38e5273626fe22d4}\label{vector__unit__3d_8hpp_ab01a99178d6b0f2f38e5273626fe22d4}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
@@ -444,18 +429,22 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00252}{252}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00542}{542}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Concatenates the string representation of the vector\+\_\+unit\+\_\+3d y to the string x. 
+
+
+
+Definition at line 542 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00543\ \{}
-\DoxyCodeLine{00544\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00545\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00546\ \ \ \ \ x\ +=\ output.str();}
-\DoxyCodeLine{00547\ \}}
+\DoxyCodeLine{543 \{}
+\DoxyCodeLine{544     ostringstream output;}
+\DoxyCodeLine{545     output << y;}
+\DoxyCodeLine{546     x += output.str();}
+\DoxyCodeLine{547 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a101c145e0d4d3ed4c82bbbb97b6b9b13}\label{vector__unit__3d_8hpp_a101c145e0d4d3ed4c82bbbb97b6b9b13} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a101c145e0d4d3ed4c82bbbb97b6b9b13}\label{vector__unit__3d_8hpp_a101c145e0d4d3ed4c82bbbb97b6b9b13}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
@@ -464,16 +453,20 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00542}{542}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00260}{260}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+It creates a new vector as the substraction of the numeric type x with the value. Theta and phi are not changed. 
+
+
+
+Definition at line 260 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00261\ \{}
-\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}(y\ -\/\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),x.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_a70b25d4709874f44f1c99d2330cec56f}{theta}},x.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_a90099d68c23025849f059f10d2be4217}{phi}});}
-\DoxyCodeLine{00263\ \}}
+\DoxyCodeLine{261 \{}
+\DoxyCodeLine{262     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}(y -\/ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),x.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_aabbc544480e739a4d45fad2371f9caaa}{theta}},x.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_aedcd4552b76ffdd4d0e9a53e1340985d}{phi}});}
+\DoxyCodeLine{263 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a68f53ea993f49c7e3fe11b6d289b8201}\label{vector__unit__3d_8hpp_a68f53ea993f49c7e3fe11b6d289b8201} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a68f53ea993f49c7e3fe11b6d289b8201}\label{vector__unit__3d_8hpp_a68f53ea993f49c7e3fe11b6d289b8201}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator/@{operator/}}
 \index{operator/@{operator/}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
@@ -482,38 +475,46 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00260}{260}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8hpp_source_l00274}{274}} of file \mbox{\hyperlink{vector__unit__3d_8hpp_source}{vector\+\_\+unit\+\_\+3d.\+hpp}}.
+It creates a new vector as the division of the numeric type x with the value. Theta and phi are not changed. 
+
+
+
+Definition at line 274 of file vector\+\_\+unit\+\_\+3d.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00275\ \{}
-\DoxyCodeLine{00276\ \ \ \ \ vector<scifir::dimension>\ new\_dimensions\ =\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}();}
-\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classscifir_1_1dimension}{scifir::dimension}}\&\ new\_dimension\ :\ new\_dimensions)}
-\DoxyCodeLine{00278\ \ \ \ \ \{}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ new\_dimension.invert();}
-\DoxyCodeLine{00280\ \ \ \ \ \}}
-\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}(y\ /\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),new\_dimensions,x.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_a70b25d4709874f44f1c99d2330cec56f}{theta}},x.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_a90099d68c23025849f059f10d2be4217}{phi}});}
-\DoxyCodeLine{00282\ \}}
+\DoxyCodeLine{275 \{}
+\DoxyCodeLine{276     vector<scifir::dimension> new\_dimensions = x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}();}
+\DoxyCodeLine{277     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classscifir_1_1dimension}{scifir::dimension}}\& new\_dimension : new\_dimensions)}
+\DoxyCodeLine{278     \{}
+\DoxyCodeLine{279         new\_dimension.invert();}
+\DoxyCodeLine{280     \}}
+\DoxyCodeLine{281     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}(y / x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),new\_dimensions,x.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_aabbc544480e739a4d45fad2371f9caaa}{theta}},x.\mbox{\hyperlink{classscifir_1_1vector__unit__3d_aedcd4552b76ffdd4d0e9a53e1340985d}{phi}});}
+\DoxyCodeLine{282 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a7a7f117501b6fdfeb462b147d2239c3a}\label{vector__unit__3d_8hpp_a7a7f117501b6fdfeb462b147d2239c3a} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a6311698b1e622a7e32d5466e1775b84f}\label{vector__unit__3d_8hpp_a6311698b1e622a7e32d5466e1775b84f}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00565}{565}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Adds the string representation of the vector\+\_\+unit\+\_\+3d x to an output stream os. 
+
+
+
+Definition at line 565 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00566\ \{}
-\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
-\DoxyCodeLine{00568\ \}}
+\DoxyCodeLine{566 \{}
+\DoxyCodeLine{567     \textcolor{keywordflow}{return} os << \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
+\DoxyCodeLine{568 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a42f3ca37252f0b895098df93814d7569}\label{vector__unit__3d_8hpp_a42f3ca37252f0b895098df93814d7569} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a42f3ca37252f0b895098df93814d7569}\label{vector__unit__3d_8hpp_a42f3ca37252f0b895098df93814d7569}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -521,17 +522,21 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00565}{565}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00520}{520}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Returns true if x is equal to the vector\+\_\+unit\+\_\+3d initialized with the string being compared. The vectorial\+\_\+display() function is not used, and so the values are compared with all its decimal numbers. 
+
+
+
+Definition at line 520 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00521\ \{}
-\DoxyCodeLine{00522\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}\ y(init\_vector\_3d);}
-\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00524\ \}}
+\DoxyCodeLine{521 \{}
+\DoxyCodeLine{522     \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}} y(init\_vector\_3d);}
+\DoxyCodeLine{523     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{524 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a02fc9cbed6b20dc6eb7befefebbd95c7}\label{vector__unit__3d_8hpp_a02fc9cbed6b20dc6eb7befefebbd95c7} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_a02fc9cbed6b20dc6eb7befefebbd95c7}\label{vector__unit__3d_8hpp_a02fc9cbed6b20dc6eb7befefebbd95c7}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -539,35 +544,43 @@ Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00520}{520}} o
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00531}{531}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Returns true if x is equal to the vector\+\_\+unit\+\_\+3d initialized with the string being compared. The vectorial\+\_\+display() function is not used, and so the values are compared with all its decimal numbers. 
+
+
+
+Definition at line 531 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00532\ \{}
-\DoxyCodeLine{00533\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}\ x(init\_vector\_3d);}
-\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00535\ \}}
+\DoxyCodeLine{532 \{}
+\DoxyCodeLine{533     \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}} x(init\_vector\_3d);}
+\DoxyCodeLine{534     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{535 \}}
 
 \end{DoxyCode}
-\Hypertarget{vector__unit__3d_8hpp_a761af8b75a156be9a599fd2b55ab8417}\label{vector__unit__3d_8hpp_a761af8b75a156be9a599fd2b55ab8417} 
+\mbox{\Hypertarget{vector__unit__3d_8hpp_abe7a1e329668ae7c61378c29c4361046}\label{vector__unit__3d_8hpp_abe7a1e329668ae7c61378c29c4361046}} 
 \index{vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!vector\_unit\_3d.hpp@{vector\_unit\_3d.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
-{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir\+::vector\+\_\+unit\+\_\+3d}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{vector__unit__3d_8cpp_source_l00570}{570}} of file \mbox{\hyperlink{vector__unit__3d_8cpp_source}{vector\+\_\+unit\+\_\+3d.\+cpp}}.
+Allows that an istream initializes by string a vector\+\_\+unit\+\_\+3d x. 
+
+\#endif // SCIFIR\+\_\+\+UNITS\+\_\+\+UNITS\+\_\+\+VECTOR\+\_\+\+UNIT\+\_\+3\+D\+\_\+\+HPP\+\_\+\+INCLUDED 
+
+Definition at line 570 of file vector\+\_\+unit\+\_\+3d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00571\ \{}
-\DoxyCodeLine{00572\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00573\ \ \ \ \ is.getline(a,\ 256);}
-\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
-\DoxyCodeLine{00575\ \ \ \ \ boost::trim(b);}
-\DoxyCodeLine{00576\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}(b);}
-\DoxyCodeLine{00577\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{00578\ \}}
+\DoxyCodeLine{571 \{}
+\DoxyCodeLine{572     \textcolor{keywordtype}{char} a[256];}
+\DoxyCodeLine{573     is.getline(a, 256);}
+\DoxyCodeLine{574     \textcolor{keywordtype}{string} b(a);}
+\DoxyCodeLine{575     boost::trim(b);}
+\DoxyCodeLine{576     x = \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{scifir::vector\_unit\_3d}}(b);}
+\DoxyCodeLine{577     \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{578 \}}
 
 \end{DoxyCode}

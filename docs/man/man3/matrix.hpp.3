@@ -1,4 +1,4 @@
-.TH "util/matrix.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "util/matrix.hpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -26,7 +26,7 @@ util/matrix.hpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -48,17 +48,18 @@ util/matrix.hpp
 .SS "template<typename T , int M, int N> bool operator!= (const \fBscifir::matrix\fP< T, M, N > & x, const \fBscifir::matrix\fP< T, M, N > & y)"
 
 .PP
-Definition at line \fB275\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 275 of file matrix\&.hpp\&.
+.PP
 .nf
 276 {
 277     return !(x == y);
 278 }
 .fi
-
-.SS "template<typename T , int M, int N> ostream & operator<< (ostream & os, const \fBscifir::matrix\fP< T, M, N > & x)"
+.SS "template<typename T , int M, int N> ostream& operator<< (ostream & os, const \fBscifir::matrix\fP< T, M, N > & x)"
 
 .PP
-Definition at line \fB281\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 281 of file matrix\&.hpp\&.
+.PP
 .nf
 282 {
 283     ostringstream output;
@@ -82,11 +83,11 @@ Definition at line \fB281\fP of file \fBmatrix\&.hpp\fP\&..PP
 301     return os << output\&.str();
 302 }
 .fi
-
 .SS "template<typename T , int M, int N> bool operator== (const \fBscifir::matrix\fP< T, M, N > & x, const \fBscifir::matrix\fP< T, M, N > & y)"
 
 .PP
-Definition at line \fB259\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 259 of file matrix\&.hpp\&.
+.PP
 .nf
 260 {
 261     for(int i = 0; i < x\&.row_size(); i++)
@@ -102,7 +103,6 @@ Definition at line \fB259\fP of file \fBmatrix\&.hpp\fP\&..PP
 271     return true;
 272 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

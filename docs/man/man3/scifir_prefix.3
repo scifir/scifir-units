@@ -1,8 +1,9 @@
-.TH "scifir::prefix" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::prefix" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-scifir::prefix
+scifir::prefix \- Class that represents prefixes of the SI system of units\&. Each prefix sizes 1 byte\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -12,8 +13,9 @@ scifir::prefix
 
 .in +1c
 .ti -1c
-.RI "enum \fBtype\fP : int8_t { \fBno_prefix\fP, \fBY\fP, \fBZ\fP, \fBE\fP, \fBP\fP, \fBT\fP, \fBG\fP, \fBM\fP, \fBk\fP, \fBh\fP, \fBda\fP, \fBd\fP, \fBc\fP, \fBm\fP, \fBu\fP, \fBn\fP, \fBp\fP, \fBf\fP, \fBa\fP, \fBz\fP, \fBy\fP }"
+.RI "enum \fBtype\fP : int8_t { \fBNONE\fP, \fBQUETTA\fP, \fBRONNA\fP, \fBYOTTA\fP, \fBZETTA\fP, \fBEXA\fP, \fBPETA\fP, \fBTERA\fP, \fBGIGA\fP, \fBMEGA\fP, \fBKILO\fP, \fBHECTO\fP, \fBDECA\fP, \fBDECI\fP, \fBCENTI\fP, \fBMILLI\fP, \fBMICRO\fP, \fBNANO\fP, \fBPICO\fP, \fBFEMTO\fP, \fBATTO\fP, \fBZEPTO\fP, \fBYOCTO\fP, \fBRONTO\fP, \fBQUECTO\fP }"
 .br
+.RI "Represents a prefix of the SI system of units\&. All the prefixes of the SI system of units are supported\&. "
 .in -1c
 .SS "Public Member Functions"
 
@@ -21,36 +23,47 @@ scifir::prefix
 .ti -1c
 .RI "\fBprefix\fP ()"
 .br
+.RI "Default constructor\&. The prefix_type is set to NONE\&. "
 .ti -1c
-.RI "\fBprefix\fP (\fBconst\fP \fBprefix\fP &x)"
+.RI "\fBprefix\fP (const \fBprefix\fP &x)"
 .br
+.RI "Copy constructor\&. The prefix_type is copied from the prefix x\&. "
 .ti -1c
 .RI "\fBprefix\fP (\fBprefix\fP &&x)"
 .br
+.RI "Move constructor\&. The prefix_type is moved from the prefix x\&. "
 .ti -1c
-.RI "\fBprefix\fP (\fBprefix::type\fP \fBnew_type\fP)"
+.RI "\fBprefix\fP (\fBprefix::type\fP new_type)"
 .br
+.RI "Constructor\&. The prefix_type is set to the new_type given\&. "
 .ti -1c
-.RI "\fBprefix\fP (\fBconst\fP \fBstring\fP &\fBnew_type\fP)"
+.RI "\fBprefix\fP (const string &new_type)"
 .br
+.RI "Constructor\&. The prefix_type is set to the new_type specified in the string\&. "
 .ti -1c
-.RI "\fBprefix\fP & \fBoperator=\fP (\fBconst\fP \fBprefix\fP &x)"
+.RI "\fBprefix\fP & \fBoperator=\fP (const \fBprefix\fP &x)"
 .br
+.RI "Copy assignment\&. The prefix_type is copied from the prefix x\&. "
 .ti -1c
 .RI "\fBprefix\fP & \fBoperator=\fP (\fBprefix\fP &&x)"
 .br
+.RI "Move assignment\&. The prefix_type is moved from the prefix x\&. "
 .ti -1c
-.RI "\fBint\fP \fBget_conversion_factor\fP () \fBconst\fP"
+.RI "int \fBget_conversion_factor\fP () const"
 .br
+.RI "Returns the conversion factor of the prefix given the prefix_type\&. It uses the SI system of units for the value of each conversion factor\&. "
 .ti -1c
-.RI "\fBstring\fP \fBget_name\fP () \fBconst\fP"
+.RI "string \fBget_name\fP () const"
 .br
+.RI "Name of the prefix given the prefix_type\&. "
 .ti -1c
-.RI "\fBstring\fP \fBget_symbol\fP () \fBconst\fP"
+.RI "string \fBget_symbol\fP () const"
 .br
+.RI "Symbol of the prefix given the prefix_type\&. The symbol of micro is supported in his Unicode version\&. "
 .ti -1c
-.RI "\fBbool\fP \fBoperator<\fP (\fBconst\fP \fBscifir::prefix\fP &x) \fBconst\fP"
+.RI "bool \fBoperator<\fP (const \fBscifir::prefix\fP &x) const"
 .br
+.RI "This operator allows to order the prefixes from the lower to the greather\&. "
 .in -1c
 .SS "Public Attributes"
 
@@ -58,317 +71,403 @@ scifir::prefix
 .ti -1c
 .RI "\fBprefix::type\fP \fBprefix_type\fP"
 .br
+.RI "It stores the prefix type currently being used\&. "
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB13\fP of file \fBprefix\&.hpp\fP\&.
+Class that represents prefixes of the SI system of units\&. Each prefix sizes 1 byte\&. 
+.PP
+Definition at line 13 of file prefix\&.hpp\&.
 .SH "Member Enumeration Documentation"
 .PP 
-.SS "\fBenum\fP \fBscifir::prefix::type\fP : \fBint8_t\fP"
+.SS "enum \fBscifir::prefix::type\fP : int8_t"
 
+.PP
+Represents a prefix of the SI system of units\&. All the prefixes of the SI system of units are supported\&. 
 .PP
 \fBEnumerator\fP
 .in +1c
 .TP
-\fB\fIno_prefix \fP\fP
+\fB\fINONE \fP\fP
+There is no prefix\&. Then, the dimension is not increased or decreased by some factor\&. 
 .TP
-\fB\fIY \fP\fP
+\fB\fIQUETTA \fP\fP
+Prefix of a factor of 10^30\&. 
 .TP
-\fB\fIZ \fP\fP
+\fB\fIRONNA \fP\fP
+Prefix of a factor of 10^27\&. 
 .TP
-\fB\fIE \fP\fP
+\fB\fIYOTTA \fP\fP
+Prefix of a factor of 10^24\&. 
 .TP
-\fB\fIP \fP\fP
+\fB\fIZETTA \fP\fP
+Prefix of a factor of 10^21\&. 
 .TP
-\fB\fIT \fP\fP
+\fB\fIEXA \fP\fP
+Prefix of a factor of 10^18\&. 
 .TP
-\fB\fIG \fP\fP
+\fB\fIPETA \fP\fP
+Prefix of a factor of 10^15\&. 
 .TP
-\fB\fIM \fP\fP
+\fB\fITERA \fP\fP
+Prefix of a factor of 10^12\&. 
 .TP
-\fB\fIk \fP\fP
+\fB\fIGIGA \fP\fP
+Prefix of a factor of 10^9\&. 
 .TP
-\fB\fIh \fP\fP
+\fB\fIMEGA \fP\fP
+Prefix of a factor of 10^6\&. 
 .TP
-\fB\fIda \fP\fP
+\fB\fIKILO \fP\fP
+Prefix of a factor of 10^3\&. 
 .TP
-\fB\fId \fP\fP
+\fB\fIHECTO \fP\fP
+Prefix of a factor of 10^2\&. 
 .TP
-\fB\fIc \fP\fP
+\fB\fIDECA \fP\fP
+Prefix of a factor of 10^1\&. 
 .TP
-\fB\fIm \fP\fP
+\fB\fIDECI \fP\fP
+Prefix of a factor of 10^-1\&. 
 .TP
-\fB\fIu \fP\fP
+\fB\fICENTI \fP\fP
+Prefix of a factor of 10^-2\&. 
 .TP
-\fB\fIn \fP\fP
+\fB\fIMILLI \fP\fP
+Prefix of a factor of 10^-3\&. 
 .TP
-\fB\fIp \fP\fP
+\fB\fIMICRO \fP\fP
+Prefix of a factor of 10^-6\&. 
 .TP
-\fB\fIf \fP\fP
+\fB\fINANO \fP\fP
+Prefix of a factor of 10^-9\&. 
 .TP
-\fB\fIa \fP\fP
+\fB\fIPICO \fP\fP
+Prefix of a factor of 10^-12\&. 
 .TP
-\fB\fIz \fP\fP
+\fB\fIFEMTO \fP\fP
+Prefix of a factor of 10^-15\&. 
 .TP
-\fB\fIy \fP\fP
+\fB\fIATTO \fP\fP
+Prefix of a factor of 10^-18\&. 
+.TP
+\fB\fIZEPTO \fP\fP
+Prefix of a factor of 10^-21\&. 
+.TP
+\fB\fIYOCTO \fP\fP
+Prefix of a factor of 10^-24\&. 
+.TP
+\fB\fIRONTO \fP\fP
+Prefix of a factor of 10^-27\&. 
+.TP
+\fB\fIQUECTO \fP\fP
+Prefix of a factor of 10^-30\&. 
 .PP
-Definition at line \fB16\fP of file \fBprefix\&.hpp\fP\&..PP
+Definition at line 16 of file prefix\&.hpp\&.
+.PP
 .nf
-16 : int8_t {no_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y};
+16 : int8_t {NONE,QUETTA,RONNA,YOTTA,ZETTA,EXA,PETA,TERA,GIGA,MEGA,KILO,HECTO,DECA,DECI,CENTI,MILLI,MICRO,NANO,PICO,FEMTO,ATTO,ZEPTO,YOCTO,RONTO,QUECTO};
 .fi
-
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "scifir::prefix::prefix ()"
+.SS "prefix::prefix ()"
 
 .PP
-Definition at line \fB9\fP of file \fBprefix\&.cpp\fP\&..PP
+Default constructor\&. The prefix_type is set to NONE\&. 
+.PP
+Definition at line 9 of file prefix\&.cpp\&.
+.PP
 .nf
-9                   : prefix_type(prefix::no_prefix)
+9                   : prefix_type(prefix::NONE)
 10     {}
 .fi
-
-.SS "scifir::prefix::prefix (\fBconst\fP \fBprefix\fP & x)"
+.SS "prefix::prefix (const \fBprefix\fP & x)"
 
 .PP
-Definition at line \fB12\fP of file \fBprefix\&.cpp\fP\&..PP
+Copy constructor\&. The prefix_type is copied from the prefix x\&. 
+.PP
+Definition at line 12 of file prefix\&.cpp\&.
+.PP
 .nf
 12                                   : prefix_type(x\&.prefix_type)
 13     {}
 .fi
-
-.SS "scifir::prefix::prefix (\fBprefix\fP && x)"
+.SS "prefix::prefix (\fBprefix\fP && x)"
 
 .PP
-Definition at line \fB15\fP of file \fBprefix\&.cpp\fP\&..PP
+Move constructor\&. The prefix_type is moved from the prefix x\&. 
+.PP
+Definition at line 15 of file prefix\&.cpp\&.
+.PP
 .nf
 15                              : prefix_type(std::move(x\&.prefix_type))
 16     {}
 .fi
-
-.SS "scifir::prefix::prefix (\fBprefix::type\fP new_type)\fC [explicit]\fP"
+.SS "prefix::prefix (\fBprefix::type\fP new_type)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB18\fP of file \fBprefix\&.cpp\fP\&..PP
+Constructor\&. The prefix_type is set to the new_type given\&. 
+.PP
+Definition at line 18 of file prefix\&.cpp\&.
+.PP
 .nf
 18                                       : prefix_type(new_type)
 19     {}
 .fi
-
-.SS "scifir::prefix::prefix (\fBconst\fP \fBstring\fP & new_type)\fC [explicit]\fP"
+.SS "prefix::prefix (const string & new_type)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB21\fP of file \fBprefix\&.cpp\fP\&..PP
+Constructor\&. The prefix_type is set to the new_type specified in the string\&. 
+.PP
+Definition at line 21 of file prefix\&.cpp\&.
+.PP
 .nf
 21                                          : prefix_type(prefix_string(new_type))
 22     {}
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBint\fP scifir::prefix::get_conversion_factor () const"
+.SS "int prefix::get_conversion_factor () const"
 
 .PP
-Definition at line \fB36\fP of file \fBprefix\&.cpp\fP\&..PP
+Returns the conversion factor of the prefix given the prefix_type\&. It uses the SI system of units for the value of each conversion factor\&. 
+.PP
+Definition at line 36 of file prefix\&.cpp\&.
+.PP
 .nf
 37     {
 38         switch (prefix_type)
 39         {
-40             case prefix::Y:
-41                 return 24;
-42             case prefix::Z:
-43                 return 21;
-44             case prefix::E:
-45                 return 18;
-46             case prefix::P:
-47                 return 15;
-48             case prefix::T:
-49                 return 12;
-50             case prefix::G:
-51                 return 9;
-52             case prefix::M:
-53                 return 6;
-54             case prefix::k:
-55                 return 3;
-56             case prefix::h:
-57                 return 2;
-58             case prefix::da:
-59                 return 1;
-60             case prefix::no_prefix:
-61                 return 0;
-62             case prefix::d:
-63                 return \-1;
-64             case prefix::c:
-65                 return \-2;
-66             case prefix::m:
-67                 return \-3;
-68             case prefix::u:
-69                 return \-6;
-70             case prefix::n:
-71                 return \-9;
-72             case prefix::p:
-73                 return \-12;
-74             case prefix::f:
-75                 return \-15;
-76             case prefix::a:
-77                 return \-18;
-78             case prefix::z:
-79                 return \-21;
-80             case prefix::y:
-81                 return \-24;
-82         }
-83         return 0;
-84     }
+40             case prefix::QUETTA:
+41                 return 30;
+42             case prefix::RONNA:
+43                 return 27;
+44             case prefix::YOTTA:
+45                 return 24;
+46             case prefix::ZETTA:
+47                 return 21;
+48             case prefix::EXA:
+49                 return 18;
+50             case prefix::PETA:
+51                 return 15;
+52             case prefix::TERA:
+53                 return 12;
+54             case prefix::GIGA:
+55                 return 9;
+56             case prefix::MEGA:
+57                 return 6;
+58             case prefix::KILO:
+59                 return 3;
+60             case prefix::HECTO:
+61                 return 2;
+62             case prefix::DECA:
+63                 return 1;
+64             case prefix::NONE:
+65                 return 0;
+66             case prefix::DECI:
+67                 return -1;
+68             case prefix::CENTI:
+69                 return -2;
+70             case prefix::MILLI:
+71                 return -3;
+72             case prefix::MICRO:
+73                 return -6;
+74             case prefix::NANO:
+75                 return -9;
+76             case prefix::PICO:
+77                 return -12;
+78             case prefix::FEMTO:
+79                 return -15;
+80             case prefix::ATTO:
+81                 return -18;
+82             case prefix::ZEPTO:
+83                 return -21;
+84             case prefix::YOCTO:
+85                 return -24;
+86             case prefix::RONTO:
+87                 return -27;
+88             case prefix::QUECTO:
+89                 return -30;
+90         }
+91         return 0;
+92     }
 .fi
-
-.SS "\fBstring\fP scifir::prefix::get_name () const"
+.SS "string prefix::get_name () const"
 
 .PP
-Definition at line \fB86\fP of file \fBprefix\&.cpp\fP\&..PP
+Name of the prefix given the prefix_type\&. 
+.PP
+Definition at line 94 of file prefix\&.cpp\&.
+.PP
 .nf
-87     {
-88         switch (prefix_type)
-89         {
-90             case prefix::Y:
-91                 return "yotta";
-92             case prefix::Z:
-93                 return "zetta";
-94             case prefix::E:
-95                 return "exa";
-96             case prefix::P:
-97                 return "peta";
-98             case prefix::T:
-99                 return "tera";
-100             case prefix::G:
-101                 return "giga";
-102             case prefix::M:
-103                 return "mega";
-104             case prefix::k:
-105                 return "kilo";
-106             case prefix::h:
-107                 return "hecto";
-108             case prefix::da:
-109                 return "deca";
-110             case prefix::no_prefix:
-111                 return "";
-112             case prefix::d:
-113                 return "deci";
-114             case prefix::c:
-115                 return "centi";
-116             case prefix::m:
-117                 return "milli";
-118             case prefix::u:
-119                 return "micro";
-120             case prefix::n:
-121                 return "nano";
-122             case prefix::p:
-123                 return "pico";
-124             case prefix::f:
-125                 return "femto";
-126             case prefix::a:
-127                 return "atto";
-128             case prefix::z:
-129                 return "zepto";
-130             case prefix::y:
-131                 return "yocto";
-132         }
-133         return "";
-134     }
+95     {
+96         switch (prefix_type)
+97         {
+98             case prefix::QUETTA:
+99                 return "quetta";
+100             case prefix::RONNA:
+101                 return "ronna";
+102             case prefix::YOTTA:
+103                 return "yotta";
+104             case prefix::ZETTA:
+105                 return "zetta";
+106             case prefix::EXA:
+107                 return "exa";
+108             case prefix::PETA:
+109                 return "peta";
+110             case prefix::TERA:
+111                 return "tera";
+112             case prefix::GIGA:
+113                 return "giga";
+114             case prefix::MEGA:
+115                 return "mega";
+116             case prefix::KILO:
+117                 return "kilo";
+118             case prefix::HECTO:
+119                 return "hecto";
+120             case prefix::DECA:
+121                 return "deca";
+122             case prefix::NONE:
+123                 return "";
+124             case prefix::DECI:
+125                 return "deci";
+126             case prefix::CENTI:
+127                 return "centi";
+128             case prefix::MILLI:
+129                 return "milli";
+130             case prefix::MICRO:
+131                 return "micro";
+132             case prefix::NANO:
+133                 return "nano";
+134             case prefix::PICO:
+135                 return "pico";
+136             case prefix::FEMTO:
+137                 return "femto";
+138             case prefix::ATTO:
+139                 return "atto";
+140             case prefix::ZEPTO:
+141                 return "zepto";
+142             case prefix::YOCTO:
+143                 return "yocto";
+144             case prefix::RONTO:
+145                 return "ronto";
+146             case prefix::QUECTO:
+147                 return "quecto";
+148         }
+149         return "";
+150     }
 .fi
-
-.SS "\fBstring\fP scifir::prefix::get_symbol () const"
+.SS "string prefix::get_symbol () const"
 
 .PP
-Definition at line \fB136\fP of file \fBprefix\&.cpp\fP\&..PP
+Symbol of the prefix given the prefix_type\&. The symbol of micro is supported in his Unicode version\&. 
+.PP
+Definition at line 152 of file prefix\&.cpp\&.
+.PP
 .nf
-137     {
-138         switch (prefix_type)
-139         {
-140             case prefix::Y:
-141                 return "Y";
-142             case prefix::Z:
-143                 return "Z";
-144             case prefix::E:
-145                 return "E";
-146             case prefix::P:
-147                 return "P";
-148             case prefix::T:
-149                 return "T";
-150             case prefix::G:
-151                 return "G";
-152             case prefix::M:
-153                 return "M";
-154             case prefix::k:
-155                 return "k";
-156             case prefix::h:
-157                 return "h";
-158             case prefix::da:
-159                 return "da";
-160             case prefix::no_prefix:
-161                 return "";
-162             case prefix::d:
-163                 return "d";
-164             case prefix::c:
-165                 return "c";
-166             case prefix::m:
-167                 return "m";
-168             case prefix::u:
-169                 return "\\u00B5";
-170             case prefix::n:
-171                 return "n";
-172             case prefix::p:
-173                 return "p";
-174             case prefix::f:
-175                 return "f";
-176             case prefix::a:
-177                 return "a";
-178             case prefix::z:
-179                 return "z";
-180             case prefix::y:
-181                 return "y";
-182         }
-183         return "";
-184     }
+153     {
+154         switch (prefix_type)
+155         {
+156             case prefix::QUETTA:
+157                 return "Q";
+158             case prefix::RONNA:
+159                 return "R";
+160             case prefix::YOTTA:
+161                 return "Y";
+162             case prefix::ZETTA:
+163                 return "Z";
+164             case prefix::EXA:
+165                 return "E";
+166             case prefix::PETA:
+167                 return "P";
+168             case prefix::TERA:
+169                 return "T";
+170             case prefix::GIGA:
+171                 return "G";
+172             case prefix::MEGA:
+173                 return "M";
+174             case prefix::KILO:
+175                 return "k";
+176             case prefix::HECTO:
+177                 return "h";
+178             case prefix::DECA:
+179                 return "da";
+180             case prefix::NONE:
+181                 return "";
+182             case prefix::DECI:
+183                 return "d";
+184             case prefix::CENTI:
+185                 return "c";
+186             case prefix::MILLI:
+187                 return "m";
+188             case prefix::MICRO:
+189                 return "\u00B5";
+190             case prefix::NANO:
+191                 return "n";
+192             case prefix::PICO:
+193                 return "p";
+194             case prefix::FEMTO:
+195                 return "f";
+196             case prefix::ATTO:
+197                 return "a";
+198             case prefix::ZEPTO:
+199                 return "z";
+200             case prefix::YOCTO:
+201                 return "y";
+202             case prefix::RONTO:
+203                 return "r";
+204             case prefix::QUECTO:
+205                 return "q";
+206         }
+207         return "";
+208     }
 .fi
-
-.SS "\fBbool\fP scifir::prefix::operator< (\fBconst\fP \fBscifir::prefix\fP & x) const"
+.SS "bool prefix::operator< (const \fBscifir::prefix\fP & x) const"
 
 .PP
-Definition at line \fB186\fP of file \fBprefix\&.cpp\fP\&..PP
+This operator allows to order the prefixes from the lower to the greather\&. 
+.PP
+Definition at line 210 of file prefix\&.cpp\&.
+.PP
 .nf
-187     {
-188         return (get_conversion_factor() < x\&.get_conversion_factor());
-189     }
+211     {
+212         return (get_conversion_factor() < x\&.get_conversion_factor());
+213     }
 .fi
-
-.SS "\fBprefix\fP & scifir::prefix::operator= (\fBconst\fP \fBprefix\fP & x)"
+.SS "\fBprefix\fP & prefix::operator= (const \fBprefix\fP & x)"
 
 .PP
-Definition at line \fB24\fP of file \fBprefix\&.cpp\fP\&..PP
+Copy assignment\&. The prefix_type is copied from the prefix x\&. 
+.PP
+Definition at line 24 of file prefix\&.cpp\&.
+.PP
 .nf
 25     {
 26         prefix_type = x\&.prefix_type;
 27         return *this;
 28     }
 .fi
-
-.SS "\fBprefix\fP & scifir::prefix::operator= (\fBprefix\fP && x)"
+.SS "\fBprefix\fP & prefix::operator= (\fBprefix\fP && x)"
 
 .PP
-Definition at line \fB30\fP of file \fBprefix\&.cpp\fP\&..PP
+Move assignment\&. The prefix_type is moved from the prefix x\&. 
+.PP
+Definition at line 30 of file prefix\&.cpp\&.
+.PP
 .nf
 31     {
 32         prefix_type = std::move(x\&.prefix_type);
 33         return *this;
 34     }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "\fBprefix::type\fP scifir::prefix::prefix_type"
+.SS "prefix::prefix_type"
 
 .PP
-Definition at line \fB33\fP of file \fBprefix\&.hpp\fP\&.
+It stores the prefix type currently being used\&. 
+.PP
+Definition at line 33 of file prefix\&.hpp\&.
 
 .SH "Author"
 .PP 

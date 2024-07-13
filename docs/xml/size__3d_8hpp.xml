@@ -1,84 +1,26 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="size__3d_8hpp" kind="file" language="C++">
     <compoundname>size_3d.hpp</compoundname>
     <includes refid="space__units_8hpp" local="yes">../predefined_units/space_units.hpp</includes>
     <includes refid="types_8hpp" local="yes">../util/types.hpp</includes>
     <includes local="yes">boost/algorithm/string.hpp</includes>
     <includes local="no">string</includes>
+    <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
     <includedby refid="space__units_8cpp" local="yes">predefined_units/space_units.cpp</includedby>
     <includedby refid="size__3d_8cpp" local="yes">special_units/size_3d.cpp</includedby>
-    <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
     <incdepgraph>
-      <node id="23">
-        <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
+      <node id="29">
+        <label>list</label>
       </node>
-      <node id="2">
-        <label>../predefined_units/space_units.hpp</label>
-        <link refid="space__units_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
+      <node id="10">
+        <label>boost/algorithm/string.hpp</label>
       </node>
-      <node id="31">
-        <label>../special_units/percentage.hpp</label>
-        <link refid="percentage_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
+      <node id="28">
+        <label>functional</label>
       </node>
-      <node id="1">
-        <label>special_units/size_3d.hpp</label>
-        <link refid="size__3d_8hpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="24">
-        <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp"/>
-        <childnode refid="25" relation="include">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
+      <node id="25">
+        <label>boost/math/constants/constants.hpp</label>
       </node>
       <node id="4">
         <label>../units/dimension.hpp</label>
@@ -108,17 +50,20 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp"/>
-        <childnode refid="6" relation="include">
+      <node id="1">
+        <label>special_units/size_3d.hpp</label>
+        <link refid="size__3d_8hpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
       </node>
       <node id="3">
         <label>../units/scalar_unit.hpp</label>
@@ -144,25 +89,56 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="30">
-        <label>../units/unit_basic.hpp</label>
-        <link refid="unit__basic_8hpp"/>
-        <childnode refid="5" relation="include">
+      <node id="14">
+        <label>cmath</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>map</label>
+      </node>
+      <node id="23">
+        <label>../meca_number/angle.hpp</label>
+        <link refid="angle_8hpp"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="22">
-        <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp"/>
+      <node id="31">
+        <label>../special_units/percentage.hpp</label>
+        <link refid="percentage_8hpp"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>../util/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>../units/vector_unit_nd.hpp</label>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -173,9 +149,19 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
         <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="21">
@@ -210,9 +196,46 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="27">
-        <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp"/>
+      <node id="5">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>../topology/direction.hpp</label>
+        <link refid="direction_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>string_view</label>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
+      <node id="18">
+        <label>../util/is_number.hpp</label>
+        <link refid="is__number_8hpp"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>sstream</label>
+      </node>
+      <node id="22">
+        <label>../units/vector_unit_2d.hpp</label>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -223,97 +246,66 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>../topology/constants.hpp</label>
+        <link refid="constants_8hpp"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>../units/unit_basic.hpp</label>
+        <link refid="unit__basic_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="33">
-        <label>../util/types.hpp</label>
-        <link refid="types_8hpp"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>algorithm</label>
-      </node>
-      <node id="10">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="25">
-        <label>boost/math/constants/constants.hpp</label>
-      </node>
-      <node id="32">
-        <label>chrono</label>
-      </node>
-      <node id="14">
-        <label>cmath</label>
-      </node>
-      <node id="13">
-        <label>cstddef</label>
-      </node>
-      <node id="6">
-        <label>cstdint</label>
-      </node>
-      <node id="12">
-        <label>cstring</label>
-      </node>
-      <node id="28">
-        <label>functional</label>
       </node>
       <node id="7">
         <label>iostream</label>
       </node>
-      <node id="29">
-        <label>list</label>
+      <node id="13">
+        <label>cstddef</label>
       </node>
-      <node id="8">
-        <label>map</label>
+      <node id="32">
+        <label>chrono</label>
       </node>
-      <node id="15">
-        <label>set</label>
-      </node>
-      <node id="16">
-        <label>sstream</label>
-      </node>
-      <node id="9">
-        <label>string</label>
-      </node>
-      <node id="20">
-        <label>string_view</label>
+      <node id="2">
+        <label>../predefined_units/space_units.hpp</label>
+        <link refid="space__units_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
       </node>
       <node id="19">
         <label>type_traits</label>
       </node>
-      <node id="17">
-        <label>vector</label>
+      <node id="15">
+        <label>set</label>
+      </node>
+      <node id="11">
+        <label>algorithm</label>
+      </node>
+      <node id="12">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
-        <label>predefined_units/space_units.cpp</label>
-        <link refid="space__units_8cpp"/>
-      </node>
-      <node id="3">
-        <label>special_units/size_3d.cpp</label>
-        <link refid="size__3d_8cpp"/>
-      </node>
       <node id="1">
         <label>special_units/size_3d.hpp</label>
         <link refid="size__3d_8hpp"/>
@@ -325,6 +317,14 @@
         </childnode>
       </node>
       <node id="4">
+        <label>special_units/size_3d.cpp</label>
+        <link refid="size__3d_8cpp"/>
+      </node>
+      <node id="3">
+        <label>predefined_units/space_units.cpp</label>
+        <link refid="space__units_8cpp"/>
+      </node>
+      <node id="2">
         <label>units.hpp</label>
         <link refid="units_8hpp"/>
       </node>
@@ -332,7 +332,7 @@
     <innerclass refid="classscifir_1_1size__3d" prot="public">scifir::size_3d</innerclass>
     <innerclass refid="classscifir_1_1size__3d_3_01float_01_4" prot="public">scifir::size_3d&lt; float &gt;</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
-    <sectiondef kind="func">
+      <sectiondef kind="func">
       <memberdef kind="function" id="size__3d_8hpp_1aca48f495ba029ac7fc33d6f8c7a3ddb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -567,14 +567,14 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="288" column="8" bodyfile="special_units/size_3d.hpp" bodystart="288" bodyend="291"/>
       </memberdef>
-      <memberdef kind="function" id="size__3d_8hpp_1a7d9acabd50e86aaa259c36ce5510aba0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="size__3d_8hpp_1a480c28f90a2ee8ddf38b0d13f009035a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::size_3d&lt; T &gt; &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -593,14 +593,14 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="294" column="1" bodyfile="special_units/size_3d.hpp" bodystart="294" bodyend="297"/>
       </memberdef>
-      <memberdef kind="function" id="size__3d_8hpp_1a5b1710768a306056e3ead200b14bc5da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="size__3d_8hpp_1a968f0a3c02510dbe7c9bb1fcd7d00b5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
         <type>istream &amp;</type>
-        <definition>istream &amp; operator&gt;&gt;</definition>
+        <definition>istream&amp; operator&gt;&gt;</definition>
         <argsstring>(istream &amp;is, scifir::size_3d&lt; T &gt; &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
@@ -619,7 +619,7 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="300" column="9" bodyfile="special_units/size_3d.hpp" bodystart="300" bodyend="307"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -643,82 +643,82 @@
 <codeline lineno="16" refid="classscifir_1_1size__3d" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="19" refid="classscifir_1_1size__3d_1a203226ede3f032f59fa077e3d62145ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a203226ede3f032f59fa077e3d62145ab" kindref="member">size_3d</ref>()<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>()</highlight></codeline>
+<codeline lineno="19" refid="classscifir_1_1size__3d_1a203226ede3f032f59fa077e3d62145ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a203226ede3f032f59fa077e3d62145ab" kindref="member">size_3d</ref>()<sp/>:<sp/>width(),height(),depth()</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="classscifir_1_1size__3d_1a8b4d091f0e15f510c3542dbfe43a4b08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a8b4d091f0e15f510c3542dbfe43a4b08" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>(x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>)</highlight></codeline>
+<codeline lineno="22" refid="classscifir_1_1size__3d_1a8b4d091f0e15f510c3542dbfe43a4b08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a8b4d091f0e15f510c3542dbfe43a4b08" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)<sp/>:<sp/>width(x.width),height(x.height),depth(x.depth)</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25" refid="classscifir_1_1size__3d_1ab7b5c855243567515aad306f0696d4c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1ab7b5c855243567515aad306f0696d4c7" kindref="member">size_3d</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(std::move(x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>)),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(std::move(x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>)),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>(std::move(x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>))</highlight></codeline>
+<codeline lineno="25" refid="classscifir_1_1size__3d_1ab7b5c855243567515aad306f0696d4c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1ab7b5c855243567515aad306f0696d4c7" kindref="member">size_3d</ref>(<ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;&amp;<sp/>x)<sp/>:<sp/>width(std::move(x.width)),height(std::move(x.height)),depth(std::move(x.depth))</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="classscifir_1_1size__3d_1a342c29fa2eba3ff9769107bc2f9b7143" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a342c29fa2eba3ff9769107bc2f9b7143" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_width</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_height</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_depth</ref>)<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_width</ref>),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_height</ref>),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_depth</ref>)</highlight></codeline>
+<codeline lineno="28" refid="classscifir_1_1size__3d_1a342c29fa2eba3ff9769107bc2f9b7143" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a342c29fa2eba3ff9769107bc2f9b7143" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>new_width,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>new_height,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>new_depth)<sp/>:<sp/>width(new_width),height(new_height),depth(new_depth)</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="classscifir_1_1size__3d_1aa2869e0ab5bf6135a0596582b7e2dbc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1aa2869e0ab5bf6135a0596582b7e2dbc9" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_width</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_height</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_depth</ref>)<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_width</ref>),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_height</ref>),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_depth</ref>)</highlight></codeline>
+<codeline lineno="31" refid="classscifir_1_1size__3d_1aa2869e0ab5bf6135a0596582b7e2dbc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1aa2869e0ab5bf6135a0596582b7e2dbc9" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_width,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_height,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_depth)<sp/>:<sp/>width(new_width),height(new_height),depth(new_depth)</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="classscifir_1_1size__3d_1a16c224393337c845db0cc897aeab4518" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a16c224393337c845db0cc897aeab4518" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>)<sp/>:<sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>()</highlight></codeline>
+<codeline lineno="34" refid="classscifir_1_1size__3d_1a16c224393337c845db0cc897aeab4518" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a16c224393337c845db0cc897aeab4518" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)<sp/>:<sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>()</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" kindref="member">initialize_from_string</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialize_from_string(init_size_3d);</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39" refid="classscifir_1_1size__3d_1a98f8bc0fa68dd84e1be98e72df756a9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1size__3d_1a98f8bc0fa68dd84e1be98e72df756a9a" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="39" refid="classscifir_1_1size__3d_1a46d0ddfccf708903e86c2451c3da0a69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>=<sp/>x.width;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>=<sp/>x.height;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>=<sp/>x.depth;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>=<sp/>x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47" refid="classscifir_1_1size__3d_1ac6c6096261c81209145a8b304a98a563" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1size__3d_1ac6c6096261c81209145a8b304a98a563" kindref="member">operator=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="47" refid="classscifir_1_1size__3d_1a5556b70bf199a26cd02e5c172e5520d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>=<sp/>std::move(x.width);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>=<sp/>std::move(x.height);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>=<sp/>std::move(x.depth);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>std::move(x.width);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>std::move(x.height);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>=<sp/>std::move(x.depth);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55" refid="classscifir_1_1size__3d_1ab6c14ba934d14fe1f026dd696bfccae0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1size__3d_1ab6c14ba934d14fe1f026dd696bfccae0" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>)</highlight></codeline>
+<codeline lineno="55" refid="classscifir_1_1size__3d_1a3df5f22dce67caa88cde8844663720c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" kindref="member">initialize_from_string</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialize_from_string(init_size_3d);</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="classscifir_1_1size__3d_1ab20ca4cf111fd6b684c92ba23389e50e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref><sp/><ref refid="classscifir_1_1size__3d_1ab20ca4cf111fd6b684c92ba23389e50e" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="61" refid="classscifir_1_1size__3d_1a4a21cf4cceed534f3f418fd6365fc0d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref><sp/><ref refid="size__3d_8hpp_1a2bdd1b5d1983e5cb10f314d32f74c277" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="62"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>(<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>+<sp/>x.width,<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>+<sp/>x.height,<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>+<sp/>x.depth);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>(width<sp/>+<sp/>x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>,height<sp/>+<sp/>x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>,depth<sp/>+<sp/>x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>);</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66" refid="classscifir_1_1size__3d_1ab9a7fc37a90e64c394bda2cce6bba10a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref><sp/><ref refid="classscifir_1_1size__3d_1ab9a7fc37a90e64c394bda2cce6bba10a" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="66" refid="classscifir_1_1size__3d_1ac7ebb7c805519069c42533d9c43cc435" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref><sp/><ref refid="angle_8hpp_1a0962f28ca147b65932f14efcba2d6456" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="67"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>(<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>-<sp/>x.width,<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>-<sp/>x.height,<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>-<sp/>x.depth);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>(width<sp/>-<sp/>x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>,height<sp/>-<sp/>x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>,depth<sp/>-<sp/>x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>);</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71" refid="classscifir_1_1size__3d_1ada390e320ba19c5fdad921ebb4240a06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1ada390e320ba19c5fdad921ebb4240a06" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="71" refid="classscifir_1_1size__3d_1ada390e320ba19c5fdad921ebb4240a06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a3a6da2c52abe77a491235af79ad909be" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>+=<sp/>x.width;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>+=<sp/>x.height;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>+=<sp/>x.depth;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>+=<sp/>x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>+=<sp/>x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>+=<sp/>x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>;</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="classscifir_1_1size__3d_1a83e9e06987837b70e62dc5720a2956d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a83e9e06987837b70e62dc5720a2956d7" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="78" refid="classscifir_1_1size__3d_1a83e9e06987837b70e62dc5720a2956d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>-=<sp/>x.width;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>-=<sp/>x.height;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>-=<sp/>x.depth;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>-=<sp/>x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>-=<sp/>x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>-=<sp/>x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>;</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
 <codeline lineno="85" refid="classscifir_1_1size__3d_1a29ff12f1198e9457bf02dbb848db6edb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref><sp/><ref refid="classscifir_1_1size__3d_1a29ff12f1198e9457bf02dbb848db6edb" kindref="member">get_volume</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="86"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>(<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>*<sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>*<sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>(width<sp/>*<sp/>height<sp/>*<sp/>depth);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
 <codeline lineno="90" refid="classscifir_1_1size__3d_1a6a2ee372c452eb7ba4e7e5cbac1e0d50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a6a2ee372c452eb7ba4e7e5cbac1e0d50" kindref="member">display</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="91"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">ostringstream</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">output</ref>;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">output</ref><sp/>&lt;&lt;<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>*<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>*<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">output</ref>.str();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ostringstream<sp/>output;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/>&lt;&lt;<sp/>width<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>*<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>height<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>*<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>depth;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>output.str();</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
 <codeline lineno="97" refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>;</highlight></codeline>
@@ -726,102 +726,102 @@
 <codeline lineno="99" refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>;</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="102" refid="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>)</highlight></codeline>
+<codeline lineno="102" refid="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;string&gt;</ref><sp/>widths;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::split(widths,<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>,boost::is_any_of(</highlight><highlight class="stringliteral">&quot;*&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>widths;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::split(widths,init_size_3d,boost::is_any_of(</highlight><highlight class="stringliteral">&quot;*&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(widths.size()<sp/>==<sp/>3)</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::trim(widths[0]);</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::trim(widths[1]);</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::trim(widths[2]);</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>=<sp/>T(widths[0]);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>=<sp/>T(widths[1]);</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>=<sp/>T(widths[2]);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>T(widths[0]);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>T(widths[1]);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>=<sp/>T(widths[2]);</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
-<codeline lineno="119" refid="classscifir_1_1size__3d_3_01float_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>&gt;</highlight></codeline>
+<codeline lineno="119" refid="classscifir_1_1size__3d_3_01float_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt;float&gt;</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="122" refid="classscifir_1_1size__3d_3_01float_01_4_1a299413ba5435c392757c3df728d46047" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a299413ba5435c392757c3df728d46047" kindref="member">size_3d</ref>()<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>()</highlight></codeline>
+<codeline lineno="122" refid="classscifir_1_1size__3d_3_01float_01_4_1a299413ba5435c392757c3df728d46047" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a299413ba5435c392757c3df728d46047" kindref="member">size_3d</ref>()<sp/>:<sp/>width(),height(),depth()</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125" refid="classscifir_1_1size__3d_3_01float_01_4_1a32dff4f6e57b0239e39f92e5fb22743d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a32dff4f6e57b0239e39f92e5fb22743d" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>(x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>)</highlight></codeline>
+<codeline lineno="125" refid="classscifir_1_1size__3d_3_01float_01_4_1a32dff4f6e57b0239e39f92e5fb22743d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a32dff4f6e57b0239e39f92e5fb22743d" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)<sp/>:<sp/>width(x.width),height(x.height),depth(x.depth)</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128" refid="classscifir_1_1size__3d_3_01float_01_4_1a8cbcc3e31964d19aa006e5c47f806b98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a8cbcc3e31964d19aa006e5c47f806b98" kindref="member">size_3d</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(std::move(x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>)),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(std::move(x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>)),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>(std::move(x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>))</highlight></codeline>
+<codeline lineno="128" refid="classscifir_1_1size__3d_3_01float_01_4_1a8cbcc3e31964d19aa006e5c47f806b98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a8cbcc3e31964d19aa006e5c47f806b98" kindref="member">size_3d</ref>(<ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;&amp;<sp/>x)<sp/>:<sp/>width(std::move(x.width)),height(std::move(x.height)),depth(std::move(x.depth))</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131" refid="classscifir_1_1size__3d_3_01float_01_4_1a274d7930a6fd19a3f708d0fdc9453742" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a274d7930a6fd19a3f708d0fdc9453742" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_width</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_height</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_depth</ref>)<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_width</ref>),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_height</ref>),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_depth</ref>)</highlight></codeline>
+<codeline lineno="131" refid="classscifir_1_1size__3d_3_01float_01_4_1a274d7930a6fd19a3f708d0fdc9453742" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a274d7930a6fd19a3f708d0fdc9453742" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>new_width,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>new_height,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>new_depth)<sp/>:<sp/>width(new_width),height(new_height),depth(new_depth)</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134" refid="classscifir_1_1size__3d_3_01float_01_4_1ad51ab6e61122bd93149646582d83d3dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1ad51ab6e61122bd93149646582d83d3dd" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_width</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_height</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_depth</ref>)<sp/>:<sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">stof</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_width</ref>)),<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">stof</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_height</ref>)),<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">stof</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_depth</ref>))</highlight></codeline>
+<codeline lineno="134" refid="classscifir_1_1size__3d_3_01float_01_4_1ad51ab6e61122bd93149646582d83d3dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1ad51ab6e61122bd93149646582d83d3dd" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_width,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_height,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_depth)<sp/>:<sp/>width(stof(new_width)),height(stof(new_height)),depth(stof(new_depth))</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137" refid="classscifir_1_1size__3d_3_01float_01_4_1a8fe981bbb48a995d36f2ad3ad2c19b62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a8fe981bbb48a995d36f2ad3ad2c19b62" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>)<sp/>:<sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>()</highlight></codeline>
+<codeline lineno="137" refid="classscifir_1_1size__3d_3_01float_01_4_1a8fe981bbb48a995d36f2ad3ad2c19b62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a8fe981bbb48a995d36f2ad3ad2c19b62" kindref="member">size_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)<sp/>:<sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>()</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" kindref="member">initialize_from_string</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialize_from_string(init_size_3d);</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142" refid="classscifir_1_1size__3d_3_01float_01_4_1a93cd3b281bb3f2e0cb52d04c92eee60d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a93cd3b281bb3f2e0cb52d04c92eee60d" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="142" refid="classscifir_1_1size__3d_3_01float_01_4_1aa9618ab62041324c118324fa56f59a71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>=<sp/>x.width;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>=<sp/>x.height;</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>=<sp/>x.depth;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1ad232bf592b2bbf6aaf2667763ea004c4" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a538e1ae810cc34f3b6ca5d3bc0aec34a" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>=<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a10af10381c32c346530f4df50b6c0b1c" kindref="member">depth</ref>;</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150" refid="classscifir_1_1size__3d_3_01float_01_4_1adc9c21ba8f73f39b7e971618785070f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1adc9c21ba8f73f39b7e971618785070f7" kindref="member">operator=</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="150" refid="classscifir_1_1size__3d_3_01float_01_4_1a410fb9b40d659b2dbf263600dbb06005" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>=<sp/>std::move(x.width);</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>=<sp/>std::move(x.height);</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>=<sp/>std::move(x.depth);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>std::move(x.width);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>std::move(x.height);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>=<sp/>std::move(x.depth);</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158" refid="classscifir_1_1size__3d_3_01float_01_4_1a2aeca509ba18b57703e6ef054d2191c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a2aeca509ba18b57703e6ef054d2191c8" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>)</highlight></codeline>
+<codeline lineno="158" refid="classscifir_1_1size__3d_3_01float_01_4_1a5564243802b59b1bca9d8fd4e3a09363" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" kindref="member">initialize_from_string</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialize_from_string(init_size_3d);</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164" refid="classscifir_1_1size__3d_3_01float_01_4_1a019ba42cbd9b5c7b834d383c4710ec02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref><sp/><ref refid="classscifir_1_1size__3d_1ab20ca4cf111fd6b684c92ba23389e50e" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="164" refid="classscifir_1_1size__3d_3_01float_01_4_1a4f5c6930b877374b3339ec88c317c1ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref><sp/><ref refid="size__3d_8hpp_1a2bdd1b5d1983e5cb10f314d32f74c277" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="165"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>(<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>+<sp/>x.width,<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>+<sp/>x.height,<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>+<sp/>x.depth);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>(width<sp/>+<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1ad232bf592b2bbf6aaf2667763ea004c4" kindref="member">width</ref>,height<sp/>+<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a538e1ae810cc34f3b6ca5d3bc0aec34a" kindref="member">height</ref>,depth<sp/>+<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a10af10381c32c346530f4df50b6c0b1c" kindref="member">depth</ref>);</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169" refid="classscifir_1_1size__3d_3_01float_01_4_1a2d1058b8d59b184c0a16ec28cf386509" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref><sp/><ref refid="classscifir_1_1size__3d_1ab9a7fc37a90e64c394bda2cce6bba10a" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="169" refid="classscifir_1_1size__3d_3_01float_01_4_1ac83c8380ebf767c2fe728f76f2705fa9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref><sp/><ref refid="angle_8hpp_1a0962f28ca147b65932f14efcba2d6456" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="170"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>(<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>-<sp/>x.width,<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>-<sp/>x.height,<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>-<sp/>x.depth);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>(width<sp/>-<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1ad232bf592b2bbf6aaf2667763ea004c4" kindref="member">width</ref>,height<sp/>-<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a538e1ae810cc34f3b6ca5d3bc0aec34a" kindref="member">height</ref>,depth<sp/>-<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a10af10381c32c346530f4df50b6c0b1c" kindref="member">depth</ref>);</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174" refid="classscifir_1_1size__3d_3_01float_01_4_1afc225edfff9ed52bfb59c9ef3d97687b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1ada390e320ba19c5fdad921ebb4240a06" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="174" refid="classscifir_1_1size__3d_3_01float_01_4_1afc225edfff9ed52bfb59c9ef3d97687b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a3a6da2c52abe77a491235af79ad909be" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>+=<sp/>x.width;</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>+=<sp/>x.height;</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>+=<sp/>x.depth;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>+=<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1ad232bf592b2bbf6aaf2667763ea004c4" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>+=<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a538e1ae810cc34f3b6ca5d3bc0aec34a" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>+=<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a10af10381c32c346530f4df50b6c0b1c" kindref="member">depth</ref>;</highlight></codeline>
 <codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"></highlight></codeline>
-<codeline lineno="181" refid="classscifir_1_1size__3d_3_01float_01_4_1a1a393c8a6dacd4b996062b94f4659618" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a83e9e06987837b70e62dc5720a2956d7" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="181" refid="classscifir_1_1size__3d_3_01float_01_4_1a1a393c8a6dacd4b996062b94f4659618" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4" kindref="compound">size_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>-=<sp/>x.width;</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>-=<sp/>x.height;</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>-=<sp/>x.depth;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>-=<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1ad232bf592b2bbf6aaf2667763ea004c4" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>-=<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a538e1ae810cc34f3b6ca5d3bc0aec34a" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>-=<sp/>x.<ref refid="classscifir_1_1size__3d_3_01float_01_4_1a10af10381c32c346530f4df50b6c0b1c" kindref="member">depth</ref>;</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"></highlight></codeline>
 <codeline lineno="188" refid="classscifir_1_1size__3d_3_01float_01_4_1aecb08c629179c69e20257cf82305fac5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1aecb08c629179c69e20257cf82305fac5" kindref="member">get_volume</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="189"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>*<sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>*<sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>width<sp/>*<sp/>height<sp/>*<sp/>depth;</highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
 <codeline lineno="193" refid="classscifir_1_1size__3d_3_01float_01_4_1a0b946bb4370adcbe31465dcb2f4af95c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a0b946bb4370adcbe31465dcb2f4af95c" kindref="member">display</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="194"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">ostringstream</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">output</ref>;</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">output</ref><sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a6fc5f876bdd1abb1118fc73288152eb0" kindref="member">display_float</ref>(<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref>,2)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>*<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a6fc5f876bdd1abb1118fc73288152eb0" kindref="member">display_float</ref>(<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref>,2)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>*<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a6fc5f876bdd1abb1118fc73288152eb0" kindref="member">display_float</ref>(<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>,2);</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">output</ref>.str();</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ostringstream<sp/>output;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a6fc5f876bdd1abb1118fc73288152eb0" kindref="member">display_float</ref>(width,2)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>*<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a6fc5f876bdd1abb1118fc73288152eb0" kindref="member">display_float</ref>(height,2)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>*<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a6fc5f876bdd1abb1118fc73288152eb0" kindref="member">display_float</ref>(depth,2);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>output.str();</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"></highlight></codeline>
 <codeline lineno="200" refid="classscifir_1_1size__3d_3_01float_01_4_1ad232bf592b2bbf6aaf2667763ea004c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1ad232bf592b2bbf6aaf2667763ea004c4" kindref="member">width</ref>;</highlight></codeline>
@@ -829,35 +829,35 @@
 <codeline lineno="202" refid="classscifir_1_1size__3d_3_01float_01_4_1a10af10381c32c346530f4df50b6c0b1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a10af10381c32c346530f4df50b6c0b1c" kindref="member">depth</ref>;</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"></highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="205" refid="classscifir_1_1size__3d_3_01float_01_4_1a75e367a3f2054870bb3c71c7822ea081" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a75e367a3f2054870bb3c71c7822ea081" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>)</highlight></codeline>
+<codeline lineno="205" refid="classscifir_1_1size__3d_3_01float_01_4_1a75e367a3f2054870bb3c71c7822ea081" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d_3_01float_01_4_1a75e367a3f2054870bb3c71c7822ea081" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;string&gt;</ref><sp/>widths;</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::split(widths,<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_size_3d</ref>,boost::is_any_of(</highlight><highlight class="stringliteral">&quot;*&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>widths;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::split(widths,init_size_3d,boost::is_any_of(</highlight><highlight class="stringliteral">&quot;*&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(widths.size()<sp/>==<sp/>3)</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::trim(widths[0]);</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::trim(widths[1]);</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::trim(widths[2]);</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">stof</ref>(widths[0]);</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">stof</ref>(widths[1]);</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">stof</ref>(widths[2]);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/>=<sp/>stof(widths[0]);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>stof(widths[1]);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>=<sp/>stof(widths[2]);</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"></highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="222" refid="namespacescifir_1ab0c61bac766af1baa5040a2a55aaf86d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="222" refid="namespacescifir_1ab0c61bac766af1baa5040a2a55aaf86d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1ab0c61bac766af1baa5040a2a55aaf86d" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x.display();</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x.<ref refid="classscifir_1_1size__3d_1a6a2ee372c452eb7ba4e7e5cbac1e0d50" kindref="member">display</ref>();</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"></highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>size_3d&lt;float&gt;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1ab0c61bac766af1baa5040a2a55aaf86d" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>size_3d&lt;float&gt;&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="228"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"></highlight></codeline>
 <codeline lineno="230"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="231" refid="size__3d_8hpp_1aca48f495ba029ac7fc33d6f8c7a3ddb1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1aca48f495ba029ac7fc33d6f8c7a3ddb1" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="231" refid="size__3d_8hpp_1aca48f495ba029ac7fc33d6f8c7a3ddb1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1aca48f495ba029ac7fc33d6f8c7a3ddb1" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="232"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x.width<sp/>==<sp/>y.width<sp/>and<sp/>x.height<sp/>==<sp/>y.height<sp/>and<sp/>x.depth<sp/>==<sp/>y.depth)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>==<sp/>y.<ref refid="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" kindref="member">width</ref><sp/>and<sp/>x.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>==<sp/>y.<ref refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" kindref="member">height</ref><sp/>and<sp/>x.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref><sp/>==<sp/>y.<ref refid="classscifir_1_1size__3d_1adc948753e8017b454d878cc6b59466d7" kindref="member">depth</ref>)</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -868,68 +868,68 @@
 <codeline lineno="241"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"></highlight></codeline>
 <codeline lineno="243"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="244" refid="size__3d_8hpp_1a471154cf7a222fdc3d71752735e9de65" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a471154cf7a222fdc3d71752735e9de65" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="244" refid="size__3d_8hpp_1a471154cf7a222fdc3d71752735e9de65" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a471154cf7a222fdc3d71752735e9de65" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="245"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(x<sp/>==<sp/>y);</highlight></codeline>
 <codeline lineno="247"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="248"><highlight class="normal"></highlight></codeline>
 <codeline lineno="249"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="250" refid="size__3d_8hpp_1ad5dbedd00933f49639631e28046eb3b7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1aca48f495ba029ac7fc33d6f8c7a3ddb1" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)</highlight></codeline>
+<codeline lineno="250" refid="size__3d_8hpp_1ad5dbedd00933f49639631e28046eb3b7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1aca48f495ba029ac7fc33d6f8c7a3ddb1" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)</highlight></codeline>
 <codeline lineno="251"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref><sp/>y(init_size_3d);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref><sp/>y(init_size_3d);</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y);</highlight></codeline>
 <codeline lineno="254"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="255"><highlight class="normal"></highlight></codeline>
 <codeline lineno="256"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="257" refid="size__3d_8hpp_1aec02df64d988e25160d5547cdc0185f9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a471154cf7a222fdc3d71752735e9de65" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)</highlight></codeline>
+<codeline lineno="257" refid="size__3d_8hpp_1aec02df64d988e25160d5547cdc0185f9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a471154cf7a222fdc3d71752735e9de65" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d)</highlight></codeline>
 <codeline lineno="258"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(x<sp/>==<sp/>init_size_3d);</highlight></codeline>
 <codeline lineno="260"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"></highlight></codeline>
 <codeline lineno="262"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="263" refid="size__3d_8hpp_1afaba4634bb43db7d21a3913830c047d0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1aca48f495ba029ac7fc33d6f8c7a3ddb1" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="263" refid="size__3d_8hpp_1afaba4634bb43db7d21a3913830c047d0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1aca48f495ba029ac7fc33d6f8c7a3ddb1" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="264"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref><sp/>y(init_size_3d);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref><sp/>y(init_size_3d);</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y);</highlight></codeline>
 <codeline lineno="267"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="268"><highlight class="normal"></highlight></codeline>
 <codeline lineno="269"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="270" refid="size__3d_8hpp_1a71080df5567d65d37fd8447985967ef9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a471154cf7a222fdc3d71752735e9de65" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="270" refid="size__3d_8hpp_1a71080df5567d65d37fd8447985967ef9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a471154cf7a222fdc3d71752735e9de65" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_size_3d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="271"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(init_size_3d<sp/>==<sp/>x);</highlight></codeline>
 <codeline lineno="273"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"></highlight></codeline>
 <codeline lineno="275"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="276" refid="size__3d_8hpp_1a3a6da2c52abe77a491235af79ad909be" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a3a6da2c52abe77a491235af79ad909be" kindref="member">operator +=</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="276" refid="size__3d_8hpp_1a3a6da2c52abe77a491235af79ad909be" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a3a6da2c52abe77a491235af79ad909be" kindref="member">operator +=</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="277"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>to_string(y);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>+=<sp/><ref refid="namespacescifir_1ab0c61bac766af1baa5040a2a55aaf86d" kindref="member">to_string</ref>(y);</highlight></codeline>
 <codeline lineno="279"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="280"><highlight class="normal"></highlight></codeline>
 <codeline lineno="281"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="282" refid="size__3d_8hpp_1a2bdd1b5d1983e5cb10f314d32f74c277" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a2bdd1b5d1983e5cb10f314d32f74c277" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="282" refid="size__3d_8hpp_1a2bdd1b5d1983e5cb10f314d32f74c277" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a2bdd1b5d1983e5cb10f314d32f74c277" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="283"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>+<sp/>to_string(y);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>+<sp/><ref refid="namespacescifir_1ab0c61bac766af1baa5040a2a55aaf86d" kindref="member">to_string</ref>(y);</highlight></codeline>
 <codeline lineno="285"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="286"><highlight class="normal"></highlight></codeline>
 <codeline lineno="287"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="288" refid="size__3d_8hpp_1af2944dc9aece4de057c732425aba6d5a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a2bdd1b5d1983e5cb10f314d32f74c277" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="288" refid="size__3d_8hpp_1af2944dc9aece4de057c732425aba6d5a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="size__3d_8hpp_1a2bdd1b5d1983e5cb10f314d32f74c277" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="289"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>to_string(x)<sp/>+<sp/>y;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1ab0c61bac766af1baa5040a2a55aaf86d" kindref="member">to_string</ref>(x)<sp/>+<sp/>y;</highlight></codeline>
 <codeline lineno="291"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"></highlight></codeline>
 <codeline lineno="293"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="294" refid="size__3d_8hpp_1a7d9acabd50e86aaa259c36ce5510aba0" refkind="member"><highlight class="normal">ostream&amp;<sp/><ref refid="size__3d_8hpp_1a7d9acabd50e86aaa259c36ce5510aba0" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="294" refid="size__3d_8hpp_1a480c28f90a2ee8ddf38b0d13f009035a" refkind="member"><highlight class="normal">ostream&amp;<sp/><ref refid="size__3d_8hpp_1a480c28f90a2ee8ddf38b0d13f009035a" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="295"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>to_string(x);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1ab0c61bac766af1baa5040a2a55aaf86d" kindref="member">to_string</ref>(x);</highlight></codeline>
 <codeline lineno="297"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"></highlight></codeline>
 <codeline lineno="299"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="300" refid="size__3d_8hpp_1a5b1710768a306056e3ead200b14bc5da" refkind="member"><highlight class="normal">istream&amp;<sp/><ref refid="size__3d_8hpp_1a5b1710768a306056e3ead200b14bc5da" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="300" refid="size__3d_8hpp_1a968f0a3c02510dbe7c9bb1fcd7d00b5d" refkind="member"><highlight class="normal">istream&amp;<sp/><ref refid="size__3d_8hpp_1a968f0a3c02510dbe7c9bb1fcd7d00b5d" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="301"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>a[256];</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>is.getline(a,<sp/>256);</highlight></codeline>
 <codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>b(a);</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>(b);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="classscifir_1_1size__3d" kindref="compound">scifir::size_3d&lt;T&gt;</ref>(b);</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
 <codeline lineno="307"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="308"><highlight class="normal"></highlight></codeline>

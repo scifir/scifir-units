@@ -1,4 +1,4 @@
-.TH "special_units/zid.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "special_units/zid.cpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -19,7 +19,7 @@ special_units/zid.cpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -27,7 +27,7 @@ special_units/zid.cpp
 
 .in +1c
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBzid\fP &x)"
+.RI "string \fBscifir::to_string\fP (const zid &x)"
 .br
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBscifir::zid\fP &x, const \fBscifir::zid\fP &y)"
@@ -68,37 +68,38 @@ special_units/zid.cpp
 .SS "bool operator!= (const \fBscifir::zid\fP & x, const \fBscifir::zid\fP & y)"
 
 .PP
-Definition at line \fB210\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 210 of file zid\&.cpp\&.
+.PP
 .nf
 211 {
 212     return !(x == y);
 213 }
 .fi
-
 .SS "bool operator!= (const \fBscifir::zid\fP & x, const string & init_zid_full)"
 
 .PP
-Definition at line \fB221\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 221 of file zid\&.cpp\&.
+.PP
 .nf
 222 {
 223     return !(x == init_zid_full);
 224 }
 .fi
-
 .SS "bool operator!= (const string & init_zid_full, const \fBscifir::zid\fP & x)"
 
 .PP
-Definition at line \fB232\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 232 of file zid\&.cpp\&.
+.PP
 .nf
 233 {
 234     return !(init_zid_full == x);
 235 }
 .fi
-
 .SS "string operator+ (const \fBscifir::zid\fP & y, const string & x)"
 
 .PP
-Definition at line \fB252\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 252 of file zid\&.cpp\&.
+.PP
 .nf
 253 {
 254     ostringstream output;
@@ -107,11 +108,11 @@ Definition at line \fB252\fP of file \fBzid\&.cpp\fP\&..PP
 257     return output\&.str();
 258 }
 .fi
-
 .SS "string operator+ (const string & x, const \fBscifir::zid\fP & y)"
 
 .PP
-Definition at line \fB244\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 244 of file zid\&.cpp\&.
+.PP
 .nf
 245 {
 246     ostringstream output;
@@ -120,11 +121,11 @@ Definition at line \fB244\fP of file \fBzid\&.cpp\fP\&..PP
 249     return output\&.str();
 250 }
 .fi
-
 .SS "void operator+= (string & x, const \fBscifir::zid\fP & y)"
 
 .PP
-Definition at line \fB237\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 237 of file zid\&.cpp\&.
+.PP
 .nf
 238 {
 239     ostringstream output;
@@ -132,21 +133,21 @@ Definition at line \fB237\fP of file \fBzid\&.cpp\fP\&..PP
 241     x += output\&.str();
 242 }
 .fi
-
-.SS "ostream & operator<< (ostream & os, const \fBscifir::zid\fP & x)"
+.SS "ostream& operator<< (ostream & os, const \fBscifir::zid\fP & x)"
 
 .PP
-Definition at line \fB260\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 260 of file zid\&.cpp\&.
+.PP
 .nf
 261 {
 262     return os << to_string(x);
 263 }
 .fi
-
 .SS "bool operator== (const \fBscifir::zid\fP & x, const \fBscifir::zid\fP & y)"
 
 .PP
-Definition at line \fB177\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 177 of file zid\&.cpp\&.
+.PP
 .nf
 178 {
 179     if (x\&.aid == y\&.aid)
@@ -180,33 +181,33 @@ Definition at line \fB177\fP of file \fBzid\&.cpp\fP\&..PP
 207     }
 208 }
 .fi
-
 .SS "bool operator== (const \fBscifir::zid\fP & x, const string & init_zid_full)"
 
 .PP
-Definition at line \fB215\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 215 of file zid\&.cpp\&.
+.PP
 .nf
 216 {
 217     scifir::zid y = scifir::zid(init_zid_full);
 218     return (x == y);
 219 }
 .fi
-
 .SS "bool operator== (const string & init_zid_full, const \fBscifir::zid\fP & x)"
 
 .PP
-Definition at line \fB226\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 226 of file zid\&.cpp\&.
+.PP
 .nf
 227 {
 228     scifir::zid y = scifir::zid(init_zid_full);
 229     return (x == y);
 230 }
 .fi
-
-.SS "istream & operator>> (istream & is, \fBscifir::zid\fP & x)"
+.SS "istream& operator>> (istream & is, \fBscifir::zid\fP & x)"
 
 .PP
-Definition at line \fB265\fP of file \fBzid\&.cpp\fP\&..PP
+Definition at line 265 of file zid\&.cpp\&.
+.PP
 .nf
 266 {
 267     char a[256];
@@ -217,7 +218,6 @@ Definition at line \fB265\fP of file \fBzid\&.cpp\fP\&..PP
 272     return is;
 273 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

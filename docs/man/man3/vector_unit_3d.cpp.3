@@ -1,4 +1,4 @@
-.TH "units/vector_unit_3d.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "units/vector_unit_3d.cpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -17,7 +17,7 @@ units/vector_unit_3d.cpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -25,102 +25,131 @@ units/vector_unit_3d.cpp
 
 .in +1c
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::norm\fP (\fBconst\fP \fBvector_unit_3d\fP &x)"
+.RI "scalar_unit \fBscifir::norm\fP (const vector_unit_3d &x)"
 .br
+.RI "It returns the value of the vector in spherical coordinates, r\&. "
 .ti -1c
-.RI "\fBvector_unit_3d\fP \fBscifir::sqrt\fP (\fBconst\fP \fBvector_unit_3d\fP &x)"
+.RI "vector_unit_3d \fBscifir::sqrt\fP (const vector_unit_3d &x)"
 .br
+.RI "It squares the vector, creating a \fBvector_unit_3d\fP with the value squared and always the same theta and the same phi\&. The dimensions are squared with the same rules for the square of dimensions than \fBscalar_unit\fP classes\&. "
 .ti -1c
-.RI "\fBvector_unit_3d\fP \fBscifir::sqrt_nth\fP (\fBconst\fP \fBvector_unit_3d\fP &x, \fBint\fP index)"
+.RI "vector_unit_3d \fBscifir::sqrt_nth\fP (const vector_unit_3d &x, int index)"
 .br
+.RI "It takes the root of the vector with the index given, creating a \fBvector_unit_3d\fP with the value rooted to that index and always maintains the same theta and the same phi\&. The dimensions are squared with the same rules for the square of dimensions than \fBscalar_unit\fP classes\&. "
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::dot_product\fP (\fBconst\fP \fBvector_unit_3d\fP &x, \fBconst\fP \fBvector_unit_3d\fP &y)"
+.RI "scalar_unit \fBscifir::dot_product\fP (const vector_unit_3d &x, const vector_unit_3d &y)"
 .br
+.RI "Creates a \fBscalar_unit\fP as the dot product of the two vectors x and y\&. "
 .ti -1c
-.RI "\fBvector_unit_3d\fP \fBscifir::cross_product\fP (\fBconst\fP \fBvector_unit_3d\fP &x, \fBconst\fP \fBvector_unit_3d\fP &y)"
+.RI "vector_unit_3d \fBscifir::cross_product\fP (const vector_unit_3d &x, const vector_unit_3d &y)"
 .br
+.RI "Creates a \fBvector_unit_3d\fP as the cross product of the two vectors x and y\&. "
 .ti -1c
-.RI "\fBangle\fP \fBscifir::angle_between\fP (\fBconst\fP \fBvector_unit_3d\fP &x, \fBconst\fP \fBvector_unit_3d\fP &y)"
+.RI "angle \fBscifir::angle_between\fP (const vector_unit_3d &x, const vector_unit_3d &y)"
 .br
+.RI "Returns the angle between two vectors x and y inside a 3D space\&. "
 .ti -1c
-.RI "\fBbool\fP \fBscifir::same_direction\fP (\fBconst\fP \fBvector_unit_3d\fP &x, \fBconst\fP \fBvector_unit_3d\fP &y)"
+.RI "bool \fBscifir::same_direction\fP (const vector_unit_3d &x, const vector_unit_3d &y)"
 .br
+.RI "Checks if two vectors x and y have the same direction\&. "
 .ti -1c
-.RI "\fBbool\fP \fBscifir::parallel\fP (\fBconst\fP \fBvector_unit_3d\fP &x, \fBconst\fP \fBvector_unit_3d\fP &y)"
+.RI "bool \fBscifir::parallel\fP (const vector_unit_3d &x, const vector_unit_3d &y)"
 .br
+.RI "Checks if two vectors x and y are parallel, which means that their direction is the same or the exact opposite\&. "
 .ti -1c
-.RI "\fBbool\fP \fBscifir::orthogonal\fP (\fBconst\fP \fBvector_unit_3d\fP &x, \fBconst\fP \fBvector_unit_3d\fP &y)"
+.RI "bool \fBscifir::orthogonal\fP (const vector_unit_3d &x, const vector_unit_3d &y)"
 .br
+.RI "Checks if two vectors x and y are orthogonal, that's, if they have 90 degrees between them\&. "
 .ti -1c
 .RI "\fBscifir::vector_unit_3d\fP \fBoperator*\fP (const \fBscifir::scalar_unit\fP &x, const \fBscifir::vector_unit_3d\fP &y)"
 .br
+.RI "It creates a new vector_unit_3d scaling a vector_unit_3d by the scalar_unit x\&. "
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBscifir::vector_unit_3d\fP &x, const \fBscifir::vector_unit_3d\fP &y)"
 .br
+.RI "Comparison operator\&. Two vector_unit_3d are not equal if their value, dimensions, theta or phi are different\&. "
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBscifir::vector_unit_3d\fP &x, const string &init_vector_3d)"
 .br
+.RI "Returns true if x is equal to the vector_unit_3d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. "
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBscifir::vector_unit_3d\fP &x, const string &init_vector_3d)"
 .br
+.RI "Returns true if x is not equal to the vector_unit_3d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. "
 .ti -1c
 .RI "bool \fBoperator==\fP (const string &init_vector_3d, const \fBscifir::vector_unit_3d\fP &y)"
 .br
+.RI "Returns true if x is equal to the vector_unit_3d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. "
 .ti -1c
 .RI "bool \fBoperator!=\fP (const string &init_vector_3d, const \fBscifir::vector_unit_3d\fP &y)"
 .br
+.RI "Returns true if x is not equal to the vector_unit_3d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. "
 .ti -1c
 .RI "void \fBoperator+=\fP (string &x, const \fBscifir::vector_unit_3d\fP &y)"
 .br
+.RI "Concatenates the string representation of the vector_unit_3d y to the string x\&. "
 .ti -1c
 .RI "string \fBoperator+\fP (const string &x, const \fBscifir::vector_unit_3d\fP &y)"
 .br
+.RI "Creates a new string as the concatenation of the string x with the representation string of the vector_unit_3d y\&. "
 .ti -1c
 .RI "string \fBoperator+\fP (const \fBscifir::vector_unit_3d\fP &y, const string &x)"
 .br
+.RI "Creates a new string as the concatenation of the string x with the representation string of the vector_unit_3d y\&. "
 .ti -1c
 .RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::vector_unit_3d\fP &x)"
 .br
+.RI "Adds the string representation of the vector_unit_3d x to an output stream os\&. "
 .ti -1c
 .RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::vector_unit_3d\fP &x)"
 .br
+.RI "Allows that an istream initializes by string a vector_unit_3d x\&. "
 .in -1c
 .SH "Function Documentation"
 .PP 
 .SS "bool operator!= (const \fBscifir::vector_unit_3d\fP & x, const \fBscifir::vector_unit_3d\fP & y)"
 
 .PP
-Definition at line \fB515\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Comparison operator\&. Two vector_unit_3d are not equal if their value, dimensions, theta or phi are different\&. 
+.PP
+Definition at line 515 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 516 {
 517     return !(x == y);
 518 }
 .fi
-
 .SS "bool operator!= (const \fBscifir::vector_unit_3d\fP & x, const string & init_vector_3d)"
 
 .PP
-Definition at line \fB526\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Returns true if x is not equal to the vector_unit_3d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line 526 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 527 {
 528     return !(x == init_vector_3d);
 529 }
 .fi
-
 .SS "bool operator!= (const string & init_vector_3d, const \fBscifir::vector_unit_3d\fP & y)"
 
 .PP
-Definition at line \fB537\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Returns true if x is not equal to the vector_unit_3d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line 537 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 538 {
 539     return !(init_vector_3d == y);
 540 }
 .fi
-
 .SS "\fBscifir::vector_unit_3d\fP operator* (const \fBscifir::scalar_unit\fP & x, const \fBscifir::vector_unit_3d\fP & y)"
 
 .PP
-Definition at line \fB508\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+It creates a new vector_unit_3d scaling a vector_unit_3d by the scalar_unit x\&. 
+.PP
+Definition at line 508 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 509 {
 510     long double new_value = x\&.get_value() * y\&.get_value();
@@ -128,11 +157,13 @@ Definition at line \fB508\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
 512     return scifir::vector_unit_3d(float(new_value), new_dimensions, y\&.theta, y\&.phi);
 513 }
 .fi
-
 .SS "string operator+ (const \fBscifir::vector_unit_3d\fP & y, const string & x)"
 
 .PP
-Definition at line \fB557\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Creates a new string as the concatenation of the string x with the representation string of the vector_unit_3d y\&. 
+.PP
+Definition at line 557 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 558 {
 559     ostringstream output;
@@ -141,11 +172,13 @@ Definition at line \fB557\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
 562     return output\&.str();
 563 }
 .fi
-
 .SS "string operator+ (const string & x, const \fBscifir::vector_unit_3d\fP & y)"
 
 .PP
-Definition at line \fB549\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Creates a new string as the concatenation of the string x with the representation string of the vector_unit_3d y\&. 
+.PP
+Definition at line 549 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 550 {
 551     ostringstream output;
@@ -154,11 +187,13 @@ Definition at line \fB549\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
 554     return output\&.str();
 555 }
 .fi
-
 .SS "void operator+= (string & x, const \fBscifir::vector_unit_3d\fP & y)"
 
 .PP
-Definition at line \fB542\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Concatenates the string representation of the vector_unit_3d y to the string x\&. 
+.PP
+Definition at line 542 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 543 {
 544     ostringstream output;
@@ -166,43 +201,51 @@ Definition at line \fB542\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
 546     x += output\&.str();
 547 }
 .fi
-
 .SS "ostream & operator<< (ostream & os, const \fBscifir::vector_unit_3d\fP & x)"
 
 .PP
-Definition at line \fB565\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Adds the string representation of the vector_unit_3d x to an output stream os\&. 
+.PP
+Definition at line 565 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 566 {
 567     return os << to_string(x);
 568 }
 .fi
-
 .SS "bool operator== (const \fBscifir::vector_unit_3d\fP & x, const string & init_vector_3d)"
 
 .PP
-Definition at line \fB520\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Returns true if x is equal to the vector_unit_3d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line 520 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 521 {
 522     scifir::vector_unit_3d y(init_vector_3d);
 523     return (x == y);
 524 }
 .fi
-
 .SS "bool operator== (const string & init_vector_3d, const \fBscifir::vector_unit_3d\fP & y)"
 
 .PP
-Definition at line \fB531\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Returns true if x is equal to the vector_unit_3d initialized with the string being compared\&. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line 531 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 532 {
 533     scifir::vector_unit_3d x(init_vector_3d);
 534     return (x == y);
 535 }
 .fi
-
 .SS "istream & operator>> (istream & is, \fBscifir::vector_unit_3d\fP & x)"
 
 .PP
-Definition at line \fB570\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+Allows that an istream initializes by string a vector_unit_3d x\&. #endif // SCIFIR_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED 
+.PP
+Definition at line 570 of file vector_unit_3d\&.cpp\&.
+.PP
 .nf
 571 {
 572     char a[256];
@@ -213,7 +256,6 @@ Definition at line \fB570\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
 577     return is;
 578 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

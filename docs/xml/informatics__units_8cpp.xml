@@ -1,20 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="informatics__units_8cpp" kind="file" language="C++">
     <compoundname>informatics_units.cpp</compoundname>
     <includes refid="informatics__units_8hpp" local="yes">./informatics_units.hpp</includes>
     <incdepgraph>
-      <node id="1">
-        <label>predefined_units/informatics_units.cpp</label>
-        <link refid="informatics__units_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>./informatics_units.hpp</label>
-        <link refid="informatics__units_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
+      <node id="10">
+        <label>boost/algorithm/string.hpp</label>
       </node>
       <node id="4">
         <label>../units/dimension.hpp</label>
@@ -44,17 +35,8 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
+      <node id="6">
+        <label>cstdint</label>
       </node>
       <node id="3">
         <label>../units/scalar_unit.hpp</label>
@@ -80,53 +62,71 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
+      <node id="14">
+        <label>cmath</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>map</label>
+      </node>
+      <node id="2">
+        <label>./informatics_units.hpp</label>
+        <link refid="informatics__units_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>string_view</label>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
+      <node id="1">
+        <label>predefined_units/informatics_units.cpp</label>
+        <link refid="informatics__units_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
       <node id="18">
         <label>../util/is_number.hpp</label>
         <link refid="is__number_8hpp"/>
         <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>algorithm</label>
-      </node>
-      <node id="10">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="14">
-        <label>cmath</label>
-      </node>
-      <node id="13">
-        <label>cstddef</label>
-      </node>
-      <node id="6">
-        <label>cstdint</label>
-      </node>
-      <node id="12">
-        <label>cstring</label>
+      <node id="16">
+        <label>sstream</label>
       </node>
       <node id="7">
         <label>iostream</label>
       </node>
-      <node id="8">
-        <label>map</label>
-      </node>
-      <node id="15">
-        <label>set</label>
-      </node>
-      <node id="16">
-        <label>sstream</label>
-      </node>
-      <node id="9">
-        <label>string</label>
-      </node>
-      <node id="20">
-        <label>string_view</label>
+      <node id="13">
+        <label>cstddef</label>
       </node>
       <node id="19">
         <label>type_traits</label>
       </node>
-      <node id="17">
-        <label>vector</label>
+      <node id="15">
+        <label>set</label>
+      </node>
+      <node id="11">
+        <label>algorithm</label>
+      </node>
+      <node id="12">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
@@ -141,7 +141,7 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="7" refid="namespacescifir_1a3b4c9df9e4eae8d455ff188129513568" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">transfer_speed</ref>,</highlight><highlight class="stringliteral">&quot;B/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="7" refid="namespacescifir_1a3b4c9df9e4eae8d455ff188129513568" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(transfer_speed,</highlight><highlight class="stringliteral">&quot;B/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="8"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="predefined_units/informatics_units.cpp"/>

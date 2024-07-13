@@ -1,4 +1,4 @@
-.TH "scifir::pH" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::pH" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,160 +15,161 @@ scifir::pH
 .RI "\fBpH\fP ()"
 .br
 .ti -1c
-.RI "\fBpH\fP (\fBconst\fP \fBpH\fP &x)"
+.RI "\fBpH\fP (const \fBpH\fP &x)"
 .br
 .ti -1c
 .RI "\fBpH\fP (\fBpH\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpH\fP (\fBfloat\fP \fBnew_value\fP)"
+.RI "\fBpH\fP (float new_value)"
 .br
 .ti -1c
-.RI "\fBpH\fP (\fBconst\fP \fBstring\fP &\fBinit_pH\fP)"
+.RI "\fBpH\fP (const string &init_pH)"
 .br
 .ti -1c
-.RI "\fBpH\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBpH\fP (const \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBpH\fP &x)"
+.RI "\fBpH\fP & \fBoperator=\fP (const \fBpH\fP &x)"
 .br
 .ti -1c
 .RI "\fBpH\fP & \fBoperator=\fP (\fBpH\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpH\fP & \fBoperator=\fP (\fBfloat\fP \fBnew_value\fP)"
+.RI "\fBpH\fP & \fBoperator=\fP (float new_value)"
 .br
 .ti -1c
-.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_pH\fP)"
+.RI "\fBpH\fP & \fBoperator=\fP (const string &init_pH)"
 .br
 .ti -1c
-.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBpH\fP & \fBoperator=\fP (const \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBoperator float\fP () \fBconst\fP"
+.RI "\fBoperator float\fP () const"
 .br
 .ti -1c
-.RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
+.RI "const float & \fBget_value\fP () const"
 .br
 .ti -1c
-.RI "\fBpH\fP \fBoperator+\fP (\fBconst\fP \fBpH\fP &x) \fBconst\fP"
+.RI "\fBpH\fP \fBoperator+\fP (const \fBpH\fP &x) const"
 .br
 .ti -1c
-.RI "\fBpH\fP \fBoperator\-\fP (\fBconst\fP \fBpH\fP &x) \fBconst\fP"
+.RI "\fBpH\fP \fBoperator\-\fP (const \fBpH\fP &x) const"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBpH\fP &x)"
+.RI "void \fBoperator+=\fP (const \fBpH\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBpH\fP &x)"
+.RI "void \fBoperator\-=\fP (const \fBpH\fP &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator+\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator+\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator\-\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator\-\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator+=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator\-=\fP (T x)"
 .br
 .ti -1c
 .RI "\fBpH\fP & \fBoperator++\fP ()"
 .br
 .ti -1c
-.RI "\fBpH\fP \fBoperator++\fP (\fBint\fP)"
+.RI "\fBpH\fP \fBoperator++\fP (int)"
 .br
 .ti -1c
 .RI "\fBpH\fP & \fBoperator\-\-\fP ()"
 .br
 .ti -1c
-.RI "\fBpH\fP \fBoperator\-\-\fP (\fBint\fP)"
+.RI "\fBpH\fP \fBoperator\-\-\fP (int)"
 .br
 .ti -1c
-.RI "\fBmolarity\fP \fBget_H\fP () \fBconst\fP"
+.RI "molarity \fBget_H\fP () const"
 .br
 .ti -1c
-.RI "\fBmolarity\fP \fBget_OH\fP () \fBconst\fP"
+.RI "molarity \fBget_OH\fP () const"
 .br
 .ti -1c
-.RI "\fBpOH\fP \fBget_pOH\fP () \fBconst\fP"
+.RI "\fBpOH\fP \fBget_pOH\fP () const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBis_acidic\fP () \fBconst\fP"
+.RI "bool \fBis_acidic\fP () const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBis_basic\fP () \fBconst\fP"
+.RI "bool \fBis_basic\fP () const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBis_neutral\fP () \fBconst\fP"
+.RI "bool \fBis_neutral\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
+.RI "string \fBdisplay\fP (int number_of_decimals=2) const"
 .br
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBvoid\fP \fBnormalize_value\fP ()"
+.RI "void \fBnormalize_value\fP ()"
 .br
 .in -1c
 .SS "Private Attributes"
 
 .in +1c
 .ti -1c
-.RI "\fBfloat\fP \fBvalue\fP"
+.RI "float \fBvalue\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB19\fP of file \fBpH\&.hpp\fP\&.
+Definition at line 19 of file pH\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "scifir::pH::pH ()"
 
 .PP
-Definition at line \fB17\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 17 of file pH\&.cpp\&.
+.PP
 .nf
 17            : value(0\&.0f)
 18     {}
 .fi
-
-.SS "scifir::pH::pH (\fBconst\fP \fBpH\fP & x)"
+.SS "scifir::pH::pH (const \fBpH\fP & x)"
 
 .PP
-Definition at line \fB20\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 20 of file pH\&.cpp\&.
+.PP
 .nf
 20                       : value(x\&.get_value())
 21     {}
 .fi
-
 .SS "scifir::pH::pH (\fBpH\fP && x)"
 
 .PP
-Definition at line \fB23\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 23 of file pH\&.cpp\&.
+.PP
 .nf
 23                  : value(std::move(x\&.get_value()))
 24     {}
 .fi
-
-.SS "scifir::pH::pH (\fBfloat\fP new_value)\fC [explicit]\fP"
+.SS "scifir::pH::pH (float new_value)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB26\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 26 of file pH\&.cpp\&.
+.PP
 .nf
 26                   : value(x)
 27     {
 28         normalize_value();
 29     }
 .fi
-
-.SS "scifir::pH::pH (\fBconst\fP \fBstring\fP & init_pH)\fC [explicit]\fP"
+.SS "scifir::pH::pH (const string & init_pH)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB31\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 31 of file pH\&.cpp\&.
+.PP
 .nf
 31                                 : value()
 32     {
@@ -176,11 +177,11 @@ Definition at line \fB31\fP of file \fBpH\&.cpp\fP\&..PP
 34         normalize_value();
 35     }
 .fi
-
-.SS "scifir::pH::pH (\fBconst\fP \fBscalar_unit\fP & x)\fC [explicit]\fP"
+.SS "scifir::pH::pH (const \fBscalar_unit\fP & x)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB37\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 37 of file pH\&.cpp\&.
+.PP
 .nf
 38     {
 39         if (x\&.has_empty_dimensions())
@@ -195,17 +196,17 @@ Definition at line \fB37\fP of file \fBpH\&.cpp\fP\&..PP
 48         }
 49     }
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBstring\fP scifir::pH::display (\fBint\fP number_of_decimals = \fC2\fP) const"
+.SS "string scifir::pH::display (int number_of_decimals = \fC2\fP) const"
 
 .PP
-Definition at line \fB171\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 171 of file pH\&.cpp\&.
+.PP
 .nf
 172     {
 173         ostringstream output;
-174         if (value == \-0\&.0f)
+174         if (value == -0\&.0f)
 175         {
 176             output << 0;
 177         }
@@ -216,82 +217,82 @@ Definition at line \fB171\fP of file \fBpH\&.cpp\fP\&..PP
 182         return output\&.str();
 183     }
 .fi
-
-.SS "\fBmolarity\fP scifir::pH::get_H () const"
+.SS "molarity scifir::pH::get_H () const"
 
 .PP
-Definition at line \fB140\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 140 of file pH\&.cpp\&.
+.PP
 .nf
 141     {
-142         return molarity(std::pow(10\&.0f,\-value),"M");
+142         return molarity(std::pow(10\&.0f,-value),"M");
 143     }
 .fi
-
-.SS "\fBmolarity\fP scifir::pH::get_OH () const"
+.SS "molarity scifir::pH::get_OH () const"
 
 .PP
-Definition at line \fB145\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 145 of file pH\&.cpp\&.
+.PP
 .nf
 146     {
-147         return molarity(std::pow(10\&.0f,\-float(14\&.0f \- value)),"M");
+147         return molarity(std::pow(10\&.0f,-float(14\&.0f - value)),"M");
 148     }
 .fi
-
 .SS "\fBpOH\fP scifir::pH::get_pOH () const"
 
 .PP
-Definition at line \fB150\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 150 of file pH\&.cpp\&.
+.PP
 .nf
 151     {
-152         float pOH_value = 14\&.0f \- value;
+152         float pOH_value = 14\&.0f - value;
 153         return pOH(pOH_value);
 154     }
 .fi
-
-.SS "\fBconst\fP \fBfloat\fP & scifir::pH::get_value () const\fC [inline]\fP"
+.SS "const float& scifir::pH::get_value () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB40\fP of file \fBpH\&.hpp\fP\&..PP
+Definition at line 40 of file pH\&.hpp\&.
+.PP
 .nf
 41             {
 42                 return value;
 43             }
 .fi
-
-.SS "\fBbool\fP scifir::pH::is_acidic () const"
+.SS "bool scifir::pH::is_acidic () const"
 
 .PP
-Definition at line \fB156\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 156 of file pH\&.cpp\&.
+.PP
 .nf
 157     {
 158         return (value < 7\&.0f);
 159     }
 .fi
-
-.SS "\fBbool\fP scifir::pH::is_basic () const"
+.SS "bool scifir::pH::is_basic () const"
 
 .PP
-Definition at line \fB161\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 161 of file pH\&.cpp\&.
+.PP
 .nf
 162     {
 163         return (value > 7\&.0f);
 164     }
 .fi
-
-.SS "\fBbool\fP scifir::pH::is_neutral () const"
+.SS "bool scifir::pH::is_neutral () const"
 
 .PP
-Definition at line \fB166\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 166 of file pH\&.cpp\&.
+.PP
 .nf
 167     {
 168         return (value == 7\&.0f);
 169     }
 .fi
-
-.SS "\fBvoid\fP scifir::pH::normalize_value ()\fC [private]\fP"
+.SS "void scifir::pH::normalize_value ()\fC [private]\fP"
 
 .PP
-Definition at line \fB185\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 185 of file pH\&.cpp\&.
+.PP
 .nf
 186     {
 187         if(isfinite(value))
@@ -307,52 +308,52 @@ Definition at line \fB185\fP of file \fBpH\&.cpp\fP\&..PP
 197         }
 198     }
 .fi
-
-.SS "scifir::pH::operator \fBfloat\fP () const\fC [inline]\fP, \fC [explicit]\fP"
+.SS "scifir::pH::operator float () const\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB35\fP of file \fBpH\&.hpp\fP\&..PP
+Definition at line 35 of file pH\&.hpp\&.
+.PP
 .nf
 36             {
 37                 return float(value);
 38             }
 .fi
-
-.SS "\fBpH\fP scifir::pH::operator+ (\fBconst\fP \fBpH\fP & x) const"
+.SS "\fBpH\fP scifir::pH::operator+ (const \fBpH\fP & x) const"
 
 .PP
-Definition at line \fB92\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 92 of file pH\&.cpp\&.
+.PP
 .nf
 93     {
 94         return pH(value + x\&.get_value());
 95     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP scifir::pH::operator+ (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP scifir::pH::operator+ (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB51\fP of file \fBpH\&.hpp\fP\&..PP
+Definition at line 51 of file pH\&.hpp\&.
+.PP
 .nf
 52             {
 53                 return pH(value + x);
 54             }
 .fi
-
 .SS "\fBpH\fP & scifir::pH::operator++ ()"
 
 .PP
-Definition at line \fB114\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 114 of file pH\&.cpp\&.
+.PP
 .nf
 115     {
 116         value++;
 117         return *this;
 118     }
 .fi
-
-.SS "\fBpH\fP scifir::pH::operator++ (\fBint\fP)"
+.SS "\fBpH\fP scifir::pH::operator++ (int)"
 
 .PP
-Definition at line \fB120\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 120 of file pH\&.cpp\&.
+.PP
 .nf
 121     {
 122         pH tmp = pH(*this);
@@ -360,64 +361,64 @@ Definition at line \fB120\fP of file \fBpH\&.cpp\fP\&..PP
 124         return tmp;
 125     }
 .fi
-
-.SS "\fBvoid\fP scifir::pH::operator+= (\fBconst\fP \fBpH\fP & x)"
+.SS "void scifir::pH::operator+= (const \fBpH\fP & x)"
 
 .PP
-Definition at line \fB102\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 102 of file pH\&.cpp\&.
+.PP
 .nf
 103     {
 104         value += x\&.get_value();
 105         normalize_value();
 106     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::pH::operator+= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::pH::operator+= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB63\fP of file \fBpH\&.hpp\fP\&..PP
+Definition at line 63 of file pH\&.hpp\&.
+.PP
 .nf
 64             {
 65                 value += x;
 66                 normalize_value();
 67             }
 .fi
-
-.SS "\fBpH\fP scifir::pH::operator\- (\fBconst\fP \fBpH\fP & x) const"
+.SS "\fBpH\fP scifir::pH::operator\- (const \fBpH\fP & x) const"
 
 .PP
-Definition at line \fB97\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 97 of file pH\&.cpp\&.
+.PP
 .nf
 98     {
-99         return pH(value \- x\&.get_value());
+99         return pH(value - x\&.get_value());
 100     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP scifir::pH::operator\- (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP scifir::pH::operator\- (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB57\fP of file \fBpH\&.hpp\fP\&..PP
+Definition at line 57 of file pH\&.hpp\&.
+.PP
 .nf
 58             {
-59                 return pH(value \- x);
+59                 return pH(value - x);
 60             }
 .fi
-
 .SS "\fBpH\fP & scifir::pH::operator\-\- ()"
 
 .PP
-Definition at line \fB127\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 127 of file pH\&.cpp\&.
+.PP
 .nf
 128     {
-129         value\-\-;
+129         value--;
 130         return *this;
 131     }
 .fi
-
-.SS "\fBpH\fP scifir::pH::operator\-\- (\fBint\fP)"
+.SS "\fBpH\fP scifir::pH::operator\-\- (int)"
 
 .PP
-Definition at line \fB133\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 133 of file pH\&.cpp\&.
+.PP
 .nf
 134     {
 135         pH tmp = pH(*this);
@@ -425,44 +426,44 @@ Definition at line \fB133\fP of file \fBpH\&.cpp\fP\&..PP
 137         return tmp;
 138     }
 .fi
-
-.SS "\fBvoid\fP scifir::pH::operator\-= (\fBconst\fP \fBpH\fP & x)"
+.SS "void scifir::pH::operator\-= (const \fBpH\fP & x)"
 
 .PP
-Definition at line \fB108\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 108 of file pH\&.cpp\&.
+.PP
 .nf
 109     {
-110         value \-= x\&.get_value();
+110         value -= x\&.get_value();
 111         normalize_value();
 112     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::pH::operator\-= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::pH::operator\-= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB70\fP of file \fBpH\&.hpp\fP\&..PP
+Definition at line 70 of file pH\&.hpp\&.
+.PP
 .nf
 71             {
-72                 value \-= x;
+72                 value -= x;
 73                 normalize_value();
 74             }
 .fi
-
-.SS "\fBpH\fP & scifir::pH::operator= (\fBconst\fP \fBpH\fP & x)"
+.SS "\fBpH\fP & scifir::pH::operator= (const \fBpH\fP & x)"
 
 .PP
-Definition at line \fB51\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 51 of file pH\&.cpp\&.
+.PP
 .nf
 52     {
 53         value = x\&.get_value();
 54         return *this;
 55     }
 .fi
-
-.SS "\fBpH\fP & scifir::pH::operator= (\fBconst\fP \fBscalar_unit\fP & x)"
+.SS "\fBpH\fP & scifir::pH::operator= (const \fBscalar_unit\fP & x)"
 
 .PP
-Definition at line \fB77\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 77 of file pH\&.cpp\&.
+.PP
 .nf
 78     {
 79         if (x\&.has_empty_dimensions())
@@ -478,11 +479,11 @@ Definition at line \fB77\fP of file \fBpH\&.cpp\fP\&..PP
 89         return *this;
 90     }
 .fi
-
-.SS "\fBpH\fP & scifir::pH::operator= (\fBconst\fP \fBstring\fP & init_pH)"
+.SS "\fBpH\fP & scifir::pH::operator= (const string & init_pH)"
 
 .PP
-Definition at line \fB70\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 70 of file pH\&.cpp\&.
+.PP
 .nf
 71     {
 72         value = stof(x);
@@ -490,11 +491,11 @@ Definition at line \fB70\fP of file \fBpH\&.cpp\fP\&..PP
 74         return *this;
 75     }
 .fi
-
-.SS "\fBpH\fP & scifir::pH::operator= (\fBfloat\fP new_value)"
+.SS "\fBpH\fP & scifir::pH::operator= (float new_value)"
 
 .PP
-Definition at line \fB63\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 63 of file pH\&.cpp\&.
+.PP
 .nf
 64     {
 65         value = x;
@@ -502,24 +503,23 @@ Definition at line \fB63\fP of file \fBpH\&.cpp\fP\&..PP
 67         return *this;
 68     }
 .fi
-
 .SS "\fBpH\fP & scifir::pH::operator= (\fBpH\fP && x)"
 
 .PP
-Definition at line \fB57\fP of file \fBpH\&.cpp\fP\&..PP
+Definition at line 57 of file pH\&.cpp\&.
+.PP
 .nf
 58     {
 59         value = std::move(x\&.get_value());
 60         return *this;
 61     }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "\fBfloat\fP scifir::pH::value\fC [private]\fP"
+.SS "float scifir::pH::value\fC [private]\fP"
 
 .PP
-Definition at line \fB92\fP of file \fBpH\&.hpp\fP\&.
+Definition at line 92 of file pH\&.hpp\&.
 
 .SH "Author"
 .PP 

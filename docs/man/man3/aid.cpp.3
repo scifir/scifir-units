@@ -1,4 +1,4 @@
-.TH "special_units/aid.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "special_units/aid.cpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,7 +21,7 @@ special_units/aid.cpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -29,13 +29,13 @@ special_units/aid.cpp
 
 .in +1c
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBaid\fP &x)"
+.RI "string \fBscifir::to_string\fP (const aid &x)"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBaid::type\fP &x)"
+.RI "string \fBscifir::to_string\fP (const aid::type &x)"
 .br
 .ti -1c
-.RI "\fBaid::type\fP \fBscifir::create_astronomical_type\fP (\fBconst\fP \fBstring\fP &\fBastronomical_type_abbreviation\fP)"
+.RI "aid::type \fBscifir::create_astronomical_type\fP (const string &astronomical_type_abbreviation)"
 .br
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBscifir::aid\fP &x, const \fBscifir::aid\fP &y)"
@@ -76,37 +76,38 @@ special_units/aid.cpp
 .SS "bool operator!= (const \fBscifir::aid\fP & x, const \fBscifir::aid\fP & y)"
 
 .PP
-Definition at line \fB554\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 554 of file aid\&.cpp\&.
+.PP
 .nf
 555 {
 556     return !(x == y);
 557 }
 .fi
-
 .SS "bool operator!= (const \fBscifir::aid\fP & x, const string & init_aid)"
 
 .PP
-Definition at line \fB565\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 565 of file aid\&.cpp\&.
+.PP
 .nf
 566 {
 567     return !(x == init_aid);
 568 }
 .fi
-
 .SS "bool operator!= (const string & init_aid, const \fBscifir::aid\fP & x)"
 
 .PP
-Definition at line \fB576\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 576 of file aid\&.cpp\&.
+.PP
 .nf
 577 {
 578     return !(init_aid == x);
 579 }
 .fi
-
 .SS "string operator+ (const \fBscifir::aid\fP & y, const string & x)"
 
 .PP
-Definition at line \fB596\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 596 of file aid\&.cpp\&.
+.PP
 .nf
 597 {
 598     ostringstream output;
@@ -115,11 +116,11 @@ Definition at line \fB596\fP of file \fBaid\&.cpp\fP\&..PP
 601     return output\&.str();
 602 }
 .fi
-
 .SS "string operator+ (const string & x, const \fBscifir::aid\fP & y)"
 
 .PP
-Definition at line \fB588\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 588 of file aid\&.cpp\&.
+.PP
 .nf
 589 {
 590     ostringstream output;
@@ -128,11 +129,11 @@ Definition at line \fB588\fP of file \fBaid\&.cpp\fP\&..PP
 593     return output\&.str();
 594 }
 .fi
-
 .SS "void operator+= (string & x, const \fBscifir::aid\fP & y)"
 
 .PP
-Definition at line \fB581\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 581 of file aid\&.cpp\&.
+.PP
 .nf
 582 {
 583     ostringstream output;
@@ -140,21 +141,21 @@ Definition at line \fB581\fP of file \fBaid\&.cpp\fP\&..PP
 585     x += output\&.str();
 586 }
 .fi
-
-.SS "ostream & operator<< (ostream & os, const \fBscifir::aid\fP & x)"
+.SS "ostream& operator<< (ostream & os, const \fBscifir::aid\fP & x)"
 
 .PP
-Definition at line \fB604\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 604 of file aid\&.cpp\&.
+.PP
 .nf
 605 {
 606     return os << to_string(x);
 607 }
 .fi
-
 .SS "bool operator== (const \fBscifir::aid\fP & x, const \fBscifir::aid\fP & y)"
 
 .PP
-Definition at line \fB542\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 542 of file aid\&.cpp\&.
+.PP
 .nf
 543 {
 544     if(x\&.universe == y\&.universe and x\&.galaxy == y\&.galaxy and x\&.solar_system == y\&.solar_system and x\&.astronomical_body == y\&.astronomical_body)
@@ -167,33 +168,33 @@ Definition at line \fB542\fP of file \fBaid\&.cpp\fP\&..PP
 551     }
 552 }
 .fi
-
 .SS "bool operator== (const \fBscifir::aid\fP & x, const string & init_aid)"
 
 .PP
-Definition at line \fB559\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 559 of file aid\&.cpp\&.
+.PP
 .nf
 560 {
 561     scifir::aid y = scifir::aid(init_aid);
 562     return (x == y);
 563 }
 .fi
-
 .SS "bool operator== (const string & init_aid, const \fBscifir::aid\fP & x)"
 
 .PP
-Definition at line \fB570\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 570 of file aid\&.cpp\&.
+.PP
 .nf
 571 {
 572     scifir::aid y = scifir::aid(init_aid);
 573     return (x == y);
 574 }
 .fi
-
-.SS "istream & operator>> (istream & is, \fBscifir::aid\fP & x)"
+.SS "istream& operator>> (istream & is, \fBscifir::aid\fP & x)"
 
 .PP
-Definition at line \fB609\fP of file \fBaid\&.cpp\fP\&..PP
+Definition at line 609 of file aid\&.cpp\&.
+.PP
 .nf
 610 {
 611     char a[256];
@@ -204,7 +205,6 @@ Definition at line \fB609\fP of file \fBaid\&.cpp\fP\&..PP
 616     return is;
 617 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

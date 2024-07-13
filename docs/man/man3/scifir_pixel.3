@@ -1,4 +1,4 @@
-.TH "scifir::pixel" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::pixel" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,223 +15,224 @@ scifir::pixel
 .RI "\fBpixel\fP ()"
 .br
 .ti -1c
-.RI "\fBpixel\fP (\fBconst\fP \fBpixel\fP &x)"
+.RI "\fBpixel\fP (const \fBpixel\fP &x)"
 .br
 .ti -1c
 .RI "\fBpixel\fP (\fBpixel\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpixel\fP (\fBfloat\fP \fBnew_value\fP)"
+.RI "\fBpixel\fP (float new_value)"
 .br
 .ti -1c
-.RI "\fBpixel\fP (\fBdouble\fP \fBnew_value\fP)"
+.RI "\fBpixel\fP (double new_value)"
 .br
 .ti -1c
-.RI "\fBpixel\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP)"
+.RI "\fBpixel\fP (long double new_value)"
 .br
 .ti -1c
-.RI "\fBpixel\fP (\fBint\fP \fBnew_value\fP)"
+.RI "\fBpixel\fP (int new_value)"
 .br
 .ti -1c
-.RI "\fBpixel\fP (\fBconst\fP \fBstring\fP &\fBinit_pixel\fP)"
+.RI "\fBpixel\fP (const string &init_pixel)"
 .br
 .ti -1c
-.RI "\fBpixel\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBpixel\fP (const \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBpixel\fP & \fBoperator=\fP (\fBconst\fP \fBpixel\fP &x)"
+.RI "\fBpixel\fP & \fBoperator=\fP (const \fBpixel\fP &x)"
 .br
 .ti -1c
 .RI "\fBpixel\fP & \fBoperator=\fP (\fBpixel\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpixel\fP & \fBoperator=\fP (\fBfloat\fP \fBnew_value\fP)"
+.RI "\fBpixel\fP & \fBoperator=\fP (float new_value)"
 .br
 .ti -1c
-.RI "\fBpixel\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_pixel\fP)"
+.RI "\fBpixel\fP & \fBoperator=\fP (const string &init_pixel)"
 .br
 .ti -1c
-.RI "\fBpixel\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBpixel\fP & \fBoperator=\fP (const \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBoperator float\fP () \fBconst\fP"
+.RI "\fBoperator float\fP () const"
 .br
 .ti -1c
-.RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
+.RI "const float & \fBget_value\fP () const"
 .br
 .ti -1c
-.RI "\fBpixel\fP \fBoperator+\fP (\fBconst\fP \fBpixel\fP &x) \fBconst\fP"
+.RI "\fBpixel\fP \fBoperator+\fP (const \fBpixel\fP &x) const"
 .br
 .ti -1c
-.RI "\fBpixel\fP \fBoperator\-\fP (\fBconst\fP \fBpixel\fP &x) \fBconst\fP"
+.RI "\fBpixel\fP \fBoperator\-\fP (const \fBpixel\fP &x) const"
 .br
 .ti -1c
-.RI "\fBpixel\fP \fBoperator*\fP (\fBconst\fP \fBpixel\fP &x) \fBconst\fP"
+.RI "\fBpixel\fP \fBoperator*\fP (const \fBpixel\fP &x) const"
 .br
 .ti -1c
-.RI "\fBpixel\fP \fBoperator/\fP (\fBconst\fP \fBpixel\fP &x) \fBconst\fP"
+.RI "\fBpixel\fP \fBoperator/\fP (const \fBpixel\fP &x) const"
 .br
 .ti -1c
-.RI "\fBpixel\fP \fBoperator^\fP (\fBconst\fP \fBpixel\fP &x) \fBconst\fP"
+.RI "\fBpixel\fP \fBoperator^\fP (const \fBpixel\fP &x) const"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBpixel\fP &x)"
+.RI "void \fBoperator+=\fP (const \fBpixel\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBpixel\fP &x)"
+.RI "void \fBoperator\-=\fP (const \fBpixel\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator*=\fP (\fBconst\fP \fBpixel\fP &x)"
+.RI "void \fBoperator*=\fP (const \fBpixel\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator/=\fP (\fBconst\fP \fBpixel\fP &x)"
+.RI "void \fBoperator/=\fP (const \fBpixel\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator^=\fP (\fBconst\fP \fBpixel\fP &x)"
+.RI "void \fBoperator^=\fP (const \fBpixel\fP &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator+\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator+\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator\-\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator\-\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator*\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator*\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator/\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator/\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator^\fP (T x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP \fBoperator^\fP (T x) const"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator+=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator\-=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator*=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator/=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator^=\fP (T x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator^=\fP (T x)"
 .br
 .ti -1c
 .RI "\fBpixel\fP & \fBoperator++\fP ()"
 .br
 .ti -1c
-.RI "\fBpixel\fP \fBoperator++\fP (\fBint\fP)"
+.RI "\fBpixel\fP \fBoperator++\fP (int)"
 .br
 .ti -1c
 .RI "\fBpixel\fP & \fBoperator\-\-\fP ()"
 .br
 .ti -1c
-.RI "\fBpixel\fP \fBoperator\-\-\fP (\fBint\fP)"
+.RI "\fBpixel\fP \fBoperator\-\-\fP (int)"
 .br
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBconst\fP \fBstring\fP &\fBinit_pixel\fP)"
+.RI "void \fBinitialize_from_string\fP (const string &init_pixel)"
 .br
 .in -1c
 .SS "Private Attributes"
 
 .in +1c
 .ti -1c
-.RI "\fBfloat\fP \fBvalue\fP"
+.RI "float \fBvalue\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB17\fP of file \fBpixel\&.hpp\fP\&.
+Definition at line 17 of file pixel\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "scifir::pixel::pixel ()"
 
 .PP
-Definition at line \fB16\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 16 of file pixel\&.cpp\&.
+.PP
 .nf
 16                  : value(0)
 17     {}
 .fi
-
-.SS "scifir::pixel::pixel (\fBconst\fP \fBpixel\fP & x)"
+.SS "scifir::pixel::pixel (const \fBpixel\fP & x)"
 
 .PP
-Definition at line \fB19\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 19 of file pixel\&.cpp\&.
+.PP
 .nf
 19                                : value(x\&.get_value())
 20     {}
 .fi
-
 .SS "scifir::pixel::pixel (\fBpixel\fP && x)"
 
 .PP
-Definition at line \fB22\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 22 of file pixel\&.cpp\&.
+.PP
 .nf
 22                           : value(std::move(x\&.get_value()))
 23     {}
 .fi
-
-.SS "scifir::pixel::pixel (\fBfloat\fP new_value)\fC [explicit]\fP"
+.SS "scifir::pixel::pixel (float new_value)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB25\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 25 of file pixel\&.cpp\&.
+.PP
 .nf
 25                                 : value(new_value)
 26     {}
 .fi
-
-.SS "scifir::pixel::pixel (\fBdouble\fP new_value)\fC [explicit]\fP"
+.SS "scifir::pixel::pixel (double new_value)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB28\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 28 of file pixel\&.cpp\&.
+.PP
 .nf
 28                                  : value(float(new_value))
 29     {}
 .fi
-
-.SS "scifir::pixel::pixel (\fBlong\fP \fBdouble\fP new_value)\fC [explicit]\fP"
+.SS "scifir::pixel::pixel (long double new_value)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB31\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 31 of file pixel\&.cpp\&.
+.PP
 .nf
 31                                       : value(float(new_value))
 32     {}
 .fi
-
-.SS "scifir::pixel::pixel (\fBint\fP new_value)\fC [explicit]\fP"
+.SS "scifir::pixel::pixel (int new_value)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB34\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 34 of file pixel\&.cpp\&.
+.PP
 .nf
 34                               : value(float(new_value))
 35     {}
 .fi
-
-.SS "scifir::pixel::pixel (\fBconst\fP \fBstring\fP & init_pixel)\fC [explicit]\fP"
+.SS "scifir::pixel::pixel (const string & init_pixel)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB37\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 37 of file pixel\&.cpp\&.
+.PP
 .nf
 37                                          : value()
 38     {
 39         initialize_from_string(init_pixel);
 40     }
 .fi
-
-.SS "scifir::pixel::pixel (\fBconst\fP \fBscalar_unit\fP & x)\fC [explicit]\fP"
+.SS "scifir::pixel::pixel (const \fBscalar_unit\fP & x)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB42\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 42 of file pixel\&.cpp\&.
+.PP
 .nf
 43     {
 44         if (x\&.has_empty_dimensions())
@@ -245,32 +246,32 @@ Definition at line \fB42\fP of file \fBpixel\&.cpp\fP\&..PP
 52         }
 53     }
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBconst\fP \fBfloat\fP & scifir::pixel::get_value () const\fC [inline]\fP"
+.SS "const float& scifir::pixel::get_value () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB41\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 41 of file pixel\&.hpp\&.
+.PP
 .nf
 42             {
 43                 return value;
 44             }
 .fi
-
-.SS "\fBvoid\fP scifir::pixel::initialize_from_string (\fBconst\fP \fBstring\fP & init_pixel)\fC [private]\fP"
+.SS "void scifir::pixel::initialize_from_string (const string & init_pixel)\fC [private]\fP"
 
 .PP
-Definition at line \fB168\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 168 of file pixel\&.cpp\&.
+.PP
 .nf
 169     {
-170         if (init_pixel\&.substr(init_pixel\&.length() \- 3,3) == " px")
+170         if (init_pixel\&.substr(init_pixel\&.length() - 3,3) == " px")
 171         {
-172             value = stof(init_pixel\&.substr(0,init_pixel\&.length() \- 3));
+172             value = stof(init_pixel\&.substr(0,init_pixel\&.length() - 3));
 173         }
-174         else if (init_pixel\&.substr(init_pixel\&.length() \- 2,2) == "px")
+174         else if (init_pixel\&.substr(init_pixel\&.length() - 2,2) == "px")
 175         {
-176             value = stof(init_pixel\&.substr(0,init_pixel\&.length() \- 2));
+176             value = stof(init_pixel\&.substr(0,init_pixel\&.length() - 2));
 177         }
 178         else
 179         {
@@ -278,92 +279,92 @@ Definition at line \fB168\fP of file \fBpixel\&.cpp\fP\&..PP
 181         }
 182     }
 .fi
-
-.SS "scifir::pixel::operator \fBfloat\fP () const\fC [inline]\fP, \fC [explicit]\fP"
+.SS "scifir::pixel::operator float () const\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB36\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 36 of file pixel\&.hpp\&.
+.PP
 .nf
 37             {
 38                 return float(value);
 39             }
 .fi
-
-.SS "\fBpixel\fP scifir::pixel::operator* (\fBconst\fP \fBpixel\fP & x) const"
+.SS "\fBpixel\fP scifir::pixel::operator* (const \fBpixel\fP & x) const"
 
 .PP
-Definition at line \fB102\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 102 of file pixel\&.cpp\&.
+.PP
 .nf
 103     {
 104         return pixel(value * x\&.get_value());
 105     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator* (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator* (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB76\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 76 of file pixel\&.hpp\&.
+.PP
 .nf
 77             {
 78                 return pixel(value * x);
 79             }
 .fi
-
-.SS "\fBvoid\fP scifir::pixel::operator*= (\fBconst\fP \fBpixel\fP & x)"
+.SS "void scifir::pixel::operator*= (const \fBpixel\fP & x)"
 
 .PP
-Definition at line \fB127\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 127 of file pixel\&.cpp\&.
+.PP
 .nf
 128     {
 129         value *= x\&.get_value();
 130     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::pixel::operator*= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::pixel::operator*= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB106\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 106 of file pixel\&.hpp\&.
+.PP
 .nf
 107             {
 108                 value *= x;
 109             }
 .fi
-
-.SS "\fBpixel\fP scifir::pixel::operator+ (\fBconst\fP \fBpixel\fP & x) const"
+.SS "\fBpixel\fP scifir::pixel::operator+ (const \fBpixel\fP & x) const"
 
 .PP
-Definition at line \fB92\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 92 of file pixel\&.cpp\&.
+.PP
 .nf
 93     {
 94         return pixel(value + x\&.get_value());
 95     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator+ (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator+ (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB64\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 64 of file pixel\&.hpp\&.
+.PP
 .nf
 65             {
 66                 return pixel(value + x);
 67             }
 .fi
-
 .SS "\fBpixel\fP & scifir::pixel::operator++ ()"
 
 .PP
-Definition at line \fB142\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 142 of file pixel\&.cpp\&.
+.PP
 .nf
 143     {
 144         value++;
 145         return *this;
 146     }
 .fi
-
-.SS "\fBpixel\fP scifir::pixel::operator++ (\fBint\fP)"
+.SS "\fBpixel\fP scifir::pixel::operator++ (int)"
 
 .PP
-Definition at line \fB148\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 148 of file pixel\&.cpp\&.
+.PP
 .nf
 149     {
 150         pixel tmp = pixel(*this);
@@ -371,62 +372,62 @@ Definition at line \fB148\fP of file \fBpixel\&.cpp\fP\&..PP
 152         return tmp;
 153     }
 .fi
-
-.SS "\fBvoid\fP scifir::pixel::operator+= (\fBconst\fP \fBpixel\fP & x)"
+.SS "void scifir::pixel::operator+= (const \fBpixel\fP & x)"
 
 .PP
-Definition at line \fB117\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 117 of file pixel\&.cpp\&.
+.PP
 .nf
 118     {
 119         value += x\&.get_value();
 120     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::pixel::operator+= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::pixel::operator+= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB94\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 94 of file pixel\&.hpp\&.
+.PP
 .nf
 95             {
 96                 value += x;
 97             }
 .fi
-
-.SS "\fBpixel\fP scifir::pixel::operator\- (\fBconst\fP \fBpixel\fP & x) const"
+.SS "\fBpixel\fP scifir::pixel::operator\- (const \fBpixel\fP & x) const"
 
 .PP
-Definition at line \fB97\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 97 of file pixel\&.cpp\&.
+.PP
 .nf
 98     {
-99         return pixel(value \- x\&.get_value());
+99         return pixel(value - x\&.get_value());
 100     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator\- (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator\- (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB70\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 70 of file pixel\&.hpp\&.
+.PP
 .nf
 71             {
-72                 return pixel(value \- x);
+72                 return pixel(value - x);
 73             }
 .fi
-
 .SS "\fBpixel\fP & scifir::pixel::operator\-\- ()"
 
 .PP
-Definition at line \fB155\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 155 of file pixel\&.cpp\&.
+.PP
 .nf
 156     {
-157         value\-\-;
+157         value--;
 158         return *this;
 159     }
 .fi
-
-.SS "\fBpixel\fP scifir::pixel::operator\-\- (\fBint\fP)"
+.SS "\fBpixel\fP scifir::pixel::operator\-\- (int)"
 
 .PP
-Definition at line \fB161\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 161 of file pixel\&.cpp\&.
+.PP
 .nf
 162     {
 163         pixel tmp = pixel(*this);
@@ -434,82 +435,82 @@ Definition at line \fB161\fP of file \fBpixel\&.cpp\fP\&..PP
 165         return tmp;
 166     }
 .fi
-
-.SS "\fBvoid\fP scifir::pixel::operator\-= (\fBconst\fP \fBpixel\fP & x)"
+.SS "void scifir::pixel::operator\-= (const \fBpixel\fP & x)"
 
 .PP
-Definition at line \fB122\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 122 of file pixel\&.cpp\&.
+.PP
 .nf
 123     {
-124         value \-= x\&.get_value();
+124         value -= x\&.get_value();
 125     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::pixel::operator\-= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::pixel::operator\-= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB100\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 100 of file pixel\&.hpp\&.
+.PP
 .nf
 101             {
-102                 value \-= x;
+102                 value -= x;
 103             }
 .fi
-
-.SS "\fBpixel\fP scifir::pixel::operator/ (\fBconst\fP \fBpixel\fP & x) const"
+.SS "\fBpixel\fP scifir::pixel::operator/ (const \fBpixel\fP & x) const"
 
 .PP
-Definition at line \fB107\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 107 of file pixel\&.cpp\&.
+.PP
 .nf
 108     {
 109         return pixel(value / x\&.get_value());
 110     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator/ (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator/ (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB82\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 82 of file pixel\&.hpp\&.
+.PP
 .nf
 83             {
 84                 return pixel(value / x);
 85             }
 .fi
-
-.SS "\fBvoid\fP scifir::pixel::operator/= (\fBconst\fP \fBpixel\fP & x)"
+.SS "void scifir::pixel::operator/= (const \fBpixel\fP & x)"
 
 .PP
-Definition at line \fB132\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 132 of file pixel\&.cpp\&.
+.PP
 .nf
 133     {
 134         value /= x\&.get_value();
 135     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::pixel::operator/= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::pixel::operator/= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB112\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 112 of file pixel\&.hpp\&.
+.PP
 .nf
 113             {
 114                 value /= x;
 115             }
 .fi
-
-.SS "\fBpixel\fP & scifir::pixel::operator= (\fBconst\fP \fBpixel\fP & x)"
+.SS "\fBpixel\fP & scifir::pixel::operator= (const \fBpixel\fP & x)"
 
 .PP
-Definition at line \fB55\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 55 of file pixel\&.cpp\&.
+.PP
 .nf
 56     {
 57         value = x\&.get_value();
 58         return *this;
 59     }
 .fi
-
-.SS "\fBpixel\fP & scifir::pixel::operator= (\fBconst\fP \fBscalar_unit\fP & x)"
+.SS "\fBpixel\fP & scifir::pixel::operator= (const \fBscalar_unit\fP & x)"
 
 .PP
-Definition at line \fB79\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 79 of file pixel\&.cpp\&.
+.PP
 .nf
 80     {
 81         if (x\&.has_empty_dimensions())
@@ -523,96 +524,95 @@ Definition at line \fB79\fP of file \fBpixel\&.cpp\fP\&..PP
 89         return *this;
 90     }
 .fi
-
-.SS "\fBpixel\fP & scifir::pixel::operator= (\fBconst\fP \fBstring\fP & init_pixel)"
+.SS "\fBpixel\fP & scifir::pixel::operator= (const string & init_pixel)"
 
 .PP
-Definition at line \fB73\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 73 of file pixel\&.cpp\&.
+.PP
 .nf
 74     {
 75         initialize_from_string(init_pixel);
 76         return *this;
 77     }
 .fi
-
-.SS "\fBpixel\fP & scifir::pixel::operator= (\fBfloat\fP new_value)"
+.SS "\fBpixel\fP & scifir::pixel::operator= (float new_value)"
 
 .PP
-Definition at line \fB67\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 67 of file pixel\&.cpp\&.
+.PP
 .nf
 68     {
 69         value = new_value;
 70         return *this;
 71     }
 .fi
-
 .SS "\fBpixel\fP & scifir::pixel::operator= (\fBpixel\fP && x)"
 
 .PP
-Definition at line \fB61\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 61 of file pixel\&.cpp\&.
+.PP
 .nf
 62     {
 63         value = std::move(x\&.get_value());
 64         return *this;
 65     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::pixel::operator= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::pixel::operator= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB58\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 58 of file pixel\&.hpp\&.
+.PP
 .nf
 59             {
 60                 value = x;
 61             }
 .fi
-
-.SS "\fBpixel\fP scifir::pixel::operator^ (\fBconst\fP \fBpixel\fP & x) const"
+.SS "\fBpixel\fP scifir::pixel::operator^ (const \fBpixel\fP & x) const"
 
 .PP
-Definition at line \fB112\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 112 of file pixel\&.cpp\&.
+.PP
 .nf
 113     {
 114         return pixel(std::pow(value,x\&.get_value()));
 115     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator^ (T x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBpixel\fP scifir::pixel::operator^ (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB88\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 88 of file pixel\&.hpp\&.
+.PP
 .nf
 89             {
 90                 return pixel(std::pow(value, x));
 91             }
 .fi
-
-.SS "\fBvoid\fP scifir::pixel::operator^= (\fBconst\fP \fBpixel\fP & x)"
+.SS "void scifir::pixel::operator^= (const \fBpixel\fP & x)"
 
 .PP
-Definition at line \fB137\fP of file \fBpixel\&.cpp\fP\&..PP
+Definition at line 137 of file pixel\&.cpp\&.
+.PP
 .nf
 138     {
 139         value = std::pow(value,x\&.get_value());
 140     }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP scifir::pixel::operator^= (T x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void scifir::pixel::operator^= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB118\fP of file \fBpixel\&.hpp\fP\&..PP
+Definition at line 118 of file pixel\&.hpp\&.
+.PP
 .nf
 119             {
 120                 value = std::pow(value, x);
 121             }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "\fBfloat\fP scifir::pixel::value\fC [private]\fP"
+.SS "float scifir::pixel::value\fC [private]\fP"
 
 .PP
-Definition at line \fB129\fP of file \fBpixel\&.hpp\fP\&.
+Definition at line 129 of file pixel\&.hpp\&.
 
 .SH "Author"
 .PP 

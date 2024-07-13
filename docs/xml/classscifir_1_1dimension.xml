@@ -1,371 +1,420 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1dimension" kind="class" language="C++" prot="public">
     <compoundname>scifir::dimension</compoundname>
     <includes refid="dimension_8hpp" local="no">dimension.hpp</includes>
-    <sectiondef kind="public-type">
+      <sectiondef kind="public-type">
       <memberdef kind="enum" id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fb" prot="public" static="no" strong="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
+        <type>int8_t</type>
         <name>type</name>
-        <qualifiedname>scifir::dimension::type</qualifiedname>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0746ff0d9c5c3a726f1a3d0300b7a4ed" prot="public">
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba104525dd1c8d8780d7fc6418541b5019" prot="public">
           <name>NONE</name>
           <briefdescription>
+<para>No dimension. Default value for the default constructor. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3ee1e0f6a85a67dce4a1c09f01e2c9c7" prot="public">
-          <name>m</name>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad9d12d7e237cde66c650f754bf3a20f2" prot="public">
+          <name>METRE</name>
+          <briefdescription>
+<para>Meter. <bold>SI dimension</bold> of length. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba5cfe75b77c8a88a895c9bd0f4e12bf70" prot="public">
+          <name>DEGREE</name>
+          <briefdescription>
+<para>Degree. Dimension of angle. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab8283fad14df54ec9eb9b20e88f3e5cd" prot="public">
+          <name>RADIAN</name>
+          <briefdescription>
+<para>Radian. Dimension of angle. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba2324b8143ad5de9ad198dd58dbb376ef" prot="public">
+          <name>STERADIAN</name>
+          <briefdescription>
+<para>Steradian. Dimension of solid angle. A solid angle is an angle in volume. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba98b40fb196b4749b9adb7bb63e13c028" prot="public">
+          <name>SECOND</name>
+          <briefdescription>
+<para>Second. <bold>SI dimension</bold> of time. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba43f05026f9843cfc4ff57070c76cf257" prot="public">
+          <name>GRAM</name>
+          <briefdescription>
+<para>Gram. <bold>SI dimension</bold> of mass. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3ec34b656ab1a782519a9285281b4c21" prot="public">
+          <name>COULOMB</name>
+          <briefdescription>
+<para>Coulomb. <bold>SI dimension</bold> of charge. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad74cc26e453a701ae6ec4d71a73feca9" prot="public">
+          <name>KELVIN</name>
+          <briefdescription>
+<para>Kelvin. <bold>SI dimension</bold> of temperature. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba35d2cdea1dabf8f6101955c3cbf34f02" prot="public">
+          <name>MOLE</name>
+          <briefdescription>
+<para>Mole. <bold>SI dimension</bold> of quantity. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab3d700998922ca41e58c2248ae052293" prot="public">
+          <name>CANDELA</name>
+          <briefdescription>
+<para>Candela. <bold>SI dimension</bold> of luminous intensity. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbabc56146b90f20ed603262911b9dd3cda" prot="public">
+          <name>BYTE</name>
+          <briefdescription>
+<para>Byte. Dimension of amount of information. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba6f997a862ffdd213f865db907f77c1fc" prot="public">
+          <name>HERTZ</name>
+          <briefdescription>
+<para>Hertz. Dimension of frequency. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba85b93eedb548204f9635ee1d1952d4ec" prot="public">
+          <name>NEWTON</name>
+          <briefdescription>
+<para>Newton. Dimension of force. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba666869c729e2c058d7c65578f5bb6bd2" prot="public">
+          <name>PASCAL</name>
+          <briefdescription>
+<para>Pascal. Dimension of pressure. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbabe339881eb1362c3182749f9dd54e3cb" prot="public">
+          <name>JOULE</name>
+          <briefdescription>
+<para>Joule. Dimension of energy. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba7f74bf5e4b5cee03f9aacab1b8271b3c" prot="public">
+          <name>WATT</name>
+          <briefdescription>
+<para>Watt. Dimension of power. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba352af4e149d9bd56edfe2d027c70fad8" prot="public">
+          <name>AMPERE</name>
+          <briefdescription>
+<para>Ampere. Dimension of electric current. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba389e8d85db03c53acd103b579cb92dce" prot="public">
+          <name>VOLT</name>
+          <briefdescription>
+<para>Volt. Dimension of voltage. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba4aeb331e216403a96e9e451d3ef35af2" prot="public">
+          <name>FARADAY</name>
+          <briefdescription>
+<para>Faraday. Dimension of electric capacitance. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3ac1207fe7c34335a9af2d1c8a05701a" prot="public">
+          <name>OHM</name>
+          <briefdescription>
+<para>Ohm. Dimension of electric resistance. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbabce9b49af7f5de8ef85e3049d023d9b6" prot="public">
+          <name>SIEMENS</name>
+          <briefdescription>
+<para>Siemens. Dimension of electric conductance. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbac9bab3b44d956f6c61f031d5f7e36ade" prot="public">
+          <name>WEBER</name>
+          <briefdescription>
+<para>Weber. Dimension of magnetic flux. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba25d57935f4d9f558eac209aaecc3451b" prot="public">
+          <name>TESLA</name>
+          <briefdescription>
+<para>Tesla. Dimension of magnetic strength. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3465ec4f1cbc5fcbba0710857bc4c52f" prot="public">
+          <name>HENRY</name>
+          <briefdescription>
+<para>Henry. Dimension of electric inductance. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1bd9fc83c30f6db43fdc06ed7b4d038e" prot="public">
+          <name>LUMEN</name>
+          <briefdescription>
+<para>Lumen. Dimension of luminous flux. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3fe04ce9be19742037d2e01e40c3d151" prot="public">
+          <name>LUX</name>
+          <briefdescription>
+<para>Lux. Dimension of illuminance. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1275a0a24b60736d4c65027afd77a473" prot="public">
+          <name>BECQUEREL</name>
+          <briefdescription>
+<para>Becquerel. Dimension of radioactivity. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba405a6364f5a6675b2d644d0c6536ed74" prot="public">
+          <name>GRAY</name>
+          <briefdescription>
+<para>Gray. Dimension of ionising radiation (absorbed dose). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba49adceb8123354347a1541eb4af7c03e" prot="public">
+          <name>SIEVERT</name>
+          <briefdescription>
+<para>Sievert. Dimension of ionising radiation (equivalent dose). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba174c0c300e040de5e902daa9939c9618" prot="public">
+          <name>KATAL</name>
+          <briefdescription>
+<para>Katal. Dimension of catalytic activity. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba418e9b5c789dd90d474152ddfef27ce8" prot="public">
+          <name>ANGSTROM</name>
+          <briefdescription>
+<para>Ángstrom. Dimension of length, used mainly for wavelengths. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba199ff7f08482f599bb2c296ffdeb5c4f" prot="public">
+          <name>LITRE</name>
+          <briefdescription>
+<para>Litre. Dimension of volume. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba9c74e3d62f32aae155379bcae3c42132" prot="public">
+          <name>MINUTE</name>
+          <briefdescription>
+<para>Minute. Dimension of time. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba8b4b427cda174e43b0e242587ac83b19" prot="public">
+          <name>HOUR</name>
+          <briefdescription>
+<para>Hour. Dimension of time. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba77148181a94c4fc1231c3df9d9e22649" prot="public">
+          <name>DAY</name>
+          <briefdescription>
+<para>Day. Dimension of time. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba32fd64f45b837a6d0064d7945400e6c0" prot="public">
+          <name>LIGHT_YEAR</name>
+          <briefdescription>
+<para>Light year. Dimension of length. Defined as all the distance travelled by light in one year. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba6b41c70a280cb0a02b1654fafff3dc1e" prot="public">
+          <name>ASTRONOMICAL_UNIT</name>
+          <briefdescription>
+<para>Astronomical Unit. Dimension of length. Defined as the distance from the Sun to the Earth. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbae46e31f2a196a326dd1a7f423147cb6d" prot="public">
+          <name>PARSEC</name>
+          <briefdescription>
+<para>Parsec. Dimension of length. Defined as the distance where 1 AU subtends an angle of 1 second of arc. Equivalent to 3.26156 light years. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba43e32b0961d06ad1f66903833f7c8c3b" prot="public">
+          <name>ELECTRON_VOLT</name>
+          <briefdescription>
+<para>Electron volt. Dimension of energy. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba50f18d4f59c9202a0826217327fea8fc" prot="public">
+          <name>DALTON</name>
+          <briefdescription>
+<para>Dalton. Dimension of mass. Used to measure the mass of atoms and molecules. Defined as 1/12 of a C-12. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba67da7e36029ed662fd6e717735561492" prot="public">
+          <name>ATOMIC_MASS_UNIT</name>
+          <briefdescription>
+<para>Atomic mass unit. Equivalent to the Dalton. Dimension of mass. Used to measure the mass of atoms and molecules. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba2ef28355046604f1fcfb9bdd8284e620" prot="public">
+          <name>BARN</name>
+          <briefdescription>
+<para>Barn. Dimension of area. It&apos;s used inside nuclear physics to express the transversal section of nucleus and nuclear reactions. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0ac4f9fa9723f528a6e9ef07a8f51507" prot="public">
+          <name>MOLARITY</name>
+          <briefdescription>
+<para>Molarity. Dimension of concentration of a chemical species. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba8ea708047a9699f9b4570b07a6135a3e" prot="public">
+          <name>PARTICLES</name>
+          <briefdescription>
+<para>Particles. It&apos;s not exactly a dimension, it corresponds to the brute amount of particles, as opposed to the mole. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbafd6586f52e600f9ba2e7c4ba597a2ce1" prot="public">
+          <name>CUSTOM</name>
+          <briefdescription>
+<para>Custom dimension. It means the dimension is a custom dimension, which can have any value and meaning, defined freely by the programmer. Each custom dimension is unique to where it&apos;s defined and used. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba9800878b3ad41c907d13e86f61c305dd" prot="public">
+          <name>CUSTOM_BASIC</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad6c0ae707ede84a6b92174ca9b392b3f" prot="public">
-          <name>grade</name>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba36fc302bb5458acb1199c4524eccb9c5" prot="public">
+          <name>CUSTOM_FULL_SYMBOL</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba155f1a68a6bd9d4cfb7376f4dbcb38e2" prot="public">
-          <name>radian</name>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba903dc96eefeb01c52c31a3530682e9e7" prot="public">
+          <name>MONEY</name>
           <briefdescription>
+<para>Money. The money is not specified in a specific currency, you must use the ISO 4217 of currencies for that purpose. Don&apos;t mistake mixing different currencies. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba6975a95a363145b5ce70fcc623a740e3" prot="public">
-          <name>steradian</name>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba6747ebea74889f7864d1d802dc31d5d4" prot="public">
+          <name>PIXEL</name>
           <briefdescription>
+<para>Amount of pixels. Used for screen sizes. It can also be used as distance, in replacement of length dimensions, if in a virtual space it&apos;s thinked in pixels instead of normal dimensions of length. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab7081010542c35107fd753dd2611734d" prot="public">
-          <name>s</name>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1e3e9c8bf5bb5c77e0fafd3f200ad47e" prot="public">
+          <name>MEMO</name>
           <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad1c339ede63d1694fab4dcb4a598ce44" prot="public">
-          <name>g</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba89fc8171d43d04a927315029d774aec1" prot="public">
-          <name>C</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba4db984fefed27fc13de75e8130e2feeb" prot="public">
-          <name>K</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba9e7bc2b89e4c6bd4b4fa9137d5dbc7a6" prot="public">
-          <name>mol</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba2c02ea06817fd2d4e84400e149a1b964" prot="public">
-          <name>cd</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab1268a01e705d9f4aff829328386b4c7" prot="public">
-          <name>B</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbacf7e4ca1fdc24ebc9b2cbfb8bd0247d6" prot="public">
-          <name>Hz</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbada162a2bf0aae4c1c1a7a5d3b392f7d4" prot="public">
-          <name>N</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad384b88e38dec33f38c70e4ecac5cc90" prot="public">
-          <name>Pa</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba949f0e27923b5d52e23d416e1fc2f9dd" prot="public">
-          <name>J</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbada9ccc349f5311acf67b1efc32f3fceb" prot="public">
-          <name>W</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad133a0df68a14a52b6ecbfbb8065ed32" prot="public">
-          <name>A</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba5e3845aae4d42c18c680b3c07ee64f5e" prot="public">
-          <name>V</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba2c0ca25e881f311dc9c4249552b86e21" prot="public">
-          <name>F</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad870bf7275c53d257065bea242b5a471" prot="public">
-          <name>Ohm</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba550b3c8f08b4a7fe4d3f52ae6679e53e" prot="public">
-          <name>S</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba524e3d9a0d74fea5c38c8b00804357b7" prot="public">
-          <name>Wb</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba194ef025fbcbbf558f9c81d737e6fc52" prot="public">
-          <name>T</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0432aa967bb3b6d3f29209431042c706" prot="public">
-          <name>H</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab439b886fe9d0335531a24748337671f" prot="public">
-          <name>lm</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbaf687b6eaf06116663bf10fe3161b7d8b" prot="public">
-          <name>lx</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1df8369df3686578d0a5a1fa26a49ec4" prot="public">
-          <name>Bq</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba55ee28f25670250226e79fa521df017d" prot="public">
-          <name>Gy</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0211b0783277afad2aa3a974a7b1d97b" prot="public">
-          <name>Sv</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0d7b0f1ae447a0025df9d16b96fa6c40" prot="public">
-          <name>kat</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1a0e57617ad4a6dc3b7cbfcdc3f48f4b" prot="public">
-          <name>angstrom</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbafccf430a248174ba0453cf635915a72f" prot="public">
-          <name>L</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab84a4cfd0b240eda5fa88f28bacd7b11" prot="public">
-          <name>minute</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1132803a841a4d0793b2a446fe5e06e5" prot="public">
-          <name>h</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba15d8d0a20e6e9c94ff955cd2454055f6" prot="public">
-          <name>d</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba7a67e2f38936f370ec05123b37c51e50" prot="public">
-          <name>ly</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba51636d7b44e8002a2df55216e728e421" prot="public">
-          <name>AU</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba842813110e94383b6c4a008dfdde523e" prot="public">
-          <name>pc</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba90f4f3d0c1afd0f53c911a41c0747853" prot="public">
-          <name>eV</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbaec0a4aeb09bbe8d0e7446bf43cb0f44b" prot="public">
-          <name>Da</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba43546ef403f062e50368eb66c7f883b2" prot="public">
-          <name>amu</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba93a171636168335103a68b7aaf1e4060" prot="public">
-          <name>barn</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba09c9fc1bf78c98a7ef4cd7ca681bf1e2" prot="public">
-          <name>M</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad8c5fea857da0928b5359ff0e2359c8f" prot="public">
-          <name>particles</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab4076e84d07147f20173ea8acaecced1" prot="public">
-          <name>custom</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad30723f01a00ee1ab1f865d28d7b6ad8" prot="public">
-          <name>custom_basic</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba7aa910575755b3327b0e21faec32c22e" prot="public">
-          <name>custom_full_symbol</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba24f50ae11e83227dd59d242ba2f4c8ff" prot="public">
-          <name>money</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba308a5945a7421b7a1438f8ca9ed157e2" prot="public">
-          <name>pixel</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab15ca3956bf9435bc467ea786cd04bf9" prot="public">
-          <name>memo</name>
-          <briefdescription>
+<para>Invented unit inside Scifir, it&apos;s not part of the SI system of units. It represents a unit of human or animal memory. Each memory of the brain has some size hypothetically measurable in memos. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>Represents a dimension of the SI system of units. All the dimensions of the SI system of units are supported. There are also dimensions supported that aren&apos;t considered yet part of the SI system of units, but that are widely used. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -374,31 +423,34 @@
         <location file="units/dimension.hpp" line="31" column="1" bodyfile="units/dimension.hpp" bodystart="32" bodyend="34"/>
       </memberdef>
       <memberdef kind="enum" id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42a" prot="public" static="no" strong="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
+        <type>int8_t</type>
         <name>position</name>
-        <qualifiedname>scifir::dimension::position</qualifiedname>
-        <enumvalue id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa96ba9e5aa7f5db3925455b97e07010e3" prot="public">
+        <enumvalue id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa606caf7befec312f8221bc2d191071c2" prot="public">
           <name>NO_POSITION</name>
           <briefdescription>
+<para>The dimension is not ready and yet being used. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aacb86e7508c6829a6b65a5a07ad18beb7" prot="public">
+        <enumvalue id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aaca5d501f305756a8271b1c629bb2f41c" prot="public">
           <name>NUMERATOR</name>
           <briefdescription>
+<para>The dimension is at the numerator. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa5f7f521cd909b87f6b7747fcf2d39ce8" prot="public">
+        <enumvalue id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa10c8649258e57040c30a4f639eca7717" prot="public">
           <name>DENOMINATOR</name>
           <briefdescription>
+<para>The dimension is at the denominator. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>Represents the position of the dimension, which can be at the numerator or at the denominator. The value NO_POSITION is used when there&apos;s no position specified. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -406,15 +458,15 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="36" column="1" bodyfile="units/dimension.hpp" bodystart="36" bodyend="36"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="classscifir_1_1dimension_1aa69c7afee780da0c32fe00a891827ffa" prot="public" static="no" mutable="no">
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classscifir_1_1dimension_1a29c70958d053bfd9d66bd23b5f9f5319" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1prefix" kindref="compound">scifir::prefix</ref></type>
-        <definition>scifir::prefix scifir::dimension::prefix</definition>
+        <definition>scifir::prefix dimension::prefix</definition>
         <argsstring></argsstring>
         <name>prefix</name>
-        <qualifiedname>scifir::dimension::prefix</qualifiedname>
         <briefdescription>
+<para>The prefix of the dimension. It&apos;s used along with the symbol of the dimension when printing it. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -422,13 +474,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="62" column="16" bodyfile="units/dimension.hpp" bodystart="62" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classscifir_1_1dimension_1ac08ab515fd4f392075352134d9f46517" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classscifir_1_1dimension_1a55ebc67dc5f4ce62dbe4a9f888280363" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fb" kindref="member">dimension::type</ref></type>
-        <definition>dimension::type scifir::dimension::dimension_type</definition>
+        <definition>dimension::type dimension::dimension_type</definition>
         <argsstring></argsstring>
         <name>dimension_type</name>
-        <qualifiedname>scifir::dimension::dimension_type</qualifiedname>
         <briefdescription>
+<para>The type of the dimension. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -436,13 +488,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="63" column="17" bodyfile="units/dimension.hpp" bodystart="63" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classscifir_1_1dimension_1a7c2bd8eaebee581289efe69d0aef9464" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classscifir_1_1dimension_1a308aafa82609f6aca83e2c01175aa948" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42a" kindref="member">dimension::position</ref></type>
-        <definition>dimension::position scifir::dimension::dimension_sign</definition>
+        <definition>dimension::position dimension::dimension_position</definition>
         <argsstring></argsstring>
-        <name>dimension_sign</name>
-        <qualifiedname>scifir::dimension::dimension_sign</qualifiedname>
+        <name>dimension_position</name>
         <briefdescription>
+<para>The position of the dimension, which can be the NUMERATOR, the DENOMINATOR or NO_POSITION. NO_POSITION means that the dimension is not ready to be used, and must be changed if the dimension is intended to be used. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -450,13 +502,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="64" column="21" bodyfile="units/dimension.hpp" bodystart="64" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classscifir_1_1dimension_1a7bfd16bfb8a3f44035d05a3377c04656" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">char</ref></type>
-        <definition>char scifir::dimension::symbol[3]</definition>
+      <memberdef kind="variable" id="classscifir_1_1dimension_1a3954cba8d443fdf84235344f2d087455" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char dimension::symbol[3]</definition>
         <argsstring>[3]</argsstring>
         <name>symbol</name>
-        <qualifiedname>scifir::dimension::symbol</qualifiedname>
         <briefdescription>
+<para>The value of the position of the character of a custom dimension in the map of full_symbols. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -464,15 +516,14 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="65" column="6" bodyfile="units/dimension.hpp" bodystart="65" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-static-attrib">
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
       <memberdef kind="variable" id="classscifir_1_1dimension_1a5ca30a7cabdc8a807705ea6949f33fab" prot="private" static="yes" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">map</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref>, vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &gt;</type>
+        <type>map&lt; string, vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &gt;</type>
         <definition>map&lt; string, vector&lt; dimension &gt; &gt; scifir::dimension::base_dimensions</definition>
         <argsstring></argsstring>
         <name>base_dimensions</name>
-        <qualifiedname>scifir::dimension::base_dimensions</qualifiedname>
-        <initializer>= <ref refid="classscifir_1_1coordinates__1d" kindref="compound">map</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref>,vector&lt;<ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref>&gt;&gt;()</initializer>
+        <initializer>= map&lt;string,vector&lt;<ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref>&gt;&gt;()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -482,12 +533,11 @@
         <location file="units/dimension.hpp" line="155" column="12" bodyfile="units/dimension.hpp" bodystart="155" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1dimension_1aa9324596c50526bab5b142122dc02c49" prot="private" static="yes" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">map</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref>, <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &gt;</type>
+        <type>map&lt; int, string &gt;</type>
         <definition>map&lt; int, string &gt; scifir::dimension::full_symbols</definition>
         <argsstring></argsstring>
         <name>full_symbols</name>
-        <qualifiedname>scifir::dimension::full_symbols</qualifiedname>
-        <initializer>= <ref refid="classscifir_1_1coordinates__1d" kindref="compound">map</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref>,<ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref>&gt;()</initializer>
+        <initializer>= map&lt;int,string&gt;()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -497,11 +547,10 @@
         <location file="units/dimension.hpp" line="156" column="12" bodyfile="units/dimension.hpp" bodystart="156" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1dimension_1a55d272747e9394e95ec714e25f6fa9d8" prot="private" static="yes" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+        <type>int</type>
         <definition>int scifir::dimension::total_full_symbols</definition>
         <argsstring></argsstring>
         <name>total_full_symbols</name>
-        <qualifiedname>scifir::dimension::total_full_symbols</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
@@ -512,11 +561,10 @@
         <location file="units/dimension.hpp" line="157" column="12" bodyfile="units/dimension.hpp" bodystart="157" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1dimension_1a820166609b11724ffc5e5b5376f02342" prot="private" static="yes" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">set</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &gt;</type>
+        <type>set&lt; string &gt;</type>
         <definition>set&lt; string &gt; scifir::dimension::prefixes_options</definition>
         <argsstring></argsstring>
         <name>prefixes_options</name>
-        <qualifiedname>scifir::dimension::prefixes_options</qualifiedname>
         <initializer>{&quot;Y&quot;, &quot;Z&quot;, &quot;E&quot;, &quot;P&quot;, &quot;T&quot;, &quot;G&quot;, &quot;M&quot;, &quot;k&quot;, &quot;h&quot;, &quot;d&quot;, &quot;c&quot;, &quot;m&quot;, &quot;\u00B5&quot;, &quot;u&quot;, &quot;n&quot;, &quot;p&quot;, &quot;f&quot;, &quot;a&quot;, &quot;z&quot;, &quot;y&quot;}</initializer>
         <briefdescription>
         </briefdescription>
@@ -526,15 +574,15 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="158" column="12" bodyfile="units/dimension.hpp" bodystart="158" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
-      <memberdef kind="function" id="classscifir_1_1dimension_1ae1c538b135e5d594e0c694d6fe5611af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classscifir_1_1dimension_1abc6c881f1fba3ce32e2538b52d234e07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::dimension::dimension</definition>
+        <definition>dimension::dimension</definition>
         <argsstring>()</argsstring>
         <name>dimension</name>
-        <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <briefdescription>
+<para>Default constructor. The dimension_type is NONE, the dimension_position is NO_POSITION, and the prefix is NONE, the symbol is empty. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -542,17 +590,17 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="38" column="1" bodyfile="units/dimension.cpp" bodystart="23" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a2f8ad34d7754e8af75db62592fce8040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a8215c0f99838ba93690f1636594d062a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::dimension::dimension</definition>
+        <definition>dimension::dimension</definition>
         <argsstring>(const dimension &amp;x)</argsstring>
         <name>dimension</name>
-        <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Copy constructor. The dimension is initialized to be a copy of the dimension x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -560,17 +608,17 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="39" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1af7a65ca2a8db277c6ace714c0743e130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a632750528d244ea4b9b6de6005f2ed97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::dimension::dimension</definition>
+        <definition>dimension::dimension</definition>
         <argsstring>(dimension &amp;&amp;x)</argsstring>
         <name>dimension</name>
-        <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Move constructor. The dimension is initialized with a move of the dimension x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -578,12 +626,11 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="40" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a7817c55516353aa4c3b5fd753c1fada4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a2cc00f41800caf1051d9dc0dd39f1b15" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::dimension::dimension</definition>
-        <argsstring>(dimension::type new_dimension_type, scifir::prefix::type new_prefix, dimension::position new_sign)</argsstring>
+        <argsstring>(dimension::type new_dimension_type, scifir::prefix::type new_prefix, dimension::position new_position)</argsstring>
         <name>dimension</name>
-        <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fb" kindref="member">dimension::type</ref></type>
           <declname>new_dimension_type</declname>
@@ -594,7 +641,7 @@
         </param>
         <param>
           <type><ref refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42a" kindref="member">dimension::position</ref></type>
-          <declname>new_sign</declname>
+          <declname>new_position</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -604,23 +651,22 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="41" column="10" bodyfile="units/dimension.cpp" bodystart="48" bodyend="49"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a083328dce72fff8b8d1663a7ddb5fbc0" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a78def1cb43d1fb26f430ca852a95081c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::dimension::dimension</definition>
-        <argsstring>(dimension::type new_dimension_type, const scifir::prefix &amp;new_prefix, dimension::position new_sign)</argsstring>
+        <argsstring>(dimension::type new_dimension_type, const scifir::prefix &amp;new_prefix, dimension::position new_position)</argsstring>
         <name>dimension</name>
-        <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fb" kindref="member">dimension::type</ref></type>
           <declname>new_dimension_type</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1prefix" kindref="compound">scifir::prefix</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1prefix" kindref="compound">scifir::prefix</ref> &amp;</type>
           <declname>new_prefix</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42a" kindref="member">dimension::position</ref></type>
-          <declname>new_sign</declname>
+          <declname>new_position</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -630,19 +676,18 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="42" column="10" bodyfile="units/dimension.cpp" bodystart="51" bodyend="52"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1ac6f3d78d39989c41df7d997b98288c3f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1aeb2015306f134d0a95a857af1476f7c9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::dimension::dimension</definition>
-        <argsstring>(const string &amp;init_dimension, dimension::position new_sign)</argsstring>
+        <argsstring>(const string &amp;init_dimension, dimension::position new_position)</argsstring>
         <name>dimension</name>
-        <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimension</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42a" kindref="member">dimension::position</ref></type>
-          <declname>new_sign</declname>
+          <declname>new_position</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -652,17 +697,17 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="43" column="10" bodyfile="units/dimension.cpp" bodystart="54" bodyend="281"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a8ce25fd81b3cb3476da56557cc7ed74c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a0d7ddac0d7731d792fe44ab754b616c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
-        <definition>dimension &amp; scifir::dimension::operator=</definition>
+        <definition>dimension &amp; dimension::operator=</definition>
         <argsstring>(const dimension &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::dimension::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Copy assignment. The dimension copies the dimension x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -670,17 +715,17 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="45" column="11"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1af47c63fbf5b38eb3b93160d58e49a02e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a01d0d23f815aa157f11d80d5fa6fea60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
-        <definition>dimension &amp; scifir::dimension::operator=</definition>
+        <definition>dimension &amp; dimension::operator=</definition>
         <argsstring>(dimension &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::dimension::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Move assignment. The dimension values are all moved from the dimension x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -688,13 +733,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="46" column="11"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1acc91dc0871ed7b4ea53d456ddd76432a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::dimension::get_name</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1a281db17cdf4454416f390b51827f5767" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string dimension::get_name</definition>
         <argsstring>() const</argsstring>
         <name>get_name</name>
-        <qualifiedname>scifir::dimension::get_name</qualifiedname>
         <briefdescription>
+<para>Returns the name of the dimension. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -702,13 +747,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="48" column="8" bodyfile="units/dimension.cpp" bodystart="321" bodyend="429"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a183a0598a8fa71a5be70460dbf039d9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::dimension::get_symbol</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1a7a9483d3b3fb5708970dbf48730ade58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string dimension::get_symbol</definition>
         <argsstring>() const</argsstring>
         <name>get_symbol</name>
-        <qualifiedname>scifir::dimension::get_symbol</qualifiedname>
         <briefdescription>
+<para>Returns the symbol of the dimension. In the case of a custom dimension, it returns the custom dimension defined. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -716,13 +761,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="49" column="8" bodyfile="units/dimension.cpp" bodystart="431" bodyend="554"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a8618abfdcd67be2f677de2fd5bab3ffe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-        <definition>long double scifir::dimension::get_conversion_factor</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1a9626a696e8755aa10bd3e4398d177b33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long double</type>
+        <definition>long double dimension::get_conversion_factor</definition>
         <argsstring>() const</argsstring>
         <name>get_conversion_factor</name>
-        <qualifiedname>scifir::dimension::get_conversion_factor</qualifiedname>
         <briefdescription>
+<para>Returns the conversion factor of the dimension. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -730,13 +775,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="50" column="13" bodyfile="units/dimension.cpp" bodystart="556" bodyend="664"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1af185d8d42aa2cfcf396f5b90d34a9f7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-        <definition>long double scifir::dimension::prefix_math</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1ac51e0966f64a0db7b9acfb1cf19527a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long double</type>
+        <definition>long double dimension::prefix_math</definition>
         <argsstring>() const</argsstring>
         <name>prefix_math</name>
-        <qualifiedname>scifir::dimension::prefix_math</qualifiedname>
         <briefdescription>
+<para>Returns the math between the prefix and the dimension, which varies if the dimension is a B or another. In the case of bytes the math with the prefix is different, it&apos;s done with 1024 instead of multiples of 10. It doesn&apos;t includes the conversion factor of dimensions. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -744,17 +789,17 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="51" column="13" bodyfile="units/dimension.cpp" bodystart="666" bodyend="669"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a7652621ccb07137367c93f7b4b0f82be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-        <definition>long double scifir::dimension::prefix_math</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1a0bd38a082bee560e30b4a2ed56193c3b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long double</type>
+        <definition>long double dimension::prefix_math</definition>
         <argsstring>(const prefix &amp;x_prefix) const</argsstring>
         <name>prefix_math</name>
-        <qualifiedname>scifir::dimension::prefix_math</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;</type>
           <declname>x_prefix</declname>
         </param>
         <briefdescription>
+<para>Returns the math between some prefix and the dimension. The difference with the other <ref refid="classscifir_1_1dimension_1ac51e0966f64a0db7b9acfb1cf19527a9" kindref="member">prefix_math()</ref> function is that the prefix is given as parameter. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -762,13 +807,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="52" column="13" bodyfile="units/dimension.cpp" bodystart="671" bodyend="681"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a364c74c6fca013618c363126d32ab203" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-        <definition>bool scifir::dimension::is_simple_dimension</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1a6ac4a7018683de2898471fde98512d82" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dimension::is_simple_dimension</definition>
         <argsstring>() const</argsstring>
         <name>is_simple_dimension</name>
-        <qualifiedname>scifir::dimension::is_simple_dimension</qualifiedname>
         <briefdescription>
+<para>If the dimension doesn&apos;t has more derived dimensions, it&apos;s considered a simple dimension. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -776,13 +821,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="54" column="6" bodyfile="units/dimension.cpp" bodystart="683" bodyend="791"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a5332dc5feb3942e33644dd81ef131772" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-        <definition>bool scifir::dimension::is_basic_dimension</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1a024d28b2c866bb14100f7dceef9b95f9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dimension::is_basic_dimension</definition>
         <argsstring>() const</argsstring>
         <name>is_basic_dimension</name>
-        <qualifiedname>scifir::dimension::is_basic_dimension</qualifiedname>
         <briefdescription>
+<para>If the dimension is an SI basic dimension, it&apos;s considered a basic dimension. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -790,13 +835,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="55" column="6" bodyfile="units/dimension.cpp" bodystart="793" bodyend="901"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a8c56be1126721255410d7ae9ffebbd66" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-        <definition>bool scifir::dimension::is_derived_dimension</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1aaf567ebaa6d4cc7d30dd0d60bc18ed0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dimension::is_derived_dimension</definition>
         <argsstring>() const</argsstring>
         <name>is_derived_dimension</name>
-        <qualifiedname>scifir::dimension::is_derived_dimension</qualifiedname>
         <briefdescription>
+<para>If the dimension is not a basic dimension, it&apos;s considered a derived dimension. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -804,13 +849,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="56" column="6" bodyfile="units/dimension.cpp" bodystart="903" bodyend="906"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1abbb3e89b508150798110c3b27ecb0a6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1aa8314105ec18102012a911373d149ed0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt;</type>
-        <definition>vector&lt; dimension &gt; scifir::dimension::get_basic_dimensions</definition>
+        <definition>vector&lt; dimension &gt; dimension::get_basic_dimensions</definition>
         <argsstring>() const</argsstring>
         <name>get_basic_dimensions</name>
-        <qualifiedname>scifir::dimension::get_basic_dimensions</qualifiedname>
         <briefdescription>
+<para>Returns the basic dimensions of the dimension, which are different than the dimension, and possible more than one, if the dimension is not basic. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -818,13 +863,13 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="58" column="8" bodyfile="units/dimension.cpp" bodystart="908" bodyend="1140"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1aace9b9b916e5e9c1037685bd17340fae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::dimension::invert</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1ae92d50eab95ccae526424d0a13729084" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dimension::invert</definition>
         <argsstring>()</argsstring>
         <name>invert</name>
-        <qualifiedname>scifir::dimension::invert</qualifiedname>
         <briefdescription>
+<para>Changes the position of the dimension to the reverse, from the NUMERATOR to the DENOMINATOR, or from the DENOMINATOR to the NUMERATOR. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -832,23 +877,23 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="60" column="6" bodyfile="units/dimension.cpp" bodystart="1142" bodyend="1152"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classscifir_1_1dimension_1a66f3d8cb6e1c3ccbfc0e2ddc3528ba43" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>static void scifir::dimension::create_custom_dimension</definition>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a73ff39ae733fc5b9e4840ff0511df111" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dimension::create_custom_dimension</definition>
         <argsstring>(const string &amp;new_symbol, const string &amp;init_dimensions)</argsstring>
         <name>create_custom_dimension</name>
-        <qualifiedname>scifir::dimension::create_custom_dimension</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_symbol</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_dimensions</declname>
         </param>
         <briefdescription>
+<para>Creates a new custom dimension, that&apos;s stored with its symbol, which is given as an string, and the dimensions it can be derived to, if this custom dimension is not a new basic dimension. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -856,17 +901,17 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="67" column="13" bodyfile="units/dimension.hpp" bodystart="67" bodyend="73"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1aed662b0cb0da957737eddaddbaaa5192" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">char</ref> *</type>
-        <definition>static char * scifir::dimension::create_full_symbol</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1af1bdbbff3b20c8210720e72700f686f1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char * dimension::create_full_symbol</definition>
         <argsstring>(const string &amp;full_symbol)</argsstring>
         <name>create_full_symbol</name>
-        <qualifiedname>scifir::dimension::create_full_symbol</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>full_symbol</declname>
         </param>
         <briefdescription>
+<para>Creates a new dimension that&apos;s stored in the private static map <ref refid="classscifir_1_1dimension_1aa9324596c50526bab5b142122dc02c49" kindref="member">dimension::full_symbols</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -874,17 +919,17 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="75" column="13" bodyfile="units/dimension.hpp" bodystart="75" bodyend="131"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a1d5cb847a8286d1ccbc4194849b7b676" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>static string scifir::dimension::get_full_symbol</definition>
+      <memberdef kind="function" id="classscifir_1_1dimension_1ab5e4c26a969e357d446973d7e0030d39" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string dimension::get_full_symbol</definition>
         <argsstring>(const char *x_symbol)</argsstring>
         <name>get_full_symbol</name>
-        <qualifiedname>scifir::dimension::get_full_symbol</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">char</ref> *</type>
+          <type>const char *</type>
           <declname>x_symbol</declname>
         </param>
         <briefdescription>
+<para>Returns the symbol of a custom_full_symbol dimension stored in the private static map <ref refid="classscifir_1_1dimension_1aa9324596c50526bab5b142122dc02c49" kindref="member">dimension::full_symbols</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -892,12 +937,17 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="133" column="15" bodyfile="units/dimension.hpp" bodystart="133" bodyend="152"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
+<para>Class that represents dimensions of the SI system of units. Each prefix sizes 6 bytes, 1 byte for the dimension type, 1 byte for the prefix, 1 byte for the position (which can be the NUMERATOR or the DENOMINATOR), and 3 bytes for the custom dimension (in case it&apos;s used one). </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
+      <node id="2">
+        <label>scifir::prefix</label>
+        <link refid="classscifir_1_1prefix"/>
+      </node>
       <node id="1">
         <label>scifir::dimension</label>
         <link refid="classscifir_1_1dimension"/>
@@ -905,98 +955,94 @@
           <edgelabel>prefix</edgelabel>
         </childnode>
       </node>
-      <node id="2">
-        <label>scifir::prefix</label>
-        <link refid="classscifir_1_1prefix"/>
-      </node>
     </collaborationgraph>
     <location file="units/dimension.hpp" line="28" column="1" bodyfile="units/dimension.hpp" bodystart="29" bodyend="159"/>
     <listofallmembers>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad133a0df68a14a52b6ecbfbb8065ed32" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>A</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba43546ef403f062e50368eb66c7f883b2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>amu</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1a0e57617ad4a6dc3b7cbfcdc3f48f4b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>angstrom</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba51636d7b44e8002a2df55216e728e421" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>AU</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab1268a01e705d9f4aff829328386b4c7" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>B</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba93a171636168335103a68b7aaf1e4060" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>barn</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba352af4e149d9bd56edfe2d027c70fad8" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>AMPERE</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba418e9b5c789dd90d474152ddfef27ce8" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>ANGSTROM</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba6b41c70a280cb0a02b1654fafff3dc1e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>ASTRONOMICAL_UNIT</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba67da7e36029ed662fd6e717735561492" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>ATOMIC_MASS_UNIT</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba2ef28355046604f1fcfb9bdd8284e620" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>BARN</name></member>
       <member refid="classscifir_1_1dimension_1a5ca30a7cabdc8a807705ea6949f33fab" prot="private" virt="non-virtual"><scope>scifir::dimension</scope><name>base_dimensions</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1df8369df3686578d0a5a1fa26a49ec4" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Bq</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba89fc8171d43d04a927315029d774aec1" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>C</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba2c02ea06817fd2d4e84400e149a1b964" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>cd</name></member>
-      <member refid="classscifir_1_1dimension_1a66f3d8cb6e1c3ccbfc0e2ddc3528ba43" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>create_custom_dimension</name></member>
-      <member refid="classscifir_1_1dimension_1aed662b0cb0da957737eddaddbaaa5192" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>create_full_symbol</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab4076e84d07147f20173ea8acaecced1" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>custom</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad30723f01a00ee1ab1f865d28d7b6ad8" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>custom_basic</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba7aa910575755b3327b0e21faec32c22e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>custom_full_symbol</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba15d8d0a20e6e9c94ff955cd2454055f6" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>d</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbaec0a4aeb09bbe8d0e7446bf43cb0f44b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Da</name></member>
-      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa5f7f521cd909b87f6b7747fcf2d39ce8" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>DENOMINATOR</name></member>
-      <member refid="classscifir_1_1dimension_1ae1c538b135e5d594e0c694d6fe5611af" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1a2f8ad34d7754e8af75db62592fce8040" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1af7a65ca2a8db277c6ace714c0743e130" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1a7817c55516353aa4c3b5fd753c1fada4" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1a083328dce72fff8b8d1663a7ddb5fbc0" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1ac6f3d78d39989c41df7d997b98288c3f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1a7c2bd8eaebee581289efe69d0aef9464" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension_sign</name></member>
-      <member refid="classscifir_1_1dimension_1ac08ab515fd4f392075352134d9f46517" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension_type</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba90f4f3d0c1afd0f53c911a41c0747853" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>eV</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba2c0ca25e881f311dc9c4249552b86e21" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>F</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1275a0a24b60736d4c65027afd77a473" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>BECQUEREL</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbabc56146b90f20ed603262911b9dd3cda" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>BYTE</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab3d700998922ca41e58c2248ae052293" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>CANDELA</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3ec34b656ab1a782519a9285281b4c21" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>COULOMB</name></member>
+      <member refid="classscifir_1_1dimension_1a73ff39ae733fc5b9e4840ff0511df111" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>create_custom_dimension</name></member>
+      <member refid="classscifir_1_1dimension_1af1bdbbff3b20c8210720e72700f686f1" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>create_full_symbol</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbafd6586f52e600f9ba2e7c4ba597a2ce1" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>CUSTOM</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba9800878b3ad41c907d13e86f61c305dd" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>CUSTOM_BASIC</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba36fc302bb5458acb1199c4524eccb9c5" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>CUSTOM_FULL_SYMBOL</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba50f18d4f59c9202a0826217327fea8fc" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>DALTON</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba77148181a94c4fc1231c3df9d9e22649" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>DAY</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba5cfe75b77c8a88a895c9bd0f4e12bf70" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>DEGREE</name></member>
+      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa10c8649258e57040c30a4f639eca7717" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>DENOMINATOR</name></member>
+      <member refid="classscifir_1_1dimension_1abc6c881f1fba3ce32e2538b52d234e07" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a8215c0f99838ba93690f1636594d062a" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a632750528d244ea4b9b6de6005f2ed97" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a2cc00f41800caf1051d9dc0dd39f1b15" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a78def1cb43d1fb26f430ca852a95081c" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1aeb2015306f134d0a95a857af1476f7c9" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a308aafa82609f6aca83e2c01175aa948" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension_position</name></member>
+      <member refid="classscifir_1_1dimension_1a55ebc67dc5f4ce62dbe4a9f888280363" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension_type</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba43e32b0961d06ad1f66903833f7c8c3b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>ELECTRON_VOLT</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba4aeb331e216403a96e9e451d3ef35af2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>FARADAY</name></member>
       <member refid="classscifir_1_1dimension_1aa9324596c50526bab5b142122dc02c49" prot="private" virt="non-virtual"><scope>scifir::dimension</scope><name>full_symbols</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad1c339ede63d1694fab4dcb4a598ce44" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>g</name></member>
-      <member refid="classscifir_1_1dimension_1abbb3e89b508150798110c3b27ecb0a6b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_basic_dimensions</name></member>
-      <member refid="classscifir_1_1dimension_1a8618abfdcd67be2f677de2fd5bab3ffe" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_conversion_factor</name></member>
-      <member refid="classscifir_1_1dimension_1a1d5cb847a8286d1ccbc4194849b7b676" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_full_symbol</name></member>
-      <member refid="classscifir_1_1dimension_1acc91dc0871ed7b4ea53d456ddd76432a" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_name</name></member>
-      <member refid="classscifir_1_1dimension_1a183a0598a8fa71a5be70460dbf039d9d" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_symbol</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad6c0ae707ede84a6b92174ca9b392b3f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>grade</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba55ee28f25670250226e79fa521df017d" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Gy</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0432aa967bb3b6d3f29209431042c706" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>H</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1132803a841a4d0793b2a446fe5e06e5" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>h</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbacf7e4ca1fdc24ebc9b2cbfb8bd0247d6" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Hz</name></member>
-      <member refid="classscifir_1_1dimension_1aace9b9b916e5e9c1037685bd17340fae" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>invert</name></member>
-      <member refid="classscifir_1_1dimension_1a5332dc5feb3942e33644dd81ef131772" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>is_basic_dimension</name></member>
-      <member refid="classscifir_1_1dimension_1a8c56be1126721255410d7ae9ffebbd66" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>is_derived_dimension</name></member>
-      <member refid="classscifir_1_1dimension_1a364c74c6fca013618c363126d32ab203" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>is_simple_dimension</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba949f0e27923b5d52e23d416e1fc2f9dd" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>J</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba4db984fefed27fc13de75e8130e2feeb" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>K</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0d7b0f1ae447a0025df9d16b96fa6c40" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>kat</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbafccf430a248174ba0453cf635915a72f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>L</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab439b886fe9d0335531a24748337671f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>lm</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbaf687b6eaf06116663bf10fe3161b7d8b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>lx</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba7a67e2f38936f370ec05123b37c51e50" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>ly</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba09c9fc1bf78c98a7ef4cd7ca681bf1e2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>M</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3ee1e0f6a85a67dce4a1c09f01e2c9c7" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>m</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab15ca3956bf9435bc467ea786cd04bf9" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>memo</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab84a4cfd0b240eda5fa88f28bacd7b11" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>minute</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba9e7bc2b89e4c6bd4b4fa9137d5dbc7a6" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>mol</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba24f50ae11e83227dd59d242ba2f4c8ff" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>money</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbada162a2bf0aae4c1c1a7a5d3b392f7d4" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>N</name></member>
-      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa96ba9e5aa7f5db3925455b97e07010e3" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NO_POSITION</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0746ff0d9c5c3a726f1a3d0300b7a4ed" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NONE</name></member>
-      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aacb86e7508c6829a6b65a5a07ad18beb7" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NUMERATOR</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad870bf7275c53d257065bea242b5a471" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Ohm</name></member>
-      <member refid="classscifir_1_1dimension_1a8ce25fd81b3cb3476da56557cc7ed74c" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1dimension_1af47c63fbf5b38eb3b93160d58e49a02e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad384b88e38dec33f38c70e4ecac5cc90" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Pa</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad8c5fea857da0928b5359ff0e2359c8f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>particles</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba842813110e94383b6c4a008dfdde523e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>pc</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba308a5945a7421b7a1438f8ca9ed157e2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>pixel</name></member>
+      <member refid="classscifir_1_1dimension_1aa8314105ec18102012a911373d149ed0" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_basic_dimensions</name></member>
+      <member refid="classscifir_1_1dimension_1a9626a696e8755aa10bd3e4398d177b33" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_conversion_factor</name></member>
+      <member refid="classscifir_1_1dimension_1ab5e4c26a969e357d446973d7e0030d39" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_full_symbol</name></member>
+      <member refid="classscifir_1_1dimension_1a281db17cdf4454416f390b51827f5767" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_name</name></member>
+      <member refid="classscifir_1_1dimension_1a7a9483d3b3fb5708970dbf48730ade58" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_symbol</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba43f05026f9843cfc4ff57070c76cf257" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>GRAM</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba405a6364f5a6675b2d644d0c6536ed74" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>GRAY</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3465ec4f1cbc5fcbba0710857bc4c52f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>HENRY</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba6f997a862ffdd213f865db907f77c1fc" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>HERTZ</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba8b4b427cda174e43b0e242587ac83b19" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>HOUR</name></member>
+      <member refid="classscifir_1_1dimension_1ae92d50eab95ccae526424d0a13729084" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>invert</name></member>
+      <member refid="classscifir_1_1dimension_1a024d28b2c866bb14100f7dceef9b95f9" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>is_basic_dimension</name></member>
+      <member refid="classscifir_1_1dimension_1aaf567ebaa6d4cc7d30dd0d60bc18ed0a" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>is_derived_dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a6ac4a7018683de2898471fde98512d82" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>is_simple_dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbabe339881eb1362c3182749f9dd54e3cb" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>JOULE</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba174c0c300e040de5e902daa9939c9618" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>KATAL</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad74cc26e453a701ae6ec4d71a73feca9" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>KELVIN</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba32fd64f45b837a6d0064d7945400e6c0" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>LIGHT_YEAR</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba199ff7f08482f599bb2c296ffdeb5c4f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>LITRE</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1bd9fc83c30f6db43fdc06ed7b4d038e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>LUMEN</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3fe04ce9be19742037d2e01e40c3d151" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>LUX</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1e3e9c8bf5bb5c77e0fafd3f200ad47e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>MEMO</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad9d12d7e237cde66c650f754bf3a20f2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>METRE</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba9c74e3d62f32aae155379bcae3c42132" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>MINUTE</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0ac4f9fa9723f528a6e9ef07a8f51507" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>MOLARITY</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba35d2cdea1dabf8f6101955c3cbf34f02" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>MOLE</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba903dc96eefeb01c52c31a3530682e9e7" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>MONEY</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba85b93eedb548204f9635ee1d1952d4ec" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NEWTON</name></member>
+      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa606caf7befec312f8221bc2d191071c2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NO_POSITION</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba104525dd1c8d8780d7fc6418541b5019" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NONE</name></member>
+      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aaca5d501f305756a8271b1c629bb2f41c" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NUMERATOR</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3ac1207fe7c34335a9af2d1c8a05701a" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>OHM</name></member>
+      <member refid="classscifir_1_1dimension_1a0d7ddac0d7731d792fe44ab754b616c6" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1dimension_1a01d0d23f815aa157f11d80d5fa6fea60" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbae46e31f2a196a326dd1a7f423147cb6d" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>PARSEC</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba8ea708047a9699f9b4570b07a6135a3e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>PARTICLES</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba666869c729e2c058d7c65578f5bb6bd2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>PASCAL</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba6747ebea74889f7864d1d802dc31d5d4" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>PIXEL</name></member>
       <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42a" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>position</name></member>
-      <member refid="classscifir_1_1dimension_1aa69c7afee780da0c32fe00a891827ffa" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>prefix</name></member>
-      <member refid="classscifir_1_1dimension_1af185d8d42aa2cfcf396f5b90d34a9f7c" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>prefix_math</name></member>
-      <member refid="classscifir_1_1dimension_1a7652621ccb07137367c93f7b4b0f82be" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>prefix_math</name></member>
+      <member refid="classscifir_1_1dimension_1a29c70958d053bfd9d66bd23b5f9f5319" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>prefix</name></member>
+      <member refid="classscifir_1_1dimension_1ac51e0966f64a0db7b9acfb1cf19527a9" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>prefix_math</name></member>
+      <member refid="classscifir_1_1dimension_1a0bd38a082bee560e30b4a2ed56193c3b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>prefix_math</name></member>
       <member refid="classscifir_1_1dimension_1a820166609b11724ffc5e5b5376f02342" prot="private" virt="non-virtual"><scope>scifir::dimension</scope><name>prefixes_options</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba155f1a68a6bd9d4cfb7376f4dbcb38e2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>radian</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba550b3c8f08b4a7fe4d3f52ae6679e53e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>S</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab7081010542c35107fd753dd2611734d" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>s</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba6975a95a363145b5ce70fcc623a740e3" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>steradian</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0211b0783277afad2aa3a974a7b1d97b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Sv</name></member>
-      <member refid="classscifir_1_1dimension_1a7bfd16bfb8a3f44035d05a3377c04656" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>symbol</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba194ef025fbcbbf558f9c81d737e6fc52" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>T</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab8283fad14df54ec9eb9b20e88f3e5cd" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>RADIAN</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba98b40fb196b4749b9adb7bb63e13c028" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>SECOND</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbabce9b49af7f5de8ef85e3049d023d9b6" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>SIEMENS</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba49adceb8123354347a1541eb4af7c03e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>SIEVERT</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba2324b8143ad5de9ad198dd58dbb376ef" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>STERADIAN</name></member>
+      <member refid="classscifir_1_1dimension_1a3954cba8d443fdf84235344f2d087455" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>symbol</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba25d57935f4d9f558eac209aaecc3451b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>TESLA</name></member>
       <member refid="classscifir_1_1dimension_1a55d272747e9394e95ec714e25f6fa9d8" prot="private" virt="non-virtual"><scope>scifir::dimension</scope><name>total_full_symbols</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fb" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>type</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba5e3845aae4d42c18c680b3c07ee64f5e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>V</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbada9ccc349f5311acf67b1efc32f3fceb" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>W</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba524e3d9a0d74fea5c38c8b00804357b7" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Wb</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba389e8d85db03c53acd103b579cb92dce" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>VOLT</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba7f74bf5e4b5cee03f9aacab1b8271b3c" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>WATT</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbac9bab3b44d956f6c61f031d5f7e36ade" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>WEBER</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -1,4 +1,4 @@
-.TH "units/scalar_unit.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "units/scalar_unit.hpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -33,13 +33,13 @@ units/scalar_unit.hpp
 .ti -1c
 .RI "class \fBscifir::scalar_unit\fP"
 .br
-.RI "Class that allows to create scalar units\&. "
+.RI "Class that allows to create scalar units, which are cmoposed of a value (as a float) and dimensions\&. The dimensions can be of any number, and be basic dimensions and/or abbreviations of dimensions\&. "
 .in -1c
 .SS "Namespaces"
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -63,27 +63,27 @@ units/scalar_unit.hpp
 
 .in +1c
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "string \fBscifir::to_string\fP (const scalar_unit &x)"
 .br
-.RI "Generates an string from the \fBscalar_unit\fP, it uses the display of the \fBscalar_unit\fP with 2 decimals, without brackets and without a close prefix\&. "
+.RI "Generates an string representation of the \fBscalar_unit\fP, it uses the display of the \fBscalar_unit\fP with 2 decimals, without brackets and without a close prefix\&. "
 .ti -1c
-.RI "\fBbool\fP \fBscifir::is_scalar_unit\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP)"
+.RI "bool \fBscifir::is_scalar_unit\fP (const string &init_scalar)"
 .br
 .RI "Checks if an string is an initialization string of a \fBscalar_unit\fP\&. "
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::abs\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "float \fBscifir::abs\fP (const scalar_unit &x)"
 .br
 .RI "Returns the absolute value of the \fBscalar_unit\fP, without dimensions\&. "
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::pow\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBint\fP \fBexponent\fP)"
+.RI "scalar_unit \fBscifir::pow\fP (const scalar_unit &x, int exponent)"
 .br
 .RI "Exponentiates a \fBscalar_unit\fP to some numeric type, the dimensions are also exponentiated\&. "
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::sqrt\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "scalar_unit \fBscifir::sqrt\fP (const scalar_unit &x)"
 .br
 .RI "Square root of a \fBscalar_unit\fP, it squares the dimensions too\&. "
 .ti -1c
-.RI "\fBscalar_unit\fP \fBscifir::sqrt_nth\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBint\fP index)"
+.RI "scalar_unit \fBscifir::sqrt_nth\fP (const scalar_unit &x, int index)"
 .br
 .RI "Nth root of a \fBscalar_unit\fP to any numeric value, it squares the dimensions too\&. "
 .ti -1c
@@ -225,171 +225,107 @@ units/scalar_unit.hpp
 .ti -1c
 .RI "void \fBoperator+=\fP (string &x, const \fBscifir::scalar_unit\fP &y)"
 .br
-.RI "Adds the scalar_unit y converted to string to the string x\&. "
+.RI "Concatenates the string representation of the scalar_unit y to the string x\&. "
 .ti -1c
 .RI "string \fBoperator+\fP (const string &x, const \fBscifir::scalar_unit\fP &y)"
 .br
-.RI "Concatenates the string x with the string representation of the scalar_unit y\&. "
+.RI "Creates a new string as the concatenation of the string x with the representation string of the scalar_unit y\&. "
 .ti -1c
 .RI "string \fBoperator+\fP (const \fBscifir::scalar_unit\fP &y, const string &x)"
 .br
-.RI "Concatenates the string x with the string representation of the scalar_unit y\&. "
+.RI "Creates a new string as the concatenation of the string x with the representation string of the scalar_unit y\&. "
 .ti -1c
 .RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::scalar_unit\fP &x)"
 .br
-.RI "Adds the string representation of the scalar_unit x to an ostream os\&. "
+.RI "Adds the string representation of the scalar_unit x to an output stream os\&. "
 .ti -1c
 .RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::scalar_unit\fP &x)"
 .br
-.RI "Allows that an istream is initializes by string an scalar_unit x\&. "
+.RI "Allows that an istream initializes by string a scalar_unit x\&. "
 .in -1c
 .SH "Macro Definition Documentation"
 .PP 
 .SS "#define SCALAR_UNIT_CPP(name, init_dimensions)"
-\fBValue:\fP.PP
+\fBValue:\fP
+.PP
 .nf
-    name::name() : scalar_unit() { \\
-    scalar_unit::dimensions = name::real_dimensions; \\
-} \\
-\\
-    name::name(const scalar_unit& x) \\
-    { \\
-        if (x\&.has_dimensions(name::real_dimensions)) \\
-        { \\
-            value = x\&.get_value(); \\
-            dimensions = x\&.get_dimensions(); \\
-        } \\
-    } \\
-\\
-    name::name(scalar_unit&& x) \\
-    { \\
-        if (x\&.has_dimensions(name::real_dimensions)) \\
-        { \\
-            value = std::move(x\&.get_value()); \\
-            dimensions = std::move(x\&.get_dimensions()); \\
-        } \\
-    } \\
-\\
-const string name::dimensions_match = init_dimensions; \\
+  name::name() : scalar_unit() { \
+    scalar_unit::dimensions = name::real_dimensions; \
+} \
+\
+    name::name(const scalar_unit& x) \
+    { \
+        if (x\&.has_dimensions(name::real_dimensions)) \
+        { \
+            value = x\&.get_value(); \
+            dimensions = x\&.get_dimensions(); \
+        } \
+    } \
+\
+    name::name(scalar_unit&& x) \
+    { \
+        if (x\&.has_dimensions(name::real_dimensions)) \
+        { \
+            value = std::move(x\&.get_value()); \
+            dimensions = std::move(x\&.get_dimensions()); \
+        } \
+    } \
+\
+const string name::dimensions_match = init_dimensions; \
 const vector<dimension> name::real_dimensions = create_derived_dimensions(init_dimensions)
 .fi
-
 .PP
-Definition at line \fB49\fP of file \fBscalar_unit\&.hpp\fP\&..PP
-.nf
-49                                                          : scalar_unit() { \\
-50     scalar_unit::dimensions = name::real_dimensions; \\
-51 } \\
-52 \\
-53     name::name(const scalar_unit& x) \\
-54     { \\
-55         if (x\&.has_dimensions(name::real_dimensions)) \\
-56         { \\
-57             value = x\&.get_value(); \\
-58             dimensions = x\&.get_dimensions(); \\
-59         } \\
-60     } \\
-61 \\
-62     name::name(scalar_unit&& x) \\
-63     { \\
-64         if (x\&.has_dimensions(name::real_dimensions)) \\
-65         { \\
-66             value = std::move(x\&.get_value()); \\
-67             dimensions = std::move(x\&.get_dimensions()); \\
-68         } \\
-69     } \\
-70 \\
-71 const string name::dimensions_match = init_dimensions; \\
-72 const vector<dimension> name::real_dimensions = create_derived_dimensions(init_dimensions)
-.fi
-
+Definition at line 49 of file scalar_unit\&.hpp\&.
 .SS "#define SCALAR_UNIT_HPP(name)"
-\fBValue:\fP.PP
+\fBValue:\fP
+.PP
 .nf
-    class name : public scalar_unit \\
-    {   \\
-        public: \\
-            using scalar_unit::scalar_unit; \\
-            name(); \\
-            name(const scalar_unit&); \\
-            name(scalar_unit&&); \\
-            using scalar_unit::operator=; \\
-            using scalar_unit::operator+=; \\
-            using scalar_unit::operator\-=; \\
-\\
-            static const string dimensions_match; \\
-            static const vector<dimension> real_dimensions; \\
+   class name : public scalar_unit \
+    {   \
+        public: \
+            using scalar_unit::scalar_unit; \
+            name(); \
+            name(const scalar_unit&); \
+            name(scalar_unit&&); \
+            using scalar_unit::operator =; \
+            using scalar_unit::operator+=; \
+            using scalar_unit::operator-=; \
+\
+            static const string dimensions_match; \
+            static const vector<dimension> real_dimensions; \
     }
 .fi
-
 .PP
-Definition at line \fB34\fP of file \fBscalar_unit\&.hpp\fP\&..PP
-.nf
-34                                          : public scalar_unit \\
-35     {   \\
-36         public: \\
-37             using scalar_unit::scalar_unit; \\
-38             name(); \\
-39             name(const scalar_unit&); \\
-40             name(scalar_unit&&); \\
-41             using scalar_unit::operator=; \\
-42             using scalar_unit::operator+=; \\
-43             using scalar_unit::operator\-=; \\
-44 \\
-45             static const string dimensions_match; \\
-46             static const vector<dimension> real_dimensions; \\
-47     }
-.fi
-
+Definition at line 34 of file scalar_unit\&.hpp\&.
 .SS "#define SCALAR_UNIT_HPP_BEGIN(name)"
-\fBValue:\fP.PP
-.nf
-    class name : public scalar_unit \\
-    {   \\
-        public: \\
-            using scalar_unit::scalar_unit; \\
-            name(); \\
-            name(const scalar_unit&); \\
-            name(scalar_unit&&); \\
-            using scalar_unit::operator=; \\
-            using scalar_unit::operator+=; \\
-            using scalar_unit::operator\-=
-.fi
-
+\fBValue:\fP
 .PP
-Definition at line \fB16\fP of file \fBscalar_unit\&.hpp\fP\&..PP
 .nf
-16                                                : public scalar_unit \\
-17     {   \\
-18         public: \\
-19             using scalar_unit::scalar_unit; \\
-20             name(); \\
-21             name(const scalar_unit&); \\
-22             name(scalar_unit&&); \\
-23             using scalar_unit::operator=; \\
-24             using scalar_unit::operator+=; \\
-25             using scalar_unit::operator\-=
+ class name : public scalar_unit \
+    {   \
+        public: \
+            using scalar_unit::scalar_unit; \
+            name(); \
+            name(const scalar_unit&); \
+            name(scalar_unit&&); \
+            using scalar_unit::operator =; \
+            using scalar_unit::operator+=; \
+            using scalar_unit::operator-=
 .fi
-
+.PP
+Definition at line 16 of file scalar_unit\&.hpp\&.
 .SS "#define SCALAR_UNIT_HPP_END()"
-\fBValue:\fP.PP
+\fBValue:\fP
+.PP
 .nf
-\\
-        public: \\
-            static const string dimensions_match; \\
-            static const vector<dimension> real_dimensions; \\
+\
+        public: \
+            static const string dimensions_match; \
+            static const vector<dimension> real_dimensions; \
     }
 .fi
-
 .PP
-Definition at line \fB27\fP of file \fBscalar_unit\&.hpp\fP\&..PP
-.nf
-29               : \\
-30             static const string dimensions_match; \\
-31             static const vector<dimension> real_dimensions; \\
-32     }
-.fi
-
+Definition at line 27 of file scalar_unit\&.hpp\&.
 .SH "Function Documentation"
 .PP 
 .SS "bool operator!= (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
@@ -397,67 +333,68 @@ Definition at line \fB27\fP of file \fBscalar_unit\&.hpp\fP\&..PP
 .PP
 Returns true if x is not equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. 
 .PP
-Definition at line \fB804\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 804 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 805 {
 806     return !(x == init_scalar);
 807 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator!= (const \fBscifir::scalar_unit\fP & x, const T & y)"
 
 .PP
 Returns true if the value of the scalar_unit is not equal to the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB505\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 505 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 506 {
 507     return !(x == y);
 508 }
 .fi
-
 .SS "bool operator!= (const \fBscifir::scalar_unit\fP & x, \fBscifir::scalar_unit\fP y)"
 
 .PP
 Returns true if two scalar_unit classes doesn't have the same value when changed to same dimensions\&. If their basic dimensions are different, it returns false\&. 
 .PP
-Definition at line \fB747\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 747 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 748 {
 749     return !(x == y);
 750 }
 .fi
-
 .SS "bool operator!= (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Returns true if x is not equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. 
 .PP
-Definition at line \fB836\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 836 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 837 {
 838     return (x != init_scalar);
 839 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator!= (const T & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if the value of the scalar_unit is not equal to the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB469\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 469 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 470 {
 471     return !(x == y);
 472 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::scalar_unit\fP operator* (const T & y, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Multiplies a numeric type y with an scalar_unit x, returns that result as a new scalar_unit with the same dimensions of x\&. 
 .PP
-Definition at line \fB415\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 415 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 416 {
 417     scifir::scalar_unit z = x;
@@ -465,13 +402,13 @@ Definition at line \fB415\fP of file \fBscalar_unit\&.hpp\fP\&..PP
 419     return z;
 420 }
 .fi
-
 .SS "string operator+ (const \fBscifir::scalar_unit\fP & y, const string & x)"
 
 .PP
-Concatenates the string x with the string representation of the scalar_unit y\&. 
+Creates a new string as the concatenation of the string x with the representation string of the scalar_unit y\&. 
 .PP
-Definition at line \fB878\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 878 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 879 {
 880     ostringstream output;
@@ -480,13 +417,13 @@ Definition at line \fB878\fP of file \fBscalar_unit\&.cpp\fP\&..PP
 883     return output\&.str();
 884 }
 .fi
-
 .SS "string operator+ (const string & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
-Concatenates the string x with the string representation of the scalar_unit y\&. 
+Creates a new string as the concatenation of the string x with the representation string of the scalar_unit y\&. 
 .PP
-Definition at line \fB870\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 870 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 871 {
 872     ostringstream output;
@@ -495,13 +432,13 @@ Definition at line \fB870\fP of file \fBscalar_unit\&.cpp\fP\&..PP
 875     return output\&.str();
 876 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::scalar_unit\fP operator+ (const T & y, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Sums a numeric type y with an scalar_unit x, returns that result as a new scalar_unit with the same dimensions of x\&. 
 .PP
-Definition at line \fB399\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 399 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 400 {
 401     scifir::scalar_unit z = x;
@@ -509,13 +446,13 @@ Definition at line \fB399\fP of file \fBscalar_unit\&.hpp\fP\&..PP
 403     return z;
 404 }
 .fi
-
 .SS "void operator+= (string & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
-Adds the scalar_unit y converted to string to the string x\&. 
+Concatenates the string representation of the scalar_unit y to the string x\&. 
 .PP
-Definition at line \fB863\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 863 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 864 {
 865     ostringstream output;
@@ -523,40 +460,40 @@ Definition at line \fB863\fP of file \fBscalar_unit\&.cpp\fP\&..PP
 867     x += output\&.str();
 868 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::scalar_unit\fP operator\- (const T & y, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Substracts a scalar_unit x to a numeric type y, returns that result as a new scalar_unit with the same dimensions of x\&. 
 .PP
-Definition at line \fB407\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 407 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 408 {
 409     scifir::scalar_unit z = scifir::scalar_unit((long double)y,x\&.get_dimensions());
-410     z \-= x;
+410     z -= x;
 411     return z;
 412 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::scalar_unit\fP operator/ (const T & y, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Divides a numeric type y with an scalar_unit x, returns that result as a new scalar_unit with the same dimensions of x\&. 
 .PP
-Definition at line \fB423\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 423 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 424 {
 425     scifir::scalar_unit z = scifir::scalar_unit((long double)y,vector<scifir::dimension>());
 426     return z / x;
 427 }
 .fi
-
 .SS "bool operator< (const \fBscifir::scalar_unit\fP & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if x has a lower value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. 
 .PP
-Definition at line \fB752\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 752 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 753 {
 754     if(!x\&.has_dimensions(y))
@@ -575,184 +512,184 @@ Definition at line \fB752\fP of file \fBscalar_unit\&.cpp\fP\&..PP
 767     }
 768 }
 .fi
-
 .SS "bool operator< (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
 
 .PP
 Returns true if x is lower than the scalar_unit initialized with the string being compared\&. 
 .PP
-Definition at line \fB809\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 809 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 810 {
 811     scifir::scalar_unit y(init_scalar);
 812     return (x < y);
 813 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator< (const \fBscifir::scalar_unit\fP & x, const T & y)"
 
 .PP
 Returns true if the value of x is lower than the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB511\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 511 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 512 {
 513     return (x\&.get_value() < y);
 514 }
 .fi
-
 .SS "bool operator< (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Returns true if x is greather than the scalar_unit initialized with the string being compared\&. 
 .PP
-Definition at line \fB841\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 841 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 842 {
 843     scifir::scalar_unit y(init_scalar);
 844     return (y < x);
 845 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator< (const T & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if the value of y is greather than the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB475\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 475 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 476 {
 477     return (x < y\&.get_value());
 478 }
 .fi
-
-.SS "ostream & operator<< (ostream & os, const \fBscifir::scalar_unit\fP & x)"
+.SS "ostream& operator<< (ostream & os, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
-Adds the string representation of the scalar_unit x to an ostream os\&. 
+Adds the string representation of the scalar_unit x to an output stream os\&. 
 .PP
-Definition at line \fB886\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 886 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 887 {
 888     return os << to_string(x);
 889 }
 .fi
-
 .SS "bool operator<= (const \fBscifir::scalar_unit\fP & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if x has a lower or equal value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. 
 .PP
-Definition at line \fB788\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 788 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 789 {
 790     return !(x > y);
 791 }
 .fi
-
 .SS "bool operator<= (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
 
 .PP
 Returns true if x is lower or equal to the scalar_unit initialized with the string being compared\&. 
 .PP
-Definition at line \fB821\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 821 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 822 {
 823     return !(x > init_scalar);
 824 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator<= (const \fBscifir::scalar_unit\fP & x, const T & y)"
 
 .PP
 Returns true if the value of x is lower or equal than the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB523\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 523 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 524 {
 525     return (x\&.get_value() <= y);
 526 }
 .fi
-
 .SS "bool operator<= (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Returns true if x is greather or equal to the scalar_unit initialized with the string being compared\&. 
 .PP
-Definition at line \fB853\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 853 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 854 {
 855     return !(init_scalar > x);
 856 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator<= (const T & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if the value of y is lower or equal than the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB487\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 487 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 488 {
 489     return (x <= y\&.get_value());
 490 }
 .fi
-
 .SS "bool operator== (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
 
 .PP
 Returns true if x is equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. 
 .PP
-Definition at line \fB798\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 798 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 799 {
 800     scifir::scalar_unit y(init_scalar);
 801     return (x == y);
 802 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator== (const \fBscifir::scalar_unit\fP & x, const T & y)"
 
 .PP
 Returns true if the value of the scalar_unit is equal to the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB499\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 499 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 500 {
 501     return (x\&.get_value() == y);
 502 }
 .fi
-
 .SS "bool operator== (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Returns true if x is equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. 
 .PP
-Definition at line \fB831\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 831 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 832 {
 833     return (x == init_scalar);
 834 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator== (const T & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if the value of the scalar_unit is equal to the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB463\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 463 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 464 {
 465     return (x == y\&.get_value());
 466 }
 .fi
-
 .SS "bool operator> (const \fBscifir::scalar_unit\fP & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if x has a greather value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. 
 .PP
-Definition at line \fB770\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 770 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 771 {
 772     if(!x\&.has_dimensions(y))
@@ -771,123 +708,123 @@ Definition at line \fB770\fP of file \fBscalar_unit\&.cpp\fP\&..PP
 785     }
 786 }
 .fi
-
 .SS "bool operator> (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
 
 .PP
 Returns true if x is greather than the scalar_unit initialized with the string being compared\&. 
 .PP
-Definition at line \fB815\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 815 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 816 {
 817     scifir::scalar_unit y(init_scalar);
 818     return (x > y);
 819 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator> (const \fBscifir::scalar_unit\fP & x, const T & y)"
 
 .PP
 Returns true if the value of x is greather than the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB517\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 517 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 518 {
 519     return (x\&.get_value() > y);
 520 }
 .fi
-
 .SS "bool operator> (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Returns true if x is lower than the scalar_unit initialized with the string being compared\&. 
 .PP
-Definition at line \fB847\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 847 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 848 {
 849     scifir::scalar_unit y(init_scalar);
 850     return (y > x);
 851 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator> (const T & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if the value of y is lower than the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB481\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 481 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 482 {
 483     return (x > y\&.get_value());
 484 }
 .fi
-
 .SS "bool operator>= (const \fBscifir::scalar_unit\fP & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if x has a greather or equal value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. 
 .PP
-Definition at line \fB793\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 793 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 794 {
 795     return !(x < y);
 796 }
 .fi
-
 .SS "bool operator>= (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
 
 .PP
 Returns true if x is greather or equal to the scalar_unit initialized with the string being compared\&. 
 .PP
-Definition at line \fB826\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 826 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 827 {
 828     return !(x < init_scalar);
 829 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator>= (const \fBscifir::scalar_unit\fP & x, const T & y)"
 
 .PP
 Returns true if the value of x is equal or greather than the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB529\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 529 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 530 {
 531     return (x\&.get_value() >= y);
 532 }
 .fi
-
 .SS "bool operator>= (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
 
 .PP
 Returns true if x is lower or equal to the scalar_unit initialized with the string being compared\&. 
 .PP
-Definition at line \fB858\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 858 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 859 {
 860     return !(init_scalar < x);
 861 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator>= (const T & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Returns true if the value of y is equal or greather than the numeric type, ignoring the dimensions\&. 
 .PP
-Definition at line \fB493\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 493 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 494 {
 495     return (x >= y\&.get_value());
 496 }
 .fi
-
-.SS "istream & operator>> (istream & is, \fBscifir::scalar_unit\fP & x)"
+.SS "istream& operator>> (istream & is, \fBscifir::scalar_unit\fP & x)"
 
 .PP
-Allows that an istream is initializes by string an scalar_unit x\&. 
+Allows that an istream initializes by string a scalar_unit x\&. 
 .PP
-Definition at line \fB891\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+Definition at line 891 of file scalar_unit\&.cpp\&.
+.PP
 .nf
 892 {
 893     char a[256];
@@ -898,13 +835,13 @@ Definition at line \fB891\fP of file \fBscalar_unit\&.cpp\fP\&..PP
 898     return is;
 899 }
 .fi
-
 .SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> float operator^ (const T & x, const \fBscifir::scalar_unit\fP & y)"
 
 .PP
 Exponentiates a numeric type x with a scalar_unit y, only if that scalar_unit as empty dimensions, returns a float as the result of the calculation\&. 
 .PP
-Definition at line \fB430\fP of file \fBscalar_unit\&.hpp\fP\&..PP
+Definition at line 430 of file scalar_unit\&.hpp\&.
+.PP
 .nf
 431 {
 432     if(y\&.has_empty_dimensions())
@@ -917,7 +854,6 @@ Definition at line \fB430\fP of file \fBscalar_unit\&.hpp\fP\&..PP
 439     }
 440 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

@@ -1,23 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="chemistry__units_8cpp" kind="file" language="C++">
     <compoundname>chemistry_units.cpp</compoundname>
     <includes refid="chemistry__units_8hpp" local="yes">./chemistry_units.hpp</includes>
     <includes local="no">string</includes>
     <incdepgraph>
-      <node id="1">
-        <label>predefined_units/chemistry_units.cpp</label>
-        <link refid="chemistry__units_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>./chemistry_units.hpp</label>
-        <link refid="chemistry__units_8hpp"/>
-        <childnode refid="3" relation="include">
-        </childnode>
+      <node id="10">
+        <label>boost/algorithm/string.hpp</label>
       </node>
       <node id="4">
         <label>../units/dimension.hpp</label>
@@ -47,17 +36,8 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
+      <node id="6">
+        <label>cstdint</label>
       </node>
       <node id="3">
         <label>../units/scalar_unit.hpp</label>
@@ -83,53 +63,73 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
+      <node id="14">
+        <label>cmath</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>map</label>
+      </node>
+      <node id="5">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>string_view</label>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
       <node id="18">
         <label>../util/is_number.hpp</label>
         <link refid="is__number_8hpp"/>
         <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>algorithm</label>
-      </node>
-      <node id="10">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="14">
-        <label>cmath</label>
-      </node>
-      <node id="13">
-        <label>cstddef</label>
-      </node>
-      <node id="6">
-        <label>cstdint</label>
-      </node>
-      <node id="12">
-        <label>cstring</label>
-      </node>
-      <node id="7">
-        <label>iostream</label>
-      </node>
-      <node id="8">
-        <label>map</label>
-      </node>
-      <node id="15">
-        <label>set</label>
+      <node id="1">
+        <label>predefined_units/chemistry_units.cpp</label>
+        <link refid="chemistry__units_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
       </node>
       <node id="16">
         <label>sstream</label>
       </node>
-      <node id="9">
-        <label>string</label>
+      <node id="7">
+        <label>iostream</label>
       </node>
-      <node id="20">
-        <label>string_view</label>
+      <node id="13">
+        <label>cstddef</label>
       </node>
       <node id="19">
         <label>type_traits</label>
       </node>
-      <node id="17">
-        <label>vector</label>
+      <node id="15">
+        <label>set</label>
+      </node>
+      <node id="2">
+        <label>./chemistry_units.hpp</label>
+        <link refid="chemistry__units_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>algorithm</label>
+      </node>
+      <node id="12">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
@@ -147,23 +147,23 @@
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="8"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GENERAL<sp/>CHEMISTRY</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10" refid="namespacescifir_1a5d6cfabb76a9753e9e073e79194b5866" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">density</ref>,</highlight><highlight class="stringliteral">&quot;g/m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="11" refid="namespacescifir_1a5e49a6dfffe5fc0c9ff381ab99873c8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">viscosity</ref>,</highlight><highlight class="stringliteral">&quot;m2/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="12" refid="namespacescifir_1a9dae8769dbaec3e99ec27f782ddad4f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">specific_volume</ref>,</highlight><highlight class="stringliteral">&quot;m3/g&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="13" refid="namespacescifir_1a16ecdc1b530e269a636e1ae82ea9f1e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">specific_heat_capacity</ref>,</highlight><highlight class="stringliteral">&quot;m2/s2*K&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="14" refid="namespacescifir_1a23351675a5fabc973a5cffe8eb104b55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">specific_entropy</ref>,</highlight><highlight class="stringliteral">&quot;m2/s2*K&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="15" refid="namespacescifir_1a6eb9ba9fc536fe87631166e92c13cbd1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">specific_energy</ref>,</highlight><highlight class="stringliteral">&quot;m2/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="16" refid="namespacescifir_1a2cd821ed2982998ed2778363090fed1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">molar_volume</ref>,</highlight><highlight class="stringliteral">&quot;m3/mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="17" refid="namespacescifir_1a0981eb68c9e5ab542881a66520707f51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">molar_mass</ref>,</highlight><highlight class="stringliteral">&quot;g/mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="18" refid="namespacescifir_1a2bcb17ab2e6576141c809c82306bcbc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">molar_heat_capacity</ref>,</highlight><highlight class="stringliteral">&quot;m2*g/s2*K*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="19" refid="namespacescifir_1a4ec8920d411b01291fbad20c25f4988a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">molar_enthalpy</ref>,</highlight><highlight class="stringliteral">&quot;m2*g/s2*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="20" refid="namespacescifir_1a4af38679293da8fe13acf66b043f2955" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">molar_entropy</ref>,</highlight><highlight class="stringliteral">&quot;m2*g/s2*K*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="21" refid="namespacescifir_1a3d9df5368dc2fa577a1f362a70df055f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">molar_energy</ref>,</highlight><highlight class="stringliteral">&quot;m2*g/s2*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="22" refid="namespacescifir_1a9e2644261e567ecc655f74d32543f381" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">molar_conductivity</ref>,</highlight><highlight class="stringliteral">&quot;s3*A2/g*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="23" refid="namespacescifir_1a9f9fe8d88b64875594bded97ae517982" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">energy_density</ref>,</highlight><highlight class="stringliteral">&quot;g/m*s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="24" refid="namespacescifir_1aa8be50af4878cebac89e8c75b92ad6fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">catalytic_efficiency</ref>,</highlight><highlight class="stringliteral">&quot;m3/s*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="10" refid="namespacescifir_1a5d6cfabb76a9753e9e073e79194b5866" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(density,</highlight><highlight class="stringliteral">&quot;g/m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11" refid="namespacescifir_1a5e49a6dfffe5fc0c9ff381ab99873c8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(viscosity,</highlight><highlight class="stringliteral">&quot;m2/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12" refid="namespacescifir_1a9dae8769dbaec3e99ec27f782ddad4f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(specific_volume,</highlight><highlight class="stringliteral">&quot;m3/g&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13" refid="namespacescifir_1a16ecdc1b530e269a636e1ae82ea9f1e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(specific_heat_capacity,</highlight><highlight class="stringliteral">&quot;m2/s2*K&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14" refid="namespacescifir_1a23351675a5fabc973a5cffe8eb104b55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(specific_entropy,</highlight><highlight class="stringliteral">&quot;m2/s2*K&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15" refid="namespacescifir_1a6eb9ba9fc536fe87631166e92c13cbd1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(specific_energy,</highlight><highlight class="stringliteral">&quot;m2/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16" refid="namespacescifir_1a2cd821ed2982998ed2778363090fed1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(molar_volume,</highlight><highlight class="stringliteral">&quot;m3/mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17" refid="namespacescifir_1a0981eb68c9e5ab542881a66520707f51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(molar_mass,</highlight><highlight class="stringliteral">&quot;g/mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18" refid="namespacescifir_1a2bcb17ab2e6576141c809c82306bcbc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(molar_heat_capacity,</highlight><highlight class="stringliteral">&quot;m2*g/s2*K*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19" refid="namespacescifir_1a4ec8920d411b01291fbad20c25f4988a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(molar_enthalpy,</highlight><highlight class="stringliteral">&quot;m2*g/s2*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20" refid="namespacescifir_1a4af38679293da8fe13acf66b043f2955" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(molar_entropy,</highlight><highlight class="stringliteral">&quot;m2*g/s2*K*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21" refid="namespacescifir_1a3d9df5368dc2fa577a1f362a70df055f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(molar_energy,</highlight><highlight class="stringliteral">&quot;m2*g/s2*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22" refid="namespacescifir_1a9e2644261e567ecc655f74d32543f381" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(molar_conductivity,</highlight><highlight class="stringliteral">&quot;s3*A2/g*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23" refid="namespacescifir_1a9f9fe8d88b64875594bded97ae517982" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(energy_density,</highlight><highlight class="stringliteral">&quot;g/m*s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24" refid="namespacescifir_1aa8be50af4878cebac89e8c75b92ad6fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(catalytic_efficiency,</highlight><highlight class="stringliteral">&quot;m3/s*mol&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="classscifir_1_1cas__number_1ae20cc9cd1cd63cf6092bd7ab7bec92b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1cas__number_1ae20cc9cd1cd63cf6092bd7ab7bec92b4" kindref="member">cas_number::cas_number</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>)<sp/>:<sp/>value(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>)</highlight></codeline>
+<codeline lineno="26" refid="classscifir_1_1cas__number_1ae20cc9cd1cd63cf6092bd7ab7bec92b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>cas_number::cas_number(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>new_value)<sp/>:<sp/>value(new_value)</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
@@ -173,13 +173,13 @@
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SUBSTANCE</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36" refid="namespacescifir_1a025d1053300c434639819eed2f8c3705" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">molarity</ref>,</highlight><highlight class="stringliteral">&quot;mol/m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="37" refid="namespacescifir_1a3fec254ade6f05ea5fe824c2f3d07f81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">molality</ref>,</highlight><highlight class="stringliteral">&quot;mol/g&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="38" refid="namespacescifir_1a93bffb1a2953cb075ea72857d584c40a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">linear_mass_density</ref>,</highlight><highlight class="stringliteral">&quot;g/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="39" refid="namespacescifir_1a0d960fb0d83593357b1eb744385c7be8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">area_density</ref>,</highlight><highlight class="stringliteral">&quot;g/m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="40" refid="namespacescifir_1aec97a8f5356a0a4903067816af6213c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">dynamic_viscosity</ref>,</highlight><highlight class="stringliteral">&quot;g/m*s&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="41" refid="namespacescifir_1af93376dc9e367cf58bd1fa22414a146e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">mass_flow_rate</ref>,</highlight><highlight class="stringliteral">&quot;g/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="42" refid="namespacescifir_1ab2b98a52955bcca62afe085e77a2b421" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">catalytic_activity</ref>,</highlight><highlight class="stringliteral">&quot;kat&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36" refid="namespacescifir_1a025d1053300c434639819eed2f8c3705" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacescifir_1a5d6cfabb76a9753e9e073e79194b5866" kindref="member">SCALAR_UNIT_CPP</ref>(molarity,</highlight><highlight class="stringliteral">&quot;mol/m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37" refid="namespacescifir_1a3fec254ade6f05ea5fe824c2f3d07f81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacescifir_1a5d6cfabb76a9753e9e073e79194b5866" kindref="member">SCALAR_UNIT_CPP</ref>(molality,</highlight><highlight class="stringliteral">&quot;mol/g&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38" refid="namespacescifir_1a93bffb1a2953cb075ea72857d584c40a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacescifir_1a5d6cfabb76a9753e9e073e79194b5866" kindref="member">SCALAR_UNIT_CPP</ref>(linear_mass_density,</highlight><highlight class="stringliteral">&quot;g/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39" refid="namespacescifir_1a0d960fb0d83593357b1eb744385c7be8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacescifir_1a5d6cfabb76a9753e9e073e79194b5866" kindref="member">SCALAR_UNIT_CPP</ref>(area_density,</highlight><highlight class="stringliteral">&quot;g/m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40" refid="namespacescifir_1aec97a8f5356a0a4903067816af6213c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacescifir_1a5d6cfabb76a9753e9e073e79194b5866" kindref="member">SCALAR_UNIT_CPP</ref>(dynamic_viscosity,</highlight><highlight class="stringliteral">&quot;g/m*s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41" refid="namespacescifir_1af93376dc9e367cf58bd1fa22414a146e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacescifir_1a5d6cfabb76a9753e9e073e79194b5866" kindref="member">SCALAR_UNIT_CPP</ref>(mass_flow_rate,</highlight><highlight class="stringliteral">&quot;g/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42" refid="namespacescifir_1ab2b98a52955bcca62afe085e77a2b421" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacescifir_1a5d6cfabb76a9753e9e073e79194b5866" kindref="member">SCALAR_UNIT_CPP</ref>(catalytic_activity,</highlight><highlight class="stringliteral">&quot;kat&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="43"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="predefined_units/chemistry_units.cpp"/>

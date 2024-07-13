@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1pixel" kind="class" language="C++" prot="public">
     <compoundname>scifir::pixel</compoundname>
     <includes refid="pixel_8hpp" local="no">pixel.hpp</includes>
-    <sectiondef kind="private-attrib">
+      <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" prot="private" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::pixel::value</definition>
         <argsstring></argsstring>
         <name>value</name>
-        <qualifiedname>scifir::pixel::value</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -18,14 +17,13 @@
         </inbodydescription>
         <location file="special_units/pixel.hpp" line="129" column="7" bodyfile="special_units/pixel.hpp" bodystart="129" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1pixel_1ac37a8dcc1c1e3f39fcc671463b5cc527" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::pixel::pixel</definition>
         <argsstring>()</argsstring>
         <name>pixel</name>
-        <qualifiedname>scifir::pixel::pixel</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -39,9 +37,8 @@
         <definition>scifir::pixel::pixel</definition>
         <argsstring>(const pixel &amp;x)</argsstring>
         <name>pixel</name>
-        <qualifiedname>scifir::pixel::pixel</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -57,7 +54,6 @@
         <definition>scifir::pixel::pixel</definition>
         <argsstring>(pixel &amp;&amp;x)</argsstring>
         <name>pixel</name>
-        <qualifiedname>scifir::pixel::pixel</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -75,9 +71,8 @@
         <definition>scifir::pixel::pixel</definition>
         <argsstring>(float new_value)</argsstring>
         <name>pixel</name>
-        <qualifiedname>scifir::pixel::pixel</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <briefdescription>
@@ -93,9 +88,8 @@
         <definition>scifir::pixel::pixel</definition>
         <argsstring>(double new_value)</argsstring>
         <name>pixel</name>
-        <qualifiedname>scifir::pixel::pixel</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>double</type>
           <declname>new_value</declname>
         </param>
         <briefdescription>
@@ -111,9 +105,8 @@
         <definition>scifir::pixel::pixel</definition>
         <argsstring>(long double new_value)</argsstring>
         <name>pixel</name>
-        <qualifiedname>scifir::pixel::pixel</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>long double</type>
           <declname>new_value</declname>
         </param>
         <briefdescription>
@@ -129,9 +122,8 @@
         <definition>scifir::pixel::pixel</definition>
         <argsstring>(int new_value)</argsstring>
         <name>pixel</name>
-        <qualifiedname>scifir::pixel::pixel</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>new_value</declname>
         </param>
         <briefdescription>
@@ -147,9 +139,8 @@
         <definition>scifir::pixel::pixel</definition>
         <argsstring>(const string &amp;init_pixel)</argsstring>
         <name>pixel</name>
-        <qualifiedname>scifir::pixel::pixel</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_pixel</declname>
         </param>
         <briefdescription>
@@ -165,9 +156,8 @@
         <definition>scifir::pixel::pixel</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>pixel</name>
-        <qualifiedname>scifir::pixel::pixel</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -183,9 +173,8 @@
         <definition>pixel &amp; scifir::pixel::operator=</definition>
         <argsstring>(const pixel &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pixel::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -201,7 +190,6 @@
         <definition>pixel &amp; scifir::pixel::operator=</definition>
         <argsstring>(pixel &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pixel::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -219,9 +207,8 @@
         <definition>pixel &amp; scifir::pixel::operator=</definition>
         <argsstring>(float new_value)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pixel::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <briefdescription>
@@ -237,9 +224,8 @@
         <definition>pixel &amp; scifir::pixel::operator=</definition>
         <argsstring>(const string &amp;init_pixel)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pixel::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_pixel</declname>
         </param>
         <briefdescription>
@@ -255,9 +241,8 @@
         <definition>pixel &amp; scifir::pixel::operator=</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pixel::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -273,7 +258,6 @@
         <definition>scifir::pixel::operator float</definition>
         <argsstring>() const</argsstring>
         <name>operator float</name>
-        <qualifiedname>scifir::pixel::operator float</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -282,12 +266,11 @@
         </inbodydescription>
         <location file="special_units/pixel.hpp" line="36" column="10" bodyfile="special_units/pixel.hpp" bodystart="36" bodyend="39"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &amp;</type>
-        <definition>const float &amp; scifir::pixel::get_value</definition>
+      <memberdef kind="function" id="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const float &amp;</type>
+        <definition>const float&amp; scifir::pixel::get_value</definition>
         <argsstring>() const</argsstring>
         <name>get_value</name>
-        <qualifiedname>scifir::pixel::get_value</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -301,9 +284,8 @@
         <definition>pixel scifir::pixel::operator+</definition>
         <argsstring>(const pixel &amp;x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::pixel::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -319,9 +301,8 @@
         <definition>pixel scifir::pixel::operator-</definition>
         <argsstring>(const pixel &amp;x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::pixel::operator-</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -337,9 +318,8 @@
         <definition>pixel scifir::pixel::operator*</definition>
         <argsstring>(const pixel &amp;x) const</argsstring>
         <name>operator*</name>
-        <qualifiedname>scifir::pixel::operator*</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -355,9 +335,8 @@
         <definition>pixel scifir::pixel::operator/</definition>
         <argsstring>(const pixel &amp;x) const</argsstring>
         <name>operator/</name>
-        <qualifiedname>scifir::pixel::operator/</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -373,9 +352,8 @@
         <definition>pixel scifir::pixel::operator^</definition>
         <argsstring>(const pixel &amp;x) const</argsstring>
         <name>operator^</name>
-        <qualifiedname>scifir::pixel::operator^</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -387,13 +365,12 @@
         <location file="special_units/pixel.hpp" line="50" column="7" bodyfile="special_units/pixel.cpp" bodystart="112" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pixel_1a312914abb3a3b6d9335d62de77d88671" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator+=</definition>
         <argsstring>(const pixel &amp;x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::pixel::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -405,13 +382,12 @@
         <location file="special_units/pixel.hpp" line="51" column="6" bodyfile="special_units/pixel.cpp" bodystart="117" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pixel_1a81f7c10a478473e2e5eecce7b903e4c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator-=</definition>
         <argsstring>(const pixel &amp;x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::pixel::operator-=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -423,13 +399,12 @@
         <location file="special_units/pixel.hpp" line="52" column="6" bodyfile="special_units/pixel.cpp" bodystart="122" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pixel_1ace97481b414b7afaebd71fe11745d565" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator*=</definition>
         <argsstring>(const pixel &amp;x)</argsstring>
         <name>operator*=</name>
-        <qualifiedname>scifir::pixel::operator*=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -441,13 +416,12 @@
         <location file="special_units/pixel.hpp" line="53" column="6" bodyfile="special_units/pixel.cpp" bodystart="127" bodyend="130"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pixel_1ad96bb7b4799ffae91706ffda7252f3eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator/=</definition>
         <argsstring>(const pixel &amp;x)</argsstring>
         <name>operator/=</name>
-        <qualifiedname>scifir::pixel::operator/=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -459,13 +433,12 @@
         <location file="special_units/pixel.hpp" line="54" column="6" bodyfile="special_units/pixel.cpp" bodystart="132" bodyend="135"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1pixel_1a0e39299acb673f7fa48d741260030d18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator^=</definition>
         <argsstring>(const pixel &amp;x)</argsstring>
         <name>operator^=</name>
-        <qualifiedname>scifir::pixel::operator^=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -479,18 +452,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1a9397fb4e2cea946f1473c7c33f0c6979" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::pixel::operator=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -506,18 +478,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1af0b0b0f77443358713ca5caff1ae5e36" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref></type>
         <definition>pixel scifir::pixel::operator+</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::pixel::operator+</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -533,18 +504,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1a8d0bc5f7e3476695136a51c32e975217" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref></type>
         <definition>pixel scifir::pixel::operator-</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::pixel::operator-</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -560,18 +530,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1a580b4e571e9889b86eae1f3f0d0a5a37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref></type>
         <definition>pixel scifir::pixel::operator*</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator*</name>
-        <qualifiedname>scifir::pixel::operator*</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -587,18 +556,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1abe385f8b70533e92650e2e6edcac2c97" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref></type>
         <definition>pixel scifir::pixel::operator/</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator/</name>
-        <qualifiedname>scifir::pixel::operator/</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -614,18 +582,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1a59a0cd976bf02506c32a40fe3b8cf477" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1pixel" kindref="compound">pixel</ref></type>
         <definition>pixel scifir::pixel::operator^</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator^</name>
-        <qualifiedname>scifir::pixel::operator^</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -641,18 +608,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1a37b2d2515a364e601020c06bb2dfe28a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator+=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::pixel::operator+=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -668,18 +634,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1a58cf3c5c9e22dbe91d125e1066bb79ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator-=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::pixel::operator-=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -695,18 +660,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1a49b7b37296b834fc7dff47a6e3234d57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator*=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator*=</name>
-        <qualifiedname>scifir::pixel::operator*=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -722,18 +686,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1aa6662fd9a26a9c3a21109b1cfea99ff1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator/=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator/=</name>
-        <qualifiedname>scifir::pixel::operator/=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -749,18 +712,17 @@
       <memberdef kind="function" id="classscifir_1_1pixel_1a2b7a78f168372bea43a23dd0c540a2b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1pixel_1a1e79500c250b2efae9f1ba0933f85a84" kindref="member">value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::operator^=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator^=</name>
-        <qualifiedname>scifir::pixel::operator^=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
@@ -778,7 +740,6 @@
         <definition>pixel &amp; scifir::pixel::operator++</definition>
         <argsstring>()</argsstring>
         <name>operator++</name>
-        <qualifiedname>scifir::pixel::operator++</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -792,9 +753,8 @@
         <definition>pixel scifir::pixel::operator++</definition>
         <argsstring>(int)</argsstring>
         <name>operator++</name>
-        <qualifiedname>scifir::pixel::operator++</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -809,7 +769,6 @@
         <definition>pixel &amp; scifir::pixel::operator--</definition>
         <argsstring>()</argsstring>
         <name>operator--</name>
-        <qualifiedname>scifir::pixel::operator--</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -823,9 +782,8 @@
         <definition>pixel scifir::pixel::operator--</definition>
         <argsstring>(int)</argsstring>
         <name>operator--</name>
-        <qualifiedname>scifir::pixel::operator--</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -835,16 +793,15 @@
         </inbodydescription>
         <location file="special_units/pixel.hpp" line="126" column="7" bodyfile="special_units/pixel.cpp" bodystart="161" bodyend="166"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1pixel_1aed5d65834bd7b28963950784fd60d534" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::pixel::initialize_from_string</definition>
         <argsstring>(const string &amp;init_pixel)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::pixel::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_pixel</declname>
         </param>
         <briefdescription>
@@ -855,14 +812,14 @@
         </inbodydescription>
         <location file="special_units/pixel.hpp" line="131" column="6" bodyfile="special_units/pixel.cpp" bodystart="168" bodyend="182"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <location file="special_units/pixel.hpp" line="17" column="1" bodyfile="special_units/pixel.hpp" bodystart="18" bodyend="133"/>
     <listofallmembers>
-      <member refid="classscifir_1_1pixel_1a787b708456c79b02f869a394a24ed41c" prot="public" virt="non-virtual"><scope>scifir::pixel</scope><name>get_value</name></member>
+      <member refid="classscifir_1_1pixel_1a813cb357585b0413f8369c991321ede1" prot="public" virt="non-virtual"><scope>scifir::pixel</scope><name>get_value</name></member>
       <member refid="classscifir_1_1pixel_1aed5d65834bd7b28963950784fd60d534" prot="private" virt="non-virtual"><scope>scifir::pixel</scope><name>initialize_from_string</name></member>
       <member refid="classscifir_1_1pixel_1af31f373bcd06b57379209b717865af2a" prot="public" virt="non-virtual"><scope>scifir::pixel</scope><name>operator float</name></member>
       <member refid="classscifir_1_1pixel_1a7bdb977977b49b98641803bfc474fc90" prot="public" virt="non-virtual"><scope>scifir::pixel</scope><name>operator*</name></member>

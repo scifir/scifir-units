@@ -1,30 +1,31 @@
-\doxysection{topology/direction.cpp File Reference}
-\hypertarget{direction_8cpp}{}\label{direction_8cpp}\index{topology/direction.cpp@{topology/direction.cpp}}
-{\ttfamily \#include "{}./direction.\+hpp"{}}\newline
-{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+\hypertarget{direction_8cpp}{}\doxysection{topology/direction.cpp File Reference}
+\label{direction_8cpp}\index{topology/direction.cpp@{topology/direction.cpp}}
+{\ttfamily \#include \char`\"{}./direction.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}boost/algorithm/string.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
-Include dependency graph for direction.\+cpp\+:\nopagebreak
+Include dependency graph for direction.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{direction_8cpp__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Namespaces}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+ \mbox{\hyperlink{namespacescifir}{scifir}}
 \begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1direction_a3f9d1fd5a6c5f61b9fb49c4e56938319}{direction\+::name}} \mbox{\hyperlink{namespacescifir_aa4875573260680d0b88ef4a41dd91973}{scifir\+::create\+\_\+direction}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&x)
+direction\+::name \mbox{\hyperlink{namespacescifir_aa4875573260680d0b88ef4a41dd91973}{scifir\+::create\+\_\+direction}} (const string \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1direction_a3f9d1fd5a6c5f61b9fb49c4e56938319}{direction\+::name}} \mbox{\hyperlink{namespacescifir_a0dccca47be7b8a3781d743c46394dd20}{scifir\+::invert}} (\mbox{\hyperlink{classscifir_1_1direction_a3f9d1fd5a6c5f61b9fb49c4e56938319}{direction\+::name}} x)
+direction\+::name \mbox{\hyperlink{namespacescifir_a0dccca47be7b8a3781d743c46394dd20}{scifir\+::invert}} (direction\+::name x)
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a1fb6d77f9f2f7b1794a731f4f7e2603d}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1direction_a3f9d1fd5a6c5f61b9fb49c4e56938319}{direction\+::name}} x)
+string \mbox{\hyperlink{namespacescifir_a1fb6d77f9f2f7b1794a731f4f7e2603d}{scifir\+::to\+\_\+string}} (direction\+::name x)
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a40311f1f76470e8fe68d9ddb9c9a16ec}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1direction}{direction}} \&x)
+string \mbox{\hyperlink{namespacescifir_a40311f1f76470e8fe68d9ddb9c9a16ec}{scifir\+::to\+\_\+string}} (const direction \&x)
 \item 
 bool \mbox{\hyperlink{direction_8cpp_a0f6558c733aefa110323a011e9a61bf6}{operator==}} (const \mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&x, const \mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&y)
 \item 
@@ -52,14 +53,14 @@ string \mbox{\hyperlink{direction_8cpp_af02ec01815eb0e233bb5bb7e8573ff54}{operat
 \item 
 string \mbox{\hyperlink{direction_8cpp_a8cbe333070265cf3ddec4c98c487e2d4}{operator+}} (const \mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&y, const string \&x)
 \item 
-ostream \& \mbox{\hyperlink{direction_8cpp_a260343da55a8be132aea79ad914e115f}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&x)
+ostream \& \mbox{\hyperlink{direction_8cpp_a33880479bcbf35c6a291573a506ecb18}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&x)
 \item 
-istream \& \mbox{\hyperlink{direction_8cpp_a1447436d910eb95522dd783dae07f6ad}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&x)
+istream \& \mbox{\hyperlink{direction_8cpp_ad35bc1228399426cbb3f5d0679c7429a}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&x)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{direction_8cpp_a0e3f49f7be372061c882e7f31a2a3efd}\label{direction_8cpp_a0e3f49f7be372061c882e7f31a2a3efd} 
+\mbox{\Hypertarget{direction_8cpp_a0e3f49f7be372061c882e7f31a2a3efd}\label{direction_8cpp_a0e3f49f7be372061c882e7f31a2a3efd}} 
 \index{direction.cpp@{direction.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
@@ -67,16 +68,16 @@ istream \& \mbox{\hyperlink{direction_8cpp_a1447436d910eb95522dd783dae07f6ad}{op
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00359}{359}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 359 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00360\ \{}
-\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00362\ \}}
+\DoxyCodeLine{360 \{}
+\DoxyCodeLine{361     \textcolor{keywordflow}{return} !(x == y);}
+\DoxyCodeLine{362 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a4c13f34be1e6ec384cffe1da141d7b28}\label{direction_8cpp_a4c13f34be1e6ec384cffe1da141d7b28} 
+\mbox{\Hypertarget{direction_8cpp_a4c13f34be1e6ec384cffe1da141d7b28}\label{direction_8cpp_a4c13f34be1e6ec384cffe1da141d7b28}} 
 \index{direction.cpp@{direction.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
@@ -84,16 +85,16 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00359}{359}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 397 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00398\ \{}
-\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_direction);}
-\DoxyCodeLine{00400\ \}}
+\DoxyCodeLine{398 \{}
+\DoxyCodeLine{399     \textcolor{keywordflow}{return} !(x == init\_direction);}
+\DoxyCodeLine{400 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a1bc1c91e847187e7cd7697d600a8d3eb}\label{direction_8cpp_a1bc1c91e847187e7cd7697d600a8d3eb} 
+\mbox{\Hypertarget{direction_8cpp_a1bc1c91e847187e7cd7697d600a8d3eb}\label{direction_8cpp_a1bc1c91e847187e7cd7697d600a8d3eb}} 
 \index{direction.cpp@{direction.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
@@ -101,16 +102,16 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00397}{397}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00376}{376}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 376 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00377\ \{}
-\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00379\ \}}
+\DoxyCodeLine{377 \{}
+\DoxyCodeLine{378     \textcolor{keywordflow}{return} !(x == y);}
+\DoxyCodeLine{379 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_af38cd1d961be77f7c86ba7f3f2cb2ad6}\label{direction_8cpp_af38cd1d961be77f7c86ba7f3f2cb2ad6} 
+\mbox{\Hypertarget{direction_8cpp_af38cd1d961be77f7c86ba7f3f2cb2ad6}\label{direction_8cpp_af38cd1d961be77f7c86ba7f3f2cb2ad6}} 
 \index{direction.cpp@{direction.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
@@ -118,16 +119,16 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00376}{376}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00408}{408}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 408 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00409\ \{}
-\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_direction\ ==\ x);}
-\DoxyCodeLine{00411\ \}}
+\DoxyCodeLine{409 \{}
+\DoxyCodeLine{410     \textcolor{keywordflow}{return} !(init\_direction == x);}
+\DoxyCodeLine{411 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a1bed3290b95887e0105dbcc5ebed6901}\label{direction_8cpp_a1bed3290b95887e0105dbcc5ebed6901} 
+\mbox{\Hypertarget{direction_8cpp_a1bed3290b95887e0105dbcc5ebed6901}\label{direction_8cpp_a1bed3290b95887e0105dbcc5ebed6901}} 
 \index{direction.cpp@{direction.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
@@ -135,16 +136,16 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00408}{408}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00386}{386}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 386 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00387\ \{}
-\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00389\ \}}
+\DoxyCodeLine{387 \{}
+\DoxyCodeLine{388     \textcolor{keywordflow}{return} !(x == y);}
+\DoxyCodeLine{389 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a8cbe333070265cf3ddec4c98c487e2d4}\label{direction_8cpp_a8cbe333070265cf3ddec4c98c487e2d4} 
+\mbox{\Hypertarget{direction_8cpp_a8cbe333070265cf3ddec4c98c487e2d4}\label{direction_8cpp_a8cbe333070265cf3ddec4c98c487e2d4}} 
 \index{direction.cpp@{direction.cpp}!operator+@{operator+}}
 \index{operator+@{operator+}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -152,19 +153,19 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00386}{386}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00428}{428}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 428 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00429\ \{}
-\DoxyCodeLine{00430\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00431\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00432\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00434\ \}}
+\DoxyCodeLine{429 \{}
+\DoxyCodeLine{430     ostringstream output;}
+\DoxyCodeLine{431     output << y;}
+\DoxyCodeLine{432     output << x;}
+\DoxyCodeLine{433     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{434 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_af02ec01815eb0e233bb5bb7e8573ff54}\label{direction_8cpp_af02ec01815eb0e233bb5bb7e8573ff54} 
+\mbox{\Hypertarget{direction_8cpp_af02ec01815eb0e233bb5bb7e8573ff54}\label{direction_8cpp_af02ec01815eb0e233bb5bb7e8573ff54}} 
 \index{direction.cpp@{direction.cpp}!operator+@{operator+}}
 \index{operator+@{operator+}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -172,19 +173,19 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00428}{428}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00420}{420}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 420 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00421\ \{}
-\DoxyCodeLine{00422\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00423\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00424\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00426\ \}}
+\DoxyCodeLine{421 \{}
+\DoxyCodeLine{422     ostringstream output;}
+\DoxyCodeLine{423     output << x;}
+\DoxyCodeLine{424     output << y;}
+\DoxyCodeLine{425     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{426 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_ab6e5bad38e04e00dd64bea7ef0154e78}\label{direction_8cpp_ab6e5bad38e04e00dd64bea7ef0154e78} 
+\mbox{\Hypertarget{direction_8cpp_ab6e5bad38e04e00dd64bea7ef0154e78}\label{direction_8cpp_ab6e5bad38e04e00dd64bea7ef0154e78}} 
 \index{direction.cpp@{direction.cpp}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
@@ -192,35 +193,35 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00420}{420}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00413}{413}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 413 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00414\ \{}
-\DoxyCodeLine{00415\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00416\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00417\ \ \ \ \ x\ +=\ output.str();}
-\DoxyCodeLine{00418\ \}}
+\DoxyCodeLine{414 \{}
+\DoxyCodeLine{415     ostringstream output;}
+\DoxyCodeLine{416     output << y;}
+\DoxyCodeLine{417     x += output.str();}
+\DoxyCodeLine{418 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a260343da55a8be132aea79ad914e115f}\label{direction_8cpp_a260343da55a8be132aea79ad914e115f} 
+\mbox{\Hypertarget{direction_8cpp_a33880479bcbf35c6a291573a506ecb18}\label{direction_8cpp_a33880479bcbf35c6a291573a506ecb18}} 
 \index{direction.cpp@{direction.cpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00436}{436}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 436 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00437\ \{}
-\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
-\DoxyCodeLine{00439\ \}}
+\DoxyCodeLine{437 \{}
+\DoxyCodeLine{438     \textcolor{keywordflow}{return} os << \mbox{\hyperlink{namespacescifir_a40311f1f76470e8fe68d9ddb9c9a16ec}{to\_string}}(x);}
+\DoxyCodeLine{439 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a0f6558c733aefa110323a011e9a61bf6}\label{direction_8cpp_a0f6558c733aefa110323a011e9a61bf6} 
+\mbox{\Hypertarget{direction_8cpp_a0f6558c733aefa110323a011e9a61bf6}\label{direction_8cpp_a0f6558c733aefa110323a011e9a61bf6}} 
 \index{direction.cpp@{direction.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
@@ -228,23 +229,23 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00436}{436}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00347}{347}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 347 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00348\ \{}
-\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1direction_ab53ccba15d542980abc6e137d65b1e92}{value}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1direction_ab53ccba15d542980abc6e137d65b1e92}{value}})}
-\DoxyCodeLine{00350\ \ \ \ \ \{}
-\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00352\ \ \ \ \ \}}
-\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00354\ \ \ \ \ \{}
-\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00356\ \ \ \ \ \}}
-\DoxyCodeLine{00357\ \}}
+\DoxyCodeLine{348 \{}
+\DoxyCodeLine{349     \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1direction_ab53ccba15d542980abc6e137d65b1e92}{value}} == y.\mbox{\hyperlink{classscifir_1_1direction_ab53ccba15d542980abc6e137d65b1e92}{value}})}
+\DoxyCodeLine{350     \{}
+\DoxyCodeLine{351         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{352     \}}
+\DoxyCodeLine{353     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{354     \{}
+\DoxyCodeLine{355         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{356     \}}
+\DoxyCodeLine{357 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a0f3b350b363ebd2f21499d9fb3604e3e}\label{direction_8cpp_a0f3b350b363ebd2f21499d9fb3604e3e} 
+\mbox{\Hypertarget{direction_8cpp_a0f3b350b363ebd2f21499d9fb3604e3e}\label{direction_8cpp_a0f3b350b363ebd2f21499d9fb3604e3e}} 
 \index{direction.cpp@{direction.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
@@ -252,17 +253,17 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00347}{347}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00391}{391}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 391 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00392\ \{}
-\DoxyCodeLine{00393\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1direction}{scifir::direction}}\ y(init\_direction);}
-\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00395\ \}}
+\DoxyCodeLine{392 \{}
+\DoxyCodeLine{393     \mbox{\hyperlink{classscifir_1_1direction}{scifir::direction}} y(init\_direction);}
+\DoxyCodeLine{394     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{395 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_acda64e4f2f38d7bbd2777bc45406b668}\label{direction_8cpp_acda64e4f2f38d7bbd2777bc45406b668} 
+\mbox{\Hypertarget{direction_8cpp_acda64e4f2f38d7bbd2777bc45406b668}\label{direction_8cpp_acda64e4f2f38d7bbd2777bc45406b668}} 
 \index{direction.cpp@{direction.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
@@ -270,23 +271,23 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00391}{391}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00364}{364}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 364 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00365\ \{}
-\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1direction_ab53ccba15d542980abc6e137d65b1e92}{value}}\ ==\ y)}
-\DoxyCodeLine{00367\ \ \ \ \ \{}
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00369\ \ \ \ \ \}}
-\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00371\ \ \ \ \ \{}
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00373\ \ \ \ \ \}}
-\DoxyCodeLine{00374\ \}}
+\DoxyCodeLine{365 \{}
+\DoxyCodeLine{366     \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1direction_ab53ccba15d542980abc6e137d65b1e92}{value}} == y)}
+\DoxyCodeLine{367     \{}
+\DoxyCodeLine{368         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{369     \}}
+\DoxyCodeLine{370     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{371     \{}
+\DoxyCodeLine{372         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{373     \}}
+\DoxyCodeLine{374 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a4d75ba53a5c16e42498f004ab9710264}\label{direction_8cpp_a4d75ba53a5c16e42498f004ab9710264} 
+\mbox{\Hypertarget{direction_8cpp_a4d75ba53a5c16e42498f004ab9710264}\label{direction_8cpp_a4d75ba53a5c16e42498f004ab9710264}} 
 \index{direction.cpp@{direction.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
@@ -294,17 +295,17 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00364}{364}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00402}{402}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 402 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00403\ \{}
-\DoxyCodeLine{00404\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1direction}{scifir::direction}}\ y(init\_direction);}
-\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00406\ \}}
+\DoxyCodeLine{403 \{}
+\DoxyCodeLine{404     \mbox{\hyperlink{classscifir_1_1direction}{scifir::direction}} y(init\_direction);}
+\DoxyCodeLine{405     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{406 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a8ebf4ebaf3d5cc5455509c66a477b11c}\label{direction_8cpp_a8ebf4ebaf3d5cc5455509c66a477b11c} 
+\mbox{\Hypertarget{direction_8cpp_a8ebf4ebaf3d5cc5455509c66a477b11c}\label{direction_8cpp_a8ebf4ebaf3d5cc5455509c66a477b11c}} 
 \index{direction.cpp@{direction.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
@@ -312,34 +313,34 @@ Definition at line \mbox{\hyperlink{direction_8cpp_source_l00402}{402}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00381}{381}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 381 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00382\ \{}
-\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00384\ \}}
+\DoxyCodeLine{382 \{}
+\DoxyCodeLine{383     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{384 \}}
 
 \end{DoxyCode}
-\Hypertarget{direction_8cpp_a1447436d910eb95522dd783dae07f6ad}\label{direction_8cpp_a1447436d910eb95522dd783dae07f6ad} 
+\mbox{\Hypertarget{direction_8cpp_ad35bc1228399426cbb3f5d0679c7429a}\label{direction_8cpp_ad35bc1228399426cbb3f5d0679c7429a}} 
 \index{direction.cpp@{direction.cpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!direction.cpp@{direction.cpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
-{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1direction}{scifir\+::direction}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{direction_8cpp_source_l00441}{441}} of file \mbox{\hyperlink{direction_8cpp_source}{direction.\+cpp}}.
+Definition at line 441 of file direction.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00442\ \{}
-\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00444\ \ \ \ \ is.getline(a,\ 256);}
-\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
-\DoxyCodeLine{00446\ \ \ \ \ boost::trim(b);}
-\DoxyCodeLine{00447\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1direction}{scifir::direction}}(b);}
-\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{00449\ \}}
+\DoxyCodeLine{442 \{}
+\DoxyCodeLine{443     \textcolor{keywordtype}{char} a[256];}
+\DoxyCodeLine{444     is.getline(a, 256);}
+\DoxyCodeLine{445     \textcolor{keywordtype}{string} b(a);}
+\DoxyCodeLine{446     boost::trim(b);}
+\DoxyCodeLine{447     x = \mbox{\hyperlink{classscifir_1_1direction}{scifir::direction}}(b);}
+\DoxyCodeLine{448     \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{449 \}}
 
 \end{DoxyCode}

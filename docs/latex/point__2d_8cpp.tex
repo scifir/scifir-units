@@ -1,46 +1,47 @@
-\doxysection{topology/point\+\_\+2d.cpp File Reference}
-\hypertarget{point__2d_8cpp}{}\label{point__2d_8cpp}\index{topology/point\_2d.cpp@{topology/point\_2d.cpp}}
-{\ttfamily \#include "{}./point\+\_\+2d.\+hpp"{}}\newline
-{\ttfamily \#include "{}../coordinates/coordinates\+\_\+2d.\+hpp"{}}\newline
-{\ttfamily \#include "{}../util/types.\+hpp"{}}\newline
-Include dependency graph for point\+\_\+2d.\+cpp\+:\nopagebreak
+\hypertarget{point__2d_8cpp}{}\doxysection{topology/point\+\_\+2d.cpp File Reference}
+\label{point__2d_8cpp}\index{topology/point\_2d.cpp@{topology/point\_2d.cpp}}
+{\ttfamily \#include \char`\"{}./point\+\_\+2d.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../coordinates/coordinates\+\_\+2d.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/types.\+hpp\char`\"{}}\newline
+Include dependency graph for point\+\_\+2d.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{point__2d_8cpp__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Namespaces}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+ \mbox{\hyperlink{namespacescifir}{scifir}}
 \begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a56f60e962e24ebf7f776494203a43832}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1point__2d}{point\+\_\+2d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x)
+string \mbox{\hyperlink{namespacescifir_a56f60e962e24ebf7f776494203a43832}{scifir\+::to\+\_\+string}} (const point\+\_\+2d$<$ float $>$ \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a20a4708c2ac11e070f98556a86f08cb1}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1point__2d}{point\+\_\+2d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1point__2d}{point\+\_\+2d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&y)
+float \mbox{\hyperlink{namespacescifir_a20a4708c2ac11e070f98556a86f08cb1}{scifir\+::distance}} (const point\+\_\+2d$<$ float $>$ \&x, const point\+\_\+2d$<$ float $>$ \&y)
 \item 
-ostream \& \mbox{\hyperlink{point__2d_8cpp_a663319acedf14e7b1c5ccb51ee2c4617}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1point__2d}{scifir\+::point\+\_\+2d}}$<$ float $>$ \&x)
+ostream \& \mbox{\hyperlink{point__2d_8cpp_ae0dea03325035c171d1475ecdc4d2889}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1point__2d}{scifir\+::point\+\_\+2d}}$<$ float $>$ \&x)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{point__2d_8cpp_a663319acedf14e7b1c5ccb51ee2c4617}\label{point__2d_8cpp_a663319acedf14e7b1c5ccb51ee2c4617} 
+\mbox{\Hypertarget{point__2d_8cpp_ae0dea03325035c171d1475ecdc4d2889}\label{point__2d_8cpp_ae0dea03325035c171d1475ecdc4d2889}} 
 \index{point\_2d.cpp@{point\_2d.cpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!point\_2d.cpp@{point\_2d.cpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1point__2d}{scifir\+::point\+\_\+2d}}$<$ float $>$ \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1point__2d}{scifir\+::point\+\_\+2d}}$<$ float $>$ \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{point__2d_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{point__2d_8cpp_source}{point\+\_\+2d.\+cpp}}.
+Definition at line 41 of file point\+\_\+2d.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00042\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{scifir::to\_string}}(x);}
-\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43     \textcolor{keywordflow}{return} os << \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{scifir::to\_string}}(x);}
+\DoxyCodeLine{44 \}}
 
 \end{DoxyCode}

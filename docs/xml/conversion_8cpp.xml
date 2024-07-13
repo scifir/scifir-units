@@ -1,20 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="conversion_8cpp" kind="file" language="C++">
     <compoundname>conversion.cpp</compoundname>
     <includes refid="conversion_8hpp" local="yes">./conversion.hpp</includes>
     <includes refid="dimension_8hpp" local="yes">./dimension.hpp</includes>
     <includes local="no">string</includes>
     <incdepgraph>
-      <node id="1">
-        <label>units/conversion.cpp</label>
-        <link refid="conversion_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
+      <node id="9">
+        <label>boost/algorithm/string.hpp</label>
       </node>
       <node id="2">
         <label>./conversion.hpp</label>
@@ -52,6 +45,28 @@
         <childnode refid="16" relation="include">
         </childnode>
       </node>
+      <node id="5">
+        <label>cstdint</label>
+      </node>
+      <node id="13">
+        <label>cmath</label>
+      </node>
+      <node id="1">
+        <label>units/conversion.cpp</label>
+        <link refid="conversion_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>map</label>
+      </node>
       <node id="4">
         <label>../units/prefix.hpp</label>
         <link refid="prefix_8hpp"/>
@@ -64,41 +79,26 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="10">
-        <label>algorithm</label>
-      </node>
-      <node id="9">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="13">
-        <label>cmath</label>
-      </node>
-      <node id="12">
-        <label>cstddef</label>
-      </node>
-      <node id="5">
-        <label>cstdint</label>
-      </node>
-      <node id="11">
-        <label>cstring</label>
-      </node>
-      <node id="6">
-        <label>iostream</label>
-      </node>
-      <node id="7">
-        <label>map</label>
-      </node>
-      <node id="14">
-        <label>set</label>
+      <node id="16">
+        <label>vector</label>
       </node>
       <node id="15">
         <label>sstream</label>
       </node>
-      <node id="8">
-        <label>string</label>
+      <node id="6">
+        <label>iostream</label>
       </node>
-      <node id="16">
-        <label>vector</label>
+      <node id="12">
+        <label>cstddef</label>
+      </node>
+      <node id="14">
+        <label>set</label>
+      </node>
+      <node id="10">
+        <label>algorithm</label>
+      </node>
+      <node id="11">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
@@ -116,19 +116,19 @@
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="9"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="10" refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" kindref="member">conversion::conversion</ref>()<sp/>:<sp/>unit_to(),factor()</highlight></codeline>
+<codeline lineno="10" refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>conversion::conversion()<sp/>:<sp/>unit_to(),factor()</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13" refid="classscifir_1_1conversion_1a777276190f1888d24f28c271c507bd2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" kindref="member">conversion::conversion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_unit_to</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_factor</ref>)<sp/>:<sp/>unit_to(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_unit_to</ref>),factor((<ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref>)<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_factor</ref>)</highlight></codeline>
+<codeline lineno="13" refid="classscifir_1_1conversion_1a777276190f1888d24f28c271c507bd2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" kindref="member">conversion::conversion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_unit_to,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_factor)<sp/>:<sp/>unit_to(new_unit_to),factor((long<sp/>double)new_factor)</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="classscifir_1_1conversion_1a59bcdfaaa45ad31fae525e316a6cbd97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" kindref="member">conversion::conversion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_unit_to</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_factor</ref>)<sp/>:<sp/>unit_to(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_unit_to</ref>),factor((<ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref>)<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_factor</ref>)</highlight></codeline>
+<codeline lineno="16" refid="classscifir_1_1conversion_1a59bcdfaaa45ad31fae525e316a6cbd97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" kindref="member">conversion::conversion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_unit_to,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_factor)<sp/>:<sp/>unit_to(new_unit_to),factor((long<sp/>double)new_factor)</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19" refid="classscifir_1_1conversion_1a8bce1e2068cb238bad745aa25567de6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" kindref="member">conversion::conversion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_unit_to</ref>,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_factor</ref>)<sp/>:<sp/>unit_to(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_unit_to</ref>),factor(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_factor</ref>)</highlight></codeline>
+<codeline lineno="19" refid="classscifir_1_1conversion_1a8bce1e2068cb238bad745aa25567de6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" kindref="member">conversion::conversion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>new_unit_to,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>new_factor)<sp/>:<sp/>unit_to(new_unit_to),factor(new_factor)</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="namespacescifir_1a7cc97e15d82cd4bb47e27606f980b1ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">map&lt;string, conversion&gt;</ref><sp/><ref refid="namespacescifir_1a7cc97e15d82cd4bb47e27606f980b1ac" kindref="member">get_conversion</ref></highlight></codeline>
+<codeline lineno="22" refid="namespacescifir_1a7cc97e15d82cd4bb47e27606f980b1ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,<sp/>conversion&gt;<sp/><ref refid="namespacescifir_1a7cc97e15d82cd4bb47e27606f980b1ac" kindref="member">get_conversion</ref></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Common<sp/>units</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;ha&quot;</highlight><highlight class="normal">,<sp/><ref refid="classscifir_1_1conversion" kindref="compound">conversion</ref>(</highlight><highlight class="stringliteral">&quot;hm2&quot;</highlight><highlight class="normal">,<sp/>1.0L)},<sp/></highlight><highlight class="comment">//<sp/>Hectare</highlight><highlight class="normal"></highlight></codeline>

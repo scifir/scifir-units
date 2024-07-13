@@ -1,30 +1,31 @@
-\doxysection{special\+\_\+units/aid.cpp File Reference}
-\hypertarget{aid_8cpp}{}\label{aid_8cpp}\index{special\_units/aid.cpp@{special\_units/aid.cpp}}
-{\ttfamily \#include "{}./aid.\+hpp"{}}\newline
-{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+\hypertarget{aid_8cpp}{}\doxysection{special\+\_\+units/aid.cpp File Reference}
+\label{aid_8cpp}\index{special\_units/aid.cpp@{special\_units/aid.cpp}}
+{\ttfamily \#include \char`\"{}./aid.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}boost/algorithm/string.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-Include dependency graph for aid.\+cpp\+:\nopagebreak
+Include dependency graph for aid.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{aid_8cpp__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Namespaces}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+ \mbox{\hyperlink{namespacescifir}{scifir}}
 \begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a55aef4d5616f29c80bdf521cdedc6d0a}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1aid}{aid}} \&x)
+string \mbox{\hyperlink{namespacescifir_a55aef4d5616f29c80bdf521cdedc6d0a}{scifir\+::to\+\_\+string}} (const aid \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a05fe01e617f5ab6367f0e55522846767}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1aid_aef81e5d08382b7a56fe5f99f00417be6}{aid\+::type}} \&x)
+string \mbox{\hyperlink{namespacescifir_a05fe01e617f5ab6367f0e55522846767}{scifir\+::to\+\_\+string}} (const aid\+::type \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1aid_aef81e5d08382b7a56fe5f99f00417be6}{aid\+::type}} \mbox{\hyperlink{namespacescifir_adbc150ffa5bc7eac0fc06f66b5e0c7a9}{scifir\+::create\+\_\+astronomical\+\_\+type}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{astronomical\+\_\+type\+\_\+abbreviation}})
+aid\+::type \mbox{\hyperlink{namespacescifir_adbc150ffa5bc7eac0fc06f66b5e0c7a9}{scifir\+::create\+\_\+astronomical\+\_\+type}} (const string \&astronomical\+\_\+type\+\_\+abbreviation)
 \item 
 bool \mbox{\hyperlink{aid_8cpp_a117bfc9be21dfb8739b69b40767d59b7}{operator==}} (const \mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&x, const \mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&y)
 \item 
@@ -44,14 +45,14 @@ string \mbox{\hyperlink{aid_8cpp_af3452a3436468014f134c87c4d4a392f}{operator+}} 
 \item 
 string \mbox{\hyperlink{aid_8cpp_ad79839ef6dcb890f8a88be76b6e56f1c}{operator+}} (const \mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&y, const string \&x)
 \item 
-ostream \& \mbox{\hyperlink{aid_8cpp_abe7aa95f12b86951be90fc7620842f98}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&x)
+ostream \& \mbox{\hyperlink{aid_8cpp_a588546aea91339024405cd4edea0baf2}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&x)
 \item 
-istream \& \mbox{\hyperlink{aid_8cpp_a4f669aba5577e21cc4019e2eee922414}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&x)
+istream \& \mbox{\hyperlink{aid_8cpp_aa676ef43015871f3540183cce4b3575d}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&x)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{aid_8cpp_a9c9de3dc61c98293ea70f228301f116a}\label{aid_8cpp_a9c9de3dc61c98293ea70f228301f116a} 
+\mbox{\Hypertarget{aid_8cpp_a9c9de3dc61c98293ea70f228301f116a}\label{aid_8cpp_a9c9de3dc61c98293ea70f228301f116a}} 
 \index{aid.cpp@{aid.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -59,16 +60,16 @@ istream \& \mbox{\hyperlink{aid_8cpp_a4f669aba5577e21cc4019e2eee922414}{operator
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00554}{554}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 554 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00555\ \{}
-\DoxyCodeLine{00556\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00557\ \}}
+\DoxyCodeLine{555 \{}
+\DoxyCodeLine{556     \textcolor{keywordflow}{return} !(x == y);}
+\DoxyCodeLine{557 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_a47f837ac16c0400228c163ca00d3a7a7}\label{aid_8cpp_a47f837ac16c0400228c163ca00d3a7a7} 
+\mbox{\Hypertarget{aid_8cpp_a47f837ac16c0400228c163ca00d3a7a7}\label{aid_8cpp_a47f837ac16c0400228c163ca00d3a7a7}} 
 \index{aid.cpp@{aid.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -76,16 +77,16 @@ Definition at line \mbox{\hyperlink{aid_8cpp_source_l00554}{554}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00565}{565}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 565 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00566\ \{}
-\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_aid);}
-\DoxyCodeLine{00568\ \}}
+\DoxyCodeLine{566 \{}
+\DoxyCodeLine{567     \textcolor{keywordflow}{return} !(x == init\_aid);}
+\DoxyCodeLine{568 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_a74bdcae2a65c8d1d9c23a461b2701bcd}\label{aid_8cpp_a74bdcae2a65c8d1d9c23a461b2701bcd} 
+\mbox{\Hypertarget{aid_8cpp_a74bdcae2a65c8d1d9c23a461b2701bcd}\label{aid_8cpp_a74bdcae2a65c8d1d9c23a461b2701bcd}} 
 \index{aid.cpp@{aid.cpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -93,16 +94,16 @@ Definition at line \mbox{\hyperlink{aid_8cpp_source_l00565}{565}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00576}{576}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 576 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00577\ \{}
-\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_aid\ ==\ x);}
-\DoxyCodeLine{00579\ \}}
+\DoxyCodeLine{577 \{}
+\DoxyCodeLine{578     \textcolor{keywordflow}{return} !(init\_aid == x);}
+\DoxyCodeLine{579 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_ad79839ef6dcb890f8a88be76b6e56f1c}\label{aid_8cpp_ad79839ef6dcb890f8a88be76b6e56f1c} 
+\mbox{\Hypertarget{aid_8cpp_ad79839ef6dcb890f8a88be76b6e56f1c}\label{aid_8cpp_ad79839ef6dcb890f8a88be76b6e56f1c}} 
 \index{aid.cpp@{aid.cpp}!operator+@{operator+}}
 \index{operator+@{operator+}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -110,19 +111,19 @@ Definition at line \mbox{\hyperlink{aid_8cpp_source_l00576}{576}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00596}{596}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 596 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00597\ \{}
-\DoxyCodeLine{00598\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00599\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00600\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00601\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00602\ \}}
+\DoxyCodeLine{597 \{}
+\DoxyCodeLine{598     ostringstream output;}
+\DoxyCodeLine{599     output << y;}
+\DoxyCodeLine{600     output << x;}
+\DoxyCodeLine{601     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{602 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_af3452a3436468014f134c87c4d4a392f}\label{aid_8cpp_af3452a3436468014f134c87c4d4a392f} 
+\mbox{\Hypertarget{aid_8cpp_af3452a3436468014f134c87c4d4a392f}\label{aid_8cpp_af3452a3436468014f134c87c4d4a392f}} 
 \index{aid.cpp@{aid.cpp}!operator+@{operator+}}
 \index{operator+@{operator+}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -130,19 +131,19 @@ Definition at line \mbox{\hyperlink{aid_8cpp_source_l00596}{596}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00588}{588}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 588 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00589\ \{}
-\DoxyCodeLine{00590\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00591\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00592\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00593\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00594\ \}}
+\DoxyCodeLine{589 \{}
+\DoxyCodeLine{590     ostringstream output;}
+\DoxyCodeLine{591     output << x;}
+\DoxyCodeLine{592     output << y;}
+\DoxyCodeLine{593     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{594 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_a694208c04b83fe017e7e35ea8e37bb64}\label{aid_8cpp_a694208c04b83fe017e7e35ea8e37bb64} 
+\mbox{\Hypertarget{aid_8cpp_a694208c04b83fe017e7e35ea8e37bb64}\label{aid_8cpp_a694208c04b83fe017e7e35ea8e37bb64}} 
 \index{aid.cpp@{aid.cpp}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
@@ -150,35 +151,35 @@ Definition at line \mbox{\hyperlink{aid_8cpp_source_l00588}{588}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00581}{581}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 581 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00582\ \{}
-\DoxyCodeLine{00583\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00584\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00585\ \ \ \ \ x\ +=\ output.str();}
-\DoxyCodeLine{00586\ \}}
+\DoxyCodeLine{582 \{}
+\DoxyCodeLine{583     ostringstream output;}
+\DoxyCodeLine{584     output << y;}
+\DoxyCodeLine{585     x += output.str();}
+\DoxyCodeLine{586 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_abe7aa95f12b86951be90fc7620842f98}\label{aid_8cpp_abe7aa95f12b86951be90fc7620842f98} 
+\mbox{\Hypertarget{aid_8cpp_a588546aea91339024405cd4edea0baf2}\label{aid_8cpp_a588546aea91339024405cd4edea0baf2}} 
 \index{aid.cpp@{aid.cpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00604}{604}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 604 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00605\ \{}
-\DoxyCodeLine{00606\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
-\DoxyCodeLine{00607\ \}}
+\DoxyCodeLine{605 \{}
+\DoxyCodeLine{606     \textcolor{keywordflow}{return} os << \mbox{\hyperlink{namespacescifir_a05fe01e617f5ab6367f0e55522846767}{to\_string}}(x);}
+\DoxyCodeLine{607 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_a117bfc9be21dfb8739b69b40767d59b7}\label{aid_8cpp_a117bfc9be21dfb8739b69b40767d59b7} 
+\mbox{\Hypertarget{aid_8cpp_a117bfc9be21dfb8739b69b40767d59b7}\label{aid_8cpp_a117bfc9be21dfb8739b69b40767d59b7}} 
 \index{aid.cpp@{aid.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -186,23 +187,23 @@ Definition at line \mbox{\hyperlink{aid_8cpp_source_l00604}{604}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00542}{542}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 542 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00543\ \{}
-\DoxyCodeLine{00544\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1aid_a5b87d60fd368fcff5054e9d2107074b9}{universe}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1aid_a5b87d60fd368fcff5054e9d2107074b9}{universe}}\ and\ x.\mbox{\hyperlink{classscifir_1_1aid_a8d4499965704178bf289177c0fa76b0a}{galaxy}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1aid_a8d4499965704178bf289177c0fa76b0a}{galaxy}}\ and\ x.\mbox{\hyperlink{classscifir_1_1aid_a344984185dd7cbf41273831e76bad529}{solar\_system}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1aid_a344984185dd7cbf41273831e76bad529}{solar\_system}}\ and\ x.\mbox{\hyperlink{classscifir_1_1aid_a758a8e1c39b9e644bc7ae21fb1d96782}{astronomical\_body}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1aid_a758a8e1c39b9e644bc7ae21fb1d96782}{astronomical\_body}})}
-\DoxyCodeLine{00545\ \ \ \ \ \{}
-\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00547\ \ \ \ \ \}}
-\DoxyCodeLine{00548\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00549\ \ \ \ \ \{}
-\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00551\ \ \ \ \ \}}
-\DoxyCodeLine{00552\ \}}
+\DoxyCodeLine{543 \{}
+\DoxyCodeLine{544     \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1aid_a5b87d60fd368fcff5054e9d2107074b9}{universe}} == y.\mbox{\hyperlink{classscifir_1_1aid_a5b87d60fd368fcff5054e9d2107074b9}{universe}} and x.\mbox{\hyperlink{classscifir_1_1aid_a8d4499965704178bf289177c0fa76b0a}{galaxy}} == y.\mbox{\hyperlink{classscifir_1_1aid_a8d4499965704178bf289177c0fa76b0a}{galaxy}} and x.\mbox{\hyperlink{classscifir_1_1aid_a344984185dd7cbf41273831e76bad529}{solar\_system}} == y.\mbox{\hyperlink{classscifir_1_1aid_a344984185dd7cbf41273831e76bad529}{solar\_system}} and x.\mbox{\hyperlink{classscifir_1_1aid_a758a8e1c39b9e644bc7ae21fb1d96782}{astronomical\_body}} == y.\mbox{\hyperlink{classscifir_1_1aid_a758a8e1c39b9e644bc7ae21fb1d96782}{astronomical\_body}})}
+\DoxyCodeLine{545     \{}
+\DoxyCodeLine{546         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{547     \}}
+\DoxyCodeLine{548     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{549     \{}
+\DoxyCodeLine{550         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{551     \}}
+\DoxyCodeLine{552 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_ab9e73deb53ceb30fdc7dca8be88761f8}\label{aid_8cpp_ab9e73deb53ceb30fdc7dca8be88761f8} 
+\mbox{\Hypertarget{aid_8cpp_ab9e73deb53ceb30fdc7dca8be88761f8}\label{aid_8cpp_ab9e73deb53ceb30fdc7dca8be88761f8}} 
 \index{aid.cpp@{aid.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -210,17 +211,17 @@ Definition at line \mbox{\hyperlink{aid_8cpp_source_l00542}{542}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00559}{559}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 559 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00560\ \{}
-\DoxyCodeLine{00561\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}(init\_aid);}
-\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00563\ \}}
+\DoxyCodeLine{560 \{}
+\DoxyCodeLine{561     \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}} y = \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}(init\_aid);}
+\DoxyCodeLine{562     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{563 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_a520d1e4326a294d64f90e220e2e9db6f}\label{aid_8cpp_a520d1e4326a294d64f90e220e2e9db6f} 
+\mbox{\Hypertarget{aid_8cpp_a520d1e4326a294d64f90e220e2e9db6f}\label{aid_8cpp_a520d1e4326a294d64f90e220e2e9db6f}} 
 \index{aid.cpp@{aid.cpp}!operator==@{operator==}}
 \index{operator==@{operator==}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -228,35 +229,35 @@ Definition at line \mbox{\hyperlink{aid_8cpp_source_l00559}{559}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00570}{570}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 570 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00571\ \{}
-\DoxyCodeLine{00572\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}(init\_aid);}
-\DoxyCodeLine{00573\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00574\ \}}
+\DoxyCodeLine{571 \{}
+\DoxyCodeLine{572     \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}} y = \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}(init\_aid);}
+\DoxyCodeLine{573     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{574 \}}
 
 \end{DoxyCode}
-\Hypertarget{aid_8cpp_a4f669aba5577e21cc4019e2eee922414}\label{aid_8cpp_a4f669aba5577e21cc4019e2eee922414} 
+\mbox{\Hypertarget{aid_8cpp_aa676ef43015871f3540183cce4b3575d}\label{aid_8cpp_aa676ef43015871f3540183cce4b3575d}} 
 \index{aid.cpp@{aid.cpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!aid.cpp@{aid.cpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
-{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1aid}{scifir\+::aid}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{aid_8cpp_source_l00609}{609}} of file \mbox{\hyperlink{aid_8cpp_source}{aid.\+cpp}}.
+Definition at line 609 of file aid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00610\ \{}
-\DoxyCodeLine{00611\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00612\ \ \ \ \ is.getline(a,\ 256);}
-\DoxyCodeLine{00613\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
-\DoxyCodeLine{00614\ \ \ \ \ boost::trim(b);}
-\DoxyCodeLine{00615\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}(b);}
-\DoxyCodeLine{00616\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{00617\ \}}
+\DoxyCodeLine{610 \{}
+\DoxyCodeLine{611     \textcolor{keywordtype}{char} a[256];}
+\DoxyCodeLine{612     is.getline(a, 256);}
+\DoxyCodeLine{613     \textcolor{keywordtype}{string} b(a);}
+\DoxyCodeLine{614     boost::trim(b);}
+\DoxyCodeLine{615     x = \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}(b);}
+\DoxyCodeLine{616     \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{617 \}}
 
 \end{DoxyCode}

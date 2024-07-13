@@ -1,42 +1,44 @@
-\doxysection{meca\+\_\+number/lab\+\_\+number.hpp File Reference}
-\hypertarget{lab__number_8hpp}{}\label{lab__number_8hpp}\index{meca\_number/lab\_number.hpp@{meca\_number/lab\_number.hpp}}
-{\ttfamily \#include "{}../util/is\+\_\+number.\+hpp"{}}\newline
-{\ttfamily \#include "{}../util/types.\+hpp"{}}\newline
-{\ttfamily \#include "{}../units/scalar\+\_\+unit.\+hpp"{}}\newline
-{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+\hypertarget{lab__number_8hpp}{}\doxysection{meca\+\_\+number/lab\+\_\+number.hpp File Reference}
+\label{lab__number_8hpp}\index{meca\_number/lab\_number.hpp@{meca\_number/lab\_number.hpp}}
+{\ttfamily \#include \char`\"{}../util/is\+\_\+number.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/types.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../units/scalar\+\_\+unit.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}boost/algorithm/string.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
-Include dependency graph for lab\+\_\+number.\+hpp\+:\nopagebreak
+Include dependency graph for lab\+\_\+number.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{lab__number_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=327pt]{lab__number_8hpp__dep__incl}
+\includegraphics[width=328pt]{lab__number_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Classes}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number$<$ T $>$}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Namespaces}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+ \mbox{\hyperlink{namespacescifir}{scifir}}
 \begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T $>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a8678aa370e625c458e82b7b74b96d278}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1lab__number}{lab\+\_\+number}}$<$ T $>$ \&x)
+{\footnotesize template$<$typename T $>$ }\\string \mbox{\hyperlink{namespacescifir_a8678aa370e625c458e82b7b74b96d278}{scifir\+::to\+\_\+string}} (const lab\+\_\+number$<$ T $>$ \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a6f938e487f453f713e335dd6f884a413}{scifir\+::is\+\_\+lab\+\_\+number}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+lab\+\_\+number}})
+bool \mbox{\hyperlink{namespacescifir_a6f938e487f453f713e335dd6f884a413}{scifir\+::is\+\_\+lab\+\_\+number}} (const string \&init\+\_\+lab\+\_\+number)
 \item 
 {\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{lab__number_8hpp_a5d32c7e486a76a8dc134301ac210b104}{operator==}} (const \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ U $>$ \&y)
 \item 
@@ -56,14 +58,14 @@ namespace \mbox{\hyperlink{namespacescifir}{scifir}}
 \item 
 {\footnotesize template$<$typename T $>$ }\\string \mbox{\hyperlink{lab__number_8hpp_a22b193037173b03dd69498358f00e740}{operator+}} (const \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&x, const string \&y)
 \item 
-{\footnotesize template$<$typename T $>$ }\\ostream \& \mbox{\hyperlink{lab__number_8hpp_ad07977c8192b57b95be6bc207a4bc3da}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&x)
+{\footnotesize template$<$typename T $>$ }\\ostream \& \mbox{\hyperlink{lab__number_8hpp_aa00f561716a64af8ce4fc0d277f97cbf}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&x)
 \item 
-{\footnotesize template$<$typename T $>$ }\\istream \& \mbox{\hyperlink{lab__number_8hpp_a73a7697cdf8fc906059714d6b37132bc}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&x)
+{\footnotesize template$<$typename T $>$ }\\istream \& \mbox{\hyperlink{lab__number_8hpp_a2f6616b20fea203e50445b12a7874845}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&x)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{lab__number_8hpp_adc79a4b00cba09a15b767fa26d0d6bb5}\label{lab__number_8hpp_adc79a4b00cba09a15b767fa26d0d6bb5} 
+\mbox{\Hypertarget{lab__number_8hpp_adc79a4b00cba09a15b767fa26d0d6bb5}\label{lab__number_8hpp_adc79a4b00cba09a15b767fa26d0d6bb5}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -72,16 +74,16 @@ bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscif
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00132}{132}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 132 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00133\ \{}
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00135\ \}}
+\DoxyCodeLine{133 \{}
+\DoxyCodeLine{134     \textcolor{keywordflow}{return} !(x == y);}
+\DoxyCodeLine{135 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_a169033d72eca9e683f5b6459fcc7fcbd}\label{lab__number_8hpp_a169033d72eca9e683f5b6459fcc7fcbd} 
+\mbox{\Hypertarget{lab__number_8hpp_a169033d72eca9e683f5b6459fcc7fcbd}\label{lab__number_8hpp_a169033d72eca9e683f5b6459fcc7fcbd}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -90,16 +92,16 @@ bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscif
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00145}{145}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 145 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00146\ \{}
-\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_lab\_number);}
-\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{146 \{}
+\DoxyCodeLine{147     \textcolor{keywordflow}{return} !(x == init\_lab\_number);}
+\DoxyCodeLine{148 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_a0c015f0ccbd975d7b519be314e0e0dbf}\label{lab__number_8hpp_a0c015f0ccbd975d7b519be314e0e0dbf} 
+\mbox{\Hypertarget{lab__number_8hpp_a0c015f0ccbd975d7b519be314e0e0dbf}\label{lab__number_8hpp_a0c015f0ccbd975d7b519be314e0e0dbf}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -108,16 +110,16 @@ bool operator!= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+lab\
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00158}{158}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 158 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00159\ \{}
-\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_lab\_number\ ==\ x);}
-\DoxyCodeLine{00161\ \}}
+\DoxyCodeLine{159 \{}
+\DoxyCodeLine{160     \textcolor{keywordflow}{return} !(init\_lab\_number == x);}
+\DoxyCodeLine{161 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_a22b193037173b03dd69498358f00e740}\label{lab__number_8hpp_a22b193037173b03dd69498358f00e740} 
+\mbox{\Hypertarget{lab__number_8hpp_a22b193037173b03dd69498358f00e740}\label{lab__number_8hpp_a22b193037173b03dd69498358f00e740}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -126,16 +128,16 @@ string operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsci
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00176}{176}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 176 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00177\ \{}
-\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x)\ +\ y;}
-\DoxyCodeLine{00179\ \}}
+\DoxyCodeLine{177 \{}
+\DoxyCodeLine{178     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacescifir_a8678aa370e625c458e82b7b74b96d278}{to\_string}}(x) + y;}
+\DoxyCodeLine{179 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_aaa45aec8105922a392c17f15e70a855f}\label{lab__number_8hpp_aaa45aec8105922a392c17f15e70a855f} 
+\mbox{\Hypertarget{lab__number_8hpp_aaa45aec8105922a392c17f15e70a855f}\label{lab__number_8hpp_aaa45aec8105922a392c17f15e70a855f}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -144,16 +146,16 @@ string operator+ (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{c
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00170}{170}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 170 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00171\ \{}
-\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(y);}
-\DoxyCodeLine{00173\ \}}
+\DoxyCodeLine{171 \{}
+\DoxyCodeLine{172     \textcolor{keywordflow}{return} x + \mbox{\hyperlink{namespacescifir_a8678aa370e625c458e82b7b74b96d278}{to\_string}}(y);}
+\DoxyCodeLine{173 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_a56697b7105d93cd83d34fcb98bec6373}\label{lab__number_8hpp_a56697b7105d93cd83d34fcb98bec6373} 
+\mbox{\Hypertarget{lab__number_8hpp_a56697b7105d93cd83d34fcb98bec6373}\label{lab__number_8hpp_a56697b7105d93cd83d34fcb98bec6373}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
@@ -162,34 +164,34 @@ void operator+= (\begin{DoxyParamCaption}\item[{string \&}]{x,  }\item[{const \m
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00164}{164}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 164 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00165\ \{}
-\DoxyCodeLine{00166\ \ \ \ \ x\ +=\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(y);}
-\DoxyCodeLine{00167\ \}}
+\DoxyCodeLine{165 \{}
+\DoxyCodeLine{166     x += \mbox{\hyperlink{namespacescifir_a8678aa370e625c458e82b7b74b96d278}{to\_string}}(y);}
+\DoxyCodeLine{167 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_ad07977c8192b57b95be6bc207a4bc3da}\label{lab__number_8hpp_ad07977c8192b57b95be6bc207a4bc3da} 
+\mbox{\Hypertarget{lab__number_8hpp_aa00f561716a64af8ce4fc0d277f97cbf}\label{lab__number_8hpp_aa00f561716a64af8ce4fc0d277f97cbf}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00182}{182}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 182 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00183\ \{}
-\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
-\DoxyCodeLine{00185\ \}}
+\DoxyCodeLine{183 \{}
+\DoxyCodeLine{184     \textcolor{keywordflow}{return} os << \mbox{\hyperlink{namespacescifir_a8678aa370e625c458e82b7b74b96d278}{to\_string}}(x);}
+\DoxyCodeLine{185 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_a5d32c7e486a76a8dc134301ac210b104}\label{lab__number_8hpp_a5d32c7e486a76a8dc134301ac210b104} 
+\mbox{\Hypertarget{lab__number_8hpp_a5d32c7e486a76a8dc134301ac210b104}\label{lab__number_8hpp_a5d32c7e486a76a8dc134301ac210b104}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -198,23 +200,23 @@ bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscif
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00119}{119}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 119 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00120\ \{}
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.value\ ==\ y.value\ and\ x.error\_value\ ==\ y.error\_value)}
-\DoxyCodeLine{00122\ \ \ \ \ \{}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00124\ \ \ \ \ \}}
-\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00126\ \ \ \ \ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00128\ \ \ \ \ \}}
-\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{120 \{}
+\DoxyCodeLine{121     \textcolor{keywordflow}{if} (x.\mbox{\hyperlink{classscifir_1_1lab__number_a25d1942d4c74cdee805debcf87508f42}{value}} == y.\mbox{\hyperlink{classscifir_1_1lab__number_a25d1942d4c74cdee805debcf87508f42}{value}} and x.\mbox{\hyperlink{classscifir_1_1lab__number_a47a47719c9dc3a059d7dc78f520dfe66}{error\_value}} == y.\mbox{\hyperlink{classscifir_1_1lab__number_a47a47719c9dc3a059d7dc78f520dfe66}{error\_value}})}
+\DoxyCodeLine{122     \{}
+\DoxyCodeLine{123         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{124     \}}
+\DoxyCodeLine{125     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{126     \{}
+\DoxyCodeLine{127         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_a5ff3509983054476e2a98435ed08755e}\label{lab__number_8hpp_a5ff3509983054476e2a98435ed08755e} 
+\mbox{\Hypertarget{lab__number_8hpp_a5ff3509983054476e2a98435ed08755e}\label{lab__number_8hpp_a5ff3509983054476e2a98435ed08755e}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -223,17 +225,17 @@ bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscif
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00138}{138}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 138 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00139\ \{}
-\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::lab\_number<T>}}\ y(init\_lab\_number);}
-\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00142\ \}}
+\DoxyCodeLine{139 \{}
+\DoxyCodeLine{140     \mbox{\hyperlink{classscifir_1_1lab__number}{scifir::lab\_number<T>}} y(init\_lab\_number);}
+\DoxyCodeLine{141     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{142 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_a8c3b2733f529bb6a685258013120c084}\label{lab__number_8hpp_a8c3b2733f529bb6a685258013120c084} 
+\mbox{\Hypertarget{lab__number_8hpp_a8c3b2733f529bb6a685258013120c084}\label{lab__number_8hpp_a8c3b2733f529bb6a685258013120c084}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -242,35 +244,35 @@ bool operator== (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+lab\
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00151}{151}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 151 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00152\ \{}
-\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::lab\_number<T>}}\ y(init\_lab\_number);}
-\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00155\ \}}
+\DoxyCodeLine{152 \{}
+\DoxyCodeLine{153     \mbox{\hyperlink{classscifir_1_1lab__number}{scifir::lab\_number<T>}} y(init\_lab\_number);}
+\DoxyCodeLine{154     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{155 \}}
 
 \end{DoxyCode}
-\Hypertarget{lab__number_8hpp_a73a7697cdf8fc906059714d6b37132bc}\label{lab__number_8hpp_a73a7697cdf8fc906059714d6b37132bc} 
+\mbox{\Hypertarget{lab__number_8hpp_a2f6616b20fea203e50445b12a7874845}\label{lab__number_8hpp_a2f6616b20fea203e50445b12a7874845}} 
 \index{lab\_number.hpp@{lab\_number.hpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!lab\_number.hpp@{lab\_number.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1lab__number}{scifir\+::lab\+\_\+number}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{lab__number_8hpp_source_l00188}{188}} of file \mbox{\hyperlink{lab__number_8hpp_source}{lab\+\_\+number.\+hpp}}.
+Definition at line 188 of file lab\+\_\+number.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00189\ \{}
-\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00191\ \ \ \ \ is.getline(a,\ 256);}
-\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
-\DoxyCodeLine{00193\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::lab\_number<T>}}(b);}
-\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{00195\ \}}
+\DoxyCodeLine{189 \{}
+\DoxyCodeLine{190     \textcolor{keywordtype}{char} a[256];}
+\DoxyCodeLine{191     is.getline(a, 256);}
+\DoxyCodeLine{192     \textcolor{keywordtype}{string} b(a);}
+\DoxyCodeLine{193     x = \mbox{\hyperlink{classscifir_1_1lab__number}{scifir::lab\_number<T>}}(b);}
+\DoxyCodeLine{194     \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{195 \}}
 
 \end{DoxyCode}

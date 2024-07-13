@@ -1,21 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1size__3d" kind="class" language="C++" prot="public">
     <compoundname>scifir::size_3d</compoundname>
     <includes refid="size__3d_8hpp" local="no">size_3d.hpp</includes>
     <templateparamlist>
       <param>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
-        <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref></defval>
+        <type>typename T</type>
+        <defval>length</defval>
       </param>
     </templateparamlist>
-    <sectiondef kind="public-attrib">
+      <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1size__3d_1a00374fdae1c845643e428ca3db9390eb" prot="public" static="no" mutable="no">
         <type>T</type>
         <definition>T scifir::size_3d&lt; T &gt;::width</definition>
         <argsstring></argsstring>
         <name>width</name>
-        <qualifiedname>scifir::size_3d::width</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -29,7 +28,6 @@
         <definition>T scifir::size_3d&lt; T &gt;::height</definition>
         <argsstring></argsstring>
         <name>height</name>
-        <qualifiedname>scifir::size_3d::height</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -43,7 +41,6 @@
         <definition>T scifir::size_3d&lt; T &gt;::depth</definition>
         <argsstring></argsstring>
         <name>depth</name>
-        <qualifiedname>scifir::size_3d::depth</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -52,14 +49,13 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="99" column="3" bodyfile="special_units/size_3d.hpp" bodystart="99" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1size__3d_1a203226ede3f032f59fa077e3d62145ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::size_3d&lt; T &gt;::size_3d</definition>
         <argsstring>()</argsstring>
         <name>size_3d</name>
-        <qualifiedname>scifir::size_3d::size_3d</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -73,9 +69,8 @@
         <definition>scifir::size_3d&lt; T &gt;::size_3d</definition>
         <argsstring>(const size_3d&lt; T &gt; &amp;x)</argsstring>
         <name>size_3d</name>
-        <qualifiedname>scifir::size_3d::size_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -91,7 +86,6 @@
         <definition>scifir::size_3d&lt; T &gt;::size_3d</definition>
         <argsstring>(size_3d&lt; T &gt; &amp;&amp;x)</argsstring>
         <name>size_3d</name>
-        <qualifiedname>scifir::size_3d::size_3d</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;&amp;</type>
           <declname>x</declname>
@@ -109,17 +103,16 @@
         <definition>scifir::size_3d&lt; T &gt;::size_3d</definition>
         <argsstring>(const T &amp;new_width, const T &amp;new_height, const T &amp;new_depth)</argsstring>
         <name>size_3d</name>
-        <qualifiedname>scifir::size_3d::size_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <type>const T &amp;</type>
           <declname>new_width</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <type>const T &amp;</type>
           <declname>new_height</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <type>const T &amp;</type>
           <declname>new_depth</declname>
         </param>
         <briefdescription>
@@ -135,17 +128,16 @@
         <definition>scifir::size_3d&lt; T &gt;::size_3d</definition>
         <argsstring>(const string &amp;new_width, const string &amp;new_height, const string &amp;new_depth)</argsstring>
         <name>size_3d</name>
-        <qualifiedname>scifir::size_3d::size_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_width</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_height</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_depth</declname>
         </param>
         <briefdescription>
@@ -161,9 +153,8 @@
         <definition>scifir::size_3d&lt; T &gt;::size_3d</definition>
         <argsstring>(const string &amp;init_size_3d)</argsstring>
         <name>size_3d</name>
-        <qualifiedname>scifir::size_3d::size_3d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_size_3d</declname>
         </param>
         <briefdescription>
@@ -174,14 +165,13 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="34" column="10" bodyfile="special_units/size_3d.hpp" bodystart="34" bodyend="37"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__3d_1a98f8bc0fa68dd84e1be98e72df756a9a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1size__3d_1a46d0ddfccf708903e86c2451c3da0a69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
-        <definition>size_3d&lt; T &gt; &amp; scifir::size_3d&lt; T &gt;::operator=</definition>
+        <definition>size_3d&lt;T&gt;&amp; scifir::size_3d&lt; T &gt;::operator=</definition>
         <argsstring>(const size_3d&lt; T &gt; &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::size_3d::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -192,12 +182,11 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="39" column="9" bodyfile="special_units/size_3d.hpp" bodystart="39" bodyend="45"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__3d_1ac6c6096261c81209145a8b304a98a563" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1size__3d_1a5556b70bf199a26cd02e5c172e5520d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
-        <definition>size_3d&lt; T &gt; &amp; scifir::size_3d&lt; T &gt;::operator=</definition>
+        <definition>size_3d&lt;T&gt;&amp; scifir::size_3d&lt; T &gt;::operator=</definition>
         <argsstring>(size_3d&lt; T &gt; &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::size_3d::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;&amp;</type>
           <declname>x</declname>
@@ -210,14 +199,13 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="47" column="9" bodyfile="special_units/size_3d.hpp" bodystart="47" bodyend="53"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__3d_1ab6c14ba934d14fe1f026dd696bfccae0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1size__3d_1a3df5f22dce67caa88cde8844663720c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
-        <definition>size_3d&lt; T &gt; &amp; scifir::size_3d&lt; T &gt;::operator=</definition>
+        <definition>size_3d&lt;T&gt;&amp; scifir::size_3d&lt; T &gt;::operator=</definition>
         <argsstring>(const string &amp;init_size_3d)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::size_3d::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_size_3d</declname>
         </param>
         <briefdescription>
@@ -228,14 +216,13 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="55" column="9" bodyfile="special_units/size_3d.hpp" bodystart="55" bodyend="59"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__3d_1ab20ca4cf111fd6b684c92ba23389e50e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1size__3d_1a4a21cf4cceed534f3f418fd6365fc0d1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt;</type>
-        <definition>size_3d&lt; T &gt; scifir::size_3d&lt; T &gt;::operator+</definition>
+        <definition>size_3d&lt;T&gt; scifir::size_3d&lt; T &gt;::operator+</definition>
         <argsstring>(const size_3d&lt; T &gt; &amp;x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::size_3d::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -246,14 +233,13 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="61" column="9" bodyfile="special_units/size_3d.hpp" bodystart="61" bodyend="64"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__3d_1ab9a7fc37a90e64c394bda2cce6bba10a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1size__3d_1ac7ebb7c805519069c42533d9c43cc435" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt;</type>
-        <definition>size_3d&lt; T &gt; scifir::size_3d&lt; T &gt;::operator-</definition>
+        <definition>size_3d&lt;T&gt; scifir::size_3d&lt; T &gt;::operator-</definition>
         <argsstring>(const size_3d&lt; T &gt; &amp;x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::size_3d::operator-</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -265,13 +251,12 @@
         <location file="special_units/size_3d.hpp" line="66" column="9" bodyfile="special_units/size_3d.hpp" bodystart="66" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__3d_1ada390e320ba19c5fdad921ebb4240a06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::size_3d&lt; T &gt;::operator+=</definition>
         <argsstring>(const size_3d&lt; T &gt; &amp;x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::size_3d::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -283,13 +268,12 @@
         <location file="special_units/size_3d.hpp" line="71" column="6" bodyfile="special_units/size_3d.hpp" bodystart="71" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__3d_1a83e9e06987837b70e62dc5720a2956d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::size_3d&lt; T &gt;::operator-=</definition>
         <argsstring>(const size_3d&lt; T &gt; &amp;x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::size_3d::operator-=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__3d" kindref="compound">size_3d</ref>&lt; T &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -305,7 +289,6 @@
         <definition>scalar_unit scifir::size_3d&lt; T &gt;::get_volume</definition>
         <argsstring>() const</argsstring>
         <name>get_volume</name>
-        <qualifiedname>scifir::size_3d::get_volume</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -315,11 +298,10 @@
         <location file="special_units/size_3d.hpp" line="85" column="13" bodyfile="special_units/size_3d.hpp" bodystart="85" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__3d_1a6a2ee372c452eb7ba4e7e5cbac1e0d50" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::size_3d&lt; T &gt;::display</definition>
         <argsstring>() const</argsstring>
         <name>display</name>
-        <qualifiedname>scifir::size_3d::display</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -328,16 +310,15 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="90" column="8" bodyfile="special_units/size_3d.hpp" bodystart="90" bodyend="95"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::size_3d&lt; T &gt;::initialize_from_string</definition>
         <argsstring>(const string &amp;init_size_3d)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::size_3d::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_size_3d</declname>
         </param>
         <briefdescription>
@@ -348,7 +329,7 @@
         </inbodydescription>
         <location file="special_units/size_3d.hpp" line="102" column="6" bodyfile="special_units/size_3d.hpp" bodystart="102" bodyend="115"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -360,13 +341,13 @@
       <member refid="classscifir_1_1size__3d_1a29ff12f1198e9457bf02dbb848db6edb" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>get_volume</name></member>
       <member refid="classscifir_1_1size__3d_1a6b24e8c1c5d4b97028d83708a0236349" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>height</name></member>
       <member refid="classscifir_1_1size__3d_1a51bd4f309b9af74e07d691a244a38c8f" prot="private" virt="non-virtual"><scope>scifir::size_3d</scope><name>initialize_from_string</name></member>
-      <member refid="classscifir_1_1size__3d_1ab20ca4cf111fd6b684c92ba23389e50e" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1size__3d_1a4a21cf4cceed534f3f418fd6365fc0d1" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator+</name></member>
       <member refid="classscifir_1_1size__3d_1ada390e320ba19c5fdad921ebb4240a06" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1size__3d_1ab9a7fc37a90e64c394bda2cce6bba10a" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1size__3d_1ac7ebb7c805519069c42533d9c43cc435" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator-</name></member>
       <member refid="classscifir_1_1size__3d_1a83e9e06987837b70e62dc5720a2956d7" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1size__3d_1a98f8bc0fa68dd84e1be98e72df756a9a" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1size__3d_1ac6c6096261c81209145a8b304a98a563" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1size__3d_1ab6c14ba934d14fe1f026dd696bfccae0" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1size__3d_1a46d0ddfccf708903e86c2451c3da0a69" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1size__3d_1a5556b70bf199a26cd02e5c172e5520d8" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1size__3d_1a3df5f22dce67caa88cde8844663720c6" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1size__3d_1a203226ede3f032f59fa077e3d62145ab" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>size_3d</name></member>
       <member refid="classscifir_1_1size__3d_1a8b4d091f0e15f510c3542dbfe43a4b08" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>size_3d</name></member>
       <member refid="classscifir_1_1size__3d_1ab7b5c855243567515aad306f0696d4c7" prot="public" virt="non-virtual"><scope>scifir::size_3d</scope><name>size_3d</name></member>

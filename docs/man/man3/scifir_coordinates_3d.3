@@ -1,4 +1,4 @@
-.TH "scifir::coordinates_3d< T >" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::coordinates_3d< T >" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,115 +15,115 @@ scifir::coordinates_3d< T >
 .RI "\fBcoordinates_3d\fP ()"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBconst\fP \fBcoordinates_3d\fP< T > &\fBx_coordinates\fP)"
+.RI "\fBcoordinates_3d\fP (const \fBcoordinates_3d\fP< T > &x_coordinates)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBcoordinates_3d\fP< T > &&\fBx_coordinates\fP)"
+.RI "\fBcoordinates_3d\fP (\fBcoordinates_3d\fP< T > &&x_coordinates)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBconst\fP T &\fBnew_x\fP, \fBconst\fP T &\fBnew_y\fP, \fBconst\fP T &\fBnew_z\fP)"
+.RI "\fBcoordinates_3d\fP (const T &new_x, const T &new_y, const T &new_z)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBconst\fP T &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, T \fBnew_z\fP)"
+.RI "\fBcoordinates_3d\fP (const T &new_p, const \fBangle\fP &new_theta, T new_z)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBconst\fP T &\fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_3d\fP (const T &new_r, const \fBangle\fP &new_theta, const \fBangle\fP &new_phi)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBconst\fP T &\fBnew_altitude\fP)"
+.RI "\fBcoordinates_3d\fP (const \fBangle\fP &new_latitude, const \fBangle\fP &new_longitude, const T &new_altitude)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBconst\fP \fBpoint_3d\fP< T > &\fBx_point\fP)"
+.RI "\fBcoordinates_3d\fP (const \fBpoint_3d\fP< T > &x_point)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBpoint_3d\fP< T > &&\fBx_point\fP)"
+.RI "\fBcoordinates_3d\fP (\fBpoint_3d\fP< T > &&x_point)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_3d\fP)"
+.RI "\fBcoordinates_3d\fP (const string &init_coordinates_3d)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_3d\fP< T > &\fBx_coordinates\fP)"
+.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (const \fBcoordinates_3d\fP< T > &x_coordinates)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBcoordinates_3d\fP< T > &&\fBx_coordinates\fP)"
+.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBcoordinates_3d\fP< T > &&x_coordinates)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBpoint_3d\fP< T > &\fBx_point\fP)"
+.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (const \fBpoint_3d\fP< T > &x_point)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBpoint_3d\fP< T > &&\fBx_point\fP)"
+.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBpoint_3d\fP< T > &&x_point)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_3d\fP)"
+.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (const string &init_coordinates_3d)"
 .br
 .ti -1c
-.RI "T \fBget_p\fP () \fBconst\fP"
+.RI "T \fBget_p\fP () const"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBget_theta\fP () \fBconst\fP"
+.RI "\fBangle\fP \fBget_theta\fP () const"
 .br
 .ti -1c
-.RI "T \fBget_r\fP () \fBconst\fP"
+.RI "T \fBget_r\fP () const"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBget_phi\fP () \fBconst\fP"
+.RI "\fBangle\fP \fBget_phi\fP () const"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBget_latitude\fP () \fBconst\fP"
+.RI "\fBangle\fP \fBget_latitude\fP () const"
 .br
 .ti -1c
-.RI "\fBangle\fP \fBget_longitude\fP () \fBconst\fP"
+.RI "\fBangle\fP \fBget_longitude\fP () const"
 .br
 .ti -1c
-.RI "T \fBget_altitude\fP () \fBconst\fP"
+.RI "T \fBget_altitude\fP () const"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP T &\fBnew_x\fP, \fBconst\fP T &\fBnew_y\fP, \fBconst\fP T &\fBnew_z\fP)"
+.RI "void \fBset_position\fP (const T &new_x, const T &new_y, const T &new_z)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP T &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, T \fBnew_z\fP)"
+.RI "void \fBset_position\fP (const T &new_p, const \fBangle\fP &new_theta, T new_z)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP T &\fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "void \fBset_position\fP (const T &new_r, const \fBangle\fP &new_theta, const \fBangle\fP &new_phi)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBconst\fP T &\fBnew_altitude\fP)"
+.RI "void \fBset_position\fP (const \fBangle\fP &new_latitude, const \fBangle\fP &new_longitude, const T &new_altitude)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBrotate_in_x\fP (\fBconst\fP \fBangle\fP &\fBx_angle\fP)"
+.RI "void \fBrotate_in_x\fP (const \fBangle\fP &x_angle)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBrotate_in_y\fP (\fBconst\fP \fBangle\fP &\fBx_angle\fP)"
+.RI "void \fBrotate_in_y\fP (const \fBangle\fP &x_angle)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBrotate_in_z\fP (\fBconst\fP \fBangle\fP &\fBx_angle\fP)"
+.RI "void \fBrotate_in_z\fP (const \fBangle\fP &x_angle)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_3d\fP &\fBx_displacement\fP)"
+.RI "void \fBmove\fP (const displacement_3d &x_displacement)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP T &\fBnew_x\fP, \fBconst\fP T &\fBnew_y\fP, \fBconst\fP T &\fBnew_z\fP)"
+.RI "void \fBmove\fP (const T &new_x, const T &new_y, const T &new_z)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP T &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, T \fBnew_z\fP)"
+.RI "void \fBmove\fP (const T &new_p, const \fBangle\fP &new_theta, T new_z)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP T &\fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "void \fBmove\fP (const T &new_r, const \fBangle\fP &new_theta, const \fBangle\fP &new_phi)"
 .br
 .ti -1c
-.RI "T \fBdistance_to_origin\fP () \fBconst\fP"
+.RI "T \fBdistance_to_origin\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_cartesian\fP () \fBconst\fP"
+.RI "string \fBdisplay_cartesian\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_cylindrical\fP () \fBconst\fP"
+.RI "string \fBdisplay_cylindrical\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_spherical\fP () \fBconst\fP"
+.RI "string \fBdisplay_spherical\fP () const"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay_geographical\fP () \fBconst\fP"
+.RI "string \fBdisplay_geographical\fP () const"
 .br
 .in -1c
 .SS "Public Attributes"
@@ -143,121 +143,123 @@ scifir::coordinates_3d< T >
 
 .in +1c
 .ti -1c
-.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_coordinates_3d\fP)"
+.RI "void \fBinitialize_from_string\fP (string init_coordinates_3d)"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
 
-.SS "template<\fBtypename\fP T = length>
+.SS "template<typename T = length>
 .br
 class scifir::coordinates_3d< T >"
-.PP
-Definition at line \fB19\fP of file \fBcoordinates_3d\&.hpp\fP\&.
-.SH "Constructor & Destructor Documentation"
-.PP 
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d ()\fC [inline]\fP"
 
 .PP
-Definition at line \fB22\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 19 of file coordinates_3d\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP ()\fC [inline]\fP"
+
+.PP
+Definition at line 22 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 22                              : x(),y(),z()
 23             {}
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d (\fBconst\fP \fBcoordinates_3d\fP< T > & x_coordinates)\fC [inline]\fP"
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP (const \fBcoordinates_3d\fP< T > & x_coordinates)\fC [inline]\fP"
 
 .PP
-Definition at line \fB25\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 25 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 25                                                                    : x(x_coordinates\&.x),y(x_coordinates\&.y),z(x_coordinates\&.z)
 26             {}
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d (\fBcoordinates_3d\fP< T > && x_coordinates)\fC [inline]\fP"
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP (\fBcoordinates_3d\fP< T > && x_coordinates)\fC [inline]\fP"
 
 .PP
-Definition at line \fB28\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 28 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 28                                                               : x(std::move(x_coordinates\&.x)),y(std::move(x_coordinates\&.y)),z(std::move(x_coordinates\&.z))
 29             {}
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP (const T & new_x, const T & new_y, const T & new_z)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB31\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 31 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 31                                                                                   : x(new_x),y(new_y),z(new_z)
 32             {}
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP (const T & new_p, const \fBangle\fP & new_theta, T new_z)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB34\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 34 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 35             {
 36                 set_position(new_p,new_theta,new_z);
 37             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP (const T & new_r, const \fBangle\fP & new_theta, const \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB39\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 39 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 40             {
 41                 set_position(new_r,new_theta,new_phi);
 42             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBconst\fP T & new_altitude)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP (const \fBangle\fP & new_latitude, const \fBangle\fP & new_longitude, const T & new_altitude)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB44\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 44 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 44                                                                                                                 : coordinates_3d()
 45             {
 46                 set_position(new_latitude,new_longitude,new_altitude);
 47             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d (\fBconst\fP \fBpoint_3d\fP< T > & x_point)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP (const \fBpoint_3d\fP< T > & x_point)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB49\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 49 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 49                                                                 : x(x_point\&.x),y(x_point\&.y),z(x_point\&.z)
 50             {}
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d (\fBpoint_3d\fP< T > && x_point)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP (\fBpoint_3d\fP< T > && x_point)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB52\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 52 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 52                                                            : x(std::move(x_point\&.x)),y(std::move(x_point\&.y)),z(std::move(x_point\&.z))
 53             {}
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3d\fP< T >::coordinates_3d (\fBconst\fP \fBstring\fP & init_coordinates_3d)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "template<typename T  = length> \fBscifir::coordinates_3d\fP< T >::\fBcoordinates_3d\fP (const string & init_coordinates_3d)\fC [inline]\fP, \fC [explicit]\fP"
 
 .PP
-Definition at line \fB55\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 55 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 55                                                                        : coordinates_3d()
 56             {
 57                 initialize_from_string(init_coordinates_3d);
 58             }
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_3d\fP< T >::display_cartesian () const\fC [inline]\fP"
+.SS "template<typename T  = length> string \fBscifir::coordinates_3d\fP< T >::display_cartesian () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB220\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 220 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 221             {
 222                 ostringstream out;
@@ -265,11 +267,11 @@ Definition at line \fB220\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 224                 return out\&.str();
 225             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_3d\fP< T >::display_cylindrical () const\fC [inline]\fP"
+.SS "template<typename T  = length> string \fBscifir::coordinates_3d\fP< T >::display_cylindrical () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB227\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 227 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 228             {
 229                 ostringstream out;
@@ -277,11 +279,11 @@ Definition at line \fB227\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 231                 return out\&.str();
 232             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_3d\fP< T >::display_geographical () const\fC [inline]\fP"
+.SS "template<typename T  = length> string \fBscifir::coordinates_3d\fP< T >::display_geographical () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB241\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 241 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 242             {
 243                 ostringstream out;
@@ -289,11 +291,11 @@ Definition at line \fB241\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 245                 return out\&.str();
 246             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_3d\fP< T >::display_spherical () const\fC [inline]\fP"
+.SS "template<typename T  = length> string \fBscifir::coordinates_3d\fP< T >::display_spherical () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB234\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 234 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 235             {
 236                 ostringstream out;
@@ -301,91 +303,91 @@ Definition at line \fB234\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 238                 return out\&.str();
 239             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3d\fP< T >::distance_to_origin () const\fC [inline]\fP"
+.SS "template<typename T  = length> T \fBscifir::coordinates_3d\fP< T >::distance_to_origin () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB215\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 215 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 216             {
 217                 return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
 218             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3d\fP< T >::get_altitude () const\fC [inline]\fP"
+.SS "template<typename T  = length> T \fBscifir::coordinates_3d\fP< T >::get_altitude () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB128\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 128 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 129             {
 130                 return T();
 131             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3d\fP< T >::get_latitude () const\fC [inline]\fP"
+.SS "template<typename T  = length> \fBangle\fP \fBscifir::coordinates_3d\fP< T >::get_latitude () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB118\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 118 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 119             {
 120                 return scifir::asin(float(z/T(6317\&.0f,"km")));
 121             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3d\fP< T >::get_longitude () const\fC [inline]\fP"
+.SS "template<typename T  = length> \fBangle\fP \fBscifir::coordinates_3d\fP< T >::get_longitude () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB123\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 123 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 124             {
 125                 return scifir::atan(float(y/x));
 126             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3d\fP< T >::get_p () const\fC [inline]\fP"
+.SS "template<typename T  = length> T \fBscifir::coordinates_3d\fP< T >::get_p () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB98\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 98 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 99             {
 100                 return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
 101             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3d\fP< T >::get_phi () const\fC [inline]\fP"
+.SS "template<typename T  = length> \fBangle\fP \fBscifir::coordinates_3d\fP< T >::get_phi () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB113\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 113 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 114             {
-115                 return angle(scifir::acos_grade(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
+115                 return angle(scifir::acos_degree(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
 116             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3d\fP< T >::get_r () const\fC [inline]\fP"
+.SS "template<typename T  = length> T \fBscifir::coordinates_3d\fP< T >::get_r () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB108\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 108 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 109             {
 110                 return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
 111             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3d\fP< T >::get_theta () const\fC [inline]\fP"
+.SS "template<typename T  = length> \fBangle\fP \fBscifir::coordinates_3d\fP< T >::get_theta () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB103\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 103 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 104             {
 105                 return scifir::atan(float(y/x));
 106             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::initialize_from_string (\fBstring\fP init_coordinates_3d)\fC [inline]\fP, \fC [private]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::initialize_from_string (string init_coordinates_3d)\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line \fB253\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 253 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 254             {
 255                 vector<string> values;
@@ -395,7 +397,7 @@ Definition at line \fB253\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 259                 }
 260                 if (init_coordinates_3d\&.back() == ')')
 261                 {
-262                     init_coordinates_3d\&.erase(init_coordinates_3d\&.size()\-1,1);
+262                     init_coordinates_3d\&.erase(init_coordinates_3d\&.size()-1,1);
 263                 }
 264                 boost::split(values,init_coordinates_3d,boost::is_any_of(","));
 265                 if (values\&.size() == 3)
@@ -434,11 +436,11 @@ Definition at line \fB253\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 298                 }
 299             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::move (\fBconst\fP \fBdisplacement_3d\fP & x_displacement)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::move (const displacement_3d & x_displacement)\fC [inline]\fP"
 
 .PP
-Definition at line \fB186\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 186 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 187             {
 188                 x += x_displacement\&.x_projection();
@@ -446,11 +448,11 @@ Definition at line \fB186\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 190                 z += x_displacement\&.z_projection();
 191             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::move (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::move (const T & new_p, const \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
 
 .PP
-Definition at line \fB200\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 200 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 201             {
 202                 new_z\&.change_dimensions(new_p);
@@ -459,11 +461,11 @@ Definition at line \fB200\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 205                 z += new_z;
 206             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::move (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::move (const T & new_r, const \fBangle\fP & new_theta, const \fBangle\fP & new_phi)\fC [inline]\fP"
 
 .PP
-Definition at line \fB208\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 208 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 209             {
 210                 x += T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
@@ -471,11 +473,11 @@ Definition at line \fB208\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 212                 z += T(new_r * scifir::cos(new_phi));
 213             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::move (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::move (const T & new_x, const T & new_y, const T & new_z)\fC [inline]\fP"
 
 .PP
-Definition at line \fB193\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 193 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 194             {
 195                 x += new_x;
@@ -483,11 +485,11 @@ Definition at line \fB193\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 197                 z += new_z;
 198             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3d\fP< T > & \fBscifir::coordinates_3d\fP< T >::operator= (\fBconst\fP \fBcoordinates_3d\fP< T > & x_coordinates)\fC [inline]\fP"
+.SS "template<typename T  = length> \fBcoordinates_3d\fP<T>& \fBscifir::coordinates_3d\fP< T >::operator= (const \fBcoordinates_3d\fP< T > & x_coordinates)\fC [inline]\fP"
 
 .PP
-Definition at line \fB60\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 60 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 61             {
 62                 x = x_coordinates\&.x;
@@ -496,11 +498,11 @@ Definition at line \fB60\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 65                 return *this;
 66             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3d\fP< T > & \fBscifir::coordinates_3d\fP< T >::operator= (\fBconst\fP \fBpoint_3d\fP< T > & x_point)\fC [inline]\fP"
+.SS "template<typename T  = length> \fBcoordinates_3d\fP<T>& \fBscifir::coordinates_3d\fP< T >::operator= (const \fBpoint_3d\fP< T > & x_point)\fC [inline]\fP"
 
 .PP
-Definition at line \fB76\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 76 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 77             {
 78                 x = x_point\&.x;
@@ -509,22 +511,22 @@ Definition at line \fB76\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 81                 return *this;
 82             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3d\fP< T > & \fBscifir::coordinates_3d\fP< T >::operator= (\fBconst\fP \fBstring\fP & init_coordinates_3d)\fC [inline]\fP"
+.SS "template<typename T  = length> \fBcoordinates_3d\fP<T>& \fBscifir::coordinates_3d\fP< T >::operator= (const string & init_coordinates_3d)\fC [inline]\fP"
 
 .PP
-Definition at line \fB92\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 92 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 93             {
 94                 initialize_from_string(init_coordinates_3d);
 95                 return *this;
 96             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3d\fP< T > & \fBscifir::coordinates_3d\fP< T >::operator= (\fBcoordinates_3d\fP< T > && x_coordinates)\fC [inline]\fP"
+.SS "template<typename T  = length> \fBcoordinates_3d\fP<T>& \fBscifir::coordinates_3d\fP< T >::operator= (\fBcoordinates_3d\fP< T > && x_coordinates)\fC [inline]\fP"
 
 .PP
-Definition at line \fB68\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 68 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 69             {
 70                 x = std::move(x_coordinates\&.x);
@@ -533,11 +535,11 @@ Definition at line \fB68\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 73                 return *this;
 74             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3d\fP< T > & \fBscifir::coordinates_3d\fP< T >::operator= (\fBpoint_3d\fP< T > && x_point)\fC [inline]\fP"
+.SS "template<typename T  = length> \fBcoordinates_3d\fP<T>& \fBscifir::coordinates_3d\fP< T >::operator= (\fBpoint_3d\fP< T > && x_point)\fC [inline]\fP"
 
 .PP
-Definition at line \fB84\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 84 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 85             {
 86                 x = std::move(x_point\&.x);
@@ -546,50 +548,50 @@ Definition at line \fB84\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 89                 return *this;
 90             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::rotate_in_x (\fBconst\fP \fBangle\fP & x_angle)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::rotate_in_x (const \fBangle\fP & x_angle)\fC [inline]\fP"
 
 .PP
-Definition at line \fB162\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 162 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 163             {
 164                 T y_coord = y;
 165                 T z_coord = z;
-166                 y = y_coord * scifir::cos(x_angle) \- z_coord * scifir::sin(x_angle);
+166                 y = y_coord * scifir::cos(x_angle) - z_coord * scifir::sin(x_angle);
 167                 z = y_coord * scifir::sin(x_angle) + z_coord * scifir::cos(x_angle);
 168             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::rotate_in_y (\fBconst\fP \fBangle\fP & x_angle)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::rotate_in_y (const \fBangle\fP & x_angle)\fC [inline]\fP"
 
 .PP
-Definition at line \fB170\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 170 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 171             {
 172                 T x_coord = x;
 173                 T z_coord = z;
-174                 x = x_coord * scifir::cos(x_angle) \- z_coord * scifir::sin(x_angle);
+174                 x = x_coord * scifir::cos(x_angle) - z_coord * scifir::sin(x_angle);
 175                 z = x_coord * scifir::sin(x_angle) + z_coord * scifir::cos(x_angle);
 176             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::rotate_in_z (\fBconst\fP \fBangle\fP & x_angle)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::rotate_in_z (const \fBangle\fP & x_angle)\fC [inline]\fP"
 
 .PP
-Definition at line \fB178\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 178 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 179             {
 180                 T x_coord = x;
 181                 T y_coord = y;
-182                 x = x_coord * scifir::cos(x_angle) \- y_coord * scifir::sin(x_angle);
+182                 x = x_coord * scifir::cos(x_angle) - y_coord * scifir::sin(x_angle);
 183                 y = x_coord * scifir::sin(x_angle) + y_coord * scifir::cos(x_angle);
 184             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::set_position (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBconst\fP T & new_altitude)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::set_position (const \fBangle\fP & new_latitude, const \fBangle\fP & new_longitude, const T & new_altitude)\fC [inline]\fP"
 
 .PP
-Definition at line \fB155\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 155 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 156             {
 157                 x = T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
@@ -597,11 +599,11 @@ Definition at line \fB155\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 159                 z = T(new_altitude * scifir::sin(new_latitude));
 160             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::set_position (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::set_position (const T & new_p, const \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
 
 .PP
-Definition at line \fB140\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 140 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 141             {
 142                 new_z\&.change_dimensions(new_p);
@@ -610,11 +612,11 @@ Definition at line \fB140\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 145                 z = new_z;
 146             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::set_position (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::set_position (const T & new_r, const \fBangle\fP & new_theta, const \fBangle\fP & new_phi)\fC [inline]\fP"
 
 .PP
-Definition at line \fB148\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 148 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 149             {
 150                 x = T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
@@ -622,11 +624,11 @@ Definition at line \fB148\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 152                 z = T(new_r * scifir::cos(new_phi));
 153             }
 .fi
-
-.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3d\fP< T >::set_position (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP"
+.SS "template<typename T  = length> void \fBscifir::coordinates_3d\fP< T >::set_position (const T & new_x, const T & new_y, const T & new_z)\fC [inline]\fP"
 
 .PP
-Definition at line \fB133\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
+Definition at line 133 of file coordinates_3d\&.hpp\&.
+.PP
 .nf
 134             {
 135                 x = new_x;
@@ -634,21 +636,20 @@ Definition at line \fB133\fP of file \fBcoordinates_3d\&.hpp\fP\&..PP
 137                 z = new_z;
 138             }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3d\fP< T >::x"
+.SS "template<typename T  = length> T \fBscifir::coordinates_3d\fP< T >::x"
 
 .PP
-Definition at line \fB248\fP of file \fBcoordinates_3d\&.hpp\fP\&.
-.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3d\fP< T >::y"
+Definition at line 248 of file coordinates_3d\&.hpp\&.
+.SS "template<typename T  = length> T \fBscifir::coordinates_3d\fP< T >::y"
 
 .PP
-Definition at line \fB249\fP of file \fBcoordinates_3d\&.hpp\fP\&.
-.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3d\fP< T >::z"
+Definition at line 249 of file coordinates_3d\&.hpp\&.
+.SS "template<typename T  = length> T \fBscifir::coordinates_3d\fP< T >::z"
 
 .PP
-Definition at line \fB250\fP of file \fBcoordinates_3d\&.hpp\fP\&.
+Definition at line 250 of file coordinates_3d\&.hpp\&.
 
 .SH "Author"
 .PP 

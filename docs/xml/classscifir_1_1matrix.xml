@@ -1,30 +1,29 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1matrix" kind="class" language="C++" prot="public">
     <compoundname>scifir::matrix</compoundname>
     <includes refid="matrix_8hpp" local="no">matrix.hpp</includes>
     <templateparamlist>
       <param>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+        <type>typename T</type>
       </param>
       <param>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+        <type>int</type>
         <declname>M</declname>
         <defname>M</defname>
       </param>
       <param>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+        <type>int</type>
         <declname>N</declname>
         <defname>N</defname>
       </param>
     </templateparamlist>
-    <sectiondef kind="private-attrib">
+      <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classscifir_1_1matrix_1afab761b195a20c218b6cf2bbfb9a35f7" prot="private" static="no" mutable="no">
         <type>vector&lt; vector&lt; T &gt; &gt;</type>
         <definition>vector&lt;vector&lt;T&gt; &gt; scifir::matrix&lt; T, M, N &gt;::data</definition>
         <argsstring></argsstring>
         <name>data</name>
-        <qualifiedname>scifir::matrix::data</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -33,14 +32,13 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="227" column="8" bodyfile="util/matrix.hpp" bodystart="227" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1matrix_1ae9a6f954052f227f67eac65dcdc8f5f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::matrix&lt; T, M, N &gt;::matrix</definition>
         <argsstring>()</argsstring>
         <name>matrix</name>
-        <qualifiedname>scifir::matrix::matrix</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -49,14 +47,13 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="18" column="1" bodyfile="util/matrix.hpp" bodystart="18" bodyend="19"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1a933af7f36352487b137301948fd18f9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1a779306019e893736d9acf649acbe174f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::matrix&lt; T, M, N &gt;::matrix</definition>
-        <argsstring>(initializer_list&lt; vector&lt; T &gt; &gt; x)</argsstring>
+        <argsstring>(initializer_list&lt; vector&lt; T &gt;&gt; x)</argsstring>
         <name>matrix</name>
-        <qualifiedname>scifir::matrix::matrix</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">initializer_list</ref>&lt; vector&lt; T &gt; &gt;</type>
+          <type>initializer_list&lt; vector&lt; T &gt;&gt;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -67,12 +64,11 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="21" column="1" bodyfile="util/matrix.hpp" bodystart="21" bodyend="43"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1a457e72a17876ded541c31c5251338e96" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1a147351af054e802bbab52ce9ac19babc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; *</type>
-        <definition>virtual matrix&lt; T, M, N &gt; * scifir::matrix&lt; T, M, N &gt;::clone</definition>
+        <definition>virtual matrix&lt;T, M, N&gt;* scifir::matrix&lt; T, M, N &gt;::clone</definition>
         <argsstring>() const</argsstring>
         <name>clone</name>
-        <qualifiedname>scifir::matrix::clone</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -82,11 +78,10 @@
         <location file="util/matrix.hpp" line="45" column="16" bodyfile="util/matrix.hpp" bodystart="45" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1matrix_1aaf593964a6daa6b2d9ff9341f5014724" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+        <type>int</type>
         <definition>int scifir::matrix&lt; T, M, N &gt;::row_size</definition>
         <argsstring>() const</argsstring>
         <name>row_size</name>
-        <qualifiedname>scifir::matrix::row_size</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -96,11 +91,10 @@
         <location file="util/matrix.hpp" line="50" column="12" bodyfile="util/matrix.hpp" bodystart="50" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1matrix_1a51f70b483779be5047a15687cb0a46c7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+        <type>int</type>
         <definition>int scifir::matrix&lt; T, M, N &gt;::column_size</definition>
         <argsstring>() const</argsstring>
         <name>column_size</name>
-        <qualifiedname>scifir::matrix::column_size</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -109,14 +103,13 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="55" column="12" bodyfile="util/matrix.hpp" bodystart="55" bodyend="58"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1af6b1f529d588f7357713e6b2ee3464f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1a66a001baecba91581e1c6e00d8ad971a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1, N &gt;</type>
-        <definition>matrix&lt; T, 1, N &gt; scifir::matrix&lt; T, M, N &gt;::row</definition>
+        <definition>matrix&lt;T,1,N&gt; scifir::matrix&lt; T, M, N &gt;::row</definition>
         <argsstring>(int i) const</argsstring>
         <name>row</name>
-        <qualifiedname>scifir::matrix::row</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <briefdescription>
@@ -127,14 +120,13 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="60" column="8" bodyfile="util/matrix.hpp" bodystart="60" bodyend="72"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1aa94b47dde53d0c6375362f1910e9a641" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1ac76feb5325470c5d97a4cbc3aab022a5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, 1 &gt;</type>
-        <definition>matrix&lt; T, M, 1 &gt; scifir::matrix&lt; T, M, N &gt;::column</definition>
+        <definition>matrix&lt;T,M,1&gt; scifir::matrix&lt; T, M, N &gt;::column</definition>
         <argsstring>(int j) const</argsstring>
         <name>column</name>
-        <qualifiedname>scifir::matrix::column</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>j</declname>
         </param>
         <briefdescription>
@@ -145,18 +137,17 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="74" column="8" bodyfile="util/matrix.hpp" bodystart="74" bodyend="86"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1ace0dbc90ea17ecbdf9bfb2540dcf3158" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
-        <definition>const T &amp; scifir::matrix&lt; T, M, N &gt;::operator()</definition>
+      <memberdef kind="function" id="classscifir_1_1matrix_1a00de6dff848e62f6a30956d2fdc5c012" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T&amp; scifir::matrix&lt; T, M, N &gt;::operator()</definition>
         <argsstring>(int i, int j) const</argsstring>
         <name>operator()</name>
-        <qualifiedname>scifir::matrix::operator()</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>j</declname>
         </param>
         <briefdescription>
@@ -167,18 +158,17 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="88" column="9" bodyfile="util/matrix.hpp" bodystart="88" bodyend="95"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1ac8e907c79afb5b629e668c20dfc12c9a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1aa5013c937650f04dbb3d07e916b26407" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>T &amp;</type>
-        <definition>T &amp; scifir::matrix&lt; T, M, N &gt;::operator()</definition>
+        <definition>T&amp; scifir::matrix&lt; T, M, N &gt;::operator()</definition>
         <argsstring>(int i, int j)</argsstring>
         <name>operator()</name>
-        <qualifiedname>scifir::matrix::operator()</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>j</declname>
         </param>
         <briefdescription>
@@ -189,14 +179,13 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="97" column="3" bodyfile="util/matrix.hpp" bodystart="97" bodyend="104"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1a5c29921bc7850fc6feddd591a51a8ca6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1ae17b1561c73c868de28ee1400b8e6984" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt;</type>
-        <definition>matrix&lt; T, M, N &gt; scifir::matrix&lt; T, M, N &gt;::operator+</definition>
+        <definition>matrix&lt;T, M, N&gt; scifir::matrix&lt; T, M, N &gt;::operator+</definition>
         <argsstring>(const matrix&lt; T, M, N &gt; &amp;x)</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::matrix::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -207,14 +196,13 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="106" column="8" bodyfile="util/matrix.hpp" bodystart="106" bodyend="111"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1ab500541e5d709aa7e0dbbead6c6d010f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1a37b800e8fa0fdd8dc0b07dd0b3fdd028" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt;</type>
-        <definition>matrix&lt; T, M, N &gt; scifir::matrix&lt; T, M, N &gt;::operator-</definition>
+        <definition>matrix&lt;T, M, N&gt; scifir::matrix&lt; T, M, N &gt;::operator-</definition>
         <argsstring>(const matrix&lt; T, M, N &gt; &amp;x)</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::matrix::operator-</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -225,21 +213,20 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="113" column="8" bodyfile="util/matrix.hpp" bodystart="113" bodyend="118"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1abaab80e17d1facd9ce8799127170763e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1ae813579d5d39dbe241973c8a8dc6e4d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+            <type>int</type>
             <declname>N2</declname>
             <defname>N2</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, N, <ref refid="classscifir_1_1coordinates__1d" kindref="compound">N2</ref> &gt;</type>
-        <definition>matrix&lt; T, N, N2 &gt; scifir::matrix&lt; T, M, N &gt;::operator*</definition>
+        <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, N, N2 &gt;</type>
+        <definition>matrix&lt;T, N, N2&gt; scifir::matrix&lt; T, M, N &gt;::operator*</definition>
         <argsstring>(const matrix&lt; T, N, N2 &gt; &amp;x)</argsstring>
         <name>operator*</name>
-        <qualifiedname>scifir::matrix::operator*</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, N, <ref refid="classscifir_1_1coordinates__1d" kindref="compound">N2</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, N, N2 &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -250,23 +237,22 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="121" column="8" bodyfile="util/matrix.hpp" bodystart="121" bodyend="137"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1a1475eec503c6c9f77b4455bb7322ab0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1aa0f01330b32f00e3f451c5da1b88b328" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename U</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;T&gt;::value&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt;</type>
-        <definition>matrix&lt; T, M, N &gt; scifir::matrix&lt; T, M, N &gt;::operator^</definition>
+        <definition>matrix&lt;T, M, N&gt; scifir::matrix&lt; T, M, N &gt;::operator^</definition>
         <argsstring>(U x)</argsstring>
         <name>operator^</name>
-        <qualifiedname>scifir::matrix::operator^</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>U</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -278,13 +264,12 @@
         <location file="util/matrix.hpp" line="140" column="8" bodyfile="util/matrix.hpp" bodystart="140" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1matrix_1afc5ecec3434dcd9688830c003797e6cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::matrix&lt; T, M, N &gt;::operator+=</definition>
         <argsstring>(const matrix&lt; T, M, N &gt; &amp;x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::matrix::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -296,13 +281,12 @@
         <location file="util/matrix.hpp" line="147" column="6" bodyfile="util/matrix.hpp" bodystart="147" bodyend="156"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1matrix_1a96e897f2ae5b6328722bff62fcdfc3e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::matrix&lt; T, M, N &gt;::operator-=</definition>
         <argsstring>(const matrix&lt; T, M, N &gt; &amp;x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::matrix::operator-=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -316,20 +300,19 @@
       <memberdef kind="function" id="classscifir_1_1matrix_1adcd780a7c399b7591067c8548c2ff230" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+            <type>typename U</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;T&gt;::value&gt;::type</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::matrix&lt; T, M, N &gt;::operator^=</definition>
         <argsstring>(U x)</argsstring>
         <name>operator^=</name>
-        <qualifiedname>scifir::matrix::operator^=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          <type>U</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -340,12 +323,11 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="170" column="6" bodyfile="util/matrix.hpp" bodystart="170" bodyend="184"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1ad678e0366e162015beda2399e22e8555" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1a1298c000367ce8d6b245f7f5d033f859" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, N, M &gt;</type>
-        <definition>matrix&lt; T, N, M &gt; scifir::matrix&lt; T, M, N &gt;::t</definition>
+        <definition>matrix&lt;T, N, M&gt; scifir::matrix&lt; T, M, N &gt;::t</definition>
         <argsstring>() const</argsstring>
         <name>t</name>
-        <qualifiedname>scifir::matrix::t</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -355,11 +337,10 @@
         <location file="util/matrix.hpp" line="186" column="8" bodyfile="util/matrix.hpp" bodystart="186" bodyend="197"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1matrix_1a52a8d6159277aea92e9d9b7d78e66a29" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::matrix&lt; T, M, N &gt;::is_square</definition>
         <argsstring>() const</argsstring>
         <name>is_square</name>
-        <qualifiedname>scifir::matrix::is_square</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -369,11 +350,10 @@
         <location file="util/matrix.hpp" line="199" column="6" bodyfile="util/matrix.hpp" bodystart="199" bodyend="209"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1matrix_1a0c868e503472d409cd5a7ce1a1ea59d1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::matrix&lt; T, M, N &gt;::is_diagonal</definition>
         <argsstring>() const</argsstring>
         <name>is_diagonal</name>
-        <qualifiedname>scifir::matrix::is_diagonal</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -382,16 +362,15 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="211" column="6" bodyfile="util/matrix.hpp" bodystart="211" bodyend="224"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1matrix_1ab7e757f6d272a6178bb13ef2673332ef" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::matrix&lt; T, M, N &gt;::outside_row_limits</definition>
         <argsstring>(int i) const</argsstring>
         <name>outside_row_limits</name>
-        <qualifiedname>scifir::matrix::outside_row_limits</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <briefdescription>
@@ -403,13 +382,12 @@
         <location file="util/matrix.hpp" line="229" column="6" bodyfile="util/matrix.hpp" bodystart="229" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1matrix_1a7998c211e46afaeb9671bfd2afd0fb6c" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::matrix&lt; T, M, N &gt;::outside_column_limits</definition>
         <argsstring>(int i) const</argsstring>
         <name>outside_column_limits</name>
-        <qualifiedname>scifir::matrix::outside_column_limits</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <briefdescription>
@@ -421,17 +399,16 @@
         <location file="util/matrix.hpp" line="238" column="6" bodyfile="util/matrix.hpp" bodystart="238" bodyend="245"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1matrix_1a95c9a574eb6c5af2138de6cf2b2a18de" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::matrix&lt; T, M, N &gt;::outside_limits</definition>
         <argsstring>(int i, int j) const</argsstring>
         <name>outside_limits</name>
-        <qualifiedname>scifir::matrix::outside_limits</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>j</declname>
         </param>
         <briefdescription>
@@ -442,36 +419,36 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="247" column="6" bodyfile="util/matrix.hpp" bodystart="247" bodyend="254"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <location file="util/matrix.hpp" line="15" column="1" bodyfile="util/matrix.hpp" bodystart="16" bodyend="255"/>
     <listofallmembers>
-      <member refid="classscifir_1_1matrix_1a457e72a17876ded541c31c5251338e96" prot="public" virt="virtual"><scope>scifir::matrix</scope><name>clone</name></member>
-      <member refid="classscifir_1_1matrix_1aa94b47dde53d0c6375362f1910e9a641" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>column</name></member>
+      <member refid="classscifir_1_1matrix_1a147351af054e802bbab52ce9ac19babc" prot="public" virt="virtual"><scope>scifir::matrix</scope><name>clone</name></member>
+      <member refid="classscifir_1_1matrix_1ac76feb5325470c5d97a4cbc3aab022a5" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>column</name></member>
       <member refid="classscifir_1_1matrix_1a51f70b483779be5047a15687cb0a46c7" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>column_size</name></member>
       <member refid="classscifir_1_1matrix_1afab761b195a20c218b6cf2bbfb9a35f7" prot="private" virt="non-virtual"><scope>scifir::matrix</scope><name>data</name></member>
       <member refid="classscifir_1_1matrix_1a0c868e503472d409cd5a7ce1a1ea59d1" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>is_diagonal</name></member>
       <member refid="classscifir_1_1matrix_1a52a8d6159277aea92e9d9b7d78e66a29" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>is_square</name></member>
       <member refid="classscifir_1_1matrix_1ae9a6f954052f227f67eac65dcdc8f5f6" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>matrix</name></member>
-      <member refid="classscifir_1_1matrix_1a933af7f36352487b137301948fd18f9b" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>matrix</name></member>
-      <member refid="classscifir_1_1matrix_1ace0dbc90ea17ecbdf9bfb2540dcf3158" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator()</name></member>
-      <member refid="classscifir_1_1matrix_1ac8e907c79afb5b629e668c20dfc12c9a" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator()</name></member>
-      <member refid="classscifir_1_1matrix_1abaab80e17d1facd9ce8799127170763e" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1matrix_1a5c29921bc7850fc6feddd591a51a8ca6" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1matrix_1a779306019e893736d9acf649acbe174f" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>matrix</name></member>
+      <member refid="classscifir_1_1matrix_1a00de6dff848e62f6a30956d2fdc5c012" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator()</name></member>
+      <member refid="classscifir_1_1matrix_1aa5013c937650f04dbb3d07e916b26407" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator()</name></member>
+      <member refid="classscifir_1_1matrix_1ae813579d5d39dbe241973c8a8dc6e4d3" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1matrix_1ae17b1561c73c868de28ee1400b8e6984" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator+</name></member>
       <member refid="classscifir_1_1matrix_1afc5ecec3434dcd9688830c003797e6cc" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1matrix_1ab500541e5d709aa7e0dbbead6c6d010f" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1matrix_1a37b800e8fa0fdd8dc0b07dd0b3fdd028" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator-</name></member>
       <member refid="classscifir_1_1matrix_1a96e897f2ae5b6328722bff62fcdfc3e5" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1matrix_1a1475eec503c6c9f77b4455bb7322ab0d" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1matrix_1aa0f01330b32f00e3f451c5da1b88b328" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator^</name></member>
       <member refid="classscifir_1_1matrix_1adcd780a7c399b7591067c8548c2ff230" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>operator^=</name></member>
       <member refid="classscifir_1_1matrix_1a7998c211e46afaeb9671bfd2afd0fb6c" prot="private" virt="non-virtual"><scope>scifir::matrix</scope><name>outside_column_limits</name></member>
       <member refid="classscifir_1_1matrix_1a95c9a574eb6c5af2138de6cf2b2a18de" prot="private" virt="non-virtual"><scope>scifir::matrix</scope><name>outside_limits</name></member>
       <member refid="classscifir_1_1matrix_1ab7e757f6d272a6178bb13ef2673332ef" prot="private" virt="non-virtual"><scope>scifir::matrix</scope><name>outside_row_limits</name></member>
-      <member refid="classscifir_1_1matrix_1af6b1f529d588f7357713e6b2ee3464f5" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>row</name></member>
+      <member refid="classscifir_1_1matrix_1a66a001baecba91581e1c6e00d8ad971a" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>row</name></member>
       <member refid="classscifir_1_1matrix_1aaf593964a6daa6b2d9ff9341f5014724" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>row_size</name></member>
-      <member refid="classscifir_1_1matrix_1ad678e0366e162015beda2399e22e8555" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>t</name></member>
+      <member refid="classscifir_1_1matrix_1a1298c000367ce8d6b245f7f5d033f859" prot="public" virt="non-virtual"><scope>scifir::matrix</scope><name>t</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

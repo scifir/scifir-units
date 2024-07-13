@@ -1,4 +1,4 @@
-.TH "units/prefix.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "units/prefix.cpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,7 +15,7 @@ units/prefix.cpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -23,95 +23,116 @@ units/prefix.cpp
 
 .in +1c
 .ti -1c
-.RI "\fBprefix::type\fP \fBscifir::prefix_string\fP (\fBconst\fP \fBstring\fP &x)"
+.RI "prefix::type \fBscifir::prefix_string\fP (const string &x)"
 .br
+.RI "Returns the value of the enum \fBprefix::type\fP associated with the string x given\&. "
 .ti -1c
-.RI "\fBprefix\fP \fBscifir::closest_prefix\fP (\fBconst\fP \fBprefix\fP &\fBactual_prefix\fP, \fBint\fP \fBactual_scale\fP)"
+.RI "prefix \fBscifir::closest_prefix\fP (const prefix &actual_prefix, int actual_scale)"
 .br
+.RI "Returns the closes prefix related to the scale of the current value\&. It is used when displaying a \fBscalar_unit\fP to the most close prefix available\&. "
 .ti -1c
-.RI "\fBprefix\fP \fBscifir::create_prefix_by_factor\fP (\fBint\fP factor)"
+.RI "prefix \fBscifir::create_prefix_by_factor\fP (int factor)"
 .br
+.RI "Creates the prefix of the factor given, which is always between a range\&. "
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
 .br
+.RI "Comparison operator\&. Compares if two prefixes are the same, that's, if they have the same prefix::type\&. "
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
 .br
+.RI "Comparison operator\&. Compares if two prefixes are different, that's, if they don't have the same prefix::type\&. "
 .ti -1c
 .RI "bool \fBoperator<=\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
 .br
+.RI "Checks if prefix x is of a lower or equal factor than prefix y\&. "
 .ti -1c
 .RI "bool \fBoperator>\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
 .br
+.RI "Checks if prefix x is of a greather factor than prefix y\&. "
 .ti -1c
 .RI "bool \fBoperator>=\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
 .br
+.RI "Checks if prefix x is of an equal or greather factor than prefix y\&. "
 .ti -1c
 .RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::prefix\fP &x)"
 .br
+.RI "Adds the string representation of the prefix x to an output stream\&. "
 .in -1c
 .SH "Function Documentation"
 .PP 
 .SS "bool operator!= (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
 
 .PP
-Definition at line \fB385\fP of file \fBprefix\&.cpp\fP\&..PP
+Comparison operator\&. Compares if two prefixes are different, that's, if they don't have the same prefix::type\&. 
+.PP
+Definition at line 441 of file prefix\&.cpp\&.
+.PP
 .nf
-386 {
-387     return !(x == y);
-388 }
+442 {
+443     return !(x == y);
+444 }
 .fi
-
 .SS "ostream & operator<< (ostream & os, const \fBscifir::prefix\fP & x)"
 
 .PP
-Definition at line \fB405\fP of file \fBprefix\&.cpp\fP\&..PP
+Adds the string representation of the prefix x to an output stream\&. 
+.PP
+Definition at line 461 of file prefix\&.cpp\&.
+.PP
 .nf
-406 {
-407     return os << x\&.get_symbol();
-408 }
+462 {
+463     return os << x\&.get_symbol();
+464 }
 .fi
-
 .SS "bool operator<= (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
 
 .PP
-Definition at line \fB390\fP of file \fBprefix\&.cpp\fP\&..PP
+Checks if prefix x is of a lower or equal factor than prefix y\&. 
+.PP
+Definition at line 446 of file prefix\&.cpp\&.
+.PP
 .nf
-391 {
-392     return (x\&.get_conversion_factor() <= y\&.get_conversion_factor());
-393 }
+447 {
+448     return (x\&.get_conversion_factor() <= y\&.get_conversion_factor());
+449 }
 .fi
-
 .SS "bool operator== (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
 
 .PP
-Definition at line \fB380\fP of file \fBprefix\&.cpp\fP\&..PP
+Comparison operator\&. Compares if two prefixes are the same, that's, if they have the same prefix::type\&. 
+.PP
+Definition at line 436 of file prefix\&.cpp\&.
+.PP
 .nf
-381 {
-382     return (x\&.get_conversion_factor() == y\&.get_conversion_factor());
-383 }
+437 {
+438     return (x\&.get_conversion_factor() == y\&.get_conversion_factor());
+439 }
 .fi
-
 .SS "bool operator> (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
 
 .PP
-Definition at line \fB395\fP of file \fBprefix\&.cpp\fP\&..PP
+Checks if prefix x is of a greather factor than prefix y\&. 
+.PP
+Definition at line 451 of file prefix\&.cpp\&.
+.PP
 .nf
-396 {
-397     return (x\&.get_conversion_factor() > y\&.get_conversion_factor());
-398 }
+452 {
+453     return (x\&.get_conversion_factor() > y\&.get_conversion_factor());
+454 }
 .fi
-
 .SS "bool operator>= (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
 
 .PP
-Definition at line \fB400\fP of file \fBprefix\&.cpp\fP\&..PP
+Checks if prefix x is of an equal or greather factor than prefix y\&. 
+.PP
+Definition at line 456 of file prefix\&.cpp\&.
+.PP
 .nf
-401 {
-402     return (x\&.get_conversion_factor() >= y\&.get_conversion_factor());
-403 }
+457 {
+458     return (x\&.get_conversion_factor() >= y\&.get_conversion_factor());
+459 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

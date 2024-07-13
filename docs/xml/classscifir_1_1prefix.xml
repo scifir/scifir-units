@@ -1,161 +1,214 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1prefix" kind="class" language="C++" prot="public">
     <compoundname>scifir::prefix</compoundname>
     <includes refid="prefix_8hpp" local="no">prefix.hpp</includes>
-    <sectiondef kind="public-type">
+      <sectiondef kind="public-type">
       <memberdef kind="enum" id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5" prot="public" static="no" strong="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
+        <type>int8_t</type>
         <name>type</name>
-        <qualifiedname>scifir::prefix::type</qualifiedname>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76" prot="public">
-          <name>no_prefix</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711" prot="public">
+          <name>NONE</name>
           <briefdescription>
+<para>There is no prefix. Then, the dimension is not increased or decreased by some factor. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de" prot="public">
-          <name>Y</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a614051e388059a2e557389352c70dd41" prot="public">
+          <name>QUETTA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^30. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60" prot="public">
-          <name>Z</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a29023641d9e903305fc53c681946e62d" prot="public">
+          <name>RONNA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^27. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8" prot="public">
-          <name>E</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a9370c7ef21955be91159c30419b7365d" prot="public">
+          <name>YOTTA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^24. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99" prot="public">
-          <name>P</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e" prot="public">
+          <name>ZETTA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^21. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf" prot="public">
-          <name>T</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a5da2cbb97aec2a3144ac1301980eb8fb" prot="public">
+          <name>EXA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^18. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f" prot="public">
-          <name>G</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8a6a0b234bac7482d0e679943f2efd14" prot="public">
+          <name>PETA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^15. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8" prot="public">
-          <name>M</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5afac7e496810302f6c12e3dbf97268003" prot="public">
+          <name>TERA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^12. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088" prot="public">
-          <name>k</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ab8981acb27b0aad108602c0f453b7f84" prot="public">
+          <name>GIGA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^9. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65" prot="public">
-          <name>h</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a657d97af1c39a680a07e5bd7289e05f0" prot="public">
+          <name>MEGA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^6. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8" prot="public">
-          <name>da</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8" prot="public">
+          <name>KILO</name>
           <briefdescription>
+<para>Prefix of a factor of 10^3. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b" prot="public">
-          <name>d</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a6abce29e6411d0bf10f42bc1df906d82" prot="public">
+          <name>HECTO</name>
           <briefdescription>
+<para>Prefix of a factor of 10^2. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b" prot="public">
-          <name>c</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8d04c72c39369ffcab0ecac67a1d5b02" prot="public">
+          <name>DECA</name>
           <briefdescription>
+<para>Prefix of a factor of 10^1. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28" prot="public">
-          <name>m</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a9a285f2c3297e278e40a8b78eecfd5c7" prot="public">
+          <name>DECI</name>
           <briefdescription>
+<para>Prefix of a factor of 10^-1. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce" prot="public">
-          <name>u</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8180701df54e1bc488751274349a825e" prot="public">
+          <name>CENTI</name>
           <briefdescription>
+<para>Prefix of a factor of 10^-2. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35" prot="public">
-          <name>n</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a37764841864050a4aacc74d04110ed9f" prot="public">
+          <name>MILLI</name>
           <briefdescription>
+<para>Prefix of a factor of 10^-3. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4" prot="public">
-          <name>p</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aa527806621222d666ec8cc624a28f1ce" prot="public">
+          <name>MICRO</name>
           <briefdescription>
+<para>Prefix of a factor of 10^-6. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01" prot="public">
-          <name>f</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a36d34ff4b6f15a02332d7b6d9d4e4718" prot="public">
+          <name>NANO</name>
           <briefdescription>
+<para>Prefix of a factor of 10^-9. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68" prot="public">
-          <name>a</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ae337a7757abd20e76bd674ec39555082" prot="public">
+          <name>PICO</name>
           <briefdescription>
+<para>Prefix of a factor of 10^-12. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217" prot="public">
-          <name>z</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a987d9f6664d9b718098813acd8a3c2ea" prot="public">
+          <name>FEMTO</name>
           <briefdescription>
+<para>Prefix of a factor of 10^-15. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0" prot="public">
-          <name>y</name>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a084ca0815e65d79f91d8d421af3f9a6b" prot="public">
+          <name>ATTO</name>
           <briefdescription>
+<para>Prefix of a factor of 10^-18. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56" prot="public">
+          <name>ZEPTO</name>
+          <briefdescription>
+<para>Prefix of a factor of 10^-21. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a1b091a53126330b28816e9025caa8e65" prot="public">
+          <name>YOCTO</name>
+          <briefdescription>
+<para>Prefix of a factor of 10^-24. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8cb32856a820b941743975c53d4205ce" prot="public">
+          <name>RONTO</name>
+          <briefdescription>
+<para>Prefix of a factor of 10^-27. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5abe13e3ef9b4914de0f3591b6043eb623" prot="public">
+          <name>QUECTO</name>
+          <briefdescription>
+<para>Prefix of a factor of 10^-30. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>Represents a prefix of the SI system of units. All the prefixes of the SI system of units are supported. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -163,15 +216,15 @@
         </inbodydescription>
         <location file="units/prefix.hpp" line="16" column="1" bodyfile="units/prefix.hpp" bodystart="16" bodyend="16"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="classscifir_1_1prefix_1a37950f2bbe97c44f0d5372aea2b7b33a" prot="public" static="no" mutable="no">
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classscifir_1_1prefix_1a63a47fb0d940fbe6e89549b0aa801287" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5" kindref="member">prefix::type</ref></type>
-        <definition>prefix::type scifir::prefix::prefix_type</definition>
+        <definition>prefix::prefix_type</definition>
         <argsstring></argsstring>
         <name>prefix_type</name>
-        <qualifiedname>scifir::prefix::prefix_type</qualifiedname>
         <briefdescription>
+<para>It stores the prefix type currently being used. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -179,15 +232,15 @@
         </inbodydescription>
         <location file="units/prefix.hpp" line="33" column="14" bodyfile="units/prefix.hpp" bodystart="33" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
-      <memberdef kind="function" id="classscifir_1_1prefix_1aa4fa5c6b2b9c6902748b0d921eef84f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classscifir_1_1prefix_1a7da4f45d884b8dfd8a0d94a11fd08646" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::prefix::prefix</definition>
+        <definition>prefix::prefix</definition>
         <argsstring>()</argsstring>
         <name>prefix</name>
-        <qualifiedname>scifir::prefix::prefix</qualifiedname>
         <briefdescription>
+<para>Default constructor. The prefix_type is set to NONE. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -195,17 +248,17 @@
         </inbodydescription>
         <location file="units/prefix.hpp" line="18" column="1" bodyfile="units/prefix.cpp" bodystart="9" bodyend="10"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1a747e3945b7de0c8eff0915ceaef6bf4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1prefix_1a1b0e401fe9cafe203ef86e769cd4c3bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::prefix::prefix</definition>
+        <definition>prefix::prefix</definition>
         <argsstring>(const prefix &amp;x)</argsstring>
         <name>prefix</name>
-        <qualifiedname>scifir::prefix::prefix</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Copy constructor. The prefix_type is copied from the prefix x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -213,17 +266,17 @@
         </inbodydescription>
         <location file="units/prefix.hpp" line="19" column="1" bodyfile="units/prefix.cpp" bodystart="12" bodyend="13"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1add88c16e4117068ee8c2d2150193b4c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1prefix_1acc7af429a59bcdd7f7a58eff953b7981" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::prefix::prefix</definition>
+        <definition>prefix::prefix</definition>
         <argsstring>(prefix &amp;&amp;x)</argsstring>
         <name>prefix</name>
-        <qualifiedname>scifir::prefix::prefix</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Move constructor. The prefix_type is moved from the prefix x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -231,17 +284,17 @@
         </inbodydescription>
         <location file="units/prefix.hpp" line="20" column="1" bodyfile="units/prefix.cpp" bodystart="15" bodyend="16"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1aa87b72c98012be1d270810908538e1fc" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1prefix_1aca20011a1a7569c0bfc573f453935e28" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::prefix::prefix</definition>
+        <definition>prefix::prefix</definition>
         <argsstring>(prefix::type new_type)</argsstring>
         <name>prefix</name>
-        <qualifiedname>scifir::prefix::prefix</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5" kindref="member">prefix::type</ref></type>
           <declname>new_type</declname>
         </param>
         <briefdescription>
+<para>Constructor. The prefix_type is set to the new_type given. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -249,17 +302,17 @@
         </inbodydescription>
         <location file="units/prefix.hpp" line="21" column="10" bodyfile="units/prefix.cpp" bodystart="18" bodyend="19"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1a3596b726a6aec15b0015ae43b9d234d5" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1prefix_1a7c9f3b460defb1eb9456f634b7770218" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::prefix::prefix</definition>
+        <definition>prefix::prefix</definition>
         <argsstring>(const string &amp;new_type)</argsstring>
         <name>prefix</name>
-        <qualifiedname>scifir::prefix::prefix</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_type</declname>
         </param>
         <briefdescription>
+<para>Constructor. The prefix_type is set to the new_type specified in the string. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -267,17 +320,17 @@
         </inbodydescription>
         <location file="units/prefix.hpp" line="22" column="10" bodyfile="units/prefix.cpp" bodystart="21" bodyend="22"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1a0b9d5c30b77d71216588983bd3c97a14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1prefix_1ae9d352fc1d78fbe249cbf9fd8bea19db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;</type>
-        <definition>prefix &amp; scifir::prefix::operator=</definition>
+        <definition>prefix &amp; prefix::operator=</definition>
         <argsstring>(const prefix &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::prefix::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Copy assignment. The prefix_type is copied from the prefix x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -285,17 +338,17 @@
         </inbodydescription>
         <location file="units/prefix.hpp" line="24" column="8" bodyfile="units/prefix.cpp" bodystart="24" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1ac0f3c0844fe32fd87ddca55a18a1f996" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1prefix_1ac63db0d7a0698245378dff3b6c43b15e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;</type>
-        <definition>prefix &amp; scifir::prefix::operator=</definition>
+        <definition>prefix &amp; prefix::operator=</definition>
         <argsstring>(prefix &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::prefix::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Move assignment. The prefix_type is moved from the prefix x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -303,107 +356,112 @@
         </inbodydescription>
         <location file="units/prefix.hpp" line="25" column="8" bodyfile="units/prefix.cpp" bodystart="30" bodyend="34"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1a6d301253dc9b0c6cde92116da0b84e34" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-        <definition>int scifir::prefix::get_conversion_factor</definition>
+      <memberdef kind="function" id="classscifir_1_1prefix_1a045d058041cacaa09a2b4cf3954f706c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int prefix::get_conversion_factor</definition>
         <argsstring>() const</argsstring>
         <name>get_conversion_factor</name>
-        <qualifiedname>scifir::prefix::get_conversion_factor</qualifiedname>
         <briefdescription>
+<para>Returns the conversion factor of the prefix given the prefix_type. It uses the SI system of units for the value of each conversion factor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/prefix.hpp" line="27" column="5" bodyfile="units/prefix.cpp" bodystart="36" bodyend="84"/>
+        <location file="units/prefix.hpp" line="27" column="5" bodyfile="units/prefix.cpp" bodystart="36" bodyend="92"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1ab89ed3da9e955f242437b69ed4756294" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::prefix::get_name</definition>
+      <memberdef kind="function" id="classscifir_1_1prefix_1ad3806e8413ac92dfebc6847627727875" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string prefix::get_name</definition>
         <argsstring>() const</argsstring>
         <name>get_name</name>
-        <qualifiedname>scifir::prefix::get_name</qualifiedname>
         <briefdescription>
+<para>Name of the prefix given the prefix_type. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/prefix.hpp" line="28" column="8" bodyfile="units/prefix.cpp" bodystart="86" bodyend="134"/>
+        <location file="units/prefix.hpp" line="28" column="8" bodyfile="units/prefix.cpp" bodystart="94" bodyend="150"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1adceb7b20c962d582c949849446827fad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::prefix::get_symbol</definition>
+      <memberdef kind="function" id="classscifir_1_1prefix_1aa465d9bfb7c6cd8669ad545d616a2130" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string prefix::get_symbol</definition>
         <argsstring>() const</argsstring>
         <name>get_symbol</name>
-        <qualifiedname>scifir::prefix::get_symbol</qualifiedname>
         <briefdescription>
+<para>Symbol of the prefix given the prefix_type. The symbol of micro is supported in his Unicode version. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/prefix.hpp" line="29" column="8" bodyfile="units/prefix.cpp" bodystart="136" bodyend="184"/>
+        <location file="units/prefix.hpp" line="29" column="8" bodyfile="units/prefix.cpp" bodystart="152" bodyend="208"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1prefix_1a8deabe803a98512e9ffced9f36fb5536" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-        <definition>bool scifir::prefix::operator&lt;</definition>
+      <memberdef kind="function" id="classscifir_1_1prefix_1afaa72bb0c8db0b236f193e395c45d480" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool prefix::operator&lt;</definition>
         <argsstring>(const scifir::prefix &amp;x) const</argsstring>
         <name>operator&lt;</name>
-        <qualifiedname>scifir::prefix::operator&lt;</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1prefix" kindref="compound">scifir::prefix</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1prefix" kindref="compound">scifir::prefix</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>This operator allows to order the prefixes from the lower to the greather. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/prefix.hpp" line="31" column="1" bodyfile="units/prefix.cpp" bodystart="186" bodyend="189"/>
+        <location file="units/prefix.hpp" line="31" column="1" bodyfile="units/prefix.cpp" bodystart="210" bodyend="213"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
+<para>Class that represents prefixes of the SI system of units. Each prefix sizes 1 byte. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <location file="units/prefix.hpp" line="13" column="1" bodyfile="units/prefix.hpp" bodystart="14" bodyend="34"/>
     <listofallmembers>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>a</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>c</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>d</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>da</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>E</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>f</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>G</name></member>
-      <member refid="classscifir_1_1prefix_1a6d301253dc9b0c6cde92116da0b84e34" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>get_conversion_factor</name></member>
-      <member refid="classscifir_1_1prefix_1ab89ed3da9e955f242437b69ed4756294" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>get_name</name></member>
-      <member refid="classscifir_1_1prefix_1adceb7b20c962d582c949849446827fad" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>get_symbol</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>h</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>k</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>M</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>m</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>n</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>no_prefix</name></member>
-      <member refid="classscifir_1_1prefix_1a8deabe803a98512e9ffced9f36fb5536" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>operator&lt;</name></member>
-      <member refid="classscifir_1_1prefix_1a0b9d5c30b77d71216588983bd3c97a14" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1prefix_1ac0f3c0844fe32fd87ddca55a18a1f996" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>p</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>P</name></member>
-      <member refid="classscifir_1_1prefix_1aa4fa5c6b2b9c6902748b0d921eef84f8" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
-      <member refid="classscifir_1_1prefix_1a747e3945b7de0c8eff0915ceaef6bf4a" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
-      <member refid="classscifir_1_1prefix_1add88c16e4117068ee8c2d2150193b4c2" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
-      <member refid="classscifir_1_1prefix_1aa87b72c98012be1d270810908538e1fc" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
-      <member refid="classscifir_1_1prefix_1a3596b726a6aec15b0015ae43b9d234d5" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
-      <member refid="classscifir_1_1prefix_1a37950f2bbe97c44f0d5372aea2b7b33a" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix_type</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>T</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a084ca0815e65d79f91d8d421af3f9a6b" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>ATTO</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8180701df54e1bc488751274349a825e" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>CENTI</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8d04c72c39369ffcab0ecac67a1d5b02" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>DECA</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a9a285f2c3297e278e40a8b78eecfd5c7" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>DECI</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a5da2cbb97aec2a3144ac1301980eb8fb" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>EXA</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a987d9f6664d9b718098813acd8a3c2ea" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>FEMTO</name></member>
+      <member refid="classscifir_1_1prefix_1a045d058041cacaa09a2b4cf3954f706c" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>get_conversion_factor</name></member>
+      <member refid="classscifir_1_1prefix_1ad3806e8413ac92dfebc6847627727875" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>get_name</name></member>
+      <member refid="classscifir_1_1prefix_1aa465d9bfb7c6cd8669ad545d616a2130" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>get_symbol</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ab8981acb27b0aad108602c0f453b7f84" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>GIGA</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a6abce29e6411d0bf10f42bc1df906d82" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>HECTO</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a6236946c6690489418708fc0bb5fd9e8" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>KILO</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a657d97af1c39a680a07e5bd7289e05f0" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>MEGA</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aa527806621222d666ec8cc624a28f1ce" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>MICRO</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a37764841864050a4aacc74d04110ed9f" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>MILLI</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a36d34ff4b6f15a02332d7b6d9d4e4718" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>NANO</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>NONE</name></member>
+      <member refid="classscifir_1_1prefix_1afaa72bb0c8db0b236f193e395c45d480" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>operator&lt;</name></member>
+      <member refid="classscifir_1_1prefix_1ae9d352fc1d78fbe249cbf9fd8bea19db" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1prefix_1ac63db0d7a0698245378dff3b6c43b15e" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8a6a0b234bac7482d0e679943f2efd14" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>PETA</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ae337a7757abd20e76bd674ec39555082" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>PICO</name></member>
+      <member refid="classscifir_1_1prefix_1a7da4f45d884b8dfd8a0d94a11fd08646" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
+      <member refid="classscifir_1_1prefix_1a1b0e401fe9cafe203ef86e769cd4c3bb" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
+      <member refid="classscifir_1_1prefix_1acc7af429a59bcdd7f7a58eff953b7981" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
+      <member refid="classscifir_1_1prefix_1aca20011a1a7569c0bfc573f453935e28" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
+      <member refid="classscifir_1_1prefix_1a7c9f3b460defb1eb9456f634b7770218" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix</name></member>
+      <member refid="classscifir_1_1prefix_1a63a47fb0d940fbe6e89549b0aa801287" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>prefix_type</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5abe13e3ef9b4914de0f3591b6043eb623" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>QUECTO</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a614051e388059a2e557389352c70dd41" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>QUETTA</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a29023641d9e903305fc53c681946e62d" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>RONNA</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8cb32856a820b941743975c53d4205ce" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>RONTO</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5afac7e496810302f6c12e3dbf97268003" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>TERA</name></member>
       <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>type</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>u</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>y</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>Y</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>z</name></member>
-      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>Z</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a1b091a53126330b28816e9025caa8e65" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>YOCTO</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a9370c7ef21955be91159c30419b7365d" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>YOTTA</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5a8d2e129f68bf6ab676fd71bcef510d56" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>ZEPTO</name></member>
+      <member refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5aeb3eb4b295039f44d86c62c9639cb05e" prot="public" virt="non-virtual"><scope>scifir::prefix</scope><name>ZETTA</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -1,85 +1,118 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1angle" kind="class" language="C++" prot="public">
     <compoundname>scifir::angle</compoundname>
     <includes refid="angle_8hpp" local="no">angle.hpp</includes>
-    <sectiondef kind="private-attrib">
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" prot="public" static="no" strong="no">
+        <type>int8_t</type>
+        <name>type</name>
+        <enumvalue id="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4a954b9343ae2db0c68edab65f1a6b1a95" prot="public">
+          <name>DEGREE</name>
+          <briefdescription>
+<para>The angle is in DEGREE. A degree is defined as a 1/360 part of a circle. The entire circle corresponds to 360 degrees. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4afc1ecba05b162f0e97a88176b5eab48e" prot="public">
+          <name>RADIAN</name>
+          <briefdescription>
+<para>The angle is in RADIAN. A radian is defined as the length of the perimeter of the circle that conforms an angle. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Represents an type of angle, which can be a degree or a radian. The value of the angle inside the angle class is always stored in degrees, but can be get in radian if it&apos;s needed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="meca_number/angle.hpp" line="30" column="1" bodyfile="meca_number/angle.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" prot="private" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>angle::value</definition>
         <argsstring></argsstring>
         <name>value</name>
-        <qualifiedname>scifir::angle::value</qualifiedname>
         <briefdescription>
-<para>Value of the angle. It is stored always in grades. </para>
+<para>Value of the angle. It is stored in degrees. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="159" column="7" bodyfile="meca_number/angle.hpp" bodystart="159" bodyend="-1"/>
+        <location file="meca_number/angle.hpp" line="161" column="7" bodyfile="meca_number/angle.hpp" bodystart="161" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
-      <memberdef kind="function" id="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classscifir_1_1angle_1ad0dbfb238b85b3026f1ee85d77b46f64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::angle::angle</definition>
+        <definition>angle::angle</definition>
         <argsstring>()</argsstring>
         <name>angle</name>
-        <qualifiedname>scifir::angle::angle</qualifiedname>
         <briefdescription>
+<para>Default constructor of angle. The value is set to 0. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="30" column="1" bodyfile="meca_number/angle.cpp" bodystart="18" bodyend="19"/>
+        <location file="meca_number/angle.hpp" line="32" column="1" bodyfile="meca_number/angle.cpp" bodystart="18" bodyend="19"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a8e899c94771eef434430adfae098b883" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a3733278927c8b3923a12025d7a9da355" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::angle::angle</definition>
+        <definition>angle::angle</definition>
         <argsstring>(const angle &amp;x)</argsstring>
         <name>angle</name>
-        <qualifiedname>scifir::angle::angle</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Copy constructor of angle. The value is copied from the angle x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="31" column="1" bodyfile="meca_number/angle.cpp" bodystart="21" bodyend="22"/>
+        <location file="meca_number/angle.hpp" line="33" column="1" bodyfile="meca_number/angle.cpp" bodystart="21" bodyend="22"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1ae4f664413318d5a6a651f7c3fe10eb04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1acd585db51b6c10fa4ed7658bd84792e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::angle::angle</definition>
+        <definition>angle::angle</definition>
         <argsstring>(angle &amp;&amp;x)</argsstring>
         <name>angle</name>
-        <qualifiedname>scifir::angle::angle</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Move constructor of angle. The value is moved from the angle x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="32" column="1" bodyfile="meca_number/angle.cpp" bodystart="24" bodyend="25"/>
+        <location file="meca_number/angle.hpp" line="34" column="1" bodyfile="meca_number/angle.cpp" bodystart="24" bodyend="25"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a632d1b2d77513453de38a65b35d3dcda" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a5614a457bb4e581b6b2f7032978e0e8b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::angle::angle</definition>
-        <argsstring>(float new_value)</argsstring>
+        <argsstring>(float new_value, angle::type init_type=angle::DEGREE)</argsstring>
         <name>angle</name>
-        <qualifiedname>scifir::angle::angle</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">angle::type</ref></type>
+          <declname>init_type</declname>
+          <defval><ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4a954b9343ae2db0c68edab65f1a6b1a95" kindref="member">angle::DEGREE</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -87,17 +120,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="33" column="10" bodyfile="meca_number/angle.cpp" bodystart="27" bodyend="30"/>
+        <location file="meca_number/angle.hpp" line="35" column="10" bodyfile="meca_number/angle.cpp" bodystart="27" bodyend="38"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1adf69dc5ca149888d5fbe1ee20efb7cf4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1aabda1cce5564bb882153637faf0cba12" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::angle::angle</definition>
-        <argsstring>(double new_value)</argsstring>
+        <argsstring>(double new_value, angle::type init_type=angle::DEGREE)</argsstring>
         <name>angle</name>
-        <qualifiedname>scifir::angle::angle</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>double</type>
           <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">angle::type</ref></type>
+          <declname>init_type</declname>
+          <defval><ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4a954b9343ae2db0c68edab65f1a6b1a95" kindref="member">angle::DEGREE</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -105,17 +142,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="34" column="10" bodyfile="meca_number/angle.cpp" bodystart="32" bodyend="35"/>
+        <location file="meca_number/angle.hpp" line="36" column="10" bodyfile="meca_number/angle.cpp" bodystart="40" bodyend="51"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1ac778f43b489fd266d03b5c41c2f7ca95" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1ab771878a9aa88b15c9173665856fb8ea" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::angle::angle</definition>
-        <argsstring>(long double new_value)</argsstring>
+        <argsstring>(long double new_value, angle::type init_type=angle::DEGREE)</argsstring>
         <name>angle</name>
-        <qualifiedname>scifir::angle::angle</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <type>long double</type>
           <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">angle::type</ref></type>
+          <declname>init_type</declname>
+          <defval><ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4a954b9343ae2db0c68edab65f1a6b1a95" kindref="member">angle::DEGREE</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -123,17 +164,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="35" column="10" bodyfile="meca_number/angle.cpp" bodystart="37" bodyend="40"/>
+        <location file="meca_number/angle.hpp" line="37" column="10" bodyfile="meca_number/angle.cpp" bodystart="53" bodyend="64"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1aac4b1eff12b746a5915f10bf53a00adf" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a6a1921d9190d415b2c4e448d42575a6c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::angle::angle</definition>
-        <argsstring>(int new_value)</argsstring>
+        <argsstring>(int new_value, angle::type init_type=angle::DEGREE)</argsstring>
         <name>angle</name>
-        <qualifiedname>scifir::angle::angle</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">angle::type</ref></type>
+          <declname>init_type</declname>
+          <defval><ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4a954b9343ae2db0c68edab65f1a6b1a95" kindref="member">angle::DEGREE</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -141,852 +186,855 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="36" column="10" bodyfile="meca_number/angle.cpp" bodystart="42" bodyend="45"/>
+        <location file="meca_number/angle.hpp" line="38" column="10" bodyfile="meca_number/angle.cpp" bodystart="66" bodyend="77"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a0a0a9c3a1b6d598bc8ad8d97749eb258" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a06972e9acf45342478b0ec481dcbd321" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::angle::angle</definition>
+        <definition>angle::angle</definition>
         <argsstring>(const string &amp;init_angle)</argsstring>
         <name>angle</name>
-        <qualifiedname>scifir::angle::angle</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_angle</declname>
         </param>
         <briefdescription>
+<para>Constructor of angle. The value is initialized from the initialization string of angle, which uses the character 00B0 or the character 00BA to represent degrees. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="37" column="10" bodyfile="meca_number/angle.cpp" bodystart="47" bodyend="50"/>
+        <location file="meca_number/angle.hpp" line="39" column="10" bodyfile="meca_number/angle.cpp" bodystart="79" bodyend="82"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1aaa3388fcd68dd123c73b377ae662660d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a0aa8e5be255a2c960336f90c4c91f8f5" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>scifir::angle::angle</definition>
+        <definition>angle::angle</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>angle</name>
-        <qualifiedname>scifir::angle::angle</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Constructor of angle. The value is initialized from the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> x, if the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> has empty dimensions. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="38" column="10" bodyfile="meca_number/angle.cpp" bodystart="52" bodyend="64"/>
+        <location file="meca_number/angle.hpp" line="40" column="10" bodyfile="meca_number/angle.cpp" bodystart="84" bodyend="96"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a57e62f9c321f6864195d1fb6bb7cbc4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a9022ae1a46ab7da43e09dfba88c67d4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
-        <definition>angle &amp; scifir::angle::operator=</definition>
+        <definition>angle &amp; angle::operator=</definition>
         <argsstring>(const angle &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::angle::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Copy assignment of angle. The value is copied to the value of angle x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="40" column="7" bodyfile="meca_number/angle.cpp" bodystart="66" bodyend="70"/>
+        <location file="meca_number/angle.hpp" line="42" column="7" bodyfile="meca_number/angle.cpp" bodystart="98" bodyend="102"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a99af609f979f3f060b667cabfb02409f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a690b723759f9aa6ed67d450532dec773" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
-        <definition>angle &amp; scifir::angle::operator=</definition>
+        <definition>angle &amp; angle::operator=</definition>
         <argsstring>(angle &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::angle::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Move assignment of angle. The value is moved from the value of angle x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="41" column="7" bodyfile="meca_number/angle.cpp" bodystart="72" bodyend="76"/>
+        <location file="meca_number/angle.hpp" line="43" column="7" bodyfile="meca_number/angle.cpp" bodystart="104" bodyend="108"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1adaa0fc85ba37d0b29ae14daedb123a96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1aa5337bfab3026bfd36832d62650e538b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
-        <definition>angle &amp; scifir::angle::operator=</definition>
+        <definition>angle &amp; angle::operator=</definition>
         <argsstring>(float new_value)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::angle::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_value</declname>
         </param>
         <briefdescription>
+<para>Assignment operator. The value is copied from the float. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="42" column="7" bodyfile="meca_number/angle.cpp" bodystart="78" bodyend="83"/>
+        <location file="meca_number/angle.hpp" line="44" column="7" bodyfile="meca_number/angle.cpp" bodystart="110" bodyend="115"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a4eaf495e7f89d276c1f3c95106b276c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1adf34ae9c62d443cae4f81af7da2e1d77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
-        <definition>angle &amp; scifir::angle::operator=</definition>
+        <definition>angle &amp; angle::operator=</definition>
         <argsstring>(const string &amp;init_angle)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::angle::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_angle</declname>
         </param>
         <briefdescription>
+<para>Assignment operator. An initialization string is used to set the value, which contains the character 00B0 or the character 00BA to represent degrees. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="43" column="7" bodyfile="meca_number/angle.cpp" bodystart="85" bodyend="89"/>
+        <location file="meca_number/angle.hpp" line="45" column="7" bodyfile="meca_number/angle.cpp" bodystart="117" bodyend="121"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a5710c5bea8baae6ec66e49cc6ae38874" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a043644c202f2dadfeeae10ecf9f8b0ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
-        <definition>angle &amp; scifir::angle::operator=</definition>
+        <definition>angle &amp; angle::operator=</definition>
         <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::angle::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Assignment operator. The value of the angle is set to the value of the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> x, only if the <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> has empty dimensions. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="44" column="7" bodyfile="meca_number/angle.cpp" bodystart="91" bodyend="103"/>
+        <location file="meca_number/angle.hpp" line="46" column="7" bodyfile="meca_number/angle.cpp" bodystart="123" bodyend="135"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a56283b82a3dd8f71212bcfbe040a62f1" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1ae5362046e202f53179be6f64acb56b79" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>scifir::angle::operator float</definition>
+        <definition>angle::operator float</definition>
         <argsstring>() const</argsstring>
         <name>operator float</name>
-        <qualifiedname>scifir::angle::operator float</qualifiedname>
         <briefdescription>
+<para>Cast angle to a float. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="46" column="10" bodyfile="meca_number/angle.hpp" bodystart="46" bodyend="49"/>
+        <location file="meca_number/angle.hpp" line="48" column="10" bodyfile="meca_number/angle.hpp" bodystart="48" bodyend="51"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &amp;</type>
-        <definition>const float &amp; scifir::angle::get_value</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1a0ee2dddd2d514a707cc3f98e496cf8a1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const float &amp;</type>
+        <definition>const float &amp; angle::get_value</definition>
         <argsstring>() const</argsstring>
         <name>get_value</name>
-        <qualifiedname>scifir::angle::get_value</qualifiedname>
         <briefdescription>
+<para>Gets the value of the angle, in degrees. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="51" column="20" bodyfile="meca_number/angle.hpp" bodystart="51" bodyend="54"/>
+        <location file="meca_number/angle.hpp" line="53" column="20" bodyfile="meca_number/angle.hpp" bodystart="53" bodyend="56"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1aeb8b8bcb20f46bb47f557fe2d356df1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a46e28ea538450dd3e8934db480366c88" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator+</definition>
+        <definition>angle angle::operator+</definition>
         <argsstring>(const angle &amp;x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::angle::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle as the sum of other two. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="56" column="7" bodyfile="meca_number/angle.cpp" bodystart="105" bodyend="108"/>
+        <location file="meca_number/angle.hpp" line="58" column="7" bodyfile="meca_number/angle.cpp" bodystart="137" bodyend="140"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a050446b4fa277444f95f1d069e139a17" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a734a40d34319aae1f5bee1fc635c17f3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator-</definition>
+        <definition>angle angle::operator-</definition>
         <argsstring>(const angle &amp;x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::angle::operator-</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle as the substraction of this angle and another angle x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="57" column="7" bodyfile="meca_number/angle.cpp" bodystart="110" bodyend="113"/>
+        <location file="meca_number/angle.hpp" line="59" column="7" bodyfile="meca_number/angle.cpp" bodystart="142" bodyend="145"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a062e381e2f6f78713c8e07fa74fdc8f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1aebb8408ee687fd71e84c826d349c7e09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator*</definition>
+        <definition>angle angle::operator*</definition>
         <argsstring>(const angle &amp;x) const</argsstring>
         <name>operator*</name>
-        <qualifiedname>scifir::angle::operator*</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle as the multiplication of other two. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="58" column="7" bodyfile="meca_number/angle.cpp" bodystart="115" bodyend="118"/>
+        <location file="meca_number/angle.hpp" line="60" column="7" bodyfile="meca_number/angle.cpp" bodystart="147" bodyend="150"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1aac7d61310d1d7ba483bba1504b1e2725" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1ade49ca8562a9cbdb541d24ebc937002e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator/</definition>
+        <definition>angle angle::operator/</definition>
         <argsstring>(const angle &amp;x) const</argsstring>
         <name>operator/</name>
-        <qualifiedname>scifir::angle::operator/</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle as the division of this angle and another angle x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="59" column="7" bodyfile="meca_number/angle.cpp" bodystart="120" bodyend="123"/>
+        <location file="meca_number/angle.hpp" line="61" column="7" bodyfile="meca_number/angle.cpp" bodystart="152" bodyend="155"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a018ddeef5a138422b2ee7c602688da85" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1af303c6f6396668a6998be4f56044b7ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator^</definition>
+        <definition>angle angle::operator^</definition>
         <argsstring>(const angle &amp;x) const</argsstring>
         <name>operator^</name>
-        <qualifiedname>scifir::angle::operator^</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle by powering the angle class with the value of another angle x. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="60" column="7" bodyfile="meca_number/angle.cpp" bodystart="125" bodyend="128"/>
+        <location file="meca_number/angle.hpp" line="62" column="7" bodyfile="meca_number/angle.cpp" bodystart="157" bodyend="160"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a0ea46f05ced211a6c89d1aa9a3508171" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator+=</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1a929094036e2d0e5fa83f9ce6c8abee6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angle::operator+=</definition>
         <argsstring>(const angle &amp;x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::angle::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Sums the value of the angle x to the value of this angle. The value is normalized after. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="61" column="6" bodyfile="meca_number/angle.cpp" bodystart="130" bodyend="134"/>
+        <location file="meca_number/angle.hpp" line="63" column="6" bodyfile="meca_number/angle.cpp" bodystart="162" bodyend="166"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a7e81004ba9897e0607bacfe156410b88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator-=</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1a881cd5cdde5e3fdf198d9914996228b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angle::operator-=</definition>
         <argsstring>(const angle &amp;x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::angle::operator-=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Substract the value of the angle x to the value of this angle. The value is normalized after. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="62" column="6" bodyfile="meca_number/angle.cpp" bodystart="136" bodyend="140"/>
+        <location file="meca_number/angle.hpp" line="64" column="6" bodyfile="meca_number/angle.cpp" bodystart="168" bodyend="172"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a14bf7aed7303247d2166b5619f9a6777" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator*=</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1afe09b0184ea5d2f46f97b3142ae4fd03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angle::operator*=</definition>
         <argsstring>(const angle &amp;x)</argsstring>
         <name>operator*=</name>
-        <qualifiedname>scifir::angle::operator*=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Multiplies the value of this angle with the value of angle x. The value is normalized after. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="63" column="6" bodyfile="meca_number/angle.cpp" bodystart="142" bodyend="146"/>
+        <location file="meca_number/angle.hpp" line="65" column="6" bodyfile="meca_number/angle.cpp" bodystart="174" bodyend="178"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1aa677506e6c1de245e90fd6de6d681f34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator/=</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1a5d57239e7dc601fd0742be6bc09aa14e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angle::operator/=</definition>
         <argsstring>(const angle &amp;x)</argsstring>
         <name>operator/=</name>
-        <qualifiedname>scifir::angle::operator/=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Divides the value of this angle with the value of angle x. The value is normalized after. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="64" column="6" bodyfile="meca_number/angle.cpp" bodystart="148" bodyend="152"/>
+        <location file="meca_number/angle.hpp" line="66" column="6" bodyfile="meca_number/angle.cpp" bodystart="180" bodyend="184"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a270692c7ced80eb091d193a68bfe063c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator^=</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1a116f629dba37b7c8ba2056d582d3677d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angle::operator^=</definition>
         <argsstring>(const angle &amp;x)</argsstring>
         <name>operator^=</name>
-        <qualifiedname>scifir::angle::operator^=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Powers the value of this angle with the value of angle x. The value is normalized after. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="65" column="6" bodyfile="meca_number/angle.cpp" bodystart="154" bodyend="158"/>
+        <location file="meca_number/angle.hpp" line="67" column="6" bodyfile="meca_number/angle.cpp" bodystart="186" bodyend="190"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1ad47fbc165c2771187a23714f64c37fe0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1ab4232d4a7c763ba5202379e5a4bc15df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator=</definition>
+        <type>void</type>
+        <definition>void angle::operator=</definition>
         <argsstring>(T new_value)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::angle::operator=</qualifiedname>
         <param>
           <type>T</type>
           <declname>new_value</declname>
         </param>
         <briefdescription>
+<para>Sets the value to the value of some numeric type, casting it to a float first, and normalizing the value after that. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="68" column="6" bodyfile="meca_number/angle.hpp" bodystart="68" bodyend="72"/>
+        <location file="meca_number/angle.hpp" line="70" column="6" bodyfile="meca_number/angle.hpp" bodystart="70" bodyend="74"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1af1a0b2043c14e50d4471a03808f812c6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1ad080e98d7074a899a4ec374f4fdecdac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator+</definition>
+        <definition>angle angle::operator+</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::angle::operator+</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle as the sum of a numeric type with the value of this angle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="75" column="7" bodyfile="meca_number/angle.hpp" bodystart="75" bodyend="78"/>
+        <location file="meca_number/angle.hpp" line="77" column="7" bodyfile="meca_number/angle.hpp" bodystart="77" bodyend="80"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1af331f35b29c55719d2187a7d65c36025" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a6b8f5b864cbda129b8ed37b0c84045f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator-</definition>
+        <definition>angle angle::operator-</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::angle::operator-</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle as the substraction of the value of this angle with a numeric type. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="81" column="7" bodyfile="meca_number/angle.hpp" bodystart="81" bodyend="84"/>
+        <location file="meca_number/angle.hpp" line="83" column="7" bodyfile="meca_number/angle.hpp" bodystart="83" bodyend="86"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a580bb02e8a80fc26d84efb7967fbec56" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a28155a06cc1bed061a72f61004bd6dee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator*</definition>
+        <definition>angle angle::operator*</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator*</name>
-        <qualifiedname>scifir::angle::operator*</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle as the multiplication of a numeric type with the value of this angle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="87" column="7" bodyfile="meca_number/angle.hpp" bodystart="87" bodyend="90"/>
+        <location file="meca_number/angle.hpp" line="89" column="7" bodyfile="meca_number/angle.hpp" bodystart="89" bodyend="92"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a1c45515c33467f73900dc018e346860d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1ad333538b43349cfcb6a1944f45127b3c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator/</definition>
+        <definition>angle angle::operator/</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator/</name>
-        <qualifiedname>scifir::angle::operator/</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle as the division of a numeric type with the value of this angle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="93" column="7" bodyfile="meca_number/angle.hpp" bodystart="93" bodyend="96"/>
+        <location file="meca_number/angle.hpp" line="95" column="7" bodyfile="meca_number/angle.hpp" bodystart="95" bodyend="98"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1aaec67828caba34b87964960243e351bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a54ee78fca1e7d2d8f0314dd0f9cd9340" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator^</definition>
+        <definition>angle angle::operator^</definition>
         <argsstring>(T x) const</argsstring>
         <name>operator^</name>
-        <qualifiedname>scifir::angle::operator^</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Creates a new angle as the power of the value of this angle with a numeric type. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="99" column="7" bodyfile="meca_number/angle.hpp" bodystart="99" bodyend="102"/>
+        <location file="meca_number/angle.hpp" line="101" column="7" bodyfile="meca_number/angle.hpp" bodystart="101" bodyend="104"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1ac18da16234c449eb4932addec7301292" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a1e47f99c79ee9ed1defa85708577e96d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator+=</definition>
+        <type>void</type>
+        <definition>void angle::operator+=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::angle::operator+=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Sums a numeric type to the value of this angle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="105" column="6" bodyfile="meca_number/angle.hpp" bodystart="105" bodyend="109"/>
+        <location file="meca_number/angle.hpp" line="107" column="6" bodyfile="meca_number/angle.hpp" bodystart="107" bodyend="111"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1ae4d9570eb178dda7e1afdc92fc843d23" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1ad2bb2917dbfb4e614c519e87c87bf656" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator-=</definition>
+        <type>void</type>
+        <definition>void angle::operator-=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::angle::operator-=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Substracts a numeric type to the value of this angle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="112" column="6" bodyfile="meca_number/angle.hpp" bodystart="112" bodyend="116"/>
+        <location file="meca_number/angle.hpp" line="114" column="6" bodyfile="meca_number/angle.hpp" bodystart="114" bodyend="118"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1adf6afd81dcc9151caaed819cb8c54ffc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a20f5bf44b97ee0ff7d561de854e88de5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator*=</definition>
+        <type>void</type>
+        <definition>void angle::operator*=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator*=</name>
-        <qualifiedname>scifir::angle::operator*=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Multiplies a numeric type to the value of this angle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="119" column="6" bodyfile="meca_number/angle.hpp" bodystart="119" bodyend="123"/>
+        <location file="meca_number/angle.hpp" line="121" column="6" bodyfile="meca_number/angle.hpp" bodystart="121" bodyend="125"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a07dd1540554a8aaeec8be28414ae0fdf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a5d1156d4948464c8cc6550aefd05a5b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator/=</definition>
+        <type>void</type>
+        <definition>void angle::operator/=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator/=</name>
-        <qualifiedname>scifir::angle::operator/=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Divides a numeric type to the value of this angle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="126" column="6" bodyfile="meca_number/angle.hpp" bodystart="126" bodyend="130"/>
+        <location file="meca_number/angle.hpp" line="128" column="6" bodyfile="meca_number/angle.hpp" bodystart="128" bodyend="132"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a0e24aeb55b619bb39ea6f83dbfaba385" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a6ac4db37672545a8e5b676f1c433ac41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
+            <type>typename</type>
+            <defval>typename enable_if&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>&gt;::<ref refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" kindref="member">type</ref></defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::operator^=</definition>
+        <type>void</type>
+        <definition>void angle::operator^=</definition>
         <argsstring>(T x)</argsstring>
         <name>operator^=</name>
-        <qualifiedname>scifir::angle::operator^=</qualifiedname>
         <param>
           <type>T</type>
           <declname>x</declname>
         </param>
         <briefdescription>
+<para>Powers a numeric type to the value of this angle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="133" column="6" bodyfile="meca_number/angle.hpp" bodystart="133" bodyend="137"/>
+        <location file="meca_number/angle.hpp" line="135" column="6" bodyfile="meca_number/angle.hpp" bodystart="135" bodyend="139"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a511ad114fe3feb22650961027bea453e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a60e4a700325fe5eb2be54ee7dc68f2c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
-        <definition>angle &amp; scifir::angle::operator++</definition>
+        <definition>angle &amp; angle::operator++</definition>
         <argsstring>()</argsstring>
         <name>operator++</name>
-        <qualifiedname>scifir::angle::operator++</qualifiedname>
         <briefdescription>
+<para>Increments the value by one. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="139" column="7" bodyfile="meca_number/angle.cpp" bodystart="160" bodyend="164"/>
+        <location file="meca_number/angle.hpp" line="141" column="7" bodyfile="meca_number/angle.cpp" bodystart="192" bodyend="196"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1acd47f615a78aff4354caadc0a32f1f15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a120d4caf3f743d1afd021ac9ebf57f55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator++</definition>
+        <definition>angle angle::operator++</definition>
         <argsstring>(int)</argsstring>
         <name>operator++</name>
-        <qualifiedname>scifir::angle::operator++</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
         </param>
         <briefdescription>
+<para>Increments the value by one. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="140" column="7" bodyfile="meca_number/angle.cpp" bodystart="166" bodyend="171"/>
+        <location file="meca_number/angle.hpp" line="142" column="7" bodyfile="meca_number/angle.cpp" bodystart="198" bodyend="203"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a1774b30a6e5643c5f37dfa9b8d3fe791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1a032adc6e26934ab6796358b8f008979c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
-        <definition>angle &amp; scifir::angle::operator--</definition>
+        <definition>angle &amp; angle::operator--</definition>
         <argsstring>()</argsstring>
         <name>operator--</name>
-        <qualifiedname>scifir::angle::operator--</qualifiedname>
         <briefdescription>
+<para>Decrements the value by one. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="141" column="7" bodyfile="meca_number/angle.cpp" bodystart="173" bodyend="177"/>
+        <location file="meca_number/angle.hpp" line="143" column="7" bodyfile="meca_number/angle.cpp" bodystart="205" bodyend="209"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1afc0d65fce6543eddf82bf3254efd497b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1angle_1aac71dcdd3a29da84ff457bb5f1f12f9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
-        <definition>angle scifir::angle::operator--</definition>
+        <definition>angle angle::operator--</definition>
         <argsstring>(int)</argsstring>
         <name>operator--</name>
-        <qualifiedname>scifir::angle::operator--</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
         </param>
         <briefdescription>
+<para>Decrements the value by one. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="142" column="7" bodyfile="meca_number/angle.cpp" bodystart="179" bodyend="184"/>
+        <location file="meca_number/angle.hpp" line="144" column="7" bodyfile="meca_number/angle.cpp" bodystart="211" bodyend="216"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1ace0d6e31f63c9c375ca18124a75b08bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::invert</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1ac51fae1ea055292646899eee80c795a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angle::invert</definition>
         <argsstring>()</argsstring>
         <name>invert</name>
-        <qualifiedname>scifir::angle::invert</qualifiedname>
         <briefdescription>
+<para>Inverts the angle to the opposite direction in a 2D plane, which is to add 180 degrees. The value is normalized after. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="144" column="6" bodyfile="meca_number/angle.cpp" bodystart="186" bodyend="190"/>
+        <location file="meca_number/angle.hpp" line="146" column="6" bodyfile="meca_number/angle.cpp" bodystart="218" bodyend="222"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1ac80e26981e194771bd9f833f8c5d1f9a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::angle::display</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1adf5d66225219ec791fc16df004f609d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string angle::display</definition>
         <argsstring>(int number_of_decimals=2) const</argsstring>
         <name>display</name>
-        <qualifiedname>scifir::angle::display</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>int</type>
           <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <briefdescription>
+<para>Creates an string from the angle, with the value and the degrees symbol. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="146" column="8" bodyfile="meca_number/angle.cpp" bodystart="192" bodyend="205"/>
+        <location file="meca_number/angle.hpp" line="148" column="8" bodyfile="meca_number/angle.cpp" bodystart="224" bodyend="237"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a23c090d4d89ec0f6f920c7f6c7646e48" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-        <definition>float scifir::angle::get_grade</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1a5a4d42b33e811ce6cbfe4071fac3ef97" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float angle::get_degree</definition>
         <argsstring>() const</argsstring>
-        <name>get_grade</name>
-        <qualifiedname>scifir::angle::get_grade</qualifiedname>
+        <name>get_degree</name>
         <briefdescription>
+<para>Gets the value of the angle in degrees. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="148" column="14" bodyfile="meca_number/angle.hpp" bodystart="148" bodyend="151"/>
+        <location file="meca_number/angle.hpp" line="150" column="14" bodyfile="meca_number/angle.hpp" bodystart="150" bodyend="153"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1aae89eb053da66e9e8a5b940b4ec5e011" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-        <definition>float scifir::angle::get_radian</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1aa00ccd7a91c0118e83e7d36fd506d644" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float angle::get_radian</definition>
         <argsstring>() const</argsstring>
         <name>get_radian</name>
-        <qualifiedname>scifir::angle::get_radian</qualifiedname>
         <briefdescription>
+<para>Gets the value of the angle in radians. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="153" column="14" bodyfile="meca_number/angle.hpp" bodystart="153" bodyend="156"/>
+        <location file="meca_number/angle.hpp" line="155" column="14" bodyfile="meca_number/angle.hpp" bodystart="155" bodyend="158"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
-      <memberdef kind="function" id="classscifir_1_1angle_1a92290e7a3b1806470e55ead162f012f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::normalize_value</definition>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscifir_1_1angle_1ae5fd03c5778acc1b42c3a7aba88a77b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angle::normalize_value</definition>
         <argsstring>()</argsstring>
         <name>normalize_value</name>
-        <qualifiedname>scifir::angle::normalize_value</qualifiedname>
         <briefdescription>
+<para><bold>Internal function</bold>. Normalizes the value, which means to maintain the same angle within 0 and 360. If the value is lower or greather it gets converted to their equivalent counterpart within this range. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="161" column="6" bodyfile="meca_number/angle.cpp" bodystart="207" bodyend="226"/>
+        <location file="meca_number/angle.hpp" line="163" column="6" bodyfile="meca_number/angle.cpp" bodystart="239" bodyend="258"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1angle_1a4fe977fb634b4f37fa55717d7acd6cfb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::angle::initialize_from_string</definition>
+      <memberdef kind="function" id="classscifir_1_1angle_1a05641e654ba840e2a80c43406a82dfe9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angle::initialize_from_string</definition>
         <argsstring>(string init_angle)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::angle::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <type>string</type>
           <declname>init_angle</declname>
         </param>
         <briefdescription>
+<para><bold>Internal function</bold>. Sets the value of the angle to a new value using the initialization string of angles. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/angle.hpp" line="162" column="6" bodyfile="meca_number/angle.cpp" bodystart="228" bodyend="239"/>
+        <location file="meca_number/angle.hpp" line="164" column="6" bodyfile="meca_number/angle.cpp" bodystart="260" bodyend="271"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
-<para>Class that allows to work with angles. </para>
+<para>Class that allows to work with angles. Each angle sizes 4 bytes. </para>
     </briefdescription>
     <detaileddescription>
-<para>angle is a class that allows to work with angles, more in grades than in radians. The value of the angle is always stored inside the class in grades, and it can be get in radians with the to_radian() function. </para>
+<para>angle is a class that allows to work with angles, more in degrees than in radians. The value of the angle is always stored inside the class in degrees, and it can be get in radians with the to_radian() function. </para>
     </detaileddescription>
-    <location file="meca_number/angle.hpp" line="27" column="1" bodyfile="meca_number/angle.hpp" bodystart="28" bodyend="163"/>
+    <location file="meca_number/angle.hpp" line="27" column="1" bodyfile="meca_number/angle.hpp" bodystart="28" bodyend="165"/>
     <listofallmembers>
-      <member refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
-      <member refid="classscifir_1_1angle_1a8e899c94771eef434430adfae098b883" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
-      <member refid="classscifir_1_1angle_1ae4f664413318d5a6a651f7c3fe10eb04" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
-      <member refid="classscifir_1_1angle_1a632d1b2d77513453de38a65b35d3dcda" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
-      <member refid="classscifir_1_1angle_1adf69dc5ca149888d5fbe1ee20efb7cf4" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
-      <member refid="classscifir_1_1angle_1ac778f43b489fd266d03b5c41c2f7ca95" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
-      <member refid="classscifir_1_1angle_1aac4b1eff12b746a5915f10bf53a00adf" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
-      <member refid="classscifir_1_1angle_1a0a0a9c3a1b6d598bc8ad8d97749eb258" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
-      <member refid="classscifir_1_1angle_1aaa3388fcd68dd123c73b377ae662660d" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
-      <member refid="classscifir_1_1angle_1ac80e26981e194771bd9f833f8c5d1f9a" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>display</name></member>
-      <member refid="classscifir_1_1angle_1a23c090d4d89ec0f6f920c7f6c7646e48" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>get_grade</name></member>
-      <member refid="classscifir_1_1angle_1aae89eb053da66e9e8a5b940b4ec5e011" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>get_radian</name></member>
-      <member refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>get_value</name></member>
-      <member refid="classscifir_1_1angle_1a4fe977fb634b4f37fa55717d7acd6cfb" prot="private" virt="non-virtual"><scope>scifir::angle</scope><name>initialize_from_string</name></member>
-      <member refid="classscifir_1_1angle_1ace0d6e31f63c9c375ca18124a75b08bd" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>invert</name></member>
-      <member refid="classscifir_1_1angle_1a92290e7a3b1806470e55ead162f012f1" prot="private" virt="non-virtual"><scope>scifir::angle</scope><name>normalize_value</name></member>
-      <member refid="classscifir_1_1angle_1a56283b82a3dd8f71212bcfbe040a62f1" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator float</name></member>
-      <member refid="classscifir_1_1angle_1a062e381e2f6f78713c8e07fa74fdc8f4" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1angle_1a580bb02e8a80fc26d84efb7967fbec56" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1angle_1a14bf7aed7303247d2166b5619f9a6777" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1angle_1adf6afd81dcc9151caaed819cb8c54ffc" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1angle_1aeb8b8bcb20f46bb47f557fe2d356df1a" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1angle_1af1a0b2043c14e50d4471a03808f812c6" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1angle_1a511ad114fe3feb22650961027bea453e" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator++</name></member>
-      <member refid="classscifir_1_1angle_1acd47f615a78aff4354caadc0a32f1f15" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator++</name></member>
-      <member refid="classscifir_1_1angle_1a0ea46f05ced211a6c89d1aa9a3508171" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1angle_1ac18da16234c449eb4932addec7301292" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1angle_1a050446b4fa277444f95f1d069e139a17" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1angle_1af331f35b29c55719d2187a7d65c36025" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1angle_1a1774b30a6e5643c5f37dfa9b8d3fe791" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator--</name></member>
-      <member refid="classscifir_1_1angle_1afc0d65fce6543eddf82bf3254efd497b" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator--</name></member>
-      <member refid="classscifir_1_1angle_1a7e81004ba9897e0607bacfe156410b88" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1angle_1ae4d9570eb178dda7e1afdc92fc843d23" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1angle_1aac7d61310d1d7ba483bba1504b1e2725" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1angle_1a1c45515c33467f73900dc018e346860d" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1angle_1aa677506e6c1de245e90fd6de6d681f34" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1angle_1a07dd1540554a8aaeec8be28414ae0fdf" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1angle_1a57e62f9c321f6864195d1fb6bb7cbc4d" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1angle_1a99af609f979f3f060b667cabfb02409f" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1angle_1adaa0fc85ba37d0b29ae14daedb123a96" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1angle_1a4eaf495e7f89d276c1f3c95106b276c9" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1angle_1a5710c5bea8baae6ec66e49cc6ae38874" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1angle_1ad47fbc165c2771187a23714f64c37fe0" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1angle_1a018ddeef5a138422b2ee7c602688da85" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1angle_1aaec67828caba34b87964960243e351bd" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1angle_1a270692c7ced80eb091d193a68bfe063c" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^=</name></member>
-      <member refid="classscifir_1_1angle_1a0e24aeb55b619bb39ea6f83dbfaba385" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^=</name></member>
+      <member refid="classscifir_1_1angle_1ad0dbfb238b85b3026f1ee85d77b46f64" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
+      <member refid="classscifir_1_1angle_1a3733278927c8b3923a12025d7a9da355" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
+      <member refid="classscifir_1_1angle_1acd585db51b6c10fa4ed7658bd84792e6" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
+      <member refid="classscifir_1_1angle_1a5614a457bb4e581b6b2f7032978e0e8b" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
+      <member refid="classscifir_1_1angle_1aabda1cce5564bb882153637faf0cba12" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
+      <member refid="classscifir_1_1angle_1ab771878a9aa88b15c9173665856fb8ea" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
+      <member refid="classscifir_1_1angle_1a6a1921d9190d415b2c4e448d42575a6c" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
+      <member refid="classscifir_1_1angle_1a06972e9acf45342478b0ec481dcbd321" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
+      <member refid="classscifir_1_1angle_1a0aa8e5be255a2c960336f90c4c91f8f5" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>angle</name></member>
+      <member refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4a954b9343ae2db0c68edab65f1a6b1a95" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>DEGREE</name></member>
+      <member refid="classscifir_1_1angle_1adf5d66225219ec791fc16df004f609d9" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>display</name></member>
+      <member refid="classscifir_1_1angle_1a5a4d42b33e811ce6cbfe4071fac3ef97" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>get_degree</name></member>
+      <member refid="classscifir_1_1angle_1aa00ccd7a91c0118e83e7d36fd506d644" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>get_radian</name></member>
+      <member refid="classscifir_1_1angle_1a0ee2dddd2d514a707cc3f98e496cf8a1" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>get_value</name></member>
+      <member refid="classscifir_1_1angle_1a05641e654ba840e2a80c43406a82dfe9" prot="private" virt="non-virtual"><scope>scifir::angle</scope><name>initialize_from_string</name></member>
+      <member refid="classscifir_1_1angle_1ac51fae1ea055292646899eee80c795a6" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>invert</name></member>
+      <member refid="classscifir_1_1angle_1ae5fd03c5778acc1b42c3a7aba88a77b9" prot="private" virt="non-virtual"><scope>scifir::angle</scope><name>normalize_value</name></member>
+      <member refid="classscifir_1_1angle_1ae5362046e202f53179be6f64acb56b79" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator float</name></member>
+      <member refid="classscifir_1_1angle_1aebb8408ee687fd71e84c826d349c7e09" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1angle_1a28155a06cc1bed061a72f61004bd6dee" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1angle_1afe09b0184ea5d2f46f97b3142ae4fd03" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1angle_1a20f5bf44b97ee0ff7d561de854e88de5" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1angle_1a46e28ea538450dd3e8934db480366c88" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1angle_1ad080e98d7074a899a4ec374f4fdecdac" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1angle_1a60e4a700325fe5eb2be54ee7dc68f2c5" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator++</name></member>
+      <member refid="classscifir_1_1angle_1a120d4caf3f743d1afd021ac9ebf57f55" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator++</name></member>
+      <member refid="classscifir_1_1angle_1a929094036e2d0e5fa83f9ce6c8abee6f" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1angle_1a1e47f99c79ee9ed1defa85708577e96d" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1angle_1a734a40d34319aae1f5bee1fc635c17f3" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1angle_1a6b8f5b864cbda129b8ed37b0c84045f7" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1angle_1a032adc6e26934ab6796358b8f008979c" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator--</name></member>
+      <member refid="classscifir_1_1angle_1aac71dcdd3a29da84ff457bb5f1f12f9e" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator--</name></member>
+      <member refid="classscifir_1_1angle_1a881cd5cdde5e3fdf198d9914996228b7" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1angle_1ad2bb2917dbfb4e614c519e87c87bf656" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1angle_1ade49ca8562a9cbdb541d24ebc937002e" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1angle_1ad333538b43349cfcb6a1944f45127b3c" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1angle_1a5d57239e7dc601fd0742be6bc09aa14e" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1angle_1a5d1156d4948464c8cc6550aefd05a5b1" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1angle_1a9022ae1a46ab7da43e09dfba88c67d4a" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1angle_1a690b723759f9aa6ed67d450532dec773" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1angle_1aa5337bfab3026bfd36832d62650e538b" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1angle_1adf34ae9c62d443cae4f81af7da2e1d77" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1angle_1a043644c202f2dadfeeae10ecf9f8b0ad" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1angle_1ab4232d4a7c763ba5202379e5a4bc15df" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1angle_1af303c6f6396668a6998be4f56044b7ad" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1angle_1a54ee78fca1e7d2d8f0314dd0f9cd9340" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1angle_1a116f629dba37b7c8ba2056d582d3677d" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^=</name></member>
+      <member refid="classscifir_1_1angle_1a6ac4db37672545a8e5b676f1c433ac41" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^=</name></member>
+      <member refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4afc1ecba05b162f0e97a88176b5eab48e" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>RADIAN</name></member>
+      <member refid="classscifir_1_1angle_1a414ab17c4da94bdd62235d1f2245c0f4" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>type</name></member>
       <member refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" prot="private" virt="non-virtual"><scope>scifir::angle</scope><name>value</name></member>
     </listofallmembers>
   </compounddef>

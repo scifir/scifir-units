@@ -1,17 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1size__2d_3_01float_01_4" kind="class" language="C++" prot="public">
     <compoundname>scifir::size_2d&lt; float &gt;</compoundname>
     <includes refid="size__2d_8hpp" local="no">size_2d.hpp</includes>
     <templateparamlist>
     </templateparamlist>
-    <sectiondef kind="public-attrib">
+      <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1size__2d_3_01float_01_4_1a3299c67a6733aa8db5677db8bd32dbc5" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::size_2d&lt; float &gt;::width</definition>
         <argsstring></argsstring>
         <name>width</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::width</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,11 +20,10 @@
         <location file="special_units/size_2d.hpp" line="189" column="7" bodyfile="special_units/size_2d.hpp" bodystart="189" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1size__2d_3_01float_01_4_1aed2eff6718ded25e7f47a7c661e20cbe" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::size_2d&lt; float &gt;::height</definition>
         <argsstring></argsstring>
         <name>height</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::height</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -34,14 +32,13 @@
         </inbodydescription>
         <location file="special_units/size_2d.hpp" line="190" column="7" bodyfile="special_units/size_2d.hpp" bodystart="190" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1ad51a19ccdae89657f4878407ab943957" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::size_2d&lt; float &gt;::size_2d</definition>
         <argsstring>()</argsstring>
         <name>size_2d</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::size_2d</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -55,9 +52,8 @@
         <definition>scifir::size_2d&lt; float &gt;::size_2d</definition>
         <argsstring>(const size_2d&lt; float &gt; &amp;x)</argsstring>
         <name>size_2d</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::size_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -73,9 +69,8 @@
         <definition>scifir::size_2d&lt; float &gt;::size_2d</definition>
         <argsstring>(size_2d&lt; float &gt; &amp;&amp;x)</argsstring>
         <name>size_2d</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::size_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -91,13 +86,12 @@
         <definition>scifir::size_2d&lt; float &gt;::size_2d</definition>
         <argsstring>(const float &amp;new_width, const float &amp;new_height)</argsstring>
         <name>size_2d</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::size_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &amp;</type>
+          <type>const float &amp;</type>
           <declname>new_width</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &amp;</type>
+          <type>const float &amp;</type>
           <declname>new_height</declname>
         </param>
         <briefdescription>
@@ -113,13 +107,12 @@
         <definition>scifir::size_2d&lt; float &gt;::size_2d</definition>
         <argsstring>(const string &amp;new_width, const string &amp;new_height)</argsstring>
         <name>size_2d</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::size_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_width</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>new_height</declname>
         </param>
         <briefdescription>
@@ -135,9 +128,8 @@
         <definition>scifir::size_2d&lt; float &gt;::size_2d</definition>
         <argsstring>(const string &amp;init_size_2d)</argsstring>
         <name>size_2d</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::size_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_size_2d</declname>
         </param>
         <briefdescription>
@@ -148,14 +140,13 @@
         </inbodydescription>
         <location file="special_units/size_2d.hpp" line="130" column="10" bodyfile="special_units/size_2d.hpp" bodystart="130" bodyend="133"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1a31b384415d56c1974c70dd18b2ee9e7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>size_2d&lt; float &gt; &amp; scifir::size_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1a007c7757d12ab8729eaf11d6c634fb2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>size_2d&lt;float&gt;&amp; scifir::size_2d&lt; float &gt;::operator=</definition>
         <argsstring>(const size_2d&lt; float &gt; &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -166,14 +157,13 @@
         </inbodydescription>
         <location file="special_units/size_2d.hpp" line="135" column="9" bodyfile="special_units/size_2d.hpp" bodystart="135" bodyend="140"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1a971f3f53233a7a8c45149f1c42765913" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>size_2d&lt; float &gt; &amp; scifir::size_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1a9ce7d7eeb783e957b69e380581b903b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>size_2d&lt;float&gt;&amp; scifir::size_2d&lt; float &gt;::operator=</definition>
         <argsstring>(size_2d&lt; float &gt; &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -184,14 +174,13 @@
         </inbodydescription>
         <location file="special_units/size_2d.hpp" line="142" column="9" bodyfile="special_units/size_2d.hpp" bodystart="142" bodyend="147"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1ad5047b0983a6e1afdef9c936e74d0ef3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>size_2d&lt; float &gt; &amp; scifir::size_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1abf5fc3427e8cd68fed29e2acf9b857d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>size_2d&lt;float&gt;&amp; scifir::size_2d&lt; float &gt;::operator=</definition>
         <argsstring>(const string &amp;init_size_2d)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_size_2d</declname>
         </param>
         <briefdescription>
@@ -202,14 +191,13 @@
         </inbodydescription>
         <location file="special_units/size_2d.hpp" line="149" column="9" bodyfile="special_units/size_2d.hpp" bodystart="149" bodyend="153"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1ac922e6c0f8db9f92b3a6c937e3f6adb4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt;</type>
-        <definition>size_2d&lt; float &gt; scifir::size_2d&lt; float &gt;::operator+</definition>
+      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1af4b9333f22815a0dfb49c08c468a36ae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt;</type>
+        <definition>size_2d&lt;float&gt; scifir::size_2d&lt; float &gt;::operator+</definition>
         <argsstring>(const size_2d&lt; float &gt; &amp;x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -220,14 +208,13 @@
         </inbodydescription>
         <location file="special_units/size_2d.hpp" line="155" column="9" bodyfile="special_units/size_2d.hpp" bodystart="155" bodyend="158"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1af985504ee5823733d833957a4ece0f5a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt;</type>
-        <definition>size_2d&lt; float &gt; scifir::size_2d&lt; float &gt;::operator-</definition>
+      <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1a8af4f1d0b7a724b0717d8ea17b34e983" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt;</type>
+        <definition>size_2d&lt;float&gt; scifir::size_2d&lt; float &gt;::operator-</definition>
         <argsstring>(const size_2d&lt; float &gt; &amp;x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::operator-</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -239,13 +226,12 @@
         <location file="special_units/size_2d.hpp" line="160" column="9" bodyfile="special_units/size_2d.hpp" bodystart="160" bodyend="163"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1a12cfc533344e57993dce5bdf1f8eb7e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::size_2d&lt; float &gt;::operator+=</definition>
         <argsstring>(const size_2d&lt; float &gt; &amp;x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -257,13 +243,12 @@
         <location file="special_units/size_2d.hpp" line="165" column="6" bodyfile="special_units/size_2d.hpp" bodystart="165" bodyend="169"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1a4e2499c76367aa3e1fd22841eba8a6ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::size_2d&lt; float &gt;::operator-=</definition>
         <argsstring>(const size_2d&lt; float &gt; &amp;x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::operator-=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__2d" kindref="compound">size_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -275,11 +260,10 @@
         <location file="special_units/size_2d.hpp" line="171" column="6" bodyfile="special_units/size_2d.hpp" bodystart="171" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1ad9eb3ae714ce65671070656c6cbe5d14" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::size_2d&lt; float &gt;::get_area</definition>
         <argsstring>() const</argsstring>
         <name>get_area</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::get_area</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -289,11 +273,10 @@
         <location file="special_units/size_2d.hpp" line="177" column="7" bodyfile="special_units/size_2d.hpp" bodystart="177" bodyend="180"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1a1c43a9ad6a241b8df1a10c70d1ca9031" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::size_2d&lt; float &gt;::display</definition>
         <argsstring>() const</argsstring>
         <name>display</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::display</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -302,16 +285,15 @@
         </inbodydescription>
         <location file="special_units/size_2d.hpp" line="182" column="8" bodyfile="special_units/size_2d.hpp" bodystart="182" bodyend="187"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1size__2d_3_01float_01_4_1a08c6bf183aed9cf06cbd5758d382e78b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::size_2d&lt; float &gt;::initialize_from_string</definition>
         <argsstring>(const string &amp;init_size_2d)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::size_2d&lt; float &gt;::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_size_2d</declname>
         </param>
         <briefdescription>
@@ -322,7 +304,7 @@
         </inbodydescription>
         <location file="special_units/size_2d.hpp" line="193" column="6" bodyfile="special_units/size_2d.hpp" bodystart="193" bodyend="204"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -333,13 +315,13 @@
       <member refid="classscifir_1_1size__2d_3_01float_01_4_1ad9eb3ae714ce65671070656c6cbe5d14" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>get_area</name></member>
       <member refid="classscifir_1_1size__2d_3_01float_01_4_1aed2eff6718ded25e7f47a7c661e20cbe" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>height</name></member>
       <member refid="classscifir_1_1size__2d_3_01float_01_4_1a08c6bf183aed9cf06cbd5758d382e78b" prot="private" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>initialize_from_string</name></member>
-      <member refid="classscifir_1_1size__2d_3_01float_01_4_1ac922e6c0f8db9f92b3a6c937e3f6adb4" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1size__2d_3_01float_01_4_1af4b9333f22815a0dfb49c08c468a36ae" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator+</name></member>
       <member refid="classscifir_1_1size__2d_3_01float_01_4_1a12cfc533344e57993dce5bdf1f8eb7e2" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1size__2d_3_01float_01_4_1af985504ee5823733d833957a4ece0f5a" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1size__2d_3_01float_01_4_1a8af4f1d0b7a724b0717d8ea17b34e983" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator-</name></member>
       <member refid="classscifir_1_1size__2d_3_01float_01_4_1a4e2499c76367aa3e1fd22841eba8a6ff" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1size__2d_3_01float_01_4_1a31b384415d56c1974c70dd18b2ee9e7d" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1size__2d_3_01float_01_4_1a971f3f53233a7a8c45149f1c42765913" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1size__2d_3_01float_01_4_1ad5047b0983a6e1afdef9c936e74d0ef3" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1size__2d_3_01float_01_4_1a007c7757d12ab8729eaf11d6c634fb2b" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1size__2d_3_01float_01_4_1a9ce7d7eeb783e957b69e380581b903b7" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1size__2d_3_01float_01_4_1abf5fc3427e8cd68fed29e2acf9b857d2" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>operator=</name></member>
       <member refid="classscifir_1_1size__2d_3_01float_01_4_1ad51a19ccdae89657f4878407ab943957" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>size_2d</name></member>
       <member refid="classscifir_1_1size__2d_3_01float_01_4_1ad3565a42058aa54124c2cb9c71ae0a78" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>size_2d</name></member>
       <member refid="classscifir_1_1size__2d_3_01float_01_4_1afcd88351f402ad03813323f9c8e9dce1" prot="public" virt="non-virtual"><scope>scifir::size_2d&lt; float &gt;</scope><name>size_2d</name></member>

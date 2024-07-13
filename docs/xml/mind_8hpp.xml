@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="mind_8hpp" kind="file" language="C++">
     <compoundname>mind.hpp</compoundname>
     <includes local="no">string</includes>
     <includedby refid="mind_8cpp" local="yes">special_units/mind.cpp</includedby>
     <incdepgraph>
+      <node id="2">
+        <label>string</label>
+      </node>
       <node id="1">
         <label>special_units/mind.hpp</label>
         <link refid="mind_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="2">
-        <label>string</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -52,9 +52,9 @@
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18" refid="namespacescifir_1adf4f4a4a8bd67155b05554ea7e59e56e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1adf4f4a4a8bd67155b05554ea7e59e56e" kindref="member">conscience_state</ref><sp/>{<sp/><ref refid="namespacescifir_1adf4f4a4a8bd67155b05554ea7e59e56ea1e23852820b9154316c7c06e2b7ba051" kindref="member">NORMAL</ref>,<sp/><ref refid="namespacescifir_1adf4f4a4a8bd67155b05554ea7e59e56ea0d6def17de959e80440532e7e8e396c9" kindref="member">ALTERED</ref><sp/>};</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20" refid="namespacescifir_1acea8c46cd8e9ff864027ffd33f611c1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a83fe32b03d40fdd5728b2e413123bee5" kindref="member">feeling</ref>&amp;);</highlight></codeline>
-<codeline lineno="21" refid="namespacescifir_1a7bb3d88a4813aa8a6c6715385d25e7ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a689c4e163ef96d7d5dad93dce859d2c6" kindref="member">emotion</ref>&amp;);</highlight></codeline>
-<codeline lineno="22" refid="namespacescifir_1a7108c656946d5d84e561f93b6991b9f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1ac18481f3c66f9d73be63595a15353fb2" kindref="member">sensation</ref>&amp;);</highlight></codeline>
+<codeline lineno="20" refid="namespacescifir_1acea8c46cd8e9ff864027ffd33f611c1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a7108c656946d5d84e561f93b6991b9f5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a83fe32b03d40fdd5728b2e413123bee5" kindref="member">feeling</ref>&amp;);</highlight></codeline>
+<codeline lineno="21" refid="namespacescifir_1a7bb3d88a4813aa8a6c6715385d25e7ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a7108c656946d5d84e561f93b6991b9f5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a689c4e163ef96d7d5dad93dce859d2c6" kindref="member">emotion</ref>&amp;);</highlight></codeline>
+<codeline lineno="22" refid="namespacescifir_1a7108c656946d5d84e561f93b6991b9f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a7108c656946d5d84e561f93b6991b9f5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1ac18481f3c66f9d73be63595a15353fb2" kindref="member">sensation</ref>&amp;);</highlight></codeline>
 <codeline lineno="23"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_MIND_HPP_INCLUDED</highlight></codeline>

@@ -1,4 +1,4 @@
-.TH "scifir::matrix< T, M, N >" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::matrix< T, M, N >" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,71 +15,71 @@ scifir::matrix< T, M, N >
 .RI "\fBmatrix\fP ()"
 .br
 .ti -1c
-.RI "\fBmatrix\fP (\fBinitializer_list\fP< vector< T > > x)"
+.RI "\fBmatrix\fP (initializer_list< vector< T >> x)"
 .br
 .ti -1c
-.RI "\fBvirtual\fP \fBmatrix\fP< T, M, N > * \fBclone\fP () \fBconst\fP"
+.RI "virtual \fBmatrix\fP< T, M, N > * \fBclone\fP () const"
 .br
 .ti -1c
-.RI "\fBint\fP \fBrow_size\fP () \fBconst\fP"
+.RI "int \fBrow_size\fP () const"
 .br
 .ti -1c
-.RI "\fBint\fP \fBcolumn_size\fP () \fBconst\fP"
+.RI "int \fBcolumn_size\fP () const"
 .br
 .ti -1c
-.RI "\fBmatrix\fP< T, 1, N > \fBrow\fP (\fBint\fP \fBi\fP) \fBconst\fP"
+.RI "\fBmatrix\fP< T, 1, N > \fBrow\fP (int i) const"
 .br
 .ti -1c
-.RI "\fBmatrix\fP< T, M, 1 > \fBcolumn\fP (\fBint\fP \fBj\fP) \fBconst\fP"
+.RI "\fBmatrix\fP< T, M, 1 > \fBcolumn\fP (int j) const"
 .br
 .ti -1c
-.RI "\fBconst\fP T & \fBoperator()\fP (\fBint\fP \fBi\fP, \fBint\fP \fBj\fP) \fBconst\fP"
+.RI "const T & \fBoperator()\fP (int i, int j) const"
 .br
 .ti -1c
-.RI "T & \fBoperator()\fP (\fBint\fP \fBi\fP, \fBint\fP \fBj\fP)"
+.RI "T & \fBoperator()\fP (int i, int j)"
 .br
 .ti -1c
-.RI "\fBmatrix\fP< T, M, N > \fBoperator+\fP (\fBconst\fP \fBmatrix\fP< T, M, N > &x)"
+.RI "\fBmatrix\fP< T, M, N > \fBoperator+\fP (const \fBmatrix\fP< T, M, N > &x)"
 .br
 .ti -1c
-.RI "\fBmatrix\fP< T, M, N > \fBoperator\-\fP (\fBconst\fP \fBmatrix\fP< T, M, N > &x)"
+.RI "\fBmatrix\fP< T, M, N > \fBoperator\-\fP (const \fBmatrix\fP< T, M, N > &x)"
 .br
 .ti -1c
-.RI "template<\fBint\fP N2> \fBmatrix\fP< T, N, \fBN2\fP > \fBoperator*\fP (\fBconst\fP \fBmatrix\fP< T, N, \fBN2\fP > &x)"
+.RI "template<int N2> \fBmatrix\fP< T, N, N2 > \fBoperator*\fP (const \fBmatrix\fP< T, N, N2 > &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<is_integer_number<T>::value>::type> \fBmatrix\fP< T, M, N > \fBoperator^\fP (\fBU\fP x)"
+.RI "template<typename U , typename  = typename enable_if<is_integer_number<T>::value>::type> \fBmatrix\fP< T, M, N > \fBoperator^\fP (U x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBmatrix\fP< T, M, N > &x)"
+.RI "void \fBoperator+=\fP (const \fBmatrix\fP< T, M, N > &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBmatrix\fP< T, M, N > &x)"
+.RI "void \fBoperator\-=\fP (const \fBmatrix\fP< T, M, N > &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<is_integer_number<T>::value>::type> \fBvoid\fP \fBoperator^=\fP (\fBU\fP x)"
+.RI "template<typename U , typename  = typename enable_if<is_integer_number<T>::value>::type> void \fBoperator^=\fP (U x)"
 .br
 .ti -1c
-.RI "\fBmatrix\fP< T, N, M > \fBt\fP () \fBconst\fP"
+.RI "\fBmatrix\fP< T, N, M > \fBt\fP () const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBis_square\fP () \fBconst\fP"
+.RI "bool \fBis_square\fP () const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBis_diagonal\fP () \fBconst\fP"
+.RI "bool \fBis_diagonal\fP () const"
 .br
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBbool\fP \fBoutside_row_limits\fP (\fBint\fP \fBi\fP) \fBconst\fP"
+.RI "bool \fBoutside_row_limits\fP (int i) const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBoutside_column_limits\fP (\fBint\fP \fBi\fP) \fBconst\fP"
+.RI "bool \fBoutside_column_limits\fP (int i) const"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBoutside_limits\fP (\fBint\fP \fBi\fP, \fBint\fP \fBj\fP) \fBconst\fP"
+.RI "bool \fBoutside_limits\fP (int i, int j) const"
 .br
 .in -1c
 .SS "Private Attributes"
@@ -92,26 +92,28 @@ scifir::matrix< T, M, N >
 .SH "Detailed Description"
 .PP 
 
-.SS "template<\fBtypename\fP T, \fBint\fP M, \fBint\fP N>
+.SS "template<typename T, int M, int N>
 .br
 class scifir::matrix< T, M, N >"
-.PP
-Definition at line \fB15\fP of file \fBmatrix\&.hpp\fP\&.
-.SH "Constructor & Destructor Documentation"
-.PP 
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBscifir::matrix\fP< T, M, N >::matrix ()\fC [inline]\fP"
 
 .PP
-Definition at line \fB18\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 15 of file matrix\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T , int M, int N> \fBscifir::matrix\fP< T, M, N >::\fBmatrix\fP ()\fC [inline]\fP"
+
+.PP
+Definition at line 18 of file matrix\&.hpp\&.
+.PP
 .nf
 18                      : data(vector<vector<T>>(M, vector<T>(N)))
 19             {}
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBscifir::matrix\fP< T, M, N >::matrix (\fBinitializer_list\fP< vector< T > > x)\fC [inline]\fP"
+.SS "template<typename T , int M, int N> \fBscifir::matrix\fP< T, M, N >::\fBmatrix\fP (initializer_list< vector< T >> x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB21\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 21 of file matrix\&.hpp\&.
+.PP
 .nf
 21                                                   : matrix()
 22             {
@@ -137,23 +139,23 @@ Definition at line \fB21\fP of file \fBmatrix\&.hpp\fP\&..PP
 42                 }
 43             }
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBvirtual\fP \fBmatrix\fP< T, M, N > * \fBscifir::matrix\fP< T, M, N >::clone () const\fC [inline]\fP, \fC [virtual]\fP"
+.SS "template<typename T , int M, int N> virtual \fBmatrix\fP<T, M, N>* \fBscifir::matrix\fP< T, M, N >::clone () const\fC [inline]\fP, \fC [virtual]\fP"
 
 .PP
-Definition at line \fB45\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 45 of file matrix\&.hpp\&.
+.PP
 .nf
 46             {
 47                 return new matrix<T, M, N>(static_cast<const matrix<T, M, N>&>(*this));
 48             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBmatrix\fP< T, M, 1 > \fBscifir::matrix\fP< T, M, N >::column (\fBint\fP j) const\fC [inline]\fP"
+.SS "template<typename T , int M, int N> \fBmatrix\fP<T,M,1> \fBscifir::matrix\fP< T, M, N >::column (int j) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB74\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 74 of file matrix\&.hpp\&.
+.PP
 .nf
 75             {
 76                 if (outside_column_limits(j))
@@ -163,26 +165,26 @@ Definition at line \fB74\fP of file \fBmatrix\&.hpp\fP\&..PP
 80                 matrix<T,M,1> x = matrix<T,M,1>();
 81                 for (int i = 0; i < M; i++)
 82                 {
-83                     x(i + 1,1) = data[i][j \- 1];
+83                     x(i + 1,1) = data[i][j - 1];
 84                 }
 85                 return std::move(x);
 86             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBint\fP \fBscifir::matrix\fP< T, M, N >::column_size () const\fC [inline]\fP"
+.SS "template<typename T , int M, int N> int \fBscifir::matrix\fP< T, M, N >::column_size () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB55\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 55 of file matrix\&.hpp\&.
+.PP
 .nf
 56             {
 57                 return N;
 58             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBbool\fP \fBscifir::matrix\fP< T, M, N >::is_diagonal () const\fC [inline]\fP"
+.SS "template<typename T , int M, int N> bool \fBscifir::matrix\fP< T, M, N >::is_diagonal () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB211\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 211 of file matrix\&.hpp\&.
+.PP
 .nf
 212             {
 213                 for(int i = 0; i < M; i++)
@@ -198,11 +200,11 @@ Definition at line \fB211\fP of file \fBmatrix\&.hpp\fP\&..PP
 223                 return true;
 224             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBbool\fP \fBscifir::matrix\fP< T, M, N >::is_square () const\fC [inline]\fP"
+.SS "template<typename T , int M, int N> bool \fBscifir::matrix\fP< T, M, N >::is_square () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB199\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 199 of file matrix\&.hpp\&.
+.PP
 .nf
 200             {
 201                 if(M == N)
@@ -215,39 +217,39 @@ Definition at line \fB199\fP of file \fBmatrix\&.hpp\fP\&..PP
 208                 }
 209             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> T & \fBscifir::matrix\fP< T, M, N >::operator() (\fBint\fP i, \fBint\fP j)\fC [inline]\fP"
+.SS "template<typename T , int M, int N> T& \fBscifir::matrix\fP< T, M, N >::operator() (int i, int j)\fC [inline]\fP"
 
 .PP
-Definition at line \fB97\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 97 of file matrix\&.hpp\&.
+.PP
 .nf
 98             {
 99                 if (outside_limits(i,j))
 100                 {
 101                     return T();
 102                 }
-103                 return data[i \- 1][j \- 1];
+103                 return data[i - 1][j - 1];
 104             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBconst\fP T & \fBscifir::matrix\fP< T, M, N >::operator() (\fBint\fP i, \fBint\fP j) const\fC [inline]\fP"
+.SS "template<typename T , int M, int N> const T& \fBscifir::matrix\fP< T, M, N >::operator() (int i, int j) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB88\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 88 of file matrix\&.hpp\&.
+.PP
 .nf
 89             {
 90                 if (outside_limits(i,j))
 91                 {
 92                     return T();
 93                 }
-94                 return data[i \- 1][j \- 1];
+94                 return data[i - 1][j - 1];
 95             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> template<\fBint\fP N2> \fBmatrix\fP< T, N, \fBN2\fP > \fBscifir::matrix\fP< T, M, N >::operator* (\fBconst\fP \fBmatrix\fP< T, N, \fBN2\fP > & x)\fC [inline]\fP"
+.SS "template<typename T , int M, int N> template<int N2> \fBmatrix\fP<T, N, N2> \fBscifir::matrix\fP< T, M, N >::operator* (const \fBmatrix\fP< T, N, N2 > & x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB121\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 121 of file matrix\&.hpp\&.
+.PP
 .nf
 122             {
 123                 matrix<T, N, N2> new_matrix = matrix<T, N, N2>();
@@ -266,11 +268,11 @@ Definition at line \fB121\fP of file \fBmatrix\&.hpp\fP\&..PP
 136                 return move(new_matrix);
 137             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBmatrix\fP< T, M, N > \fBscifir::matrix\fP< T, M, N >::operator+ (\fBconst\fP \fBmatrix\fP< T, M, N > & x)\fC [inline]\fP"
+.SS "template<typename T , int M, int N> \fBmatrix\fP<T, M, N> \fBscifir::matrix\fP< T, M, N >::operator+ (const \fBmatrix\fP< T, M, N > & x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB106\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 106 of file matrix\&.hpp\&.
+.PP
 .nf
 107             {
 108                 matrix<T, M, N> y = *clone();
@@ -278,11 +280,11 @@ Definition at line \fB106\fP of file \fBmatrix\&.hpp\fP\&..PP
 110                 return std::move(y);
 111             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBvoid\fP \fBscifir::matrix\fP< T, M, N >::operator+= (\fBconst\fP \fBmatrix\fP< T, M, N > & x)\fC [inline]\fP"
+.SS "template<typename T , int M, int N> void \fBscifir::matrix\fP< T, M, N >::operator+= (const \fBmatrix\fP< T, M, N > & x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB147\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 147 of file matrix\&.hpp\&.
+.PP
 .nf
 148             {
 149                 for(int i = 0; i < M; i++)
@@ -294,39 +296,39 @@ Definition at line \fB147\fP of file \fBmatrix\&.hpp\fP\&..PP
 155                 }
 156             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBmatrix\fP< T, M, N > \fBscifir::matrix\fP< T, M, N >::operator\- (\fBconst\fP \fBmatrix\fP< T, M, N > & x)\fC [inline]\fP"
+.SS "template<typename T , int M, int N> \fBmatrix\fP<T, M, N> \fBscifir::matrix\fP< T, M, N >::operator\- (const \fBmatrix\fP< T, M, N > & x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB113\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 113 of file matrix\&.hpp\&.
+.PP
 .nf
 114             {
 115                 matrix<T, M, N> y = *clone();
-116                 y \-= x;
+116                 y -= x;
 117                 return std::move(y);
 118             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBvoid\fP \fBscifir::matrix\fP< T, M, N >::operator\-= (\fBconst\fP \fBmatrix\fP< T, M, N > & x)\fC [inline]\fP"
+.SS "template<typename T , int M, int N> void \fBscifir::matrix\fP< T, M, N >::operator\-= (const \fBmatrix\fP< T, M, N > & x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB158\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 158 of file matrix\&.hpp\&.
+.PP
 .nf
 159             {
 160                 for(int i = 0; i < M; i++)
 161                 {
 162                     for(int j = 0; j < N; j++)
 163                     {
-164                         data[i][j] \-= x(i + 1,j + 1);
+164                         data[i][j] -= x(i + 1,j + 1);
 165                     }
 166                 }
 167             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<is_integer_number<T>::value>::type> \fBmatrix\fP< T, M, N > \fBscifir::matrix\fP< T, M, N >::operator^ (\fBU\fP x)\fC [inline]\fP"
+.SS "template<typename T , int M, int N> template<typename U , typename  = typename enable_if<is_integer_number<T>::value>::type> \fBmatrix\fP<T, M, N> \fBscifir::matrix\fP< T, M, N >::operator^ (U x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB140\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 140 of file matrix\&.hpp\&.
+.PP
 .nf
 141             {
 142                 matrix<T, M, N> y = *clone();
@@ -334,11 +336,11 @@ Definition at line \fB140\fP of file \fBmatrix\&.hpp\fP\&..PP
 144                 return move(y);
 145             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<is_integer_number<T>::value>::type> \fBvoid\fP \fBscifir::matrix\fP< T, M, N >::operator^= (\fBU\fP x)\fC [inline]\fP"
+.SS "template<typename T , int M, int N> template<typename U , typename  = typename enable_if<is_integer_number<T>::value>::type> void \fBscifir::matrix\fP< T, M, N >::operator^= (U x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB170\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 170 of file matrix\&.hpp\&.
+.PP
 .nf
 171             {
 172                 matrix<T,M,N> new_data = *clone();
@@ -355,11 +357,11 @@ Definition at line \fB170\fP of file \fBmatrix\&.hpp\fP\&..PP
 183                 }
 184             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBbool\fP \fBscifir::matrix\fP< T, M, N >::outside_column_limits (\fBint\fP i) const\fC [inline]\fP, \fC [private]\fP"
+.SS "template<typename T , int M, int N> bool \fBscifir::matrix\fP< T, M, N >::outside_column_limits (int i) const\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line \fB238\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 238 of file matrix\&.hpp\&.
+.PP
 .nf
 239             {
 240                 if (i < 1 or i > N)
@@ -369,11 +371,11 @@ Definition at line \fB238\fP of file \fBmatrix\&.hpp\fP\&..PP
 244                 return false;
 245             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBbool\fP \fBscifir::matrix\fP< T, M, N >::outside_limits (\fBint\fP i, \fBint\fP j) const\fC [inline]\fP, \fC [private]\fP"
+.SS "template<typename T , int M, int N> bool \fBscifir::matrix\fP< T, M, N >::outside_limits (int i, int j) const\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line \fB247\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 247 of file matrix\&.hpp\&.
+.PP
 .nf
 248             {
 249                 if (outside_row_limits(i) or outside_column_limits(j))
@@ -383,11 +385,11 @@ Definition at line \fB247\fP of file \fBmatrix\&.hpp\fP\&..PP
 253                 return false;
 254             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBbool\fP \fBscifir::matrix\fP< T, M, N >::outside_row_limits (\fBint\fP i) const\fC [inline]\fP, \fC [private]\fP"
+.SS "template<typename T , int M, int N> bool \fBscifir::matrix\fP< T, M, N >::outside_row_limits (int i) const\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line \fB229\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 229 of file matrix\&.hpp\&.
+.PP
 .nf
 230             {
 231                 if (i < 1 or i > M)
@@ -397,11 +399,11 @@ Definition at line \fB229\fP of file \fBmatrix\&.hpp\fP\&..PP
 235                 return false;
 236             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBmatrix\fP< T, 1, N > \fBscifir::matrix\fP< T, M, N >::row (\fBint\fP i) const\fC [inline]\fP"
+.SS "template<typename T , int M, int N> \fBmatrix\fP<T,1,N> \fBscifir::matrix\fP< T, M, N >::row (int i) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB60\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 60 of file matrix\&.hpp\&.
+.PP
 .nf
 61             {
 62                 if (outside_row_limits(i))
@@ -411,26 +413,26 @@ Definition at line \fB60\fP of file \fBmatrix\&.hpp\fP\&..PP
 66                 matrix<T,1,N> x = matrix<T,1,N>();
 67                 for (int j = 0; j < N; j++)
 68                 {
-69                     x(1,j + 1) = data[i \- 1][j];
+69                     x(1,j + 1) = data[i - 1][j];
 70                 }
 71                 return std::move(x);
 72             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBint\fP \fBscifir::matrix\fP< T, M, N >::row_size () const\fC [inline]\fP"
+.SS "template<typename T , int M, int N> int \fBscifir::matrix\fP< T, M, N >::row_size () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB50\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 50 of file matrix\&.hpp\&.
+.PP
 .nf
 51             {
 52                 return M;
 53             }
 .fi
-
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> \fBmatrix\fP< T, N, M > \fBscifir::matrix\fP< T, M, N >::t () const\fC [inline]\fP"
+.SS "template<typename T , int M, int N> \fBmatrix\fP<T, N, M> \fBscifir::matrix\fP< T, M, N >::t () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB186\fP of file \fBmatrix\&.hpp\fP\&..PP
+Definition at line 186 of file matrix\&.hpp\&.
+.PP
 .nf
 187             {
 188                 matrix<T, N, M> new_data = matrix<T, N, M>();
@@ -444,13 +446,12 @@ Definition at line \fB186\fP of file \fBmatrix\&.hpp\fP\&..PP
 196                 return move(new_data);
 197             }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "template<\fBtypename\fP T , \fBint\fP M, \fBint\fP N> vector<vector<T> > \fBscifir::matrix\fP< T, M, N >::data\fC [private]\fP"
+.SS "template<typename T , int M, int N> vector<vector<T> > \fBscifir::matrix\fP< T, M, N >::data\fC [private]\fP"
 
 .PP
-Definition at line \fB227\fP of file \fBmatrix\&.hpp\fP\&.
+Definition at line 227 of file matrix\&.hpp\&.
 
 .SH "Author"
 .PP 

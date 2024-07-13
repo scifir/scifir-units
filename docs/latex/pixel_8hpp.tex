@@ -1,55 +1,57 @@
-\doxysection{special\+\_\+units/pixel.hpp File Reference}
-\hypertarget{pixel_8hpp}{}\label{pixel_8hpp}\index{special\_units/pixel.hpp@{special\_units/pixel.hpp}}
-{\ttfamily \#include "{}../topology/constants.\+hpp"{}}\newline
-{\ttfamily \#include "{}../util/is\+\_\+number.\+hpp"{}}\newline
-{\ttfamily \#include "{}../units/scalar\+\_\+unit.\+hpp"{}}\newline
-{\ttfamily \#include "{}boost/math/constants/constants.\+hpp"{}}\newline
+\hypertarget{pixel_8hpp}{}\doxysection{special\+\_\+units/pixel.hpp File Reference}
+\label{pixel_8hpp}\index{special\_units/pixel.hpp@{special\_units/pixel.hpp}}
+{\ttfamily \#include \char`\"{}../topology/constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/is\+\_\+number.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../units/scalar\+\_\+unit.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}boost/math/constants/constants.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
-Include dependency graph for pixel.\+hpp\+:\nopagebreak
+Include dependency graph for pixel.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{pixel_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=288pt]{pixel_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Classes}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Namespaces}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+ \mbox{\hyperlink{namespacescifir}{scifir}}
 \begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_aeb9a00fb9eb60b11ffa68783d1fbb41b}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1pixel}{pixel}} \&x)
+string \mbox{\hyperlink{namespacescifir_aeb9a00fb9eb60b11ffa68783d1fbb41b}{scifir\+::to\+\_\+string}} (const pixel \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a934fdfe1417bc9ea6bf5384af13c5576}{scifir\+::is\+\_\+pixel}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+pixel}})
+bool \mbox{\hyperlink{namespacescifir_a934fdfe1417bc9ea6bf5384af13c5576}{scifir\+::is\+\_\+pixel}} (const string \&init\+\_\+pixel)
 \item 
-\mbox{\hyperlink{classscifir_1_1pixel}{pixel}} \mbox{\hyperlink{namespacescifir_a081d72f8449e09fb1c725cf9adf94a1a}{scifir\+::sqrt}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1pixel}{pixel}} \&x)
+pixel \mbox{\hyperlink{namespacescifir_a081d72f8449e09fb1c725cf9adf94a1a}{scifir\+::sqrt}} (const pixel \&x)
 \item 
-\mbox{\hyperlink{classscifir_1_1pixel}{pixel}} \mbox{\hyperlink{namespacescifir_a8d8543360cc10512117a8006b995e7f6}{scifir\+::sqrt\+\_\+nth}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1pixel}{pixel}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} index)
+pixel \mbox{\hyperlink{namespacescifir_a8d8543360cc10512117a8006b995e7f6}{scifir\+::sqrt\+\_\+nth}} (const pixel \&x, int index)
 \item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \mbox{\hyperlink{pixel_8hpp_a0e96af7acd7bf8018fa538be6855cc71}{operator+}} (T x, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&y)
 \item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \mbox{\hyperlink{pixel_8hpp_a2f44a5c8175a3e6af6ebcafde3cbc13f}{operator-\/}} (T x, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&y)
 \item 
-{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \mbox{\hyperlink{pixel_8hpp_a18f835f157359bf6e13ea5ddf51b2133}{operator\texorpdfstring{$\ast$}{*}}} (T x, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&y)
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \mbox{\hyperlink{pixel_8hpp_a18f835f157359bf6e13ea5ddf51b2133}{operator$\ast$}} (T x, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&y)
 \item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \mbox{\hyperlink{pixel_8hpp_a479d9eb3523e8bca5936404fb2873ecd}{operator/}} (T x, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&y)
 \item 
-{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \mbox{\hyperlink{pixel_8hpp_a7eec4b3efecc4ef2a3e3f466b134eaa8}{operator\texorpdfstring{$^\wedge$}{\string^}}} (T x, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&y)
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \mbox{\hyperlink{pixel_8hpp_a7eec4b3efecc4ef2a3e3f466b134eaa8}{operator$^\wedge$}} (T x, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&y)
 \item 
 {\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{pixel_8hpp_a1d52a229b040509dc079022b95602c0b}{operator==}} (T x, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&y)
 \item 
@@ -101,14 +103,14 @@ string \mbox{\hyperlink{pixel_8hpp_acf77745337bdfa9d05f3d2f65c29eaf6}{operator+}
 \item 
 string \mbox{\hyperlink{pixel_8hpp_ae5f98ce5f5ed621542079a5844320a1a}{operator+}} (const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&y, const string \&x)
 \item 
-ostream \& \mbox{\hyperlink{pixel_8hpp_abb79e5d6f80a12ec02ce7e11bb556b33}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&x)
+ostream \& \mbox{\hyperlink{pixel_8hpp_a063388b3125071bbbc2e16f9bde48486}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&x)
 \item 
-istream \& \mbox{\hyperlink{pixel_8hpp_aacae8ba2b77a579fee17f4c23256c79f}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&x)
+istream \& \mbox{\hyperlink{pixel_8hpp_a33b143b6258c36c9e89dc480fa838272}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&x)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{pixel_8hpp_a1fef8d421528e7f10bdc5e84587cd8cc}\label{pixel_8hpp_a1fef8d421528e7f10bdc5e84587cd8cc} 
+\mbox{\Hypertarget{pixel_8hpp_a1fef8d421528e7f10bdc5e84587cd8cc}\label{pixel_8hpp_a1fef8d421528e7f10bdc5e84587cd8cc}} 
 \index{pixel.hpp@{pixel.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
@@ -116,16 +118,16 @@ istream \& \mbox{\hyperlink{pixel_8hpp_aacae8ba2b77a579fee17f4c23256c79f}{operat
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00251}{251}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 251 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00252\ \{}
-\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00254\ \}}
+\DoxyCodeLine{252 \{}
+\DoxyCodeLine{253     \textcolor{keywordflow}{return} !(x == y);}
+\DoxyCodeLine{254 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a815beda0c18972d9b53baeeddea61f11}\label{pixel_8hpp_a815beda0c18972d9b53baeeddea61f11} 
+\mbox{\Hypertarget{pixel_8hpp_a815beda0c18972d9b53baeeddea61f11}\label{pixel_8hpp_a815beda0c18972d9b53baeeddea61f11}} 
 \index{pixel.hpp@{pixel.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
@@ -133,16 +135,16 @@ Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00251}{251}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00296}{296}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 296 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00297\ \{}
-\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_pixel);}
-\DoxyCodeLine{00299\ \}}
+\DoxyCodeLine{297 \{}
+\DoxyCodeLine{298     \textcolor{keywordflow}{return} !(x == init\_pixel);}
+\DoxyCodeLine{299 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a223b13515035d79401f80ebb97b864e9}\label{pixel_8hpp_a223b13515035d79401f80ebb97b864e9} 
+\mbox{\Hypertarget{pixel_8hpp_a223b13515035d79401f80ebb97b864e9}\label{pixel_8hpp_a223b13515035d79401f80ebb97b864e9}} 
 \index{pixel.hpp@{pixel.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
@@ -151,16 +153,16 @@ bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscif
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00215}{215}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 215 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00216\ \{}
-\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00218\ \}}
+\DoxyCodeLine{216 \{}
+\DoxyCodeLine{217     \textcolor{keywordflow}{return} (x != y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{218 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a842ee253de18909169c54374782085d3}\label{pixel_8hpp_a842ee253de18909169c54374782085d3} 
+\mbox{\Hypertarget{pixel_8hpp_a842ee253de18909169c54374782085d3}\label{pixel_8hpp_a842ee253de18909169c54374782085d3}} 
 \index{pixel.hpp@{pixel.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
@@ -168,16 +170,16 @@ Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00215}{215}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 307 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00308\ \{}
-\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_pixel\ ==\ x);}
-\DoxyCodeLine{00310\ \}}
+\DoxyCodeLine{308 \{}
+\DoxyCodeLine{309     \textcolor{keywordflow}{return} !(init\_pixel == x);}
+\DoxyCodeLine{310 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a8ebcef8fc724b4121bb60e05ac7a3ffb}\label{pixel_8hpp_a8ebcef8fc724b4121bb60e05ac7a3ffb} 
+\mbox{\Hypertarget{pixel_8hpp_a8ebcef8fc724b4121bb60e05ac7a3ffb}\label{pixel_8hpp_a8ebcef8fc724b4121bb60e05ac7a3ffb}} 
 \index{pixel.hpp@{pixel.hpp}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
@@ -186,34 +188,34 @@ bool operator!= (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyp
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00179}{179}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 179 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00180\ \{}
-\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00182\ \}}
+\DoxyCodeLine{180 \{}
+\DoxyCodeLine{181     \textcolor{keywordflow}{return} (x != y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{182 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a18f835f157359bf6e13ea5ddf51b2133}\label{pixel_8hpp_a18f835f157359bf6e13ea5ddf51b2133} 
-\index{pixel.hpp@{pixel.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
-\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!pixel.hpp@{pixel.hpp}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+\mbox{\Hypertarget{pixel_8hpp_a18f835f157359bf6e13ea5ddf51b2133}\label{pixel_8hpp_a18f835f157359bf6e13ea5ddf51b2133}} 
+\index{pixel.hpp@{pixel.hpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!pixel.hpp@{pixel.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
 {\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&}]{y }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} operator$\ast$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&}]{y }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00155}{155}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 155 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00156\ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(x\ *\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00158\ \}}
+\DoxyCodeLine{156 \{}
+\DoxyCodeLine{157     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(x * y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{158 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_ae5f98ce5f5ed621542079a5844320a1a}\label{pixel_8hpp_ae5f98ce5f5ed621542079a5844320a1a} 
+\mbox{\Hypertarget{pixel_8hpp_ae5f98ce5f5ed621542079a5844320a1a}\label{pixel_8hpp_ae5f98ce5f5ed621542079a5844320a1a}} 
 \index{pixel.hpp@{pixel.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -221,19 +223,19 @@ Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00155}{155}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00327}{327}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 327 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00328\ \{}
-\DoxyCodeLine{00329\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00330\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00331\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00333\ \}}
+\DoxyCodeLine{328 \{}
+\DoxyCodeLine{329     ostringstream output;}
+\DoxyCodeLine{330     output << y;}
+\DoxyCodeLine{331     output << x;}
+\DoxyCodeLine{332     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{333 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_acf77745337bdfa9d05f3d2f65c29eaf6}\label{pixel_8hpp_acf77745337bdfa9d05f3d2f65c29eaf6} 
+\mbox{\Hypertarget{pixel_8hpp_acf77745337bdfa9d05f3d2f65c29eaf6}\label{pixel_8hpp_acf77745337bdfa9d05f3d2f65c29eaf6}} 
 \index{pixel.hpp@{pixel.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -241,19 +243,19 @@ Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00327}{327}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00319}{319}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 319 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00320\ \{}
-\DoxyCodeLine{00321\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00322\ \ \ \ \ output\ <<\ x;}
-\DoxyCodeLine{00323\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00325\ \}}
+\DoxyCodeLine{320 \{}
+\DoxyCodeLine{321     ostringstream output;}
+\DoxyCodeLine{322     output << x;}
+\DoxyCodeLine{323     output << y;}
+\DoxyCodeLine{324     \textcolor{keywordflow}{return} output.str();}
+\DoxyCodeLine{325 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a0e96af7acd7bf8018fa538be6855cc71}\label{pixel_8hpp_a0e96af7acd7bf8018fa538be6855cc71} 
+\mbox{\Hypertarget{pixel_8hpp_a0e96af7acd7bf8018fa538be6855cc71}\label{pixel_8hpp_a0e96af7acd7bf8018fa538be6855cc71}} 
 \index{pixel.hpp@{pixel.hpp}!operator+@{operator+}}
 \index{operator+@{operator+}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -262,16 +264,16 @@ Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00319}{319}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00143}{143}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 143 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00144\ \{}
-\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(x\ +\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00146\ \}}
+\DoxyCodeLine{144 \{}
+\DoxyCodeLine{145     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(x + y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{146 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a62b9c52ff7c058ba3482a3616509567e}\label{pixel_8hpp_a62b9c52ff7c058ba3482a3616509567e} 
+\mbox{\Hypertarget{pixel_8hpp_a62b9c52ff7c058ba3482a3616509567e}\label{pixel_8hpp_a62b9c52ff7c058ba3482a3616509567e}} 
 \index{pixel.hpp@{pixel.hpp}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
@@ -279,18 +281,18 @@ Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00143}{143}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00312}{312}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 312 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00313\ \{}
-\DoxyCodeLine{00314\ \ \ \ \ ostringstream\ output;}
-\DoxyCodeLine{00315\ \ \ \ \ output\ <<\ y;}
-\DoxyCodeLine{00316\ \ \ \ \ x\ +=\ output.str();}
-\DoxyCodeLine{00317\ \}}
+\DoxyCodeLine{313 \{}
+\DoxyCodeLine{314     ostringstream output;}
+\DoxyCodeLine{315     output << y;}
+\DoxyCodeLine{316     x += output.str();}
+\DoxyCodeLine{317 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a2f44a5c8175a3e6af6ebcafde3cbc13f}\label{pixel_8hpp_a2f44a5c8175a3e6af6ebcafde3cbc13f} 
+\mbox{\Hypertarget{pixel_8hpp_a2f44a5c8175a3e6af6ebcafde3cbc13f}\label{pixel_8hpp_a2f44a5c8175a3e6af6ebcafde3cbc13f}} 
 \index{pixel.hpp@{pixel.hpp}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
@@ -299,16 +301,16 @@ Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00312}{312}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00149}{149}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 149 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00150\ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(x\ -\/\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00152\ \}}
+\DoxyCodeLine{150 \{}
+\DoxyCodeLine{151     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(x -\/ y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{152 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a479d9eb3523e8bca5936404fb2873ecd}\label{pixel_8hpp_a479d9eb3523e8bca5936404fb2873ecd} 
+\mbox{\Hypertarget{pixel_8hpp_a479d9eb3523e8bca5936404fb2873ecd}\label{pixel_8hpp_a479d9eb3523e8bca5936404fb2873ecd}} 
 \index{pixel.hpp@{pixel.hpp}!operator/@{operator/}}
 \index{operator/@{operator/}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
@@ -317,16 +319,16 @@ Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00149}{149}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00161}{161}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 161 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00162\ \{}
-\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(x\ /\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00164\ \}}
+\DoxyCodeLine{162 \{}
+\DoxyCodeLine{163     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(x / y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{164 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_aa10f58a2ea634c40cb5e63cc4701f5aa}\label{pixel_8hpp_aa10f58a2ea634c40cb5e63cc4701f5aa} 
+\mbox{\Hypertarget{pixel_8hpp_aa10f58a2ea634c40cb5e63cc4701f5aa}\label{pixel_8hpp_aa10f58a2ea634c40cb5e63cc4701f5aa}} 
 \index{pixel.hpp@{pixel.hpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -334,23 +336,23 @@ Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00161}{161}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00256}{256}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 256 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00257\ \{}
-\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}()\ <\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}())}
-\DoxyCodeLine{00259\ \ \ \ \ \{}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00261\ \ \ \ \ \}}
-\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00263\ \ \ \ \ \{}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00265\ \ \ \ \ \}}
-\DoxyCodeLine{00266\ \}}
+\DoxyCodeLine{257 \{}
+\DoxyCodeLine{258     \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}() < y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}())}
+\DoxyCodeLine{259     \{}
+\DoxyCodeLine{260         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{261     \}}
+\DoxyCodeLine{262     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{263     \{}
+\DoxyCodeLine{264         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{265     \}}
+\DoxyCodeLine{266 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a833dcf33a10891912b1fa7c5a9414d69}\label{pixel_8hpp_a833dcf33a10891912b1fa7c5a9414d69} 
+\mbox{\Hypertarget{pixel_8hpp_a833dcf33a10891912b1fa7c5a9414d69}\label{pixel_8hpp_a833dcf33a10891912b1fa7c5a9414d69}} 
 \index{pixel.hpp@{pixel.hpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -359,16 +361,16 @@ bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsci
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00221}{221}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 221 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00222\ \{}
-\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}()\ <\ x);}
-\DoxyCodeLine{00224\ \}}
+\DoxyCodeLine{222 \{}
+\DoxyCodeLine{223     \textcolor{keywordflow}{return} (y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}() < x);}
+\DoxyCodeLine{224 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_ad8cb90d85e30edf41a0f6d623fbcd679}\label{pixel_8hpp_ad8cb90d85e30edf41a0f6d623fbcd679} 
+\mbox{\Hypertarget{pixel_8hpp_ad8cb90d85e30edf41a0f6d623fbcd679}\label{pixel_8hpp_ad8cb90d85e30edf41a0f6d623fbcd679}} 
 \index{pixel.hpp@{pixel.hpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -377,33 +379,33 @@ bool operator$<$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hy
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00185}{185}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 185 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00186\ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00188\ \}}
+\DoxyCodeLine{186 \{}
+\DoxyCodeLine{187     \textcolor{keywordflow}{return} (x < y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{188 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_abb79e5d6f80a12ec02ce7e11bb556b33}\label{pixel_8hpp_abb79e5d6f80a12ec02ce7e11bb556b33} 
+\mbox{\Hypertarget{pixel_8hpp_a063388b3125071bbbc2e16f9bde48486}\label{pixel_8hpp_a063388b3125071bbbc2e16f9bde48486}} 
 \index{pixel.hpp@{pixel.hpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00335}{335}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 335 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00336\ \{}
-\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
-\DoxyCodeLine{00338\ \}}
+\DoxyCodeLine{336 \{}
+\DoxyCodeLine{337     \textcolor{keywordflow}{return} os << \mbox{\hyperlink{namespacescifir_aeb9a00fb9eb60b11ffa68783d1fbb41b}{to\_string}}(x);}
+\DoxyCodeLine{338 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a64e8971a4a2c2f130700db279f399503}\label{pixel_8hpp_a64e8971a4a2c2f130700db279f399503} 
+\mbox{\Hypertarget{pixel_8hpp_a64e8971a4a2c2f130700db279f399503}\label{pixel_8hpp_a64e8971a4a2c2f130700db279f399503}} 
 \index{pixel.hpp@{pixel.hpp}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -411,16 +413,16 @@ Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00335}{335}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00280}{280}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 280 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00281\ \{}
-\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ >\ y);}
-\DoxyCodeLine{00283\ \}}
+\DoxyCodeLine{281 \{}
+\DoxyCodeLine{282     \textcolor{keywordflow}{return} !(x > y);}
+\DoxyCodeLine{283 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_ab6011fd7d65e727354ea104c7f439b01}\label{pixel_8hpp_ab6011fd7d65e727354ea104c7f439b01} 
+\mbox{\Hypertarget{pixel_8hpp_ab6011fd7d65e727354ea104c7f439b01}\label{pixel_8hpp_ab6011fd7d65e727354ea104c7f439b01}} 
 \index{pixel.hpp@{pixel.hpp}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -429,16 +431,16 @@ bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsc
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00233}{233}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 233 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00234\ \{}
-\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}()\ <=\ x);}
-\DoxyCodeLine{00236\ \}}
+\DoxyCodeLine{234 \{}
+\DoxyCodeLine{235     \textcolor{keywordflow}{return} (y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}() <= x);}
+\DoxyCodeLine{236 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_aa82b801bb92247bd0c5d0c6c6edf04b5}\label{pixel_8hpp_aa82b801bb92247bd0c5d0c6c6edf04b5} 
+\mbox{\Hypertarget{pixel_8hpp_aa82b801bb92247bd0c5d0c6c6edf04b5}\label{pixel_8hpp_aa82b801bb92247bd0c5d0c6c6edf04b5}} 
 \index{pixel.hpp@{pixel.hpp}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -447,16 +449,16 @@ bool operator$<$= (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00197}{197}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 197 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00198\ \{}
-\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <=\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00200\ \}}
+\DoxyCodeLine{198 \{}
+\DoxyCodeLine{199     \textcolor{keywordflow}{return} (x <= y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{200 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_aa95b46fa9743d91bcfccb8843f0539cf}\label{pixel_8hpp_aa95b46fa9743d91bcfccb8843f0539cf} 
+\mbox{\Hypertarget{pixel_8hpp_aa95b46fa9743d91bcfccb8843f0539cf}\label{pixel_8hpp_aa95b46fa9743d91bcfccb8843f0539cf}} 
 \index{pixel.hpp@{pixel.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
@@ -464,23 +466,23 @@ Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00197}{197}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00239}{239}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 239 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00240\ \{}
-\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}()\ ==\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}())}
-\DoxyCodeLine{00242\ \ \ \ \ \{}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00244\ \ \ \ \ \}}
-\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00246\ \ \ \ \ \{}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00248\ \ \ \ \ \}}
-\DoxyCodeLine{00249\ \}}
+\DoxyCodeLine{240 \{}
+\DoxyCodeLine{241     \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}() == y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}())}
+\DoxyCodeLine{242     \{}
+\DoxyCodeLine{243         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{244     \}}
+\DoxyCodeLine{245     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{246     \{}
+\DoxyCodeLine{247         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{248     \}}
+\DoxyCodeLine{249 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a16ab48cacdbe050d4c19953f38c3dbc8}\label{pixel_8hpp_a16ab48cacdbe050d4c19953f38c3dbc8} 
+\mbox{\Hypertarget{pixel_8hpp_a16ab48cacdbe050d4c19953f38c3dbc8}\label{pixel_8hpp_a16ab48cacdbe050d4c19953f38c3dbc8}} 
 \index{pixel.hpp@{pixel.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
@@ -488,17 +490,17 @@ Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00239}{239}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00290}{290}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 290 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00291\ \{}
-\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(init\_pixel);}
-\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00294\ \}}
+\DoxyCodeLine{291 \{}
+\DoxyCodeLine{292     \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}} y = \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(init\_pixel);}
+\DoxyCodeLine{293     \textcolor{keywordflow}{return} (x == y);}
+\DoxyCodeLine{294 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a6464cd376fdb956202bfed3023cc6870}\label{pixel_8hpp_a6464cd376fdb956202bfed3023cc6870} 
+\mbox{\Hypertarget{pixel_8hpp_a6464cd376fdb956202bfed3023cc6870}\label{pixel_8hpp_a6464cd376fdb956202bfed3023cc6870}} 
 \index{pixel.hpp@{pixel.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
@@ -507,16 +509,16 @@ bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscif
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00209}{209}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 209 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00210\ \{}
-\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00212\ \}}
+\DoxyCodeLine{210 \{}
+\DoxyCodeLine{211     \textcolor{keywordflow}{return} (x == y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{212 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a98554c5fa13b832770fbe05d807d0cf0}\label{pixel_8hpp_a98554c5fa13b832770fbe05d807d0cf0} 
+\mbox{\Hypertarget{pixel_8hpp_a98554c5fa13b832770fbe05d807d0cf0}\label{pixel_8hpp_a98554c5fa13b832770fbe05d807d0cf0}} 
 \index{pixel.hpp@{pixel.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
@@ -524,17 +526,17 @@ Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00209}{209}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00301}{301}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 301 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00302\ \{}
-\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(init\_pixel);}
-\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordflow}{return}\ (y\ ==\ x);}
-\DoxyCodeLine{00305\ \}}
+\DoxyCodeLine{302 \{}
+\DoxyCodeLine{303     \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}} y = \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(init\_pixel);}
+\DoxyCodeLine{304     \textcolor{keywordflow}{return} (y == x);}
+\DoxyCodeLine{305 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a1d52a229b040509dc079022b95602c0b}\label{pixel_8hpp_a1d52a229b040509dc079022b95602c0b} 
+\mbox{\Hypertarget{pixel_8hpp_a1d52a229b040509dc079022b95602c0b}\label{pixel_8hpp_a1d52a229b040509dc079022b95602c0b}} 
 \index{pixel.hpp@{pixel.hpp}!operator==@{operator==}}
 \index{operator==@{operator==}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
@@ -543,16 +545,16 @@ bool operator== (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyp
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00173}{173}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 173 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00174\ \{}
-\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00176\ \}}
+\DoxyCodeLine{174 \{}
+\DoxyCodeLine{175     \textcolor{keywordflow}{return} (x == y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{176 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_ad8ea431cac2f20cc9196bf5d5e3289bb}\label{pixel_8hpp_ad8ea431cac2f20cc9196bf5d5e3289bb} 
+\mbox{\Hypertarget{pixel_8hpp_ad8ea431cac2f20cc9196bf5d5e3289bb}\label{pixel_8hpp_ad8ea431cac2f20cc9196bf5d5e3289bb}} 
 \index{pixel.hpp@{pixel.hpp}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -560,23 +562,23 @@ Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00173}{173}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00268}{268}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 268 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00269\ \{}
-\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}()\ >\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}())}
-\DoxyCodeLine{00271\ \ \ \ \ \{}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00273\ \ \ \ \ \}}
-\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00275\ \ \ \ \ \{}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00277\ \ \ \ \ \}}
-\DoxyCodeLine{00278\ \}}
+\DoxyCodeLine{269 \{}
+\DoxyCodeLine{270     \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}() > y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}())}
+\DoxyCodeLine{271     \{}
+\DoxyCodeLine{272         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{273     \}}
+\DoxyCodeLine{274     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{275     \{}
+\DoxyCodeLine{276         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{277     \}}
+\DoxyCodeLine{278 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_ad5fae024b91d285be3c0b2c3c700e051}\label{pixel_8hpp_ad5fae024b91d285be3c0b2c3c700e051} 
+\mbox{\Hypertarget{pixel_8hpp_ad5fae024b91d285be3c0b2c3c700e051}\label{pixel_8hpp_ad5fae024b91d285be3c0b2c3c700e051}} 
 \index{pixel.hpp@{pixel.hpp}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -585,16 +587,16 @@ bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsci
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00227}{227}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 227 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00228\ \{}
-\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}()\ >\ x);}
-\DoxyCodeLine{00230\ \}}
+\DoxyCodeLine{228 \{}
+\DoxyCodeLine{229     \textcolor{keywordflow}{return} (y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}() > x);}
+\DoxyCodeLine{230 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_aa00ce665cd5f36505538710a08fac022}\label{pixel_8hpp_aa00ce665cd5f36505538710a08fac022} 
+\mbox{\Hypertarget{pixel_8hpp_aa00ce665cd5f36505538710a08fac022}\label{pixel_8hpp_aa00ce665cd5f36505538710a08fac022}} 
 \index{pixel.hpp@{pixel.hpp}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -603,16 +605,16 @@ bool operator$>$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hy
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00191}{191}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 191 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00192\ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00194\ \}}
+\DoxyCodeLine{192 \{}
+\DoxyCodeLine{193     \textcolor{keywordflow}{return} (x > y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{194 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a65694c92d4f6e5ae19559aab3556b871}\label{pixel_8hpp_a65694c92d4f6e5ae19559aab3556b871} 
+\mbox{\Hypertarget{pixel_8hpp_a65694c92d4f6e5ae19559aab3556b871}\label{pixel_8hpp_a65694c92d4f6e5ae19559aab3556b871}} 
 \index{pixel.hpp@{pixel.hpp}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -620,16 +622,16 @@ Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00191}{191}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00285}{285}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 285 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00286\ \{}
-\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ <\ y);}
-\DoxyCodeLine{00288\ \}}
+\DoxyCodeLine{286 \{}
+\DoxyCodeLine{287     \textcolor{keywordflow}{return} !(x < y);}
+\DoxyCodeLine{288 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a75ed75a94ce5ae19e5dfd12b93426988}\label{pixel_8hpp_a75ed75a94ce5ae19e5dfd12b93426988} 
+\mbox{\Hypertarget{pixel_8hpp_a75ed75a94ce5ae19e5dfd12b93426988}\label{pixel_8hpp_a75ed75a94ce5ae19e5dfd12b93426988}} 
 \index{pixel.hpp@{pixel.hpp}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -638,16 +640,16 @@ bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsc
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00239}{239}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 239 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00240\ \{}
-\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}()\ >=\ x);}
-\DoxyCodeLine{00242\ \}}
+\DoxyCodeLine{240 \{}
+\DoxyCodeLine{241     \textcolor{keywordflow}{return} (y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}() >= x);}
+\DoxyCodeLine{242 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_ad17f0c40358a9fe8cf85764e99acc1aa}\label{pixel_8hpp_ad17f0c40358a9fe8cf85764e99acc1aa} 
+\mbox{\Hypertarget{pixel_8hpp_ad17f0c40358a9fe8cf85764e99acc1aa}\label{pixel_8hpp_ad17f0c40358a9fe8cf85764e99acc1aa}} 
 \index{pixel.hpp@{pixel.hpp}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -656,52 +658,52 @@ bool operator$>$= (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00203}{203}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 203 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00204\ \{}
-\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}());}
-\DoxyCodeLine{00206\ \}}
+\DoxyCodeLine{204 \{}
+\DoxyCodeLine{205     \textcolor{keywordflow}{return} (x >= y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}());}
+\DoxyCodeLine{206 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_aacae8ba2b77a579fee17f4c23256c79f}\label{pixel_8hpp_aacae8ba2b77a579fee17f4c23256c79f} 
+\mbox{\Hypertarget{pixel_8hpp_a33b143b6258c36c9e89dc480fa838272}\label{pixel_8hpp_a33b143b6258c36c9e89dc480fa838272}} 
 \index{pixel.hpp@{pixel.hpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!pixel.hpp@{pixel.hpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
-{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&}]{x }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8cpp_source_l00340}{340}} of file \mbox{\hyperlink{pixel_8cpp_source}{pixel.\+cpp}}.
+Definition at line 340 of file pixel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00341\ \{}
-\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00343\ \ \ \ \ is.getline(a,\ 256);}
-\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
-\DoxyCodeLine{00345\ \ \ \ \ boost::trim(b);}
-\DoxyCodeLine{00346\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(b);}
-\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{00348\ \}}
+\DoxyCodeLine{341 \{}
+\DoxyCodeLine{342     \textcolor{keywordtype}{char} a[256];}
+\DoxyCodeLine{343     is.getline(a, 256);}
+\DoxyCodeLine{344     \textcolor{keywordtype}{string} b(a);}
+\DoxyCodeLine{345     boost::trim(b);}
+\DoxyCodeLine{346     x = \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(b);}
+\DoxyCodeLine{347     \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{348 \}}
 
 \end{DoxyCode}
-\Hypertarget{pixel_8hpp_a7eec4b3efecc4ef2a3e3f466b134eaa8}\label{pixel_8hpp_a7eec4b3efecc4ef2a3e3f466b134eaa8} 
-\index{pixel.hpp@{pixel.hpp}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
-\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!pixel.hpp@{pixel.hpp}}
-\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}}
+\mbox{\Hypertarget{pixel_8hpp_a7eec4b3efecc4ef2a3e3f466b134eaa8}\label{pixel_8hpp_a7eec4b3efecc4ef2a3e3f466b134eaa8}} 
+\index{pixel.hpp@{pixel.hpp}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!pixel.hpp@{pixel.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$^\wedge$()}{operator^()}}
 {\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
-\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&}]{y }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} operator$^\wedge$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pixel}{scifir\+::pixel}} \&}]{y }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{pixel_8hpp_source_l00167}{167}} of file \mbox{\hyperlink{pixel_8hpp_source}{pixel.\+hpp}}.
+Definition at line 167 of file pixel.\+hpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00168\ \{}
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(std::pow(x,\ y.\mbox{\hyperlink{classscifir_1_1pixel_a787b708456c79b02f869a394a24ed41c}{get\_value}}()));}
-\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{168 \{}
+\DoxyCodeLine{169     \textcolor{keywordflow}{return} \mbox{\hyperlink{classscifir_1_1pixel}{scifir::pixel}}(\mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{std::pow}}(x, y.\mbox{\hyperlink{classscifir_1_1pixel_a813cb357585b0413f8369c991321ede1}{get\_value}}()));}
+\DoxyCodeLine{170 \}}
 
 \end{DoxyCode}

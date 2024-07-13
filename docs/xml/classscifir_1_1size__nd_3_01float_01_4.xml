@@ -1,17 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1size__nd_3_01float_01_4" kind="class" language="C++" prot="public">
     <compoundname>scifir::size_nd&lt; float &gt;</compoundname>
     <includes refid="size__nd_8hpp" local="no">size_nd.hpp</includes>
     <templateparamlist>
     </templateparamlist>
-    <sectiondef kind="public-attrib">
+      <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1size__nd_3_01float_01_4_1a4ccce5f1729e3b1ae9971a6dafbc6f08" prot="public" static="no" mutable="no">
-        <type>vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt;</type>
+        <type>vector&lt; float &gt;</type>
         <definition>vector&lt;float&gt; scifir::size_nd&lt; float &gt;::widths</definition>
         <argsstring></argsstring>
         <name>widths</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::widths</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -20,14 +19,13 @@
         </inbodydescription>
         <location file="special_units/size_nd.hpp" line="315" column="8" bodyfile="special_units/size_nd.hpp" bodystart="315" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a8217231f149ae35053a6323cfcd15b3e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::size_nd&lt; float &gt;::size_nd</definition>
         <argsstring>()</argsstring>
         <name>size_nd</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::size_nd</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -41,9 +39,8 @@
         <definition>scifir::size_nd&lt; float &gt;::size_nd</definition>
         <argsstring>(const size_nd&lt; float &gt; &amp;x)</argsstring>
         <name>size_nd</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::size_nd</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -59,9 +56,8 @@
         <definition>scifir::size_nd&lt; float &gt;::size_nd</definition>
         <argsstring>(size_nd&lt; float &gt; &amp;&amp;x)</argsstring>
         <name>size_nd</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::size_nd</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -77,9 +73,8 @@
         <definition>scifir::size_nd&lt; float &gt;::size_nd</definition>
         <argsstring>(const vector&lt; float &gt; &amp;new_widths)</argsstring>
         <name>size_nd</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::size_nd</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const vector&lt; float &gt; &amp;</type>
           <declname>new_widths</declname>
         </param>
         <briefdescription>
@@ -95,9 +90,8 @@
         <definition>scifir::size_nd&lt; float &gt;::size_nd</definition>
         <argsstring>(const vector&lt; string &gt; &amp;new_widths)</argsstring>
         <name>size_nd</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::size_nd</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &gt; &amp;</type>
+          <type>const vector&lt; string &gt; &amp;</type>
           <declname>new_widths</declname>
         </param>
         <briefdescription>
@@ -113,9 +107,8 @@
         <definition>scifir::size_nd&lt; float &gt;::size_nd</definition>
         <argsstring>(const string &amp;init_size_nd)</argsstring>
         <name>size_nd</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::size_nd</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_size_nd</declname>
         </param>
         <briefdescription>
@@ -126,14 +119,13 @@
         </inbodydescription>
         <location file="special_units/size_nd.hpp" line="198" column="10" bodyfile="special_units/size_nd.hpp" bodystart="198" bodyend="201"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a31304958679031f955937e34a066191d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>size_nd&lt; float &gt; &amp; scifir::size_nd&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a750b24032e57701338564ec9d2fe2a7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;</type>
+        <definition>size_nd&lt;float&gt;&amp; scifir::size_nd&lt; float &gt;::operator=</definition>
         <argsstring>(const size_nd&lt; float &gt; &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -144,14 +136,13 @@
         </inbodydescription>
         <location file="special_units/size_nd.hpp" line="203" column="9" bodyfile="special_units/size_nd.hpp" bodystart="203" bodyend="207"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1ad08ef6e4be75b2092e6f5c4c01bfe02c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>size_nd&lt; float &gt; &amp; scifir::size_nd&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a29a333ae7ce3b203b4cba9a6bbd05c8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;</type>
+        <definition>size_nd&lt;float&gt;&amp; scifir::size_nd&lt; float &gt;::operator=</definition>
         <argsstring>(size_nd&lt; float &gt; &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -162,14 +153,13 @@
         </inbodydescription>
         <location file="special_units/size_nd.hpp" line="209" column="9" bodyfile="special_units/size_nd.hpp" bodystart="209" bodyend="213"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a535eb62d887914310d6494fe1323ca65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>size_nd&lt; float &gt; &amp; scifir::size_nd&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a20618325274a110123239bd8a9e62604" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;</type>
+        <definition>size_nd&lt;float&gt;&amp; scifir::size_nd&lt; float &gt;::operator=</definition>
         <argsstring>(const string &amp;init_size_nd)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_size_nd</declname>
         </param>
         <briefdescription>
@@ -181,13 +171,12 @@
         <location file="special_units/size_nd.hpp" line="215" column="9" bodyfile="special_units/size_nd.hpp" bodystart="215" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1aa1abddd008e82977e4cafe34f8b84723" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <type>bool</type>
         <definition>bool scifir::size_nd&lt; float &gt;::is_nd</definition>
         <argsstring>(unsigned int i) const</argsstring>
         <name>is_nd</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::is_nd</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">unsigned</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <type>unsigned int</type>
           <declname>i</declname>
         </param>
         <briefdescription>
@@ -199,11 +188,10 @@
         <location file="special_units/size_nd.hpp" line="221" column="6" bodyfile="special_units/size_nd.hpp" bodystart="221" bodyend="224"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1aee93e384342411b8fa39fee613f14c87" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+        <type>int</type>
         <definition>int scifir::size_nd&lt; float &gt;::get_nd</definition>
         <argsstring>() const</argsstring>
         <name>get_nd</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::get_nd</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -212,14 +200,13 @@
         </inbodydescription>
         <location file="special_units/size_nd.hpp" line="226" column="5" bodyfile="special_units/size_nd.hpp" bodystart="226" bodyend="229"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a78c2f3651402bf24c98095af33448ec0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt;</type>
-        <definition>size_nd&lt; float &gt; scifir::size_nd&lt; float &gt;::operator+</definition>
+      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a72fadbf0a0289587f897303fcd942d35" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt;</type>
+        <definition>size_nd&lt;float&gt; scifir::size_nd&lt; float &gt;::operator+</definition>
         <argsstring>(const size_nd&lt; float &gt; &amp;x) const</argsstring>
         <name>operator+</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -230,14 +217,13 @@
         </inbodydescription>
         <location file="special_units/size_nd.hpp" line="231" column="9" bodyfile="special_units/size_nd.hpp" bodystart="231" bodyend="246"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a9d4d96452d24f440c9e31a9d385f9984" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt;</type>
-        <definition>size_nd&lt; float &gt; scifir::size_nd&lt; float &gt;::operator-</definition>
+      <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1af507c31d5bbfadbf56d6d0d19803bd74" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt;</type>
+        <definition>size_nd&lt;float&gt; scifir::size_nd&lt; float &gt;::operator-</definition>
         <argsstring>(const size_nd&lt; float &gt; &amp;x) const</argsstring>
         <name>operator-</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::operator-</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -249,13 +235,12 @@
         <location file="special_units/size_nd.hpp" line="248" column="9" bodyfile="special_units/size_nd.hpp" bodystart="248" bodyend="263"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a04430cca9ee55c7706feb250480a92d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::size_nd&lt; float &gt;::operator+=</definition>
         <argsstring>(const size_nd&lt; float &gt; &amp;x)</argsstring>
         <name>operator+=</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -267,13 +252,12 @@
         <location file="special_units/size_nd.hpp" line="265" column="6" bodyfile="special_units/size_nd.hpp" bodystart="265" bodyend="274"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1afea8933190de32e4a4c586b4d7354f5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::size_nd&lt; float &gt;::operator-=</definition>
         <argsstring>(const size_nd&lt; float &gt; &amp;x)</argsstring>
         <name>operator-=</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::operator-=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1size__nd" kindref="compound">size_nd</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -285,11 +269,10 @@
         <location file="special_units/size_nd.hpp" line="276" column="6" bodyfile="special_units/size_nd.hpp" bodystart="276" bodyend="285"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1af21eb28e67838974a6f0acedcb38597a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::size_nd&lt; float &gt;::get_volume_nd</definition>
         <argsstring>() const</argsstring>
         <name>get_volume_nd</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::get_volume_nd</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -299,11 +282,10 @@
         <location file="special_units/size_nd.hpp" line="287" column="7" bodyfile="special_units/size_nd.hpp" bodystart="287" bodyend="295"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1ac7862559b42c5accbaa3c7d17ae3e9e7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::size_nd&lt; float &gt;::display</definition>
         <argsstring>() const</argsstring>
         <name>display</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::display</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -312,16 +294,15 @@
         </inbodydescription>
         <location file="special_units/size_nd.hpp" line="297" column="8" bodyfile="special_units/size_nd.hpp" bodystart="297" bodyend="313"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1size__nd_3_01float_01_4_1a815abe2f05a521291baa007b82542afa" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::size_nd&lt; float &gt;::initialize_from_string</definition>
         <argsstring>(const string &amp;init_size_nd)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::size_nd&lt; float &gt;::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_size_nd</declname>
         </param>
         <briefdescription>
@@ -332,7 +313,7 @@
         </inbodydescription>
         <location file="special_units/size_nd.hpp" line="318" column="6" bodyfile="special_units/size_nd.hpp" bodystart="318" bodyend="328"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -344,13 +325,13 @@
       <member refid="classscifir_1_1size__nd_3_01float_01_4_1af21eb28e67838974a6f0acedcb38597a" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>get_volume_nd</name></member>
       <member refid="classscifir_1_1size__nd_3_01float_01_4_1a815abe2f05a521291baa007b82542afa" prot="private" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>initialize_from_string</name></member>
       <member refid="classscifir_1_1size__nd_3_01float_01_4_1aa1abddd008e82977e4cafe34f8b84723" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>is_nd</name></member>
-      <member refid="classscifir_1_1size__nd_3_01float_01_4_1a78c2f3651402bf24c98095af33448ec0" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1size__nd_3_01float_01_4_1a72fadbf0a0289587f897303fcd942d35" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator+</name></member>
       <member refid="classscifir_1_1size__nd_3_01float_01_4_1a04430cca9ee55c7706feb250480a92d5" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1size__nd_3_01float_01_4_1a9d4d96452d24f440c9e31a9d385f9984" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1size__nd_3_01float_01_4_1af507c31d5bbfadbf56d6d0d19803bd74" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator-</name></member>
       <member refid="classscifir_1_1size__nd_3_01float_01_4_1afea8933190de32e4a4c586b4d7354f5c" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1size__nd_3_01float_01_4_1a31304958679031f955937e34a066191d" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1size__nd_3_01float_01_4_1ad08ef6e4be75b2092e6f5c4c01bfe02c" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1size__nd_3_01float_01_4_1a535eb62d887914310d6494fe1323ca65" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1size__nd_3_01float_01_4_1a750b24032e57701338564ec9d2fe2a7f" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1size__nd_3_01float_01_4_1a29a333ae7ce3b203b4cba9a6bbd05c8f" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1size__nd_3_01float_01_4_1a20618325274a110123239bd8a9e62604" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>operator=</name></member>
       <member refid="classscifir_1_1size__nd_3_01float_01_4_1a8217231f149ae35053a6323cfcd15b3e" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>size_nd</name></member>
       <member refid="classscifir_1_1size__nd_3_01float_01_4_1afa1e423e556189ae4be47c14eb08c903" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>size_nd</name></member>
       <member refid="classscifir_1_1size__nd_3_01float_01_4_1ae1d45bca567a4f3dee2079420dd1b49b" prot="public" virt="non-virtual"><scope>scifir::size_nd&lt; float &gt;</scope><name>size_nd</name></member>

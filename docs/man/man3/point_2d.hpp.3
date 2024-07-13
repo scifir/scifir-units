@@ -1,4 +1,4 @@
-.TH "topology/point_2d.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "topology/point_2d.hpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,7 +29,7 @@ topology/point_2d.hpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -37,16 +37,16 @@ topology/point_2d.hpp
 
 .in +1c
 .ti -1c
-.RI "template<\fBtypename\fP T > \fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBpoint_2d\fP< T > &x)"
+.RI "template<typename T > string \fBscifir::to_string\fP (const point_2d< T > &x)"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBpoint_2d\fP< \fBfloat\fP > &x)"
+.RI "string \fBscifir::to_string\fP (const point_2d< float > &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBpoint_2d\fP< T > &x, \fBconst\fP \fBpoint_2d\fP< \fBU\fP > &y)"
+.RI "template<typename T , typename U > T \fBscifir::distance\fP (const point_2d< T > &x, const point_2d< U > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBpoint_2d\fP< \fBfloat\fP > &x, \fBconst\fP \fBpoint_2d\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const point_2d< float > &x, const point_2d< float > &y)"
 .br
 .ti -1c
 .RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::point_2d\fP< T > &x, const \fBscifir::point_2d\fP< U > &y)"
@@ -90,119 +90,120 @@ topology/point_2d.hpp
 .SS "template<typename T , typename U > bool operator!= (const \fBscifir::point_2d\fP< T > & x, const \fBscifir::point_2d\fP< U > & y)"
 
 .PP
-Definition at line \fB343\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 343 of file point_2d\&.hpp\&.
+.PP
 .nf
 344 {
 345     return !(x == y);
 346 }
 .fi
-
 .SS "template<typename T > bool operator!= (const \fBscifir::point_2d\fP< T > & x, const string & init_point_2d)"
 
 .PP
-Definition at line \fB356\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 356 of file point_2d\&.hpp\&.
+.PP
 .nf
 357 {
 358     return !(x == init_point_2d);
 359 }
 .fi
-
 .SS "template<typename T > bool operator!= (const string & init_point_2d, const \fBscifir::point_2d\fP< T > & x)"
 
 .PP
-Definition at line \fB369\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 369 of file point_2d\&.hpp\&.
+.PP
 .nf
 370 {
 371     return !(init_point_2d == x);
 372 }
 .fi
-
 .SS "template<typename T > string operator+ (const \fBscifir::point_2d\fP< T > & x, const string & y)"
 
 .PP
-Definition at line \fB387\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 387 of file point_2d\&.hpp\&.
+.PP
 .nf
 388 {
 389     return to_string(x) + y;
 390 }
 .fi
-
 .SS "template<typename T > string operator+ (const string & x, const \fBscifir::point_2d\fP< T > & y)"
 
 .PP
-Definition at line \fB381\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 381 of file point_2d\&.hpp\&.
+.PP
 .nf
 382 {
 383     return x + to_string(y);
 384 }
 .fi
-
 .SS "template<typename T > void operator+= (string & x, const \fBscifir::point_2d\fP< T > & y)"
 
 .PP
-Definition at line \fB375\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 375 of file point_2d\&.hpp\&.
+.PP
 .nf
 376 {
 377     x += to_string(y);
 378 }
 .fi
-
-.SS "ostream & operator<< (ostream & os, const \fBscifir::point_2d\fP< float > & x)"
+.SS "ostream& operator<< (ostream & os, const \fBscifir::point_2d\fP< float > & x)"
 
 .PP
-Definition at line \fB41\fP of file \fBpoint_2d\&.cpp\fP\&..PP
+Definition at line 41 of file point_2d\&.cpp\&.
+.PP
 .nf
 42 {
 43     return os << scifir::to_string(x);
 44 }
 .fi
-
-.SS "template<typename T > ostream & operator<< (ostream & os, const \fBscifir::point_2d\fP< T > & x)"
+.SS "template<typename T > ostream& operator<< (ostream & os, const \fBscifir::point_2d\fP< T > & x)"
 
 .PP
-Definition at line \fB393\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 393 of file point_2d\&.hpp\&.
+.PP
 .nf
 394 {
 395     return os << to_string(x);
 396 }
 .fi
-
 .SS "template<typename T , typename U > bool operator== (const \fBscifir::point_2d\fP< T > & x, const \fBscifir::point_2d\fP< U > & y)"
 
 .PP
-Definition at line \fB337\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 337 of file point_2d\&.hpp\&.
+.PP
 .nf
 338 {
 339     return (x\&.x == y\&.x and x\&.y == y\&.y);
 340 }
 .fi
-
 .SS "template<typename T > bool operator== (const \fBscifir::point_2d\fP< T > & x, const string & init_point_2d)"
 
 .PP
-Definition at line \fB349\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 349 of file point_2d\&.hpp\&.
+.PP
 .nf
 350 {
 351     scifir::point_2d<T> y(init_point_2d);
 352     return (x == y);
 353 }
 .fi
-
 .SS "template<typename T > bool operator== (const string & init_point_2d, const \fBscifir::point_2d\fP< T > & x)"
 
 .PP
-Definition at line \fB362\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 362 of file point_2d\&.hpp\&.
+.PP
 .nf
 363 {
 364     scifir::point_2d<T> y(init_point_2d);
 365     return (x == y);
 366 }
 .fi
-
-.SS "template<typename T > istream & operator>> (istream & is, \fBscifir::point_2d\fP< T > & x)"
+.SS "template<typename T > istream& operator>> (istream & is, \fBscifir::point_2d\fP< T > & x)"
 
 .PP
-Definition at line \fB401\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+Definition at line 401 of file point_2d\&.hpp\&.
+.PP
 .nf
 402 {
 403     char a[256];
@@ -213,7 +214,6 @@ Definition at line \fB401\fP of file \fBpoint_2d\&.hpp\fP\&..PP
 408     return is;
 409 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

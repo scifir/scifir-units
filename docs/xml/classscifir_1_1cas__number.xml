@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1cas__number" kind="class" language="C++" prot="public">
     <compoundname>scifir::cas_number</compoundname>
     <includes refid="chemistry__units_8hpp" local="no">chemistry_units.hpp</includes>
-    <sectiondef kind="private-attrib">
+      <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classscifir_1_1cas__number_1a9802f9ffdf5ed21ff26bd33249712376" prot="private" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::cas_number::value</definition>
         <argsstring></argsstring>
         <name>value</name>
-        <qualifiedname>scifir::cas_number::value</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -18,16 +17,15 @@
         </inbodydescription>
         <location file="predefined_units/chemistry_units.hpp" line="40" column="8" bodyfile="predefined_units/chemistry_units.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1cas__number_1ae20cc9cd1cd63cf6092bd7ab7bec92b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::cas_number::cas_number</definition>
         <argsstring>(string)</argsstring>
         <name>cas_number</name>
-        <qualifiedname>scifir::cas_number::cas_number</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <type>string</type>
           <defname>new_value</defname>
         </param>
         <briefdescription>
@@ -39,11 +37,10 @@
         <location file="predefined_units/chemistry_units.hpp" line="30" column="1" bodyfile="predefined_units/chemistry_units.cpp" bodystart="26" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1cas__number_1a6d724821f9761cd0a934a66063caa73c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::cas_number::get_value</definition>
         <argsstring>() const</argsstring>
         <name>get_value</name>
-        <qualifiedname>scifir::cas_number::get_value</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -53,11 +50,10 @@
         <location file="predefined_units/chemistry_units.hpp" line="32" column="15" bodyfile="predefined_units/chemistry_units.hpp" bodystart="32" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1cas__number_1a4105b2281dbdf8fd394c5879016a81c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::cas_number::display</definition>
         <argsstring>() const</argsstring>
         <name>display</name>
-        <qualifiedname>scifir::cas_number::display</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -66,7 +62,7 @@
         </inbodydescription>
         <location file="predefined_units/chemistry_units.hpp" line="37" column="8" bodyfile="predefined_units/chemistry_units.cpp" bodystart="30" bodyend="33"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

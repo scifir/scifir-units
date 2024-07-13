@@ -1,17 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1point__2d_3_01float_01_4" kind="class" language="C++" prot="public">
     <compoundname>scifir::point_2d&lt; float &gt;</compoundname>
     <includes refid="point__2d_8hpp" local="no">point_2d.hpp</includes>
     <templateparamlist>
     </templateparamlist>
-    <sectiondef kind="public-attrib">
+      <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1point__2d_3_01float_01_4_1ad962dac24836d45d0d25b1a21c0b291d" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::point_2d&lt; float &gt;::x</definition>
         <argsstring></argsstring>
         <name>x</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::x</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,11 +20,10 @@
         <location file="topology/point_2d.hpp" line="289" column="7" bodyfile="topology/point_2d.hpp" bodystart="289" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1point__2d_3_01float_01_4_1a71dcc61ed749c4378035419cfcd5372d" prot="public" static="no" mutable="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::point_2d&lt; float &gt;::y</definition>
         <argsstring></argsstring>
         <name>y</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::y</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -34,14 +32,13 @@
         </inbodydescription>
         <location file="topology/point_2d.hpp" line="290" column="7" bodyfile="topology/point_2d.hpp" bodystart="290" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a91bb0cd3cad43dc98f4720b917b39df9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::point_2d&lt; float &gt;::point_2d</definition>
         <argsstring>()</argsstring>
         <name>point_2d</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::point_2d</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -55,9 +52,8 @@
         <definition>scifir::point_2d&lt; float &gt;::point_2d</definition>
         <argsstring>(const point_2d&lt; float &gt; &amp;x_point)</argsstring>
         <name>point_2d</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::point_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x_point</declname>
         </param>
         <briefdescription>
@@ -73,9 +69,8 @@
         <definition>scifir::point_2d&lt; float &gt;::point_2d</definition>
         <argsstring>(point_2d&lt; float &gt; &amp;&amp;x_point)</argsstring>
         <name>point_2d</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::point_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x_point</declname>
         </param>
         <briefdescription>
@@ -91,13 +86,12 @@
         <definition>scifir::point_2d&lt; float &gt;::point_2d</definition>
         <argsstring>(float new_x, float new_y)</argsstring>
         <name>point_2d</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::point_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_x</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_y</declname>
         </param>
         <briefdescription>
@@ -113,13 +107,12 @@
         <definition>scifir::point_2d&lt; float &gt;::point_2d</definition>
         <argsstring>(float new_p, const angle &amp;new_theta)</argsstring>
         <name>point_2d</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::point_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_p</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <briefdescription>
@@ -135,9 +128,8 @@
         <definition>scifir::point_2d&lt; float &gt;::point_2d</definition>
         <argsstring>(const coordinates_2d&lt; float &gt; &amp;x_coordinates)</argsstring>
         <name>point_2d</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::point_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x_coordinates</declname>
         </param>
         <briefdescription>
@@ -153,9 +145,8 @@
         <definition>scifir::point_2d&lt; float &gt;::point_2d</definition>
         <argsstring>(coordinates_2d&lt; float &gt; &amp;&amp;x_coordinates)</argsstring>
         <name>point_2d</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::point_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x_coordinates</declname>
         </param>
         <briefdescription>
@@ -171,9 +162,8 @@
         <definition>scifir::point_2d&lt; float &gt;::point_2d</definition>
         <argsstring>(const string &amp;init_point_2d)</argsstring>
         <name>point_2d</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::point_2d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_point_2d</declname>
         </param>
         <briefdescription>
@@ -184,14 +174,13 @@
         </inbodydescription>
         <location file="topology/point_2d.hpp" line="193" column="10" bodyfile="topology/point_2d.hpp" bodystart="193" bodyend="196"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a75f27ffab445e52cfce0533df88bfb3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>point_2d&lt; float &gt; &amp; scifir::point_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a4ecaabf7209cc59ebe3a8fe5447c181b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>point_2d&lt;float&gt;&amp; scifir::point_2d&lt; float &gt;::operator=</definition>
         <argsstring>(const point_2d&lt; float &gt; &amp;x_point)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x_point</declname>
         </param>
         <briefdescription>
@@ -202,14 +191,13 @@
         </inbodydescription>
         <location file="topology/point_2d.hpp" line="198" column="10" bodyfile="topology/point_2d.hpp" bodystart="198" bodyend="203"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a4fbb46483463217777a10791005bd504" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>point_2d&lt; float &gt; &amp; scifir::point_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a5f06fe0dba1314cc8b229a4e3f25c36f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>point_2d&lt;float&gt;&amp; scifir::point_2d&lt; float &gt;::operator=</definition>
         <argsstring>(point_2d&lt; float &gt; &amp;&amp;x_point)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x_point</declname>
         </param>
         <briefdescription>
@@ -221,13 +209,12 @@
         <location file="topology/point_2d.hpp" line="205" column="10" bodyfile="topology/point_2d.hpp" bodystart="205" bodyend="210"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1ae5bda2200af402ac8ab19619d3a391ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;</type>
         <definition>point_2d&lt; float &gt; &amp; scifir::point_2d&lt; float &gt;::operator=</definition>
         <argsstring>(const coordinates_2d&lt; float &gt; &amp;x_coordinates)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x_coordinates</declname>
         </param>
         <briefdescription>
@@ -239,13 +226,12 @@
         <location file="topology/point_2d.hpp" line="212" column="10" bodyfile="topology/point_2d.cpp" bodystart="16" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1acfd5870e2431dbbfe3e0dc4e6180e665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;</type>
         <definition>point_2d&lt; float &gt; &amp; scifir::point_2d&lt; float &gt;::operator=</definition>
         <argsstring>(coordinates_2d&lt; float &gt; &amp;&amp;x_coordinates)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; float &gt; &amp;&amp;</type>
           <declname>x_coordinates</declname>
         </param>
         <briefdescription>
@@ -256,14 +242,13 @@
         </inbodydescription>
         <location file="topology/point_2d.hpp" line="214" column="10" bodyfile="topology/point_2d.cpp" bodystart="23" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a64803e43446bb6997cc1ececf43c3a0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-        <definition>point_2d&lt; float &gt; &amp; scifir::point_2d&lt; float &gt;::operator=</definition>
+      <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a5b35d806b7f647c01eb9bc0ad9304c48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; float &gt; &amp;</type>
+        <definition>point_2d&lt;float&gt;&amp; scifir::point_2d&lt; float &gt;::operator=</definition>
         <argsstring>(const string &amp;init_point_2d)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_point_2d</declname>
         </param>
         <briefdescription>
@@ -275,11 +260,10 @@
         <location file="topology/point_2d.hpp" line="216" column="10" bodyfile="topology/point_2d.hpp" bodystart="216" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a9e70a185bb29e4b43d5bd7d749253587" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::point_2d&lt; float &gt;::get_p</definition>
         <argsstring>() const</argsstring>
         <name>get_p</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::get_p</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -293,7 +277,6 @@
         <definition>angle scifir::point_2d&lt; float &gt;::get_theta</definition>
         <argsstring>() const</argsstring>
         <name>get_theta</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::get_theta</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -303,17 +286,16 @@
         <location file="topology/point_2d.hpp" line="227" column="7" bodyfile="topology/point_2d.hpp" bodystart="227" bodyend="230"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a692086ec3e8ad0c6af266d02a6978ea3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::point_2d&lt; float &gt;::set_position</definition>
         <argsstring>(float new_x, float new_y)</argsstring>
         <name>set_position</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::set_position</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_x</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_y</declname>
         </param>
         <briefdescription>
@@ -325,17 +307,16 @@
         <location file="topology/point_2d.hpp" line="232" column="6" bodyfile="topology/point_2d.hpp" bodystart="232" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a44d783f03b84cee39668f3ee2f0e1af6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::point_2d&lt; float &gt;::set_position</definition>
         <argsstring>(float new_p, const angle &amp;new_theta)</argsstring>
         <name>set_position</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::set_position</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_p</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <briefdescription>
@@ -347,13 +328,12 @@
         <location file="topology/point_2d.hpp" line="238" column="6" bodyfile="topology/point_2d.hpp" bodystart="238" bodyend="242"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a46e738972a79fa50f52880f1f3f84adb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::point_2d&lt; float &gt;::rotate</definition>
         <argsstring>(const angle &amp;x_angle)</argsstring>
         <name>rotate</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::rotate</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>x_angle</declname>
         </param>
         <briefdescription>
@@ -365,13 +345,12 @@
         <location file="topology/point_2d.hpp" line="244" column="6" bodyfile="topology/point_2d.hpp" bodystart="244" bodyend="250"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a5c4d41d69220e7529e2a42ea17f7c206" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::point_2d&lt; float &gt;::move</definition>
         <argsstring>(const displacement_2d &amp;x_displacement)</argsstring>
         <name>move</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::move</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement_2d</ref> &amp;</type>
+          <type>const displacement_2d &amp;</type>
           <declname>x_displacement</declname>
         </param>
         <briefdescription>
@@ -383,17 +362,16 @@
         <location file="topology/point_2d.hpp" line="252" column="6" bodyfile="topology/point_2d.hpp" bodystart="252" bodyend="256"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a7b0ed972b697298391ea4147f9cecd91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::point_2d&lt; float &gt;::move</definition>
         <argsstring>(float new_x, float new_y)</argsstring>
         <name>move</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::move</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_x</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_y</declname>
         </param>
         <briefdescription>
@@ -405,17 +383,16 @@
         <location file="topology/point_2d.hpp" line="258" column="6" bodyfile="topology/point_2d.hpp" bodystart="258" bodyend="262"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a813ebec82d3119c75342b4473f6e1876" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::point_2d&lt; float &gt;::move</definition>
         <argsstring>(float new_p, const angle &amp;new_theta)</argsstring>
         <name>move</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::move</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <type>float</type>
           <declname>new_p</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
           <declname>new_theta</declname>
         </param>
         <briefdescription>
@@ -427,11 +404,10 @@
         <location file="topology/point_2d.hpp" line="264" column="6" bodyfile="topology/point_2d.hpp" bodystart="264" bodyend="268"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a75f0b4581743118243cea0645b508c9f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+        <type>float</type>
         <definition>float scifir::point_2d&lt; float &gt;::distance_to_origin</definition>
         <argsstring>() const</argsstring>
         <name>distance_to_origin</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::distance_to_origin</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -441,11 +417,10 @@
         <location file="topology/point_2d.hpp" line="270" column="7" bodyfile="topology/point_2d.hpp" bodystart="270" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a16f8ed56b83fbb63ec094978b8e93994" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::point_2d&lt; float &gt;::display_cartesian</definition>
         <argsstring>() const</argsstring>
         <name>display_cartesian</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::display_cartesian</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -455,11 +430,10 @@
         <location file="topology/point_2d.hpp" line="275" column="8" bodyfile="topology/point_2d.hpp" bodystart="275" bodyend="280"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1add91f15b53f14253a3bb0984b5e76c32" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <type>string</type>
         <definition>string scifir::point_2d&lt; float &gt;::display_polar</definition>
         <argsstring>() const</argsstring>
         <name>display_polar</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::display_polar</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -468,16 +442,15 @@
         </inbodydescription>
         <location file="topology/point_2d.hpp" line="282" column="8" bodyfile="topology/point_2d.hpp" bodystart="282" bodyend="287"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
+      </sectiondef>
+      <sectiondef kind="private-func">
       <memberdef kind="function" id="classscifir_1_1point__2d_3_01float_01_4_1a0be923ae3e445431aac38eb7a49f2677" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::point_2d&lt; float &gt;::initialize_from_string</definition>
         <argsstring>(string init_point_2d)</argsstring>
         <name>initialize_from_string</name>
-        <qualifiedname>scifir::point_2d&lt; float &gt;::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <type>string</type>
           <declname>init_point_2d</declname>
         </param>
         <briefdescription>
@@ -488,7 +461,7 @@
         </inbodydescription>
         <location file="topology/point_2d.hpp" line="293" column="6" bodyfile="topology/point_2d.hpp" bodystart="293" bodyend="316"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -504,11 +477,11 @@
       <member refid="classscifir_1_1point__2d_3_01float_01_4_1a5c4d41d69220e7529e2a42ea17f7c206" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>move</name></member>
       <member refid="classscifir_1_1point__2d_3_01float_01_4_1a7b0ed972b697298391ea4147f9cecd91" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>move</name></member>
       <member refid="classscifir_1_1point__2d_3_01float_01_4_1a813ebec82d3119c75342b4473f6e1876" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>move</name></member>
-      <member refid="classscifir_1_1point__2d_3_01float_01_4_1a75f27ffab445e52cfce0533df88bfb3c" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1point__2d_3_01float_01_4_1a4fbb46483463217777a10791005bd504" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1point__2d_3_01float_01_4_1a4ecaabf7209cc59ebe3a8fe5447c181b" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1point__2d_3_01float_01_4_1a5f06fe0dba1314cc8b229a4e3f25c36f" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>operator=</name></member>
       <member refid="classscifir_1_1point__2d_3_01float_01_4_1ae5bda2200af402ac8ab19619d3a391ab" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>operator=</name></member>
       <member refid="classscifir_1_1point__2d_3_01float_01_4_1acfd5870e2431dbbfe3e0dc4e6180e665" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1point__2d_3_01float_01_4_1a64803e43446bb6997cc1ececf43c3a0a" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1point__2d_3_01float_01_4_1a5b35d806b7f647c01eb9bc0ad9304c48" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>operator=</name></member>
       <member refid="classscifir_1_1point__2d_3_01float_01_4_1a91bb0cd3cad43dc98f4720b917b39df9" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>point_2d</name></member>
       <member refid="classscifir_1_1point__2d_3_01float_01_4_1a9f21a18da7967689cdeb5da3f0beebd3" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>point_2d</name></member>
       <member refid="classscifir_1_1point__2d_3_01float_01_4_1a283ec210d401ce646f5e31a6f3218046" prot="public" virt="non-virtual"><scope>scifir::point_2d&lt; float &gt;</scope><name>point_2d</name></member>

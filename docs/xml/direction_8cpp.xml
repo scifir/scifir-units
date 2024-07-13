@@ -1,11 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="direction_8cpp" kind="file" language="C++">
     <compoundname>direction.cpp</compoundname>
     <includes refid="direction_8hpp" local="yes">./direction.hpp</includes>
     <includes local="yes">boost/algorithm/string.hpp</includes>
     <includes local="no">sstream</includes>
     <incdepgraph>
+      <node id="6">
+        <label>boost/algorithm/string.hpp</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
       <node id="1">
         <label>topology/direction.cpp</label>
         <link refid="direction_8cpp"/>
@@ -15,6 +21,9 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+      </node>
+      <node id="5">
+        <label>string</label>
       </node>
       <node id="2">
         <label>./direction.hpp</label>
@@ -26,24 +35,15 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="3">
-        <label>cstdint</label>
+      <node id="7">
+        <label>sstream</label>
       </node>
       <node id="4">
         <label>iostream</label>
       </node>
-      <node id="7">
-        <label>sstream</label>
-      </node>
-      <node id="5">
-        <label>string</label>
-      </node>
     </incdepgraph>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
-    <sectiondef kind="func">
+      <sectiondef kind="func">
       <memberdef kind="function" id="direction_8cpp_1a0f6558c733aefa110323a011e9a61bf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
@@ -317,9 +317,9 @@
         </inbodydescription>
         <location file="topology/direction.cpp" line="428" column="8" bodyfile="topology/direction.cpp" bodystart="428" bodyend="434"/>
       </memberdef>
-      <memberdef kind="function" id="direction_8cpp_1a260343da55a8be132aea79ad914e115f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="direction_8cpp_1a33880479bcbf35c6a291573a506ecb18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::direction &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -338,9 +338,9 @@
         </inbodydescription>
         <location file="topology/direction.cpp" line="436" column="1" bodyfile="topology/direction.cpp" bodystart="436" bodyend="439"/>
       </memberdef>
-      <memberdef kind="function" id="direction_8cpp_1a1447436d910eb95522dd783dae07f6ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="direction_8cpp_1ad35bc1228399426cbb3f5d0679c7429a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>istream &amp;</type>
-        <definition>istream &amp; operator&gt;&gt;</definition>
+        <definition>istream&amp; operator&gt;&gt;</definition>
         <argsstring>(istream &amp;is, scifir::direction &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
@@ -359,7 +359,7 @@
         </inbodydescription>
         <location file="topology/direction.cpp" line="441" column="9" bodyfile="topology/direction.cpp" bodystart="441" bodyend="449"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -375,7 +375,7 @@
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="10"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="11" refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction::direction</ref>()<sp/>:<sp/>value(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>::<ref refid="namespacescifir_1a20683521b4e3fde1fac96fee7ca39e36ab50339a10e1de285ac99d4c3990b8693" kindref="member">NONE</ref>)</highlight></codeline>
+<codeline lineno="11" refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>direction::direction()<sp/>:<sp/>value(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>::<ref refid="namespacescifir_1a20683521b4e3fde1fac96fee7ca39e36ab50339a10e1de285ac99d4c3990b8693" kindref="member">NONE</ref>)</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14" refid="classscifir_1_1direction_1aa32c39856a146edf449611bdbefd081a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction::direction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(x.value)</highlight></codeline>
@@ -384,33 +384,33 @@
 <codeline lineno="17" refid="classscifir_1_1direction_1a3b8539a7f8a3e412a0cfc9435bf1b5ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction::direction</ref>(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(std::move(x.value))</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20" refid="classscifir_1_1direction_1add59983cce38ca07c7fb92d9c4f686eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction::direction</ref>(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_direction</ref>)<sp/>:<sp/>value(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_direction</ref>)</highlight></codeline>
+<codeline lineno="20" refid="classscifir_1_1direction_1add59983cce38ca07c7fb92d9c4f686eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction::direction</ref>(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/>new_direction)<sp/>:<sp/>value(new_direction)</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23" refid="classscifir_1_1direction_1a9b1933aa99679b859cd91ab9976b51c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction::direction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_direction</ref>)<sp/>:<sp/>value(<ref refid="namespacescifir_1aa4875573260680d0b88ef4a41dd91973" kindref="member">create_direction</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_direction</ref>))</highlight></codeline>
+<codeline lineno="23" refid="classscifir_1_1direction_1a9b1933aa99679b859cd91ab9976b51c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" kindref="member">direction::direction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_direction)<sp/>:<sp/>value(<ref refid="namespacescifir_1aa4875573260680d0b88ef4a41dd91973" kindref="member">create_direction</ref>(init_direction))</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">direction::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="26" refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">direction::operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" kindref="member">value</ref><sp/>=<sp/>x.<ref refid="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32" refid="classscifir_1_1direction_1ac82f07e487b1892dcefddd6a85088d51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">direction::operator=</ref>(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="32" refid="classscifir_1_1direction_1ac82f07e487b1892dcefddd6a85088d51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">direction::operator =</ref>(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" kindref="member">value</ref><sp/>=<sp/>std::move(x.value);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38" refid="classscifir_1_1direction_1a58cfd0340b81faaa47a668b79ca2a7f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">direction::operator=</ref>(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_direction</ref>)</highlight></codeline>
+<codeline lineno="38" refid="classscifir_1_1direction_1a58cfd0340b81faaa47a668b79ca2a7f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">direction::operator =</ref>(<ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref><sp/>new_direction)</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" kindref="member">value</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_direction</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" kindref="member">value</ref><sp/>=<sp/>new_direction;</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44" refid="classscifir_1_1direction_1a451683371c4836e046ba24b027c6a1b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">direction::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_direction</ref>)</highlight></codeline>
+<codeline lineno="44" refid="classscifir_1_1direction_1a451683371c4836e046ba24b027c6a1b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;<sp/><ref refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" kindref="member">direction::operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_direction)</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" kindref="member">value</ref><sp/>=<sp/><ref refid="namespacescifir_1aa4875573260680d0b88ef4a41dd91973" kindref="member">create_direction</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_direction</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" kindref="member">value</ref><sp/>=<sp/><ref refid="namespacescifir_1aa4875573260680d0b88ef4a41dd91973" kindref="member">create_direction</ref>(init_direction);</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
@@ -800,12 +800,12 @@
 <codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>output.str();</highlight></codeline>
 <codeline lineno="434"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="435"><highlight class="normal"></highlight></codeline>
-<codeline lineno="436" refid="direction_8cpp_1a260343da55a8be132aea79ad914e115f" refkind="member"><highlight class="normal">ostream&amp;<sp/><ref refid="direction_8cpp_1a260343da55a8be132aea79ad914e115f" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="436" refid="direction_8cpp_1a33880479bcbf35c6a291573a506ecb18" refkind="member"><highlight class="normal">ostream&amp;<sp/><ref refid="direction_8cpp_1a33880479bcbf35c6a291573a506ecb18" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="437"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>to_string(x);</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/><ref refid="namespacescifir_1a40311f1f76470e8fe68d9ddb9c9a16ec" kindref="member">to_string</ref>(x);</highlight></codeline>
 <codeline lineno="439"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="440"><highlight class="normal"></highlight></codeline>
-<codeline lineno="441" refid="direction_8cpp_1a1447436d910eb95522dd783dae07f6ad" refkind="member"><highlight class="normal">istream&amp;<sp/><ref refid="direction_8cpp_1a1447436d910eb95522dd783dae07f6ad" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="441" refid="direction_8cpp_1ad35bc1228399426cbb3f5d0679c7429a" refkind="member"><highlight class="normal">istream&amp;<sp/><ref refid="direction_8cpp_1ad35bc1228399426cbb3f5d0679c7429a" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="442"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>a[256];</highlight></codeline>
 <codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/>is.getline(a,<sp/>256);</highlight></codeline>

@@ -1,4 +1,4 @@
-.TH "scifir::vector_unit_nd" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "scifir::vector_unit_nd" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,418 +16,282 @@ Inherits \fBscifir::scalar_unit\fP\&.
 .ti -1c
 .RI "\fBvector_unit_nd\fP ()"
 .br
+.RI "Default constructor\&. The value is 0, the dimensions are empty and the angles are empty\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBconst\fP \fBvector_unit_nd\fP &x)"
+.RI "\fBvector_unit_nd\fP (const \fBvector_unit_nd\fP &x)"
 .br
+.RI "Copy constructor\&. The member-variables are copied from \fBvector_unit_nd\fP x\&. "
 .ti -1c
 .RI "\fBvector_unit_nd\fP (\fBvector_unit_nd\fP &&x)"
 .br
+.RI "Move constructor\&. The member-variables are moved from \fBvector_unit_nd\fP x\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
+.RI "\fBvector_unit_nd\fP (float new_value, const string &init_dimensions)"
 .br
+.RI "Constructor\&. The value is new_value and the dimensions are initialized with the initialization string of dimensions init_dimensions\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (float new_value, const string &init_dimensions, const vector< float > &new_angles)"
 .br
+.RI "Constructor\&. The value is new_value, the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are constructed with new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (float new_value, const string &init_dimensions, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "Constructor\&. The value is new_value, the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
+.RI "\fBvector_unit_nd\fP (double new_value, const string &init_dimensions)"
 .br
+.RI "Constructor\&. The value is new_value (the double is casted to a float) and the dimensions are initialized with the initialization string of dimensions init_dimensions\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (double new_value, const string &init_dimensions, const vector< float > &new_angles)"
 .br
+.RI "Constructor\&. The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are constructed with new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (double new_value, const string &init_dimensions, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "Constructor\&. The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
+.RI "\fBvector_unit_nd\fP (long double new_value, const string &init_dimensions)"
 .br
+.RI "Constructor\&. The value is new_value (the long double is casted to a float) and the dimensions are initialized with the initialization string of dimensions init_dimensions\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (long double new_value, const string &init_dimensions, const vector< float > &new_angles)"
 .br
+.RI "Constructor\&. The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are constructed with new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (long double new_value, const string &init_dimensions, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "Constructor\&. The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
+.RI "\fBvector_unit_nd\fP (int new_value, const string &init_dimensions)"
 .br
+.RI "Constructor\&. The value is new_value (the int is casted to a float) and the dimensions are initialized with the initialization string of dimensions init_dimensions\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (int new_value, const string &init_dimensions, const vector< float > &new_angles)"
 .br
+.RI "Constructor\&. The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are constructed with new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (int new_value, const string &init_dimensions, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "Constructor\&. The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
+.RI "\fBvector_unit_nd\fP (float new_value, const vector< \fBdimension\fP > &new_dimensions)"
 .br
+.RI "The value is new_value and the dimensions are initialized with a vector of dimensions\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (float new_value, const vector< \fBdimension\fP > &new_dimensions, const vector< float > &new_angles)"
 .br
+.RI "The value is new_value, the dimensions are initialized with a vector of dimensions and the angles are constructed with new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (float new_value, const vector< \fBdimension\fP > &new_dimensions, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "The value is new_value, the dimensions are initialized with a vector of dimensions and the angles are new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
+.RI "\fBvector_unit_nd\fP (double new_value, const vector< \fBdimension\fP > &new_dimensions)"
 .br
+.RI "The value is new_value (the double is casted to a float) and the dimensions are initialized with a vector of dimensions\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (double new_value, const vector< \fBdimension\fP > &new_dimensions, const vector< float > &new_angles)"
 .br
+.RI "The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are constructed with new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (double new_value, const vector< \fBdimension\fP > &new_dimensions, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
+.RI "\fBvector_unit_nd\fP (long double new_value, const vector< \fBdimension\fP > &new_dimensions)"
 .br
+.RI "The value is new_value (the long double is casted to a float) and the dimensions are initialized with a vector of dimensions\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (long double new_value, const vector< \fBdimension\fP > &new_dimensions, const vector< float > &new_angles)"
 .br
+.RI "The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are constructed with new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (long double new_value, const vector< \fBdimension\fP > &new_dimensions, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
+.RI "\fBvector_unit_nd\fP (int new_value, const vector< \fBdimension\fP > &new_dimensions)"
 .br
+.RI "The value is new_value (the int is casted to a float) and the dimensions are initialized with a vector of dimensions\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (int new_value, const vector< \fBdimension\fP > &new_dimensions, const vector< float > &new_angles)"
 .br
+.RI "The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are constructed with new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (int new_value, const vector< \fBdimension\fP > &new_dimensions, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBvector_unit_nd\fP (const \fBscalar_unit\fP &x)"
 .br
+.RI "The value and the dimensions are copied from the \fBscalar_unit\fP x, the angles are empty\&. The vector is in 1D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (const \fBscalar_unit\fP &x, const vector< float > &new_angles)"
 .br
+.RI "The value and the dimensions are copied from the \fBscalar_unit\fP x, the angles are constructed with new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (const \fBscalar_unit\fP &x, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "The value and the dimensions are copied from the \fBscalar_unit\fP x, the angles are new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (const string &init_scalar, const vector< float > &new_angles)"
 .br
+.RI "The value and the dimensions are copied from the initialization string of \fBscalar_unit\fP init_scalar, the angles are constructed with new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvector_unit_nd\fP (const string &init_scalar, const vector< \fBangle\fP > &new_angles)"
 .br
+.RI "The value and the dimensions are copied from the initialization string of \fBscalar_unit\fP init_scalar, the angles are new_angles\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP (\fBconst\fP \fBstring\fP &\fBinit_vector_nd\fP)"
+.RI "\fBvector_unit_nd\fP (const string &init_vector_nd)"
 .br
+.RI "The value, the dimensions and all the angles are initialized from the initialization string of \fBvector_unit_nd\fP init_vector_nd\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP & \fBoperator=\fP (\fBconst\fP \fBvector_unit_nd\fP &x)"
+.RI "\fBvector_unit_nd\fP & \fBoperator=\fP (const \fBvector_unit_nd\fP &x)"
 .br
+.RI "Copy assignment\&. The member-variables are copied from \fBvector_unit_nd\fP x\&. "
 .ti -1c
 .RI "\fBvector_unit_nd\fP & \fBoperator=\fP (\fBvector_unit_nd\fP &&x)"
 .br
+.RI "Move assignment\&. The member-variables are moved from \fBvector_unit_nd\fP x\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.RI "\fBvector_unit_nd\fP & \fBoperator=\fP (const \fBscalar_unit\fP &x)"
 .br
+.RI "The value and the dimensions are copied from the \fBscalar_unit\fP x, the angles are not changed\&. "
 .ti -1c
 .RI "\fBvector_unit_nd\fP & \fBoperator=\fP (\fBscalar_unit\fP &&x)"
 .br
+.RI "The value and the dimensions are moved from the \fBscalar_unit\fP x, the angles are not changed\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_vector_nd\fP)"
+.RI "\fBvector_unit_nd\fP & \fBoperator=\fP (const string &init_vector_nd)"
 .br
+.RI "The value, the dimensions and the angles are set from the initialization string init_vector_nd\&. "
 .ti -1c
-.RI "\fBbool\fP \fBoperator==\fP (\fBvector_unit_nd\fP x) \fBconst\fP"
+.RI "bool \fBoperator==\fP (\fBvector_unit_nd\fP x) const"
 .br
+.RI "Comparison operator\&. Two \fBvector_unit_nd\fP are equal if their value, dimensions and angles are the same\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBpoint_to\fP (\fBdirection::name\fP x)"
+.RI "void \fBpoint_to\fP (\fBdirection::name\fP x)"
 .br
+.RI "The angles are set to the direction specified in 1D, 2D or 3D, depending on the current ND of \fBvector_unit_nd\fP\&. The possible values are LEFT, RIGHT, TOP, BOTTOM, LEFT_TOP, RIGHT_TOP, RIGHT_BOTTOM, LEFT_BOTTOM, FRONT, BACK, LEFT_FRONT, RIGHT_FRONT, TOP_FRONT, BOTTOM_FRONT, LEFT_BACK, RIGHT_BACK, TOP_BACK, BOTTOM_BACK, LEFT_TOP_FRONT, RIGHT_TOP_FRONT, LEFT_BOTTOM_FRONT, RIGHT_BOTTOM_FRONT, LEFT_TOP_BACK, RIGHT_TOP_BACK, LEFT_BOTTOM_BACK, RIGHT_BOTTOM_BACK\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBvector_unit_nd\fP &x)"
+.RI "void \fBoperator+=\fP (const \fBvector_unit_nd\fP &x)"
 .br
+.RI "The \fBvector_unit_nd\fP is summed as vector in 2D, 3D, or more coordinates\&. It's summed as scalar in 1D\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBvector_unit_nd\fP x)"
+.RI "void \fBoperator\-=\fP (\fBvector_unit_nd\fP x)"
 .br
+.RI "The \fBvector_unit_nd\fP is substracted as vector in 2D, 3D, or more coordinates\&. It's substracted as scalar in 1D\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP \fBoperator+\fP (\fBconst\fP \fBvector_unit_nd\fP &x) \fBconst\fP"
+.RI "\fBvector_unit_nd\fP \fBoperator+\fP (const \fBvector_unit_nd\fP &x) const"
 .br
+.RI "Addition of vectors in 2D, 3D, or more coordinates\&. It's an addition of scalars in 1D\&. It creates a new vector as the addition of the other two\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP \fBoperator\-\fP (\fBvector_unit_nd\fP x) \fBconst\fP"
+.RI "\fBvector_unit_nd\fP \fBoperator\-\fP (\fBvector_unit_nd\fP x) const"
 .br
+.RI "Substraction of vectors in 2D, 3D, or more coordinates\&. It's a substraction of scalars in 1D\&. It creates a new vector as the difference of the other two\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP \fBoperator*\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
+.RI "\fBvector_unit_nd\fP \fBoperator*\fP (const \fBscalar_unit\fP &x) const"
 .br
+.RI "It creates a new \fBvector_unit_nd\fP scaling a \fBvector_unit_nd\fP by the \fBscalar_unit\fP x\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP \fBoperator/\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
+.RI "\fBvector_unit_nd\fP \fBoperator/\fP (const \fBscalar_unit\fP &x) const"
 .br
+.RI "It creates a new \fBvector_unit_3d\fP scaling a \fBvector_unit_3d\fP by the inverse of the \fBscalar_unit\fP x\&. "
 .ti -1c
-.RI "\fBvector_unit_nd\fP \fBoperator^\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
+.RI "\fBvector_unit_nd\fP \fBoperator^\fP (const \fBscalar_unit\fP &x) const"
 .br
+.RI "It powers a vector by a \fBscalar_unit\fP x if that \fBscalar_unit\fP has empty dimensions\&. "
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_nd\fP \fBoperator+\fP (\fBU\fP x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBvector_unit_nd\fP \fBoperator+\fP (T x) const"
 .br
+.RI "It creates a new vector as the addition of the numeric type x to the value\&. The angles are not changed\&. "
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_nd\fP \fBoperator\-\fP (\fBU\fP x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBvector_unit_nd\fP \fBoperator\-\fP (T x) const"
 .br
+.RI "It creates a new vector as the substraction of the numeric type x to the value\&. The angles are not changed\&. "
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_nd\fP \fBoperator*\fP (\fBU\fP x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBvector_unit_nd\fP \fBoperator*\fP (T x) const"
 .br
+.RI "It creates a new vector as the multiplication of the numeric type x to the value\&. The angles are not changed\&. "
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_nd\fP \fBoperator/\fP (\fBU\fP x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBvector_unit_nd\fP \fBoperator/\fP (T x) const"
 .br
+.RI "It creates a new vector as the division of the value with the numeric type x\&. The angles are not changed\&. "
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<is_integer_number<U>::value>::type> \fBvector_unit_nd\fP \fBoperator^\fP (\fBU\fP x) \fBconst\fP"
+.RI "template<typename T , typename  = typename enable_if<is_integer_number<T>::value>::type> \fBvector_unit_nd\fP \fBoperator^\fP (T x) const"
 .br
+.RI "It creates a new vector as the power of the value with the numeric type x\&. The angles are not changed\&. "
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator+=\fP (\fBU\fP x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator+=\fP (T x)"
 .br
+.RI "It sums the numeric type x to the value\&. The angles are not changed\&. "
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator\-=\fP (\fBU\fP x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator\-=\fP (T x)"
 .br
+.RI "It substracts the numeric type x to the value\&. The angles are not changed\&. "
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator*=\fP (\fBU\fP x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator*=\fP (T x)"
 .br
+.RI "It multiplies the numeric type x to the value\&. The angles are not changed\&. "
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator/=\fP (\fBU\fP x)"
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void \fBoperator/=\fP (T x)"
 .br
+.RI "It divides the numeric type x to the value\&. The angles are not changed\&. "
 .ti -1c
-.RI "\fBbool\fP \fBis_nd\fP (\fBunsigned\fP \fBint\fP \fBi\fP) \fBconst\fP"
+.RI "bool \fBis_nd\fP (unsigned int i) const"
 .br
+.RI "Returns true if the vector is at the same number of dimensions as i\&. "
 .ti -1c
-.RI "\fBint\fP \fBget_nd\fP () \fBconst\fP"
+.RI "int \fBget_nd\fP () const"
 .br
+.RI "Returns the number of dimensions\&. "
 .ti -1c
-.RI "\fBscalar_unit\fP \fBn_projection\fP (\fBint\fP \fBi\fP) \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBn_projection\fP (int i) const"
 .br
+.RI "Returns the x projection, the y projection or the z projection, depending if i is 1 (it returns x), 2 (it returns y) or 3 (it returns z)\&. "
 .ti -1c
-.RI "\fBscalar_unit\fP \fBx_projection\fP () \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBx_projection\fP () const"
 .br
+.RI "It creates the x projection of the vector, returning it as a \fBscalar_unit\fP of the same dimensions, and the value corresponds to the projection\&. In 1D the projection is the value, in 2D it's in polar coordinates and in 3D it's in spherical coordinates\&. "
 .ti -1c
-.RI "\fBscalar_unit\fP \fBy_projection\fP () \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBy_projection\fP () const"
 .br
+.RI "It creates the y projection of the vector, returning it as a \fBscalar_unit\fP of the same dimensions, and the value corresponds to the projection\&. In 1D this projection doesn't exist, in 2D it's in polar coordinates and in 3D it's in spherical coordinates\&. "
 .ti -1c
-.RI "\fBscalar_unit\fP \fBz_projection\fP () \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBz_projection\fP () const"
 .br
+.RI "It creates the z projection of the vector, returning it as a \fBscalar_unit\fP of the same dimensions, and the value corresponds to the projection\&. In 1D this projection doesn't exist, in 2D it doesn't exist neither and in 3D it's in spherical coordinates\&. "
 .ti -1c
-.RI "\fBvoid\fP \fBinvert\fP ()"
+.RI "void \fBinvert\fP ()"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBvectorial_display\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
+.RI "string \fBvectorial_display\fP (int number_of_decimals=2) const"
 .br
+.RI "Displays the vector as the string representation of the scalar unit adding also all the angles\&. "
 .ti -1c
-.RI "\fBstring\fP \fBvectorial_derived_display\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
+.RI "string \fBvectorial_derived_display\fP (int number_of_decimals=2) const"
 .br
+.RI "Displays the vector as the string representation of the scalar unit adding also all the angles\&. It displays the dimensions with its derived dimensions\&. "
 .ti -1c
-.RI "\fBstring\fP \fBvectorial_custom_display\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
+.RI "string \fBvectorial_custom_display\fP (const string &init_dimensions, int number_of_decimals=2) const"
 .br
-.in -1c
-
-Public Member Functions inherited from \fBscifir::scalar_unit\fP
-.in +1c
-.ti -1c
-.RI "\fBscalar_unit\fP ()"
-.br
-.RI "Default constructor, the value is 0 and the dimensions are empty\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBconst\fP \fBscalar_unit\fP &x)"
-.br
-.RI "Copy constructor, copies the value and the dimensions\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBscalar_unit\fP &&x)"
-.br
-.RI "Move constructor, moves the value and the dimensions\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
-.br
-.RI "Creates a new \fBscalar_unit\fP with the value and with the dimensions specified in the string\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
-.br
-.RI "Creates a new \fBscalar_unit\fP, the double is casted to a float\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
-.br
-.RI "Creates a new \fBscalar_unit\fP, the long double is casted to a float\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
-.br
-.RI "Creates a new \fBscalar_unit\fP, the int is casted to a float\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
-.br
-.RI "Creates a new \fBscalar_unit\fP with the value given and copying the dimensions\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
-.br
-.RI "Creates a new \fBscalar_unit\fP, the double is casted to a float, the dimensions are copied\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
-.br
-.RI "Creates a new \fBscalar_unit\fP, the long double is casted to a float, the dimensions are copied\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
-.br
-.RI "Creates a new \fBscalar_unit\fP, the int is casted to a float, the dimensions are copied\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP)"
-.br
-.RI "Creates a new \fBscalar_unit\fP, the initialization string specifies both the value and the dimensions\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
-.br
-.RI "Copy assignment, it assigns a copy of the \fBscalar_unit\fP\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBscalar_unit\fP &&x)"
-.br
-.RI "Move assignment, it moves the \fBscalar_unit\fP\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP)"
-.br
-.RI "Assignment with an initialization string, the value and the dimensions are both specified\&. "
-.ti -1c
-.RI "\fBoperator float\fP () \fBconst\fP"
-.br
-.RI "Cast the \fBscalar_unit\fP to their float equivalent, it discards the dimensions and copies the value to a float\&. "
-.ti -1c
-.RI "\fBbool\fP \fBoperator==\fP (\fBscalar_unit\fP x) \fBconst\fP"
-.br
-.RI "Comparison operator, two \fBscalar_unit\fP classes are considered equivalent if they have the same value given the same dimensions\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP \fBoperator+\fP (\fBscalar_unit\fP x) \fBconst\fP"
-.br
-.RI "Addition operator, it sums two \fBscalar_unit\fP classes, their dimensions are changed to be equal first\&. If the basic dimensions are different, it returns an empty \fBscalar_unit\fP class\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP \fBoperator\-\fP (\fBscalar_unit\fP x) \fBconst\fP"
-.br
-.RI "Substraction operator, it substracts one \fBscalar_unit\fP from the other, their dimensions are changed to be equal first\&. If the basic dimensions are different, it returns an empty \fBscalar_unit\fP class\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP \fBoperator*\fP (\fBscalar_unit\fP x) \fBconst\fP"
-.br
-.RI "Multiplication operator, it multiplies two \fBscalar_unit\fP classes, their dimensions are also multiplied\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP \fBoperator/\fP (\fBscalar_unit\fP x) \fBconst\fP"
-.br
-.RI "Division operator, it divides one \fBscalar_unit\fP class with the other, their dimensions are also divided\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP \fBoperator^\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
-.br
-.RI "Power operator, it powers a \fBscalar_unit\fP class with another, if that second \fBscalar_unit\fP class, which is the exponent, as empty dimensions\&. If the exponent doesn't has empty dimensions it returns an empty \fBscalar_unit\fP class\&. "
-.ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBscalar_unit\fP x)"
-.br
-.RI "Addition operator, it adds a \fBscalar_unit\fP class to another, by converting their dimensions to be equal first\&. If their basic dimensions are different, it doesn't sums to the value\&. "
-.ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBscalar_unit\fP x)"
-.br
-.RI "Substraction operator, it substracts a \fBscalar_unit\fP class to another, by converting their dimensions to be equal first\&. If their basic dimensions are different, it doesn't substracts to the value\&. "
-.ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator+\fP (T y) \fBconst\fP"
-.br
-.RI "Addition operator, it sums the numeric type to the value, independent of the dimensions\&. "
-.ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator\-\fP (T y) \fBconst\fP"
-.br
-.RI "Substraction operator, it substracts the numeric type to the value, independent of the dimensions\&. "
-.ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator*\fP (T y) \fBconst\fP"
-.br
-.RI "Multiplication operator, it multiplies the numeric type with the value, independent of the dimensions\&. "
-.ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator/\fP (T y) \fBconst\fP"
-.br
-.RI "Division operator, it divides the value with the numeric type, independent of the dimensions\&. "
-.ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<is_integer_number<T>::value>::type> \fBscalar_unit\fP \fBoperator^\fP (T y) \fBconst\fP"
-.br
-.RI "Power operator, it powers the value with the numeric type, independent of the dimensions\&. "
-.ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T y)"
-.br
-.RI "Addition operator, it adds the numeric type to the value, independent of the dimensions\&. "
-.ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T y)"
-.br
-.RI "Substraction operator, it substracts the numeric type to the value, independent of the dimensions\&. "
-.ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (T y)"
-.br
-.RI "Multiplication operator, it multiplies the numeric type to the value, independent of the dimensions\&. "
-.ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (T y)"
-.br
-.RI "Division operator, it divides the numeric type to the value, independent of the dimensions\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP & \fBoperator++\fP ()"
-.br
-.RI "Increment operator, it increases the value by one\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP & \fBoperator++\fP (\fBint\fP)"
-.br
-.RI "Increment operator, it increases the value by one\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP & \fBoperator\-\-\fP ()"
-.br
-.RI "Decrement operator, it decreases the value by one\&. "
-.ti -1c
-.RI "\fBscalar_unit\fP & \fBoperator\-\-\fP (\fBint\fP)"
-.br
-.RI "Decrement operator, it decreases the value by one\&. "
-.ti -1c
-.RI "\fBvoid\fP \fBchange_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
-.br
-.RI "Changes the dimensions to the dimensions specified by the initialization string of dimensions\&. "
-.ti -1c
-.RI "\fBvoid\fP \fBchange_dimensions\fP (\fBconst\fP \fBscalar_unit\fP &x)"
-.br
-.RI "Changes the dimensions to the same dimensions of the \fBscalar_unit\fP\&. "
-.ti -1c
-.RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP) \fBconst\fP"
-.br
-.RI "Checks if the basic dimensions are the same as the initialization string of dimensions\&. "
-.ti -1c
-.RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &\fBx_dimensions\fP) \fBconst\fP"
-.br
-.RI "Checks if the basic dimensions are the same as some set of dimensions\&. "
-.ti -1c
-.RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
-.br
-.RI "Checks if the basic dimensions are the same as other \fBscalar_unit\fP\&. "
-.ti -1c
-.RI "\fBbool\fP \fBhas_empty_dimensions\fP () \fBconst\fP"
-.br
-.RI "Checks if there aren't basic dimensions\&. "
-.ti -1c
-.RI "\fBstring\fP \fBdisplay_dimensions\fP () \fBconst\fP"
-.br
-.RI "Generates an string of the dimensions of the \fBscalar_unit\fP, with the same format as the initialization string of dimensions\&. "
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBget_derived_dimensions\fP () \fBconst\fP"
-.br
-.RI "Generates a set of the derived dimensions of the dimensions of the \fBscalar_unit\fP\&. "
-.ti -1c
-.RI "\fBconst\fP vector< \fBdimension\fP > & \fBget_dimensions\fP () \fBconst\fP"
-.br
-.RI "Read-only getter of the dimensions\&. "
-.ti -1c
-.RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
-.br
-.RI "Read-only getter of the value\&. "
-.ti -1c
-.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP \fBnumber_of_decimals\fP=2, \fBbool\fP \fBwith_brackets\fP=\fBfalse\fP, \fBbool\fP \fBuse_close_prefix\fP=\fBfalse\fP) \fBconst\fP"
-.br
-.RI "Generates an string of the \fBscalar_unit\fP, with the value and the dimensions\&. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix\&. "
-.ti -1c
-.RI "\fBstring\fP \fBderived_display\fP (\fBint\fP \fBnumber_of_decimals\fP=2, \fBbool\fP \fBwith_brackets\fP=\fBfalse\fP, \fBbool\fP \fBuse_close_prefix\fP=\fBfalse\fP) \fBconst\fP"
-.br
-.RI "Generates an string of the \fBscalar_unit\fP, with all dimensions converted to their derived counterpart\&. "
-.ti -1c
-.RI "\fBstring\fP \fBcustom_display\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBint\fP \fBnumber_of_decimals\fP=2, \fBbool\fP \fBwith_brackets\fP=\fBfalse\fP) \fBconst\fP"
-.br
-.RI "Generates an string of the \fBscalar_unit\fP, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions\&. "
+.RI "Displays the vector as the string representation of the scalar unit adding also all the angles\&. It displays the vector in the dimensions specified in the initialization string of dimensions init_dimensions\&. "
 .in -1c
 .SS "Static Public Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBstatic\fP \fBvector_unit_nd\fP \fBcartesian_2d\fP (\fBconst\fP \fBstring\fP &\fBnew_dimensions\fP, \fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP)"
+.RI "static \fBvector_unit_nd\fP \fBcartesian_2d\fP (const string &init_dimensions, float new_x, float new_y)"
 .br
+.RI "The dimensions are initialized from the initialization string of dimensions new_dimensions, the cartesian coordinates new_x and new_y are converted to polar coordinates and then set the value and theta\&. "
 .ti -1c
-.RI "\fBstatic\fP \fBvector_unit_nd\fP \fBcartesian_3d\fP (\fBconst\fP \fBstring\fP &\fBnew_dimensions\fP, \fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP)"
+.RI "static \fBvector_unit_nd\fP \fBcartesian_3d\fP (const string &init_dimensions, float new_x, float new_y, float new_z)"
 .br
+.RI "The dimensions are initialized from the initialization string of dimensions new_dimensions, the cartesian coordinates new_x, new_y and new_z are converted to spherical coordinates and then set the value, theta and phi\&. "
 .ti -1c
-.RI "\fBstatic\fP \fBvector_unit_nd\fP \fBcylindrical\fP (\fBconst\fP \fBstring\fP &\fBnew_dimensions\fP, \fBfloat\fP \fBnew_p\fP, \fBangle\fP \fBnew_theta\fP, \fBfloat\fP \fBnew_z\fP)"
+.RI "static \fBvector_unit_nd\fP \fBcylindrical\fP (const string &init_dimensions, float new_p, \fBangle\fP new_theta, float new_z)"
 .br
+.RI "The dimensions are initialized from the initialization string of dimensions new_dimensions, the cylindrical coordinates new_p, new_theta and new_z are converted to spherical coordinates and then set the value, theta and phi\&. "
 .in -1c
 .SS "Public Attributes"
 
@@ -435,89 +299,75 @@ Public Member Functions inherited from \fBscifir::scalar_unit\fP
 .ti -1c
 .RI "vector< \fBangle\fP > \fBangles\fP"
 .br
+.RI "The angles\&. A total of one angle means the vector is in 2D in polar coordinates, two angles means it's in 3D in spherical coordinates\&. "
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_vector_nd\fP)"
+.RI "void \fBinitialize_from_string\fP (string init_vector_nd)"
 .br
+.RI "Initializes the member-variables with the initialization string of \fBvector_unit_nd\fP init_vector_nd\&. "
 .in -1c
 .SS "Additional Inherited Members"
-
-
-Protected Member Functions inherited from \fBscifir::scalar_unit\fP
-.in +1c
-.ti -1c
-.RI "\fBvoid\fP \fBadd_dimension\fP (\fBconst\fP \fBdimension\fP &\fBnew_dimension\fP)"
-.br
-.RI "Internal function\&. It adds a dimension, changing the value according to the conversion factor of the added dimension and the prefix\&. "
-.ti -1c
-.RI "\fBvoid\fP \fBremove_dimension\fP (\fBconst\fP \fBdimension\fP &\fBold_dimension\fP)"
-.br
-.RI "Internal function\&. It removes a dimension, changing the value according to the conversion factor of the removed dimension and the prefix\&. "
-.ti -1c
-.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_scalar\fP)"
-.br
-.RI "Internal function\&. It sets the value and the dimensions of the \fBscalar_unit\fP to the value and dimensions specified by the initialization string of \fBscalar_unit\fP\&. "
-.in -1c
-
-Protected Attributes inherited from \fBscifir::scalar_unit\fP
-.in +1c
-.ti -1c
-.RI "vector< \fBdimension\fP > \fBdimensions\fP"
-.br
-.RI "Dimensions of the \fBscalar_unit\fP\&. They can be basic dimensions or abbreviations\&. "
-.ti -1c
-.RI "\fBfloat\fP \fBvalue\fP"
-.br
-.RI "Value of the \fBscalar_unit\fP\&. It changes automatically when the dimensions change\&. "
-.in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB60\fP of file \fBvector_unit_nd\&.hpp\fP\&.
+Class that creates a vector in ND, which means a variable number of dimensions\&. A \fBvector_unit_nd\fP can change to be in 1D, in 2D or in 3D, but it cannot be in more than one dimension at the same time\&. The member-variables of \fBvector_unit_nd\fP are the value and the vector<dimension> of \fBscalar_unit\fP, and a vector<angle> angles\&. The number of angles is equal to the number of dimensions vector unit has - 1\&. In 1D \fBvector_unit_nd\fP doesn't has angles, in 2D \fBvector_unit_nd\fP is in \fBpolar coordniates\fP an has 1 angle, and in 3D \fBvector_unit_nd\fP is in \fBspherical coordinates\fP an has 2 angles\&. 
+.PP
+Definition at line 60 of file vector_unit_nd\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "scifir::vector_unit_nd::vector_unit_nd ()"
+.SS "vector_unit_nd::vector_unit_nd ()"
 
 .PP
-Definition at line \fB10\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Default constructor\&. The value is 0, the dimensions are empty and the angles are empty\&. 
+.PP
+Definition at line 10 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 10                                    : scalar_unit(),angles()
 11     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBconst\fP \fBvector_unit_nd\fP & x)"
+.SS "vector_unit_nd::vector_unit_nd (const \fBvector_unit_nd\fP & x)"
 
 .PP
-Definition at line \fB13\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Copy constructor\&. The member-variables are copied from \fBvector_unit_nd\fP x\&. 
+.PP
+Definition at line 13 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 13                                                           : scalar_unit(x),angles(x\&.angles)
 14     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBvector_unit_nd\fP && x)"
+.SS "vector_unit_nd::vector_unit_nd (\fBvector_unit_nd\fP && x)"
 
 .PP
-Definition at line \fB16\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Move constructor\&. The member-variables are moved from \fBvector_unit_nd\fP x\&. 
+.PP
+Definition at line 16 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 16                                                      : scalar_unit(std::move(x)),angles(std::move(x\&.angles))
 17     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBfloat\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (float new_value, const string & init_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB19\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value and the dimensions are initialized with the initialization string of dimensions init_dimensions\&. 
+.PP
+Definition at line 19 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 19                                                                                 : scalar_unit(new_value,init_dimensions),angles()
 20     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBfloat\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (float new_value, const string & init_dimensions, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB22\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value, the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are constructed with new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. 
+.PP
+Definition at line 22 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 22                                                                                                                 : scalar_unit(new_value,init_dimensions),angles()
 23     {
@@ -527,29 +377,35 @@ Definition at line \fB22\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 27         }
 28     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBfloat\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (float new_value, const string & init_dimensions, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB30\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value, the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. 
+.PP
+Definition at line 30 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 30                                                                                                                 : scalar_unit(new_value,init_dimensions),angles(new_angles)
 31     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (double new_value, const string & init_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB33\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value (the double is casted to a float) and the dimensions are initialized with the initialization string of dimensions init_dimensions\&. 
+.PP
+Definition at line 33 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 33                                                                                  : scalar_unit(new_value,init_dimensions),angles()
 34     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (double new_value, const string & init_dimensions, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB36\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are constructed with new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. 
+.PP
+Definition at line 36 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 36                                                                                                                  : scalar_unit(new_value,init_dimensions),angles()
 37     {
@@ -559,29 +415,35 @@ Definition at line \fB36\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 41         }
 42     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (double new_value, const string & init_dimensions, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB44\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. 
+.PP
+Definition at line 44 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 44                                                                                                                  : scalar_unit(new_value,init_dimensions),angles(new_angles)
 45     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (long double new_value, const string & init_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB47\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value (the long double is casted to a float) and the dimensions are initialized with the initialization string of dimensions init_dimensions\&. 
+.PP
+Definition at line 47 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 47                                                                                       : scalar_unit(new_value,init_dimensions),angles()
 48     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (long double new_value, const string & init_dimensions, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB50\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are constructed with new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. 
+.PP
+Definition at line 50 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 50                                                                                                                       : scalar_unit(new_value,init_dimensions),angles()
 51     {
@@ -591,29 +453,35 @@ Definition at line \fB50\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 55         }
 56     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (long double new_value, const string & init_dimensions, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB58\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. 
+.PP
+Definition at line 58 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 58                                                                                                                       : scalar_unit(new_value,init_dimensions),angles(new_angles)
 59     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBint\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (int new_value, const string & init_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB61\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value (the int is casted to a float) and the dimensions are initialized with the initialization string of dimensions init_dimensions\&. 
+.PP
+Definition at line 61 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 61                                                                               : scalar_unit(new_value,init_dimensions),angles()
 62     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBint\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (int new_value, const string & init_dimensions, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB64\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are constructed with new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. 
+.PP
+Definition at line 64 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 64                                                                                                               : scalar_unit(new_value,init_dimensions),angles()
 65     {
@@ -623,29 +491,35 @@ Definition at line \fB64\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 69         }
 70     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBint\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (int new_value, const string & init_dimensions, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB72\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Constructor\&. The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions init_dimensions, the angles are new_angles\&. With 1 angle the vector will be in 2D, with 2 angles it will be in 3D\&. 
+.PP
+Definition at line 72 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 72                                                                                                               : scalar_unit(new_value,init_dimensions),angles(new_angles)
 73     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBfloat\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (float new_value, const vector< \fBdimension\fP > & new_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB75\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value and the dimensions are initialized with a vector of dimensions\&. 
+.PP
+Definition at line 75 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 75                                                                                           : scalar_unit(new_value,new_dimensions),angles()
 76     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBfloat\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (float new_value, const vector< \fBdimension\fP > & new_dimensions, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB78\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value, the dimensions are initialized with a vector of dimensions and the angles are constructed with new_angles\&. 
+.PP
+Definition at line 78 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 78                                                                                                                           : scalar_unit(new_value,new_dimensions),angles()
 79     {
@@ -655,29 +529,35 @@ Definition at line \fB78\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 83         }
 84     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBfloat\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (float new_value, const vector< \fBdimension\fP > & new_dimensions, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB86\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value, the dimensions are initialized with a vector of dimensions and the angles are new_angles\&. 
+.PP
+Definition at line 86 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 86                                                                                                                           : scalar_unit(new_value,new_dimensions),angles(new_angles)
 87     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (double new_value, const vector< \fBdimension\fP > & new_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB89\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value (the double is casted to a float) and the dimensions are initialized with a vector of dimensions\&. 
+.PP
+Definition at line 89 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 89                                                                                            : scalar_unit(new_value,new_dimensions),angles()
 90     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (double new_value, const vector< \fBdimension\fP > & new_dimensions, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB92\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are constructed with new_angles\&. 
+.PP
+Definition at line 92 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 92                                                                                                                            : scalar_unit(new_value,new_dimensions),angles()
 93     {
@@ -687,29 +567,35 @@ Definition at line \fB92\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 97         }
 98     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (double new_value, const vector< \fBdimension\fP > & new_dimensions, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB100\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are new_angles\&. 
+.PP
+Definition at line 100 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 100                                                                                                                            : scalar_unit(new_value,new_dimensions),angles(new_angles)
 101     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (long double new_value, const vector< \fBdimension\fP > & new_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB103\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value (the long double is casted to a float) and the dimensions are initialized with a vector of dimensions\&. 
+.PP
+Definition at line 103 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 103                                                                                                 : scalar_unit(new_value,new_dimensions),angles()
 104     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (long double new_value, const vector< \fBdimension\fP > & new_dimensions, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB106\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are constructed with new_angles\&. 
+.PP
+Definition at line 106 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 106                                                                                                                                 : scalar_unit(new_value,new_dimensions),angles()
 107     {
@@ -719,29 +605,35 @@ Definition at line \fB106\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 111         }
 112     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (long double new_value, const vector< \fBdimension\fP > & new_dimensions, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB114\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are new_angles\&. 
+.PP
+Definition at line 114 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 114                                                                                                                                 : scalar_unit(new_value,new_dimensions),angles(new_angles)
 115     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBint\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (int new_value, const vector< \fBdimension\fP > & new_dimensions)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB117\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value (the int is casted to a float) and the dimensions are initialized with a vector of dimensions\&. 
+.PP
+Definition at line 117 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 117                                                                                         : scalar_unit(new_value,new_dimensions),angles()
 118     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBint\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (int new_value, const vector< \fBdimension\fP > & new_dimensions, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB120\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are constructed with new_angles\&. 
+.PP
+Definition at line 120 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 120                                                                                                                         : scalar_unit(new_value,new_dimensions),angles()
 121     {
@@ -751,29 +643,35 @@ Definition at line \fB120\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 125         }
 126     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBint\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (int new_value, const vector< \fBdimension\fP > & new_dimensions, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB128\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions and the angles are new_angles\&. 
+.PP
+Definition at line 128 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 128                                                                                                                         : scalar_unit(new_value,new_dimensions),angles(new_angles)
 129     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBconst\fP \fBscalar_unit\fP & x)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (const \fBscalar_unit\fP & x)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB131\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value and the dimensions are copied from the \fBscalar_unit\fP x, the angles are empty\&. The vector is in 1D\&. 
+.PP
+Definition at line 131 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 131                                                        : scalar_unit(x),angles()
 132     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBconst\fP \fBscalar_unit\fP & x, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (const \fBscalar_unit\fP & x, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB134\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value and the dimensions are copied from the \fBscalar_unit\fP x, the angles are constructed with new_angles\&. 
+.PP
+Definition at line 134 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 134                                                                                        : scalar_unit(x),angles()
 135     {
@@ -783,20 +681,24 @@ Definition at line \fB134\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 139         }
 140     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBconst\fP \fBscalar_unit\fP & x, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (const \fBscalar_unit\fP & x, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB142\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value and the dimensions are copied from the \fBscalar_unit\fP x, the angles are new_angles\&. 
+.PP
+Definition at line 142 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 142                                                                                        : scalar_unit(x),angles(new_angles)
 143     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBconst\fP \fBstring\fP & init_scalar, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (const string & init_scalar, const vector< float > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB145\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value and the dimensions are copied from the initialization string of \fBscalar_unit\fP init_scalar, the angles are constructed with new_angles\&. 
+.PP
+Definition at line 145 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 145                                                                                             : scalar_unit(init_scalar),angles()
 146     {
@@ -806,80 +708,94 @@ Definition at line \fB145\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 150         }
 151     }
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBconst\fP \fBstring\fP & init_scalar, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (const string & init_scalar, const vector< \fBangle\fP > & new_angles)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB153\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value and the dimensions are copied from the initialization string of \fBscalar_unit\fP init_scalar, the angles are new_angles\&. 
+.PP
+Definition at line 153 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 153                                                                                             : scalar_unit(init_scalar),angles(new_angles)
 154     {}
 .fi
-
-.SS "scifir::vector_unit_nd::vector_unit_nd (\fBconst\fP \fBstring\fP & init_vector_nd)\fC [explicit]\fP"
+.SS "vector_unit_nd::vector_unit_nd (const string & init_vector_nd)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB156\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value, the dimensions and all the angles are initialized from the initialization string of \fBvector_unit_nd\fP init_vector_nd\&. 
+.PP
+Definition at line 156 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 156                                                                : vector_unit_nd()
 157     {
 158         vector_unit_nd::initialize_from_string(init_vector_nd);
 159     }
 .fi
-
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBstatic\fP \fBvector_unit_nd\fP scifir::vector_unit_nd::cartesian_2d (\fBconst\fP \fBstring\fP & new_dimensions, \fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP, \fC [static]\fP"
+.SS "\fBvector_unit_nd\fP vector_unit_nd::cartesian_2d (const string & init_dimensions, float new_x, float new_y)\fC [inline]\fP, \fC [static]\fP"
 
 .PP
-Definition at line \fB97\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+The dimensions are initialized from the initialization string of dimensions new_dimensions, the cartesian coordinates new_x and new_y are converted to polar coordinates and then set the value and theta\&. 
+.PP
+Definition at line 97 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 98             {
 99                 float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2)));
-100                 float new_theta = scifir::atan_grade(new_y / new_x);
-101                 return vector_unit_nd(new_value,new_dimensions, {angle(new_theta)});
+100                 float new_theta = scifir::atan_degree(new_y / new_x);
+101                 return vector_unit_nd(new_value,init_dimensions, {angle(new_theta)});
 102             }
 .fi
-
-.SS "\fBstatic\fP \fBvector_unit_nd\fP scifir::vector_unit_nd::cartesian_3d (\fBconst\fP \fBstring\fP & new_dimensions, \fBfloat\fP new_x, \fBfloat\fP new_y, \fBfloat\fP new_z)\fC [inline]\fP, \fC [static]\fP"
+.SS "\fBvector_unit_nd\fP vector_unit_nd::cartesian_3d (const string & init_dimensions, float new_x, float new_y, float new_z)\fC [inline]\fP, \fC [static]\fP"
 
 .PP
-Definition at line \fB104\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+The dimensions are initialized from the initialization string of dimensions new_dimensions, the cartesian coordinates new_x, new_y and new_z are converted to spherical coordinates and then set the value, theta and phi\&. 
+.PP
+Definition at line 104 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 105             {
 106                 float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2) + std::pow(new_z,2)));
-107                 float new_theta = scifir::atan_grade(new_y / new_x);
-108                 float new_phi = scifir::acos_grade(new_z / new_value);
-109                 return vector_unit_nd(new_value,new_dimensions, {angle(new_theta), angle(new_phi)});
+107                 float new_theta = scifir::atan_degree(new_y / new_x);
+108                 float new_phi = scifir::acos_degree(new_z / new_value);
+109                 return vector_unit_nd(new_value,init_dimensions, {angle(new_theta), angle(new_phi)});
 110             }
 .fi
-
-.SS "\fBstatic\fP \fBvector_unit_nd\fP scifir::vector_unit_nd::cylindrical (\fBconst\fP \fBstring\fP & new_dimensions, \fBfloat\fP new_p, \fBangle\fP new_theta, \fBfloat\fP new_z)\fC [inline]\fP, \fC [static]\fP"
+.SS "\fBvector_unit_nd\fP vector_unit_nd::cylindrical (const string & init_dimensions, float new_p, \fBangle\fP new_theta, float new_z)\fC [inline]\fP, \fC [static]\fP"
 
 .PP
-Definition at line \fB112\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+The dimensions are initialized from the initialization string of dimensions new_dimensions, the cylindrical coordinates new_p, new_theta and new_z are converted to spherical coordinates and then set the value, theta and phi\&. 
+.PP
+Definition at line 112 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 113             {
 114                 float new_value = float(std::sqrt(std::pow(new_p,2) + std::pow(new_z,2)));
-115                 float new_phi = scifir::atan_grade(new_p / new_z);
-116                 return vector_unit_nd(new_value,new_dimensions, {new_theta, angle(new_phi)});
+115                 float new_phi = scifir::atan_degree(new_p / new_z);
+116                 return vector_unit_nd(new_value,init_dimensions, {new_theta, angle(new_phi)});
 117             }
 .fi
-
-.SS "\fBint\fP scifir::vector_unit_nd::get_nd () const\fC [inline]\fP"
+.SS "int vector_unit_nd::get_nd () const\fC [inline]\fP"
 
 .PP
-Definition at line \fB214\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+Returns the number of dimensions\&. 
+.PP
+Definition at line 214 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 215             {
 216                 return int(angles\&.size() + 1);
 217             }
 .fi
-
-.SS "\fBvoid\fP scifir::vector_unit_nd::initialize_from_string (\fBstring\fP init_vector_nd)\fC [private]\fP"
+.SS "void vector_unit_nd::initialize_from_string (string init_vector_nd)\fC [private]\fP"
 
 .PP
-Definition at line \fB722\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Initializes the member-variables with the initialization string of \fBvector_unit_nd\fP init_vector_nd\&. 
+.PP
+Definition at line 722 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 723     {
 724         vector<string> values;
@@ -895,11 +811,11 @@ Definition at line \fB722\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 734         }
 735     }
 .fi
-
-.SS "\fBvoid\fP scifir::vector_unit_nd::invert ()"
+.SS "void scifir::vector_unit_nd::invert ()"
 
 .PP
-Definition at line \fB676\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Definition at line 676 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 677     {
 678         if (is_nd(2))
@@ -909,25 +825,29 @@ Definition at line \fB676\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 682         else if (is_nd(3))
 683         {
 684             angles[0]\&.invert();
-685             angles[1] = 180\&.0f \- angles[1];
+685             angles[1] = 180\&.0f - angles[1];
 686         }
 687     }
 .fi
-
-.SS "\fBbool\fP scifir::vector_unit_nd::is_nd (\fBunsigned\fP \fBint\fP i) const\fC [inline]\fP"
+.SS "bool vector_unit_nd::is_nd (unsigned int i) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB209\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+Returns true if the vector is at the same number of dimensions as i\&. 
+.PP
+Definition at line 209 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 210             {
-211                 return angles\&.size() == (i \- 1);
+211                 return angles\&.size() == (i - 1);
 212             }
 .fi
-
-.SS "\fBscalar_unit\fP scifir::vector_unit_nd::n_projection (\fBint\fP i) const"
+.SS "\fBscalar_unit\fP vector_unit_nd::n_projection (int i) const"
 
 .PP
-Definition at line \fB596\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Returns the x projection, the y projection or the z projection, depending if i is 1 (it returns x), 2 (it returns y) or 3 (it returns z)\&. 
+.PP
+Definition at line 596 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 597     {
 598         if (i == 1)
@@ -948,11 +868,13 @@ Definition at line \fB596\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 613         }
 614     }
 .fi
-
-.SS "\fBvector_unit_nd\fP scifir::vector_unit_nd::operator* (\fBconst\fP \fBscalar_unit\fP & x) const"
+.SS "\fBvector_unit_nd\fP vector_unit_nd::operator* (const \fBscalar_unit\fP & x) const"
 
 .PP
-Definition at line \fB523\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+It creates a new \fBvector_unit_nd\fP scaling a \fBvector_unit_nd\fP by the \fBscalar_unit\fP x\&. 
+.PP
+Definition at line 523 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 524     {
 525         long double new_value = scalar_unit::value * x\&.get_value();
@@ -975,11 +897,13 @@ Definition at line \fB523\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 542         }
 543     }
 .fi
-
-.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_nd\fP scifir::vector_unit_nd::operator* (\fBU\fP x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBvector_unit_nd\fP vector_unit_nd::operator* (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB156\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+It creates a new vector as the multiplication of the numeric type x to the value\&. The angles are not changed\&. 
+.PP
+Definition at line 156 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 157             {
 158                 vector_unit_nd y = *this;
@@ -987,11 +911,13 @@ Definition at line \fB156\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
 160                 return y;
 161             }
 .fi
-
-.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP scifir::vector_unit_nd::operator*= (\fBU\fP x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void vector_unit_nd::operator*= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB190\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+It multiplies the numeric type x to the value\&. The angles are not changed\&. 
+.PP
+Definition at line 190 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 191             {
 192                 scalar_unit::value *= std::abs(x);
@@ -1001,11 +927,13 @@ Definition at line \fB190\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
 196                 }
 197             }
 .fi
-
-.SS "\fBvector_unit_nd\fP scifir::vector_unit_nd::operator+ (\fBconst\fP \fBvector_unit_nd\fP & x) const"
+.SS "\fBvector_unit_nd\fP vector_unit_nd::operator+ (const \fBvector_unit_nd\fP & x) const"
 
 .PP
-Definition at line \fB439\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Addition of vectors in 2D, 3D, or more coordinates\&. It's an addition of scalars in 1D\&. It creates a new vector as the addition of the other two\&. 
+.PP
+Definition at line 439 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 440     {
 441         if(has_dimensions(x))
@@ -1047,11 +975,13 @@ Definition at line \fB439\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 477         }
 478     }
 .fi
-
-.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_nd\fP scifir::vector_unit_nd::operator+ (\fBU\fP x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBvector_unit_nd\fP vector_unit_nd::operator+ (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB140\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+It creates a new vector as the addition of the numeric type x to the value\&. The angles are not changed\&. 
+.PP
+Definition at line 140 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 141             {
 142                 vector_unit_nd y = *this;
@@ -1059,11 +989,13 @@ Definition at line \fB140\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
 144                 return y;
 145             }
 .fi
-
-.SS "\fBvoid\fP scifir::vector_unit_nd::operator+= (\fBconst\fP \fBvector_unit_nd\fP & x)"
+.SS "void vector_unit_nd::operator+= (const \fBvector_unit_nd\fP & x)"
 
 .PP
-Definition at line \fB395\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The \fBvector_unit_nd\fP is summed as vector in 2D, 3D, or more coordinates\&. It's summed as scalar in 1D\&. 
+.PP
+Definition at line 395 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 396     {
 397         if(has_dimensions(x) and get_nd() == x\&.get_nd())
@@ -1095,40 +1027,46 @@ Definition at line \fB395\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 423         }
 424     }
 .fi
-
-.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP scifir::vector_unit_nd::operator+= (\fBU\fP x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void vector_unit_nd::operator+= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB178\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+It sums the numeric type x to the value\&. The angles are not changed\&. 
+.PP
+Definition at line 178 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 179             {
 180                 scalar_unit::value += x;
 181             }
 .fi
-
-.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_nd\fP scifir::vector_unit_nd::operator\- (\fBU\fP x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBvector_unit_nd\fP vector_unit_nd::operator\- (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB148\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+It creates a new vector as the substraction of the numeric type x to the value\&. The angles are not changed\&. 
+.PP
+Definition at line 148 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 149             {
 150                 vector_unit_nd y = *this;
-151                 y \-= x;
+151                 y -= x;
 152                 return y;
 153             }
 .fi
-
-.SS "\fBvector_unit_nd\fP scifir::vector_unit_nd::operator\- (\fBvector_unit_nd\fP x) const"
+.SS "\fBvector_unit_nd\fP vector_unit_nd::operator\- (\fBvector_unit_nd\fP x) const"
 
 .PP
-Definition at line \fB480\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Substraction of vectors in 2D, 3D, or more coordinates\&. It's a substraction of scalars in 1D\&. It creates a new vector as the difference of the other two\&. 
+.PP
+Definition at line 480 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 481     {
 482         if(has_dimensions(x))
 483         {
 484             if(is_nd(1))
 485             {
-486                 float new_value = scalar_unit::value \- x\&.get_value();
+486                 float new_value = scalar_unit::value - x\&.get_value();
 487                 return vector_unit_nd(new_value,get_dimensions());
 488             }
 489             else if(is_nd(2))
@@ -1165,21 +1103,25 @@ Definition at line \fB480\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 520         }
 521     }
 .fi
-
-.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP scifir::vector_unit_nd::operator\-= (\fBU\fP x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void vector_unit_nd::operator\-= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB184\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+It substracts the numeric type x to the value\&. The angles are not changed\&. 
+.PP
+Definition at line 184 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 185             {
-186                 scalar_unit::value \-= x;
+186                 scalar_unit::value -= x;
 187             }
 .fi
-
-.SS "\fBvoid\fP scifir::vector_unit_nd::operator\-= (\fBvector_unit_nd\fP x)"
+.SS "void vector_unit_nd::operator\-= (\fBvector_unit_nd\fP x)"
 
 .PP
-Definition at line \fB426\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The \fBvector_unit_nd\fP is substracted as vector in 2D, 3D, or more coordinates\&. It's substracted as scalar in 1D\&. 
+.PP
+Definition at line 426 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 427     {
 428         if(has_dimensions(x))
@@ -1193,11 +1135,13 @@ Definition at line \fB426\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 436         }
 437     }
 .fi
-
-.SS "\fBvector_unit_nd\fP scifir::vector_unit_nd::operator/ (\fBconst\fP \fBscalar_unit\fP & x) const"
+.SS "\fBvector_unit_nd\fP vector_unit_nd::operator/ (const \fBscalar_unit\fP & x) const"
 
 .PP
-Definition at line \fB545\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+It creates a new \fBvector_unit_3d\fP scaling a \fBvector_unit_3d\fP by the inverse of the \fBscalar_unit\fP x\&. 
+.PP
+Definition at line 545 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 546     {
 547         long double new_value = scalar_unit::value / x\&.get_value();
@@ -1220,11 +1164,13 @@ Definition at line \fB545\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 564         }
 565     }
 .fi
-
-.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_nd\fP scifir::vector_unit_nd::operator/ (\fBU\fP x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBvector_unit_nd\fP vector_unit_nd::operator/ (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB164\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+It creates a new vector as the division of the value with the numeric type x\&. The angles are not changed\&. 
+.PP
+Definition at line 164 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 165             {
 166                 vector_unit_nd y = *this;
@@ -1232,11 +1178,13 @@ Definition at line \fB164\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
 168                 return y;
 169             }
 .fi
-
-.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP scifir::vector_unit_nd::operator/= (\fBU\fP x)\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> void vector_unit_nd::operator/= (T x)\fC [inline]\fP"
 
 .PP
-Definition at line \fB200\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+It divides the numeric type x to the value\&. The angles are not changed\&. 
+.PP
+Definition at line 200 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 201             {
 202                 scalar_unit::value /= std::abs(x);
@@ -1246,68 +1194,80 @@ Definition at line \fB200\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
 206                 }
 207             }
 .fi
-
-.SS "\fBvector_unit_nd\fP & scifir::vector_unit_nd::operator= (\fBconst\fP \fBscalar_unit\fP & x)"
+.SS "\fBvector_unit_nd\fP & vector_unit_nd::operator= (const \fBscalar_unit\fP & x)"
 
 .PP
-Definition at line \fB175\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value and the dimensions are copied from the \fBscalar_unit\fP x, the angles are not changed\&. 
+.PP
+Definition at line 175 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 176     {
-177         scalar_unit::operator=(x);
+177         scalar_unit::operator =(x);
 178         return *this;
 179     }
 .fi
-
-.SS "\fBvector_unit_nd\fP & scifir::vector_unit_nd::operator= (\fBconst\fP \fBstring\fP & init_vector_nd)"
+.SS "\fBvector_unit_nd\fP & vector_unit_nd::operator= (const string & init_vector_nd)"
 
 .PP
-Definition at line \fB187\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value, the dimensions and the angles are set from the initialization string init_vector_nd\&. 
+.PP
+Definition at line 187 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 188     {
 189         vector_unit_nd::initialize_from_string(init_vector_nd);
 190         return *this;
 191     }
 .fi
-
-.SS "\fBvector_unit_nd\fP & scifir::vector_unit_nd::operator= (\fBconst\fP \fBvector_unit_nd\fP & x)"
+.SS "\fBvector_unit_nd\fP & vector_unit_nd::operator= (const \fBvector_unit_nd\fP & x)"
 
 .PP
-Definition at line \fB161\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Copy assignment\&. The member-variables are copied from \fBvector_unit_nd\fP x\&. 
+.PP
+Definition at line 161 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 162     {
-163         scalar_unit::operator=(x);
+163         scalar_unit::operator =(x);
 164         angles = x\&.angles;
 165         return *this;
 166     }
 .fi
-
-.SS "\fBvector_unit_nd\fP & scifir::vector_unit_nd::operator= (\fBscalar_unit\fP && x)"
+.SS "\fBvector_unit_nd\fP & vector_unit_nd::operator= (\fBscalar_unit\fP && x)"
 
 .PP
-Definition at line \fB181\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The value and the dimensions are moved from the \fBscalar_unit\fP x, the angles are not changed\&. 
+.PP
+Definition at line 181 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 182     {
-183         scalar_unit::operator=(std::move(x));
+183         scalar_unit::operator =(std::move(x));
 184         return *this;
 185     }
 .fi
-
-.SS "\fBvector_unit_nd\fP & scifir::vector_unit_nd::operator= (\fBvector_unit_nd\fP && x)"
+.SS "\fBvector_unit_nd\fP & vector_unit_nd::operator= (\fBvector_unit_nd\fP && x)"
 
 .PP
-Definition at line \fB168\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Move assignment\&. The member-variables are moved from \fBvector_unit_nd\fP x\&. 
+.PP
+Definition at line 168 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 169     {
-170         scalar_unit::operator=(std::move(x));
+170         scalar_unit::operator =(std::move(x));
 171         angles = std::move(x\&.angles);
 172         return *this;
 173     }
 .fi
-
-.SS "\fBbool\fP scifir::vector_unit_nd::operator== (\fBscifir::vector_unit_nd\fP x) const"
+.SS "bool vector_unit_nd::operator== (\fBscifir::vector_unit_nd\fP x) const"
 
 .PP
-Definition at line \fB193\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Comparison operator\&. Two \fBvector_unit_nd\fP are equal if their value, dimensions and angles are the same\&. 
+.PP
+Definition at line 193 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 194     {
 195         x\&.change_dimensions(*this);
@@ -1321,11 +1281,13 @@ Definition at line \fB193\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 203         }
 204     }
 .fi
-
-.SS "\fBvector_unit_nd\fP scifir::vector_unit_nd::operator^ (\fBconst\fP \fBscalar_unit\fP & x) const"
+.SS "\fBvector_unit_nd\fP vector_unit_nd::operator^ (const \fBscalar_unit\fP & x) const"
 
 .PP
-Definition at line \fB567\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+It powers a vector by a \fBscalar_unit\fP x if that \fBscalar_unit\fP has empty dimensions\&. 
+.PP
+Definition at line 567 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 568     {
 569         if(x\&.has_empty_dimensions())
@@ -1355,21 +1317,25 @@ Definition at line \fB567\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 593         }
 594     }
 .fi
-
-.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<is_integer_number<U>::value>::type> \fBvector_unit_nd\fP scifir::vector_unit_nd::operator^ (\fBU\fP x) const\fC [inline]\fP"
+.SS "template<typename T , typename  = typename enable_if<is_integer_number<T>::value>::type> \fBvector_unit_nd\fP vector_unit_nd::operator^ (T x) const\fC [inline]\fP"
 
 .PP
-Definition at line \fB172\fP of file \fBvector_unit_nd\&.hpp\fP\&..PP
+It creates a new vector as the power of the value with the numeric type x\&. The angles are not changed\&. 
+.PP
+Definition at line 172 of file vector_unit_nd\&.hpp\&.
+.PP
 .nf
 173             {
 174                 return vector_unit_nd(std::pow(get_value(),x),power_dimensions(get_dimensions(),x),angles);
 175             }
 .fi
-
-.SS "\fBvoid\fP scifir::vector_unit_nd::point_to (\fBdirection::name\fP x)"
+.SS "void vector_unit_nd::point_to (\fBdirection::name\fP x)"
 
 .PP
-Definition at line \fB206\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+The angles are set to the direction specified in 1D, 2D or 3D, depending on the current ND of \fBvector_unit_nd\fP\&. The possible values are LEFT, RIGHT, TOP, BOTTOM, LEFT_TOP, RIGHT_TOP, RIGHT_BOTTOM, LEFT_BOTTOM, FRONT, BACK, LEFT_FRONT, RIGHT_FRONT, TOP_FRONT, BOTTOM_FRONT, LEFT_BACK, RIGHT_BACK, TOP_BACK, BOTTOM_BACK, LEFT_TOP_FRONT, RIGHT_TOP_FRONT, LEFT_BOTTOM_FRONT, RIGHT_BOTTOM_FRONT, LEFT_TOP_BACK, RIGHT_TOP_BACK, LEFT_BOTTOM_BACK, RIGHT_BOTTOM_BACK\&. 
+.PP
+Definition at line 206 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 207     {
 208         if (is_nd(1))
@@ -1378,14 +1344,14 @@ Definition at line \fB206\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 211             {
 212                 if (value > 0)
 213                 {
-214                     value *= \-1;
+214                     value *= -1;
 215                 }
 216             }
 217             else if(x == direction::RIGHT)
 218             {
 219                 if (value < 0)
 220                 {
-221                     value *= \-1;
+221                     value *= -1;
 222                 }
 223             }
 224         }
@@ -1559,11 +1525,13 @@ Definition at line \fB206\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 392         }
 393     }
 .fi
-
-.SS "\fBstring\fP scifir::vector_unit_nd::vectorial_custom_display (\fBconst\fP \fBstring\fP & init_dimensions, \fBint\fP number_of_decimals = \fC2\fP) const"
+.SS "string vector_unit_nd::vectorial_custom_display (const string & init_dimensions, int number_of_decimals = \fC2\fP) const"
 
 .PP
-Definition at line \fB711\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Displays the vector as the string representation of the scalar unit adding also all the angles\&. It displays the vector in the dimensions specified in the initialization string of dimensions init_dimensions\&. 
+.PP
+Definition at line 711 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 712     {
 713         ostringstream out;
@@ -1575,11 +1543,13 @@ Definition at line \fB711\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 719         return out\&.str();
 720     }
 .fi
-
-.SS "\fBstring\fP scifir::vector_unit_nd::vectorial_derived_display (\fBint\fP number_of_decimals = \fC2\fP) const"
+.SS "string vector_unit_nd::vectorial_derived_display (int number_of_decimals = \fC2\fP) const"
 
 .PP
-Definition at line \fB700\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Displays the vector as the string representation of the scalar unit adding also all the angles\&. It displays the dimensions with its derived dimensions\&. 
+.PP
+Definition at line 700 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 701     {
 702         ostringstream out;
@@ -1591,11 +1561,13 @@ Definition at line \fB700\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 708         return out\&.str();
 709     }
 .fi
-
-.SS "\fBstring\fP scifir::vector_unit_nd::vectorial_display (\fBint\fP number_of_decimals = \fC2\fP) const"
+.SS "string vector_unit_nd::vectorial_display (int number_of_decimals = \fC2\fP) const"
 
 .PP
-Definition at line \fB689\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+Displays the vector as the string representation of the scalar unit adding also all the angles\&. 
+.PP
+Definition at line 689 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 690     {
 691         ostringstream out;
@@ -1607,11 +1579,13 @@ Definition at line \fB689\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 697         return out\&.str();
 698     }
 .fi
-
-.SS "\fBscalar_unit\fP scifir::vector_unit_nd::x_projection () const"
+.SS "\fBscalar_unit\fP vector_unit_nd::x_projection () const"
 
 .PP
-Definition at line \fB616\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+It creates the x projection of the vector, returning it as a \fBscalar_unit\fP of the same dimensions, and the value corresponds to the projection\&. In 1D the projection is the value, in 2D it's in polar coordinates and in 3D it's in spherical coordinates\&. 
+.PP
+Definition at line 616 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 617     {
 618         if (is_nd(1))
@@ -1632,11 +1606,13 @@ Definition at line \fB616\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 633         }
 634     }
 .fi
-
-.SS "\fBscalar_unit\fP scifir::vector_unit_nd::y_projection () const"
+.SS "\fBscalar_unit\fP vector_unit_nd::y_projection () const"
 
 .PP
-Definition at line \fB636\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+It creates the y projection of the vector, returning it as a \fBscalar_unit\fP of the same dimensions, and the value corresponds to the projection\&. In 1D this projection doesn't exist, in 2D it's in polar coordinates and in 3D it's in spherical coordinates\&. 
+.PP
+Definition at line 636 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 637     {
 638         if (is_nd(1))
@@ -1657,11 +1633,13 @@ Definition at line \fB636\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 653         }
 654     }
 .fi
-
-.SS "\fBscalar_unit\fP scifir::vector_unit_nd::z_projection () const"
+.SS "\fBscalar_unit\fP vector_unit_nd::z_projection () const"
 
 .PP
-Definition at line \fB656\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+It creates the z projection of the vector, returning it as a \fBscalar_unit\fP of the same dimensions, and the value corresponds to the projection\&. In 1D this projection doesn't exist, in 2D it doesn't exist neither and in 3D it's in spherical coordinates\&. 
+.PP
+Definition at line 656 of file vector_unit_nd\&.cpp\&.
+.PP
 .nf
 657     {
 658         if (is_nd(1))
@@ -1682,13 +1660,14 @@ Definition at line \fB656\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
 673         }
 674     }
 .fi
-
 .SH "Member Data Documentation"
 .PP 
-.SS "vector<\fBangle\fP> scifir::vector_unit_nd::angles"
+.SS "vector< \fBangle\fP > vector_unit_nd::angles"
 
 .PP
-Definition at line \fB230\fP of file \fBvector_unit_nd\&.hpp\fP\&.
+The angles\&. A total of one angle means the vector is in 2D in polar coordinates, two angles means it's in 3D in spherical coordinates\&. 
+.PP
+Definition at line 230 of file vector_unit_nd\&.hpp\&.
 
 .SH "Author"
 .PP 

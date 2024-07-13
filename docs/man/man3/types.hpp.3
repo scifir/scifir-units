@@ -1,4 +1,4 @@
-.TH "util/types.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "util/types.hpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,7 +13,7 @@ util/types.hpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -21,13 +21,19 @@ util/types.hpp
 
 .in +1c
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::parse_float\fP (\fBconst\fP \fBstring\fP &x)"
+.RI "float \fBscifir::parse_float\fP (const string &x)"
 .br
 .ti -1c
-.RI "\fBint\fP \fBscifir::parse_int\fP (\fBconst\fP \fBstring\fP &x)"
+.RI "int \fBscifir::parse_int\fP (const string &x)"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBscifir::display_float\fP (\fBconst\fP \fBfloat\fP &value, \fBint\fP \fBnumber_of_decimals\fP)"
+.RI "string \fBscifir::display_float\fP (const float &value, int number_of_decimals)"
+.br
+.ti -1c
+.RI "string \fBscifir::display_double\fP (const double &value, int number_of_decimals)"
+.br
+.ti -1c
+.RI "string \fBscifir::display_long_double\fP (const long double &value, int number_of_decimals)"
 .br
 .in -1c
 .SH "Author"

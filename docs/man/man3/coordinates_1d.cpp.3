@@ -1,4 +1,4 @@
-.TH "coordinates/coordinates_1d.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.TH "coordinates/coordinates_1d.cpp" 3 "Sat Jul 13 2024" "Version 2.0.0" "scifir-units" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,7 +15,7 @@ coordinates/coordinates_1d.cpp
 
 .in +1c
 .ti -1c
-.RI "namespace \fBscifir\fP"
+.RI " \fBscifir\fP"
 .br
 .RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
 .in -1c
@@ -23,16 +23,16 @@ coordinates/coordinates_1d.cpp
 
 .in +1c
 .ti -1c
-.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBcoordinates_1d\fP< \fBfloat\fP > &x)"
+.RI "string \fBscifir::to_string\fP (const coordinates_1d< float > &x)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_1d\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_1d\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const coordinates_1d< float > &x, const coordinates_1d< float > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_1d\fP< \fBfloat\fP > &x, \fBconst\fP \fBpoint_1d\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const coordinates_1d< float > &x, const point_1d< float > &y)"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBpoint_1d\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_1d\fP< \fBfloat\fP > &y)"
+.RI "float \fBscifir::distance\fP (const point_1d< float > &x, const coordinates_1d< float > &y)"
 .br
 .ti -1c
 .RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::coordinates_1d\fP< float > &x)"
@@ -40,16 +40,16 @@ coordinates/coordinates_1d.cpp
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "ostream & operator<< (ostream & os, const \fBscifir::coordinates_1d\fP< float > & x)"
+.SS "ostream& operator<< (ostream & os, const \fBscifir::coordinates_1d\fP< float > & x)"
 
 .PP
-Definition at line \fB29\fP of file \fBcoordinates_1d\&.cpp\fP\&..PP
+Definition at line 29 of file coordinates_1d\&.cpp\&.
+.PP
 .nf
 30 {
 31     return os << scifir::to_string(x);
 32 }
 .fi
-
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for scifir-units from the source code\&.

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="pOH_8hpp" kind="file" language="C++">
     <compoundname>pOH.hpp</compoundname>
     <includes refid="is__number_8hpp" local="yes">../util/is_number.hpp</includes>
@@ -9,49 +9,15 @@
     <includes local="yes">boost/math/constants/constants.hpp</includes>
     <includes local="no">cmath</includes>
     <includes local="no">string</includes>
+    <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
     <includedby refid="pH_8cpp" local="yes">special_units/pH.cpp</includedby>
     <includedby refid="pOH_8cpp" local="yes">special_units/pOH.cpp</includedby>
-    <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
     <incdepgraph>
-      <node id="20">
-        <label>../predefined_units/chemistry_units.hpp</label>
-        <link refid="chemistry__units_8hpp"/>
-        <childnode refid="4" relation="include">
-        </childnode>
+      <node id="11">
+        <label>boost/algorithm/string.hpp</label>
       </node>
-      <node id="21">
-        <label>../special_units/pH.hpp</label>
-        <link refid="pH_8hpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>special_units/pOH.hpp</label>
-        <link refid="pOH_8hpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
+      <node id="22">
+        <label>boost/math/constants/constants.hpp</label>
       </node>
       <node id="5">
         <label>../units/dimension.hpp</label>
@@ -81,17 +47,8 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
+      <node id="7">
+        <label>cstdint</label>
       </node>
       <node id="4">
         <label>../units/scalar_unit.hpp</label>
@@ -117,66 +74,105 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
+      <node id="15">
+        <label>cmath</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>map</label>
+      </node>
+      <node id="21">
+        <label>../special_units/pH.hpp</label>
+        <link refid="pH_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>string_view</label>
+      </node>
+      <node id="18">
+        <label>vector</label>
+      </node>
       <node id="2">
         <label>../util/is_number.hpp</label>
         <link refid="is__number_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="12">
-        <label>algorithm</label>
+      <node id="17">
+        <label>sstream</label>
       </node>
-      <node id="11">
-        <label>boost/algorithm/string.hpp</label>
-      </node>
-      <node id="22">
-        <label>boost/math/constants/constants.hpp</label>
-      </node>
-      <node id="15">
-        <label>cmath</label>
-      </node>
-      <node id="14">
-        <label>cstddef</label>
-      </node>
-      <node id="7">
-        <label>cstdint</label>
-      </node>
-      <node id="13">
-        <label>cstring</label>
+      <node id="1">
+        <label>special_units/pOH.hpp</label>
+        <link refid="pOH_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
       </node>
       <node id="8">
         <label>iostream</label>
       </node>
-      <node id="9">
-        <label>map</label>
-      </node>
-      <node id="16">
-        <label>set</label>
-      </node>
-      <node id="17">
-        <label>sstream</label>
-      </node>
-      <node id="10">
-        <label>string</label>
-      </node>
-      <node id="19">
-        <label>string_view</label>
+      <node id="14">
+        <label>cstddef</label>
       </node>
       <node id="3">
         <label>type_traits</label>
       </node>
-      <node id="18">
-        <label>vector</label>
+      <node id="16">
+        <label>set</label>
+      </node>
+      <node id="20">
+        <label>../predefined_units/chemistry_units.hpp</label>
+        <link refid="chemistry__units_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>algorithm</label>
+      </node>
+      <node id="13">
+        <label>cstring</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
+      <node id="3">
         <label>special_units/pH.cpp</label>
         <link refid="pH_8cpp"/>
-      </node>
-      <node id="3">
-        <label>special_units/pOH.cpp</label>
-        <link refid="pOH_8cpp"/>
       </node>
       <node id="1">
         <label>special_units/pOH.hpp</label>
@@ -188,14 +184,18 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="4">
+      <node id="2">
         <label>units.hpp</label>
         <link refid="units_8hpp"/>
+      </node>
+      <node id="4">
+        <label>special_units/pOH.cpp</label>
+        <link refid="pOH_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classscifir_1_1pOH" prot="public">scifir::pOH</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
-    <sectiondef kind="func">
+      <sectiondef kind="func">
       <memberdef kind="function" id="pOH_8hpp_1a8f4f38079730738231468ae7ff8a72dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -889,9 +889,9 @@
         </inbodydescription>
         <location file="special_units/pOH.hpp" line="198" column="8" bodyfile="special_units/pOH.cpp" bodystart="292" bodyend="298" declfile="special_units/pOH.hpp" declline="198" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="pOH_8hpp_1aa0469d993d7242a09d1ed2f4571be777" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="pOH_8hpp_1aad81293532dda52a4bcc07901a7ac1fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
-        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::pOH &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -910,9 +910,9 @@
         </inbodydescription>
         <location file="special_units/pOH.hpp" line="200" column="1" bodyfile="special_units/pOH.cpp" bodystart="300" bodyend="303" declfile="special_units/pOH.hpp" declline="200" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="pOH_8hpp_1a70d0262352bb4db91cf3f17d81e55045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="pOH_8hpp_1a93f35f033880da5b9edc3fa8c22497b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>istream &amp;</type>
-        <definition>istream &amp; operator&gt;&gt;</definition>
+        <definition>istream&amp; operator&gt;&gt;</definition>
         <argsstring>(istream &amp;is, scifir::pOH &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
@@ -931,7 +931,7 @@
         </inbodydescription>
         <location file="special_units/pOH.hpp" line="201" column="9" bodyfile="special_units/pOH.cpp" bodystart="305" bodyend="313" declfile="special_units/pOH.hpp" declline="201" declcolumn="9"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -957,79 +957,79 @@
 <codeline lineno="18" refid="classscifir_1_1pOH" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH_1a6085b23cffe72314de9c5ef4efe09dbc" kindref="member">pOH</ref>();</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH_1a6085b23cffe72314de9c5ef4efe09dbc" kindref="member">pOH</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH_1a6085b23cffe72314de9c5ef4efe09dbc" kindref="member">pOH</ref>(<ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a6085b23cffe72314de9c5ef4efe09dbc" kindref="member">pOH</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a6085b23cffe72314de9c5ef4efe09dbc" kindref="member">pOH</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_pOH</ref>);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a6085b23cffe72314de9c5ef4efe09dbc" kindref="member">pOH</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>(<ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_pOH);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/><ref refid="classscifir_1_1pOH_1a18e4e82bb711ba0058fba44a295bcebc" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/><ref refid="classscifir_1_1pOH_1a18e4e82bb711ba0058fba44a295bcebc" kindref="member">operator=</ref>(<ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/><ref refid="classscifir_1_1pOH_1a18e4e82bb711ba0058fba44a295bcebc" kindref="member">operator=</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/><ref refid="classscifir_1_1pOH_1a18e4e82bb711ba0058fba44a295bcebc" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_pOH</ref>);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/><ref refid="classscifir_1_1pOH_1a18e4e82bb711ba0058fba44a295bcebc" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>operator<sp/>=(<ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_value);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_pOH);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>operator<sp/>=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="classscifir_1_1pOH_1ac97bb607f4815a7ade736e715b8efe86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="34" refid="classscifir_1_1pOH_1ac97bb607f4815a7ade736e715b8efe86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>float()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="35"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(<ref refid="classscifir_1_1pOH_1a8e1d20f56906a021b1d528e27f1e79c9" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(value);</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39" refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="39" refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="40"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a8e1d20f56906a021b1d528e27f1e79c9" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="classscifir_1_1pOH_1ad8de37c6d1f0c1d46051b38b113930ca" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="classscifir_1_1pOH_1a934af7c0c144a19ef57dbd4a17edb196" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a21c9959c00ac0b410659b77f00aa3e90" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1aef279fef3c42ea2688503c58ed3dbbde" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="pOH_8hpp_1a8f4f38079730738231468ae7ff8a72dd" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="pOH_8hpp_1acea744d9da57ed9cbb827cb929cdda78" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a5e3540b638ec24253cc235f1c9e38e42" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="50" refid="classscifir_1_1pOH_1ac0889e20567b6fa1da58e800858c4d5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="classscifir_1_1pOH_1ad8de37c6d1f0c1d46051b38b113930ca" kindref="member">operator +</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="50" refid="classscifir_1_1pOH_1ac0889e20567b6fa1da58e800858c4d5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="pOH_8hpp_1a8f4f38079730738231468ae7ff8a72dd" kindref="member">operator +</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="51"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a6085b23cffe72314de9c5ef4efe09dbc" kindref="member">pOH</ref>(<ref refid="classscifir_1_1pOH_1a8e1d20f56906a021b1d528e27f1e79c9" kindref="member">value</ref><sp/>+<sp/>x);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>(value<sp/>+<sp/>x);</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="56" refid="classscifir_1_1pOH_1a87fad57d338ed52f0e94c59117661d46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="classscifir_1_1pOH_1a934af7c0c144a19ef57dbd4a17edb196" kindref="member">operator -</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="56" refid="classscifir_1_1pOH_1a87fad57d338ed52f0e94c59117661d46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="pOH_8hpp_1acea744d9da57ed9cbb827cb929cdda78" kindref="member">operator -</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="57"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a6085b23cffe72314de9c5ef4efe09dbc" kindref="member">pOH</ref>(<ref refid="classscifir_1_1pOH_1a8e1d20f56906a021b1d528e27f1e79c9" kindref="member">value</ref><sp/>-<sp/>x);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>(value<sp/>-<sp/>x);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="62" refid="classscifir_1_1pOH_1acd8a53406487e9943ea2487da643b80f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a21c9959c00ac0b410659b77f00aa3e90" kindref="member">operator +=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="62" refid="classscifir_1_1pOH_1acd8a53406487e9943ea2487da643b80f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a5e3540b638ec24253cc235f1c9e38e42" kindref="member">operator +=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH_1a8e1d20f56906a021b1d528e27f1e79c9" kindref="member">value</ref><sp/>+=<sp/>x;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH_1aa7340eacc658bbcbb64d6d83c51c00eb" kindref="member">normalize_value</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>+=<sp/>x;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normalize_value();</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="69" refid="classscifir_1_1pOH_1a18ee63da43a3d57aec96c9ef54112064" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1aef279fef3c42ea2688503c58ed3dbbde" kindref="member">operator -=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="69" refid="classscifir_1_1pOH_1a18ee63da43a3d57aec96c9ef54112064" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a44885d7837e32965f8cecbbb378d7606" kindref="member">operator -=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH_1a8e1d20f56906a021b1d528e27f1e79c9" kindref="member">value</ref><sp/>-=<sp/>x;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH_1aa7340eacc658bbcbb64d6d83c51c00eb" kindref="member">normalize_value</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>-=<sp/>x;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normalize_value();</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/><ref refid="classscifir_1_1pOH_1a5bb17ebfb0a3a85c442fe06c912e934a" kindref="member">operator++</ref>();</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="classscifir_1_1pOH_1a5bb17ebfb0a3a85c442fe06c912e934a" kindref="member">operator++</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/><ref refid="classscifir_1_1pOH_1a6b3e67b32d09171b101a08355a036e72" kindref="member">operator--</ref>();</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/><ref refid="classscifir_1_1pOH_1a6b3e67b32d09171b101a08355a036e72" kindref="member">operator--</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>operator++();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/>operator++(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>operator--();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref><sp/>operator--(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">molarity</ref><sp/><ref refid="classscifir_1_1pOH_1a7516ab963dd847628426a2066436a568" kindref="member">get_H</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">molarity</ref><sp/><ref refid="classscifir_1_1pOH_1a7c34e408b3f94ca8886abc527e3bff88" kindref="member">get_OH</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pH" kindref="compound">pH</ref><sp/><ref refid="classscifir_1_1pOH_1a570b2b81d7ff3b5266b0b8f465641d9b" kindref="member">get_pH</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>molarity<sp/>get_H()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>molarity<sp/>get_OH()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1pH" kindref="compound">pH</ref><sp/>get_pH()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a0d1114f7850c96ce61dc75cc24a9cecd" kindref="member">is_acidic</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1aa431e0e2f13ad662825d655968cefcfb" kindref="member">is_basic</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a807bcfa98c1ca77b18a13387bbb5140d" kindref="member">is_neutral</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_acidic()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_basic()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_neutral()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a613ab0d061e018898e976a39c334e76e" kindref="member">display</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">number_of_decimals</ref><sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>display(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number_of_decimals<sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="91" refid="classscifir_1_1pOH_1a8e1d20f56906a021b1d528e27f1e79c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1a8e1d20f56906a021b1d528e27f1e79c9" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH_1aa7340eacc658bbcbb64d6d83c51c00eb" kindref="member">normalize_value</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>normalize_value();</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">pOH</ref>&amp;<sp/>x);</highlight></codeline>
@@ -1038,85 +1038,85 @@
 <codeline lineno="99"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="100" refid="pOH_8hpp_1a8f4f38079730738231468ae7ff8a72dd" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref><sp/><ref refid="pOH_8hpp_1a8f4f38079730738231468ae7ff8a72dd" kindref="member">operator +</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="101"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>(x<sp/>+<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>(x<sp/>+<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="103"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight></codeline>
 <codeline lineno="105"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="106" refid="pOH_8hpp_1acea744d9da57ed9cbb827cb929cdda78" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref><sp/><ref refid="pOH_8hpp_1acea744d9da57ed9cbb827cb929cdda78" kindref="member">operator -</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="107"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>(x<sp/>-<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>(x<sp/>-<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="109"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
 <codeline lineno="111"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="112" refid="pOH_8hpp_1a00c100ff73398f0f75c2503834cf1d45" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a00c100ff73398f0f75c2503834cf1d45" kindref="member">operator ==</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="113"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="115"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
 <codeline lineno="117"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="118" refid="pOH_8hpp_1a70bdcc3f7f34e8bc494503214b1d0c69" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a70bdcc3f7f34e8bc494503214b1d0c69" kindref="member">operator !=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="119"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="121"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"></highlight></codeline>
 <codeline lineno="123"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="124" refid="pOH_8hpp_1a17a215ba20fb8ff2ed9720b7a7cb2fec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a17a215ba20fb8ff2ed9720b7a7cb2fec" kindref="member">operator &lt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="125"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="127"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"></highlight></codeline>
 <codeline lineno="129"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="130" refid="pOH_8hpp_1acf65b75aa4d1db02eb91f1ea84b0f020" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1acf65b75aa4d1db02eb91f1ea84b0f020" kindref="member">operator &gt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="131"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="133"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
 <codeline lineno="135"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="136" refid="pOH_8hpp_1a72ac790b4ba89d6c41b35c5727d9aaef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a72ac790b4ba89d6c41b35c5727d9aaef" kindref="member">operator &lt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="137"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;=<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;=<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="139"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="142" refid="pOH_8hpp_1af1f1be18183b2404445fbd4816a1803b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1af1f1be18183b2404445fbd4816a1803b" kindref="member">operator &gt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="143"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;=<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;=<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="145"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
 <codeline lineno="147"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="148" refid="pOH_8hpp_1a96e12f2ba7250ba69f167db0cc0b016c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a00c100ff73398f0f75c2503834cf1d45" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="149"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="151"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"></highlight></codeline>
 <codeline lineno="153"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="154" refid="pOH_8hpp_1a17682e3c98df9fbd1c460c1f2e638c53" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a70bdcc3f7f34e8bc494503214b1d0c69" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="155"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>());</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="157"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"></highlight></codeline>
 <codeline lineno="159"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="160" refid="pOH_8hpp_1a92a46ce7ccb01650e50dc468dcc9d9ad" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a17a215ba20fb8ff2ed9720b7a7cb2fec" kindref="member">operator &lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="161"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>()<sp/>&lt;<sp/>x);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>()<sp/>&lt;<sp/>x);</highlight></codeline>
 <codeline lineno="163"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"></highlight></codeline>
 <codeline lineno="165"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="166" refid="pOH_8hpp_1aa61463ff2fe4962d16820ded9796c59d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1acf65b75aa4d1db02eb91f1ea84b0f020" kindref="member">operator &gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="167"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>()<sp/>&gt;<sp/>x);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>()<sp/>&gt;<sp/>x);</highlight></codeline>
 <codeline lineno="169"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"></highlight></codeline>
 <codeline lineno="171"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="172" refid="pOH_8hpp_1a8f960610febb1748d426e08059137931" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a72ac790b4ba89d6c41b35c5727d9aaef" kindref="member">operator &lt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="173"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>()<sp/>&lt;=<sp/>x);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>()<sp/>&lt;=<sp/>x);</highlight></codeline>
 <codeline lineno="175"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"></highlight></codeline>
 <codeline lineno="177"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
 <codeline lineno="178" refid="pOH_8hpp_1a7ae1ae9ea84f9a6dd0865c5b9dba4cf1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1af1f1be18183b2404445fbd4816a1803b" kindref="member">operator &gt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="179"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pOH_1aee8138108e08fd93edfe8c868bb46496" kindref="member">get_value</ref>()<sp/>&gt;=<sp/>x);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1pOH_1aa4ae252fdc012ef29eb254157bd91e58" kindref="member">get_value</ref>()<sp/>&gt;=<sp/>x);</highlight></codeline>
 <codeline lineno="181"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"></highlight></codeline>
 <codeline lineno="183"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a00c100ff73398f0f75c2503834cf1d45" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y);</highlight></codeline>
@@ -1136,8 +1136,8 @@
 <codeline lineno="197"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a8f4f38079730738231468ae7ff8a72dd" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="pOH_8hpp_1a8f4f38079730738231468ae7ff8a72dd" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal">ostream&amp;<sp/><ref refid="pOH_8hpp_1aa0469d993d7242a09d1ed2f4571be777" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="201"><highlight class="normal">istream&amp;<sp/><ref refid="pOH_8hpp_1a70d0262352bb4db91cf3f17d81e55045" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">ostream&amp;<sp/><ref refid="pOH_8hpp_1aad81293532dda52a4bcc07901a7ac1fc" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">istream&amp;<sp/><ref refid="pOH_8hpp_1a93f35f033880da5b9edc3fa8c22497b1" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1pOH" kindref="compound">scifir::pOH</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"></highlight></codeline>
 <codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_POH_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="204"><highlight class="normal"></highlight></codeline>

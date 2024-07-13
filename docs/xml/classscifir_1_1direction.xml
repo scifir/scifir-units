@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classscifir_1_1direction" kind="class" language="C++" prot="public">
     <compoundname>scifir::direction</compoundname>
     <includes refid="direction_8hpp" local="no">direction.hpp</includes>
-    <sectiondef kind="public-type">
+      <sectiondef kind="public-type">
       <memberdef kind="enum" id="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" prot="public" static="no" strong="no">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
+        <type>int8_t</type>
         <name>name</name>
-        <qualifiedname>scifir::direction::name</qualifiedname>
         <enumvalue id="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ae81470f38b5ec641cb6204c70738bd3a" prot="public">
           <name>NONE</name>
           <briefdescription>
@@ -205,14 +204,13 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="17" column="1" bodyfile="topology/direction.hpp" bodystart="17" bodyend="17"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-attrib">
+      </sectiondef>
+      <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref></type>
         <definition>direction::name scifir::direction::value</definition>
         <argsstring></argsstring>
         <name>value</name>
-        <qualifiedname>scifir::direction::value</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -221,14 +219,13 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="32" column="17" bodyfile="topology/direction.hpp" bodystart="32" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="public-func">
+      </sectiondef>
+      <sectiondef kind="public-func">
       <memberdef kind="function" id="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::direction::direction</definition>
         <argsstring>()</argsstring>
         <name>direction</name>
-        <qualifiedname>scifir::direction::direction</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -242,9 +239,8 @@
         <definition>scifir::direction::direction</definition>
         <argsstring>(const direction &amp;x)</argsstring>
         <name>direction</name>
-        <qualifiedname>scifir::direction::direction</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -260,7 +256,6 @@
         <definition>scifir::direction::direction</definition>
         <argsstring>(direction &amp;&amp;x)</argsstring>
         <name>direction</name>
-        <qualifiedname>scifir::direction::direction</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -278,7 +273,6 @@
         <definition>scifir::direction::direction</definition>
         <argsstring>(direction::name new_direction)</argsstring>
         <name>direction</name>
-        <qualifiedname>scifir::direction::direction</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref></type>
           <declname>new_direction</declname>
@@ -296,9 +290,8 @@
         <definition>scifir::direction::direction</definition>
         <argsstring>(const string &amp;init_direction)</argsstring>
         <name>direction</name>
-        <qualifiedname>scifir::direction::direction</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_direction</declname>
         </param>
         <briefdescription>
@@ -314,9 +307,8 @@
         <definition>direction &amp; scifir::direction::operator=</definition>
         <argsstring>(const direction &amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::direction::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -332,7 +324,6 @@
         <definition>direction &amp; scifir::direction::operator=</definition>
         <argsstring>(direction &amp;&amp;x)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::direction::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;&amp;</type>
           <declname>x</declname>
@@ -350,7 +341,6 @@
         <definition>direction &amp; scifir::direction::operator=</definition>
         <argsstring>(direction::name new_direction)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::direction::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref></type>
           <declname>new_direction</declname>
@@ -368,9 +358,8 @@
         <definition>direction &amp; scifir::direction::operator=</definition>
         <argsstring>(const string &amp;init_direction)</argsstring>
         <name>operator=</name>
-        <qualifiedname>scifir::direction::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <type>const string &amp;</type>
           <declname>init_direction</declname>
         </param>
         <briefdescription>
@@ -382,11 +371,10 @@
         <location file="topology/direction.hpp" line="28" column="11" bodyfile="topology/direction.cpp" bodystart="44" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1direction_1a16c2b4878a6ac2bdd7225e52c2dfc6ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <type>void</type>
         <definition>void scifir::direction::invert</definition>
         <argsstring>()</argsstring>
         <name>invert</name>
-        <qualifiedname>scifir::direction::invert</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -395,7 +383,7 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="30" column="6" bodyfile="topology/direction.cpp" bodystart="50" bodyend="53"/>
       </memberdef>
-    </sectiondef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
