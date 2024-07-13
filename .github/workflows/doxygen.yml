@@ -33,14 +33,26 @@ jobs:
       run: touch docs/.nojekyll
       shell: bash
 
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.5.0
+    - name: Commit files
+      run: |
+        git config --local user.email "ismael.correa.castro@gmail.com"
+        git config --local user.name "iarfen"
+        git commit -m "Documentation updated"
+    
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
-        folder: ./docs
-        target-folder: docs
-        git-config-email: ismael.correa.castro@gmail.com
+
+    #- name: Deploy to GitHub Pages
+    #  uses: JamesIves/github-pages-deploy-action@v4.5.0
+    #  with:
+    #    token: ${{ secrets.GITHUB_TOKEN }}
+    #    branch: gh-pages
+    #    folder: ./docs
+    #    target-folder: docs
+    #    git-config-email: ismael.correa.castro@gmail.com
     #steps:
       #- name: Checkout
       #  uses: actions/checkout@v4
