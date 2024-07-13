@@ -14,7 +14,7 @@ jobs:
         --volume ${{ github.workspace }}:${{ github.workspace }}:rw
         ghcr.io/agarwalsaurav/doxygen-arch:latest
         .
-        ./Doxyfile
+        Doxyfile
         ./docs
 
     - name: Deploy to GitHub Pages
@@ -38,4 +38,8 @@ jobs:
       #    html-output-folder: ./docs
       #    branch: gh-pages
       #    target_folder: docs
+<<<<<<< HEAD
       #    git-config-email: ismael.correa.castro@gmail.com
+=======
+      #    git-config-email: ismael.correa.castro@gmail.com
+>>>>>>> master
