@@ -6,16 +6,32 @@ jobs:
   build-doxygen:
     runs-on: ubuntu-latest
     steps:
-    - name: Run Doxygen Documentation Generation Container
+#    - name: Run Doxygen Documentation Generation Container
+#      shell: bash
+#      run: >
+#        docker run --rm
+#        --workdir ${{ github.workspace }}
+#        --volume ${{ github.workspace }}:${{ github.workspace }}:rw
+#        ghcr.io/agarwalsaurav/doxygen-arch:latest
+#        ./
+#        ./Doxyfile
+#        ./docs
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: "true"
+
+    - name: Install Doxygen
+      run: sudo apt-get install doxygen graphviz -y
       shell: bash
-      run: >
-        docker run --rm
-        --workdir ${{ github.workspace }}
-        --volume ${{ github.workspace }}:${{ github.workspace }}:rw
-        ghcr.io/agarwalsaurav/doxygen-arch:latest
-        ./
-        ./Doxyfile
-        ./docs
+
+    - name: Generate Doxygen Documentation
+      run: doxygen Doxyfile
+      shell: bash
+      
+    - name: Create .nojekyll (ensures pages with underscores work on gh pages)
+      run: touch docs/.nojekyll
+      shell: bash
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.5.0
