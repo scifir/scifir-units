@@ -1,5 +1,5 @@
 /** \class scifir::scalar_unit
-* \brief Class that allows to create scalar units, which are cmoposed of a value (as a float) and dimensions. The dimensions can be of any number, and be basic dimensions and/or abbreviations of dimensions.
+* \brief Class that allows to create scalar units, which are composed of a value (as a float) and dimensions. The dimensions can be of any number, and be basic dimensions and/or abbreviations of dimensions. **Initialization string** example: "1 N".
 
 * scalar_unit is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its abbreviations. The abbreviations can be converted to its derived dimensions, too. scalar_unit classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its derived dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly.
 * POSSIBLE FEATURES

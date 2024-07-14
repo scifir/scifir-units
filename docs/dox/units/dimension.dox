@@ -1,5 +1,5 @@
 /** \class scifir::dimension
-* \brief Class that represents dimensions of the SI system of units. Each prefix sizes 6 bytes, 1 byte for the dimension type, 1 byte for the prefix, 1 byte for the position (which can be the NUMERATOR or the DENOMINATOR), and 3 bytes for the custom dimension (in case it's used one).
+* \brief Class that represents dimensions of the SI system of units. Each dimension sizes 6 bytes, 1 byte for the dimension type, 1 byte for the prefix, 1 byte for the position (which can be the NUMERATOR or the DENOMINATOR), and 3 bytes for the custom dimension (in case it's used one).
 
 * \enum scifir::dimension::position
 * \brief Represents the position of the dimension, which can be at the numerator or at the denominator. The value NO_POSITION is used when there's no position specified.
