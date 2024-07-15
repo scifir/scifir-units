@@ -26,10 +26,10 @@ namespace scifir
 			explicit percentage(double new_value,percentage::type init_type = percentage::PERCENTAGE);
 			explicit percentage(long double new_value,percentage::type init_type = percentage::PERCENTAGE);
 			explicit percentage(int new_value,percentage::type init_type = percentage::PERCENTAGE);
-			explicit percentage(float new_value,const string& init_dimensions);
-			explicit percentage(double new_value,const string& init_dimensions);
-			explicit percentage(long double new_value,const string& init_dimensions);
-			explicit percentage(int new_value,const string& init_dimensions);
+			explicit percentage(float new_value,const string& init_type);
+			explicit percentage(double new_value,const string& init_type);
+			explicit percentage(long double new_value,const string& init_type);
+			explicit percentage(int new_value,const string& init_type);
 			explicit percentage(const string& init_percentage);
 			explicit percentage(const scalar_unit& x);
 

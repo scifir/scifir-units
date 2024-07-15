@@ -263,13 +263,13 @@
 * \brief Returns true if x and the aid constructed with init_aid are different.
 
 * \fn void operator +=(string& x, const scifir::aid& y)
-* \brief Concatenates the string representation of y to the string x.
+* \brief Concatenates the string representation of aid y to the string x.
 
 * \fn string operator +(const string& x, const scifir::aid& y)
-* \brief Concatenates x with the string representation of y.
+* \brief Concatenates x with the string representation of aid y.
 
 * \fn string operator +(const scifir::aid& y, const string& x)
-* \brief Concatenates x with the string representation of y.
+* \brief Concatenates x with the string representation of aid y.
 
 * \fn ostream& operator <<(ostream& os, const scifir::aid& x)
 * \brief Adds the string representation of the aid x to an output stream os.

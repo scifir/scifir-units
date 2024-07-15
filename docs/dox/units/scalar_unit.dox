@@ -149,13 +149,13 @@
 * \brief Read-only getter of the value.
 
 * \fn string scalar_unit::display(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const
-* \brief Generates an string representation of the scalar_unit, with the value and the dimensions. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix.
+* \brief Generates a string representation of the scalar_unit, with the value and the dimensions. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix.
 
 * \fn string scalar_unit::derived_display(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const
-* \brief Generates an string representation of the scalar_unit, with all dimensions converted to their derived counterpart.
+* \brief Generates a string representation of the scalar_unit, with all dimensions converted to their derived counterpart.
 
 * \fn string scalar_unit::custom_display(const string& init_dimensions, int number_of_decimals=2, bool with_brackets=false) const
-* \brief Generates an string representation of the scalar_unit, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions.
+* \brief Generates a string representation of the scalar_unit, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions.
 
 * \fn void scalar_unit::add_dimension(const dimension& new_dimension)
 * \brief **Internal function**. It adds a dimension, changing the value according to the conversion factor of the added dimension and the prefix.
@@ -178,7 +178,7 @@
 * \brief The namespace scifir contains all scifir-units, excepting the string literals, which are outside.
 
 * \fn string scifir::to_string(const scalar_unit& x)
-* \brief Generates an string representation of the scalar_unit, it uses the display of the scalar_unit with 2 decimals, without brackets and without a close prefix.
+* \brief Generates a string representation of the scalar_unit, it uses the display of the scalar_unit with 2 decimals, without brackets and without a close prefix.
 * \param x scalar_unit to generate the string.
 
 * \fn bool scifir::is_scalar_unit(const string& init_scalar)
