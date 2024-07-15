@@ -1,0 +1,282 @@
+/** \class scifir::percentage
+* \brief Class that allows to handle percentages and do calculations with it easy. It supports normal percentages (with %), ppm, ppb, ppt and ppq. The types ppb, ppt and ppq are currently not supported because the float type in percentage class can't store so lower values.
+
+* \enum scifir::percentage::type
+* \brief Type of percentage.
+
+* \var percentage::PERCENTAGE
+* \brief Normal percentage, with the % symbol.
+
+* \var percentage::PARTS_PER_MILLION
+* \brief Percentage, with the ppm symbol. Commonly used in chemistry, it represents 1 in 10^6.
+
+* \var percentage::PARTS_PER_BILLION
+* \brief Percentage, with the ppb symbol. Commonly used in chemistry, it represents 1 in 10^9.
+
+* \var percentage::PARTS_PER_TRILLION
+* \brief Percentage, with the ppt symbol. Commonly used in chemistry, it represents 1 in 10^12.
+
+* \var percentage::PARTS_PER_QUATRILLION
+* \brief Percentage, with the ppq symbol. Commonly used in chemistry, it represents 1 in 10^15.
+
+* \fn percentage::percentage()
+* \brief Default constructor. The value is 0.
+
+* \fn percentage::percentage(const percentage& x)
+* \brief Copy constructor. The value is copied from the percentage x.
+
+* \fn percentage::percentage(percentage&& x)
+* \brief Move constructor. The value is moved from the percentage x.
+
+* \fn percentage::percentage(float new_value,percentage::type init_type = percentage::PERCENTAGE)
+* \brief Constructor. The value is new_value. Depending on the init_type given, the value is initialized as being a percentage or a ppm.
+
+* \fn percentage::percentage(double new_value,percentage::type init_type = percentage::PERCENTAGE)
+* \brief Constructor. The value is new_value (the double is casted to a float). Depending on the init_type given, the value is initialized as being a percentage or a ppm.
+
+* \fn percentage::percentage(long double new_value,percentage::type init_type = percentage::PERCENTAGE)
+* \brief Constructor. The value is new_value (the long double is casted to a float). Depending on the init_type given, the value is initialized as being a percentage or a ppm.
+
+* \fn percentage::percentage(int new_value,percentage::type init_type = percentage::PERCENTAGE)
+* \brief Constructor. The value is new_value (the int is casted to a float). Depending on the init_type given, the value is initialized as being a percentage or a ppm.
+
+* \fn percentage::percentage(float new_value,const string& init_type)
+* \brief Constructor. The value is new_value. init_type can be "%" or "ppm". Depending on the init_type given, the value is initialized as being a percentage or a ppm.
+
+* \fn percentage::percentage(double new_value,const string& init_type)
+* \brief Constructor. The value is new_value. init_type can be "%" or "ppm". Depending on the init_type given, the value is initialized as being a percentage or a ppm.
+
+* \fn percentage::percentage(long double new_value,const string& init_type)
+* \brief Constructor. The value is new_value. init_type can be "%" or "ppm". Depending on the init_type given, the value is initialized as being a percentage or a ppm.
+
+* \fn percentage::percentage(int new_value,const string& init_type)
+* \brief Constructor. The value is new_value. init_type can be "%" or "ppm". Depending on the init_type given, the value is initialized as being a percentage or a ppm.
+
+* \fn percentage::percentage(const string& init_percentage)
+* \brief Constructor. It initializes the value with an initialization string of percentage init_percentage.
+
+* \fn percentage::percentage(const scalar_unit& x)
+* \brief Constructor. The value is initialized to the same as the scalar_unit x, if it has empty dimensions.
+
+* \fn percentage& percentage::operator =(const percentage& x)
+* \brief Copy assignment. The value is copied from the percentage x.
+
+* \fn percentage& percentage::operator =(percentage&& x)
+* \brief Move assignment. The value is moved from the percentage x.
+
+* \fn percentage& percentage::operator =(float new_value)
+* \brief Assignment. The value is copied from new_value.
+
+* \fn percentage& percentage::operator =(double new_value)
+* \brief Assignment. The value is copied from new_value (the double is casted to a float).
+
+* \fn percentage& percentage::operator =(long double new_value)
+* \brief Assignment. The value is copied from new_value (the long double is casted to a float).
+
+* \fn percentage& percentage::operator =(int new_value)
+* \brief Assignment. The value is copied from new_value (the int is casted to a float).
+
+* \fn percentage& percentage::operator =(const string& init_percentage)
+* \brief Assignment. It initializes the value with an initialization string of percentage init_percentage.
+
+* \fn percentage& percentage::operator =(const scalar_unit& x)
+* \brief Assignment. The value is initialized to the same as the scalar_unit x, if it has empty dimensions.
+
+* \fn percentage::operator float() const
+* \brief The percentage is casted to a float. It returns the value.
+
+* \fn const float& percentage::get_value() const
+* \brief It returns the value.
+
+* \fn percentage percentage::operator +(const percentage& x) const
+* \brief Creates a new percentage as the addition of two percentages.
+
+* \fn percentage percentage::operator -(const percentage& x) const
+* \brief Creates a new percentage as the difference of two percentages.
+
+* \fn percentage percentage::operator *(const percentage& x) const
+* \brief Creates a new percentage as the multiplication of two percentages.
+
+* \fn percentage percentage::operator /(const percentage& x) const
+* \brief Creates a new percentage as the division of two percentages.
+
+* \fn void percentage::operator +=(const percentage& x)
+* \brief Sums the value with the value of the percentage x.
+
+* \fn void percentage::operator -=(const percentage& x)
+* \brief Substracts the value with the value of the percentage x.
+
+* \fn void percentage::operator *=(const percentage& x)
+* \brief Multiplies the value with the value of the percentage x.
+
+* \fn void percentage::operator /=(const percentage& x)
+* \brief Divides the value with the value of the percentage x.
+
+* \fn void percentage::operator =(T x)
+* \brief Assigns the value to be the numeric type x.
+
+* \fn percentage percentage::operator +(T x) const
+* \brief Creates a new percentage as the addition of the percentage with the numeric type x.
+
+* \fn percentage percentage::operator -(T x) const
+* \brief Creates a new percentage as the difference of the percentage with the numeric type x.
+
+* \fn float percentage::operator *(T x) const
+* \brief Creates a new percentage as the multiplication of the percentage with the numeric type x.
+
+* \fn float percentage::operator /(T x) const
+* \brief Creates a new percentage as the division of the percentage with the numeric type x.
+
+* \fn void percentage::operator +=(T x)
+* \brief Sums the value with the value of the numeric type x.
+
+* \fn void percentage::operator -=(T x)
+* \brief Substracts the value with the value of the numeric type x.
+
+* \fn void percentage::operator *=(T x)
+* \brief Multiplies the value with the value of the numeric type x.
+
+* \fn void percentage::operator /=(T x)
+* \brief Divides the value with the value of the numeric type x.
+
+* \fn percentage& percentage::operator++()
+* \brief Increments the value by one.
+
+* \fn percentage percentage::operator++(int)
+* \brief Increments the value by one.
+
+* \fn percentage& percentage::operator--()
+* \brief Decrements the value by one.
+
+* \fn percentage percentage::operator--(int)
+* \brief Decrements the value by one.
+
+* \fn scalar_unit percentage::operator *(const scalar_unit& x) const
+* \brief Multiplies the percentage with the scalar_unit x to create a percentage of that scalar_unit.
+
+* \fn scalar_unit percentage::operator /(const scalar_unit& x) const
+* \brief Divides the percentage with the scalar_unit x to create a percentage of the inverse of that scalar_unit.
+
+* \fn float percentage::get_factor() const
+* \brief Returns the factor of the percentage, not his value. It equals is value divided by 100.
+
+* \fn float percentage::get_ppm() const
+* \brief Returns the factor of the percentage in ppm, not his value. It equals is value multiplied by 10,000.
+
+* \fn string percentage::display_percentage(int number_of_decimals = 2) const
+* \brief Displays the percentage as normal percentage, with the % symbol.
+
+* \fn string percentage::display_ppm() const
+* \brief Displays the percentage as ppm, with the ppm symbol.
+
+* \var float percentage::value
+* \brief The value of the percentage, in numbers related to a 100%. A percentage of 30% has a value of 30, not of 0.3 (the factor, instead, is 0.3f). When initializing the percentage from ppm, it's converted to the numeric equivalent of percentage.
+
+* \fn void percentage::initialize_from_string(const string& init_percentage)
+* \brief **Internal function**. Initializes the member-variables with an initialization string of percentage.
+
+* \fn string scifir::to_string(const percentage& x)
+* \brief Returns a string representation of percentage x.
+
+* \fn bool scifir::is_percentage(const string& init_percentage)
+* \brief Checks if a string is an initialization string of percentage.
+
+* \fn scifir::percentage operator +(T x, const scifir::percentage& y)
+* \brief Creates a new percentage as the addition of the percentage with the numeric type x.
+
+* \fn scifir::percentage operator -(T x, const scifir::percentage& y)
+* \brief Creates a new percentage as the difference of the percentage with the numeric type x.
+
+* \fn float operator *(T x, const scifir::percentage& y)
+* \brief Creates a new percentage as the multiplication of the percentage with the numeric type x.
+
+* \fn float operator /(T x, const scifir::percentage& y)
+* \brief Creates a new percentage as the division of the percentage with the numeric type x.
+
+* \fn bool operator ==(T x, const scifir::percentage& y)
+* \brief Returns true if the value of percentage is equal to the numeric type x.
+
+* \fn bool operator !=(T x, const scifir::percentage& y)
+* \brief Returns true if the value of percentage is not equal to the numeric type x.
+
+* \fn bool operator <(T x, const scifir::percentage& y)
+* \brief Returns true if the numeric type x is lower than the value of percentage y.
+
+* \fn bool operator >(T x, const scifir::percentage& y)
+* \brief Returns true if the numeric type x is greather than the value of percentage y.
+
+* \fn bool operator <=(T x, const scifir::percentage& y)
+* \brief Returns true if the numeric type x is lower or equal than the value of percentage y.
+
+* \fn bool operator >=(T x, const scifir::percentage& y)
+* \brief Returns true if the numeric type x is equal or greather than the value of percentage y.
+
+* \fn bool operator ==(const scifir::percentage& y, T x)
+* \brief Returns true if the value of percentage is equal to the numeric type x.
+
+* \fn bool operator !=(const scifir::percentage& y, T x)
+* \brief Returns true if the value of percentage is not equal to the numeric type x.
+
+* \fn bool operator <(const scifir::percentage& y, T x)
+* \brief Returns true if the value of percentage y is lower than the numeric type x.
+
+* \fn bool operator >(const scifir::percentage& y, T x)
+* \brief Returns true if the value of percentage y is greather than the numeric type x.
+
+* \fn bool operator <=(const scifir::percentage& y, T x)
+* \brief Returns true if the value of percentage y is lower or equal than the numeric type x.
+
+* \fn bool operator >=(const scifir::percentage& y, T x)
+* \brief Returns true if the value of percentage y is equal or greather than the numeric type x.
+
+* \fn scifir::scalar_unit operator *(const scifir::scalar_unit& x, const scifir::percentage& y)
+* \brief Multiplies the percentage with the scalar_unit x to create a percentage of that scalar_unit.
+
+* \fn scifir::scalar_unit operator /(const scifir::scalar_unit& x, const scifir::percentage& y)
+* \brief Multiplies the scalar_unit x by the percentage equal to the inverse of percentage y.
+
+* \fn bool operator ==(const scifir::percentage& x, const scifir::percentage& y)
+* \brief Returns true if the value of percentage x is equal to the value of percentage y.
+
+* \fn bool operator !=(const scifir::percentage& x, const scifir::percentage& y)
+* \brief Returns true if the value of percentage x is not equal to the value of percentage y.
+
+* \fn bool operator <(const scifir::percentage& x, const scifir::percentage& y)
+* \brief Returns true if the value of percentage x is lower than the value of percentage y.
+
+* \fn bool operator >(const scifir::percentage& x, const scifir::percentage& y)
+* \brief Returns true if the value of percentage x is greather than the value of percentage y.
+
+* \fn bool operator <=(const scifir::percentage& x, const scifir::percentage& y)
+* \brief Returns true if the value of percentage x is lower or equal than the value of percentage y.
+
+* \fn bool operator >=(const scifir::percentage& x, const scifir::percentage& y)
+* \brief Returns true if the value of percentage x is equal or greather than the value of percentage y.
+
+* \fn bool operator ==(const scifir::percentage& x, const string& init_percentage)
+* \brief Returns true if x and the percentage constructed with init_percentage are equal.
+
+* \fn bool operator !=(const scifir::percentage& x, const string& init_percentage)
+* \brief Returns true if x and the percentage constructed with init_percentage are different.
+
+* \fn bool operator ==(const string& init_percentage, const scifir::percentage& x)
+* \brief Returns true if x and the percentage constructed with init_percentage are equal.
+
+* \fn bool operator !=(const string& init_percentage, const scifir::percentage& x)
+* \brief Returns true if x and the percentage constructed with init_percentage are different.
+
+* \fn void operator +=(string& x, const scifir::percentage& y)
+* \brief Concatenates the string representation of percentage y to the string x.
+
+* \fn string operator +(const string& x, const scifir::percentage& y)
+* \brief Concatenates x with the string representation of percentage y.
+
+* \fn string operator +(const scifir::percentage& y, const string& x)
+* \brief Concatenates x with the string representation of percentage y.
+
+* \fn ostream& operator <<(ostream& os, const scifir::percentage& x)
+* \brief Adds the string representation of the percentage x to an output stream os.
+
+* \fn istream& operator >>(istream& is, scifir::percentage& x)
+* \brief Allows that an istream initializes by string an percentage x.
+*/

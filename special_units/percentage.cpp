@@ -13,7 +13,7 @@ using namespace std;
 
 namespace scifir
 {
-	percentage::percentage() : value(0)
+	percentage::percentage() : value(0.0f)
 	{}
 	
 	percentage::percentage(const percentage& x) : value(x.get_value())
@@ -86,13 +86,13 @@ namespace scifir
 		}
 	}
 
-	percentage::percentage(float new_value,const string& init_dimensions)
+	percentage::percentage(float new_value,const string& init_type)
 	{
-		if (init_dimensions == "%")
+		if (init_type == "%")
 		{
 			value = new_value;
 		}
-		else if (init_dimensions == "ppm")
+		else if (init_type == "ppm")
 		{
 			value = new_value / 10000.0f;
 		}
@@ -100,27 +100,27 @@ namespace scifir
 		{
 			value = 0.0f;
 		}
-		/*else if (init_dimensions == "ppb")
+		/*else if (init_type == "ppb")
 		{
 			value = new_value / 10000000.0f;
 		}
-		else if (init_dimensions == "ppt")
+		else if (init_type == "ppt")
 		{
 			value = new_value / 10000000000.0f;
 		}
-		else if (init_dimensions == "ppq")
+		else if (init_type == "ppq")
 		{
 			value = new_value / 10000000000000.0f;
 		}*/
 	}
 
-	percentage::percentage(double new_value,const string& init_dimensions)
+	percentage::percentage(double new_value,const string& init_type)
 	{
-		if (init_dimensions == "%")
+		if (init_type == "%")
 		{
 			value = float(new_value);
 		}
-		else if (init_dimensions == "ppm")
+		else if (init_type == "ppm")
 		{
 			value = float(new_value) / 10000.0f;
 		}
@@ -128,27 +128,27 @@ namespace scifir
 		{
 			value = 0.0f;
 		}
-		/*else if (init_dimensions == "ppb")
+		/*else if (init_type == "ppb")
 		{
 			value = float(new_value) / 10000000.0f;
 		}
-		else if (init_dimensions == "ppt")
+		else if (init_type == "ppt")
 		{
 			value = float(new_value) / 10000000000.0f;
 		}
-		else if (init_dimensions == "ppq")
+		else if (init_type == "ppq")
 		{
 			value = float(new_value) / 10000000000000.0f;
 		}*/
 	}
 
-	percentage::percentage(long double new_value,const string& init_dimensions)
+	percentage::percentage(long double new_value,const string& init_type)
 	{
-		if (init_dimensions == "%")
+		if (init_type == "%")
 		{
 			value = float(new_value);
 		}
-		else if (init_dimensions == "ppm")
+		else if (init_type == "ppm")
 		{
 			value = float(new_value) / 10000.0f;
 		}
@@ -156,27 +156,27 @@ namespace scifir
 		{
 			value = 0.0f;
 		}
-		/*else if (init_dimensions == "ppb")
+		/*else if (init_type == "ppb")
 		{
 			value = float(new_value) / 10000000.0f;
 		}
-		else if (init_dimensions == "ppt")
+		else if (init_type == "ppt")
 		{
 			value = float(new_value) / 10000000000.0f;
 		}
-		else if (init_dimensions == "ppq")
+		else if (init_type == "ppq")
 		{
 			value = float(new_value) / 10000000000000.0f;
 		}*/
 	}
 
-	percentage::percentage(int new_value,const string& init_dimensions)
+	percentage::percentage(int new_value,const string& init_type)
 	{
-		if (init_dimensions == "%")
+		if (init_type == "%")
 		{
 			value = float(new_value);
 		}
-		else if (init_dimensions == "ppm")
+		else if (init_type == "ppm")
 		{
 			value = float(new_value) / 10000.0f;
 		}
@@ -184,15 +184,15 @@ namespace scifir
 		{
 			value = 0.0f;
 		}
-		/*else if (init_dimensions == "ppb")
+		/*else if (init_type == "ppb")
 		{
 			value = float(new_value) / 10000000.0f;
 		}
-		else if (init_dimensions == "ppt")
+		else if (init_type == "ppt")
 		{
 			value = float(new_value) / 10000000000.0f;
 		}
-		else if (init_dimensions == "ppq")
+		else if (init_type == "ppq")
 		{
 			value = float(new_value) / 10000000000000.0f;
 		}*/
@@ -284,12 +284,12 @@ namespace scifir
 	
 	percentage percentage::operator *(const percentage& x) const
 	{
-		return percentage(value * x.get_value() / 100);
+		return percentage(value * x.get_value() / 100.0f);
 	}
 	
 	percentage percentage::operator /(const percentage& x) const
 	{
-		return percentage(100 * value / x.get_value());
+		return percentage(100.0f * value / x.get_value());
 	}
 
 	void percentage::operator +=(const percentage& x)
@@ -304,12 +304,12 @@ namespace scifir
 	
 	void percentage::operator *=(const percentage& x)
 	{
-		value *= (x.get_value() / 100);
+		value *= (x.get_value() / 100.0f);
 	}
 	
 	void percentage::operator /=(const percentage& x)
 	{
-		value *= 100 / x.get_value();
+		value *= 100.0f / x.get_value();
 	}
 	
 	percentage& percentage::operator++()
@@ -350,7 +350,7 @@ namespace scifir
 
 	float percentage::get_factor() const
 	{
-		return value / 100;
+		return value / 100.0f;
 	}
 
 	float percentage::get_ppm() const
@@ -643,5 +643,3 @@ istream& operator >>(istream& is, scifir::percentage& x)
 	x = scifir::percentage(b);
 	return is;
 }
-
-

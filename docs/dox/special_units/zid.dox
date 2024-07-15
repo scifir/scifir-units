@@ -77,13 +77,13 @@
 * \brief Returns true if x and the zid constructed with init_zid_full are different.
 
 * \fn void operator +=(string& x, const scifir::zid& y)
-* \brief Concatenates the string representation of y to the string x.
+* \brief Concatenates the string representation of zid y to the string x.
 
 * \fn string operator +(const string& x, const scifir::zid& y)
-* \brief Concatenates x with the string representation of y.
+* \brief Concatenates x with the string representation of zid y.
 
 * \fn string operator +(const scifir::zid& y, const string& x)
-* \brief Concatenates x with the string representation of y.
+* \brief Concatenates x with the string representation of zid y.
 
 * \fn ostream& operator <<(ostream& os, const scifir::zid& x)
 * \brief Adds the string representation of the zid x to an output stream os.
