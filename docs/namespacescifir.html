@@ -126,6 +126,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1color.html">color</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1percentage.html">percentage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that allows to handle percentages and do calculations with it easy. It supports normal percentages (with %), ppm, ppb, ppt and ppq. The types ppb, ppt and ppq are currently not supported because the float type in percentage class can't store so lower values.  <a href="classscifir_1_1percentage.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1pH.html">pH</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1124,8 +1125,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a7108c656946d5d84e561f93b6991b9f5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a7108c656946d5d84e561f93b6991b9f5">to_string</a> (const <a class="el" href="namespacescifir.html#ac18481f3c66f9d73be63595a15353fb2">sensation</a> &amp;)</td></tr>
 <tr class="separator:a7108c656946d5d84e561f93b6991b9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31893a8051570f4961ff4ec9a419c851"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a31893a8051570f4961ff4ec9a419c851">to_string</a> (const <a class="el" href="classscifir_1_1percentage.html">percentage</a> &amp;x)</td></tr>
+<tr class="memdesc:a31893a8051570f4961ff4ec9a419c851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of percentage x.  <a href="namespacescifir.html#a31893a8051570f4961ff4ec9a419c851">More...</a><br /></td></tr>
 <tr class="separator:a31893a8051570f4961ff4ec9a419c851"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acab1cb8bce8abe8946add3aee1f193b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#acab1cb8bce8abe8946add3aee1f193b8">is_percentage</a> (const string &amp;init_percentage)</td></tr>
+<tr class="memdesc:acab1cb8bce8abe8946add3aee1f193b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a string is an initialization string of percentage.  <a href="namespacescifir.html#acab1cb8bce8abe8946add3aee1f193b8">More...</a><br /></td></tr>
 <tr class="separator:acab1cb8bce8abe8946add3aee1f193b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36aa7f5753b8f2cb722548bc3b1196a7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a36aa7f5753b8f2cb722548bc3b1196a7">to_string</a> (const <a class="el" href="classscifir_1_1pH.html">pH</a> &amp;x)</td></tr>
 <tr class="separator:a36aa7f5753b8f2cb722548bc3b1196a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1265,7 +1268,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:af91b178f2d049a8313dbc40c87615dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the prefix of the factor given, which is always between a range.  <a href="namespacescifir.html#af91b178f2d049a8313dbc40c87615dec">More...</a><br /></td></tr>
 <tr class="separator:af91b178f2d049a8313dbc40c87615dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a162eb483608d8201ae14d447a571e492"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a162eb483608d8201ae14d447a571e492">to_string</a> (const <a class="el" href="classscifir_1_1scalar__unit.html">scalar_unit</a> &amp;x)</td></tr>
-<tr class="memdesc:a162eb483608d8201ae14d447a571e492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates an string representation of the <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>, it uses the display of the <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> with 2 decimals, without brackets and without a close prefix.  <a href="namespacescifir.html#a162eb483608d8201ae14d447a571e492">More...</a><br /></td></tr>
+<tr class="memdesc:a162eb483608d8201ae14d447a571e492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a string representation of the <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>, it uses the display of the <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> with 2 decimals, without brackets and without a close prefix.  <a href="namespacescifir.html#a162eb483608d8201ae14d447a571e492">More...</a><br /></td></tr>
 <tr class="separator:a162eb483608d8201ae14d447a571e492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35eaaedc7d36d386d328c0422e08863e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a35eaaedc7d36d386d328c0422e08863e">is_scalar_unit</a> (const string &amp;init_scalar)</td></tr>
 <tr class="memdesc:a35eaaedc7d36d386d328c0422e08863e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if an string is an initialization string of a <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>.  <a href="namespacescifir.html#a35eaaedc7d36d386d328c0422e08863e">More...</a><br /></td></tr>
@@ -8333,6 +8336,8 @@ template&lt;typename T , typename U &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks if a string is an initialization string of percentage. </p>
 
 <p class="definition">Definition at line <a class="el" href="percentage_8cpp_source.html#l00476">476</a> of file <a class="el" href="percentage_8cpp_source.html">percentage.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    {</div>
@@ -16294,6 +16299,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a string representation of percentage x. </p>
+
 <p class="definition">Definition at line <a class="el" href="percentage_8cpp_source.html#l00471">471</a> of file <a class="el" href="percentage_8cpp_source.html">percentage.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    {</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <span class="keywordflow">return</span> x.display_percentage();</div>
@@ -16616,7 +16623,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Generates an string representation of the <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>, it uses the display of the <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> with 2 decimals, without brackets and without a close prefix. </p>
+<p>Generates a string representation of the <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>, it uses the display of the <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> with 2 decimals, without brackets and without a close prefix. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td><a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> to generate the string. </td></tr>
