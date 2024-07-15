@@ -1,0 +1,279 @@
+/** \class scifir::aid
+* \brief Class that stores astronomical ids, not as an integer but with an string as identifier. **Initialization string** example: "(P) universe:milky-way:solar-system:earth".
+
+* \enum scifir::astronomical_body
+* \brief Contains predefined astronomical bodies to be set automatically in the aid class. All of them are important astronomical bodies, unimportant astronomical bodies aren't included.
+
+* \var scifir::astronomical_body::NONE
+* \brief No predefined astronomical body selected.
+
+* \var scifir::astronomical_body::MILKY_WAY
+* \brief The Milky Way galaxy.
+
+* \var scifir::astronomical_body::ANDROMEDA
+* \brief The Andromeda galaxy, 2.5 million light years from Earth.
+
+* \var scifir::astronomical_body::SOLAR_SYSTEM
+* \brief The Solar System of the Earth.
+
+* \var scifir::astronomical_body::SUN
+* \brief The Sun, the sun of the solar system of the Earth.
+
+* \var scifir::astronomical_body::MOON
+* \brief The Moon of the Earth.
+
+* \var scifir::astronomical_body::MERCURY
+* \brief The planet Mercury.
+
+* \var scifir::astronomical_body::VENUS
+* \brief The planet Venus.
+
+* \var scifir::astronomical_body::EARTH
+* \brief The planet Earth.
+
+* \var scifir::astronomical_body::MARS
+* \brief The planet Mars.
+
+* \var scifir::astronomical_body::JUPITER
+* \brief The planet Jupiter.
+
+* \var scifir::astronomical_body::SATURN
+* \brief The planet Saturn.
+
+* \var scifir::astronomical_body::URANUS
+* \brief The planet Uranus.
+
+* \var scifir::astronomical_body::NEPTUNE
+* \brief The planet Neptune.
+
+* \var scifir::astronomical_body::CERES
+* \brief The dwarf planet Ceres.
+
+* \var scifir::astronomical_body::ORCUS
+* \brief The possible dwarf planet Orcus.
+
+* \var scifir::astronomical_body::PLUTO
+* \brief The dwarf planet Pluto.
+
+* \var scifir::astronomical_body::HAUMEA
+* \brief The dwarf planet Haumea.
+
+* \var scifir::astronomical_body::QUAOAR
+* \brief The dwarf planet Quaoar.
+
+* \var scifir::astronomical_body::MAKEMAKE
+* \brief The dwarf planet Makemake.
+
+* \var scifir::astronomical_body::GONGGONG
+* \brief The possible dwarf planet Gonggong.
+
+* \var scifir::astronomical_body::ERIS
+* \brief The dwarf planet Eris.
+
+* \var scifir::astronomical_body::SEDNA
+* \brief The minor body Sedna.
+
+* \var scifir::astronomical_body::IO
+* \brief The moon of Jupiter Io.
+
+* \var scifir::astronomical_body::EUROPA
+* \brief The moon of Jupiter Europa.
+
+* \var scifir::astronomical_body::GANYMEDE
+* \brief The moon of Jupiter Ganymede.
+
+* \var scifir::astronomical_body::CALLISTO
+* \brief The moon of Jupiter Callisto.
+
+* \var scifir::astronomical_body::MIMAS
+* \brief The moon of Saturn Mimas.
+
+* \var scifir::astronomical_body::ENCELADUS
+* \brief The moon of Saturn Enceladus.
+
+* \var scifir::astronomical_body::TETHYS
+* \brief The moon of Saturn Tethys.
+
+* \var scifir::astronomical_body::DIONE
+* \brief The moon of Saturn Dione.
+
+* \var scifir::astronomical_body::RHEA
+* \brief The moon of Saturn Rhea.
+
+* \var scifir::astronomical_body::TITAN
+* \brief The moon of Saturn Titan.
+
+* \var scifir::astronomical_body::IAPETUS
+* \brief The moon of Saturn Iapetus.
+
+* \var scifir::astronomical_body::MIRANDA
+* \brief The moon of Uranus Miranda.
+
+* \var scifir::astronomical_body::ARIEL
+* \brief The moon of Uranus Ariel.
+
+* \var scifir::astronomical_body::UMBRIEL
+* \brief The moon of Uranus Umbriel.
+
+* \var scifir::astronomical_body::TITANIA
+* \brief The moon of Uranus Titania.
+
+* \var scifir::astronomical_body::OBERON
+* \brief The moon of Uranus Oberon.
+
+* \var scifir::astronomical_body::TRITON
+* \brief The moon of Neptune Triton.
+
+* \var scifir::astronomical_body::CHARON
+* \brief The moon of Pluto Charon.
+
+* \var scifir::astronomical_body::DYSNOMIA
+* \brief The moon of Eris Dysnomia.
+
+* \enum scifir::aid::type
+* \brief Type of astronomical body.
+
+* \var aid::NONE
+* \brief No astronomical body.
+
+* \var aid::UNIVERSE
+* \brief A universe.
+
+* \var aid::GALAXY
+* \brief A galaxy.
+
+* \var aid::SOLAR_SYSTEM
+* \brief A solar system. A solar system is composed of planets orbiting a star.
+
+* \var aid::PLANET
+* \brief A planet. A planet is an astronomical object with atmosphere.
+
+* \var aid::STAR
+* \brief A star.
+
+* \var aid::ASTEROID
+* \brief An asteroid. An asteroid is an astronomical object that orbits another astronomical object.
+
+* \var aid::MOON
+* \brief A moon. A moon is a natural satellite of a planet.
+
+* \var aid::METEOR
+* \brief A meteor.
+
+* \fn aid::aid()
+* \brief Default constructor. The astronomical type is NONE, the other member-variables are empty strings.
+
+* \fn aid::aid(const aid& x)
+* \brief Copy constructor. The member-variables are copied from the aid x.
+
+* \fn aid::aid(aid&& x)
+* \brief Move constructor. The member-variables are moved from the aid x.
+
+* \fn aid::aid(const astronomical_body& predefined_astronomical_body)
+* \brief Constructor of predefined astronomical bodies. Initializes aid to be one predefined astronomical bodies of the enum astronomical_body.
+
+* \fn aid::aid(const string& new_universe,const string& new_galaxy)
+* \brief Constructor of galaxies. Initializes a new galaxy.
+
+* \fn aid::aid(const string& new_universe,const string& new_galaxy,const string& new_solar_system)
+* \brief Constructor of solar systems. Initializes a new solar system.
+
+* \fn aid::aid(const aid::type& new_astronomical_type,const string& new_universe,const string& new_galaxy,const string& new_solar_system,const string& new_astronomical_body)
+* \brief Constructor of any astronomical body. It can be any astronomical body, including coloquial astronomical bodies not officially named. If there's an official name, it's mandatory to use it instead of the coloquial name.
+
+* \fn aid::aid(const string& init_aid)
+* \brief Constructor of any astronomical body. It uses an initialization string of aid to initialized all member-variables.
+
+* \fn aid& aid::operator =(const aid& x)
+* \brief Copy assignment. The member-variables are copied from the aid x.
+
+* \fn aid& aid::operator =(aid&& x)
+* \brief Move assignment. The member-variables are moved from the aid x.
+
+* \fn aid& aid::operator =(const string& init_aid)
+* \brief Assignment operator with an initialization string of aid.
+
+* \fn bool aid::has_unknown_universe() const
+* \brief Returns true if the universe has the special value "unknown-universe".
+
+* \fn bool aid::has_unknown_galaxy() const
+* \brief Returns true if the galaxy has the special value "unknown-galaxy".
+
+* \fn bool aid::has_unknown_solar_system() const
+* \brief Returns true if the solar system has the special value "unknown-solar-system".
+
+* \fn bool aid::has_unknown_planet() const
+* \brief Returns true if the planet has the special value "unknown-planet".
+
+* \fn bool aid::has_unknown_moon() const
+* \brief Returns true if the moon has the special value "unknown-moon".
+
+* \fn bool aid::has_unknown_star() const
+* \brief Returns true if the star has the special value "unknown-star".
+
+* \fn bool aid::has_unknown_asteroid() const
+* \brief Returns true if the asteroid has the special value "unknown-asteroid".
+
+* \fn string aid::display() const
+* \brief Returns a string representation of aid.
+
+* \var string aid::universe
+* \brief The universe of the astronomical body. The predefined value **unknown-universe** means that it's not known the universe of the astronomical object.
+
+* \var string aid::galaxy
+* \brief The galaxy of the astronomical body. The predefined value **unknown-galaxy** means that it's not known the galaxy of the astronomical object.
+
+* \var string aid::solar_system
+* \brief The solar system of the astronomical body. The predefined value **unknown-solar-system** means that it's not known the solar system of the astronomical object.
+
+* \var string aid::astronomical_body
+* \brief The name of the astronomical body. The predefined value **unknown-planet** means that it's not known the planet of the astronomical object. The predefined value **unknown-moon** means that it's not known the moon of the astronomical object. The predefined value **unknown-star** means that it's not known the star of the astronomical object. The predefined value **unknown-asteroid** means that it's not known the asteroid of the astronomical object.
+
+* \var aid::type aid::astronomical_type
+* \brief The type of the astronomical body, which can be any value of the enum aid::type.
+
+* \fn void aid::initialize_from_string(const string& init_aid)
+* \brief **Internal function**. Initializes the member-variables with an initialization string of aid.
+
+* \fn string scifir::to_string(const aid& x)
+* \brief Creates a string representation of aid, it's for aid equivalent to the display() function of aid.
+
+* \fn string scifir::to_string(const aid::type& x)
+* \brief Converts a value of the enum aid::type to it string representation, which can be a single or a pair of letters. The value UNIVERSE returns **U**. The value GALAXY returns **G**. The value SOLAR_SYSTEM retrns **SS**. The value PLANET returns **P**. The value STAR returns **ST**. The value ASTEROID returns **A**. The value MOON returns **MN**. The value METEOR returns **MT**. The value NONE returns an empty string.
+
+* \fn aid::type scifir::create_astronomical_type(const string& astronomical_type_abbreviation)
+* \brief Creates an instance of an aid::type with the given string, which is the reverse as the to_string() function of aid::type.
+
+* \fn bool operator ==(const scifir::aid& x, const scifir::aid& y)
+* \brief Returns true if the type and all data are the same between x and y.
+
+* \fn bool operator !=(const scifir::aid& x, const scifir::aid& y)
+* \brief Returns true if the type or any data is different between x and y.
+
+* \fn bool operator ==(const scifir::aid& x, const string& init_aid)
+* \brief Returns true if x and the aid constructed with init_aid are equal.
+
+* \fn bool operator !=(const scifir::aid& x, const string& init_aid)
+* \brief Returns true if x and the aid constructed with init_aid are different.
+
+* \fn bool operator ==(const string& init_aid, const scifir::aid& x)
+* \brief Returns true if x and the aid constructed with init_aid are equal.
+
+* \fn bool operator !=(const string& init_aid, const scifir::aid& x)
+* \brief Returns true if x and the aid constructed with init_aid are different.
+
+* \fn void operator +=(string& x, const scifir::aid& y)
+* \brief Concatenates the string representation of y to the string x.
+
+* \fn string operator +(const string& x, const scifir::aid& y)
+* \brief Concatenates x with the string representation of y.
+
+* \fn string operator +(const scifir::aid& y, const string& x)
+* \brief Concatenates x with the string representation of y.
+
+* \fn ostream& operator <<(ostream& os, const scifir::aid& x)
+* \brief Adds the string representation of the aid x to an output stream os.
+
+* \fn istream& operator >>(istream& is, scifir::aid& x)
+* \brief Allows that an istream initializes by string an aid x.
+*/
