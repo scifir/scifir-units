@@ -109,29 +109,29 @@ namespace scifir
 		normalize_value();
 	}
 
-	pOH& pOH::operator++()
+	pOH& pOH::operator ++()
 	{
 		value++;
 		return *this;
 	}
 
-	pOH pOH::operator++(int)
+	pOH pOH::operator ++(int)
 	{
 		pOH tmp = pOH(*this);
-		operator++();
+		operator ++();
 		return tmp;
 	}
 
-	pOH& pOH::operator--()
+	pOH& pOH::operator --()
 	{
 		value--;
 		return *this;
 	}
 
-	pOH pOH::operator--(int)
+	pOH pOH::operator --(int)
 	{
 		pOH tmp = pOH(*this);
-		operator--();
+		operator --();
 		return tmp;
 	}
 

@@ -312,29 +312,29 @@ namespace scifir
 		value *= 100.0f / x.get_value();
 	}
 	
-	percentage& percentage::operator++()
+	percentage& percentage::operator ++()
 	{
 		value++;
 		return *this;
 	}
 
-	percentage percentage::operator++(int)
+	percentage percentage::operator ++(int)
 	{
 		percentage tmp = percentage(*this);
-		operator++();
+		operator ++();
 		return tmp;
 	}
 
-	percentage& percentage::operator--()
+	percentage& percentage::operator --()
 	{
 		value--;
 		return *this;
 	}
 
-	percentage percentage::operator--(int)
+	percentage percentage::operator --(int)
 	{
 		percentage tmp = percentage(*this);
-		operator--();
+		operator --();
 		return tmp;
 	}
 

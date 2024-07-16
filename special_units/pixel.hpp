@@ -120,10 +120,10 @@ namespace scifir
 				value = std::pow(value, x);
 			}
 
-			pixel& operator++();
-			pixel operator++(int);
-			pixel& operator--();
-			pixel operator--(int);
+			pixel& operator ++();
+			pixel operator ++(int);
+			pixel& operator --();
+			pixel operator --(int);
 
 		private:
 			float value;

@@ -13,11 +13,13 @@ SCIFIR UNITS - VERSION 2
 // TODO: think if to add here the trajectory and the parameterization
 
 // BUGS AND SIMILAR PROBLEMS (3)
-// TODO: add a whitespace between operator and the = sign to all those functions
-
-// TODO: update all the uses of grade in a function name or any other part by degree, which is a more precise word
-// TODO: percentage should have an enum percentage::type with the values PERCENTAGE, PARTS_PER_MILLION, PARTS_PER_BILLION, PARTS_PER_TRILLION, PARTS_PER_QUATRILLION
 // TODO: document the light units somewhere
+// TODO: aid needs a constructor of universe, previous to the constructor of galaxies
+// TODO: check the characters of the initialization strings in all vector_unit classes
+// TODO: try the initialization strings with the unicode characters literally, not with their conversion, inside the tests of vector_unit classes
+// TODO: maybe add a character table to copy the characters of the initialization strings
+// TODO: think of how to implement conversions, do also the test of them
+// TODO: add no-solar-system, no-galaxy, and maybe no-universe to aid as predefined values
 
 // TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their derived classes
 
@@ -71,20 +73,18 @@ SCIFIR UNITS - VERSION 2
 // TODO: test of unit basic classes
 
 // DOCUMENTATION (23)
-// TODO: change in the master branch the Doxyfile in order to only generate HTML, in order to improve performance
-// TODO: configure to update gh-pages based on some factor, maybe a pull request
 // TODO: create all the dox files of the library
 // TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
-// TOOD: document that angle always uses grades
 // TODO: document the use of special characters in prefixes
-// TODO: document the special characters in vector units
 // TODO: document the special character in angle class
 // TODO: document what is a dimension, what is a derived dimension, and what is a basic dimension
-// TODO: use the bold for "internal function" inside the documentation
 // TODO: add the abbreviations in the groups too
-// TODO: document the initialization string of each class in their respective page
 // TODO: add latex to the factors of prefixes in prefix.dox
 // TODO: document how the england and united states units work, which are different than the SI system of units
+// TODO: maybe use two different files Doxyfile, one for master and one for gh-pages
+// TODO: resolve how to document the string representation of enum types
+// TODO: explain in initialize_from_string() the use of this function. The explanation of the format of the initialization string should be inside the string constructor and the string assignment
+// TODO: desactivate the search engine in the doxyfile for the doxyfile of development, not the doxyfile of github pages
 
 // TODO: document the coordinates for the universe, publish that too as an standard inside scifir
 // TODO: check what to do with the libraries of ISOs and document them inside the README.md file. If there isn't a library of ISOs, decide if to create one
@@ -197,12 +197,15 @@ SCIFIR UNITS - VERSION 2
 // TODO: ip class? check networking libraries of C++ and decide if to add it here
 // TODO: nutrition_information
 // TODO: class for geographical position including ZID and coordinates_3d
+// TODO: class for geographical position in space, using AID and coordinates_3d
 // TODO: maybe pixel should be called pixel_length
 // TODO: think if to add a default case for the none value of aid and for the none value of zid
 // TODO: functions is_aid() and is_zid()
 // TODO: initialize_from_string() for pH and pOH classes should work with pH and pOH at the start, respectively
 // TODO: maybe add zoom class, which allows to work with zooms
 // TODO: _percentage literal
+// TODO: address class with zid inside
+// TODO: enum of movement maybe should be divided in kind of animal
 
 // EMOTIONAL UNITS (1)
 // TODO: finish the enums of mind.hpp

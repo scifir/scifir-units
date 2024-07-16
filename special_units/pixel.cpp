@@ -139,29 +139,29 @@ namespace scifir
 		value = std::pow(value,x.get_value());
 	}
 	
-	pixel& pixel::operator++()
+	pixel& pixel::operator ++()
 	{
 		value++;
 		return *this;
 	}
 
-	pixel pixel::operator++(int)
+	pixel pixel::operator ++(int)
 	{
 		pixel tmp = pixel(*this);
-		operator++();
+		operator ++();
 		return tmp;
 	}
 
-	pixel& pixel::operator--()
+	pixel& pixel::operator --()
 	{
 		value--;
 		return *this;
 	}
 
-	pixel pixel::operator--(int)
+	pixel pixel::operator --(int)
 	{
 		pixel tmp = pixel(*this);
-		operator--();
+		operator --();
 		return tmp;
 	}
 

@@ -138,10 +138,10 @@ namespace scifir
 				normalize_value();
 			}
 
-			angle& operator++();
-			angle operator++(int);
-			angle& operator--();
-			angle operator--(int);
+			angle& operator ++();
+			angle operator ++(int);
+			angle& operator --();
+			angle operator --(int);
 
 			void invert();
 

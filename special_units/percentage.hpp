@@ -115,10 +115,10 @@ namespace scifir
 				value /= x;
 			}
 
-			percentage& operator++();
-			percentage operator++(int);
-			percentage& operator--();
-			percentage operator--(int);
+			percentage& operator ++();
+			percentage operator ++(int);
+			percentage& operator --();
+			percentage operator --(int);
 
 			scalar_unit operator *(const scalar_unit& x) const;
 			scalar_unit operator /(const scalar_unit& x) const;

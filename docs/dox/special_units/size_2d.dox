@@ -1,0 +1,153 @@
+/** \class scifir::size_2d
+* \brief Class that allows to store and calculate size in 2D, with width and height. The template parameter T allows to select any scalar_unit or numeric type to be the type of width and height (they always have the same type in the same instance). The width and height can be any scalar_unit, usually length, but imaginary spaces with custom dimensions are also allowed. **Initialization string** example: "1 m * 2 m".
+
+* \fn size_2d::size_2d()
+* \brief Default constructor. Both width and height are initialized to 0, with the dimensions to the default of their basic unit.
+
+* \fn size_2d::size_2d(const size_2d<T>& x)
+* \brief Copy constructor. The width and height are copied from the size_2d<T> x.
+
+* \fn size_2d::size_2d(size_2d<T>&& x)
+* \brief Move constructor. The width and height are moved from the size_2d<T> x.
+
+* \fn size_2d::size_2d(const T& new_width,const T& new_height)
+* \brief Constructor. width is new_width and height is new_height.
+
+* \fn size_2d::size_2d(const string& new_width,const string& new_height)
+* \brief Constructor. width is new_width and height is new_height, they are initialized by string.
+
+* \fn size_2d::size_2d(const string& init_size_2d)
+* \brief Constructor. The member-variables are initialized by the initialization string init_size_2d.
+
+* \fn size_2d<T>& size_2d::operator =(const size_2d<T>& x)
+* \brief Copy assignment. The width and height are copied from the size_2d<T> x.
+
+* \fn size_2d<T>& size_2d::operator =(size_2d<T>&& x)
+* \brief Move assignment. The width and height are moved from the size_2d<T> x.
+
+* \fn size_2d<T>& size_2d::operator =(const string& init_size_2d)
+* \brief Assignment. The member-variables are initialized by the initialization string init_size_2d.
+
+* \fn size_2d<T> size_2d::operator +(const size_2d<T>& x) const
+* \brief Creates a new size_2d<T> by the addition of two size_2d<T> classes. The width is the result of the addition of the two width of the size_2d<T> classes and the height the result of the addition of the two height of the size_2d<T> classes.
+
+* \fn size_2d<T> size_2d::operator -(const size_2d<T>& x) const
+* \brief Creates a new size_2d<T> by the difference of two size_2d<T> classes. The width is the result of the difference of the two width of the size_2d<T> classes and the height the result of the difference of the two height of the size_2d<T> classes.
+
+* \fn void size_2d::operator +=(const size_2d<T>& x)
+* \brief Sums the width of size_2d<T> x to the width and sums the height of size_2d<T> x to the height.
+
+* \fn void size_2d::operator -=(const size_2d<T>& x)
+* \brief Substracts the width of size_2d<T> x to the width and substracts the height of size_2d<T> x to the height.
+
+* \fn scalar_unit size_2d::get_area() const
+* \brief Calculates the area as the multiplication of the width and height.
+
+* \fn string size_2d::display() const
+* \brief Returns a string representation of size_2d<T>, with his width and height.
+
+* \var T size_2d::width
+* \brief Width, usually stored as length.
+
+* \var T size_2d::height
+* \brief Height, usually stored as length.
+
+* \fn void size_2d::initialize_from_string(const string& init_size_2d)
+* \brief **Internal function**. Initializes the member-variables with an initialization string of size_2d<T>.
+
+* \class scifir::size_2d<float>
+* \brief Specialization class of size_2d<T> that allows to store and calculate size in 2D, with width and height as float types. **Initialization string** example: "1 * 2".
+
+* \fn scifir::size_2d<float>::size_2d()
+* \brief Default constructor. Initializes width and height to 0.
+
+* \fn scifir::size_2d<float>::size_2d(const size_2d<float>& x)
+* \brief Copy constructor. The width and height are copied from the size_2d<float> x.
+
+* \fn scifir::size_2d<float>::size_2d(size_2d<float>&& x)
+* \brief Move constructor. The width and height are moved from the size_2d<float> x.
+
+* \fn scifir::size_2d<float>::size_2d(const float& new_width,const float& new_height)
+* \brief Constructor. width is new_width and height is new_height.
+
+* \fn scifir::size_2d<float>::size_2d(const string& new_width,const string& new_height)
+* \brief Constructor. width is new_width and height is new_height, they are initialized by string.
+
+* \fn scifir::size_2d<float>::size_2d(const string& init_size_2d)
+* \brief Assignment. The member-variables are initialized by the initialization string init_size_2d specialized for float.
+
+* \fn size_2d<float>& scifir::size_2d<float>::operator =(const size_2d<float>& x)
+* \brief Copy assignment. The width and height are copied from the size_2d<float> x.
+
+* \fn size_2d<float>& scifir::size_2d<float>::operator =(size_2d<float>&& x)
+* \brief Move assignment. The width and height are moved from the size_2d<float> x.
+
+* \fn size_2d<float>& scifir::size_2d<float>::operator =(const string& init_size_2d)
+* \brief Assignment. The member-variables are initialized by the initialization string init_size_2d specialized for float.
+
+* \fn size_2d<float> scifir::size_2d<float>::operator +(const size_2d<float>& x) const
+* \brief Creates a new size_2d<float> by the addition of two size_2d<float> classes. The width is the result of the addition of the two width of the size_2d<float> classes and the height the result of the addition of the two height of the size_2d<float> classes.
+
+* \fn size_2d<float> scifir::size_2d<float>::operator -(const size_2d<float>& x) const
+* \brief Creates a new size_2d<float> by the difference of two size_2d<float> classes. The width is the result of the difference of the two width of the size_2d<float> classes and the height the result of the difference of the two height of the size_2d<float> classes.
+
+* \fn void scifir::size_2d<float>::operator +=(const size_2d<float>& x)
+* \brief Sums the width of size_2d<float> x to the width and sums the height of size_2d<float> x to the height.
+
+* \fn void scifir::size_2d<float>::operator -=(const size_2d<float>& x)
+* \brief Substracts the width of size_2d<float> x to the width and substracts the height of size_2d<float> x to the height.
+
+* \fn float scifir::size_2d<float>::get_area() const
+* \brief Calculates the area as the multiplication of the width and height.
+
+* \fn string scifir::size_2d<float>::display() const
+* \brief Returns a string representation of size_2d<float>, with his width and height.
+
+* \var float scifir::size_2d<float>::width
+* \brief Width, stored as a float. The advantage related to size_2d<T> is that it sizes less, the disadvantage is the lack of dimensions.
+
+* \var float scifir::size_2d<float>::height
+* \brief Height, stored as a float. The advantage related to size_2d<T> is that it sizes less, the disadvantage is the lack of dimensions.
+
+* \fn void scifir::size_2d<float>::initialize_from_string(const string& init_size_2d)
+* \brief **Internal function**. Initializes the member-variables with an initialization string of size_2d<float>.
+
+* \fn string scifir::to_string(const size_2d<T>& x)
+* \brief Returns a string representation of size_2d<T>.
+
+* \fn string scifir::to_string(const size_2d<float>& x);
+* \brief Returns a string representation of size_2d<float>.
+
+* \fn bool operator ==(const scifir::size_2d<T>& x, const scifir::size_2d<T>& y)
+* \brief Returns true if the width and height of x and y are both equal.
+
+* \fn bool operator !=(const scifir::size_2d<T>& x, const scifir::size_2d<T>& y)
+* \brief Returns true if the width and height of x and y are any of them different.
+
+* \fn bool operator ==(const scifir::size_2d<T>& x, const string& init_size_2d)
+* \brief Compares size_2d<T> x with the size_2d<T> initialized with the initialization string of size_2d<T> init_size_2d, returns true if they are equal.
+
+* \fn bool operator !=(const scifir::size_2d<T>& x, const string& init_size_2d)
+* \brief Compares size_2d<T> x with the size_2d<T> initialized with the initialization string of size_2d<T> init_size_2d, returns true if they are different.
+
+* \fn bool operator ==(const string& init_size_2d, const scifir::size_2d<T>& x)
+* \brief Compares size_2d<T> x with the size_2d<T> initialized with the initialization string of size_2d<T> init_size_2d, returns true if they are equal.
+
+* \fn bool operator !=(const string& init_size_2d, const scifir::size_2d<T>& x)
+* \brief Compares size_2d<T> x with the size_2d<T> initialized with the initialization string of size_2d<T> init_size_2d, returns true if they are different.
+
+* \fn void operator +=(string& x, const scifir::size_2d<T>& y)
+* \brief Concatenates the string x with the string representation of size_2d<T> y.
+
+* \fn string operator +(const string& x, const scifir::size_2d<T>& y)
+* \brief Creates a new string as the concatenation of the string x with the string representation of size_2d<T> y.
+
+* \fn string operator +(const scifir::size_2d<T>& x, const string& y)
+* \brief Creates a new string as the concatenation of the string x with the string representation of size_2d<T> y.
+
+* \fn ostream& operator <<(ostream& os, const scifir::size_2d<T>& x)
+* \brief Adds the string representation of the size_2d<T> x to an output stream os.
+
+* \fn istream& operator >>(istream& is, scifir::size_2d<T>& x)
+* \brief Allows that an istream initializes by string a size_2d<T> x.
+*/

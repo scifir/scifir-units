@@ -169,8 +169,11 @@
 * \fn aid::aid(aid&& x)
 * \brief Move constructor. The member-variables are moved from the aid x.
 
-* \fn aid::aid(const astronomical_body& predefined_astronomical_body)
+* \fn aid::aid(const scifir::astronomical_body& predefined_astronomical_body)
 * \brief Constructor of predefined astronomical bodies. Initializes aid to be one predefined astronomical bodies of the enum astronomical_body.
+
+* \fn aid::aid(const aid::type& new_astronomical_type,const string& new_universe)
+* \brief Constructor of universe. Initializes a new universe. In order to be different than the constructor with the initialization string, aid::UNIVERSE must be provided as second parameter.
 
 * \fn aid::aid(const string& new_universe,const string& new_galaxy)
 * \brief Constructor of galaxies. Initializes a new galaxy.
@@ -218,13 +221,13 @@
 * \brief Returns a string representation of aid.
 
 * \var string aid::universe
-* \brief The universe of the astronomical body. The predefined value **unknown-universe** means that it's not known the universe of the astronomical object.
+* \brief The universe of the astronomical body. The predefined value **no-universe** means that there's no universe, it's intended for fiction locations. The predefined value **unknown-universe** means that it's not known the universe of the astronomical object.
 
 * \var string aid::galaxy
-* \brief The galaxy of the astronomical body. The predefined value **unknown-galaxy** means that it's not known the galaxy of the astronomical object.
+* \brief The galaxy of the astronomical body. The predefined value **no-galaxy** means that the astronomical object is not inside a galaxy. The predefined value **unknown-galaxy** means that it's not known the galaxy of the astronomical object.
 
 * \var string aid::solar_system
-* \brief The solar system of the astronomical body. The predefined value **unknown-solar-system** means that it's not known the solar system of the astronomical object.
+* \brief The solar system of the astronomical body. The predefined value **no-solar-system** means that the astronomical object is not inside a solar system, it's alone. The predefined value **unknown-solar-system** means that it's not known the solar system of the astronomical object.
 
 * \var string aid::astronomical_body
 * \brief The name of the astronomical body. The predefined value **unknown-planet** means that it's not known the planet of the astronomical object. The predefined value **unknown-moon** means that it's not known the moon of the astronomical object. The predefined value **unknown-star** means that it's not known the star of the astronomical object. The predefined value **unknown-asteroid** means that it's not known the asteroid of the astronomical object.
@@ -239,7 +242,7 @@
 * \brief Creates a string representation of aid, it's for aid equivalent to the display() function of aid.
 
 * \fn string scifir::to_string(const aid::type& x)
-* \brief Converts a value of the enum aid::type to it string representation, which can be a single or a pair of letters. The value UNIVERSE returns **U**. The value GALAXY returns **G**. The value SOLAR_SYSTEM retrns **SS**. The value PLANET returns **P**. The value STAR returns **ST**. The value ASTEROID returns **A**. The value MOON returns **MN**. The value METEOR returns **MT**. The value NONE returns an empty string.
+* \brief Converts a value of the enum aid::type to its string representation, which can be a single or a pair of letters. The value UNIVERSE returns **U**. The value GALAXY returns **G**. The value SOLAR_SYSTEM returns **SS**. The value PLANET returns **P**. The value STAR returns **ST**. The value ASTEROID returns **A**. The value MOON returns **MN**. The value METEOR returns **MT**. The value NONE returns an empty string.
 
 * \fn aid::type scifir::create_astronomical_type(const string& astronomical_type_abbreviation)
 * \brief Creates an instance of an aid::type with the given string, which is the reverse as the to_string() function of aid::type.

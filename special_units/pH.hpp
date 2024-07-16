@@ -73,10 +73,10 @@ namespace scifir
 				normalize_value();
 			}
 
-			pH& operator++();
-			pH operator++(int);
-			pH& operator--();
-			pH operator--(int);
+			pH& operator ++();
+			pH operator ++(int);
+			pH& operator --();
+			pH operator --(int);
 
 			molarity get_H() const;
 			molarity get_OH() const;

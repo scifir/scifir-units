@@ -19,7 +19,7 @@ namespace scifir
 	aid::aid(aid&& x) : universe(std::move(x.universe)),galaxy(std::move(x.galaxy)),solar_system(std::move(x.solar_system)),astronomical_body(std::move(x.astronomical_body)),astronomical_type(std::move(x.astronomical_type))
 	{}
 
-	aid::aid(const enum astronomical_body& predefined_astronomical_body) : aid()
+	aid::aid(const scifir::astronomical_body& predefined_astronomical_body) : aid()
 	{
 		if (predefined_astronomical_body != astronomical_body::NONE)
 		{
@@ -309,6 +309,15 @@ namespace scifir
 		}
 	}
 
+	aid::aid(const aid::type& new_astronomical_type,const string& new_universe) : universe(),galaxy(),solar_system(),astronomical_body(),astronomical_type(aid::NONE)
+	{
+		if (new_astronomical_type == aid::UNIVERSE)
+		{
+			universe = new_universe;
+			astronomical_type = aid::UNIVERSE;
+		}
+	}
+
 	aid::aid(const string& new_universe,const string& new_galaxy) : universe(new_universe),galaxy(new_galaxy),solar_system(),astronomical_body(),astronomical_type(aid::GALAXY)
 	{}
 
@@ -349,9 +358,19 @@ namespace scifir
 		return *this;
 	}
 
+	bool aid::has_no_universe() const
+	{
+		return (universe == "no-universe");
+	}
+
 	bool aid::has_unknown_universe() const
 	{
 		return (universe == "unknown-universe");
+	}
+
+	bool aid::has_no_galaxy() const
+	{
+		return (galaxy == "no-galaxy");
 	}
 
 	bool aid::has_unknown_galaxy() const
@@ -362,6 +381,11 @@ namespace scifir
 	bool aid::has_unknown_solar_system() const
 	{
 		return (solar_system == "unknown-solar-system");
+	}
+
+	bool aid::has_no_solar_system() const
+	{
+		return (solar_system == "no-solar-system");
 	}
 
 	bool aid::has_unknown_planet() const

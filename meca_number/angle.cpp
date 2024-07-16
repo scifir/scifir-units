@@ -189,29 +189,29 @@ namespace scifir
 		normalize_value();
 	}
 
-	angle& angle::operator++()
+	angle& angle::operator ++()
 	{
 		value++;
 		return *this;
 	}
 
-	angle angle::operator++(int)
+	angle angle::operator ++(int)
 	{
 		angle tmp = angle(*this);
-		operator++();
+		operator ++();
 		return tmp;
 	}
 
-	angle& angle::operator--()
+	angle& angle::operator --()
 	{
 		value--;
 		return *this;
 	}
 
-	angle angle::operator--(int)
+	angle angle::operator --(int)
 	{
 		angle tmp = angle(*this);
-		operator--();
+		operator --();
 		return tmp;
 	}
 
