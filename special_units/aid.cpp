@@ -358,9 +358,19 @@ namespace scifir
 		return *this;
 	}
 
+	bool aid::has_no_universe() const
+	{
+		return (universe == "no-universe");
+	}
+
 	bool aid::has_unknown_universe() const
 	{
 		return (universe == "unknown-universe");
+	}
+
+	bool aid::has_no_galaxy() const
+	{
+		return (galaxy == "no-galaxy");
 	}
 
 	bool aid::has_unknown_galaxy() const
@@ -371,6 +381,11 @@ namespace scifir
 	bool aid::has_unknown_solar_system() const
 	{
 		return (solar_system == "unknown-solar-system");
+	}
+
+	bool aid::has_no_solar_system() const
+	{
+		return (solar_system == "no-solar-system");
 	}
 
 	bool aid::has_unknown_planet() const

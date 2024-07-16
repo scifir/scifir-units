@@ -221,13 +221,13 @@
 * \brief Returns a string representation of aid.
 
 * \var string aid::universe
-* \brief The universe of the astronomical body. The predefined value **unknown-universe** means that it's not known the universe of the astronomical object.
+* \brief The universe of the astronomical body. The predefined value **no-universe** means that there's no universe, it's intended for fiction locations. The predefined value **unknown-universe** means that it's not known the universe of the astronomical object.
 
 * \var string aid::galaxy
-* \brief The galaxy of the astronomical body. The predefined value **unknown-galaxy** means that it's not known the galaxy of the astronomical object.
+* \brief The galaxy of the astronomical body. The predefined value **no-galaxy** means that the astronomical object is not inside a galaxy. The predefined value **unknown-galaxy** means that it's not known the galaxy of the astronomical object.
 
 * \var string aid::solar_system
-* \brief The solar system of the astronomical body. The predefined value **unknown-solar-system** means that it's not known the solar system of the astronomical object.
+* \brief The solar system of the astronomical body. The predefined value **no-solar-system** means that the astronomical object is not inside a solar system, it's alone. The predefined value **unknown-solar-system** means that it's not known the solar system of the astronomical object.
 
 * \var string aid::astronomical_body
 * \brief The name of the astronomical body. The predefined value **unknown-planet** means that it's not known the planet of the astronomical object. The predefined value **unknown-moon** means that it's not known the moon of the astronomical object. The predefined value **unknown-star** means that it's not known the star of the astronomical object. The predefined value **unknown-asteroid** means that it's not known the asteroid of the astronomical object.
