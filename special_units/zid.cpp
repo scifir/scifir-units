@@ -9,36 +9,60 @@ using namespace std;
 
 namespace scifir
 {
-	zid::zid() : aid(),regions(),country(),zone()
+	zid::zid() : aid(),regions(),country(),zone(),zone_type(zid::NONE)
 	{}
 
-	zid::zid(const zid& x) : aid(x.aid),regions(x.regions),country(x.country),zone(x.zone)
+	zid::zid(const zid& x) : aid(x.aid),regions(x.regions),country(x.country),zone(x.zone),zone_type(x.zone_type)
 	{}
 
-	zid::zid(zid&& x) : aid(std::move(x.aid)),regions(std::move(x.regions)),country(std::move(x.country)),zone(std::move(x.zone))
+	zid::zid(zid&& x) : aid(std::move(x.aid)),regions(std::move(x.regions)),country(std::move(x.country)),zone(std::move(x.zone)),zone_type(std::move(x.zone_type))
 	{}
 
-	zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone) : aid(new_aid),country(new_country),regions(new_regions),zone(new_zone)
+	zid::zid(const scifir::aid& new_aid,const zid::type& new_zid_type,const string& new_country) : aid(),country(),regions(),zone(),zone_type(zid::NONE)
+	{
+		if (new_zid_type == zid::COUNTRY)
+		{
+			aid = new_aid;
+			country = new_country;
+			zone_type = zid::COUNTRY;
+		}
+	}
+
+	zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions) : aid(new_aid),country(new_country),regions(new_regions),zone(),zone_type(zid::REGION)
 	{}
 
-	zid::zid(const scifir::aid& new_aid,const string& init_zid) : aid(new_aid),regions(),country(),zone()
+	zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone) : aid(new_aid),country(new_country),regions(new_regions),zone(new_zone),zone_type(zid::ZONE)
+	{}
+
+	zid::zid(const scifir::aid& new_aid,const string& init_zid) : aid(new_aid),regions(),country(),zone(),zone_type(zid::NONE)
 	{
 		if (init_zid != "")
 		{
 			vector<string> values;
 			boost::split(values,init_zid,boost::is_any_of(":"));
-			country = values[0];
-			if (values.size() > 2)
+			if (values[0].front() == '(' and isalpha(values[0][1]))
 			{
-				int total_for_values = int(values.size()) - 1;
-				for (int i = 1; i < total_for_values; i++)
+				zone_type = create_zone_type(values[0].substr(1,1));
+				if (values[0][3] != ' ')
 				{
-					regions.push_back(values[i]);
+					country = values[0].substr(3);
 				}
-			}
-			if (values.size() >= 2)
-			{
-				zone = values.back();
+				else
+				{
+					country = values[0].substr(4);
+				}
+				if (values.size() > 2)
+				{
+					int total_for_values = int(values.size()) - 1;
+					for (int i = 1; i < total_for_values; i++)
+					{
+						regions.push_back(values[i]);
+					}
+				}
+				if (values.size() >= 2)
+				{
+					zone = values.back();
+				}
 			}
 		}
 	}
@@ -54,6 +78,7 @@ namespace scifir
 		regions = x.regions;
 		country = x.country;
 		zone = x.zone;
+		zone_type = x.zone_type;
 		return *this;
 	}
 
@@ -63,6 +88,7 @@ namespace scifir
 		regions = std::move(x.regions);
 		country = std::move(x.country);
 		zone = std::move(x.zone);
+		zone_type = std::move(x.zone_type);
 		return *this;
 	}
 
@@ -87,7 +113,7 @@ namespace scifir
 		if (country != "")
 		{
 			ostringstream out;
-			out << to_string(aid) << " " << country << ":";
+			out << to_string(aid) << " (" << to_string(zone_type) << ") " << country << ":";
 			for (const string& x_region : regions)
 			{
 				out << x_region << ":";
@@ -106,7 +132,7 @@ namespace scifir
 		if (country != "")
 		{
 			ostringstream out;
-			out << country << ":";
+			out << "(" << to_string(zone_type) << ") " << country << ":";
 			for (const string& x_region : regions)
 			{
 				out << x_region << ":";
@@ -124,45 +150,66 @@ namespace scifir
 	{
 		if (init_zid_full != "")
 		{
-			int number_whitespaces = std::count(init_zid_full.begin(),init_zid_full.end(),' ');
-			std::size_t last_whitespace = init_zid_full.find_last_of(' ');
-			if (number_whitespaces == 2 or number_whitespaces == 1)
+			if (!(init_zid_full[1] == 'C' or init_zid_full[1] == 'R' or init_zid_full[1] == 'Z'))
 			{
+				std::size_t last_whitespace = init_zid_full.find(" (");
 				string init_aid = init_zid_full.substr(0,last_whitespace);
 				string init_zid = init_zid_full.substr(last_whitespace + 1);
 				aid = scifir::aid(init_aid);
 				vector<string> values;
 				boost::split(values,init_zid,boost::is_any_of(":"));
-				country = values[0];
-				if (values.size() > 2)
+				if (values[0].front() == '(' and isalpha(values[0][1]))
 				{
-					int total_for_values = int(values.size()) - 1;
-					for (int i = 1; i < total_for_values; i++)
+					zone_type = create_zone_type(values[0].substr(1,1));
+					if (values[0][3] != ' ')
 					{
-						regions.push_back(values[i]);
+						country = values[0].substr(3);
+					}
+					else
+					{
+						country = values[0].substr(4);
+					}
+					if (values.size() > 2)
+					{
+						int total_for_values = int(values.size()) - 1;
+						for (int i = 1; i < total_for_values; i++)
+						{
+							regions.push_back(values[i]);
+						}
+					}
+					if (values.size() >= 2)
+					{
+						zone = values.back();
 					}
 				}
-				if (values.size() >= 2)
-				{
-					zone = values.back();
-				}
 			}
-			else if (number_whitespaces == 0)
+			else
 			{
 				vector<string> values;
 				boost::split(values,init_zid_full,boost::is_any_of(":"));
-				country = values[0];
-				if (values.size() > 2)
+				if (values[0].front() == '(' and isalpha(values[0][1]))
 				{
-					int total_for_values = int(values.size()) - 1;
-					for (int i = 1; i < total_for_values; i++)
+					zone_type = create_zone_type(values[0].substr(1,1));
+					if (values[0][3] != ' ')
 					{
-						regions.push_back(values[i]);
+						country = values[0].substr(3);
 					}
-				}
-				if (values.size() >= 2)
-				{
-					zone = values.back();
+					else
+					{
+						country = values[0].substr(4);
+					}
+					if (values.size() > 2)
+					{
+						int total_for_values = int(values.size()) - 1;
+						for (int i = 1; i < total_for_values; i++)
+						{
+							regions.push_back(values[i]);
+						}
+					}
+					if (values.size() >= 2)
+					{
+						zone = values.back();
+					}
 				}
 			}
 		}
@@ -171,6 +218,42 @@ namespace scifir
 	string to_string(const zid& x)
 	{
 		return x.display();
+	}
+
+	string to_string(const zid::type& x)
+	{
+		switch (x)
+		{
+			case zid::NONE:
+				return "";
+			case zid::COUNTRY:
+				return "C";
+			case zid::REGION:
+				return "R";
+			case zid::ZONE:
+				return "Z";
+		}
+		return "";
+	}
+
+	zid::type create_zone_type(const string& zone_type_abbreviation)
+	{
+		if (zone_type_abbreviation == "C")
+		{
+			return zid::COUNTRY;
+		}
+		else if (zone_type_abbreviation == "R")
+		{
+			return zid::REGION;
+		}
+		else if (zone_type_abbreviation == "Z")
+		{
+			return zid::ZONE;
+		}
+		else
+		{
+			return zid::NONE;
+		}
 	}
 }
 

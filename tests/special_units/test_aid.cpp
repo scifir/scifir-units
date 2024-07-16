@@ -33,6 +33,12 @@ TEST_CASE("aid class") {
 		CHECK(c.galaxy == "milky-way");
 		CHECK(c.solar_system == "solar-system");
 		CHECK(c.astronomical_body == "earth");
+		aid d2(aid::UNIVERSE,"universe-a123");
+		CHECK(d2.astronomical_type == aid::UNIVERSE);
+		CHECK(d2.universe == "universe-a123");
+		CHECK(d2.galaxy == "");
+		CHECK(d2.solar_system == "");
+		CHECK(d2.astronomical_body == "");
 		aid d("universe","milky-way");
 		CHECK(d.astronomical_type == aid::GALAXY);
 		CHECK(d.universe == "universe");

@@ -13,9 +13,13 @@ namespace scifir
 	class zid
 	{
 		public:
+			enum type : int8_t {NONE,COUNTRY,REGION,ZONE};
+
 			zid();
 			zid(const zid& x);
 			zid(zid&& x);
+			explicit zid(const scifir::aid& new_aid,const zid::type& new_zid_type,const string& new_country);
+			explicit zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions);
 			explicit zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone);
 			explicit zid(const scifir::aid& new_aid,const string& init_zid);
 			explicit zid(const string& init_zid_full);
@@ -34,12 +38,15 @@ namespace scifir
 			vector<string> regions;
 			string country;
 			string zone;
+			zid::type zone_type;
 
 		private:
 			void initialize_from_string(const string& init_zid_full);
 	};
 
 	string to_string(const zid& x);
+	string to_string(const zid::type& x);
+	zid::type create_zone_type(const string& zone_type_abbreviation);
 }
 
 bool operator ==(const scifir::zid& x, const scifir::zid& y);

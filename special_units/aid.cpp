@@ -19,7 +19,7 @@ namespace scifir
 	aid::aid(aid&& x) : universe(std::move(x.universe)),galaxy(std::move(x.galaxy)),solar_system(std::move(x.solar_system)),astronomical_body(std::move(x.astronomical_body)),astronomical_type(std::move(x.astronomical_type))
 	{}
 
-	aid::aid(const enum astronomical_body& predefined_astronomical_body) : aid()
+	aid::aid(const scifir::astronomical_body& predefined_astronomical_body) : aid()
 	{
 		if (predefined_astronomical_body != astronomical_body::NONE)
 		{
@@ -306,6 +306,15 @@ namespace scifir
 			solar_system = "solar-system";
 			astronomical_body = "dysnomia";
 			astronomical_type = aid::MOON;
+		}
+	}
+
+	aid::aid(const aid::type& new_astronomical_type,const string& new_universe) : universe(),galaxy(),solar_system(),astronomical_body(),astronomical_type(aid::NONE)
+	{
+		if (new_astronomical_type == aid::UNIVERSE)
+		{
+			universe = new_universe;
+			astronomical_type = aid::UNIVERSE;
 		}
 	}
 

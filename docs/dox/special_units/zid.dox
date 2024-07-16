@@ -1,5 +1,20 @@
 /** \class scifir::zid
-* \brief Class that allows to store information about a zone, including the astronomical object inside which the zone is. **Initialization string** example: "(P)universe:milky-way:solar-system:earth chile:region-metropolitana:santiago:providencia".
+* \brief Class that allows to store information about a zone, including the astronomical object inside which the zone is. **Initialization string** example: "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia".
+
+* \enum scifir::zid::type
+* \brief Type of zone.
+
+* \var zid::NONE
+* \brief No zone.
+
+* \var zid::COUNTRY
+* \brief A country.
+
+* \var zid::REGION
+* \brief A region.
+
+* \var zid::ZONE
+* \brief A zone. A zone is any surface inside an astronomical object, of any shape. It's not necessary to be a zone registered by a country or organization, personal zones are allowed.
 
 * \fn zid::zid()
 * \brief Default constructor. There's no data about any zone, the aid member-variable is also empty.
@@ -9,6 +24,12 @@
 
 * \fn zid::zid(zid&& x)
 * \brief Move constructor. The zid is initialized moving the member-variables of the zid x.
+
+* \fn zid::zid(const scifir::aid& new_aid,const zid::type& new_zid_type,const string& new_country)
+* \brief Constructor. It initializes a country as the entire zone of zid.
+
+* \fn zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions)
+* \brief Constructor. It initializes a region as the entire zone of zid, which is the last region specified, the one inside the other regions given if there's more than one region initialized.
 
 * \fn zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone)
 * \brief Constructor. The aid is new_aid, the country is new_country, the regions are new_regions and zone is new_zone.
@@ -50,13 +71,22 @@
 * \brief The country where the zone is. In extraterrestrial planets, it's considered a country any division of territory ruled with their own laws. The predefined value **no-country** means that the zone is not inside a country.  The predefined value **unknown-country** means that it's not known the country where the zone is, but that it's known that it's a country.
 
 * \var string zid::zone
-* \brief The name of the zone.
+* \brief The name of the zone. Personal zones with a personal name are allowed, it's not necessary that the zone is registered by a country or another organization.
+
+* \var string zid::zone_type
+* \brief The type of zone. It can be any value of the enum zid::type. The possible values are COUNTRY, REGION and ZONE. A zone can be any surface inside an astronomical object, of any shape, and it's not necessary to be a zone registered by a country or organization. A personal zone with a personal name is allowed.
 
 * \fn void zid::initialize_from_string(const string& init_zid_full)
 * \brief **Internal function**. It's used by the string constructor and the string assignment of zid to initialize the member-variables using the initialization string init_zid_full.
 
 * \fn string scifir::to_string(const zid& x)
 * \brief Returns a string representation of zid, same as display().
+
+* \fn string scifir::to_string(const zid::type& x)
+* \brief Converts a value of the enum zid::type to its string representation, which is a single letter. The value COUNTRY returns **C**. The value REGION returns **R**. The value ZONE returns **Z**.
+
+* \fn zid::type scifir::create_zone_type(const string& zone_type_abbreviation)
+* \brief Creates an instance of a zid::type with the given string, which is the reverse as the to_string() function of zid::type.
 
 * \fn bool operator ==(const scifir::zid& x, const scifir::zid& y)
 * \brief Returns true if the type and all data are the same between x and y.
