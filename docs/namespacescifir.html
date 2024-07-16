@@ -117,6 +117,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1cas__number.html">cas_number</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__2d.html">size_2d</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that allows to store and calculate size in 2D, with width and height. The template parameter T allows to select any <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> or numeric type to be the type of width and height (they always have the same type in the same instance). The width and height can be any <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>, usually length, but imaginary spaces with custom dimensions are also allowed. <b>Initialization string</b> example: "1 m * 2 m".  <a href="classscifir_1_1size__2d.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +136,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1pOH.html">pOH</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__2d_3_01float_01_4.html">size_2d&lt; float &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization class of size_2d&lt;T&gt; that allows to store and calculate size in 2D, with width and height as float types. <b>Initialization string</b> example: "1 * 2".  <a href="classscifir_1_1size__2d_3_01float_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d_3_01float_01_4.html">size_3d&lt; float &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,7 +145,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__nd_3_01float_01_4.html">size_nd&lt; float &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html">zid</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that allows to store information about a zone, including the astronomical object inside which the zone is. <b>Initialization string</b> example: "(P)universe:milky-way:solar-system:earth chile:region-metropolitana:santiago:providencia".  <a href="classscifir_1_1zid.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that allows to store information about a zone, including the astronomical object inside which the zone is. <b>Initialization string</b> example: "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia".  <a href="classscifir_1_1zid.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1direction.html">direction</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1113,7 +1115,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a55aef4d5616f29c80bdf521cdedc6d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string representation of aid, it's for aid equivalent to the display() function of aid.  <a href="namespacescifir.html#a55aef4d5616f29c80bdf521cdedc6d0a">More...</a><br /></td></tr>
 <tr class="separator:a55aef4d5616f29c80bdf521cdedc6d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05fe01e617f5ab6367f0e55522846767"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a05fe01e617f5ab6367f0e55522846767">to_string</a> (const <a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6">aid::type</a> &amp;x)</td></tr>
-<tr class="memdesc:a05fe01e617f5ab6367f0e55522846767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a value of the enum <a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6" title="Type of astronomical body.">aid::type</a> to it string representation, which can be a single or a pair of letters. The value UNIVERSE returns <b>U</b>. The value GALAXY returns <b>G</b>. The value SOLAR_SYSTEM retrns <b>SS</b>. The value PLANET returns <b>P</b>. The value STAR returns <b>ST</b>. The value ASTEROID returns <b>A</b>. The value MOON returns <b>MN</b>. The value METEOR returns <b>MT</b>. The value NONE returns an empty string.  <a href="namespacescifir.html#a05fe01e617f5ab6367f0e55522846767">More...</a><br /></td></tr>
+<tr class="memdesc:a05fe01e617f5ab6367f0e55522846767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a value of the enum <a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6" title="Type of astronomical body.">aid::type</a> to its string representation, which can be a single or a pair of letters. The value UNIVERSE returns <b>U</b>. The value GALAXY returns <b>G</b>. The value SOLAR_SYSTEM returns <b>SS</b>. The value PLANET returns <b>P</b>. The value STAR returns <b>ST</b>. The value ASTEROID returns <b>A</b>. The value MOON returns <b>MN</b>. The value METEOR returns <b>MT</b>. The value NONE returns an empty string.  <a href="namespacescifir.html#a05fe01e617f5ab6367f0e55522846767">More...</a><br /></td></tr>
 <tr class="separator:a05fe01e617f5ab6367f0e55522846767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbc150ffa5bc7eac0fc06f66b5e0c7a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6">aid::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#adbc150ffa5bc7eac0fc06f66b5e0c7a9">create_astronomical_type</a> (const string &amp;astronomical_type_abbreviation)</td></tr>
 <tr class="memdesc:adbc150ffa5bc7eac0fc06f66b5e0c7a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of an <a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6" title="Type of astronomical body.">aid::type</a> with the given string, which is the reverse as the <a class="el" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string()</a> function of <a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6" title="Type of astronomical body.">aid::type</a>.  <a href="namespacescifir.html#adbc150ffa5bc7eac0fc06f66b5e0c7a9">More...</a><br /></td></tr>
@@ -1143,9 +1145,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a58add97f33dcd503cba1cc59be940938"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a58add97f33dcd503cba1cc59be940938">to_string</a> (const <a class="el" href="classscifir_1_1pOH.html">pOH</a> &amp;x)</td></tr>
 <tr class="separator:a58add97f33dcd503cba1cc59be940938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92bc66df8690c20f8133e3d83be2ba13"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a92bc66df8690c20f8133e3d83be2ba13">to_string</a> (const <a class="el" href="classscifir_1_1size__2d.html">size_2d</a>&lt; float &gt; &amp;x)</td></tr>
+<tr class="memdesc:a92bc66df8690c20f8133e3d83be2ba13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of <a class="el" href="classscifir_1_1size__2d_3_01float_01_4.html" title="Specialization class of size_2d&lt;T&gt; that allows to store and calculate size in 2D, with width and heig...">size_2d&lt;float&gt;</a>.  <a href="namespacescifir.html#a92bc66df8690c20f8133e3d83be2ba13">More...</a><br /></td></tr>
 <tr class="separator:a92bc66df8690c20f8133e3d83be2ba13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bc295a9231111f93e0779a42d1d1828"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a9bc295a9231111f93e0779a42d1d1828"><td class="memTemplItemLeft" align="right" valign="top">string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a9bc295a9231111f93e0779a42d1d1828">to_string</a> (const <a class="el" href="classscifir_1_1size__2d.html">size_2d</a>&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a9bc295a9231111f93e0779a42d1d1828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of size_2d&lt;T&gt;.  <a href="namespacescifir.html#a9bc295a9231111f93e0779a42d1d1828">More...</a><br /></td></tr>
 <tr class="separator:a9bc295a9231111f93e0779a42d1d1828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac170824b178c6351d5804691542cf826"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#ac170824b178c6351d5804691542cf826">to_string</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; float &gt; &amp;x)</td></tr>
 <tr class="separator:ac170824b178c6351d5804691542cf826"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1160,6 +1164,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a4202fe607b159e40982128774853ed94"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a4202fe607b159e40982128774853ed94">to_string</a> (const <a class="el" href="classscifir_1_1zid.html">zid</a> &amp;x)</td></tr>
 <tr class="memdesc:a4202fe607b159e40982128774853ed94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of zid, same as display().  <a href="namespacescifir.html#a4202fe607b159e40982128774853ed94">More...</a><br /></td></tr>
 <tr class="separator:a4202fe607b159e40982128774853ed94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac87978faacca073a3cfa36500a45409a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#ac87978faacca073a3cfa36500a45409a">to_string</a> (const <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a> &amp;x)</td></tr>
+<tr class="memdesc:ac87978faacca073a3cfa36500a45409a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a value of the enum <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93" title="Type of zone.">zid::type</a> to its string representation, which is a single letter. The value COUNTRY returns <b>C</b>. The value REGION returns <b>R</b>. The value ZONE returns <b>Z</b>.  <a href="namespacescifir.html#ac87978faacca073a3cfa36500a45409a">More...</a><br /></td></tr>
+<tr class="separator:ac87978faacca073a3cfa36500a45409a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec42f20dc4534b6c166a5034631a116"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a> (const string &amp;zone_type_abbreviation)</td></tr>
+<tr class="memdesc:a7ec42f20dc4534b6c166a5034631a116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of a <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93" title="Type of zone.">zid::type</a> with the given string, which is the reverse as the <a class="el" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string()</a> function of <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93" title="Type of zone.">zid::type</a>.  <a href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">More...</a><br /></td></tr>
+<tr class="separator:a7ec42f20dc4534b6c166a5034631a116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4875573260680d0b88ef4a41dd91973"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1direction.html#a3f9d1fd5a6c5f61b9fb49c4e56938319">direction::name</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#aa4875573260680d0b88ef4a41dd91973">create_direction</a> (const string &amp;x)</td></tr>
 <tr class="separator:aa4875573260680d0b88ef4a41dd91973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dccca47be7b8a3781d743c46394dd20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1direction.html#a3f9d1fd5a6c5f61b9fb49c4e56938319">direction::name</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a0dccca47be7b8a3781d743c46394dd20">invert</a> (<a class="el" href="classscifir_1_1direction.html#a3f9d1fd5a6c5f61b9fb49c4e56938319">direction::name</a> x)</td></tr>
@@ -3380,45 +3390,45 @@ template&lt;typename T &gt; </div>
 
 <p>Creates an instance of an <a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6" title="Type of astronomical body.">aid::type</a> with the given string, which is the reverse as the <a class="el" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string()</a> function of <a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6" title="Type of astronomical body.">aid::type</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="aid_8cpp_source.html#l00501">501</a> of file <a class="el" href="aid_8cpp_source.html">aid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    {</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;U&quot;</span>)</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        {</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;            <span class="keywordflow">return</span> aid::UNIVERSE;</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        }</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;G&quot;</span>)</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        {</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;            <span class="keywordflow">return</span> aid::GALAXY;</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        }</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;SS&quot;</span>)</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        {</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;            <span class="keywordflow">return</span> aid::SOLAR_SYSTEM;</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        }</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;P&quot;</span>)</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        {</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;            <span class="keywordflow">return</span> aid::PLANET;</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        }</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;ST&quot;</span>)</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        {</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            <span class="keywordflow">return</span> aid::STAR;</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        }</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;A&quot;</span>)</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        {</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;            <span class="keywordflow">return</span> aid::ASTEROID;</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        }</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;MN&quot;</span>)</div>
+<p class="definition">Definition at line <a class="el" href="aid_8cpp_source.html#l00525">525</a> of file <a class="el" href="aid_8cpp_source.html">aid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    {</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;U&quot;</span>)</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        {</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            <span class="keywordflow">return</span> aid::MOON;</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            <span class="keywordflow">return</span> aid::UNIVERSE;</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        }</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;MT&quot;</span>)</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;G&quot;</span>)</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        {</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            <span class="keywordflow">return</span> aid::METEOR;</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            <span class="keywordflow">return</span> aid::GALAXY;</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        }</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;SS&quot;</span>)</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        {</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            <span class="keywordflow">return</span> aid::NONE;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            <span class="keywordflow">return</span> aid::SOLAR_SYSTEM;</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        }</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    }</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;P&quot;</span>)</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        {</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            <span class="keywordflow">return</span> aid::PLANET;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        }</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;ST&quot;</span>)</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        {</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            <span class="keywordflow">return</span> aid::STAR;</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        }</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;A&quot;</span>)</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        {</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            <span class="keywordflow">return</span> aid::ASTEROID;</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        }</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;MN&quot;</span>)</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        {</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;            <span class="keywordflow">return</span> aid::MOON;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        }</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (astronomical_type_abbreviation == <span class="stringliteral">&quot;MT&quot;</span>)</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        {</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <span class="keywordflow">return</span> aid::METEOR;</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        }</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        {</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            <span class="keywordflow">return</span> aid::NONE;</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        }</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3868,6 +3878,46 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        }</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keywordflow">return</span> prefix();</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7ec42f20dc4534b6c166a5034631a116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec42f20dc4534b6c166a5034631a116">&#9670;&nbsp;</a></span>create_zone_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a> scifir::create_zone_type </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>zone_type_abbreviation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an instance of a <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93" title="Type of zone.">zid::type</a> with the given string, which is the reverse as the <a class="el" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string()</a> function of <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93" title="Type of zone.">zid::type</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00239">239</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;C&quot;</span>)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">return</span> zid::COUNTRY;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;R&quot;</span>)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">return</span> zid::REGION;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;Z&quot;</span>)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">return</span> zid::ZONE;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">return</span> zid::NONE;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -15612,7 +15662,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a55aef4d5616f29c80bdf521cdedc6d0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55aef4d5616f29c80bdf521cdedc6d0a">&#9670;&nbsp;</a></span>to_string() <span class="overload">[1/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a55aef4d5616f29c80bdf521cdedc6d0a">&#9670;&nbsp;</a></span>to_string() <span class="overload">[1/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15629,15 +15679,15 @@ template&lt;typename T &gt; </div>
 
 <p>Creates a string representation of aid, it's for aid equivalent to the display() function of aid. </p>
 
-<p class="definition">Definition at line <a class="el" href="aid_8cpp_source.html#l00470">470</a> of file <a class="el" href="aid_8cpp_source.html">aid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    {</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        <span class="keywordflow">return</span> x.display();</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="aid_8cpp_source.html#l00494">494</a> of file <a class="el" href="aid_8cpp_source.html">aid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    {</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="keywordflow">return</span> x.display();</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a05fe01e617f5ab6367f0e55522846767"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05fe01e617f5ab6367f0e55522846767">&#9670;&nbsp;</a></span>to_string() <span class="overload">[2/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a05fe01e617f5ab6367f0e55522846767">&#9670;&nbsp;</a></span>to_string() <span class="overload">[2/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15652,38 +15702,38 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Converts a value of the enum <a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6" title="Type of astronomical body.">aid::type</a> to it string representation, which can be a single or a pair of letters. The value UNIVERSE returns <b>U</b>. The value GALAXY returns <b>G</b>. The value SOLAR_SYSTEM retrns <b>SS</b>. The value PLANET returns <b>P</b>. The value STAR returns <b>ST</b>. The value ASTEROID returns <b>A</b>. The value MOON returns <b>MN</b>. The value METEOR returns <b>MT</b>. The value NONE returns an empty string. </p>
+<p>Converts a value of the enum <a class="el" href="classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6" title="Type of astronomical body.">aid::type</a> to its string representation, which can be a single or a pair of letters. The value UNIVERSE returns <b>U</b>. The value GALAXY returns <b>G</b>. The value SOLAR_SYSTEM returns <b>SS</b>. The value PLANET returns <b>P</b>. The value STAR returns <b>ST</b>. The value ASTEROID returns <b>A</b>. The value MOON returns <b>MN</b>. The value METEOR returns <b>MT</b>. The value NONE returns an empty string. </p>
 
-<p class="definition">Definition at line <a class="el" href="aid_8cpp_source.html#l00475">475</a> of file <a class="el" href="aid_8cpp_source.html">aid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    {</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <span class="keywordflow">switch</span> (x)</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        {</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;            <span class="keywordflow">case</span> aid::UNIVERSE:</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;U&quot;</span>;</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            <span class="keywordflow">case</span> aid::GALAXY:</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;G&quot;</span>;</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;            <span class="keywordflow">case</span> aid::SOLAR_SYSTEM:</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;SS&quot;</span>;</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            <span class="keywordflow">case</span> aid::PLANET:</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;P&quot;</span>;</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            <span class="keywordflow">case</span> aid::STAR:</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;ST&quot;</span>;</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            <span class="keywordflow">case</span> aid::ASTEROID:</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;A&quot;</span>;</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            <span class="keywordflow">case</span> aid::MOON:</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;MN&quot;</span>;</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            <span class="keywordflow">case</span> aid::METEOR:</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;MT&quot;</span>;</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            <span class="keywordflow">case</span> aid::NONE:</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        }</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="aid_8cpp_source.html#l00499">499</a> of file <a class="el" href="aid_8cpp_source.html">aid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    {</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        <span class="keywordflow">switch</span> (x)</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        {</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;            <span class="keywordflow">case</span> aid::UNIVERSE:</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;U&quot;</span>;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;            <span class="keywordflow">case</span> aid::GALAXY:</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;G&quot;</span>;</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;            <span class="keywordflow">case</span> aid::SOLAR_SYSTEM:</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;SS&quot;</span>;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;            <span class="keywordflow">case</span> aid::PLANET:</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;P&quot;</span>;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;            <span class="keywordflow">case</span> aid::STAR:</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;ST&quot;</span>;</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;            <span class="keywordflow">case</span> aid::ASTEROID:</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;A&quot;</span>;</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            <span class="keywordflow">case</span> aid::MOON:</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;MN&quot;</span>;</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;            <span class="keywordflow">case</span> aid::METEOR:</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;MT&quot;</span>;</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;            <span class="keywordflow">case</span> aid::NONE:</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        }</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a69478e727622b137c8c584a42e02aab7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69478e727622b137c8c584a42e02aab7">&#9670;&nbsp;</a></span>to_string() <span class="overload">[3/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a69478e727622b137c8c584a42e02aab7">&#9670;&nbsp;</a></span>to_string() <span class="overload">[3/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15708,7 +15758,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="aaa5f898193180977eaaf32ff616e513b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa5f898193180977eaaf32ff616e513b">&#9670;&nbsp;</a></span>to_string() <span class="overload">[4/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa5f898193180977eaaf32ff616e513b">&#9670;&nbsp;</a></span>to_string() <span class="overload">[4/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15733,7 +15783,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a421182d5f93abcbbaeadc7c14112bdd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a421182d5f93abcbbaeadc7c14112bdd5">&#9670;&nbsp;</a></span>to_string() <span class="overload">[5/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a421182d5f93abcbbaeadc7c14112bdd5">&#9670;&nbsp;</a></span>to_string() <span class="overload">[5/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15756,7 +15806,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a873067b76a922a9f96b18e5f10088988"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a873067b76a922a9f96b18e5f10088988">&#9670;&nbsp;</a></span>to_string() <span class="overload">[6/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a873067b76a922a9f96b18e5f10088988">&#9670;&nbsp;</a></span>to_string() <span class="overload">[6/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15781,7 +15831,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ad3fadbd54cc3fcf614388823d783f972"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3fadbd54cc3fcf614388823d783f972">&#9670;&nbsp;</a></span>to_string() <span class="overload">[7/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3fadbd54cc3fcf614388823d783f972">&#9670;&nbsp;</a></span>to_string() <span class="overload">[7/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15804,7 +15854,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a1dac4f2f6e1fd5f174d18b830cc8649f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dac4f2f6e1fd5f174d18b830cc8649f">&#9670;&nbsp;</a></span>to_string() <span class="overload">[8/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dac4f2f6e1fd5f174d18b830cc8649f">&#9670;&nbsp;</a></span>to_string() <span class="overload">[8/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15829,7 +15879,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a120d19475bcb328e25d27dc6ea636858"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a120d19475bcb328e25d27dc6ea636858">&#9670;&nbsp;</a></span>to_string() <span class="overload">[9/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a120d19475bcb328e25d27dc6ea636858">&#9670;&nbsp;</a></span>to_string() <span class="overload">[9/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15852,7 +15902,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ae7d3e36641788c709cd16f8214dec495"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7d3e36641788c709cd16f8214dec495">&#9670;&nbsp;</a></span>to_string() <span class="overload">[10/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d3e36641788c709cd16f8214dec495">&#9670;&nbsp;</a></span>to_string() <span class="overload">[10/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15877,7 +15927,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a7967409458f5ca3d688d75b8f0ca45c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7967409458f5ca3d688d75b8f0ca45c6">&#9670;&nbsp;</a></span>to_string() <span class="overload">[11/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7967409458f5ca3d688d75b8f0ca45c6">&#9670;&nbsp;</a></span>to_string() <span class="overload">[11/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15900,7 +15950,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a60bedb5834916875f8bdd21c91eba1e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60bedb5834916875f8bdd21c91eba1e4">&#9670;&nbsp;</a></span>to_string() <span class="overload">[12/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a60bedb5834916875f8bdd21c91eba1e4">&#9670;&nbsp;</a></span>to_string() <span class="overload">[12/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15925,7 +15975,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ae6a67257043e1862d23a0d1d49fd27bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6a67257043e1862d23a0d1d49fd27bf">&#9670;&nbsp;</a></span>to_string() <span class="overload">[13/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6a67257043e1862d23a0d1d49fd27bf">&#9670;&nbsp;</a></span>to_string() <span class="overload">[13/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15948,7 +15998,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a61f621b5ad4ee645eeef293d44e05535"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61f621b5ad4ee645eeef293d44e05535">&#9670;&nbsp;</a></span>to_string() <span class="overload">[14/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a61f621b5ad4ee645eeef293d44e05535">&#9670;&nbsp;</a></span>to_string() <span class="overload">[14/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15973,7 +16023,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a3499b3d7d24f7c0209f0a40debf07997"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3499b3d7d24f7c0209f0a40debf07997">&#9670;&nbsp;</a></span>to_string() <span class="overload">[15/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3499b3d7d24f7c0209f0a40debf07997">&#9670;&nbsp;</a></span>to_string() <span class="overload">[15/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16015,7 +16065,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a20ad252d628354b47d9b77b2cbd3be3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20ad252d628354b47d9b77b2cbd3be3c">&#9670;&nbsp;</a></span>to_string() <span class="overload">[16/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ad252d628354b47d9b77b2cbd3be3c">&#9670;&nbsp;</a></span>to_string() <span class="overload">[16/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16058,7 +16108,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a8fd6269d50e300d53e8e170728978958"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fd6269d50e300d53e8e170728978958">&#9670;&nbsp;</a></span>to_string() <span class="overload">[17/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fd6269d50e300d53e8e170728978958">&#9670;&nbsp;</a></span>to_string() <span class="overload">[17/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16114,7 +16164,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a79b64629018bbaf5471365feca65271e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79b64629018bbaf5471365feca65271e">&#9670;&nbsp;</a></span>to_string() <span class="overload">[18/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a79b64629018bbaf5471365feca65271e">&#9670;&nbsp;</a></span>to_string() <span class="overload">[18/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16172,7 +16222,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a6c21d2cea78200614f18b622353107e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c21d2cea78200614f18b622353107e7">&#9670;&nbsp;</a></span>to_string() <span class="overload">[19/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c21d2cea78200614f18b622353107e7">&#9670;&nbsp;</a></span>to_string() <span class="overload">[19/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16199,7 +16249,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a40311f1f76470e8fe68d9ddb9c9a16ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40311f1f76470e8fe68d9ddb9c9a16ec">&#9670;&nbsp;</a></span>to_string() <span class="overload">[20/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a40311f1f76470e8fe68d9ddb9c9a16ec">&#9670;&nbsp;</a></span>to_string() <span class="overload">[20/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16223,7 +16273,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a7bb3d88a4813aa8a6c6715385d25e7ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bb3d88a4813aa8a6c6715385d25e7ec">&#9670;&nbsp;</a></span>to_string() <span class="overload">[21/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bb3d88a4813aa8a6c6715385d25e7ec">&#9670;&nbsp;</a></span>to_string() <span class="overload">[21/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16241,7 +16291,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="acea8c46cd8e9ff864027ffd33f611c1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acea8c46cd8e9ff864027ffd33f611c1a">&#9670;&nbsp;</a></span>to_string() <span class="overload">[22/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acea8c46cd8e9ff864027ffd33f611c1a">&#9670;&nbsp;</a></span>to_string() <span class="overload">[22/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16259,7 +16309,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a8678aa370e625c458e82b7b74b96d278"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8678aa370e625c458e82b7b74b96d278">&#9670;&nbsp;</a></span>to_string() <span class="overload">[23/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8678aa370e625c458e82b7b74b96d278">&#9670;&nbsp;</a></span>to_string() <span class="overload">[23/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16284,7 +16334,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a31893a8051570f4961ff4ec9a419c851"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31893a8051570f4961ff4ec9a419c851">&#9670;&nbsp;</a></span>to_string() <span class="overload">[24/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a31893a8051570f4961ff4ec9a419c851">&#9670;&nbsp;</a></span>to_string() <span class="overload">[24/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16309,7 +16359,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a36aa7f5753b8f2cb722548bc3b1196a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36aa7f5753b8f2cb722548bc3b1196a7">&#9670;&nbsp;</a></span>to_string() <span class="overload">[25/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a36aa7f5753b8f2cb722548bc3b1196a7">&#9670;&nbsp;</a></span>to_string() <span class="overload">[25/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16332,7 +16382,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="aeb9a00fb9eb60b11ffa68783d1fbb41b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb9a00fb9eb60b11ffa68783d1fbb41b">&#9670;&nbsp;</a></span>to_string() <span class="overload">[26/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb9a00fb9eb60b11ffa68783d1fbb41b">&#9670;&nbsp;</a></span>to_string() <span class="overload">[26/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16357,7 +16407,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a58add97f33dcd503cba1cc59be940938"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58add97f33dcd503cba1cc59be940938">&#9670;&nbsp;</a></span>to_string() <span class="overload">[27/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a58add97f33dcd503cba1cc59be940938">&#9670;&nbsp;</a></span>to_string() <span class="overload">[27/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16380,7 +16430,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a41e85d1777caefbb88baa8575491ae3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41e85d1777caefbb88baa8575491ae3c">&#9670;&nbsp;</a></span>to_string() <span class="overload">[28/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a41e85d1777caefbb88baa8575491ae3c">&#9670;&nbsp;</a></span>to_string() <span class="overload">[28/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16403,7 +16453,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a9d9670406b491c4deb9c6451108ac6eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d9670406b491c4deb9c6451108ac6eb">&#9670;&nbsp;</a></span>to_string() <span class="overload">[29/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d9670406b491c4deb9c6451108ac6eb">&#9670;&nbsp;</a></span>to_string() <span class="overload">[29/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16428,7 +16478,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a56f60e962e24ebf7f776494203a43832"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56f60e962e24ebf7f776494203a43832">&#9670;&nbsp;</a></span>to_string() <span class="overload">[30/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a56f60e962e24ebf7f776494203a43832">&#9670;&nbsp;</a></span>to_string() <span class="overload">[30/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16451,7 +16501,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a24ad1919eb105d2d4a743470ed0dc7cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24ad1919eb105d2d4a743470ed0dc7cc">&#9670;&nbsp;</a></span>to_string() <span class="overload">[31/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a24ad1919eb105d2d4a743470ed0dc7cc">&#9670;&nbsp;</a></span>to_string() <span class="overload">[31/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16476,7 +16526,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="afb91e9f6b69ddc0f900dcca8736b819e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb91e9f6b69ddc0f900dcca8736b819e">&#9670;&nbsp;</a></span>to_string() <span class="overload">[32/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb91e9f6b69ddc0f900dcca8736b819e">&#9670;&nbsp;</a></span>to_string() <span class="overload">[32/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16499,7 +16549,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="aec943ce3d96a0a3a8cece9cedd5760b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec943ce3d96a0a3a8cece9cedd5760b6">&#9670;&nbsp;</a></span>to_string() <span class="overload">[33/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aec943ce3d96a0a3a8cece9cedd5760b6">&#9670;&nbsp;</a></span>to_string() <span class="overload">[33/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16524,7 +16574,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a6565b99bf140936aea609a1342075748"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6565b99bf140936aea609a1342075748">&#9670;&nbsp;</a></span>to_string() <span class="overload">[34/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6565b99bf140936aea609a1342075748">&#9670;&nbsp;</a></span>to_string() <span class="overload">[34/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16565,7 +16615,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a8ae799392312bf161f558a348838c40f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ae799392312bf161f558a348838c40f">&#9670;&nbsp;</a></span>to_string() <span class="overload">[35/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ae799392312bf161f558a348838c40f">&#9670;&nbsp;</a></span>to_string() <span class="overload">[35/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16608,7 +16658,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a162eb483608d8201ae14d447a571e492"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a162eb483608d8201ae14d447a571e492">&#9670;&nbsp;</a></span>to_string() <span class="overload">[36/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a162eb483608d8201ae14d447a571e492">&#9670;&nbsp;</a></span>to_string() <span class="overload">[36/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16639,7 +16689,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a7108c656946d5d84e561f93b6991b9f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7108c656946d5d84e561f93b6991b9f5">&#9670;&nbsp;</a></span>to_string() <span class="overload">[37/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7108c656946d5d84e561f93b6991b9f5">&#9670;&nbsp;</a></span>to_string() <span class="overload">[37/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16657,7 +16707,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a92bc66df8690c20f8133e3d83be2ba13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92bc66df8690c20f8133e3d83be2ba13">&#9670;&nbsp;</a></span>to_string() <span class="overload">[38/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a92bc66df8690c20f8133e3d83be2ba13">&#9670;&nbsp;</a></span>to_string() <span class="overload">[38/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16672,6 +16722,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a string representation of <a class="el" href="classscifir_1_1size__2d_3_01float_01_4.html" title="Specialization class of size_2d&lt;T&gt; that allows to store and calculate size in 2D, with width and heig...">size_2d&lt;float&gt;</a>. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__2d_8cpp_source.html#l00007">7</a> of file <a class="el" href="size__2d_8cpp_source.html">size_2d.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">return</span> x.display();</div>
@@ -16680,7 +16732,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a9bc295a9231111f93e0779a42d1d1828"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bc295a9231111f93e0779a42d1d1828">&#9670;&nbsp;</a></span>to_string() <span class="overload">[39/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bc295a9231111f93e0779a42d1d1828">&#9670;&nbsp;</a></span>to_string() <span class="overload">[39/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16697,6 +16749,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a string representation of size_2d&lt;T&gt;. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00208">208</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    {</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">return</span> x.display();</div>
@@ -16705,7 +16759,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ac170824b178c6351d5804691542cf826"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac170824b178c6351d5804691542cf826">&#9670;&nbsp;</a></span>to_string() <span class="overload">[40/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac170824b178c6351d5804691542cf826">&#9670;&nbsp;</a></span>to_string() <span class="overload">[40/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16728,7 +16782,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ab0c61bac766af1baa5040a2a55aaf86d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0c61bac766af1baa5040a2a55aaf86d">&#9670;&nbsp;</a></span>to_string() <span class="overload">[41/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c61bac766af1baa5040a2a55aaf86d">&#9670;&nbsp;</a></span>to_string() <span class="overload">[41/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16753,7 +16807,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a8a5b284ec2fbab5a2e1b41a8c4493a88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a5b284ec2fbab5a2e1b41a8c4493a88">&#9670;&nbsp;</a></span>to_string() <span class="overload">[42/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a5b284ec2fbab5a2e1b41a8c4493a88">&#9670;&nbsp;</a></span>to_string() <span class="overload">[42/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16776,7 +16830,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a1a3ca6d26705314238f53579edffcdb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a3ca6d26705314238f53579edffcdb1">&#9670;&nbsp;</a></span>to_string() <span class="overload">[43/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3ca6d26705314238f53579edffcdb1">&#9670;&nbsp;</a></span>to_string() <span class="overload">[43/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16801,7 +16855,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a557363b7a10710912ab38e165fd0edc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a557363b7a10710912ab38e165fd0edc6">&#9670;&nbsp;</a></span>to_string() <span class="overload">[44/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a557363b7a10710912ab38e165fd0edc6">&#9670;&nbsp;</a></span>to_string() <span class="overload">[44/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16947,7 +17001,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a1c22395b3d9929cd1dada3955dc6d7b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c22395b3d9929cd1dada3955dc6d7b8">&#9670;&nbsp;</a></span>to_string() <span class="overload">[45/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c22395b3d9929cd1dada3955dc6d7b8">&#9670;&nbsp;</a></span>to_string() <span class="overload">[45/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16967,7 +17021,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ab7fb5bd7e3dce0357a306ef1bc16fd0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7fb5bd7e3dce0357a306ef1bc16fd0e">&#9670;&nbsp;</a></span>to_string() <span class="overload">[46/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7fb5bd7e3dce0357a306ef1bc16fd0e">&#9670;&nbsp;</a></span>to_string() <span class="overload">[46/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16987,7 +17041,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a19bf81b45dc720d4cf1eff9384a3a855"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19bf81b45dc720d4cf1eff9384a3a855">&#9670;&nbsp;</a></span>to_string() <span class="overload">[47/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a19bf81b45dc720d4cf1eff9384a3a855">&#9670;&nbsp;</a></span>to_string() <span class="overload">[47/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17012,7 +17066,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a4202fe607b159e40982128774853ed94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4202fe607b159e40982128774853ed94">&#9670;&nbsp;</a></span>to_string() <span class="overload">[48/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4202fe607b159e40982128774853ed94">&#9670;&nbsp;</a></span>to_string() <span class="overload">[48/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17029,15 +17083,51 @@ template&lt;typename T &gt; </div>
 
 <p>Returns a string representation of zid, same as display(). </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00171">171</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">return</span> x.display();</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00218">218</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">return</span> x.display();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac87978faacca073a3cfa36500a45409a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87978faacca073a3cfa36500a45409a">&#9670;&nbsp;</a></span>to_string() <span class="overload">[49/50]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string scifir::to_string </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a value of the enum <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93" title="Type of zone.">zid::type</a> to its string representation, which is a single letter. The value COUNTRY returns <b>C</b>. The value REGION returns <b>R</b>. The value ZONE returns <b>Z</b>. </p>
+
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00223">223</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">switch</span> (x)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordflow">case</span> zid::NONE:</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordflow">case</span> zid::COUNTRY:</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;C&quot;</span>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordflow">case</span> zid::REGION:</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;R&quot;</span>;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">case</span> zid::ZONE:</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Z&quot;</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a1fb6d77f9f2f7b1794a731f4f7e2603d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fb6d77f9f2f7b1794a731f4f7e2603d">&#9670;&nbsp;</a></span>to_string() <span class="overload">[49/49]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fb6d77f9f2f7b1794a731f4f7e2603d">&#9670;&nbsp;</a></span>to_string() <span class="overload">[50/50]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

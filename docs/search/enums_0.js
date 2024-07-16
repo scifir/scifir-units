@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['alert_5fstate_2721',['alert_state',['../namespacescifir.html#a10fb03b0e70b3cd9e77661757a2ec705',1,'scifir']]],
-  ['astronomical_5fbody_2722',['astronomical_body',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36',1,'scifir']]]
+  ['alert_5fstate_2736',['alert_state',['../namespacescifir.html#a10fb03b0e70b3cd9e77661757a2ec705',1,'scifir']]],
+  ['astronomical_5fbody_2737',['astronomical_body',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36',1,'scifir']]]
 ];

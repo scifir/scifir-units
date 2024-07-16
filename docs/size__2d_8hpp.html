@@ -136,8 +136,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that allows to store and calculate size in 2D, with width and height. The template parameter T allows to select any <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> or numeric type to be the type of width and height (they always have the same type in the same instance). The width and height can be any <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>, usually length, but imaginary spaces with custom dimensions are also allowed. <b>Initialization string</b> example: "1 m * 2 m".  <a href="classscifir_1_1size__2d.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__2d_3_01float_01_4.html">scifir::size_2d&lt; float &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization class of size_2d&lt;T&gt; that allows to store and calculate size in 2D, with width and height as float types. <b>Initialization string</b> example: "1 * 2".  <a href="classscifir_1_1size__2d_3_01float_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -150,42 +152,55 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a9bc295a9231111f93e0779a42d1d1828"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a9bc295a9231111f93e0779a42d1d1828"><td class="memTemplItemLeft" align="right" valign="top">string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a9bc295a9231111f93e0779a42d1d1828">scifir::to_string</a> (const size_2d&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a9bc295a9231111f93e0779a42d1d1828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of size_2d&lt;T&gt;.  <a href="namespacescifir.html#a9bc295a9231111f93e0779a42d1d1828">More...</a><br /></td></tr>
 <tr class="separator:a9bc295a9231111f93e0779a42d1d1828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92bc66df8690c20f8133e3d83be2ba13"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescifir.html#a92bc66df8690c20f8133e3d83be2ba13">scifir::to_string</a> (const size_2d&lt; float &gt; &amp;x)</td></tr>
+<tr class="memdesc:a92bc66df8690c20f8133e3d83be2ba13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of <a class="el" href="classscifir_1_1size__2d_3_01float_01_4.html" title="Specialization class of size_2d&lt;T&gt; that allows to store and calculate size in 2D, with width and heig...">size_2d&lt;float&gt;</a>.  <a href="namespacescifir.html#a92bc66df8690c20f8133e3d83be2ba13">More...</a><br /></td></tr>
 <tr class="separator:a92bc66df8690c20f8133e3d83be2ba13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a10f105320129304f56fa8af39dec47"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a0a10f105320129304f56fa8af39dec47"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#a0a10f105320129304f56fa8af39dec47">operator==</a> (const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x, const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;y)</td></tr>
+<tr class="memdesc:a0a10f105320129304f56fa8af39dec47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the width and height of x and y are both equal.  <a href="size__2d_8hpp.html#a0a10f105320129304f56fa8af39dec47">More...</a><br /></td></tr>
 <tr class="separator:a0a10f105320129304f56fa8af39dec47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0ec7709aa7ed2582ab47068d5807803"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:af0ec7709aa7ed2582ab47068d5807803"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#af0ec7709aa7ed2582ab47068d5807803">operator!=</a> (const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x, const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;y)</td></tr>
+<tr class="memdesc:af0ec7709aa7ed2582ab47068d5807803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the width and height of x and y are any of them different.  <a href="size__2d_8hpp.html#af0ec7709aa7ed2582ab47068d5807803">More...</a><br /></td></tr>
 <tr class="separator:af0ec7709aa7ed2582ab47068d5807803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7881440280930e13675efa25b11f4088"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7881440280930e13675efa25b11f4088"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#a7881440280930e13675efa25b11f4088">operator==</a> (const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x, const string &amp;init_size_2d)</td></tr>
+<tr class="memdesc:a7881440280930e13675efa25b11f4088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares size_2d&lt;T&gt; x with the size_2d&lt;T&gt; initialized with the initialization string of size_2d&lt;T&gt; init_size_2d, returns true if they are equal.  <a href="size__2d_8hpp.html#a7881440280930e13675efa25b11f4088">More...</a><br /></td></tr>
 <tr class="separator:a7881440280930e13675efa25b11f4088"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad40676c5e04a997d12973e29ba2a7915"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ad40676c5e04a997d12973e29ba2a7915"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#ad40676c5e04a997d12973e29ba2a7915">operator!=</a> (const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x, const string &amp;init_size_2d)</td></tr>
+<tr class="memdesc:ad40676c5e04a997d12973e29ba2a7915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares size_2d&lt;T&gt; x with the size_2d&lt;T&gt; initialized with the initialization string of size_2d&lt;T&gt; init_size_2d, returns true if they are different.  <a href="size__2d_8hpp.html#ad40676c5e04a997d12973e29ba2a7915">More...</a><br /></td></tr>
 <tr class="separator:ad40676c5e04a997d12973e29ba2a7915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8faa6702225fcee39f9ed7560e2073a9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a8faa6702225fcee39f9ed7560e2073a9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#a8faa6702225fcee39f9ed7560e2073a9">operator==</a> (const string &amp;init_size_2d, const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a8faa6702225fcee39f9ed7560e2073a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares size_2d&lt;T&gt; x with the size_2d&lt;T&gt; initialized with the initialization string of size_2d&lt;T&gt; init_size_2d, returns true if they are equal.  <a href="size__2d_8hpp.html#a8faa6702225fcee39f9ed7560e2073a9">More...</a><br /></td></tr>
 <tr class="separator:a8faa6702225fcee39f9ed7560e2073a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f509e1f8023909fd0b009a076a734c9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a6f509e1f8023909fd0b009a076a734c9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#a6f509e1f8023909fd0b009a076a734c9">operator!=</a> (const string &amp;init_size_2d, const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a6f509e1f8023909fd0b009a076a734c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares size_2d&lt;T&gt; x with the size_2d&lt;T&gt; initialized with the initialization string of size_2d&lt;T&gt; init_size_2d, returns true if they are different.  <a href="size__2d_8hpp.html#a6f509e1f8023909fd0b009a076a734c9">More...</a><br /></td></tr>
 <tr class="separator:a6f509e1f8023909fd0b009a076a734c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a419ee8bf5200073127688196e5c0f1ee"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a419ee8bf5200073127688196e5c0f1ee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#a419ee8bf5200073127688196e5c0f1ee">operator+=</a> (string &amp;x, const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;y)</td></tr>
+<tr class="memdesc:a419ee8bf5200073127688196e5c0f1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the string x with the string representation of size_2d&lt;T&gt; y.  <a href="size__2d_8hpp.html#a419ee8bf5200073127688196e5c0f1ee">More...</a><br /></td></tr>
 <tr class="separator:a419ee8bf5200073127688196e5c0f1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54b72afd354e9c8ca57759ee7e415db4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a54b72afd354e9c8ca57759ee7e415db4"><td class="memTemplItemLeft" align="right" valign="top">string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#a54b72afd354e9c8ca57759ee7e415db4">operator+</a> (const string &amp;x, const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;y)</td></tr>
+<tr class="memdesc:a54b72afd354e9c8ca57759ee7e415db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string as the concatenation of the string x with the string representation of size_2d&lt;T&gt; y.  <a href="size__2d_8hpp.html#a54b72afd354e9c8ca57759ee7e415db4">More...</a><br /></td></tr>
 <tr class="separator:a54b72afd354e9c8ca57759ee7e415db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a376af89485d1f12bf3d820c51feed042"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a376af89485d1f12bf3d820c51feed042"><td class="memTemplItemLeft" align="right" valign="top">string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#a376af89485d1f12bf3d820c51feed042">operator+</a> (const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x, const string &amp;y)</td></tr>
+<tr class="memdesc:a376af89485d1f12bf3d820c51feed042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string as the concatenation of the string x with the string representation of size_2d&lt;T&gt; y.  <a href="size__2d_8hpp.html#a376af89485d1f12bf3d820c51feed042">More...</a><br /></td></tr>
 <tr class="separator:a376af89485d1f12bf3d820c51feed042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ebb54cb80981753de7c9296056b3969"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3ebb54cb80981753de7c9296056b3969"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#a3ebb54cb80981753de7c9296056b3969">operator&lt;&lt;</a> (ostream &amp;os, const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x)</td></tr>
-<tr class="separator:a3ebb54cb80981753de7c9296056b3969"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae284f4318f6d1a8d8c920136757fe8d8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae284f4318f6d1a8d8c920136757fe8d8"><td class="memTemplItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#ae284f4318f6d1a8d8c920136757fe8d8">operator&gt;&gt;</a> (istream &amp;is, <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x)</td></tr>
-<tr class="separator:ae284f4318f6d1a8d8c920136757fe8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74f5b85cbbe69bc4ebb84a679d98d80d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a74f5b85cbbe69bc4ebb84a679d98d80d"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#a74f5b85cbbe69bc4ebb84a679d98d80d">operator&lt;&lt;</a> (ostream &amp;os, const <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a74f5b85cbbe69bc4ebb84a679d98d80d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the string representation of the size_2d&lt;T&gt; x to an output stream os.  <a href="size__2d_8hpp.html#a74f5b85cbbe69bc4ebb84a679d98d80d">More...</a><br /></td></tr>
+<tr class="separator:a74f5b85cbbe69bc4ebb84a679d98d80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeddadc4ba2d10187678684dc5de1c08"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abeddadc4ba2d10187678684dc5de1c08"><td class="memTemplItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="size__2d_8hpp.html#abeddadc4ba2d10187678684dc5de1c08">operator&gt;&gt;</a> (istream &amp;is, <a class="el" href="classscifir_1_1size__2d.html">scifir::size_2d</a>&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:abeddadc4ba2d10187678684dc5de1c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows that an istream initializes by string a size_2d&lt;T&gt; x.  <a href="size__2d_8hpp.html#abeddadc4ba2d10187678684dc5de1c08">More...</a><br /></td></tr>
+<tr class="separator:abeddadc4ba2d10187678684dc5de1c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="af0ec7709aa7ed2582ab47068d5807803"></a>
@@ -215,6 +230,8 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns true if the width and height of x and y are any of them different. </p>
 
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00230">230</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;{</div>
@@ -251,6 +268,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Compares size_2d&lt;T&gt; x with the size_2d&lt;T&gt; initialized with the initialization string of size_2d&lt;T&gt; init_size_2d, returns true if they are different. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00243">243</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;{</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">return</span> !(x == init_size_2d);</div>
@@ -285,6 +304,8 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Compares size_2d&lt;T&gt; x with the size_2d&lt;T&gt; initialized with the initialization string of size_2d&lt;T&gt; init_size_2d, returns true if they are different. </p>
 
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00256">256</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;{</div>
@@ -321,11 +342,13 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a new string as the concatenation of the string x with the string representation of size_2d&lt;T&gt; y. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00274">274</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacescifir.html#a9bc295a9231111f93e0779a42d1d1828">to_string</a>(x) + y;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
-<div class="ttc" id="anamespacescifir_html_a9bc295a9231111f93e0779a42d1d1828"><div class="ttname"><a href="namespacescifir.html#a9bc295a9231111f93e0779a42d1d1828">scifir::to_string</a></div><div class="ttdeci">string to_string(const size_2d&lt; T &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="size__2d_8hpp_source.html#l00208">size_2d.hpp:208</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a9bc295a9231111f93e0779a42d1d1828"><div class="ttname"><a href="namespacescifir.html#a9bc295a9231111f93e0779a42d1d1828">scifir::to_string</a></div><div class="ttdeci">string to_string(const size_2d&lt; T &gt; &amp;x)</div><div class="ttdoc">Returns a string representation of size_2d&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> <a href="size__2d_8hpp_source.html#l00208">size_2d.hpp:208</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -356,6 +379,8 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a new string as the concatenation of the string x with the string representation of size_2d&lt;T&gt; y. </p>
 
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00268">268</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{</div>
@@ -392,6 +417,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Concatenates the string x with the string representation of size_2d&lt;T&gt; y. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00262">262</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    x += <a class="code" href="namespacescifir.html#a9bc295a9231111f93e0779a42d1d1828">to_string</a>(y);</div>
@@ -399,8 +426,8 @@ template&lt;typename T &gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a3ebb54cb80981753de7c9296056b3969"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ebb54cb80981753de7c9296056b3969">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+<a id="a74f5b85cbbe69bc4ebb84a679d98d80d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f5b85cbbe69bc4ebb84a679d98d80d">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +435,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -426,6 +453,8 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Adds the string representation of the size_2d&lt;T&gt; x to an output stream os. </p>
 
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00280">280</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{</div>
@@ -462,9 +491,11 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns true if the width and height of x and y are both equal. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00217">217</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1size__2d.html#a70d41a94d3d859315bf892358511af65">width</a> == y.<a class="code" href="classscifir_1_1size__2d.html#a70d41a94d3d859315bf892358511af65">width</a> and x.<a class="code" href="classscifir_1_1size__2d.html#aa0314d195f593f6fef07e7fc49b3eeaf">height</a> == y.<a class="code" href="classscifir_1_1size__2d.html#aa0314d195f593f6fef07e7fc49b3eeaf">height</a>)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1size__2d.html#aec912969de8773ffe7bf27829bf8d107">width</a> == y.<a class="code" href="classscifir_1_1size__2d.html#aec912969de8773ffe7bf27829bf8d107">width</a> and x.<a class="code" href="classscifir_1_1size__2d.html#a4a5a31a6daf05898220a3c3db8df043b">height</a> == y.<a class="code" href="classscifir_1_1size__2d.html#a4a5a31a6daf05898220a3c3db8df043b">height</a>)</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    {</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
@@ -473,8 +504,8 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
-<div class="ttc" id="aclassscifir_1_1size__2d_html_a70d41a94d3d859315bf892358511af65"><div class="ttname"><a href="classscifir_1_1size__2d.html#a70d41a94d3d859315bf892358511af65">scifir::size_2d::width</a></div><div class="ttdeci">T width</div><div class="ttdef"><b>Definition:</b> <a href="size__2d_8hpp_source.html#l00093">size_2d.hpp:93</a></div></div>
-<div class="ttc" id="aclassscifir_1_1size__2d_html_aa0314d195f593f6fef07e7fc49b3eeaf"><div class="ttname"><a href="classscifir_1_1size__2d.html#aa0314d195f593f6fef07e7fc49b3eeaf">scifir::size_2d::height</a></div><div class="ttdeci">T height</div><div class="ttdef"><b>Definition:</b> <a href="size__2d_8hpp_source.html#l00094">size_2d.hpp:94</a></div></div>
+<div class="ttc" id="aclassscifir_1_1size__2d_html_a4a5a31a6daf05898220a3c3db8df043b"><div class="ttname"><a href="classscifir_1_1size__2d.html#a4a5a31a6daf05898220a3c3db8df043b">scifir::size_2d::height</a></div><div class="ttdeci">T height</div><div class="ttdoc">Height, usually stored as length.</div><div class="ttdef"><b>Definition:</b> <a href="size__2d_8hpp_source.html#l00094">size_2d.hpp:94</a></div></div>
+<div class="ttc" id="aclassscifir_1_1size__2d_html_aec912969de8773ffe7bf27829bf8d107"><div class="ttname"><a href="classscifir_1_1size__2d.html#aec912969de8773ffe7bf27829bf8d107">scifir::size_2d::width</a></div><div class="ttdeci">T width</div><div class="ttdoc">Width, usually stored as length.</div><div class="ttdef"><b>Definition:</b> <a href="size__2d_8hpp_source.html#l00093">size_2d.hpp:93</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -506,12 +537,14 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Compares size_2d&lt;T&gt; x with the size_2d&lt;T&gt; initialized with the initialization string of size_2d&lt;T&gt; init_size_2d, returns true if they are equal. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00236">236</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="classscifir_1_1size__2d.html">scifir::size_2d&lt;T&gt;</a> y(init_size_2d);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">return</span> (x == y);</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
-<div class="ttc" id="aclassscifir_1_1size__2d_html"><div class="ttname"><a href="classscifir_1_1size__2d.html">scifir::size_2d</a></div><div class="ttdef"><b>Definition:</b> <a href="size__2d_8hpp_source.html#l00016">size_2d.hpp:17</a></div></div>
+<div class="ttc" id="aclassscifir_1_1size__2d_html"><div class="ttname"><a href="classscifir_1_1size__2d.html">scifir::size_2d</a></div><div class="ttdoc">Class that allows to store and calculate size in 2D, with width and height. The template parameter T ...</div><div class="ttdef"><b>Definition:</b> <a href="size__2d_8hpp_source.html#l00016">size_2d.hpp:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -543,6 +576,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Compares size_2d&lt;T&gt; x with the size_2d&lt;T&gt; initialized with the initialization string of size_2d&lt;T&gt; init_size_2d, returns true if they are equal. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00249">249</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;{</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <a class="code" href="classscifir_1_1size__2d.html">scifir::size_2d&lt;T&gt;</a> y(init_size_2d);</div>
@@ -551,8 +586,8 @@ template&lt;typename T &gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ae284f4318f6d1a8d8c920136757fe8d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae284f4318f6d1a8d8c920136757fe8d8">&#9670;&nbsp;</a></span>operator&gt;&gt;()</h2>
+<a id="abeddadc4ba2d10187678684dc5de1c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeddadc4ba2d10187678684dc5de1c08">&#9670;&nbsp;</a></span>operator&gt;&gt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -560,7 +595,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">istream&amp; operator&gt;&gt; </td>
+          <td class="memname">istream &amp; operator&gt;&gt; </td>
           <td>(</td>
           <td class="paramtype">istream &amp;&#160;</td>
           <td class="paramname"><em>is</em>, </td>
@@ -578,6 +613,8 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Allows that an istream initializes by string a size_2d&lt;T&gt; x. </p>
 
 <p class="definition">Definition at line <a class="el" href="size__2d_8hpp_source.html#l00286">286</a> of file <a class="el" href="size__2d_8hpp_source.html">size_2d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;{</div>

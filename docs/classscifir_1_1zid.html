@@ -68,6 +68,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -77,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Class that allows to store information about a zone, including the astronomical object inside which the zone is. <b>Initialization string</b> example: "(P)universe:milky-way:solar-system:earth chile:region-metropolitana:santiago:providencia".  
+<p>Class that allows to store information about a zone, including the astronomical object inside which the zone is. <b>Initialization string</b> example: "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia".  
  <a href="classscifir_1_1zid.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="zid_8hpp_source.html">zid.hpp</a>&gt;</code></p>
@@ -91,6 +92,16 @@ Collaboration diagram for scifir::zid:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aede3937fecc379a6239ec98d9e99ff93"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">type</a> : int8_t { <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">NONE</a>
+, <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">COUNTRY</a>
+, <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">REGION</a>
+, <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">ZONE</a>
+ }</td></tr>
+<tr class="memdesc:aede3937fecc379a6239ec98d9e99ff93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of zone.  <a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">More...</a><br /></td></tr>
+<tr class="separator:aede3937fecc379a6239ec98d9e99ff93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a952698b9b559fca982259db218a4ca14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#a952698b9b559fca982259db218a4ca14">zid</a> ()</td></tr>
@@ -102,6 +113,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acac3780244a53ee2233e952fe534d663"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#acac3780244a53ee2233e952fe534d663">zid</a> (<a class="el" href="classscifir_1_1zid.html">zid</a> &amp;&amp;x)</td></tr>
 <tr class="memdesc:acac3780244a53ee2233e952fe534d663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor. The zid is initialized moving the member-variables of the zid x.  <a href="classscifir_1_1zid.html#acac3780244a53ee2233e952fe534d663">More...</a><br /></td></tr>
 <tr class="separator:acac3780244a53ee2233e952fe534d663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae520328fe0ce38f3ca072b90c4a87148"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#ae520328fe0ce38f3ca072b90c4a87148">zid</a> (const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;new_aid, const <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a> &amp;new_zid_type, const string &amp;new_country)</td></tr>
+<tr class="memdesc:ae520328fe0ce38f3ca072b90c4a87148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. It initializes a country as the entire zone of zid.  <a href="classscifir_1_1zid.html#ae520328fe0ce38f3ca072b90c4a87148">More...</a><br /></td></tr>
+<tr class="separator:ae520328fe0ce38f3ca072b90c4a87148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a487b84842ca920648db3a81874e44844"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#a487b84842ca920648db3a81874e44844">zid</a> (const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;new_aid, const string &amp;new_country, const vector&lt; string &gt; &amp;new_regions)</td></tr>
+<tr class="memdesc:a487b84842ca920648db3a81874e44844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. It initializes a region as the entire zone of zid, which is the last region specified, the one inside the other regions given if there's more than one region initialized.  <a href="classscifir_1_1zid.html#a487b84842ca920648db3a81874e44844">More...</a><br /></td></tr>
+<tr class="separator:a487b84842ca920648db3a81874e44844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab53d79b1d08b5253dab75cd978148ffd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#ab53d79b1d08b5253dab75cd978148ffd">zid</a> (const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;new_aid, const string &amp;new_country, const vector&lt; string &gt; &amp;new_regions, const string &amp;new_zone)</td></tr>
 <tr class="memdesc:ab53d79b1d08b5253dab75cd978148ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. The aid is new_aid, the country is new_country, the regions are new_regions and zone is new_zone.  <a href="classscifir_1_1zid.html#ab53d79b1d08b5253dab75cd978148ffd">More...</a><br /></td></tr>
 <tr class="separator:ab53d79b1d08b5253dab75cd978148ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,8 +162,11 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:af913eb84d4643694714120786f7fd0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The country where the zone is. In extraterrestrial planets, it's considered a country any division of territory ruled with their own laws. The predefined value <b>no-country</b> means that the zone is not inside a country. The predefined value <b>unknown-country</b> means that it's not known the country where the zone is, but that it's known that it's a country.  <a href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">More...</a><br /></td></tr>
 <tr class="separator:af913eb84d4643694714120786f7fd0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4b9f266b2222fc7dd186de8a08332c3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a></td></tr>
-<tr class="memdesc:ad4b9f266b2222fc7dd186de8a08332c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the zone.  <a href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">More...</a><br /></td></tr>
+<tr class="memdesc:ad4b9f266b2222fc7dd186de8a08332c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the zone. Personal zones with a personal name are allowed, it's not necessary that the zone is registered by a country or another organization.  <a href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">More...</a><br /></td></tr>
 <tr class="separator:ad4b9f266b2222fc7dd186de8a08332c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0afc38577ecf81ad74164818d2c6b772"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a></td></tr>
+<tr class="memdesc:a0afc38577ecf81ad74164818d2c6b772"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of zone. It can be any value of the enum <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93" title="Type of zone.">zid::type</a>. The possible values are COUNTRY, REGION and ZONE. A zone can be any surface inside an astronomical object, of any shape, and it's not necessary to be a zone registered by a country or organization. A personal zone with a personal name is allowed.  <a href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">More...</a><br /></td></tr>
+<tr class="separator:a0afc38577ecf81ad74164818d2c6b772"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -155,12 +175,46 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a2301819b28c1c3fc954caa4461b09948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class that allows to store information about a zone, including the astronomical object inside which the zone is. <b>Initialization string</b> example: "(P)universe:milky-way:solar-system:earth chile:region-metropolitana:santiago:providencia". </p>
+<div class="textblock"><p>Class that allows to store information about a zone, including the astronomical object inside which the zone is. <b>Initialization string</b> example: "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia". </p>
 
 <p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00013">13</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="aede3937fecc379a6239ec98d9e99ff93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aede3937fecc379a6239ec98d9e99ff93">&#9670;&nbsp;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">scifir::zid::type</a> : int8_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type of zone. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224"></a>NONE&#160;</td><td class="fielddoc"><p>No zone. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc"></a>COUNTRY&#160;</td><td class="fielddoc"><p>A country. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67"></a>REGION&#160;</td><td class="fielddoc"><p>A region. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b"></a>ZONE&#160;</td><td class="fielddoc"><p>A zone. A zone is any surface inside an astronomical object, of any shape. It's not necessary to be a zone registered by a country or organization, personal zones are allowed. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00016">16</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;: int8_t {<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">NONE</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">COUNTRY</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">REGION</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">ZONE</a>};</div>
+<div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">scifir::zid::REGION</a></div><div class="ttdeci">@ REGION</div><div class="ttdoc">A region.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">scifir::zid::ZONE</a></div><div class="ttdeci">@ ZONE</div><div class="ttdoc">A zone. A zone is any surface inside an astronomical object, of any shape. It's not necessary to be a...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">scifir::zid::COUNTRY</a></div><div class="ttdeci">@ COUNTRY</div><div class="ttdoc">A country.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">scifir::zid::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">No zone.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a952698b9b559fca982259db218a4ca14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a952698b9b559fca982259db218a4ca14">&#9670;&nbsp;</a></span>zid() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a952698b9b559fca982259db218a4ca14">&#9670;&nbsp;</a></span>zid() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,17 +231,18 @@ Private Member Functions</h2></td></tr>
 <p>Default constructor. There's no data about any zone, the aid member-variable is also empty. </p>
 
 <p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00012">12</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;             : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>()</div>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;             : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(),<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>(<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">zid::NONE</a>)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {}</div>
-<div class="ttc" id="aclassscifir_1_1zid_html_a8640d975f65cda5aeb22413cc16b0683"><div class="ttname"><a href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">scifir::zid::aid</a></div><div class="ttdeci">scifir::aid aid</div><div class="ttdoc">The aid of the astronomical object where the zone is.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00033">zid.hpp:33</a></div></div>
-<div class="ttc" id="aclassscifir_1_1zid_html_abbc005ce6c42fee41d748760ad749a04"><div class="ttname"><a href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">scifir::zid::regions</a></div><div class="ttdeci">vector&lt; string &gt; regions</div><div class="ttdoc">The different administrative regions where the zone is. There can be any number of administrative reg...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00034">zid.hpp:34</a></div></div>
-<div class="ttc" id="aclassscifir_1_1zid_html_ad4b9f266b2222fc7dd186de8a08332c3"><div class="ttname"><a href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">scifir::zid::zone</a></div><div class="ttdeci">string zone</div><div class="ttdoc">The name of the zone.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00036">zid.hpp:36</a></div></div>
-<div class="ttc" id="aclassscifir_1_1zid_html_af913eb84d4643694714120786f7fd0a0"><div class="ttname"><a href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">scifir::zid::country</a></div><div class="ttdeci">string country</div><div class="ttdoc">The country where the zone is. In extraterrestrial planets, it's considered a country any division of...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00035">zid.hpp:35</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_a0afc38577ecf81ad74164818d2c6b772"><div class="ttname"><a href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">scifir::zid::zone_type</a></div><div class="ttdeci">zid::type zone_type</div><div class="ttdoc">The type of zone. It can be any value of the enum zid::type. The possible values are COUNTRY,...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00041">zid.hpp:41</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_a8640d975f65cda5aeb22413cc16b0683"><div class="ttname"><a href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">scifir::zid::aid</a></div><div class="ttdeci">scifir::aid aid</div><div class="ttdoc">The aid of the astronomical object where the zone is.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00037">zid.hpp:37</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_abbc005ce6c42fee41d748760ad749a04"><div class="ttname"><a href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">scifir::zid::regions</a></div><div class="ttdeci">vector&lt; string &gt; regions</div><div class="ttdoc">The different administrative regions where the zone is. There can be any number of administrative reg...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00038">zid.hpp:38</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_ad4b9f266b2222fc7dd186de8a08332c3"><div class="ttname"><a href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">scifir::zid::zone</a></div><div class="ttdeci">string zone</div><div class="ttdoc">The name of the zone. Personal zones with a personal name are allowed, it's not necessary that the zo...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00040">zid.hpp:40</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_af913eb84d4643694714120786f7fd0a0"><div class="ttname"><a href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">scifir::zid::country</a></div><div class="ttdeci">string country</div><div class="ttdoc">The country where the zone is. In extraterrestrial planets, it's considered a country any division of...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00039">zid.hpp:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a6dcd21c703f3b42a8fac0466bddc5035"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dcd21c703f3b42a8fac0466bddc5035">&#9670;&nbsp;</a></span>zid() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dcd21c703f3b42a8fac0466bddc5035">&#9670;&nbsp;</a></span>zid() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,13 +260,13 @@ Private Member Functions</h2></td></tr>
 <p>Copy constructor. The zid is initialized copying the member-variables of the zid x. </p>
 
 <p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00015">15</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                         : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(x.aid),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(x.regions),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(x.country),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(x.zone)</div>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                         : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(x.aid),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(x.regions),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(x.country),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(x.zone),<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>(x.zone_type)</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="acac3780244a53ee2233e952fe534d663"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acac3780244a53ee2233e952fe534d663">&#9670;&nbsp;</a></span>zid() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acac3780244a53ee2233e952fe534d663">&#9670;&nbsp;</a></span>zid() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,13 +284,116 @@ Private Member Functions</h2></td></tr>
 <p>Move constructor. The zid is initialized moving the member-variables of the zid x. </p>
 
 <p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00018">18</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(std::move(x.aid)),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(std::move(x.regions)),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(std::move(x.country)),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(std::move(x.zone))</div>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(std::move(x.aid)),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(std::move(x.regions)),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(std::move(x.country)),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(std::move(x.zone)),<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>(std::move(x.zone_type))</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ae520328fe0ce38f3ca072b90c4a87148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae520328fe0ce38f3ca072b90c4a87148">&#9670;&nbsp;</a></span>zid() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">zid::zid </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_aid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_zid_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>new_country</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. It initializes a country as the entire zone of zid. </p>
+
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00021">21</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                                                                           : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(),<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>(<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">zid::NONE</a>)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (new_zid_type == <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">zid::COUNTRY</a>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> = new_aid;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">zid::COUNTRY</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a487b84842ca920648db3a81874e44844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a487b84842ca920648db3a81874e44844">&#9670;&nbsp;</a></span>zid() <span class="overload">[5/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">zid::zid </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_aid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>new_country</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vector&lt; string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>new_regions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. It initializes a region as the entire zone of zid, which is the last region specified, the one inside the other regions given if there's more than one region initialized. </p>
+
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00031">31</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                                                                 : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(new_aid),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(new_country),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(new_regions),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(),<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>(<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab53d79b1d08b5253dab75cd978148ffd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab53d79b1d08b5253dab75cd978148ffd">&#9670;&nbsp;</a></span>zid() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53d79b1d08b5253dab75cd978148ffd">&#9670;&nbsp;</a></span>zid() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,14 +440,14 @@ Private Member Functions</h2></td></tr>
 
 <p>Constructor. The aid is new_aid, the country is new_country, the regions are new_regions and zone is new_zone. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00021">21</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                                                                                                        : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(new_aid),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(new_country),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(new_regions),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(new_zone)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {}</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00034">34</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                                                                                        : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(new_aid),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(new_country),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(new_regions),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(new_zone),<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>(<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a34d6ab9691afec6a54498811a357da38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34d6ab9691afec6a54498811a357da38">&#9670;&nbsp;</a></span>zid() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a34d6ab9691afec6a54498811a357da38">&#9670;&nbsp;</a></span>zid() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,33 +482,45 @@ Private Member Functions</h2></td></tr>
 
 <p>Constructor. The aid is new_aid, init_zid initializes the other member-variables. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00024">24</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                            : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(new_aid),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>()</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (init_zid != <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            vector&lt;string&gt; values;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            boost::split(values,init_zid,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = values[0];</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">if</span> (values.size() &gt; 2)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordtype">int</span> total_for_values = int(values.size()) - 1;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (values.size() &gt;= 2)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00037">37</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                            : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(new_aid),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(),<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>(<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">zid::NONE</a>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> (init_zid != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            vector&lt;string&gt; values;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            boost::split(values,init_zid,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (values[0].front() == <span class="charliteral">&#39;(&#39;</span> and isalpha(values[0][1]))</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a>(values[0].substr(1,1));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">if</span> (values[0][3] != <span class="charliteral">&#39; &#39;</span>)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = values[0].substr(3);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = values[0].substr(4);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">if</span> (values.size() &gt; 2)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <span class="keywordtype">int</span> total_for_values = int(values.size()) - 1;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">if</span> (values.size() &gt;= 2)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="ttc" id="anamespacescifir_html_a7ec42f20dc4534b6c166a5034631a116"><div class="ttname"><a href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">scifir::create_zone_type</a></div><div class="ttdeci">zid::type create_zone_type(const string &amp;zone_type_abbreviation)</div><div class="ttdoc">Creates an instance of a zid::type with the given string, which is the reverse as the to_string() fun...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00239">zid.cpp:239</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a3acfa20f58731b3b8bbc1a234ad9d16e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3acfa20f58731b3b8bbc1a234ad9d16e">&#9670;&nbsp;</a></span>zid() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3acfa20f58731b3b8bbc1a234ad9d16e">&#9670;&nbsp;</a></span>zid() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -375,12 +545,12 @@ Private Member Functions</h2></td></tr>
 
 <p>Constructor. Initializes all the member-variables with init_zid_full, which is a union is init_aid and init_zid. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00046">46</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                        : <a class="code" href="classscifir_1_1zid.html#a952698b9b559fca982259db218a4ca14">zid</a>()</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a2301819b28c1c3fc954caa4461b09948">initialize_from_string</a>(init_zid_full);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="ttc" id="aclassscifir_1_1zid_html_a2301819b28c1c3fc954caa4461b09948"><div class="ttname"><a href="classscifir_1_1zid.html#a2301819b28c1c3fc954caa4461b09948">scifir::zid::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(const string &amp;init_zid_full)</div><div class="ttdoc">Internal function. It's used by the string constructor and the string assignment of zid to initialize...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00123">zid.cpp:123</a></div></div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00070">70</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                        : <a class="code" href="classscifir_1_1zid.html#a952698b9b559fca982259db218a4ca14">zid</a>()</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a2301819b28c1c3fc954caa4461b09948">initialize_from_string</a>(init_zid_full);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="ttc" id="aclassscifir_1_1zid_html_a2301819b28c1c3fc954caa4461b09948"><div class="ttname"><a href="classscifir_1_1zid.html#a2301819b28c1c3fc954caa4461b09948">scifir::zid::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(const string &amp;init_zid_full)</div><div class="ttdoc">Internal function. It's used by the string constructor and the string assignment of zid to initialize...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00149">zid.cpp:149</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_a952698b9b559fca982259db218a4ca14"><div class="ttname"><a href="classscifir_1_1zid.html#a952698b9b559fca982259db218a4ca14">scifir::zid::zid</a></div><div class="ttdeci">zid()</div><div class="ttdoc">Default constructor. There's no data about any zone, the aid member-variable is also empty.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00012">zid.cpp:12</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -403,24 +573,24 @@ Private Member Functions</h2></td></tr>
 
 <p>Returns a string representation of zid, including the string representation of his aid. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00085">85</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            ostringstream out;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            out &lt;&lt; <a class="code" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string</a>(<a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>) &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x_region : <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                out &lt;&lt; x_region &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            out &lt;&lt; <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">return</span> out.str();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00111">111</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            ostringstream out;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            out &lt;&lt; <a class="code" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string</a>(<a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>) &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string</a>(<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>) &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x_region : <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                out &lt;&lt; x_region &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            out &lt;&lt; <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">return</span> out.str();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
 <div class="ttc" id="anamespacescifir_html_a421182d5f93abcbbaeadc7c14112bdd5"><div class="ttname"><a href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">scifir::to_string</a></div><div class="ttdeci">string to_string(const coordinates_1d&lt; float &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__1d_8cpp_source.html#l00008">coordinates_1d.cpp:8</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -442,10 +612,10 @@ Private Member Functions</h2></td></tr>
 
 <p>Returns true if the value of country is the predefined value 'no-country'. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00075">75</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == <span class="stringliteral">&quot;no-country&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00101">101</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == <span class="stringliteral">&quot;no-country&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -466,10 +636,10 @@ Private Member Functions</h2></td></tr>
 
 <p>Returns true if the value of country is the predefined value 'unknown-country'. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00080">80</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == <span class="stringliteral">&quot;unknown-country&quot;</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00106">106</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == <span class="stringliteral">&quot;unknown-country&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -499,53 +669,74 @@ Private Member Functions</h2></td></tr>
 
 <p><b>Internal function</b>. It's used by the string constructor and the string assignment of zid to initialize the member-variables using the initialization string init_zid_full. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00123">123</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (init_zid_full != <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordtype">int</span> number_whitespaces = std::count(init_zid_full.begin(),init_zid_full.end(),<span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            std::size_t last_whitespace = init_zid_full.find_last_of(<span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> (number_whitespaces == 2 or number_whitespaces == 1)</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordtype">string</span> init_aid = init_zid_full.substr(0,last_whitespace);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordtype">string</span> init_zid = init_zid_full.substr(last_whitespace + 1);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> = <a class="code" href="classscifir_1_1aid.html">scifir::aid</a>(init_aid);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                vector&lt;string&gt; values;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                boost::split(values,init_zid,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = values[0];</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">if</span> (values.size() &gt; 2)</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    <span class="keywordtype">int</span> total_for_values = int(values.size()) - 1;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">if</span> (values.size() &gt;= 2)</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                    <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (number_whitespaces == 0)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                vector&lt;string&gt; values;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                boost::split(values,init_zid_full,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = values[0];</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">if</span> (values.size() &gt; 2)</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    <span class="keywordtype">int</span> total_for_values = int(values.size()) - 1;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                        <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordflow">if</span> (values.size() &gt;= 2)</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00149">149</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">if</span> (init_zid_full != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">if</span> (!(init_zid_full[1] == <span class="charliteral">&#39;C&#39;</span> or init_zid_full[1] == <span class="charliteral">&#39;R&#39;</span> or init_zid_full[1] == <span class="charliteral">&#39;Z&#39;</span>))</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                std::size_t last_whitespace = init_zid_full.find(<span class="stringliteral">&quot; (&quot;</span>);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keywordtype">string</span> init_aid = init_zid_full.substr(0,last_whitespace);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="keywordtype">string</span> init_zid = init_zid_full.substr(last_whitespace + 1);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> = <a class="code" href="classscifir_1_1aid.html">scifir::aid</a>(init_aid);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                vector&lt;string&gt; values;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                boost::split(values,init_zid,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">if</span> (values[0].front() == <span class="charliteral">&#39;(&#39;</span> and isalpha(values[0][1]))</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    <a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a>(values[0].substr(1,1));</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    <span class="keywordflow">if</span> (values[0][3] != <span class="charliteral">&#39; &#39;</span>)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = values[0].substr(3);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                        <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = values[0].substr(4);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <span class="keywordflow">if</span> (values.size() &gt; 2)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                        <span class="keywordtype">int</span> total_for_values = int(values.size()) - 1;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                        {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                            <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                        }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    <span class="keywordflow">if</span> (values.size() &gt;= 2)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                vector&lt;string&gt; values;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                boost::split(values,init_zid_full,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordflow">if</span> (values[0].front() == <span class="charliteral">&#39;(&#39;</span> and isalpha(values[0][1]))</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    <a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a>(values[0].substr(1,1));</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <span class="keywordflow">if</span> (values[0][3] != <span class="charliteral">&#39; &#39;</span>)</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                        <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = values[0].substr(3);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                        <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = values[0].substr(4);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    <span class="keywordflow">if</span> (values.size() &gt; 2)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        <span class="keywordtype">int</span> total_for_values = int(values.size()) - 1;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                            <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    <span class="keywordflow">if</span> (values.size() &gt;= 2)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
 <div class="ttc" id="aclassscifir_1_1aid_html"><div class="ttname"><a href="classscifir_1_1aid.html">scifir::aid</a></div><div class="ttdoc">Class that stores astronomical ids, not as an integer but with an string as identifier....</div><div class="ttdef"><b>Definition:</b> <a href="aid_8hpp_source.html#l00013">aid.hpp:14</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -568,11 +759,11 @@ Private Member Functions</h2></td></tr>
 
 <p>Assignment. Initializes all the member-variables with init_zid_full, which is a union is init_aid and init_zid. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00069">69</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a2301819b28c1c3fc954caa4461b09948">initialize_from_string</a>(init_zid_full);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00095">95</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a2301819b28c1c3fc954caa4461b09948">initialize_from_string</a>(init_zid_full);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -594,14 +785,15 @@ Private Member Functions</h2></td></tr>
 
 <p>Copy assigment. The member-variables are copied from the zid x. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00051">51</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> = x.<a class="code" href="classscifir_1_1aid.html#addb23e45add767edaa890bc1e2cfeb44">aid</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a> = x.regions;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = x.country;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = x.zone;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00075">75</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> = x.<a class="code" href="classscifir_1_1aid.html#addb23e45add767edaa890bc1e2cfeb44">aid</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a> = x.regions;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = x.country;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = x.zone;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = x.zone_type;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
 <div class="ttc" id="aclassscifir_1_1aid_html_addb23e45add767edaa890bc1e2cfeb44"><div class="ttname"><a href="classscifir_1_1aid.html#addb23e45add767edaa890bc1e2cfeb44">scifir::aid::aid</a></div><div class="ttdeci">aid()</div><div class="ttdoc">Default constructor. The astronomical type is NONE, the other member-variables are empty strings.</div><div class="ttdef"><b>Definition:</b> <a href="aid_8cpp_source.html#l00013">aid.cpp:13</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -624,14 +816,15 @@ Private Member Functions</h2></td></tr>
 
 <p>Move assigment. The member-variables are moved from the zid x. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00060">60</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> = std::move(x.aid);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a> = std::move(x.regions);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = std::move(x.country);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = std::move(x.zone);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00085">85</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> = std::move(x.aid);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a> = std::move(x.regions);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = std::move(x.country);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = std::move(x.zone);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = std::move(x.zone_type);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -652,24 +845,24 @@ Private Member Functions</h2></td></tr>
 
 <p>Returns a string representation of zid, without the string representation of his aid. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00104">104</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            ostringstream out;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            out &lt;&lt; <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x_region : <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                out &lt;&lt; x_region &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            out &lt;&lt; <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> out.str();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00130">130</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            ostringstream out;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; <a class="code" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string</a>(<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>) &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x_region : <a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                out &lt;&lt; x_region &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            out &lt;&lt; <a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keywordflow">return</span> out.str();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -688,7 +881,7 @@ Private Member Functions</h2></td></tr>
 
 <p>The aid of the astronomical object where the zone is. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00033">33</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00037">37</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
 
 </div>
 </div>
@@ -706,7 +899,7 @@ Private Member Functions</h2></td></tr>
 
 <p>The country where the zone is. In extraterrestrial planets, it's considered a country any division of territory ruled with their own laws. The predefined value <b>no-country</b> means that the zone is not inside a country. The predefined value <b>unknown-country</b> means that it's not known the country where the zone is, but that it's known that it's a country. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00035">35</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00039">39</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
 
 </div>
 </div>
@@ -724,7 +917,7 @@ Private Member Functions</h2></td></tr>
 
 <p>The different administrative regions where the zone is. There can be any number of administrative regions, each inside the other. There can't be regions that aren't inside another region here. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00034">34</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00038">38</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
 
 </div>
 </div>
@@ -740,9 +933,27 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The name of the zone. </p>
+<p>The name of the zone. Personal zones with a personal name are allowed, it's not necessary that the zone is registered by a country or another organization. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00036">36</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00040">40</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0afc38577ecf81ad74164818d2c6b772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0afc38577ecf81ad74164818d2c6b772">&#9670;&nbsp;</a></span>zone_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string zid::zone_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type of zone. It can be any value of the enum <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93" title="Type of zone.">zid::type</a>. The possible values are COUNTRY, REGION and ZONE. A zone can be any surface inside an astronomical object, of any shape, and it's not necessary to be a zone registered by a country or organization. A personal zone with a personal name is allowed. </p>
+
+<p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00041">41</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
 
 </div>
 </div>
