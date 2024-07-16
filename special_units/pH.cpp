@@ -111,29 +111,29 @@ namespace scifir
 		normalize_value();
 	}
 
-	pH& pH::operator++()
+	pH& pH::operator ++()
 	{
 		value++;
 		return *this;
 	}
 
-	pH pH::operator++(int)
+	pH pH::operator ++(int)
 	{
 		pH tmp = pH(*this);
-		operator++();
+		operator ++();
 		return tmp;
 	}
 
-	pH& pH::operator--()
+	pH& pH::operator --()
 	{
 		value--;
 		return *this;
 	}
 
-	pH pH::operator--(int)
+	pH pH::operator --(int)
 	{
 		pH tmp = pH(*this);
-		operator--();
+		operator --();
 		return tmp;
 	}
 

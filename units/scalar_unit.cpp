@@ -203,7 +203,7 @@ namespace scifir
 	scalar_unit& scalar_unit::operator ++(int)
 	{
 		scalar_unit& tmp(*this);
-		operator++();
+		operator ++();
 		return tmp;
 	}
 
@@ -216,7 +216,7 @@ namespace scifir
 	scalar_unit& scalar_unit::operator --(int)
 	{
 		scalar_unit& tmp(*this);
-		operator--();
+		operator --();
 		return tmp;
 	}
 
