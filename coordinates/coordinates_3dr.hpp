@@ -3,7 +3,7 @@
 
 #include "../topology/point_3d.hpp"
 #include "../meca_number/angle.hpp"
-#include "../coordinates/coordinates_3d.hpp"
+#include "./coordinates_3d.hpp"
 #include "../units/unit_basic.hpp"
 
 #include <iostream>

@@ -4,7 +4,7 @@
 #include "../util/is_number.hpp"
 #include "../units/scalar_unit.hpp"
 #include "../predefined_units/chemistry_units.hpp"
-#include "../special_units/pH.hpp"
+#include "./pH.hpp"
 
 #include "boost/math/constants/constants.hpp"
 

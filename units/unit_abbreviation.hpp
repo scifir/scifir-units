@@ -1,8 +1,8 @@
 #ifndef SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 
-#include "../units/scalar_unit.hpp"
-#include "../units/unit_basic.hpp"
+#include "./scalar_unit.hpp"
+#include "./unit_basic.hpp"
 
 #include "../predefined_units/electronics_units.hpp"
 #include "../predefined_units/physics_units.hpp"

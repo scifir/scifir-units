@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_TOPOLOGY_POINT_1D_IMPL_HPP_INCLUDED
 #define SCIFIR_UNITS_TOPOLOGY_POINT_1D_IMPL_HPP_INCLUDED
 
-#include "../topology/point_1d.hpp"
+#include "./point_1d.hpp"
 
 #include "../coordinates/coordinates_1d.hpp"
 

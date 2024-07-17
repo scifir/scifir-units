@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED
 #define SCIFIR_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED
 
-#include "../meca_number/angle.hpp"
+#include "./angle.hpp"
 #include "../util/is_number.hpp"
 #include "../units/scalar_unit.hpp"
 #include "../util/types.hpp"
