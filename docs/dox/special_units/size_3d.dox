@@ -1,0 +1,159 @@
+/**  \class scifir::size_3d
+* \brief Class that allows to store and calculate size in 3D, with width, height and depth. The template parameter T allows to select any scalar_unit or numeric type to be the type of the width, the height and the depth (they always have the same type in the same instance). The width, height and depth can be any scalar_unit, usually length, but imaginary spaces with custom dimensions are also allowed. **Initialization string** example: "1 m * 2 m * 4 m".
+
+* \fn size_3d::size_3d()
+* \brief Default constructor. Both width, height and depth are initialized to 0, with the dimensions to the default of their basic unit.
+
+* \fn size_3d::size_3d(const size_3d<T>& x)
+* \brief Copy constructor. The width, height and depth are copied from the size_3d<T> x.
+
+* \fn size_3d::size_3d(size_3d<T>&& x)
+* \brief Move constructor. The width, height and depth are moved from the size_3d<T> x.
+
+* \fn size_3d::size_3d(const T& new_width,const T& new_height,const T& new_depth)
+* \brief Constructor. width is new_width, height is new_height and depth is new_depth.
+
+* \fn size_3d::size_3d(const string& new_width,const string& new_height,const string& new_depth)
+* \brief Constructor. width is new_width, height is new_height and depth is new_depth, they are initialized by string.
+
+* \fn size_3d::size_3d(const string& init_size_3d)
+* \brief Constructor. The member-variables are initialized by the initialization string init_size_3d.
+
+* \fn size_3d<T>& size_3d::operator =(const size_3d<T>& x)
+* \brief Copy assignment. The width, height and depth are copied from the size_3d<T> x.
+
+* \fn size_3d<T>& size_3d::operator =(size_3d<T>&& x)
+* \brief Move assignment. The width, height and depth are moved from the size_3d<T> x.
+
+* \fn size_3d<T>& size_3d::operator =(const string& init_size_3d)
+* \brief Assignment. The member-variables are initialized by the initialization string init_size_3d.
+
+* \fn size_3d<T> size_3d::operator +(const size_3d<T>& x) const
+* \brief Creates a new size_3d<T> by the addition of two size_3d<T> classes. The width, height and depth are the result of the addition of the two width, height or depth of the size_3d<T> classes.
+
+* \fn size_3d<T> size_3d::operator -(const size_3d<T>& x) const
+* \brief Creates a new size_3d<T> by the difference of two size_3d<T> classes. The width, height and depth are the result of the difference of the two width, height or depth of the size_3d<T> classes.
+
+* \fn void size_3d::operator +=(const size_3d<T>& x)
+* \brief Sums the width of size_3d<T> x to the width, sums the height of size_3d<T> x to the height and sums the depth of size_3d<T> x to the depth.
+
+* \fn void size_3d::operator -=(const size_3d<T>& x)
+* \brief Substracts the width of size_3d<T> x to the width, substracts the height of size_3d<T> x to the height and substracts the depth of size_3d<T> x to the depth.
+
+* \fn scalar_unit size_3d::get_volume() const
+* \brief Calculates the volume as the multiplication of the width, height and depth.
+
+* \fn string size_3d::display() const
+* \brief Returns a string representation of size_3d<T>, with his width, height and depth.
+
+* \var T size_3d::width
+* \brief Width, usually stored as length.
+
+* \var T size_3d::height
+* \brief Height, usually stored as length.
+
+* \var T size_3d::depth
+* \brief Depth, usually stored as length.
+
+* \fn void size_3d::initialize_from_string(const string& init_size_3d)
+* \brief **Internal function**. Initializes the member-variables with an initialization string of size_3d<T>.
+
+* \class scifir::size_3d<float>
+* \brief Specialization class of size_3d<T> that allows to store and calculate size in 3D, with width, height and depth as float types. **Initialization string** example: "1 * 2 * 4".
+
+* \fn scifir::size_3d<float>::size_3d()
+* \brief Default constructor. Initializes width, height and depth to 0.
+
+* \fn scifir::size_3d<float>::size_3d(const size_3d<float>& x)
+* \brief Copy constructor. The width, height and depth are copied from the size_3d<float> x.
+
+* \fn scifir::size_3d<float>::size_3d(size_3d<float>&& x)
+* \brief Move constructor. The width, height and depth are moved from the size_3d<float> x.
+
+* \fn scifir::size_3d<float>::size_3d(const float& new_width,const float& new_height,const float& new_depth)
+* \brief Constructor. width is new_width, height is new_height and depth is new_depth.
+
+* \fn scifir::size_3d<float>::size_3d(const string& new_width,const string& new_height,const string& new_depth)
+* \brief Constructor. width is new_width, height is new_height and depth is new_depth, they are initialized by string.
+
+* \fn scifir::size_3d<float>::size_3d(const string& init_size_3d)
+* \brief Constructor. The member-variables are initialized by the initialization string init_size_3d specialized for float.
+
+* \fn size_3d<float>& scifir::size_3d<float>::operator =(const size_3d<float>& x)
+* \brief Copy assignment. The width, height and depth are copied from the size_3d<float> x.
+
+* \fn size_3d<float>& scifir::size_3d<float>::operator =(size_3d<float>&& x)
+* \brief Move assignment. The width, height and depth are moved from the size_3d<float> x.
+
+* \fn size_3d<float>& scifir::size_3d<float>::operator =(const string& init_size_3d)
+* \brief Assignment. The member-variables are initialized by the initialization string init_size_3d specialized for float.
+
+* \fn size_3d<float> scifir::size_3d<float>::operator +(const size_3d<float>& x) const
+* \brief Creates a new size_3d<float> by the addition of two size_3d<float> classes. The width, height and depth are the result of the addition of the two width, height and depth of the size_3d<float> classes, respectively.
+
+* \fn size_3d<float> scifir::size_3d<float>::operator -(const size_3d<float>& x) const
+* \brief Creates a new size_3d<float> by the difference of two size_3d<float> classes. The width, height and depth are the result of the difference of the width, height and depth of the size_3d<float> classes, respectively.
+
+* \fn void scifir::size_3d<float>::operator +=(const size_3d<float>& x)
+* \brief Sums the width of size_3d<float> x to the width, sums the height of size_3d<float> x to the height and sums the depth of size_3d<float> x to the depth.
+
+* \fn void scifir::size_3d<float>::operator -=(const size_3d<float>& x)
+* \brief Substracts the width of size_3d<float> x to the width, substracts the height of size_3d<float> x to the height and substracts the depth of size_3d<float> x to the depth.
+
+* \fn float scifir::size_3d<float>::get_volume() const
+* \brief Calculates the volume as the multiplication of the width, height and depth.
+
+* \fn string scifir::size_3d<float>::display() const
+* \brief Returns a string representation of size_3d<float>, with his width, height and depth.
+
+* \var float scifir::size_3d<float>::width
+* \brief Width, stored as a float. The advantage related to size_3d<float> over size_3d<T> is that it sizes less, the disadvantage is the lack of dimensions.
+
+* \var float scifir::size_3d<float>::height
+* \brief Height, stored as a float. The advantage related to size_3d<float> over size_3d<T> is that it sizes less, the disadvantage is the lack of dimensions.
+
+* \var float scifir::size_3d<float>::depth
+* \brief Depth, stored as a float. The advantage related to size_3d<float> over size_3d<T> is that it sizes less, the disadvantage is the lack of dimensions.
+
+* \fn void scifir::size_3d<float>::initialize_from_string(const string& init_size_3d)
+* \brief **Internal function**. Initializes the member-variables with an initialization string of size_3d<float>.
+
+* \fn string scifir::to_string(const size_3d<T>& x)
+* \brief Returns a string representation of size_3d<T>.
+
+* \fn string scifir::to_string(const size_3d<float>& x)
+* \brief Returns a string representation of size_3d<float>.
+
+* \fn bool operator ==(const scifir::size_3d<T>& x, const scifir::size_3d<T>& y)
+* \brief Returns true if the width, height and depth of x and y are both equal.
+
+* \fn bool operator !=(const scifir::size_3d<T>& x, const scifir::size_3d<T>& y)
+* \brief Returns true if the width, height and depth of x and y are any of them different.
+
+* \fn bool operator ==(const scifir::size_3d<T>& x, const string& init_size_3d)
+* \brief Compares size_3d<T> x with the size_3d<T> initialized with the initialization string of size_3d<T> init_size_3d, returns true if they are equal.
+
+* \fn bool operator !=(const scifir::size_3d<T>& x, const string& init_size_3d)
+* \brief Compares size_3d<T> x with the size_3d<T> initialized with the initialization string of size_3d<T> init_size_3d, returns true if they are different.
+
+* \fn bool operator ==(const string& init_size_3d, const scifir::size_3d<T>& x)
+* \brief Compares size_3d<T> x with the size_3d<T> initialized with the initialization string of size_3d<T> init_size_3d, returns true if they are equal.
+
+* \fn bool operator !=(const string& init_size_3d, const scifir::size_3d<T>& x)
+* \brief Compares size_3d<T> x with the size_3d<T> initialized with the initialization string of size_3d<T> init_size_3d, returns true if they are different.
+
+* \fn void operator +=(string& x, const scifir::size_3d<T>& y)
+* \brief Concatenates the string x with the string representation of size_3d<T> y.
+
+* \fn string operator +(const string& x, const scifir::size_3d<T>& y)
+* \brief Creates a new string as the concatenation of the string x with the string representation of size_3d<T> y.
+
+* \fn string operator +(const scifir::size_3d<T>& x, const string& y)
+* \brief Creates a new string as the concatenation of the string x with the string representation of size_3d<T> y.
+
+* \fn ostream& operator <<(ostream& os, const scifir::size_3d<T>& x)
+* \brief Adds the string representation of the size_3d<T> x to an output stream os.
+
+* \fn istream& operator >>(istream& is, scifir::size_3d<T>& x)
+* \brief Allows that an istream initializes by string a size_3d<T> x.
+*/
