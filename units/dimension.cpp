@@ -401,7 +401,7 @@ namespace scifir
 			case dimension::PARSEC:
 				return "parsec";
 			case dimension::ELECTRON_VOLT:
-				return "electronvolt";
+				return "electron volt";
 			case dimension::DALTON:
 				return "dalton";
 			case dimension::ATOMIC_MASS_UNIT:
@@ -424,6 +424,116 @@ namespace scifir
 				return "pixel";
 			case dimension::MEMO:
 				return "memo";
+		}
+		return "";
+	}
+
+	string dimension::get_plural() const
+	{
+		switch(dimension_type)
+		{
+			case dimension::NONE:
+				return "empty";
+			case dimension::METRE:
+				return "metres";
+			case dimension::DEGREE:
+				return "degrees";
+			case dimension::RADIAN:
+				return "radians";
+			case dimension::STERADIAN:
+				return "steradians";
+			case dimension::SECOND:
+				return "seconds";
+			case dimension::GRAM:
+				return "grams";
+			case dimension::COULOMB:
+				return "coulombs";
+			case dimension::KELVIN:
+				return "kelvins";
+			case dimension::MOLE:
+				return "moles";
+			case dimension::CANDELA:
+				return "candelas";
+			case dimension::BYTE:
+				return "bytes";
+			case dimension::HERTZ:
+				return "hertz";
+			case dimension::NEWTON:
+				return "newtons";
+			case dimension::PASCAL:
+				return "pascals";
+			case dimension::JOULE:
+				return "joules";
+			case dimension::WATT:
+				return "watts";
+			case dimension::AMPERE:
+				return "amperes";
+			case dimension::VOLT:
+				return "volts";
+			case dimension::FARADAY:
+				return "faradays";
+			case dimension::OHM:
+				return "ohms";
+			case dimension::SIEMENS:
+				return "siemens";
+			case dimension::WEBER:
+				return "webers";
+			case dimension::TESLA:
+				return "teslas";
+			case dimension::HENRY:
+				return "henries";
+			case dimension::LUMEN:
+				return "lumens";
+			case dimension::LUX:
+				return "luxes";
+			case dimension::BECQUEREL:
+				return "becquerels";
+			case dimension::GRAY:
+				return "grays";
+			case dimension::SIEVERT:
+				return "sieverts";
+			case dimension::KATAL:
+				return "katals";
+			case dimension::ANGSTROM:
+				return "angstroms";
+			case dimension::LITRE:
+				return "litres";
+			case dimension::MINUTE:
+				return "minutes";
+			case dimension::HOUR:
+				return "hours";
+			case dimension::DAY:
+				return "days";
+			case dimension::LIGHT_YEAR:
+				return "light years";
+			case dimension::ASTRONOMICAL_UNIT:
+				return "astronomical units";
+			case dimension::PARSEC:
+				return "parsecs";
+			case dimension::ELECTRON_VOLT:
+				return "electron volts";
+			case dimension::DALTON:
+				return "daltons";
+			case dimension::ATOMIC_MASS_UNIT:
+				return "atomic mass units";
+			case dimension::BARN:
+				return "barns";
+			case dimension::MOLARITY:
+				return "molarities";
+			case dimension::PARTICLES:
+				return "particles";
+			case dimension::CUSTOM:
+				return "custom-dimension";
+			case dimension::CUSTOM_BASIC:
+				return "custom-basic";
+			case dimension::CUSTOM_FULL_SYMBOL:
+				return "custom-full-symbol";
+			case dimension::MONEY:
+				return "money";
+			case dimension::PIXEL:
+				return "pixels";
+			case dimension::MEMO:
+				return "memos";
 		}
 		return "";
 	}
