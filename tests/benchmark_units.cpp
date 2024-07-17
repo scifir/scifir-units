@@ -3,6 +3,7 @@
 
 #include "catch2/catch_all.hpp"
 #include "../units/scalar_unit.hpp"
+#include "../units/unit_basic.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -11,7 +12,23 @@
 using namespace std;
 using namespace scifir;
 
-TEST_CASE("Benchmark of scalar_unit class","[!benchmark]") {
+TEST_CASE("Benchmark of scalar_unit class") {
+	BENCHMARK("Construction with string of scalar_unit class") {
+		scalar_unit a(20.0f,"m");
+	};
+
+	BENCHMARK("Constructor with vector<dimension> of scalar_unit class") {
+		scalar_unit a(20.0f, { dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) });
+	};
+
+	BENCHMARK("Construction of scalar_unit class with string literal m") {
+		scalar_unit a = 10_m;
+	};
+
+	BENCHMARK("Construction of scalar_unit class with string literal dm") {
+		scalar_unit a = 10_dm;
+	};
+
 	BENCHMARK("Sum of floats") {
 		float a = 1.5f;
 		float b = 2.5f;
