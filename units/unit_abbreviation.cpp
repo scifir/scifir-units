@@ -4,5165 +4,5165 @@ using namespace std;
 
 scifir::frequency operator"" _YHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "YHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _ZHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "ZHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _EHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "EHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _PHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "PHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _THz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "THz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _GHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "GHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _MHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "MHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _kHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "kHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _hHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "hHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _daHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "daHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _Hz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "Hz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _dHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "dHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _cHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "cHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _mHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "mHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _uHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "uHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _nHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "nHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _pHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "pHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _fHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "fHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _aHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "aHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _zHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "zHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _yHz(unsigned long long int x)
 {
-	return scifir::frequency((long double)x, "yHz");
+	return scifir::frequency((long double)x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _YN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "YN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _ZN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "ZN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _EN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "EN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _PN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "PN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _TN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "TN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _GN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "GN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _MN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "MN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _kN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "kN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _hN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "hN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _daN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "daN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _N(unsigned long long int x)
 {
-	return scifir::force((long double)x, "N");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _dN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "dN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _cN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "cN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _mN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "mN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _uN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "uN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _nN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "nN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _pN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "pN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _fN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "fN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _aN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "aN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _zN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "zN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _yN(unsigned long long int x)
 {
-	return scifir::force((long double)x, "yN");
+	return scifir::force((long double)x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _YPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "YPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _ZPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "ZPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _EPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "EPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _PPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "PPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _TPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "TPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _GPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "GPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _MPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "MPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _kPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "kPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _hPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "hPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _daPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "daPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _Pa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "Pa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _dPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "dPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _cPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "cPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _mPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "mPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _uPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "uPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _nPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "nPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _pPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "pPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _fPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "fPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _aPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "aPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _zPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "zPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _yPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, "yPa");
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _YJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "YJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _ZJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "ZJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _EJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "EJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _PJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "PJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _TJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "TJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _GJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "GJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _MJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "MJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _kJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "kJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _hJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "hJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _daJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "daJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _J(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "J");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _dJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "dJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _cJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "cJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _mJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "mJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _uJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "uJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _nJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "nJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _pJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "pJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _fJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "fJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _aJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "aJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _zJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "zJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _yJ(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "yJ");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _YW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "YW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _ZW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "ZW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _EW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "EW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _PW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "PW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _TW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "TW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _GW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "GW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _MW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "MW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _kW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "kW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _hW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "hW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _daW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "daW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _W(unsigned long long int x)
 {
-	return scifir::power((long double)x, "W");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _dW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "dW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _cW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "cW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _mW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "mW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _uW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "uW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _nW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "nW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _pW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "pW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _fW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "fW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _aW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "aW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _zW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "zW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _yW(unsigned long long int x)
 {
-	return scifir::power((long double)x, "yW");
+	return scifir::power((long double)x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _YA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "YA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _ZA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "ZA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _EA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "EA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _PA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "PA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _TA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "TA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _GA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "GA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _MA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "MA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _kA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "kA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _hA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "hA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _daA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "daA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _A(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "A");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _dA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "dA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _cA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "cA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _mA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "mA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _uA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "uA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _nA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "nA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _pA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "pA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _fA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "fA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _aA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "aA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _zA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "zA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _yA(unsigned long long int x)
 {
-	return scifir::electric_current((long double)x, "yA");
+	return scifir::electric_current((long double)x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _YV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "YV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _ZV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "ZV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _EV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "EV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _PV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "PV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _TV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "TV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _GV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "GV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _MV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "MV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _kV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "kV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _hV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "hV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _daV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "daV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _V(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "V");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _dV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "dV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _cV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "cV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _mV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "mV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _uV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "uV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _nV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "nV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _pV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "pV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _fV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "fV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _aV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "aV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _zV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "zV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _yV(unsigned long long int x)
 {
-	return scifir::voltage((long double)x, "yV");
+	return scifir::voltage((long double)x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _YF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "YF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _ZF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "ZF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _EF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "EF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _PF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "PF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _TF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "TF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _GF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "GF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _MF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "MF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _kF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "kF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _hF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "hF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _daF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "daF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _F(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "F");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _dF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "dF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _cF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "cF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _mF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "mF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _uF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "uF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _nF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "nF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _pF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "pF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _fF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "fF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _aF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "aF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _zF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "zF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _yF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, "yF");
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _YOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "YOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _ZOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "ZOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _EOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "EOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _POhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "POhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _TOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "TOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _GOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "GOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _MOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "MOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _kOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "kOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _hOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "hOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _daOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "daOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _Ohm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "Ohm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _dOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "dOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _cOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "cOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _mOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "mOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _uOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "uOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _nOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "nOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _pOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "pOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _fOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "fOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _aOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "aOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _zOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "zOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _yOhm(unsigned long long int x)
 {
-	return scifir::resistance((long double)x, "yOhm");
+	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _YS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "YS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _ZS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "ZS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _ES(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "ES");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _PS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "PS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _TS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "TS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _GS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "GS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _MS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "MS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _kS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "kS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _hS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "hS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _daS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "daS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _S(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "S");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _dS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "dS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _cS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "cS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _mS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "mS");
+	return scifir::electric_conductance((long double)x,{ scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _uS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "uS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _nS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "nS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _pS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "pS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _fS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "fS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _aS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "aS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _zS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "zS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _yS(unsigned long long int x)
 {
-	return scifir::electric_conductance((long double)x, "yS");
+	return scifir::electric_conductance((long double)x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _YWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "YWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _ZWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "ZWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _EWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "EWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _PWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "PWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _TWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "TWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _GWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "GWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _MWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "MWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _kWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "kWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _hWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "hWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _daWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "daWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _Wb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "Wb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _dWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "dWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _cWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "cWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _mWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "mWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _uWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "uWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _nWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "nWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _pWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "pWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _fWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "fWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _aWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "aWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _zWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "zWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _yWb(unsigned long long int x)
 {
-	return scifir::magnetic_flux((long double)x, "yWb");
+	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _YT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "YT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _ZT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "ZT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _ET(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "ET");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _PT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "PT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _TT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "TT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _GT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "GT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 /*scifir::magnetic_strength operator"" _MT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "MT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }*/
 
 scifir::magnetic_strength operator"" _kT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "kT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _hT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "hT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _daT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "daT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _T(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "T");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _dT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "dT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _cT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "cT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _mT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "mT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _uT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "uT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _nT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "nT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _pT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "pT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _fT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "fT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _aT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "aT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _zT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "zT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _yT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, "yT");
+	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _YH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "YH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _ZH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "ZH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _EH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "EH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _PH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "PH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _TH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "TH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _GH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "GH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _MH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "MH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _kH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "kH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _hH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "hH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _daH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "daH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _H(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "H");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _dH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "dH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _cH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "cH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _mH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "mH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _uH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "uH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _nH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "nH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _pH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "pH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _fH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "fH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _aH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "aH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _zH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "zH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _yH(unsigned long long int x)
 {
-	return scifir::inductance((long double)x, "yH");
+	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Ylm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "Ylm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Zlm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "Zlm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Elm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "Elm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Plm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "Plm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Tlm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "Tlm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Glm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "Glm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Mlm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "Mlm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _klm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "klm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _hlm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "hlm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _dalm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "dalm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _lm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "lm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _dlm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "dlm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _clm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "clm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _mlm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "mlm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _ulm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "ulm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _nlm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "nlm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _plm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "plm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _flm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "flm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _alm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "alm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _zlm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "zlm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _ylm(unsigned long long int x)
 {
-	return scifir::luminous_flux((long double)x, "ylm");
+	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Ylx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "Ylx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Zlx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "Zlx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Elx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "Elx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Plx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "Plx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Tlx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "Tlx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Glx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "Glx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Mlx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "Mlx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _klx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "klx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _hlx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "hlx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _dalx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "dalx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _lx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "lx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _dlx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "dlx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _clx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "clx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _mlx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "mlx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _ulx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "ulx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _nlx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "nlx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _plx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "plx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _flx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "flx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _alx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "alx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _zlx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "zlx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _ylx(unsigned long long int x)
 {
-	return scifir::illuminance((long double)x, "ylx");
+	return scifir::illuminance((long double)x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _YBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "YBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _ZBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "ZBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _EBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "EBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _PBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "PBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _TBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "TBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _GBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "GBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _MBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "MBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _kBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "kBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _hBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "hBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _daBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "daBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _Bq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "Bq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _dBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "dBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _cBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "cBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _mBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "mBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _uBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "uBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _nBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "nBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _pBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "pBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _fBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "fBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _aBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "aBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _zBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "zBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _yBq(unsigned long long int x)
 {
-	return scifir::radioactivity((long double)x, "yBq");
+	return scifir::radioactivity((long double)x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _YGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "YGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _ZGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "ZGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _EGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "EGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _PGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "PGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _TGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "TGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _GGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "GGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _MGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "MGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _kGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "kGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _hGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "hGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _daGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "daGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _Gy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "Gy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _dGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "dGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _cGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "cGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _mGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "mGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _uGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "uGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _nGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "nGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _pGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "pGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _fGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "fGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _aGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "aGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _zGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "zGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _yGy(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "yGy");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _YSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "YSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _ZSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "ZSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _ESv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "ESv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _PSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "PSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _TSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "TSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _GSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "GSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _MSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "MSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _kSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "kSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _hSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "hSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _daSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "daSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _Sv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "Sv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _dSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "dSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _cSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "cSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _mSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "mSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _uSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "uSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _nSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "nSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _pSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "pSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _fSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "fSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _aSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "aSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _zSv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "zSv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _ySv(unsigned long long int x)
 {
-	return scifir::ionizing_radiation((long double)x, "ySv");
+	return scifir::ionizing_radiation((long double)x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Ykat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "Ykat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Zkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "Zkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Ekat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "Ekat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Pkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "Pkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Tkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "Tkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Gkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "Gkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Mkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "Mkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _kkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "kkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _hkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "hkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _dakat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "dakat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _kat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "kat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _dkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "dkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _ckat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "ckat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _mkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "mkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _ukat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "ukat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _nkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "nkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _pkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "pkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _fkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "fkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _akat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "akat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _zkat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "zkat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _ykat(unsigned long long int x)
 {
-	return scifir::catalytic_activity((long double)x, "ykat");
+	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _angstrom(unsigned long long int x)
 {
-	return scifir::length((long double)x, "angstrom");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ANGSTROM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::volume operator"" _L(unsigned long long int x)
 {
-	return scifir::volume((long double)x, "L");
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::volume operator"" _mL(unsigned long long int x)
 {
-	return scifir::volume((long double)x, "mL");
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::time_duration operator"" _min(unsigned long long int x)
 {
-	return scifir::time_duration((long double)x, "min");
+	return scifir::time_duration((long double)x, { scifir::dimension(scifir::dimension::MINUTE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::time_duration operator"" _hour(unsigned long long int x)
 {
-	return scifir::time_duration((long double)x, "hour");
+	return scifir::time_duration((long double)x, { scifir::dimension(scifir::dimension::HOUR,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::time_duration operator"" _day(unsigned long long int x)
 {
-	return scifir::time_duration((long double)x, "day");
+	return scifir::time_duration((long double)x, { scifir::dimension(scifir::dimension::DAY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _YAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "YAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _ZAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "ZAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _EAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "EAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _PAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "PAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _TAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "TAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _GAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "GAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _MAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "MAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _kAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "kAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _hAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "hAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _daAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "daAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _AU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "AU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _dAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "dAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _cAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "cAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _mAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "mAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _uAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "uAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _nAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "nAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _pAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "pAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _fAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "fAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _aAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "aAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _zAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "zAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _yAU(unsigned long long int x)
 {
-	return scifir::length((long double)x, "yAU");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Ypc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "Ypc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Zpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "Zpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Epc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "Epc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Ppc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "Ppc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Tpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "Tpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Gpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "Gpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Mpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "Mpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _kpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "kpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _hpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "hpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _dapc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "dapc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _pc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "pc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _dpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "dpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _cpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "cpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _mpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "mpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _upc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "upc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _npc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "npc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _ppc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "ppc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _fpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "fpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _apc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "apc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _zpc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "zpc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _ypc(unsigned long long int x)
 {
-	return scifir::length((long double)x, "ypc");
+	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _YeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "YeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _ZeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "ZeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _EeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "EeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _PeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "PeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _TeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "TeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _GeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "GeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _MeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "MeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _keV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "keV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _heV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "heV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _daeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "daeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _eV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "eV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _deV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "deV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _ceV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "ceV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _meV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "meV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _ueV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "ueV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _neV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "neV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _peV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "peV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _feV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "feV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _aeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "aeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _zeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "zeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _yeV(unsigned long long int x)
 {
-	return scifir::energy((long double)x, "yeV");
+	return scifir::energy((long double)x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::mass operator"" _Da(unsigned long long int x)
 {
-	return scifir::mass((long double)x, "Da");
+	return scifir::mass((long double)x, { scifir::dimension(scifir::dimension::DALTON,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::mass operator"" _amu(unsigned long long int x)
 {
-	return scifir::mass((long double)x, "amu");
+	return scifir::mass((long double)x, { scifir::dimension(scifir::dimension::ATOMIC_MASS_UNIT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Yb(unsigned long long int x)
+scifir::area operator"" _Ybarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "Yb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Zb(unsigned long long int x)
+scifir::area operator"" _Zbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "Zb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Eb(unsigned long long int x)
+scifir::area operator"" _Ebarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "Eb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Pb(unsigned long long int x)
+scifir::area operator"" _Pbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "Pb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Tb(unsigned long long int x)
+scifir::area operator"" _Tbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "Tb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Gb(unsigned long long int x)
+scifir::area operator"" _Gbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "Gb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Mb(unsigned long long int x)
+scifir::area operator"" _Mbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "Mb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _kb(unsigned long long int x)
+scifir::area operator"" _kbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "kb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _hb(unsigned long long int x)
+scifir::area operator"" _hbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "hb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _dab(unsigned long long int x)
+scifir::area operator"" _dabarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "dab");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _b(unsigned long long int x)
+scifir::area operator"" _barn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "b");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _db(unsigned long long int x)
+scifir::area operator"" _dbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "db");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _cb(unsigned long long int x)
+scifir::area operator"" _cbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "cb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _mb(unsigned long long int x)
+scifir::area operator"" _mbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "mb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _ub(unsigned long long int x)
+scifir::area operator"" _ubarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "ub");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _nb(unsigned long long int x)
+scifir::area operator"" _nbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "nb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _pb(unsigned long long int x)
+scifir::area operator"" _pbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "pb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _fb(unsigned long long int x)
+scifir::area operator"" _fbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "fb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _ab(unsigned long long int x)
+scifir::area operator"" _abarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "ab");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _zb(unsigned long long int x)
+scifir::area operator"" _zbarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "zb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _yb(unsigned long long int x)
+scifir::area operator"" _ybarn(unsigned long long int x)
 {
-	return scifir::area((long double)x, "yb");
+	return scifir::area((long double)x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _YM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "YM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _ZM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "ZM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _EM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "EM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _PM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "PM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _TM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "TM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _GM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "GM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _MM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "MM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _kM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "kM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _hM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "hM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _daM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "daM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _M(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "M");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _dM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "dM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _cM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "cM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _mM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "mM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _uM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "uM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _nM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "nM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _pM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "pM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _fM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "fM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _aM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "aM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _zM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "zM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _yM(unsigned long long int x)
 {
-	return scifir::molarity((long double)x, "yM");
+	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::mole operator"" _particles(unsigned long long int x)
 {
-	return scifir::mole((long double)x, "particles");
+	return scifir::mole((long double)x, { scifir::dimension(scifir::dimension::PARTICLES,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::percentage operator"" _ppm(unsigned long long int x)
 {
-	return scifir::percentage((long double)x, "ppm");
+	return scifir::percentage((long double)x, scifir::percentage::PARTS_PER_MILLION);
 }
 
 /*scifir::percentage operator"" _ppb(unsigned long long int x)
 {
-	return scifir::percentage((long double)x, "ppb");
+	return scifir::percentage((long double)x, scifir::percentage::PARTS_PER_BILLION);
 }
 
 scifir::percentage operator"" _ppt(unsigned long long int x)
 {
-	return scifir::percentage((long double)x, "ppt");
+	return scifir::percentage((long double)x, scifir::percentage::PARTS_PER_TRILLION);
 }
 
 scifir::percentage operator"" _ppq(unsigned long long int x)
 {
-	return scifir::percentage((long double)x, "ppq");
+	return scifir::percentage((long double)x, scifir::percentage::PARTS_PER_QUATRILLION);
 }*/
 
 scifir::frequency operator"" _YHz(long double x)
 {
-	return scifir::frequency(x, "YHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _ZHz(long double x)
 {
-	return scifir::frequency(x, "ZHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _EHz(long double x)
 {
-	return scifir::frequency(x, "EHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _PHz(long double x)
 {
-	return scifir::frequency(x, "PHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _THz(long double x)
 {
-	return scifir::frequency(x, "THz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _GHz(long double x)
 {
-	return scifir::frequency(x, "GHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _MHz(long double x)
 {
-	return scifir::frequency(x, "MHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _kHz(long double x)
 {
-	return scifir::frequency(x, "kHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _hHz(long double x)
 {
-	return scifir::frequency(x, "hHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _daHz(long double x)
 {
-	return scifir::frequency(x, "daHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _Hz(long double x)
 {
-	return scifir::frequency(x, "Hz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _dHz(long double x)
 {
-	return scifir::frequency(x, "dHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _cHz(long double x)
 {
-	return scifir::frequency(x, "cHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _mHz(long double x)
 {
-	return scifir::frequency(x, "mHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _uHz(long double x)
 {
-	return scifir::frequency(x, "uHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _nHz(long double x)
 {
-	return scifir::frequency(x, "nHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _pHz(long double x)
 {
-	return scifir::frequency(x, "pHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _fHz(long double x)
 {
-	return scifir::frequency(x, "fHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _aHz(long double x)
 {
-	return scifir::frequency(x, "aHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _zHz(long double x)
 {
-	return scifir::frequency(x, "zHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::frequency operator"" _yHz(long double x)
 {
-	return scifir::frequency(x, "yHz");
+	return scifir::frequency(x, { scifir::dimension(scifir::dimension::HERTZ,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _YN(long double x)
 {
-	return scifir::force(x, "YN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _ZN(long double x)
 {
-	return scifir::force(x, "ZN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _EN(long double x)
 {
-	return scifir::force(x, "EN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _PN(long double x)
 {
-	return scifir::force(x, "PN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _TN(long double x)
 {
-	return scifir::force(x, "TN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _GN(long double x)
 {
-	return scifir::force(x, "GN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _MN(long double x)
 {
-	return scifir::force(x, "MN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _kN(long double x)
 {
-	return scifir::force(x, "kN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _hN(long double x)
 {
-	return scifir::force(x, "hN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _daN(long double x)
 {
-	return scifir::force(x, "daN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _N(long double x)
 {
-	return scifir::force(x, "N");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _dN(long double x)
 {
-	return scifir::force(x, "dN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _cN(long double x)
 {
-	return scifir::force(x, "cN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _mN(long double x)
 {
-	return scifir::force(x, "mN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _uN(long double x)
 {
-	return scifir::force(x, "uN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _nN(long double x)
 {
-	return scifir::force(x, "nN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _pN(long double x)
 {
-	return scifir::force(x, "pN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _fN(long double x)
 {
-	return scifir::force(x, "fN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _aN(long double x)
 {
-	return scifir::force(x, "aN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _zN(long double x)
 {
-	return scifir::force(x, "zN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::force operator"" _yN(long double x)
 {
-	return scifir::force(x, "yN");
+	return scifir::force(x, { scifir::dimension(scifir::dimension::NEWTON,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _YPa(long double x)
 {
-	return scifir::pressure(x, "YPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _ZPa(long double x)
 {
-	return scifir::pressure(x, "ZPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _EPa(long double x)
 {
-	return scifir::pressure(x, "EPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _PPa(long double x)
 {
-	return scifir::pressure(x, "PPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _TPa(long double x)
 {
-	return scifir::pressure(x, "TPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _GPa(long double x)
 {
-	return scifir::pressure(x, "GPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _MPa(long double x)
 {
-	return scifir::pressure(x, "MPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _kPa(long double x)
 {
-	return scifir::pressure(x, "kPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _hPa(long double x)
 {
-	return scifir::pressure(x, "hPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _daPa(long double x)
 {
-	return scifir::pressure(x, "daPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _Pa(long double x)
 {
-	return scifir::pressure(x, "Pa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _dPa(long double x)
 {
-	return scifir::pressure(x, "dPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _cPa(long double x)
 {
-	return scifir::pressure(x, "cPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _mPa(long double x)
 {
-	return scifir::pressure(x, "mPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _uPa(long double x)
 {
-	return scifir::pressure(x, "uPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _nPa(long double x)
 {
-	return scifir::pressure(x, "nPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _pPa(long double x)
 {
-	return scifir::pressure(x, "pPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _fPa(long double x)
 {
-	return scifir::pressure(x, "fPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _aPa(long double x)
 {
-	return scifir::pressure(x, "aPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _zPa(long double x)
 {
-	return scifir::pressure(x, "zPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _yPa(long double x)
 {
-	return scifir::pressure(x, "yPa");
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _YJ(long double x)
 {
-	return scifir::energy(x, "YJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _ZJ(long double x)
 {
-	return scifir::energy(x, "ZJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _EJ(long double x)
 {
-	return scifir::energy(x, "EJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _PJ(long double x)
 {
-	return scifir::energy(x, "PJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _TJ(long double x)
 {
-	return scifir::energy(x, "TJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _GJ(long double x)
 {
-	return scifir::energy(x, "GJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _MJ(long double x)
 {
-	return scifir::energy(x, "MJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _kJ(long double x)
 {
-	return scifir::energy(x, "kJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _hJ(long double x)
 {
-	return scifir::energy(x, "hJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _daJ(long double x)
 {
-	return scifir::energy(x, "daJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _J(long double x)
 {
-	return scifir::energy(x, "J");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _dJ(long double x)
 {
-	return scifir::energy(x, "dJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _cJ(long double x)
 {
-	return scifir::energy(x, "cJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _mJ(long double x)
 {
-	return scifir::energy(x, "mJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _uJ(long double x)
 {
-	return scifir::energy(x, "uJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _nJ(long double x)
 {
-	return scifir::energy(x, "nJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _pJ(long double x)
 {
-	return scifir::energy(x, "pJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _fJ(long double x)
 {
-	return scifir::energy(x, "fJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _aJ(long double x)
 {
-	return scifir::energy(x, "aJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _zJ(long double x)
 {
-	return scifir::energy(x, "zJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _yJ(long double x)
 {
-	return scifir::energy(x, "yJ");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::JOULE,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _YW(long double x)
 {
-	return scifir::power(x, "YW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _ZW(long double x)
 {
-	return scifir::power(x, "ZW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _EW(long double x)
 {
-	return scifir::power(x, "EW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _PW(long double x)
 {
-	return scifir::power(x, "PW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _TW(long double x)
 {
-	return scifir::power(x, "TW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _GW(long double x)
 {
-	return scifir::power(x, "GW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _MW(long double x)
 {
-	return scifir::power(x, "MW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _kW(long double x)
 {
-	return scifir::power(x, "kW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _hW(long double x)
 {
-	return scifir::power(x, "hW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _daW(long double x)
 {
-	return scifir::power(x, "daW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _W(long double x)
 {
-	return scifir::power(x, "W");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _dW(long double x)
 {
-	return scifir::power(x, "dW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _cW(long double x)
 {
-	return scifir::power(x, "cW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _mW(long double x)
 {
-	return scifir::power(x, "mW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _uW(long double x)
 {
-	return scifir::power(x, "uW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _nW(long double x)
 {
-	return scifir::power(x, "nW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _pW(long double x)
 {
-	return scifir::power(x, "pW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _fW(long double x)
 {
-	return scifir::power(x, "fW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _aW(long double x)
 {
-	return scifir::power(x, "aW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _zW(long double x)
 {
-	return scifir::power(x, "zW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::power operator"" _yW(long double x)
 {
-	return scifir::power(x, "yW");
+	return scifir::power(x, { scifir::dimension(scifir::dimension::WATT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _YA(long double x)
 {
-	return scifir::electric_current(x, "YA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _ZA(long double x)
 {
-	return scifir::electric_current(x, "ZA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _EA(long double x)
 {
-	return scifir::electric_current(x, "EA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _PA(long double x)
 {
-	return scifir::electric_current(x, "PA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _TA(long double x)
 {
-	return scifir::electric_current(x, "TA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _GA(long double x)
 {
-	return scifir::electric_current(x, "GA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _MA(long double x)
 {
-	return scifir::electric_current(x, "MA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _kA(long double x)
 {
-	return scifir::electric_current(x, "kA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _hA(long double x)
 {
-	return scifir::electric_current(x, "hA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _daA(long double x)
 {
-	return scifir::electric_current(x, "daA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _A(long double x)
 {
-	return scifir::electric_current(x, "A");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _dA(long double x)
 {
-	return scifir::electric_current(x, "dA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _cA(long double x)
 {
-	return scifir::electric_current(x, "cA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _mA(long double x)
 {
-	return scifir::electric_current(x, "mA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _uA(long double x)
 {
-	return scifir::electric_current(x, "uA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _nA(long double x)
 {
-	return scifir::electric_current(x, "nA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _pA(long double x)
 {
-	return scifir::electric_current(x, "pA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _fA(long double x)
 {
-	return scifir::electric_current(x, "fA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _aA(long double x)
 {
-	return scifir::electric_current(x, "aA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _zA(long double x)
 {
-	return scifir::electric_current(x, "zA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_current operator"" _yA(long double x)
 {
-	return scifir::electric_current(x, "yA");
+	return scifir::electric_current(x, { scifir::dimension(scifir::dimension::AMPERE,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _YV(long double x)
 {
-	return scifir::voltage(x, "YV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _ZV(long double x)
 {
-	return scifir::voltage(x, "ZV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _EV(long double x)
 {
-	return scifir::voltage(x, "EV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _PV(long double x)
 {
-	return scifir::voltage(x, "PV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _TV(long double x)
 {
-	return scifir::voltage(x, "TV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _GV(long double x)
 {
-	return scifir::voltage(x, "GV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _MV(long double x)
 {
-	return scifir::voltage(x, "MV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _kV(long double x)
 {
-	return scifir::voltage(x, "kV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _hV(long double x)
 {
-	return scifir::voltage(x, "hV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _daV(long double x)
 {
-	return scifir::voltage(x, "daV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _V(long double x)
 {
-	return scifir::voltage(x, "V");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _dV(long double x)
 {
-	return scifir::voltage(x, "dV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _cV(long double x)
 {
-	return scifir::voltage(x, "cV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _mV(long double x)
 {
-	return scifir::voltage(x, "mV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _uV(long double x)
 {
-	return scifir::voltage(x, "uV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _nV(long double x)
 {
-	return scifir::voltage(x, "nV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _pV(long double x)
 {
-	return scifir::voltage(x, "pV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _fV(long double x)
 {
-	return scifir::voltage(x, "fV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _aV(long double x)
 {
-	return scifir::voltage(x, "aV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _zV(long double x)
 {
-	return scifir::voltage(x, "zV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::voltage operator"" _yV(long double x)
 {
-	return scifir::voltage(x, "yV");
+	return scifir::voltage(x, { scifir::dimension(scifir::dimension::VOLT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _YF(long double x)
 {
-	return scifir::capacitance(x, "YF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _ZF(long double x)
 {
-	return scifir::capacitance(x, "ZF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _EF(long double x)
 {
-	return scifir::capacitance(x, "EF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _PF(long double x)
 {
-	return scifir::capacitance(x, "PF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _TF(long double x)
 {
-	return scifir::capacitance(x, "TF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _GF(long double x)
 {
-	return scifir::capacitance(x, "GF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _MF(long double x)
 {
-	return scifir::capacitance(x, "MF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _kF(long double x)
 {
-	return scifir::capacitance(x, "kF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _hF(long double x)
 {
-	return scifir::capacitance(x, "hF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _daF(long double x)
 {
-	return scifir::capacitance(x, "daF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _F(long double x)
 {
-	return scifir::capacitance(x, "F");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _dF(long double x)
 {
-	return scifir::capacitance(x, "dF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _cF(long double x)
 {
-	return scifir::capacitance(x, "cF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _mF(long double x)
 {
-	return scifir::capacitance(x, "mF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _uF(long double x)
 {
-	return scifir::capacitance(x, "uF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _nF(long double x)
 {
-	return scifir::capacitance(x, "nF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _pF(long double x)
 {
-	return scifir::capacitance(x, "pF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _fF(long double x)
 {
-	return scifir::capacitance(x, "fF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _aF(long double x)
 {
-	return scifir::capacitance(x, "aF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _zF(long double x)
 {
-	return scifir::capacitance(x, "zF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _yF(long double x)
 {
-	return scifir::capacitance(x, "yF");
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _YOhm(long double x)
 {
-	return scifir::resistance(x, "YOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _ZOhm(long double x)
 {
-	return scifir::resistance(x, "ZOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _EOhm(long double x)
 {
-	return scifir::resistance(x, "EOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _POhm(long double x)
 {
-	return scifir::resistance(x, "POhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _TOhm(long double x)
 {
-	return scifir::resistance(x, "TOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _GOhm(long double x)
 {
-	return scifir::resistance(x, "GOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _MOhm(long double x)
 {
-	return scifir::resistance(x, "MOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _kOhm(long double x)
 {
-	return scifir::resistance(x, "kOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _hOhm(long double x)
 {
-	return scifir::resistance(x, "hOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _daOhm(long double x)
 {
-	return scifir::resistance(x, "daOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _Ohm(long double x)
 {
-	return scifir::resistance(x, "Ohm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _dOhm(long double x)
 {
-	return scifir::resistance(x, "dOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _cOhm(long double x)
 {
-	return scifir::resistance(x, "cOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _mOhm(long double x)
 {
-	return scifir::resistance(x, "mOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _uOhm(long double x)
 {
-	return scifir::resistance(x, "uOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _nOhm(long double x)
 {
-	return scifir::resistance(x, "nOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _pOhm(long double x)
 {
-	return scifir::resistance(x, "pOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _fOhm(long double x)
 {
-	return scifir::resistance(x, "fOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _aOhm(long double x)
 {
-	return scifir::resistance(x, "aOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _zOhm(long double x)
 {
-	return scifir::resistance(x, "zOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _yOhm(long double x)
 {
-	return scifir::resistance(x, "yOhm");
+	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _YS(long double x)
 {
-	return scifir::electric_conductance(x, "YS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _ZS(long double x)
 {
-	return scifir::electric_conductance(x, "ZS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _ES(long double x)
 {
-	return scifir::electric_conductance(x, "ES");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _PS(long double x)
 {
-	return scifir::electric_conductance(x, "PS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _TS(long double x)
 {
-	return scifir::electric_conductance(x, "TS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _GS(long double x)
 {
-	return scifir::electric_conductance(x, "GS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _MS(long double x)
 {
-	return scifir::electric_conductance(x, "MS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _kS(long double x)
 {
-	return scifir::electric_conductance(x, "kS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _hS(long double x)
 {
-	return scifir::electric_conductance(x, "hS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _daS(long double x)
 {
-	return scifir::electric_conductance(x, "daS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _S(long double x)
 {
-	return scifir::electric_conductance(x, "S");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _dS(long double x)
 {
-	return scifir::electric_conductance(x, "dS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _cS(long double x)
 {
-	return scifir::electric_conductance(x, "cS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _mS(long double x)
 {
-	return scifir::electric_conductance(x, "mS");
+	return scifir::electric_conductance(x,{ scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _uS(long double x)
 {
-	return scifir::electric_conductance(x, "uS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _nS(long double x)
 {
-	return scifir::electric_conductance(x, "nS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _pS(long double x)
 {
-	return scifir::electric_conductance(x, "pS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _fS(long double x)
 {
-	return scifir::electric_conductance(x, "fS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _aS(long double x)
 {
-	return scifir::electric_conductance(x, "aS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _zS(long double x)
 {
-	return scifir::electric_conductance(x, "zS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::electric_conductance operator"" _yS(long double x)
 {
-	return scifir::electric_conductance(x, "yS");
+	return scifir::electric_conductance(x, { scifir::dimension(scifir::dimension::SIEMENS,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _YWb(long double x)
 {
-	return scifir::magnetic_flux(x, "YWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _ZWb(long double x)
 {
-	return scifir::magnetic_flux(x, "ZWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _EWb(long double x)
 {
-	return scifir::magnetic_flux(x, "EWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _PWb(long double x)
 {
-	return scifir::magnetic_flux(x, "PWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _TWb(long double x)
 {
-	return scifir::magnetic_flux(x, "TWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _GWb(long double x)
 {
-	return scifir::magnetic_flux(x, "GWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _MWb(long double x)
 {
-	return scifir::magnetic_flux(x, "MWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _kWb(long double x)
 {
-	return scifir::magnetic_flux(x, "kWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _hWb(long double x)
 {
-	return scifir::magnetic_flux(x, "hWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _daWb(long double x)
 {
-	return scifir::magnetic_flux(x, "daWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _Wb(long double x)
 {
-	return scifir::magnetic_flux(x, "Wb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _dWb(long double x)
 {
-	return scifir::magnetic_flux(x, "dWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _cWb(long double x)
 {
-	return scifir::magnetic_flux(x, "cWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _mWb(long double x)
 {
-	return scifir::magnetic_flux(x, "mWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _uWb(long double x)
 {
-	return scifir::magnetic_flux(x, "uWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _nWb(long double x)
 {
-	return scifir::magnetic_flux(x, "nWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _pWb(long double x)
 {
-	return scifir::magnetic_flux(x, "pWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _fWb(long double x)
 {
-	return scifir::magnetic_flux(x, "fWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _aWb(long double x)
 {
-	return scifir::magnetic_flux(x, "aWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _zWb(long double x)
 {
-	return scifir::magnetic_flux(x, "zWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_flux operator"" _yWb(long double x)
 {
-	return scifir::magnetic_flux(x, "yWb");
+	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _YT(long double x)
 {
-	return scifir::magnetic_strength(x, "YT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _ZT(long double x)
 {
-	return scifir::magnetic_strength(x, "ZT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _ET(long double x)
 {
-	return scifir::magnetic_strength(x, "ET");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _PT(long double x)
 {
-	return scifir::magnetic_strength(x, "PT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _TT(long double x)
 {
-	return scifir::magnetic_strength(x, "TT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _GT(long double x)
 {
-	return scifir::magnetic_strength(x, "GT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 /*scifir::magnetic_strength operator"" _MT(long double x)
 {
-	return scifir::magnetic_strength(x, "MT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }*/
 
 scifir::magnetic_strength operator"" _kT(long double x)
 {
-	return scifir::magnetic_strength(x, "kT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _hT(long double x)
 {
-	return scifir::magnetic_strength(x, "hT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _daT(long double x)
 {
-	return scifir::magnetic_strength(x, "daT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _T(long double x)
 {
-	return scifir::magnetic_strength(x, "T");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _dT(long double x)
 {
-	return scifir::magnetic_strength(x, "dT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _cT(long double x)
 {
-	return scifir::magnetic_strength(x, "cT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _mT(long double x)
 {
-	return scifir::magnetic_strength(x, "mT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _uT(long double x)
 {
-	return scifir::magnetic_strength(x, "uT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _nT(long double x)
 {
-	return scifir::magnetic_strength(x, "nT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _pT(long double x)
 {
-	return scifir::magnetic_strength(x, "pT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _fT(long double x)
 {
-	return scifir::magnetic_strength(x, "fT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _aT(long double x)
 {
-	return scifir::magnetic_strength(x, "aT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _zT(long double x)
 {
-	return scifir::magnetic_strength(x, "zT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::magnetic_strength operator"" _yT(long double x)
 {
-	return scifir::magnetic_strength(x, "yT");
+	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _YH(long double x)
 {
-	return scifir::inductance(x, "YH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _ZH(long double x)
 {
-	return scifir::inductance(x, "ZH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _EH(long double x)
 {
-	return scifir::inductance(x, "EH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _PH(long double x)
 {
-	return scifir::inductance(x, "PH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _TH(long double x)
 {
-	return scifir::inductance(x, "TH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _GH(long double x)
 {
-	return scifir::inductance(x, "GH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _MH(long double x)
 {
-	return scifir::inductance(x, "MH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _kH(long double x)
 {
-	return scifir::inductance(x, "kH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _hH(long double x)
 {
-	return scifir::inductance(x, "hH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _daH(long double x)
 {
-	return scifir::inductance(x, "daH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _H(long double x)
 {
-	return scifir::inductance(x, "H");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _dH(long double x)
 {
-	return scifir::inductance(x, "dH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _cH(long double x)
 {
-	return scifir::inductance(x, "cH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _mH(long double x)
 {
-	return scifir::inductance(x, "mH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _uH(long double x)
 {
-	return scifir::inductance(x, "uH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _nH(long double x)
 {
-	return scifir::inductance(x, "nH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _pH(long double x)
 {
-	return scifir::inductance(x, "pH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _fH(long double x)
 {
-	return scifir::inductance(x, "fH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _aH(long double x)
 {
-	return scifir::inductance(x, "aH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _zH(long double x)
 {
-	return scifir::inductance(x, "zH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _yH(long double x)
 {
-	return scifir::inductance(x, "yH");
+	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Ylm(long double x)
 {
-	return scifir::luminous_flux(x, "Ylm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Zlm(long double x)
 {
-	return scifir::luminous_flux(x, "Zlm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Elm(long double x)
 {
-	return scifir::luminous_flux(x, "Elm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Plm(long double x)
 {
-	return scifir::luminous_flux(x, "Plm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Tlm(long double x)
 {
-	return scifir::luminous_flux(x, "Tlm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Glm(long double x)
 {
-	return scifir::luminous_flux(x, "Glm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Mlm(long double x)
 {
-	return scifir::luminous_flux(x, "Mlm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _klm(long double x)
 {
-	return scifir::luminous_flux(x, "klm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _hlm(long double x)
 {
-	return scifir::luminous_flux(x, "hlm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _dalm(long double x)
 {
-	return scifir::luminous_flux(x, "dalm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _lm(long double x)
 {
-	return scifir::luminous_flux(x, "lm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _dlm(long double x)
 {
-	return scifir::luminous_flux(x, "dlm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _clm(long double x)
 {
-	return scifir::luminous_flux(x, "clm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _mlm(long double x)
 {
-	return scifir::luminous_flux(x, "mlm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _ulm(long double x)
 {
-	return scifir::luminous_flux(x, "ulm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _nlm(long double x)
 {
-	return scifir::luminous_flux(x, "nlm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _plm(long double x)
 {
-	return scifir::luminous_flux(x, "plm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _flm(long double x)
 {
-	return scifir::luminous_flux(x, "flm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _alm(long double x)
 {
-	return scifir::luminous_flux(x, "alm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _zlm(long double x)
 {
-	return scifir::luminous_flux(x, "zlm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _ylm(long double x)
 {
-	return scifir::luminous_flux(x, "ylm");
+	return scifir::luminous_flux(x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Ylx(long double x)
 {
-	return scifir::illuminance(x, "Ylx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Zlx(long double x)
 {
-	return scifir::illuminance(x, "Zlx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Elx(long double x)
 {
-	return scifir::illuminance(x, "Elx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Plx(long double x)
 {
-	return scifir::illuminance(x, "Plx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Tlx(long double x)
 {
-	return scifir::illuminance(x, "Tlx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Glx(long double x)
 {
-	return scifir::illuminance(x, "Glx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _Mlx(long double x)
 {
-	return scifir::illuminance(x, "Mlx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _klx(long double x)
 {
-	return scifir::illuminance(x, "klx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _hlx(long double x)
 {
-	return scifir::illuminance(x, "hlx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _dalx(long double x)
 {
-	return scifir::illuminance(x, "dalx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _lx(long double x)
 {
-	return scifir::illuminance(x, "lx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _dlx(long double x)
 {
-	return scifir::illuminance(x, "dlx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _clx(long double x)
 {
-	return scifir::illuminance(x, "clx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _mlx(long double x)
 {
-	return scifir::illuminance(x, "mlx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _ulx(long double x)
 {
-	return scifir::illuminance(x, "ulx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _nlx(long double x)
 {
-	return scifir::illuminance(x, "nlx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _plx(long double x)
 {
-	return scifir::illuminance(x, "plx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _flx(long double x)
 {
-	return scifir::illuminance(x, "flx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _alx(long double x)
 {
-	return scifir::illuminance(x, "alx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _zlx(long double x)
 {
-	return scifir::illuminance(x, "zlx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::illuminance operator"" _ylx(long double x)
 {
-	return scifir::illuminance(x, "ylx");
+	return scifir::illuminance(x, { scifir::dimension(scifir::dimension::LUX,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _YBq(long double x)
 {
-	return scifir::radioactivity(x, "YBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _ZBq(long double x)
 {
-	return scifir::radioactivity(x, "ZBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _EBq(long double x)
 {
-	return scifir::radioactivity(x, "EBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _PBq(long double x)
 {
-	return scifir::radioactivity(x, "PBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _TBq(long double x)
 {
-	return scifir::radioactivity(x, "TBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _GBq(long double x)
 {
-	return scifir::radioactivity(x, "GBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _MBq(long double x)
 {
-	return scifir::radioactivity(x, "MBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _kBq(long double x)
 {
-	return scifir::radioactivity(x, "kBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _hBq(long double x)
 {
-	return scifir::radioactivity(x, "hBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _daBq(long double x)
 {
-	return scifir::radioactivity(x, "daBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _Bq(long double x)
 {
-	return scifir::radioactivity(x, "Bq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _dBq(long double x)
 {
-	return scifir::radioactivity(x, "dBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _cBq(long double x)
 {
-	return scifir::radioactivity(x, "cBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _mBq(long double x)
 {
-	return scifir::radioactivity(x, "mBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _uBq(long double x)
 {
-	return scifir::radioactivity(x, "uBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _nBq(long double x)
 {
-	return scifir::radioactivity(x, "nBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _pBq(long double x)
 {
-	return scifir::radioactivity(x, "pBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _fBq(long double x)
 {
-	return scifir::radioactivity(x, "fBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _aBq(long double x)
 {
-	return scifir::radioactivity(x, "aBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _zBq(long double x)
 {
-	return scifir::radioactivity(x, "zBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::radioactivity operator"" _yBq(long double x)
 {
-	return scifir::radioactivity(x, "yBq");
+	return scifir::radioactivity(x, { scifir::dimension(scifir::dimension::BECQUEREL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _YGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "YGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _ZGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "ZGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _EGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "EGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _PGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "PGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _TGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "TGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _GGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "GGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _MGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "MGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _kGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "kGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _hGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "hGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _daGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "daGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _Gy(long double x)
 {
-	return scifir::ionizing_radiation(x, "Gy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _dGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "dGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _cGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "cGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _mGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "mGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _uGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "uGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _nGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "nGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _pGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "pGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _fGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "fGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _aGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "aGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _zGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "zGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _yGy(long double x)
 {
-	return scifir::ionizing_radiation(x, "yGy");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::GRAY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _YSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "YSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _ZSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "ZSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _ESv(long double x)
 {
-	return scifir::ionizing_radiation(x, "ESv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _PSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "PSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _TSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "TSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _GSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "GSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _MSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "MSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _kSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "kSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _hSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "hSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _daSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "daSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _Sv(long double x)
 {
-	return scifir::ionizing_radiation(x, "Sv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _dSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "dSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _cSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "cSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _mSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "mSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _uSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "uSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _nSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "nSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _pSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "pSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _fSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "fSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _aSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "aSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _zSv(long double x)
 {
-	return scifir::ionizing_radiation(x, "zSv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::ionizing_radiation operator"" _ySv(long double x)
 {
-	return scifir::ionizing_radiation(x, "ySv");
+	return scifir::ionizing_radiation(x, { scifir::dimension(scifir::dimension::SIEVERT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Ykat(long double x)
 {
-	return scifir::catalytic_activity(x, "Ykat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Zkat(long double x)
 {
-	return scifir::catalytic_activity(x, "Zkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Ekat(long double x)
 {
-	return scifir::catalytic_activity(x, "Ekat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Pkat(long double x)
 {
-	return scifir::catalytic_activity(x, "Pkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Tkat(long double x)
 {
-	return scifir::catalytic_activity(x, "Tkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Gkat(long double x)
 {
-	return scifir::catalytic_activity(x, "Gkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _Mkat(long double x)
 {
-	return scifir::catalytic_activity(x, "Mkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _kkat(long double x)
 {
-	return scifir::catalytic_activity(x, "kkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _hkat(long double x)
 {
-	return scifir::catalytic_activity(x, "hkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _dakat(long double x)
 {
-	return scifir::catalytic_activity(x, "dakat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _kat(long double x)
 {
-	return scifir::catalytic_activity(x, "kat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _dkat(long double x)
 {
-	return scifir::catalytic_activity(x, "dkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _ckat(long double x)
 {
-	return scifir::catalytic_activity(x, "ckat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _mkat(long double x)
 {
-	return scifir::catalytic_activity(x, "mkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _ukat(long double x)
 {
-	return scifir::catalytic_activity(x, "ukat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _nkat(long double x)
 {
-	return scifir::catalytic_activity(x, "nkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _pkat(long double x)
 {
-	return scifir::catalytic_activity(x, "pkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _fkat(long double x)
 {
-	return scifir::catalytic_activity(x, "fkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _akat(long double x)
 {
-	return scifir::catalytic_activity(x, "akat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _zkat(long double x)
 {
-	return scifir::catalytic_activity(x, "zkat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::catalytic_activity operator"" _ykat(long double x)
 {
-	return scifir::catalytic_activity(x, "ykat");
+	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _angstrom(long double x)
 {
-	return scifir::length(x, "angstrom");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ANGSTROM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::volume operator"" _L(long double x)
 {
-	return scifir::volume(x, "L");
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::volume operator"" _mL(long double x)
 {
-	return scifir::volume(x, "mL");
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::time_duration operator"" _min(long double x)
 {
-	return scifir::time_duration(x, "min");
+	return scifir::time_duration(x, { scifir::dimension(scifir::dimension::MINUTE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::time_duration operator"" _hour(long double x)
 {
-	return scifir::time_duration(x, "hour");
+	return scifir::time_duration(x, { scifir::dimension(scifir::dimension::HOUR,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::time_duration operator"" _day(long double x)
 {
-	return scifir::time_duration(x, "day");
+	return scifir::time_duration(x, { scifir::dimension(scifir::dimension::DAY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _YAU(long double x)
 {
-	return scifir::length(x, "YAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _ZAU(long double x)
 {
-	return scifir::length(x, "ZAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _EAU(long double x)
 {
-	return scifir::length(x, "EAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _PAU(long double x)
 {
-	return scifir::length(x, "PAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _TAU(long double x)
 {
-	return scifir::length(x, "TAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _GAU(long double x)
 {
-	return scifir::length(x, "GAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _MAU(long double x)
 {
-	return scifir::length(x, "MAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _kAU(long double x)
 {
-	return scifir::length(x, "kAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _hAU(long double x)
 {
-	return scifir::length(x, "hAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _daAU(long double x)
 {
-	return scifir::length(x, "daAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _AU(long double x)
 {
-	return scifir::length(x, "AU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _dAU(long double x)
 {
-	return scifir::length(x, "dAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _cAU(long double x)
 {
-	return scifir::length(x, "cAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _mAU(long double x)
 {
-	return scifir::length(x, "mAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _uAU(long double x)
 {
-	return scifir::length(x, "uAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _nAU(long double x)
 {
-	return scifir::length(x, "nAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _pAU(long double x)
 {
-	return scifir::length(x, "pAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _fAU(long double x)
 {
-	return scifir::length(x, "fAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _aAU(long double x)
 {
-	return scifir::length(x, "aAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _zAU(long double x)
 {
-	return scifir::length(x, "zAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _yAU(long double x)
 {
-	return scifir::length(x, "yAU");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::ASTRONOMICAL_UNIT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Ypc(long double x)
 {
-	return scifir::length(x, "Ypc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Zpc(long double x)
 {
-	return scifir::length(x, "Zpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Epc(long double x)
 {
-	return scifir::length(x, "Epc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Ppc(long double x)
 {
-	return scifir::length(x, "Ppc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Tpc(long double x)
 {
-	return scifir::length(x, "Tpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Gpc(long double x)
 {
-	return scifir::length(x, "Gpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Mpc(long double x)
 {
-	return scifir::length(x, "Mpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _kpc(long double x)
 {
-	return scifir::length(x, "kpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _hpc(long double x)
 {
-	return scifir::length(x, "hpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _dapc(long double x)
 {
-	return scifir::length(x, "dapc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _pc(long double x)
 {
-	return scifir::length(x, "pc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _dpc(long double x)
 {
-	return scifir::length(x, "dpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _cpc(long double x)
 {
-	return scifir::length(x, "cpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _mpc(long double x)
 {
-	return scifir::length(x, "mpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _upc(long double x)
 {
-	return scifir::length(x, "upc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _npc(long double x)
 {
-	return scifir::length(x, "npc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _ppc(long double x)
 {
-	return scifir::length(x, "ppc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _fpc(long double x)
 {
-	return scifir::length(x, "fpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _apc(long double x)
 {
-	return scifir::length(x, "apc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _zpc(long double x)
 {
-	return scifir::length(x, "zpc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _ypc(long double x)
 {
-	return scifir::length(x, "ypc");
+	return scifir::length(x, { scifir::dimension(scifir::dimension::PARSEC,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _YeV(long double x)
 {
-	return scifir::energy(x, "YeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _ZeV(long double x)
 {
-	return scifir::energy(x, "ZeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _EeV(long double x)
 {
-	return scifir::energy(x, "EeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _PeV(long double x)
 {
-	return scifir::energy(x, "PeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _TeV(long double x)
 {
-	return scifir::energy(x, "TeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _GeV(long double x)
 {
-	return scifir::energy(x, "GeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _MeV(long double x)
 {
-	return scifir::energy(x, "MeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _keV(long double x)
 {
-	return scifir::energy(x, "keV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _heV(long double x)
 {
-	return scifir::energy(x, "heV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _daeV(long double x)
 {
-	return scifir::energy(x, "daeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _eV(long double x)
 {
-	return scifir::energy(x, "eV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _deV(long double x)
 {
-	return scifir::energy(x, "deV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _ceV(long double x)
 {
-	return scifir::energy(x, "ceV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _meV(long double x)
 {
-	return scifir::energy(x, "meV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _ueV(long double x)
 {
-	return scifir::energy(x, "ueV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _neV(long double x)
 {
-	return scifir::energy(x, "neV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _peV(long double x)
 {
-	return scifir::energy(x, "peV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _feV(long double x)
 {
-	return scifir::energy(x, "feV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _aeV(long double x)
 {
-	return scifir::energy(x, "aeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _zeV(long double x)
 {
-	return scifir::energy(x, "zeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _yeV(long double x)
 {
-	return scifir::energy(x, "yeV");
+	return scifir::energy(x, { scifir::dimension(scifir::dimension::ELECTRON_VOLT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::mass operator"" _Da(long double x)
 {
-	return scifir::mass(x, "Da");
+	return scifir::mass(x, { scifir::dimension(scifir::dimension::DALTON,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::mass operator"" _amu(long double x)
 {
-	return scifir::mass(x, "amu");
+	return scifir::mass(x, { scifir::dimension(scifir::dimension::ATOMIC_MASS_UNIT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Yb(long double x)
+scifir::area operator"" _Ybarn(long double x)
 {
-	return scifir::area(x, "Yb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Zb(long double x)
+scifir::area operator"" _Zbarn(long double x)
 {
-	return scifir::area(x, "Zb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Eb(long double x)
+scifir::area operator"" _Ebarn(long double x)
 {
-	return scifir::area(x, "Eb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Pb(long double x)
+scifir::area operator"" _Pbarn(long double x)
 {
-	return scifir::area(x, "Pb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Tb(long double x)
+scifir::area operator"" _Tbarn(long double x)
 {
-	return scifir::area(x, "Tb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Gb(long double x)
+scifir::area operator"" _Gbarn(long double x)
 {
-	return scifir::area(x, "Gb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _Mb(long double x)
+scifir::area operator"" _Mbarn(long double x)
 {
-	return scifir::area(x, "Mb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _kb(long double x)
+scifir::area operator"" _kbarn(long double x)
 {
-	return scifir::area(x, "kb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _hb(long double x)
+scifir::area operator"" _hbarn(long double x)
 {
-	return scifir::area(x, "hb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _dab(long double x)
+scifir::area operator"" _dabarn(long double x)
 {
-	return scifir::area(x, "dab");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _b(long double x)
+scifir::area operator"" _barn(long double x)
 {
-	return scifir::area(x, "b");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _db(long double x)
+scifir::area operator"" _dbarn(long double x)
 {
-	return scifir::area(x, "db");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _cb(long double x)
+scifir::area operator"" _cbarn(long double x)
 {
-	return scifir::area(x, "cb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _mb(long double x)
+scifir::area operator"" _mbarn(long double x)
 {
-	return scifir::area(x, "mb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _ub(long double x)
+scifir::area operator"" _ubarn(long double x)
 {
-	return scifir::area(x, "ub");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _nb(long double x)
+scifir::area operator"" _nbarn(long double x)
 {
-	return scifir::area(x, "nb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _pb(long double x)
+scifir::area operator"" _pbarn(long double x)
 {
-	return scifir::area(x, "pb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _fb(long double x)
+scifir::area operator"" _fbarn(long double x)
 {
-	return scifir::area(x, "fb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _ab(long double x)
+scifir::area operator"" _abarn(long double x)
 {
-	return scifir::area(x, "ab");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _zb(long double x)
+scifir::area operator"" _zbarn(long double x)
 {
-	return scifir::area(x, "zb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::area operator"" _yb(long double x)
+scifir::area operator"" _ybarn(long double x)
 {
-	return scifir::area(x, "yb");
+	return scifir::area(x, { scifir::dimension(scifir::dimension::BARN,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _YM(long double x)
 {
-	return scifir::molarity(x, "YM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _ZM(long double x)
 {
-	return scifir::molarity(x, "ZM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _EM(long double x)
 {
-	return scifir::molarity(x, "EM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _PM(long double x)
 {
-	return scifir::molarity(x, "PM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _TM(long double x)
 {
-	return scifir::molarity(x, "TM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _GM(long double x)
 {
-	return scifir::molarity(x, "GM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _MM(long double x)
 {
-	return scifir::molarity(x, "MM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _kM(long double x)
 {
-	return scifir::molarity(x, "kM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _hM(long double x)
 {
-	return scifir::molarity(x, "hM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _daM(long double x)
 {
-	return scifir::molarity(x, "daM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _M(long double x)
 {
-	return scifir::molarity(x, "M");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _dM(long double x)
 {
-	return scifir::molarity(x, "dM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _cM(long double x)
 {
-	return scifir::molarity(x, "cM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _mM(long double x)
 {
-	return scifir::molarity(x, "mM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _uM(long double x)
 {
-	return scifir::molarity(x, "uM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _nM(long double x)
 {
-	return scifir::molarity(x, "nM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _pM(long double x)
 {
-	return scifir::molarity(x, "pM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _fM(long double x)
 {
-	return scifir::molarity(x, "fM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _aM(long double x)
 {
-	return scifir::molarity(x, "aM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _zM(long double x)
 {
-	return scifir::molarity(x, "zM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::molarity operator"" _yM(long double x)
 {
-	return scifir::molarity(x, "yM");
+	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::percentage operator"" _ppm(long double x)
 {
-	return scifir::percentage(x, "ppm");
+	return scifir::percentage(x, scifir::percentage::PARTS_PER_MILLION);
 }
 
 /*scifir::percentage operator"" _ppb(long double x)
 {
-	return scifir::percentage(x, "ppb");
+	return scifir::percentage(x, scifir::percentage::PARTS_PER_BILLION);
 }
 
 scifir::percentage operator"" _ppt(long double x)
 {
-	return scifir::percentage(x, "ppt");
+	return scifir::percentage(x, scifir::percentage::PARTS_PER_TRILLION);
 }
 
 scifir::percentage operator"" _ppq(long double x)
 {
-	return scifir::percentage(x, "ppq");
+	return scifir::percentage(x, scifir::percentage::PARTS_PER_QUATRILLION);
 }*/

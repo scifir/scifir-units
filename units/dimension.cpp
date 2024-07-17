@@ -55,10 +55,15 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "h" and init_dimension != "d" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
+		}
+		else if(init_dimension == "day")
+		{
+			prefix_name = "";
+			dimension_name = init_dimension;
 		}
 		else if(init_dimension.substr(0,2) == "da")
 		{
@@ -203,11 +208,11 @@ namespace scifir
 		{
 			dimension_type = dimension::MINUTE;
 		}
-		else if(dimension_name == "h")
+		else if(dimension_name == "hour")
 		{
 			dimension_type = dimension::HOUR;
 		}
-		else if(dimension_name == "d")
+		else if(dimension_name == "day")
 		{
 			dimension_type = dimension::DAY;
 		}
@@ -636,9 +641,9 @@ namespace scifir
 			case dimension::MINUTE:
 				return "min";
 			case dimension::HOUR:
-				return "h";
+				return "hour";
 			case dimension::DAY:
-				return "d";
+				return "day";
 			case dimension::LIGHT_YEAR:
 				return "ly";
 			case dimension::ASTRONOMICAL_UNIT:

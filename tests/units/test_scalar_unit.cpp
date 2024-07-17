@@ -239,7 +239,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(d.display(2,false,true) == "0 m");
 		scalar_unit e("1 AU");
 		CHECK(e.derived_display(2,false,true) == "1.49598e+11 m");
-		scalar_unit f("1 km/h");
+		scalar_unit f("1 km/hour");
 		CHECK(f.custom_display("m/s",2,true) == "0.27 [m/s]");
 		//CHECK(f.custom_display("sci") == "1000e0 m/h");
 	}
