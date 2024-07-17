@@ -138,6 +138,12 @@ TEST_CASE("angle class") {
         CHECK(c.get_value() == 350.0f);
     }
 
+    SECTION("to_scalar_unit() function")
+    {
+        angle a(40.0f);
+        CHECK(bool(a.to_scalar_unit() == scalar_unit("40 degree")));
+    }
+
     SECTION("Display of angles")
     {
         angle a(45.0f);
