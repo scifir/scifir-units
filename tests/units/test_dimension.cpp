@@ -74,6 +74,8 @@ TEST_CASE("dimension class") {
 		CHECK(a.dimension_type == dimension::METRE);
 		dimension a1_2("degree",dimension::NUMERATOR);
 		CHECK(a1_2.dimension_type == dimension::DEGREE);
+		dimension a1_3("θ",dimension::NUMERATOR);
+		CHECK(a1_3.dimension_type == dimension::DEGREE);
 		dimension a2("rad",dimension::NUMERATOR);
 		CHECK(a2.dimension_type == dimension::RADIAN);
 		dimension a3("sr",dimension::NUMERATOR);

@@ -75,7 +75,7 @@ namespace scifir
 		{
 			dimension_type = dimension::METRE;
 		}
-		else if(dimension_name == "degree")
+		else if(dimension_name == "degree" or dimension_name == "\U000003B8")
 		{
 			dimension_type = dimension::DEGREE;
 		}
