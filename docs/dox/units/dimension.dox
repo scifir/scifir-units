@@ -178,13 +178,13 @@
 * \fn dimension::dimension(dimension&& x)
 * \brief Move constructor. The dimension is initialized with a move of the dimension x.
 
-* \fn dimension::dimension(dimension::type new_dimension_type, scifir::prefix::type new_prefix, dimension::position new_sign)
+* \fn dimension::dimension(dimension::type new_dimension_type, scifir::prefix::type new_prefix, dimension::position new_position)
 * \brief Constructor. The dimension is initialized to the dimension_type, the prefix type and the position given.
 
-* \fn dimension::dimension(dimension::type new_dimension_type, const scifir::prefix& new_prefix, dimension::position new_sign)
+* \fn dimension::dimension(dimension::type new_dimension_type, const scifir::prefix& new_prefix, dimension::position new_position)
 * \brief Constructor. The dimension is initialized to the dimension_type, the prefix and the position given.
 
-* \fn dimension::dimension(const string& init_dimension, dimension::position new_sign)
+* \fn dimension::dimension(const string& init_dimension, dimension::position new_position)
 * \brief Constructor. The dimension is initialized with an initialization string of dimension and the position given.
 
 * \fn dimension& dimension::operator =(const dimension& x)
@@ -195,6 +195,15 @@
 
 * \fn string dimension::get_name() const
 * \brief Returns the name of the dimension.
+
+* \fn string dimension::get_fullname() const
+* \brief Returns the name of the dimension with the name of the prefix first.
+
+* \fn string dimension::get_plural() const
+* \brief Returns the plural of the dimension.
+
+* \fn string dimension::get_fullplural() const
+* \brief Returns the plural of the dimension with the name of the prefix first.
 
 * \fn string dimension::get_symbol() const
 * \brief Returns the symbol of the dimension. In the case of a custom dimension, it returns the custom dimension defined.

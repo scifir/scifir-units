@@ -46,7 +46,9 @@ namespace scifir
 			dimension& operator =(dimension&& x);
 
 			string get_name() const;
+			string get_fullname() const;
 			string get_plural() const;
+			string get_fullplural() const;
 			string get_symbol() const;
 			long double get_conversion_factor() const;
 			long double prefix_math() const;

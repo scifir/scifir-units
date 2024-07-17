@@ -187,6 +187,10 @@ TEST_CASE("dimension class") {
 	}
 
 	SECTION("Testing of length dimensions") {
+		dimension a3 = dimension("Qm",dimension::NUMERATOR);
+		CHECK(to_string(a3) == "Qm");
+		dimension a2 = dimension("Rm",dimension::NUMERATOR);
+		CHECK(to_string(a2) == "Rm");
 		dimension a = dimension("Ym",dimension::NUMERATOR);
 		CHECK(to_string(a) == "Ym");
 		dimension b = dimension("Zm",dimension::NUMERATOR);
@@ -232,6 +236,10 @@ TEST_CASE("dimension class") {
 		CHECK(to_string(s) == "zm");
 		dimension t = dimension("ym",dimension::NUMERATOR);
 		CHECK(to_string(t) == "ym");
+		dimension t2 = dimension("rm",dimension::NUMERATOR);
+		CHECK(to_string(t2) == "rm");
+		dimension t3 = dimension("qm",dimension::NUMERATOR);
+		CHECK(to_string(t3) == "qm");
 	}
 
 	SECTION ("get_name(), get_symbol(), get_conversion_factor(), is_simple_dmension(), is_basic_dimension() of dimension class")
@@ -592,7 +600,17 @@ TEST_CASE("dimension class") {
 		CHECK(a49.is_basic_dimension() == true);
 	}
 
-	SECTION ("get_basic_dimensions() of dimension class")
+	SECTION("get_fullname() and get_fullplural()")
+	{
+		dimension a(dimension::METRE,prefix::KILO,dimension::NUMERATOR);
+		CHECK(a.get_fullname() == "kilometre");
+		CHECK(a.get_fullplural() == "kilometres");
+		dimension b(dimension::GRAM,prefix::MILLI,dimension::NUMERATOR);
+		CHECK(b.get_fullname() == "milligram");
+		CHECK(b.get_fullplural() == "milligrams");
+	}
+
+	SECTION("get_basic_dimensions() of dimension class")
 	{
 		dimension a0("",dimension::NUMERATOR);
 		vector<dimension> b0 = { dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR) };
