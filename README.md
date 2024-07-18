@@ -370,8 +370,8 @@ The initialization strings are the following:
 
 - **angle**: "37°"
 - **scalar_unit**: "1 km"
-- **vector_unit_2d**: "5 km 10°"
-- **vector_unit_3d**: "3 km 10° 20°"
+- **vector_unit_2d**: "5 km 10θ" or "5 km 10°"
+- **vector_unit_3d**: "3 km 10θ 20Φ" or "3 km 10° 20°"
 - **vector_unit_nd**: "3 km 10° 20° 35°"
 - **point_1d**: "3 m" or "(3 m)"
 - **point_2d**: "2 m,4 m" or "(2 m,4 m)"
