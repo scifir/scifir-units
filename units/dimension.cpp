@@ -271,15 +271,23 @@ namespace scifir
 		else
 		{
 			prefix = scifir::prefix(prefix::NONE);
-			if (init_dimension.size() > 3)
+			if (init_dimension.size() > 2)
 			{
 				string symbol_abreviation = dimension::create_full_symbol(init_dimension);
-				symbol_abreviation.copy(symbol, init_dimension.length());
+#ifdef IS_UNIX
+				std::strncpy(symbol, symbol_abreviation.c_str(), 2);
+#elif IS_WINDOWS
+				strncpy_s(symbol, 3, symbol_abreviation.c_str(), 2);
+#endif
 				dimension_type = dimension::CUSTOM_FULL_SYMBOL;
 			}
 			else
 			{
-				init_dimension.copy(symbol, init_dimension.length());
+#ifdef IS_UNIX
+				std::strncpy(symbol, init_dimension.c_str(), 2);
+#elif IS_WINDOWS
+				strncpy_s(symbol, 3, init_dimension.c_str(), 2);
+#endif
 				dimension_type = dimension::CUSTOM;
 			}
 		}
@@ -563,10 +571,10 @@ namespace scifir
 				return "m";
 #ifdef IS_UNIX
 			case dimension::DEGREE:
-				return "\U000003B8";
+				return "θ";
 #elif IS_WINDOWS
 			case dimension::DEGREE:
-				return "\U03B8";
+				return "θ";
 #endif
 			case dimension::RADIAN:
 				return "rad";
@@ -604,10 +612,10 @@ namespace scifir
 				return "F";
 #ifdef IS_UNIX
 			case dimension::OHM:
-				return "\U000003A9";
+				return "Ω";
 #elif IS_WINDOWS
 			case dimension::OHM:
-				return "\U03A9";
+				return "Ω";
 #endif
 			case dimension::SIEMENS:
 				return "S";
@@ -634,7 +642,7 @@ namespace scifir
 				return "Å";
 #elif IS_WINDOWS
 			case dimension::ANGSTROM:
-				return "\U212B";
+				return "Å";
 #endif
 			case dimension::LITRE:
 				return "L";

@@ -222,11 +222,11 @@ TEST_CASE("dimension class") {
 		dimension m = dimension("mm",dimension::NUMERATOR);
 		CHECK(to_string(m) == "mm");
 		dimension n = dimension("um",dimension::NUMERATOR);
-		CHECK(to_string(n) == "\u00B5m");
-		//dimension n2 = dimension("\u00B5m",dimension::NUMERATOR);
+		CHECK(to_string(n) == "µm");
+		//dimension n2 = dimension("µm",dimension::NUMERATOR);
 		//cout << "n2: " << to_string(n2) << endl;
 		//string n2_icu;
-		//icu::UnicodeString("\u00B5m").toUTF8String(n2_icu);
+		//icu::UnicodeString("µm").toUTF8String(n2_icu);
 		//CHECK(to_string(n2) == n2_icu);
 		dimension o = dimension("nm",dimension::NUMERATOR);
 		CHECK(to_string(o) == "nm");
@@ -833,7 +833,7 @@ TEST_CASE("dimension class") {
 	{
 		dimension a("usd",dimension::NUMERATOR);
 		vector<dimension> b = { dimension("usd",dimension::NUMERATOR) };
-		CHECK(a.get_name() == "custom-dimension");
+		CHECK(a.get_name() == "custom-full-symbol");
 		CHECK(a.get_symbol() == "usd");
 		CHECK(a.get_conversion_factor() == 1.0l);
 		CHECK(a.is_simple_dimension() == false);

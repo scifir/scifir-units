@@ -237,7 +237,7 @@ namespace scifir
 		{
 			output << display_float(get_value(),number_of_decimals);
 		}
-		output << "\u00B0";
+		output << "°";
 		return output.str();
 	}
 

@@ -27,9 +27,9 @@ TEST_CASE("angle class") {
         CHECK(f.get_value() == 15.0);
         angle g(5);
         CHECK(g.get_value() == 5.0f);
-        angle h("10\u00B0");
+        angle h("10°");
         CHECK(h.get_value() == 10.0f);
-        angle i("15\u00BA");
+        angle i("15º");
         CHECK(i.get_value() == 15.0f);
         scalar_unit j2("7 N");
         angle j(j2);
@@ -39,13 +39,13 @@ TEST_CASE("angle class") {
         angle k(scalar_unit(k2/k3));
         CHECK(k.get_value() == 3.5f);
         angle l(0.349f,angle::RADIAN);
-        CHECK(l.display() == "19.99\u00B0");
+        CHECK(l.display() == "19.99°");
         angle l2(0.349,angle::RADIAN);
-        CHECK(l2.display() == "19.99\u00B0");
+        CHECK(l2.display() == "19.99°");
         angle l3(0.349l,angle::RADIAN);
-        CHECK(l3.display() == "19.99\u00B0");
+        CHECK(l3.display() == "19.99°");
         angle l4(5,angle::RADIAN);
-        CHECK(l4.display() == "286.47\u00B0");
+        CHECK(l4.display() == "286.47°");
     }
 
     SECTION("Assignments of angle class")
@@ -61,10 +61,10 @@ TEST_CASE("angle class") {
         c = 8.0f;
         CHECK(c.get_value() == 8.0f);
         angle d;
-        d = "10 \u00B0";
+        d = "10 °";
         CHECK(d.get_value() == 10.0f);
         angle e;
-        e = "10 \u00BA";
+        e = "10 º";
         CHECK(e.get_value() == 10.0f);
         scalar_unit f2("7 N");
         scalar_unit f3("2 N");
@@ -147,20 +147,20 @@ TEST_CASE("angle class") {
     SECTION("Display of angles")
     {
         angle a(45.0f);
-        CHECK(a.display() == "45\u00B0");
+        CHECK(a.display() == "45°");
         angle b(-0.0f);
-        CHECK(b.display() == "0\u00B0");
+        CHECK(b.display() == "0°");
         angle c(60.0f);
-        CHECK(to_string(c) == "60\u00B0");
+        CHECK(to_string(c) == "60°");
     }
 
     SECTION("is_angle function")
     {
-        CHECK(is_angle("10\u00B0") == true);
-        CHECK(is_angle("10.0\u00B0") == true);
-        CHECK(is_angle("10A\u00B0") == false);
+        CHECK(is_angle("10°") == true);
+        CHECK(is_angle("10.0°") == true);
+        CHECK(is_angle("10A°") == false);
         CHECK(is_angle("10") == false);
-        CHECK(is_angle("10.0.9\u00B0") == false);
+        CHECK(is_angle("10.0.9°") == false);
     }
 
     SECTION("Parallel and orthogonal functions")
@@ -208,25 +208,25 @@ TEST_CASE("angle class") {
 
     SECTION("String operators of angle class")
     {
-        CHECK(bool(angle(10.0f) == "10\u00B0"));
-        CHECK(bool(angle(10.0f) != "8\u00B0"));
-        CHECK(bool("10\u00B0" == angle(10.0f)));
-        CHECK(bool("8\u00B0" != angle(10.0f)));
+        CHECK(bool(angle(10.0f) == "10°"));
+        CHECK(bool(angle(10.0f) != "8°"));
+        CHECK(bool("10°" == angle(10.0f)));
+        CHECK(bool("8°" != angle(10.0f)));
         string a = "angle: ";
         a += angle(20.0f);
-        CHECK(a == "angle: 20\u00B0");
-        CHECK(("angle: " + angle(20.0f)) == "angle: 20\u00B0");
-        CHECK(("angle: 20\u00B0" == "angle: " + angle(20.0f)));
-        CHECK((angle(20.0f)) + " angle" == "20\u00B0 angle");
+        CHECK(a == "angle: 20°");
+        CHECK(("angle: " + angle(20.0f)) == "angle: 20°");
+        CHECK(("angle: 20°" == "angle: " + angle(20.0f)));
+        CHECK((angle(20.0f)) + " angle" == "20° angle");
     }
 
     SECTION("Stream operators of angle class")
     {
         ostringstream a;
         a << angle(15.0f);
-        CHECK(a.str() == "15\u00B0");
+        CHECK(a.str() == "15°");
         stringstream b;
-        b << "15\u00B0";
+        b << "15°";
         angle b2;
         b >> b2;
         CHECK(b2.get_value() == 15.0f);

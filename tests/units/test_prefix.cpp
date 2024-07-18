@@ -155,7 +155,7 @@ TEST_CASE("prefix class") {
 		prefix a14 = prefix(prefix::MICRO);
 		CHECK(a14.get_conversion_factor() == -6);
 		CHECK(a14.get_name() == "micro");
-		CHECK(a14.get_symbol() == "\u00B5");
+		CHECK(a14.get_symbol() == "µ");
 		prefix a15 = prefix(prefix::NANO);
 		CHECK(a15.get_conversion_factor() == -9);
 		CHECK(a15.get_name() == "nano");
