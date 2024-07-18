@@ -158,7 +158,7 @@
 * \brief 
 
 * \var dimension::CUSTOM_FULL_SYMBOL
-* \brief 
+* \brief Custom dimension. It's identical to a CUSTOM dimension in his use, but its symbol is stored in the static map full_symbols of dimension class. All symbols greather than two are stored there, because they don't fit in the member-variable char symbol[3] of dimension class.
 
 * \var dimension::MONEY
 * \brief Money, plural money. The money is not specified in a specific currency, you must use the ISO 4217 of currencies for that purpose. Don't mistake mixing different currencies. Symbol **money**.
