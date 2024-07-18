@@ -102,5 +102,6 @@ namespace scifir
 		{"Ebit", conversion("PB", 125.0L)},
 		{"Zbit", conversion("EB", 125.0L)},
 		{"Ybit", conversion("ZB", 125.0L)},
+		{"cc", conversion("mL", 1.0L)}
 	};
 }
