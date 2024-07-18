@@ -66,8 +66,8 @@ TEST_CASE("prefix class") {
 		CHECK(m.prefix_type == prefix::MILLI);
 		prefix n = prefix("u");
 		CHECK(n.prefix_type == prefix::MICRO);
-		//prefix j = prefix("\u00B5");
-		//CHECK(j.prefix_type == prefix::u);
+		prefix n2 = prefix("µ");
+		CHECK(n2.prefix_type == prefix::MICRO);
 		prefix o = prefix("n");
 		CHECK(o.prefix_type == prefix::NANO);
 		prefix p = prefix("p");

@@ -14,7 +14,7 @@ namespace scifir
 			{
 				return false;
 			}
-			int imaginary_length = int(numbers[1].length()) - 3;
+			unsigned int imaginary_length = int(numbers[1].length()) - 3;
 			if (imaginary_length <= 0)
 			{
 				return false;

@@ -114,8 +114,8 @@ TEST_CASE("dimension class") {
 		CHECK(a19.dimension_type == dimension::OHM);
 		dimension a19_2("Ohm",dimension::NUMERATOR);
 		CHECK(a19_2.dimension_type == dimension::OHM);
-		/*dimension a19_3("\U000003A9",dimension::NUMERATOR);
-		CHECK(a19_3.dimension_type == dimension::OHM);*/
+		dimension a19_3("Ω",dimension::NUMERATOR);
+		CHECK(a19_3.dimension_type == dimension::OHM);
 		dimension a20("S",dimension::NUMERATOR);
 		CHECK(a20.dimension_type == dimension::SIEMENS);
 		dimension a21("Wb",dimension::NUMERATOR);
@@ -136,8 +136,10 @@ TEST_CASE("dimension class") {
 		CHECK(a28.dimension_type == dimension::SIEVERT);
 		dimension a29("kat",dimension::NUMERATOR);
 		CHECK(a29.dimension_type == dimension::KATAL);
-		dimension a30("angstrom",dimension::NUMERATOR); // MORE CASES
+		dimension a30("angstrom",dimension::NUMERATOR);
 		CHECK(a30.dimension_type == dimension::ANGSTROM);
+		dimension a30_2("Å",dimension::NUMERATOR);
+		CHECK(a30_2.dimension_type == dimension::ANGSTROM);
 		dimension a31("L",dimension::NUMERATOR);
 		CHECK(a31.dimension_type == dimension::LITRE);
 		dimension a32("min",dimension::NUMERATOR);
@@ -263,7 +265,7 @@ TEST_CASE("dimension class") {
 		dimension a3_2(dimension::DEGREE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a3_2.get_name() == "degree");
 		CHECK(a3_2.get_plural() == "degrees");
-		CHECK(a3_2.get_symbol() == "\u03B8");
+		CHECK(a3_2.get_symbol() == "θ");
 		CHECK(a3_2.get_conversion_factor() == PI / 180.0l);
 		CHECK(a3_2.is_simple_dimension() == true);
 		CHECK(a3_2.is_basic_dimension() == true);
@@ -389,7 +391,7 @@ TEST_CASE("dimension class") {
 		dimension a20(dimension::OHM,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a20.get_name() == "ohm");
 		CHECK(a20.get_plural() == "ohms");
-		CHECK(a20.get_symbol() == "\U000003A9");
+		CHECK(a20.get_symbol() == "Ω");
 		CHECK(a20.get_conversion_factor() == 1.0l);
 		CHECK(a20.is_simple_dimension() == false);
 		CHECK(a20.is_basic_dimension() == false);
@@ -466,7 +468,7 @@ TEST_CASE("dimension class") {
 		dimension a31(dimension::ANGSTROM,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a31.get_name() == "angstrom");
 		CHECK(a31.get_plural() == "angstroms");
-		CHECK(a31.get_symbol() == "\U0000212B");
+		CHECK(a31.get_symbol() == "Å");
 		CHECK(a31.get_conversion_factor() == 1.0l);
 		CHECK(a31.is_simple_dimension() == true);
 		CHECK(a31.is_basic_dimension() == false);

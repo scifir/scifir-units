@@ -80,7 +80,7 @@ namespace scifir
 		{
 			dimension_type = dimension::METRE;
 		}
-		else if(dimension_name == "degree" or dimension_name == "\U000003B8")
+		else if(dimension_name == "degree" or dimension_name == "θ")
 		{
 			dimension_type = dimension::DEGREE;
 		}
@@ -152,7 +152,7 @@ namespace scifir
 		{
 			dimension_type = dimension::FARADAY;
 		}
-		else if(dimension_name == "ohm" or dimension_name == "Ohm"/* or dimension_name == U"\U000003A9"*/)
+		else if(dimension_name == "ohm" or dimension_name == "Ohm" or dimension_name == "Ω")
 		{
 			dimension_type = dimension::OHM;
 		}
@@ -196,7 +196,7 @@ namespace scifir
 		{
 			dimension_type = dimension::KATAL;
 		}
-		else if(dimension_name == "angstrom" or u32string(dimension_name.begin(),dimension_name.end()) == U"\U0000212B")
+		else if(dimension_name == "angstrom" or dimension_name == "Å")
 		{
 			dimension_type = dimension::ANGSTROM;
 		}

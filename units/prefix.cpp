@@ -274,7 +274,7 @@ namespace scifir
 		{
 			return prefix::MILLI;
 		}
-		else if(x == "u" or x == "\u00B5")
+		else if(x == "u" or x == "µ")
 		{
 			return prefix::MICRO;
 		}
