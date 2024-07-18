@@ -553,11 +553,16 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_zM == "100 zM"));
 		CHECK(bool(100_yM == "100 yM"));
 
+		CHECK(bool(100_memo == "100 memo"));
+		CHECK(bool(100_degree == "100°"));
+		CHECK(bool(to_string(5_rad) == "286.47°"));
+		CHECK(bool(100_particles == "100 particles"));
 		CHECK(bool(100_particles == "100 particles"));
 		CHECK(bool(100_ppm == "100 ppm"));
 		/*CHECK(bool(100_ppb == "100 ppb"));
 		CHECK(bool(100_ppt == "100 ppt"));
 		CHECK(bool(100_ppq == "100 ppq"));*/
+		CHECK(bool(100_px == "100 px"));
 
 		CHECK(bool(100.0_YHz == "100 YHz"));
 		CHECK(bool(100.0_ZHz == "100 ZHz"));
@@ -1100,9 +1105,13 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_zM == "100 zM"));
 		CHECK(bool(100.0_yM == "100 yM"));
 
+		CHECK(bool(100.0_memo == "100 memo"));
+		CHECK(bool(100.0_degree == "100°"));
+		CHECK(bool(to_string(5.0_rad) == "286.47°"));
 		CHECK(bool(100.0_ppm == "100 ppm"));
 		/*CHECK(bool(100.0_ppb == "100 ppb"));
 		CHECK(bool(100.0_ppt == "100 ppt"));
 		CHECK(bool(100.0_ppq == "100 ppq"));*/
+		CHECK(bool(100.0_px == "100 px"));
 	}
 }

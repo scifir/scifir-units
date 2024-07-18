@@ -2567,6 +2567,21 @@ scifir::mole operator"" _particles(unsigned long long int x)
 	return scifir::mole((long double)x, { scifir::dimension(scifir::dimension::PARTICLES,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
+scifir::scalar_unit operator"" _memo(unsigned long long int x)
+{
+	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::MEMO,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+}
+
+scifir::angle operator"" _degree(unsigned long long int x)
+{
+	return scifir::angle((long double)x, scifir::angle::DEGREE);
+}
+
+scifir::angle operator"" _rad(unsigned long long int x)
+{
+	return scifir::angle((long double)x, scifir::angle::RADIAN);
+}
+
 scifir::percentage operator"" _ppm(unsigned long long int x)
 {
 	return scifir::percentage((long double)x, scifir::percentage::PARTS_PER_MILLION);
@@ -2586,6 +2601,11 @@ scifir::percentage operator"" _ppq(unsigned long long int x)
 {
 	return scifir::percentage((long double)x, scifir::percentage::PARTS_PER_QUATRILLION);
 }*/
+
+scifir::pixel operator"" _px(unsigned long long int x)
+{
+	return scifir::pixel((long double)x);
+}
 
 scifir::frequency operator"" _YHz(long double x)
 {
@@ -5147,6 +5167,21 @@ scifir::molarity operator"" _yM(long double x)
 	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
+scifir::scalar_unit operator"" _memo(long double x)
+{
+	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::MEMO,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+}
+
+scifir::angle operator"" _degree(long double x)
+{
+	return scifir::angle(x, scifir::angle::DEGREE);
+}
+
+scifir::angle operator"" _rad(long double x)
+{
+	return scifir::angle(x, scifir::angle::RADIAN);
+}
+
 scifir::percentage operator"" _ppm(long double x)
 {
 	return scifir::percentage(x, scifir::percentage::PARTS_PER_MILLION);
@@ -5166,3 +5201,8 @@ scifir::percentage operator"" _ppq(long double x)
 {
 	return scifir::percentage(x, scifir::percentage::PARTS_PER_QUATRILLION);
 }*/
+
+scifir::pixel operator"" _px(long double x)
+{
+	return scifir::pixel(x);
+}

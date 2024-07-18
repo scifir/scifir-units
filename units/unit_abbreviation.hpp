@@ -11,6 +11,7 @@
 #include "../predefined_units/chemistry_units.hpp"
 
 #include "../special_units/percentage.hpp"
+#include "../special_units/pixel.hpp"
 
 scifir::frequency operator"" _YHz(unsigned long long int);
 scifir::frequency operator"" _ZHz(unsigned long long int);
@@ -554,10 +555,14 @@ scifir::molarity operator"" _zM(unsigned long long int);
 scifir::molarity operator"" _yM(unsigned long long int);
 
 scifir::mole operator"" _particles(unsigned long long int);
+scifir::scalar_unit operator"" _memo(unsigned long long int);
+scifir::angle operator"" _degree(unsigned long long int);
+scifir::angle operator"" _rad(unsigned long long int);
 scifir::percentage operator"" _ppm(unsigned long long int);
 /*scifir::percentage operator"" _ppb(unsigned long long int);
 scifir::percentage operator"" _ppt(unsigned long long int);
 scifir::percentage operator"" _ppq(unsigned long long int);*/
+scifir::pixel operator"" _px(unsigned long long int);
 
 scifir::frequency operator"" _YHz(long double);
 scifir::frequency operator"" _ZHz(long double);
@@ -1102,9 +1107,13 @@ scifir::molarity operator"" _aM(long double);
 scifir::molarity operator"" _zM(long double);
 scifir::molarity operator"" _yM(long double);
 
+scifir::scalar_unit operator"" _memo(long double);
+scifir::angle operator"" _degree(long double);
+scifir::angle operator"" _rad(long double);
 scifir::percentage operator"" _ppm(long double);
 /*scifir::percentage operator"" _ppb(long double);
 scifir::percentage operator"" _ppt(long double);
 scifir::percentage operator"" _ppq(long double);*/
+scifir::pixel operator"" _px(long double);
 
 #endif // SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED

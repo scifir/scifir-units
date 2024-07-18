@@ -631,7 +631,7 @@ namespace scifir
 				return "kat";
 #ifdef IS_UNIX
 			case dimension::ANGSTROM:
-				return "\U0000212B";
+				return "Å";
 #elif IS_WINDOWS
 			case dimension::ANGSTROM:
 				return "\U212B";
