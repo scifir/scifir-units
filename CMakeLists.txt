@@ -72,7 +72,13 @@ if(Boost_FOUND)
 endif()
 
 if(!Boost_FOUND)
-  message("Boost not found, configure Boost_ variables properly and/or install Boost adequately. You can search the documentation of FindBoost, part of CMake, to learn the Boost_ variables to configure. Inside the README.md of scifir-units is also the explanation of how to configure Boost_ variables.")
+  message("Libraries of Boost not found, configure Boost_ variables properly and/or install Boost adequately. You can search the documentation of FindBoost, part of CMake, to learn the Boost_ variables to configure. Inside the README.md of scifir-units is also the explanation of how to configure Boost_ variables.")
+endif()
+
+find_package(ICU 70 COMPONENTS uc REQUIRED)
+
+if(!ICU_FOUND)
+	message("Library ICU not found, install it in your system first.")
 endif()
 
 # Files to compile
@@ -92,7 +98,7 @@ file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp fields/*.cpp meca_number/*.cpp pr
 # Project to build
 
 add_library(scifir-units ${TARGET_SRC})
-target_link_libraries(scifir-units Boost::system icuuc)
+target_link_libraries(scifir-units Boost::system ${ICU_LIBRARIES})
 
 # Define variables for cross-compiling
 
@@ -134,175 +140,175 @@ if(BUILD_TESTING)
 		enable_testing()
 
 		add_executable(test_sizeof tests/test_sizeof.cpp)
-		target_link_libraries(test_sizeof PRIVATE scifir-units Boost::system icuuc)
+		target_link_libraries(test_sizeof PRIVATE scifir-units Boost::system ${ICU_LIBRARIES})
 
 		add_executable(test_prefix tests/units/test_prefix.cpp)
-		target_link_libraries(test_prefix PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_prefix PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME prefix COMMAND test_prefix)
 		set_tests_properties(prefix PROPERTIES LABELS tests)
 
 		add_executable(test_dimension tests/units/test_dimension.cpp)
-		target_link_libraries(test_dimension PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_dimension PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME dimension COMMAND test_dimension)
 		set_tests_properties(dimension PROPERTIES LABELS tests)
 
 		add_executable(test_scalar_unit tests/units/test_scalar_unit.cpp)
-		target_link_libraries(test_scalar_unit PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_scalar_unit PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME scalar_unit COMMAND test_scalar_unit)
 		set_tests_properties(scalar_unit PROPERTIES LABELS tests)
 
 		add_executable(test_vector_unit_2d tests/units/test_vector_unit_2d.cpp)
-		target_link_libraries(test_vector_unit_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_vector_unit_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME vector_unit_2d COMMAND test_vector_unit_2d)
 		set_tests_properties(vector_unit_2d PROPERTIES LABELS tests)
 
 		add_executable(test_vector_unit_3d tests/units/test_vector_unit_3d.cpp)
-		target_link_libraries(test_vector_unit_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_vector_unit_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME vector_unit_3d COMMAND test_vector_unit_3d)
 		set_tests_properties(vector_unit_3d PROPERTIES LABELS tests)
 
 		add_executable(test_vector_unit_nd tests/units/test_vector_unit_nd.cpp)
-		target_link_libraries(test_vector_unit_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_vector_unit_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME vector_unit_nd COMMAND test_vector_unit_nd)
 		set_tests_properties(vector_unit_nd PROPERTIES LABELS tests)
 
 		add_executable(test_angle tests/meca_number/test_angle.cpp)
-		target_link_libraries(test_angle PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_angle PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME angle COMMAND test_angle)
 		set_tests_properties(angle PROPERTIES LABELS tests)
 
 		add_executable(test_complex_number tests/meca_number/test_complex_number.cpp)
-		target_link_libraries(test_complex_number PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_complex_number PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME complex_number COMMAND test_complex_number)
 		set_tests_properties(complex_number PROPERTIES LABELS tests)
 
 		add_executable(test_lab_number tests/meca_number/test_lab_number.cpp)
-		target_link_libraries(test_lab_number PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_lab_number PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME lab_number COMMAND test_lab_number)
 		set_tests_properties(lab_number PROPERTIES LABELS tests)
 
 		add_executable(test_unit_basic tests/units/test_unit_basic.cpp)
-		target_link_libraries(test_unit_basic PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_unit_basic PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME unit_basic COMMAND test_unit_basic)
 		set_tests_properties(unit_basic PROPERTIES LABELS tests)
 
 		add_executable(test_unit_abbreviation tests/units/test_unit_abbreviation.cpp)
-		target_link_libraries(test_unit_abbreviation PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_unit_abbreviation PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME unit_abbreviation COMMAND test_unit_abbreviation)
 		set_tests_properties(unit_abbreviation PROPERTIES LABELS tests)
 
 		add_executable(test_coordinates_1d tests/coordinates/test_coordinates_1d.cpp)
-		target_link_libraries(test_coordinates_1d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_coordinates_1d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME coordinates_1d COMMAND test_coordinates_1d)
 		set_tests_properties(coordinates_1d PROPERTIES LABELS tests)
 
 		add_executable(test_coordinates_2d tests/coordinates/test_coordinates_2d.cpp)
-		target_link_libraries(test_coordinates_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_coordinates_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME coordinates_2d COMMAND test_coordinates_2d)
 		set_tests_properties(coordinates_2d PROPERTIES LABELS tests)
 
 		add_executable(test_coordinates_2dr tests/coordinates/test_coordinates_2dr.cpp)
-		target_link_libraries(test_coordinates_2dr PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_coordinates_2dr PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME coordinates_2dr COMMAND test_coordinates_2dr)
 		set_tests_properties(coordinates_2dr PROPERTIES LABELS tests)
 
 		add_executable(test_coordinates_3d tests/coordinates/test_coordinates_3d.cpp)
-		target_link_libraries(test_coordinates_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_coordinates_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME coordinates_3d COMMAND test_coordinates_3d)
 		set_tests_properties(coordinates_3d PROPERTIES LABELS tests)
 
 		add_executable(test_coordinates_3dr tests/coordinates/test_coordinates_3dr.cpp)
-		target_link_libraries(test_coordinates_3dr PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_coordinates_3dr PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME coordinates_3dr COMMAND test_coordinates_3dr)
 		set_tests_properties(coordinates_3dr PROPERTIES LABELS tests)
 
 		add_executable(test_coordinates_nd tests/coordinates/test_coordinates_nd.cpp)
-		target_link_libraries(test_coordinates_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_coordinates_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME coordinates_nd COMMAND test_coordinates_nd)
 		set_tests_properties(coordinates_nd PROPERTIES LABELS tests)
 
 		add_executable(test_coordinates_ndr tests/coordinates/test_coordinates_ndr.cpp)
-		target_link_libraries(test_coordinates_ndr PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_coordinates_ndr PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME coordinates_ndr COMMAND test_coordinates_ndr)
 		set_tests_properties(coordinates_ndr PROPERTIES LABELS tests)
 
 		add_executable(test_direction tests/topology/test_direction.cpp)
-		target_link_libraries(test_direction PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_direction PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME direction COMMAND test_direction)
 		set_tests_properties(direction PROPERTIES LABELS tests)
 
 		add_executable(test_point_1d tests/topology/test_point_1d.cpp)
-		target_link_libraries(test_point_1d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_point_1d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME point_1d COMMAND test_point_1d)
 		set_tests_properties(point_1d PROPERTIES LABELS tests)
 
 		add_executable(test_point_2d tests/topology/test_point_2d.cpp)
-		target_link_libraries(test_point_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_point_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME point_2d COMMAND test_point_2d)
 		set_tests_properties(point_2d PROPERTIES LABELS tests)
 
 		add_executable(test_point_3d tests/topology/test_point_3d.cpp)
-		target_link_libraries(test_point_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_point_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME point_3d COMMAND test_point_3d)
 		set_tests_properties(point_3d PROPERTIES LABELS tests)
 
 		add_executable(test_point_nd tests/topology/test_point_nd.cpp)
-		target_link_libraries(test_point_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_point_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME point_nd COMMAND test_point_nd)
 		set_tests_properties(point_nd PROPERTIES LABELS tests)
 
 		add_executable(test_aid tests/special_units/test_aid.cpp)
-		target_link_libraries(test_aid PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_aid PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME aid COMMAND test_aid)
 		set_tests_properties(aid PROPERTIES LABELS tests)
 
 		add_executable(test_percentage tests/special_units/test_percentage.cpp)
-		target_link_libraries(test_percentage PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_percentage PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME percentage COMMAND test_percentage)
 		set_tests_properties(percentage PROPERTIES LABELS tests)
 
 		add_executable(test_pH tests/special_units/test_pH.cpp)
-		target_link_libraries(test_pH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_pH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME pH COMMAND test_pH)
 		set_tests_properties(pH PROPERTIES LABELS tests)
 
 		add_executable(test_pOH tests/special_units/test_pOH.cpp)
-		target_link_libraries(test_pOH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_pOH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME pOH COMMAND test_pOH)
 		set_tests_properties(pOH PROPERTIES LABELS tests)
 
 		add_executable(test_pixel tests/special_units/test_pixel.cpp)
-		target_link_libraries(test_pixel PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_pixel PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME pixel COMMAND test_pixel)
 		set_tests_properties(pixel PROPERTIES LABELS tests)
 
 		add_executable(test_size_2d tests/special_units/test_size_2d.cpp)
-		target_link_libraries(test_size_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_size_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME size_2d COMMAND test_size_2d)
 		set_tests_properties(size_2d PROPERTIES LABELS tests)
 
 		add_executable(test_size_3d tests/special_units/test_size_3d.cpp)
-		target_link_libraries(test_size_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_size_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME size_3d COMMAND test_size_3d)
 		set_tests_properties(size_3d PROPERTIES LABELS tests)
 
 		add_executable(test_size_nd tests/special_units/test_size_nd.cpp)
-		target_link_libraries(test_size_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_size_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME size_nd COMMAND test_size_nd)
 		set_tests_properties(size_nd PROPERTIES LABELS tests)
 
 		add_executable(test_zid tests/special_units/test_zid.cpp)
-		target_link_libraries(test_zid PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_zid PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME zid COMMAND test_zid)
 		set_tests_properties(zid PROPERTIES LABELS tests)
 
 		add_executable(test_types tests/util/test_types.cpp)
-		target_link_libraries(test_types PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(test_types PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME types COMMAND test_types)
 		set_tests_properties(types PROPERTIES LABELS tests)
 
 		add_executable(benchmark_units tests/benchmark_units.cpp)
-		target_link_libraries(benchmark_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		target_link_libraries(benchmark_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME benchmark_units COMMAND benchmark_units)
 		set_tests_properties(benchmark_units PROPERTIES LABELS benchmarks)
 
