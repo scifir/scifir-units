@@ -224,6 +224,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac51fae1ea055292646899eee80c795a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1angle.html#ac51fae1ea055292646899eee80c795a6">invert</a> ()</td></tr>
 <tr class="memdesc:ac51fae1ea055292646899eee80c795a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts the angle to the opposite direction in a 2D plane, which is to add 180 degrees. The value is normalized after.  <a href="classscifir_1_1angle.html#ac51fae1ea055292646899eee80c795a6">More...</a><br /></td></tr>
 <tr class="separator:ac51fae1ea055292646899eee80c795a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b37fbde3c8d0034c9038408c951342"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1scalar__unit.html">scalar_unit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1angle.html#a35b37fbde3c8d0034c9038408c951342">to_scalar_unit</a> () const</td></tr>
+<tr class="memdesc:a35b37fbde3c8d0034c9038408c951342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> with the same value and degree dimensions.  <a href="classscifir_1_1angle.html#a35b37fbde3c8d0034c9038408c951342">More...</a><br /></td></tr>
+<tr class="separator:a35b37fbde3c8d0034c9038408c951342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf5d66225219ec791fc16df004f609d9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1angle.html#adf5d66225219ec791fc16df004f609d9">display</a> (int number_of_decimals=2) const</td></tr>
 <tr class="memdesc:adf5d66225219ec791fc16df004f609d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an string from the angle, with the value and the degrees symbol.  <a href="classscifir_1_1angle.html#adf5d66225219ec791fc16df004f609d9">More...</a><br /></td></tr>
 <tr class="separator:adf5d66225219ec791fc16df004f609d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -303,7 +306,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="angle_8cpp_source.html#l00018">18</a> of file <a class="el" href="angle_8cpp_source.html">angle.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                 : <a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a>(0.0f)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {}</div>
-<div class="ttc" id="aclassscifir_1_1angle_html_a3cafe677d680efd536fad4822885ffc2"><div class="ttname"><a href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">scifir::angle::value</a></div><div class="ttdeci">float value</div><div class="ttdoc">Value of the angle. It is stored in degrees.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00161">angle.hpp:161</a></div></div>
+<div class="ttc" id="aclassscifir_1_1angle_html_a3cafe677d680efd536fad4822885ffc2"><div class="ttname"><a href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">scifir::angle::value</a></div><div class="ttdeci">float value</div><div class="ttdoc">Value of the angle. It is stored in degrees.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00163">angle.hpp:163</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -402,7 +405,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classscifir_1_1angle.html#ae5fd03c5778acc1b42c3a7aba88a77b9">normalize_value</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="ttc" id="aclassscifir_1_1angle_html_ae5fd03c5778acc1b42c3a7aba88a77b9"><div class="ttname"><a href="classscifir_1_1angle.html#ae5fd03c5778acc1b42c3a7aba88a77b9">scifir::angle::normalize_value</a></div><div class="ttdeci">void normalize_value()</div><div class="ttdoc">Internal function. Normalizes the value, which means to maintain the same angle within 0 and 360....</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00239">angle.cpp:239</a></div></div>
+<div class="ttc" id="aclassscifir_1_1angle_html_ae5fd03c5778acc1b42c3a7aba88a77b9"><div class="ttname"><a href="classscifir_1_1angle.html#ae5fd03c5778acc1b42c3a7aba88a77b9">scifir::angle::normalize_value</a></div><div class="ttdeci">void normalize_value()</div><div class="ttdoc">Internal function. Normalizes the value, which means to maintain the same angle within 0 and 360....</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00244">angle.cpp:244</a></div></div>
 <div class="ttc" id="anamespacescifir_html_a4279b6b5a8b758d99f7f94f0ed400977"><div class="ttname"><a href="namespacescifir.html#a4279b6b5a8b758d99f7f94f0ed400977">scifir::radian_to_degree</a></div><div class="ttdeci">float radian_to_degree(float x)</div><div class="ttdoc">Converts a radian to degree.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00017">angle.hpp:17</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -588,7 +591,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classscifir_1_1angle.html#a05641e654ba840e2a80c43406a82dfe9">initialize_from_string</a>(init_angle);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="ttc" id="aclassscifir_1_1angle_html_a05641e654ba840e2a80c43406a82dfe9"><div class="ttname"><a href="classscifir_1_1angle.html#a05641e654ba840e2a80c43406a82dfe9">scifir::angle::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(string init_angle)</div><div class="ttdoc">Internal function. Sets the value of the angle to a new value using the initialization string of angl...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00260">angle.cpp:260</a></div></div>
+<div class="ttc" id="aclassscifir_1_1angle_html_a05641e654ba840e2a80c43406a82dfe9"><div class="ttname"><a href="classscifir_1_1angle.html#a05641e654ba840e2a80c43406a82dfe9">scifir::angle::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(string init_angle)</div><div class="ttdoc">Internal function. Sets the value of the angle to a new value using the initialization string of angl...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00265">angle.cpp:265</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -653,20 +656,20 @@ Private Attributes</h2></td></tr>
 
 <p>Creates an string from the angle, with the value and the degrees symbol. </p>
 
-<p class="definition">Definition at line <a class="el" href="angle_8cpp_source.html#l00224">224</a> of file <a class="el" href="angle_8cpp_source.html">angle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        ostringstream output;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1angle.html#a0ee2dddd2d514a707cc3f98e496cf8a1">get_value</a>() == -0)</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            output &lt;&lt; 0;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            output &lt;&lt; <a class="code" href="namespacescifir.html#a6fc5f876bdd1abb1118fc73288152eb0">display_float</a>(<a class="code" href="classscifir_1_1angle.html#a0ee2dddd2d514a707cc3f98e496cf8a1">get_value</a>(),number_of_decimals);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        }</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        output &lt;&lt; <span class="stringliteral">&quot;\u00B0&quot;</span>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">return</span> output.str();</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="angle_8cpp_source.html#l00229">229</a> of file <a class="el" href="angle_8cpp_source.html">angle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        ostringstream output;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1angle.html#a0ee2dddd2d514a707cc3f98e496cf8a1">get_value</a>() == -0)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            output &lt;&lt; 0;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            output &lt;&lt; <a class="code" href="namespacescifir.html#a6fc5f876bdd1abb1118fc73288152eb0">display_float</a>(<a class="code" href="classscifir_1_1angle.html#a0ee2dddd2d514a707cc3f98e496cf8a1">get_value</a>(),number_of_decimals);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        output &lt;&lt; <span class="stringliteral">&quot;°&quot;</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">return</span> output.str();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
 <div class="ttc" id="aclassscifir_1_1angle_html_a0ee2dddd2d514a707cc3f98e496cf8a1"><div class="ttname"><a href="classscifir_1_1angle.html#a0ee2dddd2d514a707cc3f98e496cf8a1">scifir::angle::get_value</a></div><div class="ttdeci">const float &amp; get_value() const</div><div class="ttdoc">Gets the value of the angle, in degrees.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00053">angle.hpp:53</a></div></div>
 <div class="ttc" id="anamespacescifir_html_a6fc5f876bdd1abb1118fc73288152eb0"><div class="ttname"><a href="namespacescifir.html#a6fc5f876bdd1abb1118fc73288152eb0">scifir::display_float</a></div><div class="ttdeci">string display_float(const float &amp;value, int number_of_decimals)</div><div class="ttdef"><b>Definition:</b> <a href="types_8cpp_source.html#l00036">types.cpp:36</a></div></div>
 </div><!-- fragment -->
@@ -697,10 +700,10 @@ Private Attributes</h2></td></tr>
 
 <p>Gets the value of the angle in degrees. </p>
 
-<p class="definition">Definition at line <a class="el" href="angle_8hpp_source.html#l00150">150</a> of file <a class="el" href="angle_8hpp_source.html">angle.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="angle_8hpp_source.html#l00152">152</a> of file <a class="el" href="angle_8hpp_source.html">angle.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -729,10 +732,10 @@ Private Attributes</h2></td></tr>
 
 <p>Gets the value of the angle in radians. </p>
 
-<p class="definition">Definition at line <a class="el" href="angle_8hpp_source.html#l00155">155</a> of file <a class="el" href="angle_8hpp_source.html">angle.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacescifir.html#a5f6a331e2ea05821aad3167e2b42b626">degree_to_radian</a>(<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a>);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="angle_8hpp_source.html#l00157">157</a> of file <a class="el" href="angle_8hpp_source.html">angle.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacescifir.html#a5f6a331e2ea05821aad3167e2b42b626">degree_to_radian</a>(<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            }</div>
 <div class="ttc" id="anamespacescifir_html_a5f6a331e2ea05821aad3167e2b42b626"><div class="ttname"><a href="namespacescifir.html#a5f6a331e2ea05821aad3167e2b42b626">scifir::degree_to_radian</a></div><div class="ttdeci">float degree_to_radian(float x)</div><div class="ttdoc">Converts a degree to a radian.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00022">angle.hpp:22</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -795,18 +798,18 @@ Private Attributes</h2></td></tr>
 
 <p><b>Internal function</b>. Sets the value of the angle to a new value using the initialization string of angles. </p>
 
-<p class="definition">Definition at line <a class="el" href="angle_8cpp_source.html#l00260">260</a> of file <a class="el" href="angle_8cpp_source.html">angle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">if</span> (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        init_angle.clear();</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        init_angle_unicode.toUTF8String(init_angle);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> = stof(init_angle);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="classscifir_1_1angle.html#ae5fd03c5778acc1b42c3a7aba88a77b9">normalize_value</a>();</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="angle_8cpp_source.html#l00265">265</a> of file <a class="el" href="angle_8cpp_source.html">angle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">if</span> (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        init_angle.clear();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        init_angle_unicode.toUTF8String(init_angle);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> = stof(init_angle);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <a class="code" href="classscifir_1_1angle.html#ae5fd03c5778acc1b42c3a7aba88a77b9">normalize_value</a>();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -860,26 +863,26 @@ Private Attributes</h2></td></tr>
 
 <p><b>Internal function</b>. Normalizes the value, which means to maintain the same angle within 0 and 360. If the value is lower or greather it gets converted to their equivalent counterpart within this range. </p>
 
-<p class="definition">Definition at line <a class="el" href="angle_8cpp_source.html#l00239">239</a> of file <a class="el" href="angle_8cpp_source.html">angle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">if</span>(isfinite(<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a>))</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> &gt;= 360.0f)</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keywordflow">while</span> (<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> &gt;= 360.0f)</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    <a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> -= 360.0f;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> &lt; 0.0f)</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <span class="keywordflow">while</span> (<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> &lt; 0.0f)</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    <a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> += 360.0f;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="angle_8cpp_source.html#l00244">244</a> of file <a class="el" href="angle_8cpp_source.html">angle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">if</span>(isfinite(<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a>))</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> &gt;= 360.0f)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="keywordflow">while</span> (<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> &gt;= 360.0f)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    <a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> -= 360.0f;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> &lt; 0.0f)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keywordflow">while</span> (<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> &lt; 0.0f)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a> += 360.0f;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1804,6 +1807,33 @@ template&lt;typename T , typename  = typename enable_if&lt;scifir::is_number&lt;
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a35b37fbde3c8d0034c9038408c951342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35b37fbde3c8d0034c9038408c951342">&#9670;&nbsp;</a></span>to_scalar_unit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classscifir_1_1scalar__unit.html">scalar_unit</a> angle::to_scalar_unit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> with the same value and degree dimensions. </p>
+
+<p class="definition">Definition at line <a class="el" href="angle_8cpp_source.html#l00224">224</a> of file <a class="el" href="angle_8cpp_source.html">angle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span> scalar_unit(<a class="code" href="classscifir_1_1angle.html#a3cafe677d680efd536fad4822885ffc2">value</a>, { dimension(<a class="code" href="classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba5cfe75b77c8a88a895c9bd0f4e12bf70">dimension::DEGREE</a>, <a class="code" href="classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711">prefix::NONE</a>, <a class="code" href="classscifir_1_1dimension.html#a0c5cc98c4cc5074dc6d68b9d36aff42aaca5d501f305756a8271b1c629bb2f41c">dimension::NUMERATOR</a>) });</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
+<div class="ttc" id="aclassscifir_1_1dimension_html_a0c5cc98c4cc5074dc6d68b9d36aff42aaca5d501f305756a8271b1c629bb2f41c"><div class="ttname"><a href="classscifir_1_1dimension.html#a0c5cc98c4cc5074dc6d68b9d36aff42aaca5d501f305756a8271b1c629bb2f41c">scifir::dimension::NUMERATOR</a></div><div class="ttdeci">@ NUMERATOR</div><div class="ttdoc">The dimension is at the numerator.</div><div class="ttdef"><b>Definition:</b> <a href="dimension_8hpp_source.html#l00036">dimension.hpp:36</a></div></div>
+<div class="ttc" id="aclassscifir_1_1dimension_html_a7159ee72510ebcc26ee93da8900fb9fba5cfe75b77c8a88a895c9bd0f4e12bf70"><div class="ttname"><a href="classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba5cfe75b77c8a88a895c9bd0f4e12bf70">scifir::dimension::DEGREE</a></div><div class="ttdeci">@ DEGREE</div><div class="ttdoc">Degree, plural degrees. Dimension of angle. Symbol θ.</div><div class="ttdef"><b>Definition:</b> <a href="dimension_8hpp_source.html#l00033">dimension.hpp:33</a></div></div>
+<div class="ttc" id="aclassscifir_1_1prefix_html_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711"><div class="ttname"><a href="classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711">scifir::prefix::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">There is no prefix. Then, the dimension is not increased or decreased by some factor.</div><div class="ttdef"><b>Definition:</b> <a href="prefix_8hpp_source.html#l00016">prefix.hpp:16</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a3cafe677d680efd536fad4822885ffc2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3cafe677d680efd536fad4822885ffc2">&#9670;&nbsp;</a></span>value</h2>
@@ -1827,7 +1857,7 @@ template&lt;typename T , typename  = typename enable_if&lt;scifir::is_number&lt;
 
 <p>Value of the angle. It is stored in degrees. </p>
 
-<p class="definition">Definition at line <a class="el" href="angle_8hpp_source.html#l00161">161</a> of file <a class="el" href="angle_8hpp_source.html">angle.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="angle_8hpp_source.html#l00163">163</a> of file <a class="el" href="angle_8hpp_source.html">angle.hpp</a>.</p>
 
 </div>
 </div>

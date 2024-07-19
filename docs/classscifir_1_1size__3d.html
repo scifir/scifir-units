@@ -77,64 +77,87 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class that allows to store and calculate size in 3D, with width, height and depth. The template parameter T allows to select any <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> or numeric type to be the type of the width, the height and the depth (they always have the same type in the same instance). The width, height and depth can be any <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>, usually length, but imaginary spaces with custom dimensions are also allowed. <b>Initialization string</b> example: "1 m * 2 m * 4 m".  
+ <a href="classscifir_1_1size__3d.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a203226ede3f032f59fa077e3d62145ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a203226ede3f032f59fa077e3d62145ab">size_3d</a> ()</td></tr>
-<tr class="separator:a203226ede3f032f59fa077e3d62145ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b4d091f0e15f510c3542dbfe43a4b08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a8b4d091f0e15f510c3542dbfe43a4b08">size_3d</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x)</td></tr>
-<tr class="separator:a8b4d091f0e15f510c3542dbfe43a4b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7b5c855243567515aad306f0696d4c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#ab7b5c855243567515aad306f0696d4c7">size_3d</a> (<a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&amp;x)</td></tr>
-<tr class="separator:ab7b5c855243567515aad306f0696d4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a342c29fa2eba3ff9769107bc2f9b7143"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a342c29fa2eba3ff9769107bc2f9b7143">size_3d</a> (const T &amp;new_width, const T &amp;new_height, const T &amp;new_depth)</td></tr>
-<tr class="separator:a342c29fa2eba3ff9769107bc2f9b7143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2869e0ab5bf6135a0596582b7e2dbc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#aa2869e0ab5bf6135a0596582b7e2dbc9">size_3d</a> (const string &amp;new_width, const string &amp;new_height, const string &amp;new_depth)</td></tr>
-<tr class="separator:aa2869e0ab5bf6135a0596582b7e2dbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16c224393337c845db0cc897aeab4518"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a16c224393337c845db0cc897aeab4518">size_3d</a> (const string &amp;init_size_3d)</td></tr>
-<tr class="separator:a16c224393337c845db0cc897aeab4518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d0ddfccf708903e86c2451c3da0a69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a46d0ddfccf708903e86c2451c3da0a69">operator=</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x)</td></tr>
-<tr class="separator:a46d0ddfccf708903e86c2451c3da0a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5556b70bf199a26cd02e5c172e5520d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a5556b70bf199a26cd02e5c172e5520d8">operator=</a> (<a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&amp;x)</td></tr>
-<tr class="separator:a5556b70bf199a26cd02e5c172e5520d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3df5f22dce67caa88cde8844663720c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a3df5f22dce67caa88cde8844663720c6">operator=</a> (const string &amp;init_size_3d)</td></tr>
-<tr class="separator:a3df5f22dce67caa88cde8844663720c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a21cf4cceed534f3f418fd6365fc0d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a4a21cf4cceed534f3f418fd6365fc0d1">operator+</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x) const</td></tr>
-<tr class="separator:a4a21cf4cceed534f3f418fd6365fc0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7ebb7c805519069c42533d9c43cc435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#ac7ebb7c805519069c42533d9c43cc435">operator-</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x) const</td></tr>
-<tr class="separator:ac7ebb7c805519069c42533d9c43cc435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada390e320ba19c5fdad921ebb4240a06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#ada390e320ba19c5fdad921ebb4240a06">operator+=</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x)</td></tr>
-<tr class="separator:ada390e320ba19c5fdad921ebb4240a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83e9e06987837b70e62dc5720a2956d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a83e9e06987837b70e62dc5720a2956d7">operator-=</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x)</td></tr>
-<tr class="separator:a83e9e06987837b70e62dc5720a2956d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29ff12f1198e9457bf02dbb848db6edb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1scalar__unit.html">scalar_unit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a29ff12f1198e9457bf02dbb848db6edb">get_volume</a> () const</td></tr>
-<tr class="separator:a29ff12f1198e9457bf02dbb848db6edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a2ee372c452eb7ba4e7e5cbac1e0d50"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a6a2ee372c452eb7ba4e7e5cbac1e0d50">display</a> () const</td></tr>
-<tr class="separator:a6a2ee372c452eb7ba4e7e5cbac1e0d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b19e402d8666548288fbb41e3c7fc0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a3b19e402d8666548288fbb41e3c7fc0f">size_3d</a> ()</td></tr>
+<tr class="memdesc:a3b19e402d8666548288fbb41e3c7fc0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Both width, height and depth are initialized to 0, with the dimensions to the default of their basic unit.  <a href="classscifir_1_1size__3d.html#a3b19e402d8666548288fbb41e3c7fc0f">More...</a><br /></td></tr>
+<tr class="separator:a3b19e402d8666548288fbb41e3c7fc0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6432ca102407d66a7c508209fd6e8b45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a6432ca102407d66a7c508209fd6e8b45">size_3d</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a6432ca102407d66a7c508209fd6e8b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. The width, height and depth are copied from the size_3d&lt;T&gt; x.  <a href="classscifir_1_1size__3d.html#a6432ca102407d66a7c508209fd6e8b45">More...</a><br /></td></tr>
+<tr class="separator:a6432ca102407d66a7c508209fd6e8b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3998318ba16e782b2eb624168d35a050"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a3998318ba16e782b2eb624168d35a050">size_3d</a> (<a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&amp;x)</td></tr>
+<tr class="memdesc:a3998318ba16e782b2eb624168d35a050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor. The width, height and depth are moved from the size_3d&lt;T&gt; x.  <a href="classscifir_1_1size__3d.html#a3998318ba16e782b2eb624168d35a050">More...</a><br /></td></tr>
+<tr class="separator:a3998318ba16e782b2eb624168d35a050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29378f3c3c06ae8bfb454d3b91ad89b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a29378f3c3c06ae8bfb454d3b91ad89b4">size_3d</a> (const T &amp;new_width, const T &amp;new_height, const T &amp;new_depth)</td></tr>
+<tr class="memdesc:a29378f3c3c06ae8bfb454d3b91ad89b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. width is new_width, height is new_height and depth is new_depth.  <a href="classscifir_1_1size__3d.html#a29378f3c3c06ae8bfb454d3b91ad89b4">More...</a><br /></td></tr>
+<tr class="separator:a29378f3c3c06ae8bfb454d3b91ad89b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c3b9426f78e148998dd8551fcb3182"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a31c3b9426f78e148998dd8551fcb3182">size_3d</a> (const string &amp;new_width, const string &amp;new_height, const string &amp;new_depth)</td></tr>
+<tr class="memdesc:a31c3b9426f78e148998dd8551fcb3182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. width is new_width, height is new_height and depth is new_depth, they are initialized by string.  <a href="classscifir_1_1size__3d.html#a31c3b9426f78e148998dd8551fcb3182">More...</a><br /></td></tr>
+<tr class="separator:a31c3b9426f78e148998dd8551fcb3182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d553abf5196fd0d583cda402c4b0a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a08d553abf5196fd0d583cda402c4b0a9">size_3d</a> (const string &amp;init_size_3d)</td></tr>
+<tr class="memdesc:a08d553abf5196fd0d583cda402c4b0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. The member-variables are initialized by the initialization string init_size_3d.  <a href="classscifir_1_1size__3d.html#a08d553abf5196fd0d583cda402c4b0a9">More...</a><br /></td></tr>
+<tr class="separator:a08d553abf5196fd0d583cda402c4b0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae07aea54c2b5e6cbf46412a5db71f044"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#ae07aea54c2b5e6cbf46412a5db71f044">operator=</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:ae07aea54c2b5e6cbf46412a5db71f044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment. The width, height and depth are copied from the size_3d&lt;T&gt; x.  <a href="classscifir_1_1size__3d.html#ae07aea54c2b5e6cbf46412a5db71f044">More...</a><br /></td></tr>
+<tr class="separator:ae07aea54c2b5e6cbf46412a5db71f044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7efbc5938960130cd84e5a5dee7775d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a7efbc5938960130cd84e5a5dee7775d1">operator=</a> (<a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&amp;x)</td></tr>
+<tr class="memdesc:a7efbc5938960130cd84e5a5dee7775d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment. The width, height and depth are moved from the size_3d&lt;T&gt; x.  <a href="classscifir_1_1size__3d.html#a7efbc5938960130cd84e5a5dee7775d1">More...</a><br /></td></tr>
+<tr class="separator:a7efbc5938960130cd84e5a5dee7775d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae75c0560307379a8a79e6e4b4fca0b92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#ae75c0560307379a8a79e6e4b4fca0b92">operator=</a> (const string &amp;init_size_3d)</td></tr>
+<tr class="memdesc:ae75c0560307379a8a79e6e4b4fca0b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment. The member-variables are initialized by the initialization string init_size_3d.  <a href="classscifir_1_1size__3d.html#ae75c0560307379a8a79e6e4b4fca0b92">More...</a><br /></td></tr>
+<tr class="separator:ae75c0560307379a8a79e6e4b4fca0b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf053e8ac161fb9dcbe367f513f76a31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#acf053e8ac161fb9dcbe367f513f76a31">operator+</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x) const</td></tr>
+<tr class="memdesc:acf053e8ac161fb9dcbe367f513f76a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new size_3d&lt;T&gt; by the addition of two size_3d&lt;T&gt; classes. The width, height and depth are the result of the addition of the two width, height or depth of the size_3d&lt;T&gt; classes.  <a href="classscifir_1_1size__3d.html#acf053e8ac161fb9dcbe367f513f76a31">More...</a><br /></td></tr>
+<tr class="separator:acf053e8ac161fb9dcbe367f513f76a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a377482f84ed175b19a2145279d61550b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a377482f84ed175b19a2145279d61550b">operator-</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x) const</td></tr>
+<tr class="memdesc:a377482f84ed175b19a2145279d61550b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new size_3d&lt;T&gt; by the difference of two size_3d&lt;T&gt; classes. The width, height and depth are the result of the difference of the two width, height or depth of the size_3d&lt;T&gt; classes.  <a href="classscifir_1_1size__3d.html#a377482f84ed175b19a2145279d61550b">More...</a><br /></td></tr>
+<tr class="separator:a377482f84ed175b19a2145279d61550b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dbc5480dae724b90d3b413085d9c0d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a9dbc5480dae724b90d3b413085d9c0d5">operator+=</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a9dbc5480dae724b90d3b413085d9c0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sums the width of size_3d&lt;T&gt; x to the width, sums the height of size_3d&lt;T&gt; x to the height and sums the depth of size_3d&lt;T&gt; x to the depth.  <a href="classscifir_1_1size__3d.html#a9dbc5480dae724b90d3b413085d9c0d5">More...</a><br /></td></tr>
+<tr class="separator:a9dbc5480dae724b90d3b413085d9c0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d448d510772b92673418243f5af73e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#ad1d448d510772b92673418243f5af73e">operator-=</a> (const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:ad1d448d510772b92673418243f5af73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substracts the width of size_3d&lt;T&gt; x to the width, substracts the height of size_3d&lt;T&gt; x to the height and substracts the depth of size_3d&lt;T&gt; x to the depth.  <a href="classscifir_1_1size__3d.html#ad1d448d510772b92673418243f5af73e">More...</a><br /></td></tr>
+<tr class="separator:ad1d448d510772b92673418243f5af73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc6d4002551f491505b6a41b0a19fea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1scalar__unit.html">scalar_unit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a1cc6d4002551f491505b6a41b0a19fea">get_volume</a> () const</td></tr>
+<tr class="memdesc:a1cc6d4002551f491505b6a41b0a19fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the volume as the multiplication of the width, height and depth.  <a href="classscifir_1_1size__3d.html#a1cc6d4002551f491505b6a41b0a19fea">More...</a><br /></td></tr>
+<tr class="separator:a1cc6d4002551f491505b6a41b0a19fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36a362337679c636180e5884b2666e7e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a36a362337679c636180e5884b2666e7e">display</a> () const</td></tr>
+<tr class="memdesc:a36a362337679c636180e5884b2666e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of size_3d&lt;T&gt;, with his width, height and depth.  <a href="classscifir_1_1size__3d.html#a36a362337679c636180e5884b2666e7e">More...</a><br /></td></tr>
+<tr class="separator:a36a362337679c636180e5884b2666e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a00374fdae1c845643e428ca3db9390eb"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a></td></tr>
-<tr class="separator:a00374fdae1c845643e428ca3db9390eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b24e8c1c5d4b97028d83708a0236349"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a></td></tr>
-<tr class="separator:a6b24e8c1c5d4b97028d83708a0236349"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc948753e8017b454d878cc6b59466d7"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a></td></tr>
-<tr class="separator:adc948753e8017b454d878cc6b59466d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e97204ff89d59e776b721a05a7d5586"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a></td></tr>
+<tr class="memdesc:a0e97204ff89d59e776b721a05a7d5586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width, usually stored as length.  <a href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">More...</a><br /></td></tr>
+<tr class="separator:a0e97204ff89d59e776b721a05a7d5586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af02fe8fa38050a804e1b7a99ad01ed3c"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a></td></tr>
+<tr class="memdesc:af02fe8fa38050a804e1b7a99ad01ed3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height, usually stored as length.  <a href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">More...</a><br /></td></tr>
+<tr class="separator:af02fe8fa38050a804e1b7a99ad01ed3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d7a1617eaa3658ba4dea03c5d5bedb"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a></td></tr>
+<tr class="memdesc:a36d7a1617eaa3658ba4dea03c5d5bedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth, usually stored as length.  <a href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">More...</a><br /></td></tr>
+<tr class="separator:a36d7a1617eaa3658ba4dea03c5d5bedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a51bd4f309b9af74e07d691a244a38c8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a51bd4f309b9af74e07d691a244a38c8f">initialize_from_string</a> (const string &amp;init_size_3d)</td></tr>
-<tr class="separator:a51bd4f309b9af74e07d691a244a38c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9fe71297acd700335cce624348b9eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1size__3d.html#a9c9fe71297acd700335cce624348b9eb">initialize_from_string</a> (const string &amp;init_size_3d)</td></tr>
+<tr class="memdesc:a9c9fe71297acd700335cce624348b9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Internal function</b>. Initializes the member-variables with an initialization string of size_3d&lt;T&gt;.  <a href="classscifir_1_1size__3d.html#a9c9fe71297acd700335cce624348b9eb">More...</a><br /></td></tr>
+<tr class="separator:a9c9fe71297acd700335cce624348b9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T = length&gt;<br />
 class scifir::size_3d&lt; T &gt;</h3>
 
+<p>Class that allows to store and calculate size in 3D, with width, height and depth. The template parameter T allows to select any <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a> or numeric type to be the type of the width, the height and the depth (they always have the same type in the same instance). The width, height and depth can be any <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>, usually length, but imaginary spaces with custom dimensions are also allowed. <b>Initialization string</b> example: "1 m * 2 m * 4 m". </p>
 
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00016">16</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a203226ede3f032f59fa077e3d62145ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a203226ede3f032f59fa077e3d62145ab">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[1/6]</span></h2>
+<a id="a3b19e402d8666548288fbb41e3c7fc0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b19e402d8666548288fbb41e3c7fc0f">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +168,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::<a class="el" href="classscifir_1_1size__3d.html">size_3d</a> </td>
+          <td class="memname">size_3d::size_3d </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -158,17 +181,19 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Default constructor. Both width, height and depth are initialized to 0, with the dimensions to the default of their basic unit. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00019">19</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                      : <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a>(),<a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a>(),<a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a>()</div>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                      : <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a>(),<a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a>(),<a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a>()</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            {}</div>
-<div class="ttc" id="aclassscifir_1_1size__3d_html_a00374fdae1c845643e428ca3db9390eb"><div class="ttname"><a href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">scifir::size_3d::width</a></div><div class="ttdeci">T width</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00097">size_3d.hpp:97</a></div></div>
-<div class="ttc" id="aclassscifir_1_1size__3d_html_a6b24e8c1c5d4b97028d83708a0236349"><div class="ttname"><a href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">scifir::size_3d::height</a></div><div class="ttdeci">T height</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00098">size_3d.hpp:98</a></div></div>
-<div class="ttc" id="aclassscifir_1_1size__3d_html_adc948753e8017b454d878cc6b59466d7"><div class="ttname"><a href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">scifir::size_3d::depth</a></div><div class="ttdeci">T depth</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00099">size_3d.hpp:99</a></div></div>
+<div class="ttc" id="aclassscifir_1_1size__3d_html_a0e97204ff89d59e776b721a05a7d5586"><div class="ttname"><a href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">scifir::size_3d::width</a></div><div class="ttdeci">T width</div><div class="ttdoc">Width, usually stored as length.</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00097">size_3d.hpp:97</a></div></div>
+<div class="ttc" id="aclassscifir_1_1size__3d_html_a36d7a1617eaa3658ba4dea03c5d5bedb"><div class="ttname"><a href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">scifir::size_3d::depth</a></div><div class="ttdeci">T depth</div><div class="ttdoc">Depth, usually stored as length.</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00099">size_3d.hpp:99</a></div></div>
+<div class="ttc" id="aclassscifir_1_1size__3d_html_af02fe8fa38050a804e1b7a99ad01ed3c"><div class="ttname"><a href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">scifir::size_3d::height</a></div><div class="ttdeci">T height</div><div class="ttdoc">Height, usually stored as length.</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00098">size_3d.hpp:98</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a8b4d091f0e15f510c3542dbfe43a4b08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b4d091f0e15f510c3542dbfe43a4b08">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[2/6]</span></h2>
+<a id="a6432ca102407d66a7c508209fd6e8b45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6432ca102407d66a7c508209fd6e8b45">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +204,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::<a class="el" href="classscifir_1_1size__3d.html">size_3d</a> </td>
+          <td class="memname">size_3d::size_3d </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -193,14 +218,16 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Copy constructor. The width, height and depth are copied from the size_3d&lt;T&gt; x. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00022">22</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                         : <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a>(x.width),<a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a>(x.height),<a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a>(x.depth)</div>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                         : <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a>(x.width),<a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a>(x.height),<a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a>(x.depth)</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            {}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ab7b5c855243567515aad306f0696d4c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7b5c855243567515aad306f0696d4c7">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[3/6]</span></h2>
+<a id="a3998318ba16e782b2eb624168d35a050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3998318ba16e782b2eb624168d35a050">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,7 +238,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::<a class="el" href="classscifir_1_1size__3d.html">size_3d</a> </td>
+          <td class="memname">size_3d::size_3d </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -225,14 +252,16 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Move constructor. The width, height and depth are moved from the size_3d&lt;T&gt; x. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00025">25</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                    : <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a>(std::move(x.width)),<a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a>(std::move(x.height)),<a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a>(std::move(x.depth))</div>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                    : <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a>(std::move(x.width)),<a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a>(std::move(x.height)),<a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a>(std::move(x.depth))</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a342c29fa2eba3ff9769107bc2f9b7143"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a342c29fa2eba3ff9769107bc2f9b7143">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[4/6]</span></h2>
+<a id="a29378f3c3c06ae8bfb454d3b91ad89b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29378f3c3c06ae8bfb454d3b91ad89b4">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +272,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::<a class="el" href="classscifir_1_1size__3d.html">size_3d</a> </td>
+          <td class="memname">size_3d::size_3d </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>new_width</em>, </td>
@@ -273,14 +302,16 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. width is new_width, height is new_height and depth is new_depth. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00028">28</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                        : <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a>(new_width),<a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a>(new_height),<a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a>(new_depth)</div>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                        : <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a>(new_width),<a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a>(new_height),<a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a>(new_depth)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aa2869e0ab5bf6135a0596582b7e2dbc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2869e0ab5bf6135a0596582b7e2dbc9">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[5/6]</span></h2>
+<a id="a31c3b9426f78e148998dd8551fcb3182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c3b9426f78e148998dd8551fcb3182">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -291,7 +322,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::<a class="el" href="classscifir_1_1size__3d.html">size_3d</a> </td>
+          <td class="memname">size_3d::size_3d </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>new_width</em>, </td>
@@ -321,14 +352,16 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. width is new_width, height is new_height and depth is new_depth, they are initialized by string. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00031">31</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                                                                       : <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a>(new_width),<a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a>(new_height),<a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a>(new_depth)</div>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                                                                       : <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a>(new_width),<a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a>(new_height),<a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a>(new_depth)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a16c224393337c845db0cc897aeab4518"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16c224393337c845db0cc897aeab4518">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[6/6]</span></h2>
+<a id="a08d553abf5196fd0d583cda402c4b0a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d553abf5196fd0d583cda402c4b0a9">&#9670;&nbsp;</a></span>size_3d() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -339,7 +372,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::<a class="el" href="classscifir_1_1size__3d.html">size_3d</a> </td>
+          <td class="memname">size_3d::size_3d </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>init_size_3d</em></td><td>)</td>
@@ -353,19 +386,21 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. The member-variables are initialized by the initialization string init_size_3d. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00034">34</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                         : <a class="code" href="classscifir_1_1size__3d.html#a203226ede3f032f59fa077e3d62145ab">size_3d</a>()</div>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                         : <a class="code" href="classscifir_1_1size__3d.html#a3b19e402d8666548288fbb41e3c7fc0f">size_3d</a>()</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a51bd4f309b9af74e07d691a244a38c8f">initialize_from_string</a>(init_size_3d);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a9c9fe71297acd700335cce624348b9eb">initialize_from_string</a>(init_size_3d);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
-<div class="ttc" id="aclassscifir_1_1size__3d_html_a203226ede3f032f59fa077e3d62145ab"><div class="ttname"><a href="classscifir_1_1size__3d.html#a203226ede3f032f59fa077e3d62145ab">scifir::size_3d::size_3d</a></div><div class="ttdeci">size_3d()</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00019">size_3d.hpp:19</a></div></div>
-<div class="ttc" id="aclassscifir_1_1size__3d_html_a51bd4f309b9af74e07d691a244a38c8f"><div class="ttname"><a href="classscifir_1_1size__3d.html#a51bd4f309b9af74e07d691a244a38c8f">scifir::size_3d::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(const string &amp;init_size_3d)</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00102">size_3d.hpp:102</a></div></div>
+<div class="ttc" id="aclassscifir_1_1size__3d_html_a3b19e402d8666548288fbb41e3c7fc0f"><div class="ttname"><a href="classscifir_1_1size__3d.html#a3b19e402d8666548288fbb41e3c7fc0f">scifir::size_3d::size_3d</a></div><div class="ttdeci">size_3d()</div><div class="ttdoc">Default constructor. Both width, height and depth are initialized to 0, with the dimensions to the de...</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00019">size_3d.hpp:19</a></div></div>
+<div class="ttc" id="aclassscifir_1_1size__3d_html_a9c9fe71297acd700335cce624348b9eb"><div class="ttname"><a href="classscifir_1_1size__3d.html#a9c9fe71297acd700335cce624348b9eb">scifir::size_3d::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(const string &amp;init_size_3d)</div><div class="ttdoc">Internal function. Initializes the member-variables with an initialization string of size_3d&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> <a href="size__3d_8hpp_source.html#l00102">size_3d.hpp:102</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6a2ee372c452eb7ba4e7e5cbac1e0d50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a2ee372c452eb7ba4e7e5cbac1e0d50">&#9670;&nbsp;</a></span>display()</h2>
+<a id="a36a362337679c636180e5884b2666e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36a362337679c636180e5884b2666e7e">&#9670;&nbsp;</a></span>display()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -376,7 +411,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::display </td>
+          <td class="memname">string size_3d::display </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -389,17 +424,19 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a string representation of size_3d&lt;T&gt;, with his width, height and depth. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00090">90</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                ostringstream output;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                output &lt;&lt; <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a> &lt;&lt; <span class="stringliteral">&quot; * &quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a> &lt;&lt; <span class="stringliteral">&quot; * &quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                output &lt;&lt; <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a> &lt;&lt; <span class="stringliteral">&quot; * &quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a> &lt;&lt; <span class="stringliteral">&quot; * &quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">return</span> output.str();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a29ff12f1198e9457bf02dbb848db6edb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29ff12f1198e9457bf02dbb848db6edb">&#9670;&nbsp;</a></span>get_volume()</h2>
+<a id="a1cc6d4002551f491505b6a41b0a19fea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc6d4002551f491505b6a41b0a19fea">&#9670;&nbsp;</a></span>get_volume()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,7 +447,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1scalar__unit.html">scalar_unit</a> <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::get_volume </td>
+          <td class="memname"><a class="el" href="classscifir_1_1scalar__unit.html">scalar_unit</a> size_3d::get_volume </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -423,15 +460,17 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Calculates the volume as the multiplication of the width, height and depth. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00085">85</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">return</span> scalar_unit(<a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a> * <a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a> * <a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">return</span> scalar_unit(<a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a> * <a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a> * <a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a>);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a51bd4f309b9af74e07d691a244a38c8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51bd4f309b9af74e07d691a244a38c8f">&#9670;&nbsp;</a></span>initialize_from_string()</h2>
+<a id="a9c9fe71297acd700335cce624348b9eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9fe71297acd700335cce624348b9eb">&#9670;&nbsp;</a></span>initialize_from_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,7 +481,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::initialize_from_string </td>
+          <td class="memname">void size_3d::initialize_from_string </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>init_size_3d</em></td><td>)</td>
@@ -456,6 +495,8 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p><b>Internal function</b>. Initializes the member-variables with an initialization string of size_3d&lt;T&gt;. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00102">102</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                vector&lt;string&gt; widths;</div>
@@ -465,16 +506,16 @@ template&lt;typename T  = length&gt; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    boost::trim(widths[0]);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    boost::trim(widths[1]);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    boost::trim(widths[2]);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a> = T(widths[0]);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a> = T(widths[1]);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a> = T(widths[2]);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a> = T(widths[0]);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a> = T(widths[1]);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a> = T(widths[2]);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a4a21cf4cceed534f3f418fd6365fc0d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a21cf4cceed534f3f418fd6365fc0d1">&#9670;&nbsp;</a></span>operator+()</h2>
+<a id="acf053e8ac161fb9dcbe367f513f76a31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf053e8ac161fb9dcbe367f513f76a31">&#9670;&nbsp;</a></span>operator+()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -485,7 +526,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt;T&gt; <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::operator+ </td>
+          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; size_3d::operator+ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -499,15 +540,17 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a new size_3d&lt;T&gt; by the addition of two size_3d&lt;T&gt; classes. The width, height and depth are the result of the addition of the two width, height or depth of the size_3d&lt;T&gt; classes. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00061">61</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">return</span> size_3d&lt;T&gt;(<a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a> + x.width,<a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a> + x.height,<a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a> + x.depth);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">return</span> size_3d&lt;T&gt;(<a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a> + x.width,<a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a> + x.height,<a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a> + x.depth);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ada390e320ba19c5fdad921ebb4240a06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada390e320ba19c5fdad921ebb4240a06">&#9670;&nbsp;</a></span>operator+=()</h2>
+<a id="a9dbc5480dae724b90d3b413085d9c0d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dbc5480dae724b90d3b413085d9c0d5">&#9670;&nbsp;</a></span>operator+=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -518,7 +561,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::operator+= </td>
+          <td class="memname">void size_3d::operator+= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -532,17 +575,19 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Sums the width of size_3d&lt;T&gt; x to the width, sums the height of size_3d&lt;T&gt; x to the height and sums the depth of size_3d&lt;T&gt; x to the depth. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00071">71</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a> += x.width;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a> += x.height;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a> += x.depth;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a> += x.width;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a> += x.height;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a> += x.depth;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ac7ebb7c805519069c42533d9c43cc435"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7ebb7c805519069c42533d9c43cc435">&#9670;&nbsp;</a></span>operator-()</h2>
+<a id="a377482f84ed175b19a2145279d61550b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a377482f84ed175b19a2145279d61550b">&#9670;&nbsp;</a></span>operator-()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -553,7 +598,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt;T&gt; <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::operator- </td>
+          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; size_3d::operator- </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -567,15 +612,17 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a new size_3d&lt;T&gt; by the difference of two size_3d&lt;T&gt; classes. The width, height and depth are the result of the difference of the two width, height or depth of the size_3d&lt;T&gt; classes. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00066">66</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> size_3d&lt;T&gt;(<a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a> - x.width,<a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a> - x.height,<a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a> - x.depth);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> size_3d&lt;T&gt;(<a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a> - x.width,<a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a> - x.height,<a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a> - x.depth);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a83e9e06987837b70e62dc5720a2956d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83e9e06987837b70e62dc5720a2956d7">&#9670;&nbsp;</a></span>operator-=()</h2>
+<a id="ad1d448d510772b92673418243f5af73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d448d510772b92673418243f5af73e">&#9670;&nbsp;</a></span>operator-=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -586,7 +633,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::operator-= </td>
+          <td class="memname">void size_3d::operator-= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -600,17 +647,19 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Substracts the width of size_3d&lt;T&gt; x to the width, substracts the height of size_3d&lt;T&gt; x to the height and substracts the depth of size_3d&lt;T&gt; x to the depth. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00078">78</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a> -= x.width;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a> -= x.height;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a> -= x.depth;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a> -= x.width;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a> -= x.height;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a> -= x.depth;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a46d0ddfccf708903e86c2451c3da0a69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46d0ddfccf708903e86c2451c3da0a69">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/3]</span></h2>
+<a id="ae07aea54c2b5e6cbf46412a5db71f044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae07aea54c2b5e6cbf46412a5db71f044">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -621,7 +670,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt;T&gt;&amp; <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp; size_3d::operator= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -635,18 +684,20 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Copy assignment. The width, height and depth are copied from the size_3d&lt;T&gt; x. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00039">39</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a> = x.width;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a> = x.height;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a> = x.depth;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a> = x.width;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a> = x.height;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a> = x.depth;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a3df5f22dce67caa88cde8844663720c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3df5f22dce67caa88cde8844663720c6">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/3]</span></h2>
+<a id="ae75c0560307379a8a79e6e4b4fca0b92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae75c0560307379a8a79e6e4b4fca0b92">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -657,7 +708,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt;T&gt;&amp; <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp; size_3d::operator= </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>init_size_3d</em></td><td>)</td>
@@ -671,16 +722,18 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Assignment. The member-variables are initialized by the initialization string init_size_3d. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00055">55</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a51bd4f309b9af74e07d691a244a38c8f">initialize_from_string</a>(init_size_3d);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a9c9fe71297acd700335cce624348b9eb">initialize_from_string</a>(init_size_3d);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a5556b70bf199a26cd02e5c172e5520d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5556b70bf199a26cd02e5c172e5520d8">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/3]</span></h2>
+<a id="a7efbc5938960130cd84e5a5dee7775d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7efbc5938960130cd84e5a5dee7775d1">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -691,7 +744,7 @@ template&lt;typename T  = length&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt;T&gt;&amp; <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp; size_3d::operator= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classscifir_1_1size__3d.html">size_3d</a>&lt; T &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -705,19 +758,21 @@ template&lt;typename T  = length&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Move assignment. The width, height and depth are moved from the size_3d&lt;T&gt; x. </p>
+
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00047">47</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a00374fdae1c845643e428ca3db9390eb">width</a> = std::move(x.width);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a6b24e8c1c5d4b97028d83708a0236349">height</a> = std::move(x.height);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#adc948753e8017b454d878cc6b59466d7">depth</a> = std::move(x.depth);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a0e97204ff89d59e776b721a05a7d5586">width</a> = std::move(x.width);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#af02fe8fa38050a804e1b7a99ad01ed3c">height</a> = std::move(x.height);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="classscifir_1_1size__3d.html#a36d7a1617eaa3658ba4dea03c5d5bedb">depth</a> = std::move(x.depth);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="adc948753e8017b454d878cc6b59466d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc948753e8017b454d878cc6b59466d7">&#9670;&nbsp;</a></span>depth</h2>
+<a id="a36d7a1617eaa3658ba4dea03c5d5bedb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36d7a1617eaa3658ba4dea03c5d5bedb">&#9670;&nbsp;</a></span>depth</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -725,17 +780,19 @@ template&lt;typename T  = length&gt; </div>
 template&lt;typename T  = length&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::depth</td>
+          <td class="memname">T size_3d::depth</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Depth, usually stored as length. </p>
 
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00099">99</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a6b24e8c1c5d4b97028d83708a0236349"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b24e8c1c5d4b97028d83708a0236349">&#9670;&nbsp;</a></span>height</h2>
+<a id="af02fe8fa38050a804e1b7a99ad01ed3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af02fe8fa38050a804e1b7a99ad01ed3c">&#9670;&nbsp;</a></span>height</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -743,17 +800,19 @@ template&lt;typename T  = length&gt; </div>
 template&lt;typename T  = length&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::height</td>
+          <td class="memname">T size_3d::height</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Height, usually stored as length. </p>
 
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00098">98</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a00374fdae1c845643e428ca3db9390eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00374fdae1c845643e428ca3db9390eb">&#9670;&nbsp;</a></span>width</h2>
+<a id="a0e97204ff89d59e776b721a05a7d5586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e97204ff89d59e776b721a05a7d5586">&#9670;&nbsp;</a></span>width</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -761,10 +820,12 @@ template&lt;typename T  = length&gt; </div>
 template&lt;typename T  = length&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="classscifir_1_1size__3d.html">scifir::size_3d</a>&lt; T &gt;::width</td>
+          <td class="memname">T size_3d::width</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Width, usually stored as length. </p>
 
 <p class="definition">Definition at line <a class="el" href="size__3d_8hpp_source.html#l00097">97</a> of file <a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a>.</p>
 
@@ -773,6 +834,7 @@ template&lt;typename T  = length&gt; </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>predefined_units/<a class="el" href="space__units_8hpp_source.html">space_units.hpp</a></li>
 <li>special_units/<a class="el" href="size__3d_8hpp_source.html">size_3d.hpp</a></li>
+<li>docs/dox/special_units/<a class="el" href="size__3d_8dox.html">size_3d.dox</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

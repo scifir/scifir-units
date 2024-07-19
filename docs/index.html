@@ -332,10 +332,11 @@ Initialization strings</h2>
 <p>All the unit classes, and also the other related classes of this library, can be constructed with what is called here an <b>initialization string</b>. An initialization string is an string used to instantiate the class, and it's also used when converting the class to an string for any purpose (like printing it on the screen).</p>
 <p>The initialization strings are the following:</p>
 <ul>
-<li><b>angle</b>: "37°"</li>
+<li><b>dimensions</b>: "m2 / s", "J / s2 * kg"</li>
+<li><b>angle</b>: "37°" or "37º"</li>
 <li><b>scalar_unit</b>: "1 km"</li>
-<li><b>vector_unit_2d</b>: "5 km 10°"</li>
-<li><b>vector_unit_3d</b>: "3 km 10° 20°"</li>
+<li><b>vector_unit_2d</b>: "5 km 10θ" or "5 km 10°"</li>
+<li><b>vector_unit_3d</b>: "3 km 10θ 20Φ" or "3 km 10° 20°"</li>
 <li><b>vector_unit_nd</b>: "3 km 10° 20° 35°"</li>
 <li><b>point_1d</b>: "3 m" or "(3 m)"</li>
 <li><b>point_2d</b>: "2 m,4 m" or "(2 m,4 m)"</li>
@@ -356,12 +357,193 @@ Space</h2>
 <h2><a class="anchor" id="autotoc_md34"></a>
 Dimensions</h2>
 <p>Inside scifir-units a <b>basic dimension</b> is a dimension considered basic under the SI system of units. Different to that, a <b>simple dimension</b> is a dimension without any derived dimension. That's, it's a dimension that's not an abbreviation of two or more other dimensions.</p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<p>The dimensions that a scalar_unit class can have are available in the enum dimension::type, and are only the SI dimensions or, if there isn't a dimension for an important purpose in the SI system of units, a selected dimension of the different possible options. Only the prefered dimensions have been added to the enum dimension::type, the other dimensions, as for example England units, have been added only as conversion options. With that system, always the same dimensions are used, which simplifies the work inside a laboratory, because then there's less confusion about which dimensions are being used.</p>
+<h3><a class="anchor" id="autotoc_md35"></a>
+Dimensions of space</h3>
+<p>Both the degree and the radian are used for measuring angles. When specifying angles in a human readable way, degree is always or nearly always the prefered choice. When specifying angles within mathematical formulas, radians are used, and the degrees can be converted to radians for that purpose. Given the definition of radian, mathematical formulas naturally have their angles needed to be specified in radians.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">m   </td><td class="markdownTableBodyNone">Metre   </td><td class="markdownTableBodyNone">Metres   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of length.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">θ   </td><td class="markdownTableBodyNone">Degree   </td><td class="markdownTableBodyNone">Degrees   </td><td class="markdownTableBodyNone">$$\frac{\pi}{180} rad$$   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of length.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">rad   </td><td class="markdownTableBodyNone">Radian   </td><td class="markdownTableBodyNone">Radians   </td><td class="markdownTableBodyNone">$$\frac{180}{\pi} θ$$   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of the angle, it's the exact measure of the perimeter of the angle, when that angle is drawn as a circle in a math graph.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">sr   </td><td class="markdownTableBodyNone">Steradian   </td><td class="markdownTableBodyNone">Steradians   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of a solid angle, which is defined as an angle in two dimensions.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">L   </td><td class="markdownTableBodyNone">Litre   </td><td class="markdownTableBodyNone">Litres   </td><td class="markdownTableBodyNone">1 dm3   </td><td class="markdownTableBodyNone">dm3   </td><td class="markdownTableBodyNone">Measure of volume, frequently used for liquids.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md36"></a>
+Dimensions of time</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">s   </td><td class="markdownTableBodyNone">Second   </td><td class="markdownTableBodyNone">Seconds   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of time.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">min   </td><td class="markdownTableBodyNone">Minute   </td><td class="markdownTableBodyNone">Minutes   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">60 s   </td><td class="markdownTableBodyNone">Measure of time.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">hour   </td><td class="markdownTableBodyNone">Hour   </td><td class="markdownTableBodyNone">Hours   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">3,600 s   </td><td class="markdownTableBodyNone">Measure of time.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">day   </td><td class="markdownTableBodyNone">Day   </td><td class="markdownTableBodyNone">Days   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">86,400 s   </td><td class="markdownTableBodyNone">Measure of time.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Hz   </td><td class="markdownTableBodyNone">Hertz   </td><td class="markdownTableBodyNone">Hertz   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">1 / s   </td><td class="markdownTableBodyNone">Measure of frequency.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md37"></a>
+Dimensions of chemistry and matter</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">g   </td><td class="markdownTableBodyNone">Gram   </td><td class="markdownTableBodyNone">Grams   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of amount of mass.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">mol   </td><td class="markdownTableBodyNone">Mole   </td><td class="markdownTableBodyNone">Moles   </td><td class="markdownTableBodyNone">N particles (Avogadro number)   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Amounf of matter.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">particles   </td><td class="markdownTableBodyNone">Particles   </td><td class="markdownTableBodyNone">Particles   </td><td class="markdownTableBodyNone">mol / (Avogadro number)   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Amount of particles, without using mol.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">M   </td><td class="markdownTableBodyNone">Molarity   </td><td class="markdownTableBodyNone">Molarities   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">mol / L   </td><td class="markdownTableBodyNone">Measure of concentration of a chemical species.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">kat   </td><td class="markdownTableBodyNone">Katal   </td><td class="markdownTableBodyNone">Katals   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">mol / s   </td><td class="markdownTableBodyNone">Catalytic activity.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Å   </td><td class="markdownTableBodyNone">Angstrom   </td><td class="markdownTableBodyNone">Angstroms   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">$$10^{-10} m$$   </td><td class="markdownTableBodyNone">Dimension of length, used mainly for wavelengths, inside the laboratory.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Da   </td><td class="markdownTableBodyNone">Dalton   </td><td class="markdownTableBodyNone">Daltons   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">$$1,66053886 * 10^{-24} g$$   </td><td class="markdownTableBodyNone">Measure of mass very low that is used for atoms and molecules, at microscopic and quantum scale. One mole of 1 Da is equivalent to 1 g.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">amu   </td><td class="markdownTableBodyNone">Atomic mass unit   </td><td class="markdownTableBodyNone">Atomic mass units   </td><td class="markdownTableBodyNone">1 Da   </td><td class="markdownTableBodyNone">Da   </td><td class="markdownTableBodyNone">Equivalent name to Dalton.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md38"></a>
+Dimensions of force</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">N   </td><td class="markdownTableBodyNone">Newton   </td><td class="markdownTableBodyNone">Newtons   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">kg * m / s2   </td><td class="markdownTableBodyNone">Measure of force.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Pa   </td><td class="markdownTableBodyNone">Pascal   </td><td class="markdownTableBodyNone">Pascals   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">kg / s2 * m   </td><td class="markdownTableBodyNone">Measure of pressure.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md39"></a>
+Dimensions of energy</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">J   </td><td class="markdownTableBodyNone">Joule   </td><td class="markdownTableBodyNone">Joules   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">kg * m2 / s2   </td><td class="markdownTableBodyNone">Measure of energy.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">W   </td><td class="markdownTableBodyNone">Watt   </td><td class="markdownTableBodyNone">Watts   </td><td class="markdownTableBodyNone">N particles (Avogadro number)   </td><td class="markdownTableBodyNone">kg * m2 / s3   </td><td class="markdownTableBodyNone">Amounf of matter.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">eV   </td><td class="markdownTableBodyNone">Electron volt   </td><td class="markdownTableBodyNone">Electron volts   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">$$1.602176634 * 10^{−19} J$$   </td><td class="markdownTableBodyNone">Measure of energy, used for quantum physics. It's a very low unit, intended for the quantum scale.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md40"></a>
+Dimensions of optics</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">cd   </td><td class="markdownTableBodyNone">Candela   </td><td class="markdownTableBodyNone">Candelas   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of luminous intensity.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">lm   </td><td class="markdownTableBodyNone">Lumen   </td><td class="markdownTableBodyNone">Lumens   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">cd * sr   </td><td class="markdownTableBodyNone">Measure of luminous flux.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">lx   </td><td class="markdownTableBodyNone">Lux   </td><td class="markdownTableBodyNone">Luxes   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">cd * sr / m2   </td><td class="markdownTableBodyNone">Measure of illuminance.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md41"></a>
+Dimensions of heat</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">K   </td><td class="markdownTableBodyNone">Kelvin   </td><td class="markdownTableBodyNone">Kelvins   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of temperature.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md42"></a>
+Dimensions of electricity</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">C   </td><td class="markdownTableBodyNone">Coulomb   </td><td class="markdownTableBodyNone">Coulombs   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of electric charge.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">A   </td><td class="markdownTableBodyNone">Ampere   </td><td class="markdownTableBodyNone">Amperes   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">C / s   </td><td class="markdownTableBodyNone">Measure of electric current.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">V   </td><td class="markdownTableBodyNone">Volt   </td><td class="markdownTableBodyNone">Volts   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">J / C, W / A   </td><td class="markdownTableBodyNone">Measure of voltage.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">F   </td><td class="markdownTableBodyNone">Faraday   </td><td class="markdownTableBodyNone">Faradays   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">A * s / V   </td><td class="markdownTableBodyNone">Measure of electric capacitance.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Ω   </td><td class="markdownTableBodyNone">Ohm   </td><td class="markdownTableBodyNone">Ohms   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">V / A   </td><td class="markdownTableBodyNone">Measure of electric resistance.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">S   </td><td class="markdownTableBodyNone">Siemens   </td><td class="markdownTableBodyNone">Siemens   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">1 / Ω   </td><td class="markdownTableBodyNone">Measure of electric conductance.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Wb   </td><td class="markdownTableBodyNone">Weber   </td><td class="markdownTableBodyNone">Webers   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">T * m2   </td><td class="markdownTableBodyNone">Measure of magnetic flux.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">T   </td><td class="markdownTableBodyNone">Tesla   </td><td class="markdownTableBodyNone">Teslas   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">V * s / m2   </td><td class="markdownTableBodyNone">Measure of magnetic strength.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">H   </td><td class="markdownTableBodyNone">Henry   </td><td class="markdownTableBodyNone">Henries   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">V * s / A   </td><td class="markdownTableBodyNone">Measure of electric inductance.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md43"></a>
+Dimensions of astronomy</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">AU   </td><td class="markdownTableBodyNone">Astronomical unit   </td><td class="markdownTableBodyNone">Astronomical units   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">149,597,870,700 m   </td><td class="markdownTableBodyNone">Measure of long distances, for use in the space.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ly   </td><td class="markdownTableBodyNone">Light year   </td><td class="markdownTableBodyNone">Light years   </td><td class="markdownTableBodyNone">63,241.07 AU   </td><td class="markdownTableBodyNone">9,460,730,472,580,800 m   </td><td class="markdownTableBodyNone">Measure of long distances, for use in the space. It's exactly defined as the amount of distance that the light travels in a year.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">pc   </td><td class="markdownTableBodyNone">Parsec   </td><td class="markdownTableBodyNone">Parsecs   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">3.2616 ly   </td><td class="markdownTableBodyNone">Measure of long distances, for use in the space.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md44"></a>
+Dimensions of nuclear physics</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Bq   </td><td class="markdownTableBodyNone">Becquerel   </td><td class="markdownTableBodyNone">Becquerels   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">1 / s   </td><td class="markdownTableBodyNone">Measure of radioactivity.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Gy   </td><td class="markdownTableBodyNone">Gray   </td><td class="markdownTableBodyNone">Grays   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">m2 / s2   </td><td class="markdownTableBodyNone">Measure of ionising radiation (absorbed dose).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Sv   </td><td class="markdownTableBodyNone">Sievert   </td><td class="markdownTableBodyNone">Sieverts   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">J / kg   </td><td class="markdownTableBodyNone">Measure of ionising radiation (equivalent dose).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Barn   </td><td class="markdownTableBodyNone">Barn   </td><td class="markdownTableBodyNone">Barns   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">$$10^{−28} m2$$   </td><td class="markdownTableBodyNone">Represents the transversal section of nucleus and nuclear reactions.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md45"></a>
+Dimensions of informatics</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">B   </td><td class="markdownTableBodyNone">Byte   </td><td class="markdownTableBodyNone">Bytes   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of quantity of information.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">px   </td><td class="markdownTableBodyNone">Pixel   </td><td class="markdownTableBodyNone">Pixels   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure the amount of pixels or the position inside a screen.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md46"></a>
+Dimensions of biology</h3>
+<p>Inside scifir-units, a unit for measuring the quantity of memory inside the brain has been invented, and has been called <b>memo</b>.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">memo   </td><td class="markdownTableBodyNone">Memo   </td><td class="markdownTableBodyNone">Memos   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of quantity of memory.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md47"></a>
+Dimensions of economy</h3>
+<p>The dimension of money inside scifir-units is just money. Apart from scifir-units, inside the same code, you can use the <b>ISO 4217</b>, which is the <b>ISO of currency codes</b>, after doing all the math with the money dimension, to convert to the final currency needed.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Plural   </th><th class="markdownTableHeadNone">Equivalency   </th><th class="markdownTableHeadNone">Derived dimensions   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">money   </td><td class="markdownTableBodyNone">Money   </td><td class="markdownTableBodyNone">Money   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">-   </td><td class="markdownTableBodyNone">Measure of money.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md48"></a>
+Custom dimensions</h3>
+<p>A custom dimension is a dimension of any name, with any derived dimensions, that can be defined inside each project that uses scifir-units. To use custom dimensions, just initialize a scalar_unit or any vector_unit class with a name different than the default dimensions.</p>
+<h2><a class="anchor" id="autotoc_md49"></a>
 Angle</h2>
 <p>An angle object manages angles. It stores angles in degrees, rather than in radians. It can be initialized to any degree between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that's not inside this range of values gets automatically converted inside it, to his equivalent value between the range.</p>
 <p>An example of use of angle is the following:</p>
 <div class="fragment"><div class="line"><span class="comment">// Constructors and instantiation</span></div>
-<div class="line">angle y = 54; <span class="comment">// Better constructor! Preferred method</span></div>
+<div class="line">angle x = 37_degree; <span class="comment">// Better constructor for degrees! Prefered method for degrees</span></div>
+<div class="line">angle x2 = 3_rad; <span class="comment">// Better constructor for radians! Prefered method for radians</span></div>
+<div class="line">angle y = 54; <span class="comment">// Other good constructor! Of the prefered methods</span></div>
 <div class="line">angle a = 367; <span class="comment">// Gets converted to the value 7, because 7 is the equivalent of 367 inside 0 and 360</span></div>
 <div class="line">angle b = angle(12);</div>
 <div class="line">angle c = angle(34_Pa);</div>
@@ -397,8 +579,8 @@ Angle</h2>
 <div class="line"><span class="keywordtype">float</span> a_radian = x.get_radian();</div>
 <div class="line">x.invert(); <span class="comment">// Inverts the angle, the orientation described by this angle points now in the opposite direction</span></div>
 <div class="line"><span class="keywordtype">float</span> y = float(x); <span class="comment">// Angles can be converted to float</span></div>
-<div class="ttc" id="aclassscifir_1_1angle_html_a5a4d42b33e811ce6cbfe4071fac3ef97"><div class="ttname"><a href="classscifir_1_1angle.html#a5a4d42b33e811ce6cbfe4071fac3ef97">scifir::angle::get_degree</a></div><div class="ttdeci">float get_degree() const</div><div class="ttdoc">Gets the value of the angle in degrees.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00150">angle.hpp:150</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md36"></a>
+<div class="ttc" id="aclassscifir_1_1angle_html_a5a4d42b33e811ce6cbfe4071fac3ef97"><div class="ttname"><a href="classscifir_1_1angle.html#a5a4d42b33e811ce6cbfe4071fac3ef97">scifir::angle::get_degree</a></div><div class="ttdeci">float get_degree() const</div><div class="ttdoc">Gets the value of the angle in degrees.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00152">angle.hpp:152</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md50"></a>
 Scalar units</h2>
 <p>Scalar units and vector units are the central objects of scifir-units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.</p>
 <p>Scalar units can operate with other scalar units, as well as with numeric primitive types. Functions like <a class="el" href="namespacescifir.html#a0fca35769fd130e4f6303660a24e6c83">abs()</a>, <a class="el" href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c" title="Calculates the square root of the angle x and returns that new angle.">sqrt()</a> and <a class="el" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string()</a> are supported. They have functions to operate with strings, and functions to operate with streams.</p>
@@ -472,38 +654,38 @@ Scalar units</h2>
 <div class="ttc" id="anamespacescifir_html_a421182d5f93abcbbaeadc7c14112bdd5"><div class="ttname"><a href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">scifir::to_string</a></div><div class="ttdeci">string to_string(const coordinates_1d&lt; float &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__1d_8cpp_source.html#l00008">coordinates_1d.cpp:8</a></div></div>
 <div class="ttc" id="anamespacescifir_html_a44533727ef4f03e8303664cdd665c2bc"><div class="ttname"><a href="namespacescifir.html#a44533727ef4f03e8303664cdd665c2bc">scifir::pow</a></div><div class="ttdeci">scalar_unit pow(const scalar_unit &amp;x, int exponent)</div><div class="ttdoc">Exponentiates a scalar_unit to some numeric type, the dimensions are also exponentiated.</div><div class="ttdef"><b>Definition:</b> <a href="scalar__unit_8cpp_source.html#l00725">scalar_unit.cpp:725</a></div></div>
 <div class="ttc" id="anamespacescifir_html_a5d7071e9b105c05f7e4d5e278a71673e"><div class="ttname"><a href="namespacescifir.html#a5d7071e9b105c05f7e4d5e278a71673e">scifir::area</a></div><div class="ttdeci">area(const size_2d&lt; length &gt; &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="space__units_8cpp_source.html#l00013">space_units.cpp:13</a></div></div>
-<div class="ttc" id="anamespacescifir_html_adeff4b825414d35ce963977f181f1b5c"><div class="ttname"><a href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c">scifir::sqrt</a></div><div class="ttdeci">angle sqrt(const angle &amp;x)</div><div class="ttdoc">Calculates the square root of the angle x and returns that new angle.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00336">angle.cpp:336</a></div></div>
+<div class="ttc" id="anamespacescifir_html_adeff4b825414d35ce963977f181f1b5c"><div class="ttname"><a href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c">scifir::sqrt</a></div><div class="ttdeci">angle sqrt(const angle &amp;x)</div><div class="ttdoc">Calculates the square root of the angle x and returns that new angle.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00341">angle.cpp:341</a></div></div>
 </div><!-- fragment --><p>The basic dimensions of this library, for scalar_unit classes, all the different vector_unit classes, and all other classes that handle units, are the following. They are all in SI units, excepting memo, which is a basic dimension created by Ismael Correa, the author of this library, to measure the size occupied by a memory inside the animal brain, including human brains.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Length   </td><td class="markdownTableBodyNone">m   </td><td class="markdownTableBodyNone">Measures the length occupied in space by an object    </td></tr>
+<td class="markdownTableBodyNone">Length   </td><td class="markdownTableBodyNone">m   </td><td class="markdownTableBodyNone">Measures the length occupied in space by an object.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Time   </td><td class="markdownTableBodyNone">s   </td><td class="markdownTableBodyNone">Measures the duration in time of some event    </td></tr>
+<td class="markdownTableBodyNone">Time   </td><td class="markdownTableBodyNone">s   </td><td class="markdownTableBodyNone">Measures the duration in time of some event.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Mass   </td><td class="markdownTableBodyNone">g   </td><td class="markdownTableBodyNone">Measures the amount of substance related to the strength of a gravitational field    </td></tr>
+<td class="markdownTableBodyNone">Mass   </td><td class="markdownTableBodyNone">g   </td><td class="markdownTableBodyNone">Measures the amount of substance related to the strength of a gravitational field.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Radian   </td><td class="markdownTableBodyNone">rad   </td><td class="markdownTableBodyNone">Measures the size of an angle    </td></tr>
+<td class="markdownTableBodyNone">Radian   </td><td class="markdownTableBodyNone">rad   </td><td class="markdownTableBodyNone">Measures the size of an angle.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Steradian   </td><td class="markdownTableBodyNone">sr   </td><td class="markdownTableBodyNone">Measures the size of a solid angle    </td></tr>
+<td class="markdownTableBodyNone">Steradian   </td><td class="markdownTableBodyNone">sr   </td><td class="markdownTableBodyNone">Measures the size of a solid angle.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Coulomb   </td><td class="markdownTableBodyNone">C   </td><td class="markdownTableBodyNone">Measures the amount of charge    </td></tr>
+<td class="markdownTableBodyNone">Coulomb   </td><td class="markdownTableBodyNone">C   </td><td class="markdownTableBodyNone">Measures the amount of charge.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Temperature   </td><td class="markdownTableBodyNone">K   </td><td class="markdownTableBodyNone">Measures the amount of hotness or coldness. Microscopically it measures the speed at which the particles that constitute the matter are moving    </td></tr>
+<td class="markdownTableBodyNone">Temperature   </td><td class="markdownTableBodyNone">K   </td><td class="markdownTableBodyNone">Measures the amount of hotness or coldness. Microscopically it measures the speed at which the particles that constitute the matter are moving.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Mole   </td><td class="markdownTableBodyNone">mol   </td><td class="markdownTableBodyNone">Measures the amount of a substance related to the number of its constituent particles    </td></tr>
+<td class="markdownTableBodyNone">Mole   </td><td class="markdownTableBodyNone">mol   </td><td class="markdownTableBodyNone">Measures the amount of a substance related to the number of its constituent particles.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Luminous intensity   </td><td class="markdownTableBodyNone">cd   </td><td class="markdownTableBodyNone">Measures the intensity of light    </td></tr>
+<td class="markdownTableBodyNone">Luminous intensity   </td><td class="markdownTableBodyNone">cd   </td><td class="markdownTableBodyNone">Measures the intensity of light.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Byte   </td><td class="markdownTableBodyNone">B   </td><td class="markdownTableBodyNone">Measures the amount of information    </td></tr>
+<td class="markdownTableBodyNone">Byte   </td><td class="markdownTableBodyNone">B   </td><td class="markdownTableBodyNone">Measures the amount of information.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Money   </td><td class="markdownTableBodyNone">money   </td><td class="markdownTableBodyNone">Measures the economic value of an entity    </td></tr>
+<td class="markdownTableBodyNone">Money   </td><td class="markdownTableBodyNone">money   </td><td class="markdownTableBodyNone">Measures the economic value of an entity.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Memo   </td><td class="markdownTableBodyNone">memo   </td><td class="markdownTableBodyNone">Measures the size occupied by a memory inside the brain of an animal, including human brains. Created by Ismael Correa, it's not an official basic dimension of the SI system of units   </td></tr>
+<td class="markdownTableBodyNone">Memo   </td><td class="markdownTableBodyNone">memo   </td><td class="markdownTableBodyNone">Measures the size occupied by a memory inside the brain of an animal, including human brains. Created by Ismael Correa, it's not an official basic dimension of the SI system of units.   </td></tr>
 </table>
 <p>There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.</p>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md51"></a>
 Vector units in 2D</h2>
 <p>Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar_unit, and additional to his member-variables they include the member-variable theta, of class angle (described above).</p>
 <p>An example of use of it is the following:</p>
@@ -570,13 +752,13 @@ Vector units in 2D</h2>
 <div class="line">vector_unit_2d a;</div>
 <div class="line">cin &gt;&gt; a; <span class="comment">// Initializes a with the string given to cin</span></div>
 <div class="ttc" id="anamespacescifir_html_a0a708b03e7faa9893325df448046989c"><div class="ttname"><a href="namespacescifir.html#a0a708b03e7faa9893325df448046989c">scifir::angle_between</a></div><div class="ttdeci">angle angle_between(const vector_unit_2d &amp;x, const vector_unit_2d &amp;y)</div><div class="ttdoc">Returns the angle between two vectors x and y inside a 2D space.</div><div class="ttdef"><b>Definition:</b> <a href="vector__unit__2d_8cpp_source.html#l00345">vector_unit_2d.cpp:345</a></div></div>
-<div class="ttc" id="anamespacescifir_html_a0b02e4d82f1d2253f6901264ff11ca38"><div class="ttname"><a href="namespacescifir.html#a0b02e4d82f1d2253f6901264ff11ca38">scifir::sqrt_nth</a></div><div class="ttdeci">angle sqrt_nth(const angle &amp;x, int index)</div><div class="ttdoc">Calculates the nth root of the angle x and returns that new angle.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00341">angle.cpp:341</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a0b02e4d82f1d2253f6901264ff11ca38"><div class="ttname"><a href="namespacescifir.html#a0b02e4d82f1d2253f6901264ff11ca38">scifir::sqrt_nth</a></div><div class="ttdeci">angle sqrt_nth(const angle &amp;x, int index)</div><div class="ttdoc">Calculates the nth root of the angle x and returns that new angle.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00346">angle.cpp:346</a></div></div>
 <div class="ttc" id="anamespacescifir_html_a0c8de3e3dd65b45ba57dc8e8cf70c214"><div class="ttname"><a href="namespacescifir.html#a0c8de3e3dd65b45ba57dc8e8cf70c214">scifir::same_direction</a></div><div class="ttdeci">bool same_direction(const vector_unit_2d &amp;x, const vector_unit_2d &amp;y)</div><div class="ttdoc">Checks if two vectors x and y have the same direction.</div><div class="ttdef"><b>Definition:</b> <a href="vector__unit__2d_8cpp_source.html#l00350">vector_unit_2d.cpp:350</a></div></div>
-<div class="ttc" id="anamespacescifir_html_a3ea95ad2c4137768f1e541e77db8a97a"><div class="ttname"><a href="namespacescifir.html#a3ea95ad2c4137768f1e541e77db8a97a">scifir::orthogonal</a></div><div class="ttdeci">bool orthogonal(const angle &amp;x, const angle &amp;y)</div><div class="ttdoc">Checks if two angles in a 2D correspond to orthogonal lines (or orthogonal vectors).</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00323">angle.cpp:323</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a3ea95ad2c4137768f1e541e77db8a97a"><div class="ttname"><a href="namespacescifir.html#a3ea95ad2c4137768f1e541e77db8a97a">scifir::orthogonal</a></div><div class="ttdeci">bool orthogonal(const angle &amp;x, const angle &amp;y)</div><div class="ttdoc">Checks if two angles in a 2D correspond to orthogonal lines (or orthogonal vectors).</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00328">angle.cpp:328</a></div></div>
 <div class="ttc" id="anamespacescifir_html_a732fc05956fd18f78cd0019c5c023b5c"><div class="ttname"><a href="namespacescifir.html#a732fc05956fd18f78cd0019c5c023b5c">scifir::dot_product</a></div><div class="ttdeci">scalar_unit dot_product(const vector_unit_2d &amp;x, const vector_unit_2d &amp;y)</div><div class="ttdoc">Creates a scalar_unit as the dot product of the two vectors x and y.</div><div class="ttdef"><b>Definition:</b> <a href="vector__unit__2d_8cpp_source.html#l00338">vector_unit_2d.cpp:338</a></div></div>
 <div class="ttc" id="anamespacescifir_html_accc56ab405831f217868c125f41d18d0"><div class="ttname"><a href="namespacescifir.html#accc56ab405831f217868c125f41d18d0">scifir::norm</a></div><div class="ttdeci">scalar_unit norm(const vector_unit_2d &amp;x)</div><div class="ttdoc">It returns the value of the vector in polar coordinates, p.</div><div class="ttdef"><b>Definition:</b> <a href="vector__unit__2d_8cpp_source.html#l00321">vector_unit_2d.cpp:321</a></div></div>
-<div class="ttc" id="anamespacescifir_html_ae4beaddada9427f8c7a53e3381c5b796"><div class="ttname"><a href="namespacescifir.html#ae4beaddada9427f8c7a53e3381c5b796">scifir::parallel</a></div><div class="ttdeci">bool parallel(const angle &amp;x, const angle &amp;y)</div><div class="ttdoc">Checks if two angles in a 2D correspond to parallel lines (or parallel vectors).</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00311">angle.cpp:311</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md38"></a>
+<div class="ttc" id="anamespacescifir_html_ae4beaddada9427f8c7a53e3381c5b796"><div class="ttname"><a href="namespacescifir.html#ae4beaddada9427f8c7a53e3381c5b796">scifir::parallel</a></div><div class="ttdeci">bool parallel(const angle &amp;x, const angle &amp;y)</div><div class="ttdoc">Checks if two angles in a 2D correspond to parallel lines (or parallel vectors).</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00316">angle.cpp:316</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md52"></a>
 Vector units in 3D</h2>
 <p>Vector units in 3D are the most useful vectorial units. They allow to do all the simulations of physics and any other area of science in 3D, which is the most common scenario. To work, they have, as vector_unit_2d, a value, dimensions, and an angle theta, but they include the angle phi. So, they work as spherical coordinates, having cartesian projections for each axis. The class vector_unit_3d inherits from scalar_unit, as vector_unit_2d, but not from vector_unit_2d, evading math errors that would be derived from that, because 2D and 3D dimensions are not mathematically equivalent in 2D (when projecting the x and y axis there appears the angle phi on the equations for the 3D cases).</p>
 <p>An example of use is the following:</p>
@@ -646,7 +828,7 @@ Vector units in 3D</h2>
 <div class="line">vector_unit_3d a;</div>
 <div class="line">cin &gt;&gt; a; <span class="comment">// Initializes a with the string given to cin</span></div>
 <div class="ttc" id="anamespacescifir_html_ac62851b9d931d02184edca7f3db3f1a7"><div class="ttname"><a href="namespacescifir.html#ac62851b9d931d02184edca7f3db3f1a7">scifir::cross_product</a></div><div class="ttdeci">vector_unit_3d cross_product(const vector_unit_3d &amp;x, const vector_unit_3d &amp;y)</div><div class="ttdoc">Creates a vector_unit_3d as the cross product of the two vectors x and y.</div><div class="ttdef"><b>Definition:</b> <a href="vector__unit__3d_8cpp_source.html#l00450">vector_unit_3d.cpp:450</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md39"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md53"></a>
 Vector units in ND</h2>
 <p>Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside scifir-units, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector&lt;angle&gt; member-variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector_unit_2d, and for 3D it has two angles, as vector_unit_3d. For 1D it doesn't has any angle.</p>
 <p>An example of use is the following:</p>
@@ -722,7 +904,7 @@ Vector units in ND</h2>
 <div class="line">vector_unit_nd a;</div>
 <div class="line">cin &gt;&gt; a; <span class="comment">// Initializes a with the string given to cin</span></div>
 <div class="ttc" id="anamespacescifir_html_a6329769c05bd5f028a1bd369affcd0c9"><div class="ttname"><a href="namespacescifir.html#a6329769c05bd5f028a1bd369affcd0c9">scifir::same_nd</a></div><div class="ttdeci">bool same_nd(const vector_unit_nd &amp;x, const vector_unit_nd &amp;y)</div><div class="ttdoc">Checks if two vectors have the same number of dimensions.</div><div class="ttdef"><b>Definition:</b> <a href="vector__unit__nd_8cpp_source.html#l00804">vector_unit_nd.cpp:804</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md40"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md54"></a>
 Coordinates and points in 1D</h2>
 <p>Coordinates in 1D allow to move any object, particle, solid or immaterial, through a 1D space. The coordinates_1d class has been implemented as a template class, allowing to use any scalar_unit, or, also, a single float. Any scalar_unit can be used, because then coordinates_1d allows to move in dimensions different than length, as dimensions on some science-fiction speculations are (because on some science-fiction ideas, a dimension can be anything).</p>
 <p>point_1d is equivalent in functionality as coordinates_1d, it has the same member-variables and functions, its intended use is to be an abstract point in 1D, rather than a position in 1D (as coordinates_1d are).</p>
@@ -759,7 +941,7 @@ Coordinates and points in 1D</h2>
 <div class="line">cout &lt;&lt; x; <span class="comment">// coordinates_1d can be printed to cout</span></div>
 <div class="line">cin &gt;&gt; x; <span class="comment">// coordinates_1d can be initialized through cin</span></div>
 <div class="ttc" id="anamespacescifir_html_a5b44128227fa8f95625e0f4d51f3b783"><div class="ttname"><a href="namespacescifir.html#a5b44128227fa8f95625e0f4d51f3b783">scifir::distance</a></div><div class="ttdeci">float distance(const coordinates_1d&lt; float &gt; &amp;x, const coordinates_1d&lt; float &gt; &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__1d_8cpp_source.html#l00013">coordinates_1d.cpp:13</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md41"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md55"></a>
 Coordinates and points in 2D</h2>
 <p>coordinates_2d class allows to create software with positions in 2D. It has a very similar interface to coordinates_1d, it's initialized with an string of the form "1 m,2 m" or "(1 m,2 m)" because the character '(' can be present or not. It's, as coordinates_1d, a template class, and can then specify coordinates of any scalar_unit (usually, length), or with a float, if there's no unit that represents adequately the coordinates, or if it's needed to save some memory (because the float is lighter than a unit in his consumption of memory).</p>
 <p>coordinates_2d can be used as cartesian and as polar coordinates at the same time. It has x and y as member-variables, which can be of the type of any scalar_unit or a float. When working with polar coordinates, the calculations are stored as x and y, that's, as cartesian coordinates, but when accessing it, with functions like get_p() and get_theta(), they give the values in polar coordinates. Then, at the same time, coordinates_2d behave as cartesian and as polar coordinates, by storing the values only once, not two times. Then, coordinates_2d is like a dual object, it contains cartesian_2d and polar_coordinates inside.</p>
@@ -804,7 +986,7 @@ Coordinates and points in 2D</h2>
 <div class="line"> </div>
 <div class="line">cout &lt;&lt; x; <span class="comment">// coordinates_2d can be printed to cout</span></div>
 <div class="line">cin &gt;&gt; x; <span class="comment">// coordinates_2d can be initialized through cin</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md42"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md56"></a>
 Coordinates and points in 3D</h2>
 <p>coordinates_3d class allows to work with positions in 3D. Its initialization string is of the form "10 m,5 m,3 m", or of the form "(10 m,5 m,3 m)".</p>
 <p>coordinates_3d can be used as cartesian coordinates, as cylindrical coordinates, as spherical coordinates and as geographical coordinates at the same time. It has x, y and z as member-variables, which can be of the type of any scalar_unit or a float. When working with coordinates different than cartesian coordinates, the calculations are stored as x, y and z, that's, as cartesian coordinates, but when accessing it, with functions like get_p(), get_theta() and get_r(), they give the values in the other coordinates systems. Then, at the same time, coordinates_3d behave as cartesian, cylindrical, spherical and geographical coordinates, by storing the values only once, not various times. Then, coordinates_3d is like a multiple object, it contains cartesian_3d_coordinates, cylindrical_coordinates, spherical_coordinates and geographical_coordinates inside.</p>
@@ -861,23 +1043,23 @@ Coordinates and points in 3D</h2>
 <div class="line"> </div>
 <div class="line">cout &lt;&lt; x; <span class="comment">// coordinates_3d can be printed to cout</span></div>
 <div class="line">cin &gt;&gt; x; <span class="comment">// coordinates_3d can be initialized through cin</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md43"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md57"></a>
 AID and ZID</h2>
 <p>An <b>AID</b>, acronym of <b>Astronomycal ID</b>, is an identifier of an astronomical object, like planets, moons, galaxies, stars, and any other astronomical object.</p>
 <p>A <b>ZID</b>, acronym of <b>Zone ID</b>, is an identifier of a zone, like a region, a district, a store, a lake, a country, and any other zone. A zone is defined here as any closed surface that can be drawn over an astronomycal object. A ZID is composed of the AID of which the zone pertains, and the zone itself.</p>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 percentage</h2>
 <p>The <b>percentage</b> class represents percentages, they calculate the factor of the percentage and automatically, when operating with numeric types, calculate the percentage of that number.</p>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md59"></a>
 pixel</h2>
 <p>The <b>pixel</b> class represents pixels, which are the squares that compose screens. It can be used to calculate distance over pixels instead of distances of physical lengths, which is a need of some digital applications.</p>
-<h2><a class="anchor" id="autotoc_md46"></a>
+<h2><a class="anchor" id="autotoc_md60"></a>
 pH and pOH</h2>
 <p>The <b>pH</b> class allows to work with pH, which is used inside chemistry software to store data about pH. The <b>pOH</b> class is the counterpart of the pH class, and is not commonly needed, but it can be used if the pH class is not being useful for some reason, and if instead the pOH class is useful. The pH class should always be <b>prefered</b> to be used over the pOH class, and that last should be used <b>only</b> if the pH class is not properly solving the needs.</p>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<h2><a class="anchor" id="autotoc_md61"></a>
 Sizes in 2D, 3D and ND</h2>
 <p>The <b>size_2d</b> class allows to store the data of the width and height of an object in length classes. The <b>size_3d</b> allows to store the data of the width, the height and the depth of an object in length classes. The <b>size_nd</b> class allows to store lengths corresponding to the dimension of an object in a variable number of dimensions.</p>
-<h1><a class="anchor" id="autotoc_md48"></a>
+<h1><a class="anchor" id="autotoc_md62"></a>
 Internals</h1>
 <p>Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.</p>
 <p>The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it's used the char symbol[3] of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.</p>

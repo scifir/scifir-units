@@ -602,8 +602,8 @@ template&lt;typename T  = length&gt; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="classscifir_1_1coordinates__ndr.html#a46611a0d7da8e8ce28a5d2e66a0d66ae">values</a>.push_back(T(new_p * <a class="code" href="namespacescifir.html#ad3b92cdb628eeec991c326c1727fdd9e">scifir::sin</a>(new_polar_theta)));</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classscifir_1_1coordinates__ndr.html#a22523768b685ecfb0c8da9ce8fa58352">angles</a>.push_back(new_theta);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
-<div class="ttc" id="anamespacescifir_html_a36d6ffb762d9c276b4229a2bedf3bca9"><div class="ttname"><a href="namespacescifir.html#a36d6ffb762d9c276b4229a2bedf3bca9">scifir::cos</a></div><div class="ttdeci">float cos(const angle &amp;x)</div><div class="ttdoc">Calculates the cos of angle x. It uses the cos() function of the standard library of C++,...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00351">angle.cpp:351</a></div></div>
-<div class="ttc" id="anamespacescifir_html_ad3b92cdb628eeec991c326c1727fdd9e"><div class="ttname"><a href="namespacescifir.html#ad3b92cdb628eeec991c326c1727fdd9e">scifir::sin</a></div><div class="ttdeci">float sin(const angle &amp;x)</div><div class="ttdoc">Calculates the sin of angle x. It uses the sin() function of the standard library of C++,...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00346">angle.cpp:346</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a36d6ffb762d9c276b4229a2bedf3bca9"><div class="ttname"><a href="namespacescifir.html#a36d6ffb762d9c276b4229a2bedf3bca9">scifir::cos</a></div><div class="ttdeci">float cos(const angle &amp;x)</div><div class="ttdoc">Calculates the cos of angle x. It uses the cos() function of the standard library of C++,...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00356">angle.cpp:356</a></div></div>
+<div class="ttc" id="anamespacescifir_html_ad3b92cdb628eeec991c326c1727fdd9e"><div class="ttname"><a href="namespacescifir.html#ad3b92cdb628eeec991c326c1727fdd9e">scifir::sin</a></div><div class="ttdeci">float sin(const angle &amp;x)</div><div class="ttdoc">Calculates the sin of angle x. It uses the sin() function of the standard library of C++,...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00351">angle.cpp:351</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1720,7 +1720,7 @@ template&lt;typename T  = length&gt; </div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c">scifir::sqrt</a>(x_T);</div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;            }</div>
 <div class="ttc" id="anamespacescifir_html_a44533727ef4f03e8303664cdd665c2bc"><div class="ttname"><a href="namespacescifir.html#a44533727ef4f03e8303664cdd665c2bc">scifir::pow</a></div><div class="ttdeci">scalar_unit pow(const scalar_unit &amp;x, int exponent)</div><div class="ttdoc">Exponentiates a scalar_unit to some numeric type, the dimensions are also exponentiated.</div><div class="ttdef"><b>Definition:</b> <a href="scalar__unit_8cpp_source.html#l00725">scalar_unit.cpp:725</a></div></div>
-<div class="ttc" id="anamespacescifir_html_adeff4b825414d35ce963977f181f1b5c"><div class="ttname"><a href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c">scifir::sqrt</a></div><div class="ttdeci">angle sqrt(const angle &amp;x)</div><div class="ttdoc">Calculates the square root of the angle x and returns that new angle.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00336">angle.cpp:336</a></div></div>
+<div class="ttc" id="anamespacescifir_html_adeff4b825414d35ce963977f181f1b5c"><div class="ttname"><a href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c">scifir::sqrt</a></div><div class="ttdeci">angle sqrt(const angle &amp;x)</div><div class="ttdoc">Calculates the square root of the angle x and returns that new angle.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00341">angle.cpp:341</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1898,7 +1898,7 @@ template&lt;typename T  = length&gt; </div>
 <div class="fragment"><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            {</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacescifir.html#a1f303936f1ea7ec91375b8d707a51a90">scifir::asin</a>(<span class="keywordtype">float</span>(<a class="code" href="classscifir_1_1coordinates__ndr.html#a46611a0d7da8e8ce28a5d2e66a0d66ae">values</a>[2]/T(6317,<span class="stringliteral">&quot;km&quot;</span>)));</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            }</div>
-<div class="ttc" id="anamespacescifir_html_a1f303936f1ea7ec91375b8d707a51a90"><div class="ttname"><a href="namespacescifir.html#a1f303936f1ea7ec91375b8d707a51a90">scifir::asin</a></div><div class="ttdeci">angle asin(float x)</div><div class="ttdoc">Calculates the asin of some value x and returns the result as angle in degrees.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00361">angle.cpp:361</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a1f303936f1ea7ec91375b8d707a51a90"><div class="ttname"><a href="namespacescifir.html#a1f303936f1ea7ec91375b8d707a51a90">scifir::asin</a></div><div class="ttdeci">angle asin(float x)</div><div class="ttdoc">Calculates the asin of some value x and returns the result as angle in degrees.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00366">angle.cpp:366</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1931,7 +1931,7 @@ template&lt;typename T  = length&gt; </div>
 <div class="fragment"><div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            {</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacescifir.html#a6238e1d28db776a5d6497d463cc18a24">scifir::atan</a>(<span class="keywordtype">float</span>(<a class="code" href="classscifir_1_1coordinates__ndr.html#a46611a0d7da8e8ce28a5d2e66a0d66ae">values</a>[1]/<a class="code" href="classscifir_1_1coordinates__ndr.html#a46611a0d7da8e8ce28a5d2e66a0d66ae">values</a>[0]));</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            }</div>
-<div class="ttc" id="anamespacescifir_html_a6238e1d28db776a5d6497d463cc18a24"><div class="ttname"><a href="namespacescifir.html#a6238e1d28db776a5d6497d463cc18a24">scifir::atan</a></div><div class="ttdeci">angle atan(float x)</div><div class="ttdoc">Calculates the atan of some value x and returns the result as angle in degrees.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00371">angle.cpp:371</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a6238e1d28db776a5d6497d463cc18a24"><div class="ttname"><a href="namespacescifir.html#a6238e1d28db776a5d6497d463cc18a24">scifir::atan</a></div><div class="ttdeci">angle atan(float x)</div><div class="ttdoc">Calculates the atan of some value x and returns the result as angle in degrees.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00376">angle.cpp:376</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2081,7 +2081,7 @@ template&lt;typename T  = length&gt; </div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                    <span class="keywordflow">return</span> angle();</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                }</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            }</div>
-<div class="ttc" id="anamespacescifir_html_a73055e45327c72e4bc3f1e392c3c019e"><div class="ttname"><a href="namespacescifir.html#a73055e45327c72e4bc3f1e392c3c019e">scifir::acos_degree</a></div><div class="ttdeci">float acos_degree(float x)</div><div class="ttdoc">Calculates the acos receiving x in degrees. It uses the acos() function of the standard library of C+...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00193">angle.hpp:193</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a73055e45327c72e4bc3f1e392c3c019e"><div class="ttname"><a href="namespacescifir.html#a73055e45327c72e4bc3f1e392c3c019e">scifir::acos_degree</a></div><div class="ttdeci">float acos_degree(float x)</div><div class="ttdoc">Calculates the acos receiving x in degrees. It uses the acos() function of the standard library of C+...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00195">angle.hpp:195</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2121,7 +2121,7 @@ template&lt;typename T  = length&gt; </div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                    <span class="keywordflow">return</span> angle();</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                }</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            }</div>
-<div class="ttc" id="anamespacescifir_html_a4f9e2e4c610d0caaeaeb057eba2d0ab9"><div class="ttname"><a href="namespacescifir.html#a4f9e2e4c610d0caaeaeb057eba2d0ab9">scifir::atan_degree</a></div><div class="ttdeci">float atan_degree(float x)</div><div class="ttdoc">Calculates the atan receiving x in degrees. It uses the atan() function of the standard library of C+...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00198">angle.hpp:198</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a4f9e2e4c610d0caaeaeb057eba2d0ab9"><div class="ttname"><a href="namespacescifir.html#a4f9e2e4c610d0caaeaeb057eba2d0ab9">scifir::atan_degree</a></div><div class="ttdeci">float atan_degree(float x)</div><div class="ttdoc">Calculates the atan receiving x in degrees. It uses the atan() function of the standard library of C+...</div><div class="ttdef"><b>Definition:</b> <a href="angle_8hpp_source.html#l00200">angle.hpp:200</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2359,7 +2359,7 @@ template&lt;typename T  = length&gt; </div>
 <div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;                    }</div>
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;                }</div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;            }</div>
-<div class="ttc" id="anamespacescifir_html_af5a4683671f496fe4aaa2d378c81d0b1"><div class="ttname"><a href="namespacescifir.html#af5a4683671f496fe4aaa2d378c81d0b1">scifir::is_angle</a></div><div class="ttdeci">bool is_angle(const string &amp;init_angle)</div><div class="ttdoc">Checks if some string is an initialization string of an angle.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00278">angle.cpp:278</a></div></div>
+<div class="ttc" id="anamespacescifir_html_af5a4683671f496fe4aaa2d378c81d0b1"><div class="ttname"><a href="namespacescifir.html#af5a4683671f496fe4aaa2d378c81d0b1">scifir::is_angle</a></div><div class="ttdeci">bool is_angle(const string &amp;init_angle)</div><div class="ttdoc">Checks if some string is an initialization string of an angle.</div><div class="ttdef"><b>Definition:</b> <a href="angle_8cpp_source.html#l00283">angle.cpp:283</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
