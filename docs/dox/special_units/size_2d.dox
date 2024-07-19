@@ -74,7 +74,7 @@
 * \brief Constructor. width is new_width and height is new_height, they are initialized by string.
 
 * \fn scifir::size_2d<float>::size_2d(const string& init_size_2d)
-* \brief Assignment. The member-variables are initialized by the initialization string init_size_2d specialized for float.
+* \brief Constructor. The member-variables are initialized by the initialization string init_size_2d specialized for float.
 
 * \fn size_2d<float>& scifir::size_2d<float>::operator =(const size_2d<float>& x)
 * \brief Copy assignment. The width and height are copied from the size_2d<float> x.
@@ -104,10 +104,10 @@
 * \brief Returns a string representation of size_2d<float>, with his width and height.
 
 * \var float scifir::size_2d<float>::width
-* \brief Width, stored as a float. The advantage related to size_2d<T> is that it sizes less, the disadvantage is the lack of dimensions.
+* \brief Width, stored as a float. The advantage related to size_2d<float> over size_2d<T> is that it sizes less, the disadvantage is the lack of dimensions.
 
 * \var float scifir::size_2d<float>::height
-* \brief Height, stored as a float. The advantage related to size_2d<T> is that it sizes less, the disadvantage is the lack of dimensions.
+* \brief Height, stored as a float. The advantage related to size_2d<float> over size_2d<T> is that it sizes less, the disadvantage is the lack of dimensions.
 
 * \fn void scifir::size_2d<float>::initialize_from_string(const string& init_size_2d)
 * \brief **Internal function**. Initializes the member-variables with an initialization string of size_2d<float>.
@@ -115,7 +115,7 @@
 * \fn string scifir::to_string(const size_2d<T>& x)
 * \brief Returns a string representation of size_2d<T>.
 
-* \fn string scifir::to_string(const size_2d<float>& x);
+* \fn string scifir::to_string(const size_2d<float>& x)
 * \brief Returns a string representation of size_2d<float>.
 
 * \fn bool operator ==(const scifir::size_2d<T>& x, const scifir::size_2d<T>& y)

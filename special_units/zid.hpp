@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED
 #define SCIFIR_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED
 
-#include "../special_units/aid.hpp"
+#include "./aid.hpp"
 
 #include <string>
 #include <vector>

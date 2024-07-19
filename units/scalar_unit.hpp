@@ -1,8 +1,8 @@
 #ifndef SCIFIR_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
 
-#include "../units/dimension.hpp"
-#include "../units/prefix.hpp"
+#include "./dimension.hpp"
+#include "./prefix.hpp"
 #include "../util/is_number.hpp"
 
 #include <cmath>

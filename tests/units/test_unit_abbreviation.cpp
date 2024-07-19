@@ -509,27 +509,27 @@ TEST_CASE("Abbreviation literals") {
 
 		CHECK(bool(100_amu == "100 amu"));
 
-		CHECK(bool(100_Yb == "100 Yb"));
-		CHECK(bool(100_Zb == "100 Zb"));
-		CHECK(bool(100_Eb == "100 Eb"));
-		CHECK(bool(100_Pb == "100 Pb"));
-		CHECK(bool(100_Tb == "100 Tb"));
-		CHECK(bool(100_Gb == "100 Gb"));
-		CHECK(bool(100_Mb == "100 Mb"));
-		CHECK(bool(100_kb == "100 kb"));
-		CHECK(bool(100_hb == "100 hb"));
-		CHECK(bool(100_dab == "100 dab"));
-		CHECK(bool(100_b == "100 b"));
-		CHECK(bool(100_db == "100 db"));
-		CHECK(bool(100_cb == "100 cb"));
-		CHECK(bool(100_mb == "100 mb"));
-		CHECK(bool(100_ub == "100 ub"));
-		CHECK(bool(100_nb == "100 nb"));
-		CHECK(bool(100_pb == "100 pb"));
-		CHECK(bool(100_fb == "100 fb"));
-		CHECK(bool(100_ab == "100 ab"));
-		CHECK(bool(100_zb == "100 zb"));
-		CHECK(bool(100_yb == "100 yb"));
+		CHECK(bool(100_Ybarn == "100 Ybarn"));
+		CHECK(bool(100_Zbarn == "100 Zbarn"));
+		CHECK(bool(100_Ebarn == "100 Ebarn"));
+		CHECK(bool(100_Pbarn == "100 Pbarn"));
+		CHECK(bool(100_Tbarn == "100 Tbarn"));
+		CHECK(bool(100_Gbarn == "100 Gbarn"));
+		CHECK(bool(100_Mbarn == "100 Mbarn"));
+		CHECK(bool(100_kbarn == "100 kbarn"));
+		CHECK(bool(100_hbarn == "100 hbarn"));
+		CHECK(bool(100_dabarn == "100 dabarn"));
+		CHECK(bool(100_barn == "100 barn"));
+		CHECK(bool(100_dbarn == "100 dbarn"));
+		CHECK(bool(100_cbarn == "100 cbarn"));
+		CHECK(bool(100_mbarn == "100 mbarn"));
+		CHECK(bool(100_ubarn == "100 ubarn"));
+		CHECK(bool(100_nbarn == "100 nbarn"));
+		CHECK(bool(100_pbarn == "100 pbarn"));
+		CHECK(bool(100_fbarn == "100 fbarn"));
+		CHECK(bool(100_abarn == "100 abarn"));
+		CHECK(bool(100_zbarn == "100 zbarn"));
+		CHECK(bool(100_ybarn == "100 ybarn"));
 
 		CHECK(bool(100_YM == "100 YM"));
 		CHECK(bool(100_ZM == "100 ZM"));
@@ -553,11 +553,16 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_zM == "100 zM"));
 		CHECK(bool(100_yM == "100 yM"));
 
+		CHECK(bool(100_memo == "100 memo"));
+		CHECK(bool(100_degree == "100°"));
+		CHECK(bool(to_string(5_rad) == "286.47°"));
+		CHECK(bool(100_particles == "100 particles"));
 		CHECK(bool(100_particles == "100 particles"));
 		CHECK(bool(100_ppm == "100 ppm"));
 		/*CHECK(bool(100_ppb == "100 ppb"));
 		CHECK(bool(100_ppt == "100 ppt"));
 		CHECK(bool(100_ppq == "100 ppq"));*/
+		CHECK(bool(100_px == "100 px"));
 
 		CHECK(bool(100.0_YHz == "100 YHz"));
 		CHECK(bool(100.0_ZHz == "100 ZHz"));
@@ -1056,27 +1061,27 @@ TEST_CASE("Abbreviation literals") {
 
 		CHECK(bool(100.0_amu == "100 amu"));
 
-		CHECK(bool(100.0_Yb == "100 Yb"));
-		CHECK(bool(100.0_Zb == "100 Zb"));
-		CHECK(bool(100.0_Eb == "100 Eb"));
-		CHECK(bool(100.0_Pb == "100 Pb"));
-		CHECK(bool(100.0_Tb == "100 Tb"));
-		CHECK(bool(100.0_Gb == "100 Gb"));
-		CHECK(bool(100.0_Mb == "100 Mb"));
-		CHECK(bool(100.0_kb == "100 kb"));
-		CHECK(bool(100.0_hb == "100 hb"));
-		CHECK(bool(100.0_dab == "100 dab"));
-		CHECK(bool(100.0_b == "100 b"));
-		CHECK(bool(100.0_db == "100 db"));
-		CHECK(bool(100.0_cb == "100 cb"));
-		CHECK(bool(100.0_mb == "100 mb"));
-		CHECK(bool(100.0_ub == "100 ub"));
-		CHECK(bool(100.0_nb == "100 nb"));
-		CHECK(bool(100.0_pb == "100 pb"));
-		CHECK(bool(100.0_fb == "100 fb"));
-		CHECK(bool(100.0_ab == "100 ab"));
-		CHECK(bool(100.0_zb == "100 zb"));
-		CHECK(bool(100.0_yb == "100 yb"));
+		CHECK(bool(100.0_Ybarn == "100 Ybarn"));
+		CHECK(bool(100.0_Zbarn == "100 Zbarn"));
+		CHECK(bool(100.0_Ebarn == "100 Ebarn"));
+		CHECK(bool(100.0_Pbarn == "100 Pbarn"));
+		CHECK(bool(100.0_Tbarn == "100 Tbarn"));
+		CHECK(bool(100.0_Gbarn == "100 Gbarn"));
+		CHECK(bool(100.0_Mbarn == "100 Mbarn"));
+		CHECK(bool(100.0_kbarn == "100 kbarn"));
+		CHECK(bool(100.0_hbarn == "100 hbarn"));
+		CHECK(bool(100.0_dabarn == "100 dabarn"));
+		CHECK(bool(100.0_barn == "100 barn"));
+		CHECK(bool(100.0_dbarn == "100 dbarn"));
+		CHECK(bool(100.0_cbarn == "100 cbarn"));
+		CHECK(bool(100.0_mbarn == "100 mbarn"));
+		CHECK(bool(100.0_ubarn == "100 ubarn"));
+		CHECK(bool(100.0_nbarn == "100 nbarn"));
+		CHECK(bool(100.0_pbarn == "100 pbarn"));
+		CHECK(bool(100.0_fbarn == "100 fbarn"));
+		CHECK(bool(100.0_abarn == "100 abarn"));
+		CHECK(bool(100.0_zbarn == "100 zbarn"));
+		CHECK(bool(100.0_ybarn == "100 ybarn"));
 
 		CHECK(bool(100.0_YM == "100 YM"));
 		CHECK(bool(100.0_ZM == "100 ZM"));
@@ -1100,9 +1105,13 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_zM == "100 zM"));
 		CHECK(bool(100.0_yM == "100 yM"));
 
+		CHECK(bool(100.0_memo == "100 memo"));
+		CHECK(bool(100.0_degree == "100°"));
+		CHECK(bool(to_string(5.0_rad) == "286.47°"));
 		CHECK(bool(100.0_ppm == "100 ppm"));
 		/*CHECK(bool(100.0_ppb == "100 ppb"));
 		CHECK(bool(100.0_ppt == "100 ppt"));
 		CHECK(bool(100.0_ppq == "100 ppq"));*/
+		CHECK(bool(100.0_px == "100 px"));
 	}
 }

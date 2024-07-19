@@ -1172,4 +1172,3 @@ istream& operator >>(istream& is, scifir::point_nd<T>& x)
 }
 
 #endif // SCIFIR_UNITS_TOPOLOGY_POINT_ND_HPP_INCLUDED
-

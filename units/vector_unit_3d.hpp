@@ -1,9 +1,9 @@
 #ifndef SCIFIR_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
 
-#include "../units/scalar_unit.hpp"
-#include "../units/vector_unit_2d.hpp"
-#include "../units/vector_unit_nd.hpp"
+#include "./scalar_unit.hpp"
+#include "./vector_unit_2d.hpp"
+#include "./vector_unit_nd.hpp"
 #include "../meca_number/angle.hpp"
 #include "../util/is_number.hpp"
 #include "../topology/direction.hpp"

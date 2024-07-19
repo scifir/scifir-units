@@ -23,7 +23,6 @@ namespace scifir
 	{
 		// Common units
 		{"ha", conversion("hm2", 1.0L)}, // Hectare
-		{"ly", conversion("AU", 63241.0L)}, // Light-year
 		{"dyn", conversion("N", 0.00001L)}, // Dyne
 		{"Ba", conversion("Pa", 0.1L)}, // Barye
 		{"bar", conversion("Pa", 100000.0L)}, // Bar
@@ -102,5 +101,6 @@ namespace scifir
 		{"Ebit", conversion("PB", 125.0L)},
 		{"Zbit", conversion("EB", 125.0L)},
 		{"Ybit", conversion("ZB", 125.0L)},
+		{"cc", conversion("mL", 1.0L)}
 	};
 }

@@ -144,6 +144,9 @@
 * \fn void angle::invert()
 * \brief Inverts the angle to the opposite direction in a 2D plane, which is to add 180 degrees. The value is normalized after.
 
+* \fn scalar_unit angle::to_scalar_unit() const
+* \brief Creates a scalar_unit with the same value and degree dimensions.
+
 * \fn string angle::display(int number_of_decimals = 2) const
 * \brief Creates an string from the angle, with the value and the degrees symbol.
 

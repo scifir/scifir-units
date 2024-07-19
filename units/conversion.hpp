@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_UNITS_CONVERSION_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_CONVERSION_HPP_INCLUDED
 
-#include "../units/dimension.hpp"
+#include "./dimension.hpp"
 
 #include <string>
 

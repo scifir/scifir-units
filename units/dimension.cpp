@@ -18,7 +18,7 @@ namespace scifir
 	map<string,vector<dimension>> dimension::base_dimensions = map<string,vector<dimension>>();
 	map<int,string> dimension::full_symbols = map<int,string>();
 	int dimension::total_full_symbols = 0;
-	set<string> dimension::prefixes_options {"Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
+	set<string> dimension::prefixes_options {"Q", "R", "Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y", "r", "q"};
 
 	dimension::dimension() : prefix(),dimension_type(dimension::NONE),dimension_position(dimension::NO_POSITION),symbol()
 	{}
@@ -55,10 +55,15 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "h" and init_dimension != "d" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
+		}
+		else if(init_dimension == "day")
+		{
+			prefix_name = "";
+			dimension_name = init_dimension;
 		}
 		else if(init_dimension.substr(0,2) == "da")
 		{
@@ -75,7 +80,7 @@ namespace scifir
 		{
 			dimension_type = dimension::METRE;
 		}
-		else if(dimension_name == "degree")
+		else if(dimension_name == "degree" or dimension_name == "θ")
 		{
 			dimension_type = dimension::DEGREE;
 		}
@@ -147,7 +152,7 @@ namespace scifir
 		{
 			dimension_type = dimension::FARADAY;
 		}
-		else if(dimension_name == "ohm" or dimension_name == "Ohm"/* or dimension_name == U"\U000003A9"*/)
+		else if(dimension_name == "ohm" or dimension_name == "Ohm" or dimension_name == "Ω")
 		{
 			dimension_type = dimension::OHM;
 		}
@@ -191,7 +196,7 @@ namespace scifir
 		{
 			dimension_type = dimension::KATAL;
 		}
-		else if(dimension_name == "angstrom" or u32string(dimension_name.begin(),dimension_name.end()) == U"\U0000212B")
+		else if(dimension_name == "angstrom" or dimension_name == "Å")
 		{
 			dimension_type = dimension::ANGSTROM;
 		}
@@ -203,11 +208,11 @@ namespace scifir
 		{
 			dimension_type = dimension::MINUTE;
 		}
-		else if(dimension_name == "h")
+		else if(dimension_name == "hour")
 		{
 			dimension_type = dimension::HOUR;
 		}
-		else if(dimension_name == "d")
+		else if(dimension_name == "day")
 		{
 			dimension_type = dimension::DAY;
 		}
@@ -266,15 +271,23 @@ namespace scifir
 		else
 		{
 			prefix = scifir::prefix(prefix::NONE);
-			if (init_dimension.size() > 3)
+			if (init_dimension.size() > 2)
 			{
 				string symbol_abreviation = dimension::create_full_symbol(init_dimension);
-				symbol_abreviation.copy(symbol, init_dimension.length());
+#ifdef IS_UNIX
+				std::strncpy(symbol, symbol_abreviation.c_str(), 2);
+#elif IS_WINDOWS
+				strncpy_s(symbol, 3, symbol_abreviation.c_str(), 2);
+#endif
 				dimension_type = dimension::CUSTOM_FULL_SYMBOL;
 			}
 			else
 			{
-				init_dimension.copy(symbol, init_dimension.length());
+#ifdef IS_UNIX
+				std::strncpy(symbol, init_dimension.c_str(), 2);
+#elif IS_WINDOWS
+				strncpy_s(symbol, 3, init_dimension.c_str(), 2);
+#endif
 				dimension_type = dimension::CUSTOM;
 			}
 		}
@@ -401,7 +414,7 @@ namespace scifir
 			case dimension::PARSEC:
 				return "parsec";
 			case dimension::ELECTRON_VOLT:
-				return "electronvolt";
+				return "electron volt";
 			case dimension::DALTON:
 				return "dalton";
 			case dimension::ATOMIC_MASS_UNIT:
@@ -428,6 +441,126 @@ namespace scifir
 		return "";
 	}
 
+	string dimension::get_fullname() const
+	{
+		return prefix.get_name() + get_name();
+	}
+
+	string dimension::get_plural() const
+	{
+		switch(dimension_type)
+		{
+			case dimension::NONE:
+				return "empty";
+			case dimension::METRE:
+				return "metres";
+			case dimension::DEGREE:
+				return "degrees";
+			case dimension::RADIAN:
+				return "radians";
+			case dimension::STERADIAN:
+				return "steradians";
+			case dimension::SECOND:
+				return "seconds";
+			case dimension::GRAM:
+				return "grams";
+			case dimension::COULOMB:
+				return "coulombs";
+			case dimension::KELVIN:
+				return "kelvins";
+			case dimension::MOLE:
+				return "moles";
+			case dimension::CANDELA:
+				return "candelas";
+			case dimension::BYTE:
+				return "bytes";
+			case dimension::HERTZ:
+				return "hertz";
+			case dimension::NEWTON:
+				return "newtons";
+			case dimension::PASCAL:
+				return "pascals";
+			case dimension::JOULE:
+				return "joules";
+			case dimension::WATT:
+				return "watts";
+			case dimension::AMPERE:
+				return "amperes";
+			case dimension::VOLT:
+				return "volts";
+			case dimension::FARADAY:
+				return "faradays";
+			case dimension::OHM:
+				return "ohms";
+			case dimension::SIEMENS:
+				return "siemens";
+			case dimension::WEBER:
+				return "webers";
+			case dimension::TESLA:
+				return "teslas";
+			case dimension::HENRY:
+				return "henries";
+			case dimension::LUMEN:
+				return "lumens";
+			case dimension::LUX:
+				return "luxes";
+			case dimension::BECQUEREL:
+				return "becquerels";
+			case dimension::GRAY:
+				return "grays";
+			case dimension::SIEVERT:
+				return "sieverts";
+			case dimension::KATAL:
+				return "katals";
+			case dimension::ANGSTROM:
+				return "angstroms";
+			case dimension::LITRE:
+				return "litres";
+			case dimension::MINUTE:
+				return "minutes";
+			case dimension::HOUR:
+				return "hours";
+			case dimension::DAY:
+				return "days";
+			case dimension::LIGHT_YEAR:
+				return "light years";
+			case dimension::ASTRONOMICAL_UNIT:
+				return "astronomical units";
+			case dimension::PARSEC:
+				return "parsecs";
+			case dimension::ELECTRON_VOLT:
+				return "electron volts";
+			case dimension::DALTON:
+				return "daltons";
+			case dimension::ATOMIC_MASS_UNIT:
+				return "atomic mass units";
+			case dimension::BARN:
+				return "barns";
+			case dimension::MOLARITY:
+				return "molarities";
+			case dimension::PARTICLES:
+				return "particles";
+			case dimension::CUSTOM:
+				return "custom-dimension";
+			case dimension::CUSTOM_BASIC:
+				return "custom-basic";
+			case dimension::CUSTOM_FULL_SYMBOL:
+				return "custom-full-symbol";
+			case dimension::MONEY:
+				return "money";
+			case dimension::PIXEL:
+				return "pixels";
+			case dimension::MEMO:
+				return "memos";
+		}
+		return "";
+	}
+
+	string dimension::get_fullplural() const
+	{
+		return prefix.get_name() + get_plural();
+	}
+
 	string dimension::get_symbol() const
 	{
 		switch(dimension_type)
@@ -438,10 +571,10 @@ namespace scifir
 				return "m";
 #ifdef IS_UNIX
 			case dimension::DEGREE:
-				return "\U000003B8";
+				return "θ";
 #elif IS_WINDOWS
 			case dimension::DEGREE:
-				return "\U03B8";
+				return "θ";
 #endif
 			case dimension::RADIAN:
 				return "rad";
@@ -479,10 +612,10 @@ namespace scifir
 				return "F";
 #ifdef IS_UNIX
 			case dimension::OHM:
-				return "\U000003A9";
+				return "Ω";
 #elif IS_WINDOWS
 			case dimension::OHM:
-				return "\U03A9";
+				return "Ω";
 #endif
 			case dimension::SIEMENS:
 				return "S";
@@ -506,19 +639,19 @@ namespace scifir
 				return "kat";
 #ifdef IS_UNIX
 			case dimension::ANGSTROM:
-				return "\U0000212B";
+				return "Å";
 #elif IS_WINDOWS
 			case dimension::ANGSTROM:
-				return "\U212B";
+				return "Å";
 #endif
 			case dimension::LITRE:
 				return "L";
 			case dimension::MINUTE:
 				return "min";
 			case dimension::HOUR:
-				return "h";
+				return "hour";
 			case dimension::DAY:
-				return "d";
+				return "day";
 			case dimension::LIGHT_YEAR:
 				return "ly";
 			case dimension::ASTRONOMICAL_UNIT:

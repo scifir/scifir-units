@@ -1,8 +1,8 @@
 #ifndef SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 
-#include "../units/scalar_unit.hpp"
-#include "../units/unit_basic.hpp"
+#include "./scalar_unit.hpp"
+#include "./unit_basic.hpp"
 
 #include "../predefined_units/electronics_units.hpp"
 #include "../predefined_units/physics_units.hpp"
@@ -11,6 +11,7 @@
 #include "../predefined_units/chemistry_units.hpp"
 
 #include "../special_units/percentage.hpp"
+#include "../special_units/pixel.hpp"
 
 scifir::frequency operator"" _YHz(unsigned long long int);
 scifir::frequency operator"" _ZHz(unsigned long long int);
@@ -509,27 +510,27 @@ scifir::mass operator"" _Da(unsigned long long int);
 
 scifir::mass operator"" _amu(unsigned long long int);
 
-scifir::area operator"" _Yb(unsigned long long int);
-scifir::area operator"" _Zb(unsigned long long int);
-scifir::area operator"" _Eb(unsigned long long int);
-scifir::area operator"" _Pb(unsigned long long int);
-scifir::area operator"" _Tb(unsigned long long int);
-scifir::area operator"" _Gb(unsigned long long int);
-scifir::area operator"" _Mb(unsigned long long int);
-scifir::area operator"" _kb(unsigned long long int);
-scifir::area operator"" _hb(unsigned long long int);
-scifir::area operator"" _dab(unsigned long long int);
-scifir::area operator"" _b(unsigned long long int);
-scifir::area operator"" _db(unsigned long long int);
-scifir::area operator"" _cb(unsigned long long int);
-scifir::area operator"" _mb(unsigned long long int);
-scifir::area operator"" _ub(unsigned long long int);
-scifir::area operator"" _nb(unsigned long long int);
-scifir::area operator"" _pb(unsigned long long int);
-scifir::area operator"" _fb(unsigned long long int);
-scifir::area operator"" _ab(unsigned long long int);
-scifir::area operator"" _zb(unsigned long long int);
-scifir::area operator"" _yb(unsigned long long int);
+scifir::area operator"" _Ybarn(unsigned long long int);
+scifir::area operator"" _Zbarn(unsigned long long int);
+scifir::area operator"" _Ebarn(unsigned long long int);
+scifir::area operator"" _Pbarn(unsigned long long int);
+scifir::area operator"" _Tbarn(unsigned long long int);
+scifir::area operator"" _Gbarn(unsigned long long int);
+scifir::area operator"" _Mbarn(unsigned long long int);
+scifir::area operator"" _kbarn(unsigned long long int);
+scifir::area operator"" _hbarn(unsigned long long int);
+scifir::area operator"" _dabarn(unsigned long long int);
+scifir::area operator"" _barn(unsigned long long int);
+scifir::area operator"" _dbarn(unsigned long long int);
+scifir::area operator"" _cbarn(unsigned long long int);
+scifir::area operator"" _mbarn(unsigned long long int);
+scifir::area operator"" _ubarn(unsigned long long int);
+scifir::area operator"" _nbarn(unsigned long long int);
+scifir::area operator"" _pbarn(unsigned long long int);
+scifir::area operator"" _fbarn(unsigned long long int);
+scifir::area operator"" _abarn(unsigned long long int);
+scifir::area operator"" _zbarn(unsigned long long int);
+scifir::area operator"" _ybarn(unsigned long long int);
 
 scifir::molarity operator"" _YM(unsigned long long int);
 scifir::molarity operator"" _ZM(unsigned long long int);
@@ -554,10 +555,14 @@ scifir::molarity operator"" _zM(unsigned long long int);
 scifir::molarity operator"" _yM(unsigned long long int);
 
 scifir::mole operator"" _particles(unsigned long long int);
+scifir::scalar_unit operator"" _memo(unsigned long long int);
+scifir::angle operator"" _degree(unsigned long long int);
+scifir::angle operator"" _rad(unsigned long long int);
 scifir::percentage operator"" _ppm(unsigned long long int);
 /*scifir::percentage operator"" _ppb(unsigned long long int);
 scifir::percentage operator"" _ppt(unsigned long long int);
 scifir::percentage operator"" _ppq(unsigned long long int);*/
+scifir::pixel operator"" _px(unsigned long long int);
 
 scifir::frequency operator"" _YHz(long double);
 scifir::frequency operator"" _ZHz(long double);
@@ -1058,27 +1063,27 @@ scifir::mass operator"" _Da(long double);
 
 scifir::mass operator"" _amu(long double);
 
-scifir::area operator"" _Yb(long double);
-scifir::area operator"" _Zb(long double);
-scifir::area operator"" _Eb(long double);
-scifir::area operator"" _Pb(long double);
-scifir::area operator"" _Tb(long double);
-scifir::area operator"" _Gb(long double);
-scifir::area operator"" _Mb(long double);
-scifir::area operator"" _kb(long double);
-scifir::area operator"" _hb(long double);
-scifir::area operator"" _dab(long double);
-scifir::area operator"" _b(long double);
-scifir::area operator"" _db(long double);
-scifir::area operator"" _cb(long double);
-scifir::area operator"" _mb(long double);
-scifir::area operator"" _ub(long double);
-scifir::area operator"" _nb(long double);
-scifir::area operator"" _pb(long double);
-scifir::area operator"" _fb(long double);
-scifir::area operator"" _ab(long double);
-scifir::area operator"" _zb(long double);
-scifir::area operator"" _yb(long double);
+scifir::area operator"" _Ybarn(long double);
+scifir::area operator"" _Zbarn(long double);
+scifir::area operator"" _Ebarn(long double);
+scifir::area operator"" _Pbarn(long double);
+scifir::area operator"" _Tbarn(long double);
+scifir::area operator"" _Gbarn(long double);
+scifir::area operator"" _Mbarn(long double);
+scifir::area operator"" _kbarn(long double);
+scifir::area operator"" _hbarn(long double);
+scifir::area operator"" _dabarn(long double);
+scifir::area operator"" _barn(long double);
+scifir::area operator"" _dbarn(long double);
+scifir::area operator"" _cbarn(long double);
+scifir::area operator"" _mbarn(long double);
+scifir::area operator"" _ubarn(long double);
+scifir::area operator"" _nbarn(long double);
+scifir::area operator"" _pbarn(long double);
+scifir::area operator"" _fbarn(long double);
+scifir::area operator"" _abarn(long double);
+scifir::area operator"" _zbarn(long double);
+scifir::area operator"" _ybarn(long double);
 
 scifir::molarity operator"" _YM(long double);
 scifir::molarity operator"" _ZM(long double);
@@ -1102,9 +1107,13 @@ scifir::molarity operator"" _aM(long double);
 scifir::molarity operator"" _zM(long double);
 scifir::molarity operator"" _yM(long double);
 
+scifir::scalar_unit operator"" _memo(long double);
+scifir::angle operator"" _degree(long double);
+scifir::angle operator"" _rad(long double);
 scifir::percentage operator"" _ppm(long double);
 /*scifir::percentage operator"" _ppb(long double);
 scifir::percentage operator"" _ppt(long double);
 scifir::percentage operator"" _ppq(long double);*/
+scifir::pixel operator"" _px(long double);
 
 #endif // SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED

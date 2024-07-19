@@ -1,8 +1,8 @@
 #ifndef SCIFIR_UNITS_UNITS_UNIT_BASIC_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_UNIT_BASIC_HPP_INCLUDED
 
-#include "../units/prefix.hpp"
-#include "../units/scalar_unit.hpp"
+#include "./prefix.hpp"
+#include "./scalar_unit.hpp"
 #include "../special_units/percentage.hpp"
 
 #include <chrono>

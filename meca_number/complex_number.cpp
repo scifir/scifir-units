@@ -14,11 +14,11 @@ namespace scifir
 			{
 				return false;
 			}
-			int imaginary_length = int(numbers[1].length()) - 3;
-			if (imaginary_length <= 0)
+			if ((int(numbers[1].length()) - 3) <= 0)
 			{
 				return false;
 			}
+			unsigned int imaginary_length = int(numbers[1].length()) - 3;
 			if (numbers[1].substr(imaginary_length) == "(i)")
 			{
 				bool dot_present = false;

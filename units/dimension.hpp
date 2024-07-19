@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_UNITS_DIMENSION_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_DIMENSION_HPP_INCLUDED
 
-#include "../units/prefix.hpp"
+#include "./prefix.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -46,6 +46,9 @@ namespace scifir
 			dimension& operator =(dimension&& x);
 
 			string get_name() const;
+			string get_fullname() const;
+			string get_plural() const;
+			string get_fullplural() const;
 			string get_symbol() const;
 			long double get_conversion_factor() const;
 			long double prefix_math() const;

@@ -221,6 +221,11 @@ namespace scifir
 		normalize_value();
 	}
 
+	scalar_unit angle::to_scalar_unit() const
+	{
+		return scalar_unit(value, { dimension(dimension::DEGREE, prefix::NONE, dimension::NUMERATOR) });
+	}
+
 	string angle::display(int number_of_decimals) const
 	{
 		ostringstream output;
@@ -232,7 +237,7 @@ namespace scifir
 		{
 			output << display_float(get_value(),number_of_decimals);
 		}
-		output << "\u00B0";
+		output << "°";
 		return output.str();
 	}
 

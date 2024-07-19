@@ -14,12 +14,16 @@ SCIFIR UNITS - VERSION 2
 
 // BUGS AND SIMILAR PROBLEMS (3)
 // TODO: document the light units somewhere
-// TODO: aid needs a constructor of universe, previous to the constructor of galaxies
+// TODO: zones must match that the type send corresponds to the data
+// TODO: aid must match that the type send corresponds to the data
+// TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes
+// TODO: change the #include paths that are of the same folder to be direct
+
 // TODO: check the characters of the initialization strings in all vector_unit classes
 // TODO: try the initialization strings with the unicode characters literally, not with their conversion, inside the tests of vector_unit classes
-// TODO: maybe add a character table to copy the characters of the initialization strings
+// TODO: maybe add a character table inside the documentation to copy the characters of the initialization strings
 // TODO: think of how to implement conversions, do also the test of them
-// TODO: add no-solar-system, no-galaxy, and maybe no-universe to aid as predefined values
+// TODO: check if the member-variable names of dimension class can be changed
 
 // TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their derived classes
 
@@ -81,10 +85,18 @@ SCIFIR UNITS - VERSION 2
 // TODO: add the abbreviations in the groups too
 // TODO: add latex to the factors of prefixes in prefix.dox
 // TODO: document how the england and united states units work, which are different than the SI system of units
-// TODO: maybe use two different files Doxyfile, one for master and one for gh-pages
 // TODO: resolve how to document the string representation of enum types
 // TODO: explain in initialize_from_string() the use of this function. The explanation of the format of the initialization string should be inside the string constructor and the string assignment
+// TODO: explain how to use the basic units apart from the scalar_unit class, it doesn't appears inside the reference of Doxygen
+// TODO: in the README.md file add the explanation of the first thing to learn first, after that the rest of the library
+// TODO: inside scalar_unit explain how basic unit work
+// TODO: inside vector_unit classes explain how basic units of vector_unit classes work
+// TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
+
 // TODO: desactivate the search engine in the doxyfile for the doxyfile of development, not the doxyfile of github pages
+// TODO: maybe use two different files Doxyfile, one for master and one for gh-pages
+// TODO: use a dev_doxyfile for the master branch without the search engine
+// TODO: add google analytics to the website of scifir-units of github pages
 
 // TODO: document the coordinates for the universe, publish that too as an standard inside scifir
 // TODO: check what to do with the libraries of ISOs and document them inside the README.md file. If there isn't a library of ISOs, decide if to create one
@@ -136,7 +148,7 @@ SCIFIR UNITS - VERSION 2
 // PLOTTING
 // TODO: add functions that allow to use also matplot++ inside the library
 
-// ALGEBRA (4)
+// ALGEBRA (5)
 // TODO: constructor with initialization string
 // TODO: is_algebraic_expression() and is_algebraic_term() functions
 // TODO: static variable storing scalar_units, scalar_fields, etc
@@ -150,16 +162,17 @@ SCIFIR UNITS - VERSION 2
 // TODO: use reference when instantiating variables and when it's not needed to instantiate by value inside the body of functions
 // TODO: if size_t and other similar constants are intended to be used inside normal code
 // TODO: replace boost::split by split of C++20
+// TODO: check is string_view should be used as parameters
 
 // DIMENSIONS (7)
 // TODO: support the binary prefixes too
 // TODO: a new function to display dimensions with their full name, including the prefix
-// TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
 // TODO: functions get_plural(), get_fullname() and get_fullplural()
+// TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
 
-// TODO: allow to initalize grade dimensions by symbol
+// TODO: allow to initalize degree dimensions by symbol
 // TODO: angle class needs a to_scalar_unit() function that gives an equivalent scalar_unit class with the same value and grade dimension
-// TODO: some dimensions like grade, rad and money shouldn't be allowed to have a prefix
+// TODO: some dimensions like degree, radian and money shouldn't be allowed to have a prefix
 // TODO: check the literal with e
 // TODO: read the ISO 80000
 

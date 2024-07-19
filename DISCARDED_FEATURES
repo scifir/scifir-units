@@ -5,3 +5,4 @@ DISCARDED FEATURES
 4. sqrt() can't give scalar_units with squared dimensions, that's, with dimensions at a power of 1/2, although that appears in some scientific texts it's very possibly a wrong statement and then is discarded as feature for this library.
 5. Temperature can have negative values, that's an express feature of the library. The reason of that is that then erroneous calculations appears expressly with the negative symbol, which is better than to throw an error message.
 6. coordinates_2d can't support geographic coordinates, because that's always false. Geographic coordinates are always really in 3D, because they represent a position inside a planet (or another astronomical object).
+7. day and hour can't be abbreviated with 'd' and 'h', respectively, because then they are easily confused with other different dimensions. That's why their name and not their symbol is used instead. The same logic applies to barn.

@@ -66,8 +66,8 @@ TEST_CASE("prefix class") {
 		CHECK(m.prefix_type == prefix::MILLI);
 		prefix n = prefix("u");
 		CHECK(n.prefix_type == prefix::MICRO);
-		//prefix j = prefix("\u00B5");
-		//CHECK(j.prefix_type == prefix::u);
+		prefix n2 = prefix("µ");
+		CHECK(n2.prefix_type == prefix::MICRO);
 		prefix o = prefix("n");
 		CHECK(o.prefix_type == prefix::NANO);
 		prefix p = prefix("p");
@@ -155,7 +155,7 @@ TEST_CASE("prefix class") {
 		prefix a14 = prefix(prefix::MICRO);
 		CHECK(a14.get_conversion_factor() == -6);
 		CHECK(a14.get_name() == "micro");
-		CHECK(a14.get_symbol() == "\u00B5");
+		CHECK(a14.get_symbol() == "µ");
 		prefix a15 = prefix(prefix::NANO);
 		CHECK(a15.get_conversion_factor() == -9);
 		CHECK(a15.get_name() == "nano");

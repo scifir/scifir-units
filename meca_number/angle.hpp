@@ -145,6 +145,8 @@ namespace scifir
 
 			void invert();
 
+			scalar_unit to_scalar_unit() const;
+
 			string display(int number_of_decimals = 2) const;
 
 			inline float get_degree() const

@@ -424,7 +424,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(bool(scifir::cross_product(e5,e6).vectorial_display() == vector_unit_nd()));
 		vector_unit_nd f("2 N",{10.0f,10.0f});
 		vector_unit_nd f2("1 m",{20.0f,20.0f});
-		CHECK(bool(scifir::angle_between(f,f2).display() == angle("10.29\u00B0")));
+		CHECK(bool(scifir::angle_between(f,f2).display() == angle("10.29°")));
 		vector_unit_nd g("2 N",{10.0f,10.0f});
 		vector_unit_nd g2("1 m",{10.0f,10.0f});
 		CHECK(scifir::same_nd(g,g2) == true);

@@ -368,10 +368,11 @@ All the unit classes, and also the other related classes of this library, can be
 
 The initialization strings are the following:
 
-- **angle**: "37°"
+- **dimensions**: "m2 / s", "J / s2 * kg"
+- **angle**: "37°" or "37º"
 - **scalar_unit**: "1 km"
-- **vector_unit_2d**: "5 km 10°"
-- **vector_unit_3d**: "3 km 10° 20°"
+- **vector_unit_2d**: "5 km 10θ" or "5 km 10°"
+- **vector_unit_3d**: "3 km 10θ 20Φ" or "3 km 10° 20°"
 - **vector_unit_nd**: "3 km 10° 20° 35°"
 - **point_1d**: "3 m" or "(3 m)"
 - **point_2d**: "2 m,4 m" or "(2 m,4 m)"
@@ -395,6 +396,130 @@ Inside scifir-units the space can be measured with float or with length. Seconda
 
 Inside scifir-units a **basic dimension** is a dimension considered basic under the SI system of units. Different to that, a **simple dimension** is a dimension without any derived dimension. That's, it's a dimension that's not an abbreviation of two or more other dimensions.
 
+The dimensions that a scalar_unit class can have are available in the enum dimension::type, and are only the SI dimensions or, if there isn't a dimension for an important purpose in the SI system of units, a selected dimension of the different possible options. Only the prefered dimensions have been added to the enum dimension::type, the other dimensions, as for example England units, have been added only as conversion options. With that system, always the same dimensions are used, which simplifies the work inside a laboratory, because then there's less confusion about which dimensions are being used.
+
+#### Dimensions of space
+
+Both the degree and the radian are used for measuring angles. When specifying angles in a human readable way, degree is always or nearly always the prefered choice. When specifying angles within mathematical formulas, radians are used, and the degrees can be converted to radians for that purpose. Given the definition of radian, mathematical formulas naturally have their angles needed to be specified in radians.
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| m | Metre | Metres | - | - | Measure of length.
+| θ | Degree | Degrees | $$\frac{\pi}{180} rad$$ | - | Measure of length.
+| rad | Radian | Radians | $$\frac{180}{\pi} θ$$ | - | Measure of the angle, it's the exact measure of the perimeter of the angle, when that angle is drawn as a circle in a math graph.
+| sr | Steradian | Steradians | - | - | Measure of a solid angle, which is defined as an angle in two dimensions.
+| L | Litre | Litres | 1 dm3 | dm3 | Measure of volume, frequently used for liquids.
+
+#### Dimensions of time
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| s | Second | Seconds | - | - | Measure of time.
+| min | Minute | Minutes | - | 60 s | Measure of time.
+| hour | Hour | Hours | - | 3,600 s | Measure of time.
+| day | Day | Days | - |  86,400 s | Measure of time.
+| Hz | Hertz | Hertz | - | 1 / s | Measure of frequency.
+
+#### Dimensions of chemistry and matter
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| g | Gram | Grams | - | - | Measure of amount of mass.
+| mol | Mole | Moles | N particles (Avogadro number) | - | Amounf of matter.
+| particles | Particles | Particles | mol / (Avogadro number) | - | Amount of particles, without using mol.
+| M | Molarity | Molarities | - | mol / L | Measure of concentration of a chemical species.
+| kat | Katal | Katals | - | mol / s | Catalytic activity.
+| Å | Angstrom | Angstroms | - | $$10^{-10} m$$ | Dimension of length, used mainly for wavelengths, inside the laboratory.
+| Da | Dalton | Daltons | - | $$1,66053886 * 10^{-24} g$$ | Measure of mass very low that is used for atoms and molecules, at microscopic and quantum scale. One mole of 1 Da is equivalent to 1 g.
+| amu | Atomic mass unit | Atomic mass units | 1 Da | Da | Equivalent name to Dalton.
+
+#### Dimensions of force
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| N | Newton | Newtons | - | kg * m / s2 | Measure of force.
+| Pa | Pascal | Pascals | - | kg / s2 * m | Measure of pressure.
+
+#### Dimensions of energy
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| J | Joule | Joules | - | kg * m2 / s2 | Measure of energy.
+| W | Watt | Watts | N particles (Avogadro number) | kg * m2 / s3 | Amounf of matter.
+| eV | Electron volt | Electron volts | - | $$1.602176634 * 10^{−19} J$$ | Measure of energy, used for quantum physics. It's a very low unit, intended for the quantum scale.
+
+#### Dimensions of optics
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| cd | Candela | Candelas | - | - | Measure of luminous intensity.
+| lm | Lumen | Lumens | - | cd * sr | Measure of luminous flux.
+| lx | Lux | Luxes | - | cd * sr / m2 | Measure of illuminance.
+
+#### Dimensions of heat
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| K | Kelvin | Kelvins | - | - | Measure of temperature.
+
+#### Dimensions of electricity
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| C | Coulomb | Coulombs | - | - | Measure of electric charge.
+| A | Ampere | Amperes | - | C / s | Measure of electric current.
+| V | Volt | Volts | - | J / C, W / A | Measure of voltage.
+| F | Faraday | Faradays | - | A * s / V | Measure of electric capacitance.
+| Ω | Ohm | Ohms | - | V / A | Measure of electric resistance.
+| S | Siemens | Siemens | - | 1 / Ω | Measure of electric conductance.
+| Wb | Weber | Webers | - | T * m2 | Measure of magnetic flux.
+| T | Tesla | Teslas | - | V * s / m2 | Measure of magnetic strength.
+| H | Henry | Henries | - | V * s / A | Measure of electric inductance.
+
+#### Dimensions of astronomy
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| AU | Astronomical unit | Astronomical units | - | 149,597,870,700 m | Measure of long distances, for use in the space.
+| ly | Light year | Light years | 63,241.07 AU | 9,460,730,472,580,800 m | Measure of long distances, for use in the space. It's exactly defined as the amount of distance that the light travels in a year.
+| pc | Parsec | Parsecs | - | 3.2616 ly | Measure of long distances, for use in the space.
+
+#### Dimensions of nuclear physics
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| Bq | Becquerel | Becquerels | - | 1 / s | Measure of radioactivity.
+| Gy | Gray | Grays | - | m2 / s2 | Measure of ionising radiation (absorbed dose).
+| Sv | Sievert | Sieverts | - | J / kg | Measure of ionising radiation (equivalent dose).
+| Barn | Barn | Barns | - | $$10^{−28} m2$$  | Represents the transversal section of nucleus and nuclear reactions.
+
+#### Dimensions of informatics
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| B | Byte | Bytes | - | - | Measure of quantity of information.
+| px | Pixel | Pixels | - | - | Measure the amount of pixels or the position inside a screen.
+
+#### Dimensions of biology
+
+Inside scifir-units, a unit for measuring the quantity of memory inside the brain has been invented, and has been called **memo**.
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| memo | Memo | Memos | - | - | Measure of quantity of memory.
+
+#### Dimensions of economy
+
+The dimension of money inside scifir-units is just money. Apart from scifir-units, inside the same code, you can use the **ISO 4217**, which is the **ISO of currency codes**, after doing all the math with the money dimension, to convert to the final currency needed.
+
+| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| --- | ----- | ----- | --- | -------------------- | --------------------------
+| money | Money | Money | - | - | Measure of money.
+
+#### Custom dimensions
+
+A custom dimension is a dimension of any name, with any derived dimensions, that can be defined inside each project that uses scifir-units. To use custom dimensions, just initialize a scalar_unit or any vector_unit class with a name different than the default dimensions.
+
 ### Angle
 
 An angle object manages angles. It stores angles in degrees, rather than in radians. It can be initialized to any degree between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that's not inside this range of values gets automatically converted inside it, to his equivalent value between the range.
@@ -403,7 +528,9 @@ An example of use of angle is the following:
 
 ```cpp
 // Constructors and instantiation
-angle y = 54; // Better constructor! Preferred method
+angle x = 37_degree; // Better constructor for degrees! Prefered method for degrees
+angle x2 = 3_rad; // Better constructor for radians! Prefered method for radians
+angle y = 54; // Other good constructor! Of the prefered methods
 angle a = 367; // Gets converted to the value 7, because 7 is the equivalent of 367 inside 0 and 360
 angle b = angle(12);
 angle c = angle(34_Pa);
@@ -522,18 +649,18 @@ The basic dimensions of this library, for scalar_unit classes, all the different
 
 | Name | Symbol | Description
 | ----- | --- | --------------------------|
-| Length | m | Measures the length occupied in space by an object |
-| Time | s | Measures the duration in time of some event |
-| Mass | g | Measures the amount of substance related to the strength of a gravitational field |
-| Radian | rad | Measures the size of an angle |
-| Steradian | sr | Measures the size of a solid angle |
-| Coulomb | C | Measures the amount of charge |
-| Temperature | K | Measures the amount of hotness or coldness. Microscopically it measures the speed at which the particles that constitute the matter are moving |
-| Mole | mol | Measures the amount of a substance related to the number of its constituent particles |
-| Luminous intensity | cd | Measures the intensity of light |
-| Byte | B | Measures the amount of information |
-| Money | money | Measures the economic value of an entity |
-| Memo | memo | Measures the size occupied by a memory inside the brain of an animal, including human brains. Created by Ismael Correa, it's not an official basic dimension of the SI system of units |
+| Length | m | Measures the length occupied in space by an object. |
+| Time | s | Measures the duration in time of some event. |
+| Mass | g | Measures the amount of substance related to the strength of a gravitational field. |
+| Radian | rad | Measures the size of an angle. |
+| Steradian | sr | Measures the size of a solid angle. |
+| Coulomb | C | Measures the amount of charge. |
+| Temperature | K | Measures the amount of hotness or coldness. Microscopically it measures the speed at which the particles that constitute the matter are moving. |
+| Mole | mol | Measures the amount of a substance related to the number of its constituent particles. |
+| Luminous intensity | cd | Measures the intensity of light. |
+| Byte | B | Measures the amount of information. |
+| Money | money | Measures the economic value of an entity. |
+| Memo | memo | Measures the size occupied by a memory inside the brain of an animal, including human brains. Created by Ismael Correa, it's not an official basic dimension of the SI system of units. |
 
 There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.
 

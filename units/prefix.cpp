@@ -186,7 +186,7 @@ namespace scifir
 			case prefix::MILLI:
 				return "m";
 			case prefix::MICRO:
-				return "\u00B5";
+				return "µ";
 			case prefix::NANO:
 				return "n";
 			case prefix::PICO:
@@ -274,7 +274,7 @@ namespace scifir
 		{
 			return prefix::MILLI;
 		}
-		else if(x == "u" or x == "\u00B5")
+		else if(x == "u" or x == "µ")
 		{
 			return prefix::MICRO;
 		}

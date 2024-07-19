@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED
 
-#include "../units/scalar_unit.hpp"
+#include "./scalar_unit.hpp"
 #include "../meca_number/angle.hpp"
 #include "../util/is_number.hpp"
 #include "../topology/direction.hpp"
