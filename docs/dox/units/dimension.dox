@@ -53,100 +53,100 @@
 * \brief Byte, plural bytes. Dimension of amount of information. Symbol **B**.
 
 * \var dimension::HERTZ
-* \brief Hertz, plural hertz. Dimension of frequency. Symbol **Hz**.
+* \brief Hertz, plural hertz. The derived dimensions are **1 / s**. Dimension of frequency. Symbol **Hz**.
 
 * \var dimension::NEWTON
-* \brief Newton, plural newtons. Dimension of force. Symbol **N**.
+* \brief Newton, plural newtons. The derived dimensions are **kg * m / s2**. Dimension of force. Symbol **N**.
 
 * \var dimension::PASCAL
-* \brief Pascal, plural pascals. Dimension of pressure. Symbol **Pa**.
+* \brief Pascal, plural pascals. The derived dimensions are **kg / s2 * m**. Dimension of pressure. Symbol **Pa**.
 
 * \var dimension::JOULE
-* \brief Joule, plural joules. Dimension of energy. Symbol **J**.
+* \brief Joule, plural joules. The derived dimensions are **kg * m2 / s2**. Dimension of energy. Symbol **J**.
 
 * \var dimension::WATT
-* \brief Watt, plural watts. Dimension of power. Symbol **W**.
+* \brief Watt, plural watts. The derived dimensions are **kg * m2 / s3**. Dimension of power. Symbol **W**.
 
 * \var dimension::AMPERE
-* \brief Ampere, plural amperes. Dimension of electric current. Symbol **A**.
+* \brief Ampere, plural amperes. The derived dimensions are  **C / s**. Dimension of electric current. Symbol **A**.
 
 * \var dimension::VOLT
-* \brief Volt, plural volts. Dimension of voltage. Symbol **V**.
+* \brief Volt, plural volts. The derived dimensions are  **J / C**, **W / A**. Dimension of voltage. Symbol **V**.
 
 * \var dimension::FARADAY
-* \brief Faraday, plural faradays. Dimension of electric capacitance. Symbol **F**.
+* \brief Faraday, plural faradays. The derived dimensions are  **A * s / V**. Dimension of electric capacitance. Symbol **F**.
 
 * \var dimension::OHM
-* \brief Ohm, plural ohms. Dimension of electric resistance. Symbol **Ω**.
+* \brief Ohm, plural ohms. The derived dimensions are  **V / A**. Dimension of electric resistance. Symbol **Ω**.
 
 * \var dimension::SIEMENS
-* \brief Siemens, plural siemens. Dimension of electric conductance. Symbol **S**.
+* \brief Siemens, plural siemens. The derived dimensions are  **1 / Ω**. Dimension of electric conductance. Symbol **S**.
 
 * \var dimension::WEBER
-* \brief Weber, plural webers. Dimension of magnetic flux. Symbol **Wb**.
+* \brief Weber, plural webers. The derived dimensions are  **T * m2**. Dimension of magnetic flux. Symbol **Wb**.
 
 * \var dimension::TESLA
-* \brief Tesla, plural teslas. Dimension of magnetic strength. Symbol **T**.
+* \brief Tesla, plural teslas. The derived dimensions are  **V * s / m2**. Dimension of magnetic strength. Symbol **T**.
 
 * \var dimension::HENRY
-* \brief Henry, plural henries. Dimension of electric inductance. Symbol **H**.
+* \brief Henry, plural henries. The derived dimensions are  **V * s / A**. Dimension of electric inductance. Symbol **H**.
 
 * \var dimension::LUMEN
-* \brief Lumen, plural lumens. Dimension of luminous flux. Symbol **lm**.
+* \brief Lumen, plural lumens. The derived dimensions are  **cd * sr** Dimension of luminous flux. Symbol **lm**.
 
 * \var dimension::LUX
-* \brief Lux, plural luxes. Dimension of illuminance. Symbol **lx**.
+* \brief Lux, plural luxes. The derived dimensions are  **cd * sr / m2**. Dimension of illuminance. Symbol **lx**.
 
 * \var dimension::BECQUEREL
-* \brief Becquerel, plural becquerels. Dimension of radioactivity. Symbol **Bq**.
+* \brief Becquerel, plural becquerels. The derived dimensions are  **1 / s**. Dimension of radioactivity. Symbol **Bq**.
 
 * \var dimension::GRAY
-* \brief Gray, plural grays. Dimension of ionising radiation (absorbed dose). Symbol **Gy**.
+* \brief Gray, plural grays. The derived dimensions are  **m2 / s2**. Dimension of ionising radiation (absorbed dose). Symbol **Gy**.
 
 * \var dimension::SIEVERT
-* \brief Sievert, plural sieverts. Dimension of ionising radiation (equivalent dose). Symbol **Sv**.
+* \brief Sievert, plural sieverts. The derived dimensions are  **J / kg**. Dimension of ionising radiation (equivalent dose). Symbol **Sv**.
 
 * \var dimension::KATAL
-* \brief Katal, plural katals. Dimension of catalytic activity. Symbol **kat**.
+* \brief Katal, plural katals. The derived dimensions are **mol / s**. Dimension of catalytic activity. Symbol **kat**.
 
 * \var dimension::ANGSTROM
-* \brief Ángstrom, plural angstroms. Dimension of length, used mainly for wavelengths. Symbol **Å**.
+* \brief Ángstrom, plural angstroms. The derived dimensions are **10^-10 m**. Dimension of length, used mainly for wavelengths. Symbol **Å**.
 
 * \var dimension::LITRE
-* \brief Litre, plural litres. Dimension of volume. Symbol **L**.
+* \brief Litre, plural litres. The derived dimensions are **dm3**. Dimension of volume. Symbol **L**.
 
 * \var dimension::MINUTE
-* \brief Minute, plural minutes. Dimension of time. Symbol **min**.
+* \brief Minute, plural minutes. The derived dimensions are **60 s**. Dimension of time. Symbol **min**.
 
 * \var dimension::HOUR
-* \brief Hour, plural hours. Dimension of time. Symbol **hour**, the abbreviation "h" is not used because it would be easy to confuss it with the H of the Henry dimension.
+* \brief Hour, plural hours. The derived dimensions are **3,600 s**. Dimension of time. Symbol **hour**, the abbreviation "h" is not used because it would be easy to confuss it with the H of the Henry dimension.
 
 * \var dimension::DAY
-* \brief Day, plural days. Dimension of time. Symbol **day**, the abbreviation "d" is not used because it would be easy to confuss it with the d of the deci prefix.
+* \brief Day, plural days. The derived dimensions are **86,400 s**. Dimension of time. Symbol **day**, the abbreviation "d" is not used because it would be easy to confuss it with the d of the deci prefix.
 
 * \var dimension::LIGHT_YEAR
-* \brief Light year, plural light years. Dimension of length. Defined as all the distance travelled by light in one year. Symbol **ly**.
+* \brief Light year, plural light years. Dimension of length. The derived dimensions are  **9,460,730,472,580,800 m**. Defined as all the distance travelled by light in one year. Symbol **ly**.
 
 * \var dimension::ASTRONOMICAL_UNIT
-* \brief Astronomical unit, plural astronomical units. Dimension of length. Defined as the distance from the Sun to the Earth. Symbol **AU**.
+* \brief Astronomical unit, plural astronomical units. Dimension of length. The derived dimensions are  **149,597,870,700 m**. Defined as the distance from the Sun to the Earth. Symbol **AU**.
 
 * \var dimension::PARSEC
-* \brief Parsec, plural parsecs. Dimension of length. Defined as the distance where 1 AU subtends an angle of 1 second of arc. Equivalent to 3.26156 light years. Symbol **pc**.
+* \brief Parsec, plural parsecs. Dimension of length. The derived dimensions are  **3.2616 ly**. Defined as the distance where 1 AU subtends an angle of 1 second of arc. Equivalent to 3.26156 light years. Symbol **pc**.
 
 * \var dimension::ELECTRON_VOLT
-* \brief Electron volt, plural electron volts. Dimension of energy. Symbol **eV**.
+* \brief Electron volt, plural electron volts. The derived dimensions are  **1.602176634 * 10^−19 J**. Dimension of energy. Symbol **eV**.
 
 * \var dimension::DALTON
-* \brief Dalton, plural daltons. Dimension of mass. Used to measure the mass of atoms and molecules. Defined as 1/12 of a C-12. Symbol **Da**.
+* \brief Dalton, plural daltons. The derived dimensions are **1,66053886 * 10^-24**. Dimension of mass. Used to measure the mass of atoms and molecules. Defined as 1/12 of a C-12. Symbol **Da**.
 
 * \var dimension::ATOMIC_MASS_UNIT
-* \brief Atomic mass unit, plural atomic mass units. Equivalent to the Dalton. Dimension of mass. Used to measure the mass of atoms and molecules. Symbol **amu**.
+* \brief Atomic mass unit, plural atomic mass units. The derived dimensions are **Da**. Equivalent to the Dalton. Dimension of mass. Used to measure the mass of atoms and molecules. Symbol **amu**.
 
 * \var dimension::BARN
-* \brief Barn, plural barns. Dimension of area. It's used inside nuclear physics to express the transversal section of nucleus and nuclear reactions. Symbol **barn**.
+* \brief Barn, plural barns. Dimension of area. The derived dimensions are  **10^-28 m2**. It's used inside nuclear physics to express the transversal section of nucleus and nuclear reactions. Symbol **barn**.
 
 * \var dimension::MOLARITY
-* \brief Molarity, plural molarities. Dimension of concentration of a chemical species. Symbol **M**.
+* \brief Molarity, plural molarities. The derived dimensions are **mol / L**. Dimension of concentration of a chemical species. Symbol **M**.
 
 * \var dimension::PARTICLES
 * \brief Total of particles, the total amount that the mole represents. It's not exactly a dimension, it corresponds to the brute amount of particles. Symbol **particles**, it's not exactly a symbol but rather a name for the total of particles.
