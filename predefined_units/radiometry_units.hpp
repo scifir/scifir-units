@@ -12,7 +12,6 @@ namespace scifir
 	VECTOR_UNIT_HPP(irradiance);
 	VECTOR_UNIT_HPP(radiant_exposure);
 	SCALAR_UNIT_HPP(radiant_intensity);
-	SCALAR_UNIT_HPP(spectral_intensity);
 	SCALAR_UNIT_HPP(radiance);
 	SCALAR_UNIT_HPP(spectral_radiance);
 	VECTOR_UNIT_HPP(radiant_flux);

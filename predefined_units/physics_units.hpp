@@ -75,7 +75,6 @@ namespace scifir
 	SCALAR_UNIT_HPP(action);
 	SCALAR_UNIT_HPP(power);
 	SCALAR_UNIT_HPP(power_density);
-	SCALAR_UNIT_HPP(enthalpy);
 	SCALAR_UNIT_HPP(entropy);
 	SCALAR_UNIT_HPP(heat_capacity);
 	SCALAR_UNIT_HPP(heat_flux_density);
