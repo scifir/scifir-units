@@ -20,14 +20,14 @@ TEST_CASE("zid class") {
 		CHECK(a.regions.size() == 0);
 		CHECK(a.zone == "");
 		CHECK(a.zone_type == zid::NONE);
-		zid b2(aid(astronomical_body::MARS),"no-country",{"southern-highlands"},"noachis-terra");
+		zid b2(aid(astronomical_body::MARS),zid::ZONE,"no-country",{"southern-highlands"},"noachis-terra");
 		zid b(b2);
 		CHECK(to_string(b.aid) == "(P)universe:milky-way:solar-system:mars");
 		CHECK(b.country == "no-country");
 		CHECK(b.regions == vector<string>{"southern-highlands"});
 		CHECK(b.zone == "noachis-terra");
 		CHECK(b.zone_type == zid::ZONE);
-		zid c2(aid(astronomical_body::EARTH),"chile",{"region-metropolitana","santiago"},"providencia");
+		zid c2(aid(astronomical_body::EARTH),zid::ZONE,"chile",{"region-metropolitana","santiago"},"providencia");
 		zid c(std::move(c2));
 		CHECK(to_string(c.aid) == "(P)universe:milky-way:solar-system:earth");
 		CHECK(c.country == "chile");
@@ -46,12 +46,18 @@ TEST_CASE("zid class") {
 		CHECK(d3.regions == vector<string>{"region-metropolitana","chacabuco"});
 		CHECK(d3.zone == "");
 		CHECK(d3.zone_type == zid::REGION);
-		zid d(aid(astronomical_body::EARTH),"chile",{"region-metropolitana","santiago"},"providencia");
+		zid d(aid(astronomical_body::EARTH),zid::ZONE,"chile",{"region-metropolitana","santiago"},"providencia");
 		CHECK(to_string(d.aid) == "(P)universe:milky-way:solar-system:earth");
 		CHECK(d.country == "chile");
 		CHECK(d.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(d.zone == "providencia");
 		CHECK(d.zone_type == zid::ZONE);
+		zid d4(aid(astronomical_body::EARTH),zid::SETTLEMENT,"chile",{"region-metropolitana"},"santiago");
+		CHECK(to_string(d4.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(d4.country == "chile");
+		CHECK(d4.regions == vector<string>{"region-metropolitana"});
+		CHECK(d4.zone == "santiago");
+		CHECK(d4.zone_type == zid::SETTLEMENT);
 		zid e(aid(astronomical_body::EARTH),"(Z) chile:region-metropolitana:santiago:providencia");
 		CHECK(to_string(e.aid) == "(P)universe:milky-way:solar-system:earth");
 		CHECK(e.country == "chile");
@@ -94,12 +100,18 @@ TEST_CASE("zid class") {
 		CHECK(h.regions.size() == 0);
 		CHECK(h.zone == "");
 		CHECK(h.zone_type == zid::NONE);
+		zid i("(S) chile:region-metropolitana:santiago");
+		CHECK(to_string(i.aid) == "");
+		CHECK(i.country == "chile");
+		CHECK(i.regions == vector<string>{"region-metropolitana"});
+		CHECK(i.zone == "santiago");
+		CHECK(i.zone_type == zid::SETTLEMENT);
 	}
 
 	SECTION("Assignments of zid class")
 	{
 		zid b;
-		zid b2(aid(astronomical_body::MARS),"no-country",{"southern-highlands"},"noachis-terra");
+		zid b2(aid(astronomical_body::MARS),zid::ZONE,"no-country",{"southern-highlands"},"noachis-terra");
 		b = b2;
 		CHECK(to_string(b.aid) == "(P)universe:milky-way:solar-system:mars");
 		CHECK(b.country == "no-country");
@@ -107,7 +119,7 @@ TEST_CASE("zid class") {
 		CHECK(b.zone == "noachis-terra");
 		CHECK(b.zone_type == zid::ZONE);
 		zid c;
-		zid c2(aid(astronomical_body::EARTH),"chile",{"region-metropolitana","santiago"},"providencia");
+		zid c2(aid(astronomical_body::EARTH),zid::ZONE,"chile",{"region-metropolitana","santiago"},"providencia");
 		c = std::move(c2);
 		CHECK(to_string(c.aid) == "(P)universe:milky-way:solar-system:earth");
 		CHECK(c.country == "chile");
@@ -155,7 +167,7 @@ TEST_CASE("zid class") {
 	{
 		zid a;
 		CHECK(to_string(a) == "");
-		zid b(aid(astronomical_body::MARS),"no-country",{"southern-highlands"},"noachis-terra");
+		zid b(aid(astronomical_body::MARS),zid::ZONE,"no-country",{"southern-highlands"},"noachis-terra");
 		CHECK(to_string(b) == "(P)universe:milky-way:solar-system:mars (Z) no-country:southern-highlands:noachis-terra");
 	}
 
@@ -164,6 +176,7 @@ TEST_CASE("zid class") {
 		CHECK(to_string(zid::NONE) == "");
 		CHECK(to_string(zid::COUNTRY) == "C");
 		CHECK(to_string(zid::REGION) == "R");
+		CHECK(to_string(zid::SETTLEMENT) == "S");
 		CHECK(to_string(zid::ZONE) == "Z");
 	}
 
@@ -172,6 +185,7 @@ TEST_CASE("zid class") {
 		CHECK(create_zone_type("") == zid::NONE);
 		CHECK(create_zone_type("C") == zid::COUNTRY);
 		CHECK(create_zone_type("R") == zid::REGION);
+		CHECK(create_zone_type("S") == zid::SETTLEMENT);
 		CHECK(create_zone_type("Z") == zid::ZONE);
 	}
 

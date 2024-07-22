@@ -1,5 +1,5 @@
 /** \class scifir::zid
-* \brief Class that allows to store information about a zone, including the astronomical object inside which the zone is. **Initialization string** example: "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia".
+* \brief Class that allows to store information about a zone, including the astronomical object inside which the zone is. The zone can be in any astronomical object, not only the Earth is supported. **Initialization string** example: "(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia".
 
 * \enum scifir::zid::type
 * \brief Type of zone.
@@ -12,6 +12,9 @@
 
 * \var zid::REGION
 * \brief A region.
+
+* \var zid::SETTLEMENT
+* \brief A settlement.
 
 * \var zid::ZONE
 * \brief A zone. A zone is any surface inside an astronomical object, of any shape. It's not necessary to be a zone registered by a country or organization, personal zones are allowed.
@@ -31,8 +34,8 @@
 * \fn zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions)
 * \brief Constructor. It initializes a region as the entire zone of zid, which is the last region specified, the one inside the other regions given if there's more than one region initialized.
 
-* \fn zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone)
-* \brief Constructor. The aid is new_aid, the country is new_country, the regions are new_regions and zone is new_zone.
+* \fn zid::zid(const scifir::aid& new_aid,const zid::type& new_zid_type,const string& new_country,const vector<string>& new_regions,const string& new_zone)
+* \brief Constructor. The aid is new_aid, the country is new_country, the regions are new_regions and zone is new_zone. The zone_type can be ZONE or SETTLEMENT.
 
 * \fn zid::zid(const scifir::aid& new_aid,const string& init_zid)
 * \brief Constructor. The aid is new_aid, init_zid initializes the other member-variables.
@@ -83,7 +86,7 @@
 * \brief Returns a string representation of zid, same as display().
 
 * \fn string scifir::to_string(const zid::type& x)
-* \brief Converts a value of the enum zid::type to its string representation, which is a single letter. The value COUNTRY returns **C**. The value REGION returns **R**. The value ZONE returns **Z**.
+* \brief Converts a value of the enum zid::type to its string representation, which is a single letter. The value COUNTRY returns **C**. The value REGION returns **R**. The value SETTLEMENT returns **S**. The value ZONE returns **Z**.
 
 * \fn zid::type scifir::create_zone_type(const string& zone_type_abbreviation)
 * \brief Creates an instance of a zid::type with the given string, which is the reverse as the to_string() function of zid::type.

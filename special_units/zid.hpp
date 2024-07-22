@@ -13,14 +13,14 @@ namespace scifir
 	class zid
 	{
 		public:
-			enum type : int8_t {NONE,COUNTRY,REGION,ZONE};
+			enum type : int8_t {NONE,COUNTRY,REGION,SETTLEMENT,ZONE};
 
 			zid();
 			zid(const zid& x);
 			zid(zid&& x);
 			explicit zid(const scifir::aid& new_aid,const zid::type& new_zid_type,const string& new_country);
 			explicit zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions);
-			explicit zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone);
+			explicit zid(const scifir::aid& new_aid,const zid::type& new_zid_type,const string& new_country,const vector<string>& new_regions,const string& new_zone);
 			explicit zid(const scifir::aid& new_aid,const string& init_zid);
 			explicit zid(const string& init_zid_full);
 
