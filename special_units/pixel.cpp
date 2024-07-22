@@ -165,6 +165,11 @@ namespace scifir
 		return tmp;
 	}
 
+	scalar_unit pixel::to_scalar_unit() const
+	{
+		return scalar_unit(value, { dimension(dimension::PIXEL, prefix::NONE, dimension::NUMERATOR) });
+	}
+
 	void pixel::initialize_from_string(const string& init_pixel)
 	{
 		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")

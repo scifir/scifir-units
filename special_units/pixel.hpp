@@ -125,6 +125,8 @@ namespace scifir
 			pixel& operator --();
 			pixel operator --(int);
 
+			scalar_unit to_scalar_unit() const;
+
 		private:
 			float value;
 
