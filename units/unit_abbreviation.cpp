@@ -842,107 +842,107 @@ scifir::capacitance operator"" _yF(unsigned long long int x)
 	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _YOhm(unsigned long long int x)
+scifir::resistance operator"" _YΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _ZOhm(unsigned long long int x)
+scifir::resistance operator"" _ZΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _EOhm(unsigned long long int x)
+scifir::resistance operator"" _EΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _POhm(unsigned long long int x)
+scifir::resistance operator"" _PΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _TOhm(unsigned long long int x)
+scifir::resistance operator"" _TΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _GOhm(unsigned long long int x)
+scifir::resistance operator"" _GΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _MOhm(unsigned long long int x)
+scifir::resistance operator"" _MΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _kOhm(unsigned long long int x)
+scifir::resistance operator"" _kΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _hOhm(unsigned long long int x)
+scifir::resistance operator"" _hΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _daOhm(unsigned long long int x)
+scifir::resistance operator"" _daΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _Ohm(unsigned long long int x)
+scifir::resistance operator"" _Ω(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _dOhm(unsigned long long int x)
+scifir::resistance operator"" _dΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _cOhm(unsigned long long int x)
+scifir::resistance operator"" _cΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _mOhm(unsigned long long int x)
+scifir::resistance operator"" _mΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _uOhm(unsigned long long int x)
+scifir::resistance operator"" _uΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _nOhm(unsigned long long int x)
+scifir::resistance operator"" _nΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _pOhm(unsigned long long int x)
+scifir::resistance operator"" _pΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _fOhm(unsigned long long int x)
+scifir::resistance operator"" _fΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _aOhm(unsigned long long int x)
+scifir::resistance operator"" _aΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _zOhm(unsigned long long int x)
+scifir::resistance operator"" _zΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _yOhm(unsigned long long int x)
+scifir::resistance operator"" _yΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
@@ -3542,107 +3542,107 @@ scifir::capacitance operator"" _yF(long double x)
 	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _YOhm(long double x)
+scifir::resistance operator"" _YΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _ZOhm(long double x)
+scifir::resistance operator"" _ZΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _EOhm(long double x)
+scifir::resistance operator"" _EΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _POhm(long double x)
+scifir::resistance operator"" _PΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _TOhm(long double x)
+scifir::resistance operator"" _TΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _GOhm(long double x)
+scifir::resistance operator"" _GΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _MOhm(long double x)
+scifir::resistance operator"" _MΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _kOhm(long double x)
+scifir::resistance operator"" _kΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _hOhm(long double x)
+scifir::resistance operator"" _hΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _daOhm(long double x)
+scifir::resistance operator"" _daΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _Ohm(long double x)
+scifir::resistance operator"" _Ω(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _dOhm(long double x)
+scifir::resistance operator"" _dΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _cOhm(long double x)
+scifir::resistance operator"" _cΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _mOhm(long double x)
+scifir::resistance operator"" _mΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _uOhm(long double x)
+scifir::resistance operator"" _uΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _nOhm(long double x)
+scifir::resistance operator"" _nΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _pOhm(long double x)
+scifir::resistance operator"" _pΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _fOhm(long double x)
+scifir::resistance operator"" _fΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _aOhm(long double x)
+scifir::resistance operator"" _aΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _zOhm(long double x)
+scifir::resistance operator"" _zΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::resistance operator"" _yOhm(long double x)
+scifir::resistance operator"" _yΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
