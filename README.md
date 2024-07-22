@@ -398,6 +398,8 @@ Inside scifir-units a **basic dimension** is a dimension considered basic under 
 
 The dimensions that a scalar_unit class can have are available in the enum dimension::type, and are only the SI dimensions or, if there isn't a dimension for an important purpose in the SI system of units, a selected dimension of the different possible options. Only the prefered dimensions have been added to the enum dimension::type, the other dimensions, as for example England units, have been added only as conversion options. With that system, always the same dimensions are used, which simplifies the work inside a laboratory, because then there's less confusion about which dimensions are being used.
 
+The **basic dimensions** of scifir-units are mainly the basic dimensions of the SI system of units with the coulomb and the byte added, and are then the **metre** (m), **kilogram** (kg), **second** (s), **mole** (mol), **candela** (cd), **kelvin** (K), **coulomb** (C) and **byte** (B). The coulomb is used in place of the ampere, and the byte has been added as another basic dimension.
+
 Dimensions present in scifir-units not so widely known are the **steradian** (sr, solid angles), **katal** (kat, catalytic activity), **angstrom** (Å, length for wavelengths), **dalton** (Da, mass for atoms and molecules), **atomic mass unit** (same as Da), **electron volt** (eV, measure of very small amounts of energy, mainly for quantum physics), **candela** (cd, luminous intensity), **lumen** (lm, luminous flux), **lux** (lx, illuminance), **siemens** (S, electric cnoductance), **weber** (Wb, magnetic flux), **tesla** (T, magnetic strength), **henry** (H, electric inductance), **astronomical unit** (AU, long astronomic distances), **light year** (ly, very long astronomic distances), **parsec** (pc, very long astronomic distances), **becquerel** (Bq, radioactivity), **gray** (Gy, absorbed dose of ionising radiation), **sievert** (Sv, equivalent dose of ionising radiation), **barn** (Barn, transversal section of nuclear reactions). An invented unit inside Scifir is **memo**, which is used to measure the amount of memory inside the brain.
 
 #### Dimensions of space
@@ -657,7 +659,7 @@ string c = x + " value";
 | charge | C | scalar_unit | Measures the charge.
 | temperature | K | scalar_unit | Measures the temperature. The temperature corresponds to the movement of molecules.
 | mole | mol | scalar_unit | Amount of matter, by number.
-| light | cd | scalar_unit | Intensity of light.
+| light_intensity | cd | scalar_unit | Intensity of light.
 | data | B | scalar_unit | Amount of information.
 
 #### Space units
@@ -669,7 +671,7 @@ string c = x + " value";
 | volume_4d | m4 | scalar_unit | Measures the volume in 4D.
 | curvature | 1/m | scalar_unit | Measures the curvature.
 
-#### Physics units
+#### Kinematics units
 
 | Name | Dimensions | Type | Description
 | ----- | ----- | ----- | --------------------------
@@ -813,6 +815,8 @@ string c = x + " value";
 | permittivity | A2*s4/kg*m3 | scalar_unit | The electric polarizability of a dieletric material.
 | resistivity | kg*m3/A2*s3 | scalar_unit | How much a material stops the flow of electric current through it.
 | linear_charge_density | C/m | scalar_unit | The amount of electric charge per unit length.
+| surface_charge_density | C/m2 | scalar_unit | The amount of electric charge per unit area.
+| volume_charge_density | C/m3 | scalar_unit | The amount of electric charge per unit volume.
 | frequency_drift | 1/s2 | scalar_unit | Offset of an oscillator from its nominal frequency.
 
 #### Radiometry units
