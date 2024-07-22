@@ -433,8 +433,27 @@ scifir::catalytic_activity operator"" _ykat(unsigned long long int);
 
 scifir::length operator"" _angstrom(unsigned long long int);
 
+scifir::volume operator"" _YL(unsigned long long int);
+scifir::volume operator"" _ZL(unsigned long long int);
+scifir::volume operator"" _EL(unsigned long long int);
+scifir::volume operator"" _PL(unsigned long long int);
+scifir::volume operator"" _TL(unsigned long long int);
+scifir::volume operator"" _GL(unsigned long long int);
+scifir::volume operator"" _ML(unsigned long long int);
+scifir::volume operator"" _kL(unsigned long long int);
+scifir::volume operator"" _hL(unsigned long long int);
+scifir::volume operator"" _daL(unsigned long long int);
 scifir::volume operator"" _L(unsigned long long int);
+scifir::volume operator"" _dL(unsigned long long int);
+scifir::volume operator"" _cL(unsigned long long int);
 scifir::volume operator"" _mL(unsigned long long int);
+scifir::volume operator"" _uL(unsigned long long int);
+scifir::volume operator"" _nL(unsigned long long int);
+scifir::volume operator"" _pL(unsigned long long int);
+scifir::volume operator"" _fL(unsigned long long int);
+scifir::volume operator"" _aL(unsigned long long int);
+scifir::volume operator"" _zL(unsigned long long int);
+scifir::volume operator"" _yL(unsigned long long int);
 
 scifir::time_duration operator"" _min(unsigned long long int);
 scifir::time_duration operator"" _hour(unsigned long long int);
@@ -984,8 +1003,27 @@ scifir::catalytic_activity operator"" _ykat(long double);
 
 scifir::length operator"" _angstrom(long double);
 
+scifir::volume operator"" _YL(long double);
+scifir::volume operator"" _ZL(long double);
+scifir::volume operator"" _EL(long double);
+scifir::volume operator"" _PL(long double);
+scifir::volume operator"" _TL(long double);
+scifir::volume operator"" _GL(long double);
+scifir::volume operator"" _ML(long double);
+scifir::volume operator"" _kL(long double);
+scifir::volume operator"" _hL(long double);
+scifir::volume operator"" _daL(long double);
 scifir::volume operator"" _L(long double);
+scifir::volume operator"" _dL(long double);
+scifir::volume operator"" _cL(long double);
 scifir::volume operator"" _mL(long double);
+scifir::volume operator"" _uL(long double);
+scifir::volume operator"" _nL(long double);
+scifir::volume operator"" _pL(long double);
+scifir::volume operator"" _fL(long double);
+scifir::volume operator"" _aL(long double);
+scifir::volume operator"" _zL(long double);
+scifir::volume operator"" _yL(long double);
 
 scifir::time_duration operator"" _min(long double);
 

@@ -2002,14 +2002,109 @@ scifir::length operator"" _angstrom(unsigned long long int x)
 	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ANGSTROM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
+scifir::volume operator"" _YL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _ZL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _EL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _PL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _TL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _GL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _ML(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _kL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _hL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _daL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+}
+
 scifir::volume operator"" _L(unsigned long long int x)
 {
 	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
+scifir::volume operator"" _dL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _cL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+}
+
 scifir::volume operator"" _mL(unsigned long long int x)
 {
 	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _uL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _nL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _pL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _fL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _aL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _zL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _yL(unsigned long long int x)
+{
+	return scifir::volume((long double)x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::time_duration operator"" _min(unsigned long long int x)
@@ -4607,14 +4702,109 @@ scifir::length operator"" _angstrom(long double x)
 	return scifir::length(x, { scifir::dimension(scifir::dimension::ANGSTROM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
+scifir::volume operator"" _YL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _ZL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _EL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _PL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _TL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _GL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _ML(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _kL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _hL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _daL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+}
+
 scifir::volume operator"" _L(long double x)
 {
 	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
+scifir::volume operator"" _dL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _cL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+}
+
 scifir::volume operator"" _mL(long double x)
 {
 	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _uL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _nL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _pL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _fL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _aL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _zL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::volume operator"" _yL(long double x)
+{
+	return scifir::volume(x, { scifir::dimension(scifir::dimension::LITRE,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::time_duration operator"" _min(long double x)

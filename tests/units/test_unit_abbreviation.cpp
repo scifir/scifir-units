@@ -432,8 +432,27 @@ TEST_CASE("Abbreviation literals") {
 
 		CHECK(bool(100_angstrom == "100 angstrom"));
 
+		CHECK(bool(100_YL == "100 YL"));
+		CHECK(bool(100_ZL == "100 ZL"));
+		CHECK(bool(100_EL == "100 EL"));
+		CHECK(bool(100_PL == "100 PL"));
+		CHECK(bool(100_TL == "100 TL"));
+		CHECK(bool(100_GL == "100 GL"));
+		CHECK(bool(100_ML == "100 ML"));
+		CHECK(bool(100_kL == "100 kL"));
+		CHECK(bool(100_hL == "100 hL"));
+		CHECK(bool(100_daL == "100 daL"));
 		CHECK(bool(100_L == "100 L"));
+		CHECK(bool(100_dL == "100 dL"));
+		CHECK(bool(100_cL == "100 cL"));
 		CHECK(bool(100_mL == "100 mL"));
+		CHECK(bool(100_uL == "100 uL"));
+		CHECK(bool(100_nL == "100 nL"));
+		CHECK(bool(100_pL == "100 pL"));
+		CHECK(bool(100_fL == "100 fL"));
+		CHECK(bool(100_aL == "100 aL"));
+		CHECK(bool(100_zL == "100 zL"));
+		CHECK(bool(100_yL == "100 yL"));
 
 		CHECK(bool(100_min == "100 min"));
 		CHECK(bool(100_hour == "100 hour"));
@@ -984,8 +1003,27 @@ TEST_CASE("Abbreviation literals") {
 
 		CHECK(bool(100.0_angstrom == "100 angstrom"));
 
+		CHECK(bool(100.0_YL == "100 YL"));
+		CHECK(bool(100.0_ZL == "100 ZL"));
+		CHECK(bool(100.0_EL == "100 EL"));
+		CHECK(bool(100.0_PL == "100 PL"));
+		CHECK(bool(100.0_TL == "100 TL"));
+		CHECK(bool(100.0_GL == "100 GL"));
+		CHECK(bool(100.0_ML == "100 ML"));
+		CHECK(bool(100.0_kL == "100 kL"));
+		CHECK(bool(100.0_hL == "100 hL"));
+		CHECK(bool(100.0_daL == "100 daL"));
 		CHECK(bool(100.0_L == "100 L"));
+		CHECK(bool(100.0_dL == "100 dL"));
+		CHECK(bool(100.0_cL == "100 cL"));
 		CHECK(bool(100.0_mL == "100 mL"));
+		CHECK(bool(100.0_uL == "100 uL"));
+		CHECK(bool(100.0_nL == "100 nL"));
+		CHECK(bool(100.0_pL == "100 pL"));
+		CHECK(bool(100.0_fL == "100 fL"));
+		CHECK(bool(100.0_aL == "100 aL"));
+		CHECK(bool(100.0_zL == "100 zL"));
+		CHECK(bool(100.0_yL == "100 yL"));
 
 		CHECK(bool(100.0_min == "100 min"));
 		CHECK(bool(100.0_hour == "100 hour"));
