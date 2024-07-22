@@ -2,7 +2,7 @@
 
 [![Linux build status](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml/badge.svg)](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml)
 
-Welcome! The **Scifir Collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+Welcome! The **Scifir Collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. Also, any **electronic device**, **medical machine**, **electrodomestic** or **vehicle** can be benefited with the use of units and related classes. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
 
 The Scifir Collection is under development, but the units are already released. Molecules aren't, but they will by ready soon!
 
