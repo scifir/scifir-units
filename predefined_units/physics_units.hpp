@@ -16,6 +16,7 @@ namespace scifir
 	VECTOR_UNIT_ND_HPP(displacement);
 	VECTOR_UNIT_HPP(velocity);
 	VECTOR_UNIT_HPP(acceleration);
+	VECTOR_UNIT_HPP(momentum);
 	VECTOR_UNIT_HPP(jerk);
 	VECTOR_UNIT_HPP(snap);
 	VECTOR_UNIT_HPP(angular_velocity);

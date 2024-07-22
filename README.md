@@ -485,7 +485,7 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
 | --- | ----- | ----- | --- | -------------------- | --------------------------
 | AU | Astronomical unit | Astronomical units | - | 149,597,870,700 m | Measure of long distances, for use in the space.
-| ly | Light year | Light years | 63,241.07 AU | 9,460,730,472,580,800 m | Measure of long distances, for use in the space. It's exactly defined as the amount of distance that the light travels in a year.
+| ly | Light year | Light years | 63,241.07 AU | 9,460,730,472,580,800 m | Measure of long distances, for use in the space. It's exactly defined as the amount of distance that the light travels in a year. Prefixes commonly used with light-years when distances are too large are **kly**, **Mly** and **Gly**, any other prefix is possible to use too. Use them if the distance in space is large enough that even ly is small.
 | pc | Parsec | Parsecs | - | 3.2616 ly | Measure of long distances, for use in the space.
 
 #### Dimensions of nuclear physics
