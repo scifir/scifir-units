@@ -307,6 +307,11 @@ if(BUILD_TESTING)
 		add_test(NAME types COMMAND test_types)
 		set_tests_properties(types PROPERTIES LABELS tests)
 
+		add_executable(test_scalar_field_3d tests/fields/test_scalar_field_3d.cpp)
+		target_link_libraries(test_scalar_field_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME scalar_field_3d COMMAND test_scalar_field_3d)
+		set_tests_properties(scalar_field_3d PROPERTIES LABELS tests)
+
 		add_executable(benchmark_units tests/benchmark_units.cpp)
 		target_link_libraries(benchmark_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME benchmark_units COMMAND benchmark_units)
