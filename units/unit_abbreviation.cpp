@@ -1997,7 +1997,7 @@ scifir::catalytic_activity operator"" _ykat(unsigned long long int x)
 	return scifir::catalytic_activity((long double)x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::length operator"" _angstrom(unsigned long long int x)
+scifir::length operator"" _Å(unsigned long long int x)
 {
 	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ANGSTROM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
@@ -4697,7 +4697,7 @@ scifir::catalytic_activity operator"" _ykat(long double x)
 	return scifir::catalytic_activity(x, { scifir::dimension(scifir::dimension::KATAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::length operator"" _angstrom(long double x)
+scifir::length operator"" _Å(long double x)
 {
 	return scifir::length(x, { scifir::dimension(scifir::dimension::ANGSTROM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }

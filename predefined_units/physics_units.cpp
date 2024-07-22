@@ -44,7 +44,7 @@ namespace scifir
 	SCALAR_UNIT_CPP(magnetic_permeability,"A2*s2/kg*m");
 	SCALAR_UNIT_CPP(magnetization,"A/m");
 	SCALAR_UNIT_CPP(magnetic_flux,"Wb");
-	VECTOR_UNIT_CPP(magnetic_strength,"Wb/m2");
+	VECTOR_UNIT_CPP(magnetic_strength,"T");
 	VECTOR_UNIT_CPP(magnetic_moment,"A*m2");
 	SCALAR_UNIT_CPP(magnetic_reluctance,"A2*s2/kg*m2");
 	VECTOR_UNIT_CPP(magnetic_vector_potential,"kg*m/A*s2");
@@ -60,7 +60,7 @@ namespace scifir
 	SCALAR_UNIT_CPP(luminous_energy,"cd*sr*s");
 	SCALAR_UNIT_CPP(luminous_exposure,"cd*sr*s/m2");
 	SCALAR_UNIT_CPP(luminous_efficacy,"lm/W");
-	SCALAR_UNIT_CPP(ionizing_radiation,"A*s/kg");
+	SCALAR_UNIT_CPP(ionizing_radiation,"Gy");
 	SCALAR_UNIT_CPP(absorbed_dose,"m2/s3");
 
 	// THERMODYNAMICS
@@ -80,5 +80,5 @@ namespace scifir
 
 	// WAVES
 	SCALAR_UNIT_CPP(wavenumber,"1/m");
-	SCALAR_UNIT_CPP(frequency,"1/s");
+	SCALAR_UNIT_CPP(frequency,"Hz");
 }

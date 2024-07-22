@@ -651,191 +651,191 @@ string c = x + " value";
 
 #### Basic scalar_unit classes
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| length | m | scalar_unit | Measures the length.
-| time_duration | s | scalar_unit | Measures time. Intended to be used in calculations with other scalar_unit classes, for other time uses inside a code use chrono or ctime of the standard library.
-| mass | g | scalar_unit | Measures the mass.
-| charge | C | scalar_unit | Measures the charge.
-| temperature | K | scalar_unit | Measures the temperature. The temperature corresponds to the movement of molecules.
-| mole | mol | scalar_unit | Amount of matter, by number.
-| light_intensity | cd | scalar_unit | Intensity of light.
-| data | B | scalar_unit | Amount of information.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| length | m | scalar_unit | _m and _Tm, _km, etc (all prefixes supported). Also, _AU and _AU, _kAU, etc (all prefixes supported). And also, _pc and _Tpc, _kpc, etc (all prefixes supported) | Measures the length.
+| time_duration | s | scalar_unit | _s and _Ts, _ks, etc (all prefixes supported). There's also _min, _hour and _day | Measures time. Intended to be used in calculations with other scalar_unit classes, for other time uses inside a code use chrono or ctime of the standard library.
+| mass | g | scalar_unit | _g and _Tg, _kg, etc (all prefixes supported). Also, _Da and _amu | Measures the mass.
+| charge | C | scalar_unit | _C and _TC, _kC, etc (all prefixes supported) | Measures the charge.
+| temperature | K | scalar_unit | _K and _TK, _kK, etc (all prefixes supported) | Measures the temperature. The temperature corresponds to the movement of molecules.
+| mole | mol | scalar_unit | _mol and _Tmol, _kmol, etc (all prefixes supported). Also, use _particles for specifying an exact amount of particles. | Amount of matter, by number.
+| light_intensity | cd | scalar_unit | _cd and _Tcd, _kcd, etc (all prefixes supported) | Intensity of light.
+| data | B | scalar_unit | _B and _TB, _kB, etc (all prefixes supported) | Amount of information.
 
 #### Space units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| area | m2 | scalar_unit | Measures the area.
-| volume | m3 | scalar_unit | Measures the volume.
-| volume_4d | m4 | scalar_unit | Measures the volume in 4D.
-| curvature | 1/m | scalar_unit | Measures the curvature.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| area | m2 | scalar_unit | For nuclear calculations, you can use _barn and _Tbarn, _kbarn, etc (all prefixes supported). Otherwise use "m2" instead. | Measures the area.
+| volume | m3 | scalar_unit | _L and _TL, _kL, etc (all prefixes supported). You can use m3 too as string, the litre literals aren't the only choice (use the most appropriate for each case). | Measures the volume.
+| volume_4d | m4 | scalar_unit | - | Measures the volume in 4D.
+| curvature | 1/m | scalar_unit | - | Measures the curvature.
 
 #### Kinematics units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| displacement | m | vector_unit_2d, vector_unit_3d, vector_unit_nd | Measures the displacement.
-| velocity | m/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Measures the velocity of an object.
-| acceleration | m/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | The increase of the velocity by time.
-| jerk | m/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | 
-| snap | m/s4 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | 
-| angular_velocity | rad/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Measures the velocity of an object around a center.
-| angular_acceleration | rad/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | The increase of angular velocity by time.
-| angular_momentum | m2*kg/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | A momentum, but related to the angular movement.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| displacement | m | vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the displacement.
+| velocity | m/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the velocity of an object.
+| acceleration | m/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The increase of the velocity by time.
+| jerk | m/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | 
+| snap | m/s4 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | 
+| angular_velocity | rad/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the velocity of an object around a center.
+| angular_acceleration | rad/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The increase of angular velocity by time.
+| angular_momentum | m2*kg/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | A momentum, but related to the angular movement.
 
 #### Dynamics units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| impulse | m*kg/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Measures the amount of change in momentum.
-| force | kg*m/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | The force is what changes the acceleration of some matter.
-| torque | kg*m2/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | 
-| pressure | kg/m*s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Force applied to a surface.
-| surface_tension | kg/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Tension in a surface.
-| stiffness | kg/s2 | scalar_unit | Extent to which an object resists deformation.
-| moment_of_inertia | m2*kg | scalar_unit | Torque needed for a desired angular acceleration about a rotational axis.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| impulse | m*kg/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the amount of change in momentum.
+| force | kg*m/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | _N and _TN, _kN, etc (all prefixes supported) | The force is what changes the acceleration of some matter.
+| torque | kg*m2/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | 
+| pressure | kg/m*s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | _Pa and _TPa, _kPa, etc (all prefixes supported) | Force applied to a surface.
+| surface_tension | kg/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Tension in a surface.
+| stiffness | kg/s2 | scalar_unit | - | Extent to which an object resists deformation.
+| moment_of_inertia | m2*kg | scalar_unit | - | Torque needed for a desired angular acceleration about a rotational axis.
 
 #### Electricity units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| electric_current | A | scalar_unit | Measures the amount of current.
-| voltage | V | scalar_unit | The intensity of the electric force.
-| electric_charge_density | A*s/m3 | scalar_unit | Density of the electric charge of a charged object.
-| electric_current_density | A/m2 | scalar_unit | Density of the electric current.
-| electric_field_strength | kg*m/A*s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | The strength of the electric field.
-| electron_mobility | A*s2/kg | How quickly an electron can move through a metal or semiconductor.
-| inductance | H | scalar_unit | The tendency of an electrical conductor to oppose a change in the electric current flowing through it.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| electric_current | A | scalar_unit | _A and _TA, _kA, etc (all prefixes supported) | Measures the amount of current.
+| voltage | V | scalar_unit | _V and _TV, _kV, etc (all prefixes supported) | The intensity of the electric force.
+| electric_charge_density | A*s/m3 | scalar_unit | - | Density of the electric charge of a charged object.
+| electric_current_density | A/m2 | scalar_unit | - | Density of the electric current.
+| electric_field_strength | kg*m/A*s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The strength of the electric field.
+| electron_mobility | A*s2/kg | scalar_unit | - | How quickly an electron can move through a metal or semiconductor.
+| inductance | H | scalar_unit | _H and _TH, _kH, etc (all prefixes supported) | The tendency of an electrical conductor to oppose a change in the electric current flowing through it.
 
 #### Fluid dynamics units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| volumetric_flow | m3/s | scalar_unit | Quantity of fluid per second.
-| diffusion_coefficient | m2/s | scalar_unit | Coefficient of diffusion.
-| compressibility | m*s2/kg | scalar_unit | How easy it's to compress the fluid.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| volumetric_flow | m3/s | scalar_unit | - | Quantity of fluid per second.
+| diffusion_coefficient | m2/s | scalar_unit | - | Coefficient of diffusion.
+| compressibility | m*s2/kg | scalar_unit | - | How easy it's to compress the fluid.
 
 #### Magnetism units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| magnetic_flux | Wb | scalar_unit | Amount of magnetism per surface.
-| magnetic_moment | A*m2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Combination of strength and orientation of a magnet or other object that exerts a magnetic field.
-| magnetic_reluctance | A2*s2/kg*m2 | scalar_unit | It's a resistance to the magnetism.
-| magnetic_rigidity | kg*m/A*s2 | scalar_unit | Resistance to magnetism.
-| magnetomotive_force | A | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | It's the property that gives rise to magnetic fields.
-| magnetic_susceptibility | A2*s2/kg*m | scalar_unit | It's a measure of how much a material will become magnetized in an applied magnetic field.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| magnetic_flux | Wb | scalar_unit | _Wb and _TWb, _kWb, etc (all prefixes supported) | Amount of magnetism per surface.
+| magnetic_moment | A*m2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Combination of strength and orientation of a magnet or other object that exerts a magnetic field.
+| magnetic_reluctance | A2*s2/kg*m2 | scalar_unit | - | It's a resistance to the magnetism.
+| magnetic_rigidity | kg*m/A*s2 | scalar_unit | - | Resistance to magnetism.
+| magnetomotive_force | A | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | It's the property that gives rise to magnetic fields.
+| magnetic_susceptibility | A2*s2/kg*m | scalar_unit | - | It's a measure of how much a material will become magnetized in an applied magnetic field.
 
 #### Optics units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| optical_power | 1/m | scalar_unit | Degree to which a lens, mirror or other optical system converges or diverges light.
-| luminance | cd/m2 | scalar_unit | Luminous intensity per unit area of light.
-| illuminance | lx | scalar_unit | Luminous flux incident in a surface.
-| luminous_flux | lm | scalar_unit | The perceived power of light.
-| luminous_energy | cd*sr*s | scalar_unit | Perceived fraction of energy transported by the light waves.
-| luminous_exposure | cd*sr*s/m2 | scalar_unit | Amount of light per unit area.
-| luminous_efficacy | lm/W | scalar_unit | Measure of how well a light source produces visible light.
-| ionizing_radiation | A*s/kg | scalar_unit | Subatomic particles or electromagnetic waves that have sufficient energy to ionize atoms or molecules by detaching electrons from them.
-| absorbed_dose | m2/s3 | scalar_unit | Measure of the energy deposited in matter by ionizing radiation per unit mass.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| optical_power | 1/m | scalar_unit | - | Degree to which a lens, mirror or other optical system converges or diverges light.
+| luminance | cd/m2 | scalar_unit | - | Luminous intensity per unit area of light.
+| illuminance | lx | scalar_unit | _lx and _Tlx, _klx, etc (all prefixes supported) | Luminous flux incident in a surface.
+| luminous_flux | lm | scalar_unit | _lm and _Tlm, _klm, etc (all prefixes supported) | The perceived power of light.
+| luminous_energy | cd*sr*s | scalar_unit | - | Perceived fraction of energy transported by the light waves.
+| luminous_exposure | cd*sr*s/m2 | scalar_unit | - | Amount of light per unit area.
+| luminous_efficacy | lm/W | scalar_unit | - | Measure of how well a light source produces visible light.
+| ionizing_radiation | Gy | scalar_unit | _Gy and _TGy, _kGy, etc (all prefixes supported). Also, _Sv and _TSv, _kSv, etc (all prefixes supported) | Subatomic particles or electromagnetic waves that have sufficient energy to ionize atoms or molecules by detaching electrons from them.
+| absorbed_dose | m2/s3 | scalar_unit | - | Measure of the energy deposited in matter by ionizing radiation per unit mass.
 
 #### Thermodynamics units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| energy | kg*m2/s2 | scalar_unit | Entity needed to create a force.
-| action | kg*m2/s | scalar_unit | It describes how the balance between kinetic versus potential energy changes with the trajectory.
-| power | kg*m2/s3 | scalar_unit | Energy per second.
-| power_density | kg/m*s3 | scalar_unit | Energy per second per volume.
-| entropy | kg*m2/K*s2 | scalar_unit | Amount of disorder in nature.
-| heat_capacity | kg*m2/K*s2 | scalar_unit | Amount of heat that matter needs to change temperature.
-| heat_flux_density | kg/s3 | scalar_unit | Amount of heat per surface.
-| thermal_conductivity | kg*m/K*s3 | scalar_unit | How easy matters conducts thermal energy.
-| thermal_diffusivity | m2/s | scalar_unit | The diffusivity of the thermal energy.
-| thermal_resistance | K*s3/kg*m2 | scalar_unit | The resistance to thermal change.
-| thermal_expansion_coefficient | 1/K | scalar_unit | The coefficient at which matter expands due to heat.
-| temperature_gradient | K/m | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | The gradient of change of temperature inside the space.
-| energy_flux_density | kg/s3 | scalar_unit | Density of a flux of energy.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| energy | J | scalar_unit | _J and _TJ, _kJ, etc (all prefixes supported). Also, _eV and _TeV, _keV, etc (all prefixes supported) | Entity needed to create a force.
+| action | kg*m2/s | scalar_unit | - | It describes how the balance between kinetic versus potential energy changes with the trajectory.
+| power | W | scalar_unit | _W and _TW, _kW, etc (all prefixes supported) | Energy per second.
+| power_density | kg/m*s3 | scalar_unit | - | Energy per second per volume.
+| entropy | kg*m2/K*s2 | scalar_unit | - | Amount of disorder in nature.
+| heat_capacity | kg*m2/K*s2 | scalar_unit | - | Amount of heat that matter needs to change temperature.
+| heat_flux_density | kg/s3 | scalar_unit | - | Amount of heat per surface.
+| thermal_conductivity | kg*m/K*s3 | scalar_unit | - | How easy matters conducts thermal energy.
+| thermal_diffusivity | m2/s | scalar_unit | - | The diffusivity of the thermal energy.
+| thermal_resistance | K*s3/kg*m2 | scalar_unit | - | The resistance to thermal change.
+| thermal_expansion_coefficient | 1/K | scalar_unit | - | The coefficient at which matter expands due to heat.
+| temperature_gradient | K/m | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The gradient of change of temperature inside the space.
+| energy_flux_density | kg/s3 | scalar_unit | - | Density of a flux of energy.
 
 #### Waves units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| wavenumber | 1/m | scalar_unit | Number of times a wave vibrates over a distance.
-| frequency | 1/s | scalar_unit | Number of repetitions over time.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| wavenumber | 1/m | scalar_unit | - | Number of times a wave vibrates over a distance.
+| frequency | Hz | scalar_unit | _Hz and _THz, _kHz, etc (all prefixes supported) | Number of repetitions over time.
 
 #### Astronomy units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| specific_angular_momentum | m2/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Angular momentum of a particular celestial body.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| specific_angular_momentum | m2/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Angular momentum of a particular celestial body.
 
 #### General chemistry units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| density | g/m3 | scalar_unit | Amount of mass per unit of volume.
-| viscosity | m2/s | scalar_unit | Resistance to the movement done by the solvent.
-| specific_volume | m3/g | scalar_unit | Volume per unit of mass.
-| specific_heat_capacity | m2/s2*K | scalar_unit | Heat capacity of a particular substance.
-| specific_entropy | m2/s2*K | scalar_unit | Entropy of a substance.
-| specific_energy | m2/s2 | scalar_unit | Energy per unit of mass
-| molar_volume | m3/mol | scalar_unit | Volume of each mole of a substance.
-| molar_mass | g/mol | scalar_unit | Mass of each mole of a substance.
-| molar_heat_capacity | m2*g/s2*K*mol | scalar_unit | Heat capacity of each mole of a substance.
-| molar_enthalpy | m2*g/s2*mol | scalar_unit | Enthalpy of each mole of a substance.
-| molar_entropy | m2*g/s2*K*mol | scalar_unit | Entropy of each mole of a substance.
-| molar_energy | m2*g/s2*mol | scalar_unit | Energy of each mole of a substance.
-| molar_conductivity | s3*A2/g*mol | scalar_unit | Conductivity of each mole of a substance.
-| energy_density | g/m*s2 | scalar_unit | Amount of energy per unit of volume.
-| catalytic_efficiency | m3/s*mol | scalar_unit | How efficiently an enzyme converts substrates into products.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| density | g/m3 | scalar_unit | - | Amount of mass per unit of volume.
+| viscosity | m2/s | scalar_unit | - | Resistance to the movement done by the solvent.
+| specific_volume | m3/g | scalar_unit | - | Volume per unit of mass.
+| specific_heat_capacity | m2/s2*K | scalar_unit | - | Heat capacity of a particular substance.
+| specific_entropy | m2/s2*K | scalar_unit | - | Entropy of a substance.
+| specific_energy | m2/s2 | scalar_unit | - | Energy per unit of mass
+| molar_volume | m3/mol | scalar_unit | - | Volume of each mole of a substance.
+| molar_mass | g/mol | scalar_unit | - | Mass of each mole of a substance.
+| molar_heat_capacity | m2*g/s2*K*mol | scalar_unit | - | Heat capacity of each mole of a substance.
+| molar_enthalpy | m2*g/s2*mol | scalar_unit | - | Enthalpy of each mole of a substance.
+| molar_entropy | m2*g/s2*K*mol | scalar_unit | - | Entropy of each mole of a substance.
+| molar_energy | m2*g/s2*mol | scalar_unit | - | Energy of each mole of a substance.
+| molar_conductivity | s3*A2/g*mol | scalar_unit | - | Conductivity of each mole of a substance.
+| energy_density | g/m*s2 | scalar_unit | - | Amount of energy per unit of volume.
+| catalytic_efficiency | m3/s*mol | scalar_unit | _kat and _Tkat, _kkat, etc (all prefixes supported) | How efficiently an enzyme converts substrates into products.
 
 #### Substance units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| molarity | mol/m3 | scalar_unit | Amount of moles per volume, usually per litres.
-| molality | mol/g | scalar_unit | Amount of moles per mass.
-| linear_mass_density | g/m | scalar_unit | Amount of mass per length.
-| area_density | g/m2 | scalar_unit | Amount of mass per surface.
-| dynamic_viscosity | g/m*s | scalar_unit | Relation between the viscous stresses in a material to the rate of change of a deformation.
-| mass_flow_rate | g/s | scalar_unit | Mass per second.
-| catalytic_activity | kat | scalar_unit | Rate of conversion of catalysis, amount of moles per second.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| molarity | M | scalar_unit | _M and _TM, _kM, etc (all prefixes supported) | Amount of moles per volume, usually per litres.
+| molality | mol/g | scalar_unit | - | Amount of moles per mass.
+| linear_mass_density | g/m | scalar_unit | - | Amount of mass per length.
+| area_density | g/m2 | scalar_unit | - | Amount of mass per surface.
+| dynamic_viscosity | g/m*s | scalar_unit | - | Relation between the viscous stresses in a material to the rate of change of a deformation.
+| mass_flow_rate | g/s | scalar_unit | - | Mass per second.
+| catalytic_activity | kat | scalar_unit | _kat and _Tkat, _kkat, etc (all prefixes supported) | Rate of conversion of catalysis, amount of moles per second.
 
 #### Electronics units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| electrical_conductivity | A2*s3/kg*m3 | scalar_unit | Amount of current conducted.
-| resistance | kg*m2/A2*s3 | scalar_unit | Opposition to the flow of current of a substance.
-| electric_conductance | A2*s3/kg*m2 | scalar_unit | The inverse of the resistance.
-| capacitance | A2*s4/m2*kg | scalar_unit | Amount of charge that can be stored by a capacitor.
-| permittivity | A2*s4/kg*m3 | scalar_unit | The electric polarizability of a dieletric material.
-| resistivity | kg*m3/A2*s3 | scalar_unit | How much a material stops the flow of electric current through it.
-| linear_charge_density | C/m | scalar_unit | The amount of electric charge per unit length.
-| surface_charge_density | C/m2 | scalar_unit | The amount of electric charge per unit area.
-| volume_charge_density | C/m3 | scalar_unit | The amount of electric charge per unit volume.
-| frequency_drift | 1/s2 | scalar_unit | Offset of an oscillator from its nominal frequency.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| electrical_conductivity | A2*s3/kg*m3 | scalar_unit | - | Amount of current conducted.
+| resistance | Ω | scalar_unit | _Ω and _TΩ, _kΩ, etc (all prefixes supported) | Opposition to the flow of current of a substance.
+| electric_conductance | S | scalar_unit | _S and _TS, _kS, etc (all prefixes supported) | The inverse of the resistance.
+| capacitance | F | scalar_unit | _F and _TF, _kF, etc (all prefixes supported) | Amount of charge that can be stored by a capacitor.
+| permittivity | A2*s4/kg*m3 | scalar_unit | - | The electric polarizability of a dieletric material.
+| resistivity | kg*m3/A2*s3 | scalar_unit | - | How much a material stops the flow of electric current through it.
+| linear_charge_density | C/m | scalar_unit | - | The amount of electric charge per unit length.
+| surface_charge_density | C/m2 | scalar_unit | - | The amount of electric charge per unit area.
+| volume_charge_density | C/m3 | scalar_unit | - | The amount of electric charge per unit volume.
+| frequency_drift | 1/s2 | scalar_unit | - | Offset of an oscillator from its nominal frequency.
 
 #### Radiometry units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| radioactivity | Bq | scalar_unit | Presence of nuclear radiation.
-| radiant_exposure | kg/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Radiant energy received by a surface per unit area.
-| radiant_intensity | kg*m2/s3 | scalar_unit | Radiant flux emitted per unit solid angle.
-| radiance | kg/s3 | scalar_unit | Radiant flux emitted by a surface per unit solid angle per unit projected area.
-| spectral_radiance | kg/m*s3 | scalar_unit | Radiance of a surface per unit frequency or wavelength.
-| radiant_flux | kg*m2/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Radiant energy emitted per unit time.
-| spectral_flux | kg*m/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | Radiant flux per unit frequency or wavelength.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| radioactivity | Bq | scalar_unit | _Bq and _TBq, _kBq, etc (all prefixes supported) | Presence of nuclear radiation.
+| radiant_exposure | kg/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Radiant energy received by a surface per unit area.
+| radiant_intensity | kg*m2/s3 | scalar_unit | - | Radiant flux emitted per unit solid angle.
+| radiance | kg/s3 | scalar_unit | - | Radiant flux emitted by a surface per unit solid angle per unit projected area.
+| spectral_radiance | kg/m*s3 | scalar_unit | - | Radiance of a surface per unit frequency or wavelength.
+| radiant_flux | kg*m2/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Radiant energy emitted per unit time.
+| spectral_flux | kg*m/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Radiant flux per unit frequency or wavelength.
 
 #### Informatics units
 
-| Name | Dimensions | Type | Description
-| ----- | ----- | ----- | --------------------------
-| transfer_speed | B/s | scalar_unit | Bytes emitted or received per second.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| transfer_speed | B/s | scalar_unit | - | Bytes emitted or received per second.
 
 ### Vector units in 2D
 

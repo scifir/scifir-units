@@ -430,7 +430,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_zkat == "100 zkat"));
 		CHECK(bool(100_ykat == "100 ykat"));
 
-		CHECK(bool(100_angstrom == "100 angstrom"));
+		CHECK(bool(100_Å == "100 angstrom"));
 
 		CHECK(bool(100_YL == "100 YL"));
 		CHECK(bool(100_ZL == "100 ZL"));
@@ -1001,7 +1001,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_zkat == "100 zkat"));
 		CHECK(bool(100.0_ykat == "100 ykat"));
 
-		CHECK(bool(100.0_angstrom == "100 angstrom"));
+		CHECK(bool(100.0_Å == "100 angstrom"));
 
 		CHECK(bool(100.0_YL == "100 YL"));
 		CHECK(bool(100.0_ZL == "100 ZL"));

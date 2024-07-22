@@ -431,7 +431,7 @@ scifir::catalytic_activity operator"" _akat(unsigned long long int);
 scifir::catalytic_activity operator"" _zkat(unsigned long long int);
 scifir::catalytic_activity operator"" _ykat(unsigned long long int);
 
-scifir::length operator"" _angstrom(unsigned long long int);
+scifir::length operator"" _Å(unsigned long long int);
 
 scifir::volume operator"" _YL(unsigned long long int);
 scifir::volume operator"" _ZL(unsigned long long int);
@@ -1001,7 +1001,7 @@ scifir::catalytic_activity operator"" _akat(long double);
 scifir::catalytic_activity operator"" _zkat(long double);
 scifir::catalytic_activity operator"" _ykat(long double);
 
-scifir::length operator"" _angstrom(long double);
+scifir::length operator"" _Å(long double);
 
 scifir::volume operator"" _YL(long double);
 scifir::volume operator"" _ZL(long double);
