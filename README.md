@@ -866,7 +866,7 @@ string c = x + " value";
 | molar_energy | m2*g/s2*mol | scalar_unit | - | Energy of each mole of a substance.
 | molar_conductivity | s3*A2/g*mol | scalar_unit | - | Conductivity of each mole of a substance.
 | energy_density | g/m*s2 | scalar_unit | - | Amount of energy per unit of volume.
-| catalytic_efficiency | m3/s*mol | scalar_unit | _kat and _Tkat, _kkat, etc (all prefixes supported) | How efficiently an enzyme converts substrates into products.
+| catalytic_efficiency | m3/s*mol | scalar_unit | - | How efficiently an enzyme converts substrates into products.
 
 #### Substance units
 

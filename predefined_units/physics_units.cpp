@@ -17,9 +17,9 @@ namespace scifir
 
 	// DYNAMICS
 	VECTOR_UNIT_CPP(impulse,"m*kg/s");
-	VECTOR_UNIT_CPP(force,"kg*m/s2");
+	VECTOR_UNIT_CPP(force,"N");
 	VECTOR_UNIT_CPP(torque,"kg*m2/s2");
-	VECTOR_UNIT_CPP(pressure,"kg/m*s2");
+	VECTOR_UNIT_CPP(pressure,"Pa");
 	VECTOR_UNIT_CPP(surface_tension,"kg/s2");
 	SCALAR_UNIT_CPP(stiffness,"kg/s2");
 	SCALAR_UNIT_CPP(moment_of_inertia,"m2*kg");
@@ -64,9 +64,9 @@ namespace scifir
 	SCALAR_UNIT_CPP(absorbed_dose,"m2/s3");
 
 	// THERMODYNAMICS
-	SCALAR_UNIT_CPP(energy,"kg*m2/s2");
+	SCALAR_UNIT_CPP(energy,"J");
 	SCALAR_UNIT_CPP(action,"kg*m2/s");
-	SCALAR_UNIT_CPP(power,"kg*m2/s3");
+	SCALAR_UNIT_CPP(power,"W");
 	SCALAR_UNIT_CPP(power_density,"kg/m*s3");
 	SCALAR_UNIT_CPP(entropy,"kg*m2/K*s2");
 	SCALAR_UNIT_CPP(heat_capacity,"kg*m2/K*s2");

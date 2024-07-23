@@ -33,7 +33,7 @@ namespace scifir
 	}
 
 	// SUBSTANCE
-	SCALAR_UNIT_CPP(molarity,"mol/m3");
+	SCALAR_UNIT_CPP(molarity,"M");
 	SCALAR_UNIT_CPP(molality,"mol/g");
 	SCALAR_UNIT_CPP(linear_mass_density,"g/m");
 	SCALAR_UNIT_CPP(area_density,"g/m2");
