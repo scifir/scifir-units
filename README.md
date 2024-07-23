@@ -754,8 +754,8 @@ string c = x + " value";
 | displacement | m | vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the displacement.
 | velocity | m/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the velocity of an object.
 | acceleration | m/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The increase of the velocity by time.
-| jerk | m/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | 
-| snap | m/s4 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | 
+| jerk | m/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The rate of change of the acceleration over time.
+| snap | m/s4 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The fourth derivative of the position vector with respect to time.
 | angular_velocity | rad/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the velocity of an object around a center.
 | angular_acceleration | rad/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The increase of angular velocity by time.
 | angular_momentum | m2*kg/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | A momentum, but related to the angular movement.
@@ -766,7 +766,7 @@ string c = x + " value";
 | ----- | ----- | ----- | ----------- | --------------------------
 | impulse | m*kg/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the amount of change in momentum.
 | force | kg*m/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | _N and _TN, _kN, etc (all prefixes supported) | The force is what changes the acceleration of some matter.
-| torque | kg*m2/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | 
+| torque | kg*m2/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | A force that does a rotation.
 | pressure | kg/m*s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | _Pa and _TPa, _kPa, etc (all prefixes supported) | Force applied to a surface.
 | surface_tension | kg/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Tension in a surface.
 | stiffness | kg/s2 | scalar_unit | - | Extent to which an object resists deformation.
