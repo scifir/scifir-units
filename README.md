@@ -607,6 +607,13 @@ x.invert(); // Inverts the angle, the orientation described by this angle points
 float y = float(x); // Angles can be converted to float
 ```
 
+#### Angle literals
+
+| Literal | Use
+| ----- | --------------------------
+| _degree | Creates a new angle of the degrees given. **Example:** 30_degree.
+| _rad | Creates a new angle of the radians given. The value of the radian is internally converted to degrees, angle class always uses degrees internally. The value can be obtained in radian form using get_radian(). **Example:** 5.0_rad.
+
 ### Scalar units
 
 Scalar units and vector units are the central objects of scifir-units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.
