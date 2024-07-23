@@ -18,6 +18,41 @@ The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.
 
 The **Scifir Foundation** is looking for **funding**, in order to do some digital marketing and pay some other needs of the project. If you want to support this libraries, **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/iarfen).
 
+## Short example
+
+```cpp
+length x = 100_km;
+cout << x << endl;
+
+force_2d y(50_N,20_degree);
+cout << y << endl;
+
+force_2d y2(30_N,10_degree);
+cout << y2 << endl;
+cout << (y + y2) << endl;
+
+force_3d z(50_N,20_degree,40_degree);
+cout << z << endl;
+
+angle a = 100_degree;
+a++;
+cout << a << endl;
+
+coordinates_3d_<> b(10M,5_m,30_m);
+cout << b << endl;
+```
+
+### Copy-paste symbols
+
+| Symbol | Use
+| --- | -----
+| θ | String literal of angle and used both in vector_unit_2d and vector_unit_3d.
+| Φ | Angle phi, used in vector_unit_3d.
+| ° | Degree, used in vector_unit_nd.
+| Ω | String literal of resistance.
+| Å | String literal of angstrom.
+| µ | Prefix micro, used as part of the string literals with micro.
+
 ## Installation
 
 To install **scifir-units** you have to use **CMake** and **make**. scifir-units can be compiled with **g++**, **clang++** and **msvc**. Also, **nvcc** and **dpcpp** can also be used. The compilers for microcontrollers can also be used.
