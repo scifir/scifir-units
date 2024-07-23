@@ -559,6 +559,38 @@ The dimension of money inside scifir-units is just money. Apart from scifir-unit
 
 A custom dimension is a dimension of any name, with any derived dimensions, that can be defined inside each project that uses scifir-units. To use custom dimensions, just initialize a scalar_unit or any vector_unit class with a name different than the default dimensions.
 
+### Prefix
+
+The prefixes are writed before the dimension, both on string literals and initialization strings. In any initialization string of dimensions you can write the symbol of the prefix before the symbol of the dimension.
+
+| prefix::type | Symbol | Scale
+| ------ | --- | ---
+| QUETTA | Q | 30
+| RONNA | R | 27
+| YOTTA | Y | 24
+| ZETTA | Z | 21
+| EXA | E | 18
+| PETA | P | 15
+| TERA | T | 12
+| GIGA | G | 9
+| MEGA | M | 6
+| KILO | k | 3
+| HECTO | h | 2
+| DECA | da | 1
+| NONE | - | 0
+| DECI | d | -1
+| CENTI | c | -2
+| MILLI | m | -3
+| MICRO | µ | -6
+| NANO | n | -9
+| PICO | p | -12
+| FEMTO | f | -15
+| ATTO | a | -18
+| ZEPTO | z | -21
+| YOCTO | y | -24
+| RONTO | r | -27
+| QUECTO | q | -30
+
 ### Angle
 
 An angle object manages angles. It stores angles in degrees, rather than in radians. It can be initialized to any degree between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that's not inside this range of values gets automatically converted inside it, to his equivalent value between the range.
@@ -611,8 +643,8 @@ float y = float(x); // Angles can be converted to float
 
 | Literal | Use
 | ----- | --------------------------
-| _degree | Creates a new angle of the degrees given. **Example:** 30_degree.
-| _rad | Creates a new angle of the radians given. The value of the radian is internally converted to degrees, angle class always uses degrees internally. The value can be obtained in radian form using get_radian(). **Example:** 5.0_rad.
+| _degree | Creates a new angle of the degrees given. **Example:** scifir::angle a = 30_degree.
+| _rad | Creates a new angle of the radians given. The value of the radian is internally converted to degrees, angle class always uses degrees internally. The value can be obtained in radian form using get_radian(). **Example:** scifir::angle a = 5.0_rad.
 
 ### Scalar units
 
