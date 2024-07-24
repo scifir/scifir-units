@@ -25,25 +25,35 @@ The **Scifir Foundation** is looking for **funding**, in order to do some digita
 ## Short example
 
 ```cpp
-length x = 100_km;
-cout << x << endl;
+length x = 100_km; // length is a child class of scalar_unit, only supports dimensions convertible to metre
+cout << x << endl; // Prints "100 km"
+x.change_dimensions("m");
+cout << x << endl; // Prints "100000 m"
 
-force_2d y(50_N,20_degree);
-cout << y << endl;
+force_2d y(50_N,20_degree); // force_2d is a child class of vector_unit_2d
+cout << y << endl; // Prints "50 N 20θ"
 
 force_2d y2(30_N,10_degree);
 cout << y2 << endl;
-cout << (y + y2) << endl;
+cout << (y + y2) << endl; // Prints the vectorial sum of y + y2
 
-force_3d z(50_N,20_degree,40_degree);
-cout << z << endl;
+force_3d z(50_N,20_degree,40_degree); // force_3d is a child class of vector_unit_3d
+cout << z << endl; // Prints "50 N 20θ 40Φ"
 
-angle a = 100_degree;
-a++;
-cout << a << endl;
+angle a = 100_degree; // angle class is not a scalar_unit
+a++; // Increments a by one unit
+cout << a << endl; // Prints "100°"
 
-coordinates_3d_<> b(10M,5_m,30_m);
-cout << b << endl;
+coordinates_3d<> b(10_m,5_m,30_m); // coordinates_3d<> has length as dimension of space. float and imaginary dimensions are also supported for the space
+cout << b << endl; // Prints "(10 m,5 m,30 m)"
+
+aid c("(P) universe:milky-way:solar-system:earth"); // aid is an identifier for any astronomical object
+cout << c << endl; // Prints "(P) universe:milky-way:solar-system:earth"
+
+zid d("(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia"); // zid is an identifier for any zone, of any astronomical object
+cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia"
+
+// Among many other features!
 ```
 
 ### Copy-paste symbols
