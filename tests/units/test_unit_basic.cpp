@@ -50,6 +50,8 @@ TEST_CASE("Basic units") {
 
 	SECTION("Basic unit literals")
 	{
+		CHECK(bool(100_Qm == "100 Qm"));
+		CHECK(bool(100_Rm == "100 Rm"));
 		CHECK(bool(100_Ym == "100 Ym"));
 		CHECK(bool(100_Zm == "100 Zm"));
 		CHECK(bool(100_Em == "100 Em"));
@@ -71,6 +73,8 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100_am == "100 am"));
 		CHECK(bool(100_zm == "100 zm"));
 		CHECK(bool(100_ym == "100 ym"));
+		CHECK(bool(100_rm == "100 rm"));
+		CHECK(bool(100_qm == "100 qm"));
 		
 		CHECK(bool(100_s == "100 s"));
 		CHECK(bool(100_ms == "100 ms"));
@@ -81,7 +85,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100_as == "100 as"));
 		CHECK(bool(100_zs == "100 zs"));
 		CHECK(bool(100_ys == "100 ys"));
+		CHECK(bool(100_rs == "100 rs"));
+		CHECK(bool(100_qs == "100 qs"));
 		
+		CHECK(bool(100_Qg == "100 Qg"));
+		CHECK(bool(100_Rg == "100 Rg"));
 		CHECK(bool(100_Yg == "100 Yg"));
 		CHECK(bool(100_Zg == "100 Zg"));
 		CHECK(bool(100_Eg == "100 Eg"));
@@ -103,7 +111,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100_ag == "100 ag"));
 		CHECK(bool(100_zg == "100 zg"));
 		CHECK(bool(100_yg == "100 yg"));
+		CHECK(bool(100_rg == "100 rg"));
+		CHECK(bool(100_qg == "100 qg"));
 
+		CHECK(bool(100_QC == "100 QC"));
+		CHECK(bool(100_RC == "100 RC"));
 		CHECK(bool(100_YC == "100 YC"));
 		CHECK(bool(100_ZC == "100 ZC"));
 		CHECK(bool(100_EC == "100 EC"));
@@ -125,7 +137,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100_aC == "100 aC"));
 		CHECK(bool(100_zC == "100 zC"));
 		CHECK(bool(100_yC == "100 yC"));
+		CHECK(bool(100_rC == "100 rC"));
+		CHECK(bool(100_qC == "100 qC"));
 
+		CHECK(bool(100_QK == "100 QK"));
+		CHECK(bool(100_RK == "100 RK"));
 		CHECK(bool(100_YK == "100 YK"));
 		CHECK(bool(100_ZK == "100 ZK"));
 		CHECK(bool(100_EK == "100 EK"));
@@ -147,7 +163,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100_aK == "100 aK"));
 		CHECK(bool(100_zK == "100 zK"));
 		CHECK(bool(100_yK == "100 yK"));
+		CHECK(bool(100_rK == "100 rK"));
+		CHECK(bool(100_qK == "100 qK"));
 
+		CHECK(bool(100_Qmol == "100 Qmol"));
+		CHECK(bool(100_Rmol == "100 Rmol"));
 		CHECK(bool(100_Ymol == "100 Ymol"));
 		CHECK(bool(100_Zmol == "100 Zmol"));
 		CHECK(bool(100_Emol == "100 Emol"));
@@ -169,7 +189,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100_amol == "100 amol"));
 		CHECK(bool(100_zmol == "100 zmol"));
 		CHECK(bool(100_ymol == "100 ymol"));
+		CHECK(bool(100_rmol == "100 rmol"));
+		CHECK(bool(100_qmol == "100 qmol"));
 
+		CHECK(bool(100_Qcd == "100 Qcd"));
+		CHECK(bool(100_Rcd == "100 Rcd"));
 		CHECK(bool(100_Ycd == "100 Ycd"));
 		CHECK(bool(100_Zcd == "100 Zcd"));
 		CHECK(bool(100_Ecd == "100 Ecd"));
@@ -191,7 +215,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100_acd == "100 acd"));
 		CHECK(bool(100_zcd == "100 zcd"));
 		CHECK(bool(100_ycd == "100 ycd"));
+		CHECK(bool(100_rcd == "100 rcd"));
+		CHECK(bool(100_qcd == "100 qcd"));
 
+		CHECK(bool(100_QB == "100 QB"));
+		CHECK(bool(100_RB == "100 RB"));
 		CHECK(bool(100_YB == "100 YB"));
 		CHECK(bool(100_ZB == "100 ZB"));
 		CHECK(bool(100_EB == "100 EB"));
@@ -202,6 +230,8 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100_kB == "100 kB"));
 		CHECK(bool(100_B == "100 B"));
 
+		CHECK(bool(100.0_Qm == "100 Qm"));
+		CHECK(bool(100.0_Rm == "100 Rm"));
 		CHECK(bool(100.0_Ym == "100 Ym"));
 		CHECK(bool(100.0_Zm == "100 Zm"));
 		CHECK(bool(100.0_Em == "100 Em"));
@@ -223,6 +253,8 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100.0_am == "100 am"));
 		CHECK(bool(100.0_zm == "100 zm"));
 		CHECK(bool(100.0_ym == "100 ym"));
+		CHECK(bool(100.0_rm == "100 rm"));
+		CHECK(bool(100.0_qm == "100 qm"));
 		
 		CHECK(bool(100.0_s == "100 s"));
 		CHECK(bool(100.0_ms == "100 ms"));
@@ -233,7 +265,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100.0_as == "100 as"));
 		CHECK(bool(100.0_zs == "100 zs"));
 		CHECK(bool(100.0_ys == "100 ys"));
+		CHECK(bool(100.0_rs == "100 rs"));
+		CHECK(bool(100.0_qs == "100 qs"));
 		
+		CHECK(bool(100.0_Qg == "100 Qg"));
+		CHECK(bool(100.0_Rg == "100 Rg"));
 		CHECK(bool(100.0_Yg == "100 Yg"));
 		CHECK(bool(100.0_Zg == "100 Zg"));
 		CHECK(bool(100.0_Eg == "100 Eg"));
@@ -255,7 +291,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100.0_ag == "100 ag"));
 		CHECK(bool(100.0_zg == "100 zg"));
 		CHECK(bool(100.0_yg == "100 yg"));
+		CHECK(bool(100.0_rg == "100 rg"));
+		CHECK(bool(100.0_qg == "100 qg"));
 
+		CHECK(bool(100.0_QC == "100 QC"));
+		CHECK(bool(100.0_RC == "100 RC"));
 		CHECK(bool(100.0_YC == "100 YC"));
 		CHECK(bool(100.0_ZC == "100 ZC"));
 		CHECK(bool(100.0_EC == "100 EC"));
@@ -277,7 +317,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100.0_aC == "100 aC"));
 		CHECK(bool(100.0_zC == "100 zC"));
 		CHECK(bool(100.0_yC == "100 yC"));
+		CHECK(bool(100.0_rC == "100 rC"));
+		CHECK(bool(100.0_qC == "100 qC"));
 
+		CHECK(bool(100.0_QK == "100 QK"));
+		CHECK(bool(100.0_RK == "100 RK"));
 		CHECK(bool(100.0_YK == "100 YK"));
 		CHECK(bool(100.0_ZK == "100 ZK"));
 		CHECK(bool(100.0_EK == "100 EK"));
@@ -299,7 +343,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100.0_aK == "100 aK"));
 		CHECK(bool(100.0_zK == "100 zK"));
 		CHECK(bool(100.0_yK == "100 yK"));
+		CHECK(bool(100.0_rK == "100 rK"));
+		CHECK(bool(100.0_qK == "100 qK"));
 
+		CHECK(bool(100.0_Qmol == "100 Qmol"));
+		CHECK(bool(100.0_Rmol == "100 Rmol"));
 		CHECK(bool(100.0_Ymol == "100 Ymol"));
 		CHECK(bool(100.0_Zmol == "100 Zmol"));
 		CHECK(bool(100.0_Emol == "100 Emol"));
@@ -321,7 +369,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100.0_amol == "100 amol"));
 		CHECK(bool(100.0_zmol == "100 zmol"));
 		CHECK(bool(100.0_ymol == "100 ymol"));
+		CHECK(bool(100.0_rmol == "100 rmol"));
+		CHECK(bool(100.0_qmol == "100 qmol"));
 
+		CHECK(bool(100.0_Qcd == "100 Qcd"));
+		CHECK(bool(100.0_Rcd == "100 Rcd"));
 		CHECK(bool(100.0_Ycd == "100 Ycd"));
 		CHECK(bool(100.0_Zcd == "100 Zcd"));
 		CHECK(bool(100.0_Ecd == "100 Ecd"));
@@ -343,7 +395,11 @@ TEST_CASE("Basic units") {
 		CHECK(bool(100.0_acd == "100 acd"));
 		CHECK(bool(100.0_zcd == "100 zcd"));
 		CHECK(bool(100.0_ycd == "100 ycd"));
+		CHECK(bool(100.0_rcd == "100 rcd"));
+		CHECK(bool(100.0_qcd == "100 qcd"));
 
+		CHECK(bool(100.0_QB == "100 QB"));
+		CHECK(bool(100.0_RB == "100 RB"));
 		CHECK(bool(100.0_YB == "100 YB"));
 		CHECK(bool(100.0_ZB == "100 ZB"));
 		CHECK(bool(100.0_EB == "100 EB"));

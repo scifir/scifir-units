@@ -82,6 +82,8 @@ namespace scifir
 	SCALAR_UNIT_HPP(data);
 }
 
+scifir::length operator"" _Qm(unsigned long long int);
+scifir::length operator"" _Rm(unsigned long long int);
 scifir::length operator"" _Ym(unsigned long long int);
 scifir::length operator"" _Zm(unsigned long long int);
 scifir::length operator"" _Em(unsigned long long int);
@@ -103,6 +105,8 @@ scifir::length operator"" _fm(unsigned long long int);
 scifir::length operator"" _am(unsigned long long int);
 scifir::length operator"" _zm(unsigned long long int);
 scifir::length operator"" _ym(unsigned long long int);
+scifir::length operator"" _rm(unsigned long long int);
+scifir::length operator"" _qm(unsigned long long int);
 
 scifir::time_duration operator"" _s(unsigned long long int);
 scifir::time_duration operator"" _ms(unsigned long long int);
@@ -113,7 +117,11 @@ scifir::time_duration operator"" _fs(unsigned long long int);
 scifir::time_duration operator"" _as(unsigned long long int);
 scifir::time_duration operator"" _zs(unsigned long long int);
 scifir::time_duration operator"" _ys(unsigned long long int);
+scifir::time_duration operator"" _rs(unsigned long long int);
+scifir::time_duration operator"" _qs(unsigned long long int);
 
+scifir::mass operator"" _Qg(unsigned long long int);
+scifir::mass operator"" _Rg(unsigned long long int);
 scifir::mass operator"" _Yg(unsigned long long int);
 scifir::mass operator"" _Zg(unsigned long long int);
 scifir::mass operator"" _Eg(unsigned long long int);
@@ -135,7 +143,11 @@ scifir::mass operator"" _fg(unsigned long long int);
 scifir::mass operator"" _ag(unsigned long long int);
 scifir::mass operator"" _zg(unsigned long long int);
 scifir::mass operator"" _yg(unsigned long long int);
+scifir::mass operator"" _rg(unsigned long long int);
+scifir::mass operator"" _qg(unsigned long long int);
 
+scifir::charge operator"" _QC(unsigned long long int);
+scifir::charge operator"" _RC(unsigned long long int);
 scifir::charge operator"" _YC(unsigned long long int);
 scifir::charge operator"" _ZC(unsigned long long int);
 scifir::charge operator"" _EC(unsigned long long int);
@@ -157,7 +169,11 @@ scifir::charge operator"" _fC(unsigned long long int);
 scifir::charge operator"" _aC(unsigned long long int);
 scifir::charge operator"" _zC(unsigned long long int);
 scifir::charge operator"" _yC(unsigned long long int);
+scifir::charge operator"" _rC(unsigned long long int);
+scifir::charge operator"" _qC(unsigned long long int);
 
+scifir::temperature operator"" _QK(unsigned long long int);
+scifir::temperature operator"" _RK(unsigned long long int);
 scifir::temperature operator"" _YK(unsigned long long int);
 scifir::temperature operator"" _ZK(unsigned long long int);
 scifir::temperature operator"" _EK(unsigned long long int);
@@ -179,7 +195,11 @@ scifir::temperature operator"" _fK(unsigned long long int);
 scifir::temperature operator"" _aK(unsigned long long int);
 scifir::temperature operator"" _zK(unsigned long long int);
 scifir::temperature operator"" _yK(unsigned long long int);
+scifir::temperature operator"" _rK(unsigned long long int);
+scifir::temperature operator"" _qK(unsigned long long int);
 
+scifir::mole operator"" _Qmol(unsigned long long int);
+scifir::mole operator"" _Rmol(unsigned long long int);
 scifir::mole operator"" _Ymol(unsigned long long int);
 scifir::mole operator"" _Zmol(unsigned long long int);
 scifir::mole operator"" _Emol(unsigned long long int);
@@ -201,7 +221,11 @@ scifir::mole operator"" _fmol(unsigned long long int);
 scifir::mole operator"" _amol(unsigned long long int);
 scifir::mole operator"" _zmol(unsigned long long int);
 scifir::mole operator"" _ymol(unsigned long long int);
+scifir::mole operator"" _rmol(unsigned long long int);
+scifir::mole operator"" _qmol(unsigned long long int);
 
+scifir::light_intensity operator"" _Qcd(unsigned long long int);
+scifir::light_intensity operator"" _Rcd(unsigned long long int);
 scifir::light_intensity operator"" _Ycd(unsigned long long int);
 scifir::light_intensity operator"" _Zcd(unsigned long long int);
 scifir::light_intensity operator"" _Ecd(unsigned long long int);
@@ -223,7 +247,11 @@ scifir::light_intensity operator"" _fcd(unsigned long long int);
 scifir::light_intensity operator"" _acd(unsigned long long int);
 scifir::light_intensity operator"" _zcd(unsigned long long int);
 scifir::light_intensity operator"" _ycd(unsigned long long int);
+scifir::light_intensity operator"" _rcd(unsigned long long int);
+scifir::light_intensity operator"" _qcd(unsigned long long int);
 
+scifir::data operator"" _QB(unsigned long long int);
+scifir::data operator"" _RB(unsigned long long int);
 scifir::data operator"" _YB(unsigned long long int);
 scifir::data operator"" _ZB(unsigned long long int);
 scifir::data operator"" _EB(unsigned long long int);
@@ -234,6 +262,8 @@ scifir::data operator"" _MB(unsigned long long int);
 scifir::data operator"" _kB(unsigned long long int);
 scifir::data operator"" _B(unsigned long long int);
 
+scifir::length operator"" _Qm(long double);
+scifir::length operator"" _Rm(long double);
 scifir::length operator"" _Ym(long double);
 scifir::length operator"" _Zm(long double);
 scifir::length operator"" _Em(long double);
@@ -255,6 +285,8 @@ scifir::length operator"" _fm(long double);
 scifir::length operator"" _am(long double);
 scifir::length operator"" _zm(long double);
 scifir::length operator"" _ym(long double);
+scifir::length operator"" _rm(long double);
+scifir::length operator"" _qm(long double);
 
 scifir::time_duration operator"" _s(long double);
 scifir::time_duration operator"" _ms(long double);
@@ -265,7 +297,11 @@ scifir::time_duration operator"" _fs(long double);
 scifir::time_duration operator"" _as(long double);
 scifir::time_duration operator"" _zs(long double);
 scifir::time_duration operator"" _ys(long double);
+scifir::time_duration operator"" _rs(long double);
+scifir::time_duration operator"" _qs(long double);
 
+scifir::mass operator"" _Qg(long double);
+scifir::mass operator"" _Rg(long double);
 scifir::mass operator"" _Yg(long double);
 scifir::mass operator"" _Zg(long double);
 scifir::mass operator"" _Eg(long double);
@@ -287,7 +323,11 @@ scifir::mass operator"" _fg(long double);
 scifir::mass operator"" _ag(long double);
 scifir::mass operator"" _zg(long double);
 scifir::mass operator"" _yg(long double);
+scifir::mass operator"" _rg(long double);
+scifir::mass operator"" _qg(long double);
 
+scifir::charge operator"" _QC(long double);
+scifir::charge operator"" _RC(long double);
 scifir::charge operator"" _YC(long double);
 scifir::charge operator"" _ZC(long double);
 scifir::charge operator"" _EC(long double);
@@ -309,7 +349,11 @@ scifir::charge operator"" _fC(long double);
 scifir::charge operator"" _aC(long double);
 scifir::charge operator"" _zC(long double);
 scifir::charge operator"" _yC(long double);
+scifir::charge operator"" _rC(long double);
+scifir::charge operator"" _qC(long double);
 
+scifir::temperature operator"" _QK(long double);
+scifir::temperature operator"" _RK(long double);
 scifir::temperature operator"" _YK(long double);
 scifir::temperature operator"" _ZK(long double);
 scifir::temperature operator"" _EK(long double);
@@ -331,7 +375,11 @@ scifir::temperature operator"" _fK(long double);
 scifir::temperature operator"" _aK(long double);
 scifir::temperature operator"" _zK(long double);
 scifir::temperature operator"" _yK(long double);
+scifir::temperature operator"" _rK(long double);
+scifir::temperature operator"" _qK(long double);
 
+scifir::mole operator"" _Qmol(long double);
+scifir::mole operator"" _Rmol(long double);
 scifir::mole operator"" _Ymol(long double);
 scifir::mole operator"" _Zmol(long double);
 scifir::mole operator"" _Emol(long double);
@@ -353,7 +401,11 @@ scifir::mole operator"" _fmol(long double);
 scifir::mole operator"" _amol(long double);
 scifir::mole operator"" _zmol(long double);
 scifir::mole operator"" _ymol(long double);
+scifir::mole operator"" _rmol(long double);
+scifir::mole operator"" _qmol(long double);
 
+scifir::light_intensity operator"" _Qcd(long double);
+scifir::light_intensity operator"" _Rcd(long double);
 scifir::light_intensity operator"" _Ycd(long double);
 scifir::light_intensity operator"" _Zcd(long double);
 scifir::light_intensity operator"" _Ecd(long double);
@@ -375,7 +427,11 @@ scifir::light_intensity operator"" _fcd(long double);
 scifir::light_intensity operator"" _acd(long double);
 scifir::light_intensity operator"" _zcd(long double);
 scifir::light_intensity operator"" _ycd(long double);
+scifir::light_intensity operator"" _rcd(long double);
+scifir::light_intensity operator"" _qcd(long double);
 
+scifir::data operator"" _QB(long double);
+scifir::data operator"" _RB(long double);
 scifir::data operator"" _YB(long double);
 scifir::data operator"" _ZB(long double);
 scifir::data operator"" _EB(long double);
