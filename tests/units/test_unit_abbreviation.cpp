@@ -12,6 +12,8 @@ using namespace scifir;
 
 TEST_CASE("Abbreviation literals") {
 	SECTION("Abbreviation literals") {
+		CHECK(bool(100_QHz == "100 QHz"));
+		CHECK(bool(100_RHz == "100 RHz"));
 		CHECK(bool(100_YHz == "100 YHz"));
 		CHECK(bool(100_ZHz == "100 ZHz"));
 		CHECK(bool(100_EHz == "100 EHz"));
@@ -33,7 +35,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aHz == "100 aHz"));
 		CHECK(bool(100_zHz == "100 zHz"));
 		CHECK(bool(100_yHz == "100 yHz"));
+		CHECK(bool(100_rHz == "100 rHz"));
+		CHECK(bool(100_qHz == "100 qHz"));
 
+		CHECK(bool(100_QN == "100 QN"));
+		CHECK(bool(100_RN == "100 RN"));
 		CHECK(bool(100_YN == "100 YN"));
 		CHECK(bool(100_ZN == "100 ZN"));
 		CHECK(bool(100_EN == "100 EN"));
@@ -55,7 +61,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aN == "100 aN"));
 		CHECK(bool(100_zN == "100 zN"));
 		CHECK(bool(100_yN == "100 yN"));
+		CHECK(bool(100_rN == "100 rN"));
+		CHECK(bool(100_qN == "100 qN"));
 
+		CHECK(bool(100_QPa == "100 QPa"));
+		CHECK(bool(100_RPa == "100 RPa"));
 		CHECK(bool(100_YPa == "100 YPa"));
 		CHECK(bool(100_ZPa == "100 ZPa"));
 		CHECK(bool(100_EPa == "100 EPa"));
@@ -77,7 +87,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aPa == "100 aPa"));
 		CHECK(bool(100_zPa == "100 zPa"));
 		CHECK(bool(100_yPa == "100 yPa"));
+		CHECK(bool(100_rPa == "100 rPa"));
+		CHECK(bool(100_qPa == "100 qPa"));
 
+		CHECK(bool(100_QJ == "100 QJ"));
+		CHECK(bool(100_RJ == "100 RJ"));
 		CHECK(bool(100_YJ == "100 YJ"));
 		CHECK(bool(100_ZJ == "100 ZJ"));
 		CHECK(bool(100_EJ == "100 EJ"));
@@ -99,7 +113,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aJ == "100 aJ"));
 		CHECK(bool(100_zJ == "100 zJ"));
 		CHECK(bool(100_yJ == "100 yJ"));
+		CHECK(bool(100_rJ == "100 rJ"));
+		CHECK(bool(100_qJ == "100 qJ"));
 
+		CHECK(bool(100_QW == "100 QW"));
+		CHECK(bool(100_RW == "100 RW"));
 		CHECK(bool(100_YW == "100 YW"));
 		CHECK(bool(100_ZW == "100 ZW"));
 		CHECK(bool(100_EW == "100 EW"));
@@ -121,7 +139,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aW == "100 aW"));
 		CHECK(bool(100_zW == "100 zW"));
 		CHECK(bool(100_yW == "100 yW"));
+		CHECK(bool(100_rW == "100 rW"));
+		CHECK(bool(100_qW == "100 qW"));
 
+		CHECK(bool(100_QA == "100 QA"));
+		CHECK(bool(100_RA == "100 RA"));
 		CHECK(bool(100_YA == "100 YA"));
 		CHECK(bool(100_ZA == "100 ZA"));
 		CHECK(bool(100_EA == "100 EA"));
@@ -143,7 +165,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aA == "100 aA"));
 		CHECK(bool(100_zA == "100 zA"));
 		CHECK(bool(100_yA == "100 yA"));
+		CHECK(bool(100_rA == "100 rA"));
+		CHECK(bool(100_qA == "100 qA"));
 
+		CHECK(bool(100_QV == "100 QV"));
+		CHECK(bool(100_RV == "100 RV"));
 		CHECK(bool(100_YV == "100 YV"));
 		CHECK(bool(100_ZV == "100 ZV"));
 		CHECK(bool(100_EV == "100 EV"));
@@ -165,7 +191,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aV == "100 aV"));
 		CHECK(bool(100_zV == "100 zV"));
 		CHECK(bool(100_yV == "100 yV"));
+		CHECK(bool(100_rV == "100 rV"));
+		CHECK(bool(100_qV == "100 qV"));
 
+		CHECK(bool(100_QF == "100 QF"));
+		CHECK(bool(100_RF == "100 RF"));
 		CHECK(bool(100_YF == "100 YF"));
 		CHECK(bool(100_ZF == "100 ZF"));
 		CHECK(bool(100_EF == "100 EF"));
@@ -187,7 +217,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aF == "100 aF"));
 		CHECK(bool(100_zF == "100 zF"));
 		CHECK(bool(100_yF == "100 yF"));
+		CHECK(bool(100_rF == "100 rF"));
+		CHECK(bool(100_qF == "100 qF"));
 
+		CHECK(bool(100_QΩ == "100 QOhm"));
+		CHECK(bool(100_RΩ == "100 ROhm"));
 		CHECK(bool(100_YΩ == "100 YOhm"));
 		CHECK(bool(100_ZΩ == "100 ZOhm"));
 		CHECK(bool(100_EΩ == "100 EOhm"));
@@ -209,7 +243,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aΩ == "100 aOhm"));
 		CHECK(bool(100_zΩ == "100 zOhm"));
 		CHECK(bool(100_yΩ == "100 yOhm"));
+		CHECK(bool(100_rΩ == "100 rOhm"));
+		CHECK(bool(100_qΩ == "100 qOhm"));
 
+		CHECK(bool(100_QS == "100 QS"));
+		CHECK(bool(100_RS == "100 RS"));
 		CHECK(bool(100_YS == "100 YS"));
 		CHECK(bool(100_ZS == "100 ZS"));
 		CHECK(bool(100_ES == "100 ES"));
@@ -231,7 +269,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aS == "100 aS"));
 		CHECK(bool(100_zS == "100 zS"));
 		CHECK(bool(100_yS == "100 yS"));
+		CHECK(bool(100_rS == "100 rS"));
+		CHECK(bool(100_qS == "100 qS"));
 
+		CHECK(bool(100_QWb == "100 QWb"));
+		CHECK(bool(100_RWb == "100 RWb"));
 		CHECK(bool(100_YWb == "100 YWb"));
 		CHECK(bool(100_ZWb == "100 ZWb"));
 		CHECK(bool(100_EWb == "100 EWb"));
@@ -253,7 +295,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aWb == "100 aWb"));
 		CHECK(bool(100_zWb == "100 zWb"));
 		CHECK(bool(100_yWb == "100 yWb"));
+		CHECK(bool(100_rWb == "100 rWb"));
+		CHECK(bool(100_qWb == "100 qWb"));
 
+		CHECK(bool(100_QT == "100 QT"));
+		CHECK(bool(100_RT == "100 RT"));
 		CHECK(bool(100_YT == "100 YT"));
 		CHECK(bool(100_ZT == "100 ZT"));
 		CHECK(bool(100_ET == "100 ET"));
@@ -275,7 +321,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aT == "100 aT"));
 		CHECK(bool(100_zT == "100 zT"));
 		CHECK(bool(100_yT == "100 yT"));
+		CHECK(bool(100_rT == "100 rT"));
+		CHECK(bool(100_qT == "100 qT"));
 
+		CHECK(bool(100_QH == "100 QH"));
+		CHECK(bool(100_RH == "100 RH"));
 		CHECK(bool(100_YH == "100 YH"));
 		CHECK(bool(100_ZH == "100 ZH"));
 		CHECK(bool(100_EH == "100 EH"));
@@ -297,7 +347,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aH == "100 aH"));
 		CHECK(bool(100_zH == "100 zH"));
 		CHECK(bool(100_yH == "100 yH"));
+		CHECK(bool(100_rH == "100 rH"));
+		CHECK(bool(100_qH == "100 qH"));
 
+		CHECK(bool(100_Qlm == "100 Qlm"));
+		CHECK(bool(100_Rlm == "100 Rlm"));
 		CHECK(bool(100_Ylm == "100 Ylm"));
 		CHECK(bool(100_Zlm == "100 Zlm"));
 		CHECK(bool(100_Elm == "100 Elm"));
@@ -319,7 +373,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_alm == "100 alm"));
 		CHECK(bool(100_zlm == "100 zlm"));
 		CHECK(bool(100_ylm == "100 ylm"));
+		CHECK(bool(100_rlm == "100 rlm"));
+		CHECK(bool(100_qlm == "100 qlm"));
 
+		CHECK(bool(100_Qlx == "100 Qlx"));
+		CHECK(bool(100_Rlx == "100 Rlx"));
 		CHECK(bool(100_Ylx == "100 Ylx"));
 		CHECK(bool(100_Zlx == "100 Zlx"));
 		CHECK(bool(100_Elx == "100 Elx"));
@@ -341,7 +399,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_alx == "100 alx"));
 		CHECK(bool(100_zlx == "100 zlx"));
 		CHECK(bool(100_ylx == "100 ylx"));
+		CHECK(bool(100_rlx == "100 rlx"));
+		CHECK(bool(100_qlx == "100 qlx"));
 
+		CHECK(bool(100_QBq == "100 QBq"));
+		CHECK(bool(100_RBq == "100 RBq"));
 		CHECK(bool(100_YBq == "100 YBq"));
 		CHECK(bool(100_ZBq == "100 ZBq"));
 		CHECK(bool(100_EBq == "100 EBq"));
@@ -363,7 +425,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aBq == "100 aBq"));
 		CHECK(bool(100_zBq == "100 zBq"));
 		CHECK(bool(100_yBq == "100 yBq"));
+		CHECK(bool(100_rBq == "100 rBq"));
+		CHECK(bool(100_qBq == "100 qBq"));
 
+		CHECK(bool(100_QGy == "100 QGy"));
+		CHECK(bool(100_RGy == "100 RGy"));
 		CHECK(bool(100_YGy == "100 YGy"));
 		CHECK(bool(100_ZGy == "100 ZGy"));
 		CHECK(bool(100_EGy == "100 EGy"));
@@ -385,7 +451,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aGy == "100 aGy"));
 		CHECK(bool(100_zGy == "100 zGy"));
 		CHECK(bool(100_yGy == "100 yGy"));
+		CHECK(bool(100_rGy == "100 rGy"));
+		CHECK(bool(100_qGy == "100 qGy"));
 
+		CHECK(bool(100_QSv == "100 QSv"));
+		CHECK(bool(100_RSv == "100 RSv"));
 		CHECK(bool(100_YSv == "100 YSv"));
 		CHECK(bool(100_ZSv == "100 ZSv"));
 		CHECK(bool(100_ESv == "100 ESv"));
@@ -407,7 +477,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aSv == "100 aSv"));
 		CHECK(bool(100_zSv == "100 zSv"));
 		CHECK(bool(100_ySv == "100 ySv"));
+		CHECK(bool(100_rSv == "100 rSv"));
+		CHECK(bool(100_qSv == "100 qSv"));
 
+		CHECK(bool(100_Qkat == "100 Qkat"));
+		CHECK(bool(100_Rkat == "100 Rkat"));
 		CHECK(bool(100_Ykat == "100 Ykat"));
 		CHECK(bool(100_Zkat == "100 Zkat"));
 		CHECK(bool(100_Ekat == "100 Ekat"));
@@ -429,9 +503,13 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_akat == "100 akat"));
 		CHECK(bool(100_zkat == "100 zkat"));
 		CHECK(bool(100_ykat == "100 ykat"));
+		CHECK(bool(100_rkat == "100 rkat"));
+		CHECK(bool(100_qkat == "100 qkat"));
 
 		CHECK(bool(100_Å == "100 angstrom"));
 
+		CHECK(bool(100_QL == "100 QL"));
+		CHECK(bool(100_RL == "100 RL"));
 		CHECK(bool(100_YL == "100 YL"));
 		CHECK(bool(100_ZL == "100 ZL"));
 		CHECK(bool(100_EL == "100 EL"));
@@ -453,11 +531,15 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aL == "100 aL"));
 		CHECK(bool(100_zL == "100 zL"));
 		CHECK(bool(100_yL == "100 yL"));
+		CHECK(bool(100_rL == "100 rL"));
+		CHECK(bool(100_qL == "100 qL"));
 
 		CHECK(bool(100_min == "100 min"));
 		CHECK(bool(100_hour == "100 hour"));
 		CHECK(bool(100_day == "100 day"));
 
+		CHECK(bool(100_QAU == "100 QAU"));
+		CHECK(bool(100_RAU == "100 RAU"));
 		CHECK(bool(100_YAU == "100 YAU"));
 		CHECK(bool(100_ZAU == "100 ZAU"));
 		CHECK(bool(100_EAU == "100 EAU"));
@@ -479,7 +561,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aAU == "100 aAU"));
 		CHECK(bool(100_zAU == "100 zAU"));
 		CHECK(bool(100_yAU == "100 yAU"));
+		CHECK(bool(100_rAU == "100 rAU"));
+		CHECK(bool(100_qAU == "100 qAU"));
 
+		CHECK(bool(100_Qpc == "100 Qpc"));
+		CHECK(bool(100_Rpc == "100 Rpc"));
 		CHECK(bool(100_Ypc == "100 Ypc"));
 		CHECK(bool(100_Zpc == "100 Zpc"));
 		CHECK(bool(100_Epc == "100 Epc"));
@@ -501,7 +587,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_apc == "100 apc"));
 		CHECK(bool(100_zpc == "100 zpc"));
 		CHECK(bool(100_ypc == "100 ypc"));
+		CHECK(bool(100_rpc == "100 rpc"));
+		CHECK(bool(100_qpc == "100 qpc"));
 
+		CHECK(bool(100_QeV == "100 QeV"));
+		CHECK(bool(100_ReV == "100 ReV"));
 		CHECK(bool(100_YeV == "100 YeV"));
 		CHECK(bool(100_ZeV == "100 ZeV"));
 		CHECK(bool(100_EeV == "100 EeV"));
@@ -523,11 +613,15 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aeV == "100 aeV"));
 		CHECK(bool(100_zeV == "100 zeV"));
 		CHECK(bool(100_yeV == "100 yeV"));
+		CHECK(bool(100_reV == "100 reV"));
+		CHECK(bool(100_qeV == "100 qeV"));
 
 		CHECK(bool(100_Da == "100 Da"));
 
 		CHECK(bool(100_amu == "100 amu"));
 
+		CHECK(bool(100_Qbarn == "100 Qbarn"));
+		CHECK(bool(100_Rbarn == "100 Rbarn"));
 		CHECK(bool(100_Ybarn == "100 Ybarn"));
 		CHECK(bool(100_Zbarn == "100 Zbarn"));
 		CHECK(bool(100_Ebarn == "100 Ebarn"));
@@ -549,7 +643,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_abarn == "100 abarn"));
 		CHECK(bool(100_zbarn == "100 zbarn"));
 		CHECK(bool(100_ybarn == "100 ybarn"));
+		CHECK(bool(100_rbarn == "100 rbarn"));
+		CHECK(bool(100_qbarn == "100 qbarn"));
 
+		CHECK(bool(100_QM == "100 QM"));
+		CHECK(bool(100_RM == "100 RM"));
 		CHECK(bool(100_YM == "100 YM"));
 		CHECK(bool(100_ZM == "100 ZM"));
 		CHECK(bool(100_EM == "100 EM"));
@@ -571,6 +669,8 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_aM == "100 aM"));
 		CHECK(bool(100_zM == "100 zM"));
 		CHECK(bool(100_yM == "100 yM"));
+		CHECK(bool(100_rM == "100 rM"));
+		CHECK(bool(100_qM == "100 qM"));
 
 		CHECK(bool(100_memo == "100 memo"));
 		CHECK(bool(100_degree == "100°"));
@@ -583,6 +683,8 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_ppq == "100 ppq"));*/
 		CHECK(bool(100_px == "100 px"));
 
+		CHECK(bool(100.0_QHz == "100 QHz"));
+		CHECK(bool(100.0_RHz == "100 RHz"));
 		CHECK(bool(100.0_YHz == "100 YHz"));
 		CHECK(bool(100.0_ZHz == "100 ZHz"));
 		CHECK(bool(100.0_EHz == "100 EHz"));
@@ -604,7 +706,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aHz == "100 aHz"));
 		CHECK(bool(100.0_zHz == "100 zHz"));
 		CHECK(bool(100.0_yHz == "100 yHz"));
+		CHECK(bool(100.0_rHz == "100 rHz"));
+		CHECK(bool(100.0_qHz == "100 qHz"));
 
+		CHECK(bool(100.0_QN == "100 QN"));
+		CHECK(bool(100.0_RN == "100 RN"));
 		CHECK(bool(100.0_YN == "100 YN"));
 		CHECK(bool(100.0_ZN == "100 ZN"));
 		CHECK(bool(100.0_EN == "100 EN"));
@@ -626,7 +732,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aN == "100 aN"));
 		CHECK(bool(100.0_zN == "100 zN"));
 		CHECK(bool(100.0_yN == "100 yN"));
+		CHECK(bool(100.0_rN == "100 rN"));
+		CHECK(bool(100.0_qN == "100 qN"));
 
+		CHECK(bool(100.0_QPa == "100 QPa"));
+		CHECK(bool(100.0_RPa == "100 RPa"));
 		CHECK(bool(100.0_YPa == "100 YPa"));
 		CHECK(bool(100.0_ZPa == "100 ZPa"));
 		CHECK(bool(100.0_EPa == "100 EPa"));
@@ -648,7 +758,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aPa == "100 aPa"));
 		CHECK(bool(100.0_zPa == "100 zPa"));
 		CHECK(bool(100.0_yPa == "100 yPa"));
+		CHECK(bool(100.0_rPa == "100 rPa"));
+		CHECK(bool(100.0_qPa == "100 qPa"));
 
+		CHECK(bool(100.0_QJ == "100 QJ"));
+		CHECK(bool(100.0_RJ == "100 RJ"));
 		CHECK(bool(100.0_YJ == "100 YJ"));
 		CHECK(bool(100.0_ZJ == "100 ZJ"));
 		CHECK(bool(100.0_EJ == "100 EJ"));
@@ -670,7 +784,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aJ == "100 aJ"));
 		CHECK(bool(100.0_zJ == "100 zJ"));
 		CHECK(bool(100.0_yJ == "100 yJ"));
+		CHECK(bool(100.0_rJ == "100 rJ"));
+		CHECK(bool(100.0_qJ == "100 qJ"));
 
+		CHECK(bool(100.0_QW == "100 QW"));
+		CHECK(bool(100.0_RW == "100 RW"));
 		CHECK(bool(100.0_YW == "100 YW"));
 		CHECK(bool(100.0_ZW == "100 ZW"));
 		CHECK(bool(100.0_EW == "100 EW"));
@@ -692,7 +810,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aW == "100 aW"));
 		CHECK(bool(100.0_zW == "100 zW"));
 		CHECK(bool(100.0_yW == "100 yW"));
+		CHECK(bool(100.0_rW == "100 rW"));
+		CHECK(bool(100.0_qW == "100 qW"));
 
+		CHECK(bool(100.0_QA == "100 QA"));
+		CHECK(bool(100.0_RA == "100 RA"));
 		CHECK(bool(100.0_YA == "100 YA"));
 		CHECK(bool(100.0_ZA == "100 ZA"));
 		CHECK(bool(100.0_EA == "100 EA"));
@@ -714,7 +836,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aA == "100 aA"));
 		CHECK(bool(100.0_zA == "100 zA"));
 		CHECK(bool(100.0_yA == "100 yA"));
+		CHECK(bool(100.0_rA == "100 rA"));
+		CHECK(bool(100.0_qA == "100 qA"));
 
+		CHECK(bool(100.0_QV == "100 QV"));
+		CHECK(bool(100.0_RV == "100 RV"));
 		CHECK(bool(100.0_YV == "100 YV"));
 		CHECK(bool(100.0_ZV == "100 ZV"));
 		CHECK(bool(100.0_EV == "100 EV"));
@@ -736,7 +862,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aV == "100 aV"));
 		CHECK(bool(100.0_zV == "100 zV"));
 		CHECK(bool(100.0_yV == "100 yV"));
+		CHECK(bool(100.0_rV == "100 rV"));
+		CHECK(bool(100.0_qV == "100 qV"));
 
+		CHECK(bool(100.0_QF == "100 QF"));
+		CHECK(bool(100.0_RF == "100 RF"));
 		CHECK(bool(100.0_YF == "100 YF"));
 		CHECK(bool(100.0_ZF == "100 ZF"));
 		CHECK(bool(100.0_EF == "100 EF"));
@@ -758,7 +888,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aF == "100 aF"));
 		CHECK(bool(100.0_zF == "100 zF"));
 		CHECK(bool(100.0_yF == "100 yF"));
+		CHECK(bool(100.0_rF == "100 rF"));
+		CHECK(bool(100.0_qF == "100 qF"));
 
+		CHECK(bool(100.0_QΩ == "100 QOhm"));
+		CHECK(bool(100.0_RΩ == "100 ROhm"));
 		CHECK(bool(100.0_YΩ == "100 YOhm"));
 		CHECK(bool(100.0_ZΩ == "100 ZOhm"));
 		CHECK(bool(100.0_EΩ == "100 EOhm"));
@@ -780,7 +914,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aΩ == "100 aOhm"));
 		CHECK(bool(100.0_zΩ == "100 zOhm"));
 		CHECK(bool(100.0_yΩ == "100 yOhm"));
+		CHECK(bool(100.0_rΩ == "100 rOhm"));
+		CHECK(bool(100.0_qΩ == "100 qOhm"));
 
+		CHECK(bool(100.0_QS == "100 QS"));
+		CHECK(bool(100.0_RS == "100 RS"));
 		CHECK(bool(100.0_YS == "100 YS"));
 		CHECK(bool(100.0_ZS == "100 ZS"));
 		CHECK(bool(100.0_ES == "100 ES"));
@@ -802,7 +940,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aS == "100 aS"));
 		CHECK(bool(100.0_zS == "100 zS"));
 		CHECK(bool(100.0_yS == "100 yS"));
+		CHECK(bool(100.0_rS == "100 rS"));
+		CHECK(bool(100.0_qS == "100 qS"));
 
+		CHECK(bool(100.0_QWb == "100 QWb"));
+		CHECK(bool(100.0_RWb == "100 RWb"));
 		CHECK(bool(100.0_YWb == "100 YWb"));
 		CHECK(bool(100.0_ZWb == "100 ZWb"));
 		CHECK(bool(100.0_EWb == "100 EWb"));
@@ -824,7 +966,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aWb == "100 aWb"));
 		CHECK(bool(100.0_zWb == "100 zWb"));
 		CHECK(bool(100.0_yWb == "100 yWb"));
+		CHECK(bool(100.0_rWb == "100 rWb"));
+		CHECK(bool(100.0_qWb == "100 qWb"));
 
+		CHECK(bool(100.0_QT == "100 QT"));
+		CHECK(bool(100.0_RT == "100 RT"));
 		CHECK(bool(100.0_YT == "100 YT"));
 		CHECK(bool(100.0_ZT == "100 ZT"));
 		CHECK(bool(100.0_ET == "100 ET"));
@@ -846,7 +992,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aT == "100 aT"));
 		CHECK(bool(100.0_zT == "100 zT"));
 		CHECK(bool(100.0_yT == "100 yT"));
+		CHECK(bool(100.0_rT == "100 rT"));
+		CHECK(bool(100.0_qT == "100 qT"));
 
+		CHECK(bool(100.0_QH == "100 QH"));
+		CHECK(bool(100.0_RH == "100 RH"));
 		CHECK(bool(100.0_YH == "100 YH"));
 		CHECK(bool(100.0_ZH == "100 ZH"));
 		CHECK(bool(100.0_EH == "100 EH"));
@@ -868,7 +1018,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aH == "100 aH"));
 		CHECK(bool(100.0_zH == "100 zH"));
 		CHECK(bool(100.0_yH == "100 yH"));
+		CHECK(bool(100.0_rH == "100 rH"));
+		CHECK(bool(100.0_qH == "100 qH"));
 
+		CHECK(bool(100.0_Qlm == "100 Qlm"));
+		CHECK(bool(100.0_Rlm == "100 Rlm"));
 		CHECK(bool(100.0_Ylm == "100 Ylm"));
 		CHECK(bool(100.0_Zlm == "100 Zlm"));
 		CHECK(bool(100.0_Elm == "100 Elm"));
@@ -890,7 +1044,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_alm == "100 alm"));
 		CHECK(bool(100.0_zlm == "100 zlm"));
 		CHECK(bool(100.0_ylm == "100 ylm"));
+		CHECK(bool(100.0_rlm == "100 rlm"));
+		CHECK(bool(100.0_qlm == "100 qlm"));
 
+		CHECK(bool(100.0_Qlx == "100 Qlx"));
+		CHECK(bool(100.0_Rlx == "100 Rlx"));
 		CHECK(bool(100.0_Ylx == "100 Ylx"));
 		CHECK(bool(100.0_Zlx == "100 Zlx"));
 		CHECK(bool(100.0_Elx == "100 Elx"));
@@ -912,7 +1070,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_alx == "100 alx"));
 		CHECK(bool(100.0_zlx == "100 zlx"));
 		CHECK(bool(100.0_ylx == "100 ylx"));
+		CHECK(bool(100.0_rlx == "100 rlx"));
+		CHECK(bool(100.0_qlx == "100 qlx"));
 
+		CHECK(bool(100.0_QBq == "100 QBq"));
+		CHECK(bool(100.0_RBq == "100 RBq"));
 		CHECK(bool(100.0_YBq == "100 YBq"));
 		CHECK(bool(100.0_ZBq == "100 ZBq"));
 		CHECK(bool(100.0_EBq == "100 EBq"));
@@ -934,7 +1096,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aBq == "100 aBq"));
 		CHECK(bool(100.0_zBq == "100 zBq"));
 		CHECK(bool(100.0_yBq == "100 yBq"));
+		CHECK(bool(100.0_rBq == "100 rBq"));
+		CHECK(bool(100.0_qBq == "100 qBq"));
 
+		CHECK(bool(100.0_QGy == "100 QGy"));
+		CHECK(bool(100.0_RGy == "100 RGy"));
 		CHECK(bool(100.0_YGy == "100 YGy"));
 		CHECK(bool(100.0_ZGy == "100 ZGy"));
 		CHECK(bool(100.0_EGy == "100 EGy"));
@@ -956,7 +1122,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aGy == "100 aGy"));
 		CHECK(bool(100.0_zGy == "100 zGy"));
 		CHECK(bool(100.0_yGy == "100 yGy"));
+		CHECK(bool(100.0_rGy == "100 rGy"));
+		CHECK(bool(100.0_qGy == "100 qGy"));
 
+		CHECK(bool(100.0_QSv == "100 QSv"));
+		CHECK(bool(100.0_RSv == "100 RSv"));
 		CHECK(bool(100.0_YSv == "100 YSv"));
 		CHECK(bool(100.0_ZSv == "100 ZSv"));
 		CHECK(bool(100.0_ESv == "100 ESv"));
@@ -978,7 +1148,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aSv == "100 aSv"));
 		CHECK(bool(100.0_zSv == "100 zSv"));
 		CHECK(bool(100.0_ySv == "100 ySv"));
+		CHECK(bool(100.0_rSv == "100 rSv"));
+		CHECK(bool(100.0_qSv == "100 qSv"));
 
+		CHECK(bool(100.0_Qkat == "100 Qkat"));
+		CHECK(bool(100.0_Rkat == "100 Rkat"));
 		CHECK(bool(100.0_Ykat == "100 Ykat"));
 		CHECK(bool(100.0_Zkat == "100 Zkat"));
 		CHECK(bool(100.0_Ekat == "100 Ekat"));
@@ -1000,9 +1174,13 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_akat == "100 akat"));
 		CHECK(bool(100.0_zkat == "100 zkat"));
 		CHECK(bool(100.0_ykat == "100 ykat"));
+		CHECK(bool(100.0_rkat == "100 rkat"));
+		CHECK(bool(100.0_qkat == "100 qkat"));
 
 		CHECK(bool(100.0_Å == "100 angstrom"));
 
+		CHECK(bool(100.0_QL == "100 QL"));
+		CHECK(bool(100.0_RL == "100 RL"));
 		CHECK(bool(100.0_YL == "100 YL"));
 		CHECK(bool(100.0_ZL == "100 ZL"));
 		CHECK(bool(100.0_EL == "100 EL"));
@@ -1024,11 +1202,15 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aL == "100 aL"));
 		CHECK(bool(100.0_zL == "100 zL"));
 		CHECK(bool(100.0_yL == "100 yL"));
+		CHECK(bool(100.0_rL == "100 rL"));
+		CHECK(bool(100.0_qL == "100 qL"));
 
 		CHECK(bool(100.0_min == "100 min"));
 		CHECK(bool(100.0_hour == "100 hour"));
 		CHECK(bool(100.0_day == "100 day"));
 
+		CHECK(bool(100.0_QAU == "100 QAU"));
+		CHECK(bool(100.0_RAU == "100 RAU"));
 		CHECK(bool(100.0_YAU == "100 YAU"));
 		CHECK(bool(100.0_ZAU == "100 ZAU"));
 		CHECK(bool(100.0_EAU == "100 EAU"));
@@ -1050,7 +1232,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aAU == "100 aAU"));
 		CHECK(bool(100.0_zAU == "100 zAU"));
 		CHECK(bool(100.0_yAU == "100 yAU"));
+		CHECK(bool(100.0_rAU == "100 rAU"));
+		CHECK(bool(100.0_qAU == "100 qAU"));
 
+		CHECK(bool(100.0_Qpc == "100 Qpc"));
+		CHECK(bool(100.0_Rpc == "100 Rpc"));
 		CHECK(bool(100.0_Ypc == "100 Ypc"));
 		CHECK(bool(100.0_Zpc == "100 Zpc"));
 		CHECK(bool(100.0_Epc == "100 Epc"));
@@ -1072,7 +1258,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_apc == "100 apc"));
 		CHECK(bool(100.0_zpc == "100 zpc"));
 		CHECK(bool(100.0_ypc == "100 ypc"));
+		CHECK(bool(100.0_rpc == "100 rpc"));
+		CHECK(bool(100.0_qpc == "100 qpc"));
 
+		CHECK(bool(100.0_QeV == "100 QeV"));
+		CHECK(bool(100.0_ReV == "100 ReV"));
 		CHECK(bool(100.0_YeV == "100 YeV"));
 		CHECK(bool(100.0_ZeV == "100 ZeV"));
 		CHECK(bool(100.0_EeV == "100 EeV"));
@@ -1094,11 +1284,15 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aeV == "100 aeV"));
 		CHECK(bool(100.0_zeV == "100 zeV"));
 		CHECK(bool(100.0_yeV == "100 yeV"));
+		CHECK(bool(100.0_reV == "100 reV"));
+		CHECK(bool(100.0_qeV == "100 qeV"));
 
 		CHECK(bool(100.0_Da == "100 Da"));
 
 		CHECK(bool(100.0_amu == "100 amu"));
 
+		CHECK(bool(100.0_Qbarn == "100 Qbarn"));
+		CHECK(bool(100.0_Rbarn == "100 Rbarn"));
 		CHECK(bool(100.0_Ybarn == "100 Ybarn"));
 		CHECK(bool(100.0_Zbarn == "100 Zbarn"));
 		CHECK(bool(100.0_Ebarn == "100 Ebarn"));
@@ -1120,7 +1314,11 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_abarn == "100 abarn"));
 		CHECK(bool(100.0_zbarn == "100 zbarn"));
 		CHECK(bool(100.0_ybarn == "100 ybarn"));
+		CHECK(bool(100.0_rbarn == "100 rbarn"));
+		CHECK(bool(100.0_qbarn == "100 qbarn"));
 
+		CHECK(bool(100.0_QM == "100 QM"));
+		CHECK(bool(100.0_RM == "100 RM"));
 		CHECK(bool(100.0_YM == "100 YM"));
 		CHECK(bool(100.0_ZM == "100 ZM"));
 		CHECK(bool(100.0_EM == "100 EM"));
@@ -1142,6 +1340,8 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_aM == "100 aM"));
 		CHECK(bool(100.0_zM == "100 zM"));
 		CHECK(bool(100.0_yM == "100 yM"));
+		CHECK(bool(100.0_rM == "100 rM"));
+		CHECK(bool(100.0_qM == "100 qM"));
 
 		CHECK(bool(100.0_memo == "100 memo"));
 		CHECK(bool(100.0_degree == "100°"));

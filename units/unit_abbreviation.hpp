@@ -13,6 +13,8 @@
 #include "../special_units/percentage.hpp"
 #include "../special_units/pixel.hpp"
 
+scifir::frequency operator"" _QHz(unsigned long long int);
+scifir::frequency operator"" _RHz(unsigned long long int);
 scifir::frequency operator"" _YHz(unsigned long long int);
 scifir::frequency operator"" _ZHz(unsigned long long int);
 scifir::frequency operator"" _EHz(unsigned long long int);
@@ -34,7 +36,11 @@ scifir::frequency operator"" _fHz(unsigned long long int);
 scifir::frequency operator"" _aHz(unsigned long long int);
 scifir::frequency operator"" _zHz(unsigned long long int);
 scifir::frequency operator"" _yHz(unsigned long long int);
+scifir::frequency operator"" _rHz(unsigned long long int);
+scifir::frequency operator"" _qHz(unsigned long long int);
 
+scifir::force operator"" _QN(unsigned long long int);
+scifir::force operator"" _RN(unsigned long long int);
 scifir::force operator"" _YN(unsigned long long int);
 scifir::force operator"" _ZN(unsigned long long int);
 scifir::force operator"" _EN(unsigned long long int);
@@ -56,7 +62,11 @@ scifir::force operator"" _fN(unsigned long long int);
 scifir::force operator"" _aN(unsigned long long int);
 scifir::force operator"" _zN(unsigned long long int);
 scifir::force operator"" _yN(unsigned long long int);
+scifir::force operator"" _rN(unsigned long long int);
+scifir::force operator"" _qN(unsigned long long int);
 
+scifir::pressure operator"" _QPa(unsigned long long int);
+scifir::pressure operator"" _RPa(unsigned long long int);
 scifir::pressure operator"" _YPa(unsigned long long int);
 scifir::pressure operator"" _ZPa(unsigned long long int);
 scifir::pressure operator"" _EPa(unsigned long long int);
@@ -78,7 +88,11 @@ scifir::pressure operator"" _fPa(unsigned long long int);
 scifir::pressure operator"" _aPa(unsigned long long int);
 scifir::pressure operator"" _zPa(unsigned long long int);
 scifir::pressure operator"" _yPa(unsigned long long int);
+scifir::pressure operator"" _rPa(unsigned long long int);
+scifir::pressure operator"" _qPa(unsigned long long int);
 
+scifir::energy operator"" _QJ(unsigned long long int);
+scifir::energy operator"" _RJ(unsigned long long int);
 scifir::energy operator"" _YJ(unsigned long long int);
 scifir::energy operator"" _ZJ(unsigned long long int);
 scifir::energy operator"" _EJ(unsigned long long int);
@@ -100,7 +114,11 @@ scifir::energy operator"" _fJ(unsigned long long int);
 scifir::energy operator"" _aJ(unsigned long long int);
 scifir::energy operator"" _zJ(unsigned long long int);
 scifir::energy operator"" _yJ(unsigned long long int);
+scifir::energy operator"" _rJ(unsigned long long int);
+scifir::energy operator"" _qJ(unsigned long long int);
 
+scifir::power operator"" _QW(unsigned long long int);
+scifir::power operator"" _RW(unsigned long long int);
 scifir::power operator"" _YW(unsigned long long int);
 scifir::power operator"" _ZW(unsigned long long int);
 scifir::power operator"" _EW(unsigned long long int);
@@ -122,7 +140,11 @@ scifir::power operator"" _fW(unsigned long long int);
 scifir::power operator"" _aW(unsigned long long int);
 scifir::power operator"" _zW(unsigned long long int);
 scifir::power operator"" _yW(unsigned long long int);
+scifir::power operator"" _rW(unsigned long long int);
+scifir::power operator"" _qW(unsigned long long int);
 
+scifir::electric_current operator"" _QA(unsigned long long int);
+scifir::electric_current operator"" _RA(unsigned long long int);
 scifir::electric_current operator"" _YA(unsigned long long int);
 scifir::electric_current operator"" _ZA(unsigned long long int);
 scifir::electric_current operator"" _EA(unsigned long long int);
@@ -144,7 +166,11 @@ scifir::electric_current operator"" _fA(unsigned long long int);
 scifir::electric_current operator"" _aA(unsigned long long int);
 scifir::electric_current operator"" _zA(unsigned long long int);
 scifir::electric_current operator"" _yA(unsigned long long int);
+scifir::electric_current operator"" _rA(unsigned long long int);
+scifir::electric_current operator"" _qA(unsigned long long int);
 
+scifir::voltage operator"" _QV(unsigned long long int);
+scifir::voltage operator"" _RV(unsigned long long int);
 scifir::voltage operator"" _YV(unsigned long long int);
 scifir::voltage operator"" _ZV(unsigned long long int);
 scifir::voltage operator"" _EV(unsigned long long int);
@@ -166,7 +192,11 @@ scifir::voltage operator"" _fV(unsigned long long int);
 scifir::voltage operator"" _aV(unsigned long long int);
 scifir::voltage operator"" _zV(unsigned long long int);
 scifir::voltage operator"" _yV(unsigned long long int);
+scifir::voltage operator"" _rV(unsigned long long int);
+scifir::voltage operator"" _qV(unsigned long long int);
 
+scifir::capacitance operator"" _QF(unsigned long long int);
+scifir::capacitance operator"" _RF(unsigned long long int);
 scifir::capacitance operator"" _YF(unsigned long long int);
 scifir::capacitance operator"" _ZF(unsigned long long int);
 scifir::capacitance operator"" _EF(unsigned long long int);
@@ -188,7 +218,11 @@ scifir::capacitance operator"" _fF(unsigned long long int);
 scifir::capacitance operator"" _aF(unsigned long long int);
 scifir::capacitance operator"" _zF(unsigned long long int);
 scifir::capacitance operator"" _yF(unsigned long long int);
+scifir::capacitance operator"" _rF(unsigned long long int);
+scifir::capacitance operator"" _qF(unsigned long long int);
 
+scifir::resistance operator"" _QΩ(unsigned long long int);
+scifir::resistance operator"" _RΩ(unsigned long long int);
 scifir::resistance operator"" _YΩ(unsigned long long int);
 scifir::resistance operator"" _ZΩ(unsigned long long int);
 scifir::resistance operator"" _EΩ(unsigned long long int);
@@ -210,7 +244,11 @@ scifir::resistance operator"" _fΩ(unsigned long long int);
 scifir::resistance operator"" _aΩ(unsigned long long int);
 scifir::resistance operator"" _zΩ(unsigned long long int);
 scifir::resistance operator"" _yΩ(unsigned long long int);
+scifir::resistance operator"" _rΩ(unsigned long long int);
+scifir::resistance operator"" _qΩ(unsigned long long int);
 
+scifir::electric_conductance operator"" _QS(unsigned long long int);
+scifir::electric_conductance operator"" _RS(unsigned long long int);
 scifir::electric_conductance operator"" _YS(unsigned long long int);
 scifir::electric_conductance operator"" _ZS(unsigned long long int);
 scifir::electric_conductance operator"" _ES(unsigned long long int);
@@ -232,7 +270,11 @@ scifir::electric_conductance operator"" _fS(unsigned long long int);
 scifir::electric_conductance operator"" _aS(unsigned long long int);
 scifir::electric_conductance operator"" _zS(unsigned long long int);
 scifir::electric_conductance operator"" _yS(unsigned long long int);
+scifir::electric_conductance operator"" _rS(unsigned long long int);
+scifir::electric_conductance operator"" _qS(unsigned long long int);
 
+scifir::magnetic_flux operator"" _QWb(unsigned long long int);
+scifir::magnetic_flux operator"" _RWb(unsigned long long int);
 scifir::magnetic_flux operator"" _YWb(unsigned long long int);
 scifir::magnetic_flux operator"" _ZWb(unsigned long long int);
 scifir::magnetic_flux operator"" _EWb(unsigned long long int);
@@ -254,7 +296,11 @@ scifir::magnetic_flux operator"" _fWb(unsigned long long int);
 scifir::magnetic_flux operator"" _aWb(unsigned long long int);
 scifir::magnetic_flux operator"" _zWb(unsigned long long int);
 scifir::magnetic_flux operator"" _yWb(unsigned long long int);
+scifir::magnetic_flux operator"" _rWb(unsigned long long int);
+scifir::magnetic_flux operator"" _qWb(unsigned long long int);
 
+scifir::magnetic_strength operator"" _QT(unsigned long long int);
+scifir::magnetic_strength operator"" _RT(unsigned long long int);
 scifir::magnetic_strength operator"" _YT(unsigned long long int);
 scifir::magnetic_strength operator"" _ZT(unsigned long long int);
 scifir::magnetic_strength operator"" _ET(unsigned long long int);
@@ -276,7 +322,11 @@ scifir::magnetic_strength operator"" _fT(unsigned long long int);
 scifir::magnetic_strength operator"" _aT(unsigned long long int);
 scifir::magnetic_strength operator"" _zT(unsigned long long int);
 scifir::magnetic_strength operator"" _yT(unsigned long long int);
+scifir::magnetic_strength operator"" _rT(unsigned long long int);
+scifir::magnetic_strength operator"" _qT(unsigned long long int);
 
+scifir::inductance operator"" _QH(unsigned long long int);
+scifir::inductance operator"" _RH(unsigned long long int);
 scifir::inductance operator"" _YH(unsigned long long int);
 scifir::inductance operator"" _ZH(unsigned long long int);
 scifir::inductance operator"" _EH(unsigned long long int);
@@ -298,7 +348,11 @@ scifir::inductance operator"" _fH(unsigned long long int);
 scifir::inductance operator"" _aH(unsigned long long int);
 scifir::inductance operator"" _zH(unsigned long long int);
 scifir::inductance operator"" _yH(unsigned long long int);
+scifir::inductance operator"" _rH(unsigned long long int);
+scifir::inductance operator"" _qH(unsigned long long int);
 
+scifir::luminous_flux operator"" _Qlm(unsigned long long int);
+scifir::luminous_flux operator"" _Rlm(unsigned long long int);
 scifir::luminous_flux operator"" _Ylm(unsigned long long int);
 scifir::luminous_flux operator"" _Zlm(unsigned long long int);
 scifir::luminous_flux operator"" _Elm(unsigned long long int);
@@ -320,7 +374,11 @@ scifir::luminous_flux operator"" _flm(unsigned long long int);
 scifir::luminous_flux operator"" _alm(unsigned long long int);
 scifir::luminous_flux operator"" _zlm(unsigned long long int);
 scifir::luminous_flux operator"" _ylm(unsigned long long int);
+scifir::luminous_flux operator"" _rlm(unsigned long long int);
+scifir::luminous_flux operator"" _qlm(unsigned long long int);
 
+scifir::illuminance operator"" _Qlx(unsigned long long int);
+scifir::illuminance operator"" _Rlx(unsigned long long int);
 scifir::illuminance operator"" _Ylx(unsigned long long int);
 scifir::illuminance operator"" _Zlx(unsigned long long int);
 scifir::illuminance operator"" _Elx(unsigned long long int);
@@ -342,7 +400,11 @@ scifir::illuminance operator"" _flx(unsigned long long int);
 scifir::illuminance operator"" _alx(unsigned long long int);
 scifir::illuminance operator"" _zlx(unsigned long long int);
 scifir::illuminance operator"" _ylx(unsigned long long int);
+scifir::illuminance operator"" _rlx(unsigned long long int);
+scifir::illuminance operator"" _qlx(unsigned long long int);
 
+scifir::radioactivity operator"" _QBq(unsigned long long int);
+scifir::radioactivity operator"" _RBq(unsigned long long int);
 scifir::radioactivity operator"" _YBq(unsigned long long int);
 scifir::radioactivity operator"" _ZBq(unsigned long long int);
 scifir::radioactivity operator"" _EBq(unsigned long long int);
@@ -364,7 +426,11 @@ scifir::radioactivity operator"" _fBq(unsigned long long int);
 scifir::radioactivity operator"" _aBq(unsigned long long int);
 scifir::radioactivity operator"" _zBq(unsigned long long int);
 scifir::radioactivity operator"" _yBq(unsigned long long int);
+scifir::radioactivity operator"" _rBq(unsigned long long int);
+scifir::radioactivity operator"" _qBq(unsigned long long int);
 
+scifir::ionizing_radiation operator"" _QGy(unsigned long long int);
+scifir::ionizing_radiation operator"" _RGy(unsigned long long int);
 scifir::ionizing_radiation operator"" _YGy(unsigned long long int);
 scifir::ionizing_radiation operator"" _ZGy(unsigned long long int);
 scifir::ionizing_radiation operator"" _EGy(unsigned long long int);
@@ -386,7 +452,11 @@ scifir::ionizing_radiation operator"" _fGy(unsigned long long int);
 scifir::ionizing_radiation operator"" _aGy(unsigned long long int);
 scifir::ionizing_radiation operator"" _zGy(unsigned long long int);
 scifir::ionizing_radiation operator"" _yGy(unsigned long long int);
+scifir::ionizing_radiation operator"" _rGy(unsigned long long int);
+scifir::ionizing_radiation operator"" _qGy(unsigned long long int);
 
+scifir::ionizing_radiation operator"" _QSv(unsigned long long int);
+scifir::ionizing_radiation operator"" _RSv(unsigned long long int);
 scifir::ionizing_radiation operator"" _YSv(unsigned long long int);
 scifir::ionizing_radiation operator"" _ZSv(unsigned long long int);
 scifir::ionizing_radiation operator"" _ESv(unsigned long long int);
@@ -408,7 +478,11 @@ scifir::ionizing_radiation operator"" _fSv(unsigned long long int);
 scifir::ionizing_radiation operator"" _aSv(unsigned long long int);
 scifir::ionizing_radiation operator"" _zSv(unsigned long long int);
 scifir::ionizing_radiation operator"" _ySv(unsigned long long int);
+scifir::ionizing_radiation operator"" _rSv(unsigned long long int);
+scifir::ionizing_radiation operator"" _qSv(unsigned long long int);
 
+scifir::catalytic_activity operator"" _Qkat(unsigned long long int);
+scifir::catalytic_activity operator"" _Rkat(unsigned long long int);
 scifir::catalytic_activity operator"" _Ykat(unsigned long long int);
 scifir::catalytic_activity operator"" _Zkat(unsigned long long int);
 scifir::catalytic_activity operator"" _Ekat(unsigned long long int);
@@ -430,9 +504,13 @@ scifir::catalytic_activity operator"" _fkat(unsigned long long int);
 scifir::catalytic_activity operator"" _akat(unsigned long long int);
 scifir::catalytic_activity operator"" _zkat(unsigned long long int);
 scifir::catalytic_activity operator"" _ykat(unsigned long long int);
+scifir::catalytic_activity operator"" _rkat(unsigned long long int);
+scifir::catalytic_activity operator"" _qkat(unsigned long long int);
 
 scifir::length operator"" _Å(unsigned long long int);
 
+scifir::volume operator"" _QL(unsigned long long int);
+scifir::volume operator"" _RL(unsigned long long int);
 scifir::volume operator"" _YL(unsigned long long int);
 scifir::volume operator"" _ZL(unsigned long long int);
 scifir::volume operator"" _EL(unsigned long long int);
@@ -454,11 +532,15 @@ scifir::volume operator"" _fL(unsigned long long int);
 scifir::volume operator"" _aL(unsigned long long int);
 scifir::volume operator"" _zL(unsigned long long int);
 scifir::volume operator"" _yL(unsigned long long int);
+scifir::volume operator"" _rL(unsigned long long int);
+scifir::volume operator"" _qL(unsigned long long int);
 
 scifir::time_duration operator"" _min(unsigned long long int);
 scifir::time_duration operator"" _hour(unsigned long long int);
 scifir::time_duration operator"" _day(unsigned long long int);
 
+scifir::length operator"" _QAU(unsigned long long int);
+scifir::length operator"" _RAU(unsigned long long int);
 scifir::length operator"" _YAU(unsigned long long int);
 scifir::length operator"" _ZAU(unsigned long long int);
 scifir::length operator"" _EAU(unsigned long long int);
@@ -480,7 +562,11 @@ scifir::length operator"" _fAU(unsigned long long int);
 scifir::length operator"" _aAU(unsigned long long int);
 scifir::length operator"" _zAU(unsigned long long int);
 scifir::length operator"" _yAU(unsigned long long int);
+scifir::length operator"" _rAU(unsigned long long int);
+scifir::length operator"" _qAU(unsigned long long int);
 
+scifir::length operator"" _Qpc(unsigned long long int);
+scifir::length operator"" _Rpc(unsigned long long int);
 scifir::length operator"" _Ypc(unsigned long long int);
 scifir::length operator"" _Zpc(unsigned long long int);
 scifir::length operator"" _Epc(unsigned long long int);
@@ -502,7 +588,11 @@ scifir::length operator"" _fpc(unsigned long long int);
 scifir::length operator"" _apc(unsigned long long int);
 scifir::length operator"" _zpc(unsigned long long int);
 scifir::length operator"" _ypc(unsigned long long int);
+scifir::length operator"" _rpc(unsigned long long int);
+scifir::length operator"" _qpc(unsigned long long int);
 
+scifir::energy operator"" _QeV(unsigned long long int);
+scifir::energy operator"" _ReV(unsigned long long int);
 scifir::energy operator"" _YeV(unsigned long long int);
 scifir::energy operator"" _ZeV(unsigned long long int);
 scifir::energy operator"" _EeV(unsigned long long int);
@@ -524,11 +614,15 @@ scifir::energy operator"" _feV(unsigned long long int);
 scifir::energy operator"" _aeV(unsigned long long int);
 scifir::energy operator"" _zeV(unsigned long long int);
 scifir::energy operator"" _yeV(unsigned long long int);
+scifir::energy operator"" _reV(unsigned long long int);
+scifir::energy operator"" _qeV(unsigned long long int);
 
 scifir::mass operator"" _Da(unsigned long long int);
 
 scifir::mass operator"" _amu(unsigned long long int);
 
+scifir::area operator"" _Qbarn(unsigned long long int);
+scifir::area operator"" _Rbarn(unsigned long long int);
 scifir::area operator"" _Ybarn(unsigned long long int);
 scifir::area operator"" _Zbarn(unsigned long long int);
 scifir::area operator"" _Ebarn(unsigned long long int);
@@ -550,7 +644,11 @@ scifir::area operator"" _fbarn(unsigned long long int);
 scifir::area operator"" _abarn(unsigned long long int);
 scifir::area operator"" _zbarn(unsigned long long int);
 scifir::area operator"" _ybarn(unsigned long long int);
+scifir::area operator"" _rbarn(unsigned long long int);
+scifir::area operator"" _qbarn(unsigned long long int);
 
+scifir::molarity operator"" _QM(unsigned long long int);
+scifir::molarity operator"" _RM(unsigned long long int);
 scifir::molarity operator"" _YM(unsigned long long int);
 scifir::molarity operator"" _ZM(unsigned long long int);
 scifir::molarity operator"" _EM(unsigned long long int);
@@ -572,6 +670,8 @@ scifir::molarity operator"" _fM(unsigned long long int);
 scifir::molarity operator"" _aM(unsigned long long int);
 scifir::molarity operator"" _zM(unsigned long long int);
 scifir::molarity operator"" _yM(unsigned long long int);
+scifir::molarity operator"" _rM(unsigned long long int);
+scifir::molarity operator"" _qM(unsigned long long int);
 
 scifir::mole operator"" _particles(unsigned long long int);
 scifir::scalar_unit operator"" _memo(unsigned long long int);
@@ -583,6 +683,8 @@ scifir::percentage operator"" _ppt(unsigned long long int);
 scifir::percentage operator"" _ppq(unsigned long long int);*/
 scifir::pixel operator"" _px(unsigned long long int);
 
+scifir::frequency operator"" _QHz(long double);
+scifir::frequency operator"" _RHz(long double);
 scifir::frequency operator"" _YHz(long double);
 scifir::frequency operator"" _ZHz(long double);
 scifir::frequency operator"" _EHz(long double);
@@ -604,7 +706,11 @@ scifir::frequency operator"" _fHz(long double);
 scifir::frequency operator"" _aHz(long double);
 scifir::frequency operator"" _zHz(long double);
 scifir::frequency operator"" _yHz(long double);
+scifir::frequency operator"" _rHz(long double);
+scifir::frequency operator"" _qHz(long double);
 
+scifir::force operator"" _QN(long double);
+scifir::force operator"" _RN(long double);
 scifir::force operator"" _YN(long double);
 scifir::force operator"" _ZN(long double);
 scifir::force operator"" _EN(long double);
@@ -626,7 +732,11 @@ scifir::force operator"" _fN(long double);
 scifir::force operator"" _aN(long double);
 scifir::force operator"" _zN(long double);
 scifir::force operator"" _yN(long double);
+scifir::force operator"" _rN(long double);
+scifir::force operator"" _qN(long double);
 
+scifir::pressure operator"" _QPa(long double);
+scifir::pressure operator"" _RPa(long double);
 scifir::pressure operator"" _YPa(long double);
 scifir::pressure operator"" _ZPa(long double);
 scifir::pressure operator"" _EPa(long double);
@@ -648,7 +758,11 @@ scifir::pressure operator"" _fPa(long double);
 scifir::pressure operator"" _aPa(long double);
 scifir::pressure operator"" _zPa(long double);
 scifir::pressure operator"" _yPa(long double);
+scifir::pressure operator"" _rPa(long double);
+scifir::pressure operator"" _qPa(long double);
 
+scifir::energy operator"" _QJ(long double);
+scifir::energy operator"" _RJ(long double);
 scifir::energy operator"" _YJ(long double);
 scifir::energy operator"" _ZJ(long double);
 scifir::energy operator"" _EJ(long double);
@@ -670,7 +784,11 @@ scifir::energy operator"" _fJ(long double);
 scifir::energy operator"" _aJ(long double);
 scifir::energy operator"" _zJ(long double);
 scifir::energy operator"" _yJ(long double);
+scifir::energy operator"" _rJ(long double);
+scifir::energy operator"" _qJ(long double);
 
+scifir::power operator"" _QW(long double);
+scifir::power operator"" _RW(long double);
 scifir::power operator"" _YW(long double);
 scifir::power operator"" _ZW(long double);
 scifir::power operator"" _EW(long double);
@@ -692,7 +810,11 @@ scifir::power operator"" _fW(long double);
 scifir::power operator"" _aW(long double);
 scifir::power operator"" _zW(long double);
 scifir::power operator"" _yW(long double);
+scifir::power operator"" _rW(long double);
+scifir::power operator"" _qW(long double);
 
+scifir::electric_current operator"" _QA(long double);
+scifir::electric_current operator"" _RA(long double);
 scifir::electric_current operator"" _YA(long double);
 scifir::electric_current operator"" _ZA(long double);
 scifir::electric_current operator"" _EA(long double);
@@ -714,7 +836,11 @@ scifir::electric_current operator"" _fA(long double);
 scifir::electric_current operator"" _aA(long double);
 scifir::electric_current operator"" _zA(long double);
 scifir::electric_current operator"" _yA(long double);
+scifir::electric_current operator"" _rA(long double);
+scifir::electric_current operator"" _qA(long double);
 
+scifir::voltage operator"" _QV(long double);
+scifir::voltage operator"" _RV(long double);
 scifir::voltage operator"" _YV(long double);
 scifir::voltage operator"" _ZV(long double);
 scifir::voltage operator"" _EV(long double);
@@ -736,7 +862,11 @@ scifir::voltage operator"" _fV(long double);
 scifir::voltage operator"" _aV(long double);
 scifir::voltage operator"" _zV(long double);
 scifir::voltage operator"" _yV(long double);
+scifir::voltage operator"" _rV(long double);
+scifir::voltage operator"" _qV(long double);
 
+scifir::capacitance operator"" _QF(long double);
+scifir::capacitance operator"" _RF(long double);
 scifir::capacitance operator"" _YF(long double);
 scifir::capacitance operator"" _ZF(long double);
 scifir::capacitance operator"" _EF(long double);
@@ -758,7 +888,11 @@ scifir::capacitance operator"" _fF(long double);
 scifir::capacitance operator"" _aF(long double);
 scifir::capacitance operator"" _zF(long double);
 scifir::capacitance operator"" _yF(long double);
+scifir::capacitance operator"" _rF(long double);
+scifir::capacitance operator"" _qF(long double);
 
+scifir::resistance operator"" _QΩ(long double);
+scifir::resistance operator"" _RΩ(long double);
 scifir::resistance operator"" _YΩ(long double);
 scifir::resistance operator"" _ZΩ(long double);
 scifir::resistance operator"" _EΩ(long double);
@@ -780,7 +914,11 @@ scifir::resistance operator"" _fΩ(long double);
 scifir::resistance operator"" _aΩ(long double);
 scifir::resistance operator"" _zΩ(long double);
 scifir::resistance operator"" _yΩ(long double);
+scifir::resistance operator"" _rΩ(long double);
+scifir::resistance operator"" _qΩ(long double);
 
+scifir::electric_conductance operator"" _QS(long double);
+scifir::electric_conductance operator"" _RS(long double);
 scifir::electric_conductance operator"" _YS(long double);
 scifir::electric_conductance operator"" _ZS(long double);
 scifir::electric_conductance operator"" _ES(long double);
@@ -802,7 +940,11 @@ scifir::electric_conductance operator"" _fS(long double);
 scifir::electric_conductance operator"" _aS(long double);
 scifir::electric_conductance operator"" _zS(long double);
 scifir::electric_conductance operator"" _yS(long double);
+scifir::electric_conductance operator"" _rS(long double);
+scifir::electric_conductance operator"" _qS(long double);
 
+scifir::magnetic_flux operator"" _QWb(long double);
+scifir::magnetic_flux operator"" _RWb(long double);
 scifir::magnetic_flux operator"" _YWb(long double);
 scifir::magnetic_flux operator"" _ZWb(long double);
 scifir::magnetic_flux operator"" _EWb(long double);
@@ -824,7 +966,11 @@ scifir::magnetic_flux operator"" _fWb(long double);
 scifir::magnetic_flux operator"" _aWb(long double);
 scifir::magnetic_flux operator"" _zWb(long double);
 scifir::magnetic_flux operator"" _yWb(long double);
+scifir::magnetic_flux operator"" _rWb(long double);
+scifir::magnetic_flux operator"" _qWb(long double);
 
+scifir::magnetic_strength operator"" _QT(long double);
+scifir::magnetic_strength operator"" _RT(long double);
 scifir::magnetic_strength operator"" _YT(long double);
 scifir::magnetic_strength operator"" _ZT(long double);
 scifir::magnetic_strength operator"" _ET(long double);
@@ -846,7 +992,11 @@ scifir::magnetic_strength operator"" _fT(long double);
 scifir::magnetic_strength operator"" _aT(long double);
 scifir::magnetic_strength operator"" _zT(long double);
 scifir::magnetic_strength operator"" _yT(long double);
+scifir::magnetic_strength operator"" _rT(long double);
+scifir::magnetic_strength operator"" _qT(long double);
 
+scifir::inductance operator"" _QH(long double);
+scifir::inductance operator"" _RH(long double);
 scifir::inductance operator"" _YH(long double);
 scifir::inductance operator"" _ZH(long double);
 scifir::inductance operator"" _EH(long double);
@@ -868,7 +1018,11 @@ scifir::inductance operator"" _fH(long double);
 scifir::inductance operator"" _aH(long double);
 scifir::inductance operator"" _zH(long double);
 scifir::inductance operator"" _yH(long double);
+scifir::inductance operator"" _rH(long double);
+scifir::inductance operator"" _qH(long double);
 
+scifir::luminous_flux operator"" _Qlm(long double);
+scifir::luminous_flux operator"" _Rlm(long double);
 scifir::luminous_flux operator"" _Ylm(long double);
 scifir::luminous_flux operator"" _Zlm(long double);
 scifir::luminous_flux operator"" _Elm(long double);
@@ -890,7 +1044,11 @@ scifir::luminous_flux operator"" _flm(long double);
 scifir::luminous_flux operator"" _alm(long double);
 scifir::luminous_flux operator"" _zlm(long double);
 scifir::luminous_flux operator"" _ylm(long double);
+scifir::luminous_flux operator"" _rlm(long double);
+scifir::luminous_flux operator"" _qlm(long double);
 
+scifir::illuminance operator"" _Qlx(long double);
+scifir::illuminance operator"" _Rlx(long double);
 scifir::illuminance operator"" _Ylx(long double);
 scifir::illuminance operator"" _Zlx(long double);
 scifir::illuminance operator"" _Elx(long double);
@@ -912,7 +1070,11 @@ scifir::illuminance operator"" _flx(long double);
 scifir::illuminance operator"" _alx(long double);
 scifir::illuminance operator"" _zlx(long double);
 scifir::illuminance operator"" _ylx(long double);
+scifir::illuminance operator"" _rlx(long double);
+scifir::illuminance operator"" _qlx(long double);
 
+scifir::radioactivity operator"" _QBq(long double);
+scifir::radioactivity operator"" _RBq(long double);
 scifir::radioactivity operator"" _YBq(long double);
 scifir::radioactivity operator"" _ZBq(long double);
 scifir::radioactivity operator"" _EBq(long double);
@@ -934,7 +1096,11 @@ scifir::radioactivity operator"" _fBq(long double);
 scifir::radioactivity operator"" _aBq(long double);
 scifir::radioactivity operator"" _zBq(long double);
 scifir::radioactivity operator"" _yBq(long double);
+scifir::radioactivity operator"" _rBq(long double);
+scifir::radioactivity operator"" _qBq(long double);
 
+scifir::ionizing_radiation operator"" _QGy(long double);
+scifir::ionizing_radiation operator"" _RGy(long double);
 scifir::ionizing_radiation operator"" _YGy(long double);
 scifir::ionizing_radiation operator"" _ZGy(long double);
 scifir::ionizing_radiation operator"" _EGy(long double);
@@ -956,7 +1122,11 @@ scifir::ionizing_radiation operator"" _fGy(long double);
 scifir::ionizing_radiation operator"" _aGy(long double);
 scifir::ionizing_radiation operator"" _zGy(long double);
 scifir::ionizing_radiation operator"" _yGy(long double);
+scifir::ionizing_radiation operator"" _rGy(long double);
+scifir::ionizing_radiation operator"" _qGy(long double);
 
+scifir::ionizing_radiation operator"" _QSv(long double);
+scifir::ionizing_radiation operator"" _RSv(long double);
 scifir::ionizing_radiation operator"" _YSv(long double);
 scifir::ionizing_radiation operator"" _ZSv(long double);
 scifir::ionizing_radiation operator"" _ESv(long double);
@@ -978,7 +1148,11 @@ scifir::ionizing_radiation operator"" _fSv(long double);
 scifir::ionizing_radiation operator"" _aSv(long double);
 scifir::ionizing_radiation operator"" _zSv(long double);
 scifir::ionizing_radiation operator"" _ySv(long double);
+scifir::ionizing_radiation operator"" _rSv(long double);
+scifir::ionizing_radiation operator"" _qSv(long double);
 
+scifir::catalytic_activity operator"" _Qkat(long double);
+scifir::catalytic_activity operator"" _Rkat(long double);
 scifir::catalytic_activity operator"" _Ykat(long double);
 scifir::catalytic_activity operator"" _Zkat(long double);
 scifir::catalytic_activity operator"" _Ekat(long double);
@@ -1000,9 +1174,13 @@ scifir::catalytic_activity operator"" _fkat(long double);
 scifir::catalytic_activity operator"" _akat(long double);
 scifir::catalytic_activity operator"" _zkat(long double);
 scifir::catalytic_activity operator"" _ykat(long double);
+scifir::catalytic_activity operator"" _rkat(long double);
+scifir::catalytic_activity operator"" _qkat(long double);
 
 scifir::length operator"" _Å(long double);
 
+scifir::volume operator"" _QL(long double);
+scifir::volume operator"" _RL(long double);
 scifir::volume operator"" _YL(long double);
 scifir::volume operator"" _ZL(long double);
 scifir::volume operator"" _EL(long double);
@@ -1024,6 +1202,8 @@ scifir::volume operator"" _fL(long double);
 scifir::volume operator"" _aL(long double);
 scifir::volume operator"" _zL(long double);
 scifir::volume operator"" _yL(long double);
+scifir::volume operator"" _rL(long double);
+scifir::volume operator"" _qL(long double);
 
 scifir::time_duration operator"" _min(long double);
 
@@ -1031,6 +1211,8 @@ scifir::time_duration operator"" _hour(long double);
 
 scifir::time_duration operator"" _day(long double);
 
+scifir::length operator"" _QAU(long double);
+scifir::length operator"" _RAU(long double);
 scifir::length operator"" _YAU(long double);
 scifir::length operator"" _ZAU(long double);
 scifir::length operator"" _EAU(long double);
@@ -1052,7 +1234,11 @@ scifir::length operator"" _fAU(long double);
 scifir::length operator"" _aAU(long double);
 scifir::length operator"" _zAU(long double);
 scifir::length operator"" _yAU(long double);
+scifir::length operator"" _rAU(long double);
+scifir::length operator"" _qAU(long double);
 
+scifir::length operator"" _Qpc(long double);
+scifir::length operator"" _Rpc(long double);
 scifir::length operator"" _Ypc(long double);
 scifir::length operator"" _Zpc(long double);
 scifir::length operator"" _Epc(long double);
@@ -1074,7 +1260,11 @@ scifir::length operator"" _fpc(long double);
 scifir::length operator"" _apc(long double);
 scifir::length operator"" _zpc(long double);
 scifir::length operator"" _ypc(long double);
+scifir::length operator"" _rpc(long double);
+scifir::length operator"" _qpc(long double);
 
+scifir::energy operator"" _QeV(long double);
+scifir::energy operator"" _ReV(long double);
 scifir::energy operator"" _YeV(long double);
 scifir::energy operator"" _ZeV(long double);
 scifir::energy operator"" _EeV(long double);
@@ -1096,11 +1286,15 @@ scifir::energy operator"" _feV(long double);
 scifir::energy operator"" _aeV(long double);
 scifir::energy operator"" _zeV(long double);
 scifir::energy operator"" _yeV(long double);
+scifir::energy operator"" _reV(long double);
+scifir::energy operator"" _qeV(long double);
 
 scifir::mass operator"" _Da(long double);
 
 scifir::mass operator"" _amu(long double);
 
+scifir::area operator"" _Qbarn(long double);
+scifir::area operator"" _Rbarn(long double);
 scifir::area operator"" _Ybarn(long double);
 scifir::area operator"" _Zbarn(long double);
 scifir::area operator"" _Ebarn(long double);
@@ -1122,7 +1316,11 @@ scifir::area operator"" _fbarn(long double);
 scifir::area operator"" _abarn(long double);
 scifir::area operator"" _zbarn(long double);
 scifir::area operator"" _ybarn(long double);
+scifir::area operator"" _rbarn(long double);
+scifir::area operator"" _qbarn(long double);
 
+scifir::molarity operator"" _QM(long double);
+scifir::molarity operator"" _RM(long double);
 scifir::molarity operator"" _YM(long double);
 scifir::molarity operator"" _ZM(long double);
 scifir::molarity operator"" _EM(long double);
@@ -1144,6 +1342,8 @@ scifir::molarity operator"" _fM(long double);
 scifir::molarity operator"" _aM(long double);
 scifir::molarity operator"" _zM(long double);
 scifir::molarity operator"" _yM(long double);
+scifir::molarity operator"" _rM(long double);
+scifir::molarity operator"" _qM(long double);
 
 scifir::scalar_unit operator"" _memo(long double);
 scifir::angle operator"" _degree(long double);
