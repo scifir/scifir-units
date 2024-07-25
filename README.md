@@ -67,6 +67,28 @@ cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chil
 | Å | String literal of angstrom.
 | µ | Prefix micro, used as part of the string literals with micro.
 
+### Concepts
+
+- In science, a **scalar unit** is a unit of measurement that adds dimensions to a number, in order to allow to manage concepts represents with numbers better. The dimensions can have prefixes, like kilo and deci, that scale the value by multiples of 10.
+- The **International System of Units**, of abbreviation **SI**, defines the following **base units**: metre (m), second (s), gram (g), electric current (A), temperature (K), amount of substance (mol), luminous intensity (cd).
+- The **decimal prefixes** are part of the SI system of units scale the value of the base unit by a factor. Examples of prefixes are the kilo (k, factor 3), deci (d, factor -1) and milli (m, factor -3).
+- The **derived units**, part of the SI system of units, are the units derived from the base units.
+- The **angle** is not exactly a scalar unit, but is similar. Its main difference with a scalar unit is that it's a mathematical concept, not a concept defined from natural science.
+- As the angle, the **complex number** also is not a scalar unit, because it's a mathematical concept, not defined from natural science.
+- The **laboratory number** allows to work with measures and possible errors of those measures. It's a mathematical concept invented for the laboratory.
+- A **vector unit** is a vector that also has dimensions, like scalar units.
+- A **scalar field** is a function that assigns a scalar unit to each point inside a space.
+- A **vector field** is a function that assigns a vector unit to each point inside a space.
+- The **space** is measured in units of lengths, which in the SI system of units is the metre. Inside scifir-units, it can be used a length, a float or a scalar unit of an imaginary dimension. The scalar_unit is the better system, the float is intended for high-performance computation needs, and the imaginary dimensions are needed when they are being used for some purpose in the project (and that's why they are supported here).
+- A **space of two dimensions** has only two edges, it's an imaginary space that doesn't exist in the real world, but is used for simulations and some reasonings. It's abbreviated **2D**.
+- A **space of three dimensions** has three edges, it can represent both the real world and imaginary worlds. It's abbreviated **3D**.
+- Inside scifir-units, a space of a variable number of dimensions is abbreviated **ND**, of **space of n-dimensions**. ND can be sometimes 2D, sometimes 3D, also it can be 1D if needed, and even a space of a greather number of dimensions.
+- The **coordinates** are the position of an object in the space. There are coordinates for 2D and for 3D spaces, which are different systems of coordinates. For 2D spaces there exist the **cartesian coordinates** and the **polar coordinates**. For 3D space there exist the **cartesian coordinates**, the **cylindrical coordinates** and the **spherical coordinates**. The cartesian coordinates in 3D contain one more component of coordinates than their 2D counterpart.
+- The **points**, although can be thinked as being identical to coordinates, are usually fixed in the space. The coordinates are used for the positions of objects inside the space, and the points for more fixed uses.
+- A **percentage** is a mathematical concept that represents a fraction of some value, the fraction can be better than the value too.
+- **AID**, acronym of **Astronomical ID**, and **ZID**, acronym of **Zone ID**, are two identifiers invented in Scifir that provide a text-based identifier to refer to astronomical objects and zones, respectively. They are considered a special unit inside scifir-units.
+- The **pH** is a concept used in chemistry for measuring the concentration of H+ ions in a solution.
+
 ## Installation
 
 To install **scifir-units** you have to use **CMake** and **make**. scifir-units can be compiled with **g++**, **clang++** and **msvc**. Also, **nvcc** and **dpcpp** can also be used. The compilers for microcontrollers can also be used.
@@ -738,6 +760,8 @@ a += x; // Adds the scalar_unit to the string
 string b = "x: " + x;
 string c = x + " value";
 ```
+
+A predefined unit is a child class of a scalar_unit or of one of the vector unit classes (which are vector_unit_2d, vector_unit_3d and vector_unit_nd). A predefined unit adds always in his name a suffix _2d, _3d or _nd, if they inherit from vector_unit_2d, vector_unit_3d or vector_unit_nd, respectively.
 
 #### Basic scalar_unit classes
 
