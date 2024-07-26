@@ -139,7 +139,6 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 
 #### Derived units
 
-- **Force:** Force sensor.
 - **Pressure:** Barometer.
 - **pH meter:** pH.
 - **Geographical position:** GPS receiver.
@@ -157,6 +156,7 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - **Infrared light:** IR sensor.
 - **Electric field:** Electric field meter sensor.
 - **Magnetic field:** Magnetic sensor.
+- **Force:** Force sensor.
 
 ### Electronic motors of units
 
@@ -544,7 +544,9 @@ In order to store units inside a file an initialization string should be used. F
 
 ### Space
 
-Inside scifir-units the space can be measured with float or with length. Secondarily, any scalar_unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar_unit classes.
+Inside scifir-units the space can be measured with length or with float. Secondarily, any scalar_unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar_unit classes.
+
+N-dimensions, inside scifir-units, are called **ND** in classnames. ND classes allow to change the number of dimensions of the space where they behave, by just changing their number of values to a different number of them. You can always change the values of ND classes to change the space they operate on to a different space. Then, if you're developing a software where for some reason the space changes from 2D to 3D, or viceversa, you can use ND classes for that purpose.
 
 ### Dimensions
 
