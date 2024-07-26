@@ -56,6 +56,20 @@ cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chil
 // Among many other features!
 ```
 
+### Using the library
+
+First you have to link **scifir-units** to your project. To link scifir-units, after installing it following the steps above, add the following code inside your CMakeLists.txt file:
+
+```
+target_link_libraries(your-project scifir-units)
+```
+
+Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**.
+
+```
+#include "scifir/units.hpp"
+```
+
 ### Copy-paste symbols
 
 | Symbol | Use
@@ -118,11 +132,19 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - **fields/:** Contains the field classes.
 - **meca_number/:** Contains numeric concepts that behave like a number machine, which are angle, complex_number and lab_number.
 - **predefined_units/:** Contains the derived units of the SI system of units.
-- **special_unis/:** Contains concepts similar to base and derived units, but different than them.
+- **special_units/:** Contains concepts similar to base and derived units, but different than them.
 - **tests/:** Contains the unitary tests.
 - **topology/:** Contains point classes.
 - **units/:** Contains the unit classes, dimension, prefix and conversion.
 - **util/:** Contains utilities for programming related to scifir-units, like is_number in template programming, matrix class and primitive type operations.
+
+## Table of contents
+
+- [Installation](#installation)
+- [Introduction](#introduction)
+- [Use cases](#use-cases)
+- [Core functionalities](#core-functionalities)
+- [Internals](#internals)
 
 ## Installation
 
@@ -256,20 +278,6 @@ You can test scifir-units executing ctest if you want. It's not needed to execut
 
 ```
 ctest --preset=<your-preset>
-```
-
-## Using the library
-
-First you have to link **scifir-units** to your project. To link scifir-units, after installing it following the steps above, add the following code inside your CMakeLists.txt file:
-
-```
-target_link_libraries(your-project scifir-units)
-```
-
-Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**.
-
-```
-#include "scifir/units.hpp"
 ```
 
 ## Introduction
