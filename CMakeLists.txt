@@ -87,13 +87,13 @@ set(TARGET_H
 coordinates
 fields
 meca_number
-predefined_units
+derived_units
 special_units
 topology
 units
 util)
 
-file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp fields/*.cpp meca_number/*.cpp predefined_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
+file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp fields/*.cpp meca_number/*.cpp derived_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
 
 # Project to build
 

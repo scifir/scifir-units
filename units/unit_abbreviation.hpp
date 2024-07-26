@@ -4,11 +4,11 @@
 #include "./scalar_unit.hpp"
 #include "./base_units.hpp"
 
-#include "../predefined_units/electronics_units.hpp"
-#include "../predefined_units/physics_units.hpp"
-#include "../predefined_units/radiometry_units.hpp"
-#include "../predefined_units/space_units.hpp"
-#include "../predefined_units/chemistry_units.hpp"
+#include "../derived_units/electronics_units.hpp"
+#include "../derived_units/physics_units.hpp"
+#include "../derived_units/radiometry_units.hpp"
+#include "../derived_units/space_units.hpp"
+#include "../derived_units/chemistry_units.hpp"
 
 #include "../special_units/percentage.hpp"
 #include "../special_units/pixel.hpp"

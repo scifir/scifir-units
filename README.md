@@ -185,7 +185,7 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 - **extra/:** Contains extra files related to the build.
 - **fields/:** Contains the field classes.
 - **meca_number/:** Contains numeric concepts that behave like a number machine, which are angle, complex_number and lab_number.
-- **predefined_units/:** Contains the derived units of the SI system of units.
+- **derived_units/:** Contains the derived units of the SI system of units.
 - **special_units/:** Contains concepts similar to base and derived units, but different than them.
 - **tests/:** Contains the unitary tests.
 - **topology/:** Contains point classes.
@@ -860,7 +860,7 @@ string b = "x: " + x;
 string c = x + " value";
 ```
 
-A predefined unit is a child class of a scalar_unit or of one of the vector unit classes (which are vector_unit_2d, vector_unit_3d and vector_unit_nd). A predefined unit adds always in his name a suffix _2d, _3d or _nd, if they inherit from vector_unit_2d, vector_unit_3d or vector_unit_nd, respectively.
+A derived unit is a child class of a scalar_unit or of one of the vector unit classes (which are vector_unit_2d, vector_unit_3d and vector_unit_nd). A derived unit adds always in his name a suffix _2d, _3d or _nd, if they inherit from vector_unit_2d, vector_unit_3d or vector_unit_nd, respectively.
 
 #### Base unit classes
 

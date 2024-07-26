@@ -2,7 +2,7 @@
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
 
 #include "../topology/point_nd.hpp"
-#include "../predefined_units/physics_units.hpp"
+#include "../derived_units/physics_units.hpp"
 #include "../units/base_units.hpp"
 #include "../util/types.hpp"
 
