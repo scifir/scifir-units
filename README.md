@@ -89,6 +89,41 @@ cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chil
 - **AID**, acronym of **Astronomical ID**, and **ZID**, acronym of **Zone ID**, are two identifiers invented in Scifir that provide a text-based identifier to refer to astronomical objects and zones, respectively. They are considered a special unit inside scifir-units.
 - The **pH** is a concept used in chemistry for measuring the concentration of H+ ions in a solution.
 
+### Class list
+
+- prefix.
+- dimension.
+- scalar_unit.
+- vector_unit_2d, vector_unit_3d, vector_unit_nd.
+- angle.
+- scalar_field_3d<T,U>.
+- coordinates_1d<T>, coordinates_2d<T>, coordinates_3d<T>, coordinates_nd<T>.
+- coordinates_2dr<T>, coordinates_3dr<T>, coordinates_ndr<T>.
+- point_1d<T>, point_2d<T>, point_3d<T>, point_nd<T>.
+- aid, zid.
+- percentage.
+- complex_number<T>.
+- lab_number<T>.
+- size_2d<T>, size_3d<T>, size_nd<T>.
+- pH, pOH.
+
+prefix can have all SI prefixes. dimension has all SI base dimensions, all common abbreviations, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
+
+### Folder structure
+
+- **.github/:** Contains configuration files related to the GitHub of scifir-units.
+- **coordinates/:** Contains coordinates classes.
+- **docs/:** Contains the documentation.
+- **extra/:** Contains extra files related to the build.
+- **fields/:** Contains the field classes.
+- **meca_number/:** Contains numeric concepts that behave like a number machine, which are angle, complex_number and lab_number.
+- **predefined_units/:** Contains the derived units of the SI system of units.
+- **special_unis/:** Contains concepts similar to base and derived units, but different than them.
+- **tests/:** Contains the unitary tests.
+- **topology/:** Contains point classes.
+- **units/:** Contains the unit classes, dimension, prefix and conversion.
+- **util/:** Contains utilities for programming related to scifir-units, like is_number in template programming, matrix class and primitive type operations.
+
 ## Installation
 
 To install **scifir-units** you have to use **CMake** and **make**. scifir-units can be compiled with **g++**, **clang++** and **msvc**. Also, **nvcc** and **dpcpp** can also be used. The compilers for microcontrollers can also be used.
