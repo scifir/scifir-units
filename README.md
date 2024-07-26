@@ -163,6 +163,20 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - **Movement:** Electronic motor (very different sizes available).
 - **Valve:** Electronic valve.
 
+### Constants of the SI system
+
+All constants of the SI system of units are implemeneted inside scifir-units, in the file **units/constants.hpp**. They are all **long double** types, use them to calculate anything you need.
+
+| Constant | Value
+| ------ | ------
+| HYPERFINE_TRANSITION_FREQUENCY_OF_CS | 9192631770 Hz
+| SPEED_OF_LIGHT | 299792458 m/s
+| PLANCK_CONSTANT | 6.62607015×10−34 J⋅s
+| ELEMENTARY_CHARGE | 1.602176634×10−19 C
+| BOLTZMANN_CONSTANT | 1.380649×10−23 J/K
+| AVOGADRO_CONSTANT | 6.02214076×1023 mol−1
+| LUMINOUS_EFFICACY_OF_540_THZ_RADIATION | 683 lm/W
+
 ### Folder structure
 
 - **.github/:** Contains configuration files related to the GitHub of scifir-units.
