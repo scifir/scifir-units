@@ -351,7 +351,7 @@ The most important classes are the scalar units and the vector units. Vector uni
 
 The classes dimension, prefix and conversion are intended for **internal use** mainly, but they can be used if they are needed.
 
-The basic unit classes that inherit scalar_unit and use, then, too, dimension and prefix classes, are the following:
+The base unit classes that inherit scalar_unit and use, then, too, dimension and prefix classes, are the following:
 
 - length.
 - time_duration.
@@ -362,7 +362,7 @@ The basic unit classes that inherit scalar_unit and use, then, too, dimension an
 - light.
 - data.
 
-Apart from those basic scalar_unit subclasses, there are a great amount of more unit classes defined, that are derived from scalar_unit or from vector_unit. All scalar unit subclasses derive from scalar_unit, and all vector unit subclasses are defined one time for 2d, one time for 3d, one time for nd, and one time for the scalar_unit case. Then, force units, which are vector units, exist as force, force_2d, force_3d and force_nd.
+Apart from those base scalar_unit subclasses, there are a great amount of more unit classes defined, that are derived from scalar_unit or from vector_unit. All scalar unit subclasses derive from scalar_unit, and all vector unit subclasses are defined one time for 2d, one time for 3d, one time for nd, and one time for the scalar_unit case. Then, force units, which are vector units, exist as force, force_2d, force_3d and force_nd.
 
 All those additional unit classes are the following:
 
@@ -848,7 +848,7 @@ string c = x + " value";
 
 A predefined unit is a child class of a scalar_unit or of one of the vector unit classes (which are vector_unit_2d, vector_unit_3d and vector_unit_nd). A predefined unit adds always in his name a suffix _2d, _3d or _nd, if they inherit from vector_unit_2d, vector_unit_3d or vector_unit_nd, respectively.
 
-#### Basic scalar_unit classes
+#### Base unit classes
 
 | Name | Dimensions | Type | Literals | Description
 | ----- | ----- | ----- | ----------- | --------------------------

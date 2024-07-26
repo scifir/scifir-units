@@ -189,7 +189,7 @@
 	topology/point_3d_impl.hpp, topology/point_nd.hpp,
 	topology/point_nd_impl.hpp, units.hpp, units/conversion.hpp,
 	units/dimension.hpp, units/scalar_unit.cpp, units/scalar_unit.hpp,
-	units/unit_abbreviation.hpp, units/unit_basic.hpp,
+	units/unit_abbreviation.hpp, units/base_units.hpp,
 	units/vector_unit_2d.hpp, units/vector_unit_3d.hpp,
 	units/vector_unit_nd.hpp, util/matrix.hpp: headers now use relative
 	paths instead of absolute path in order to simplify the use of the
@@ -639,7 +639,7 @@
 	units/dimension.hpp, units/prefix.cpp, units/prefix.hpp,
 	units/scalar_unit.cpp, units/scalar_unit.hpp,
 	units/unit_abbreviation.cpp, units/unit_abbreviation.hpp,
-	units/unit_basic.cpp, units/unit_basic.hpp,
+	units/unit_basic.cpp, units/base_units.hpp,
 	units/vector_unit_2d.cpp, units/vector_unit_2d.hpp,
 	units/vector_unit_3d.cpp, units/vector_unit_3d.hpp,
 	units/vector_unit_nd.cpp, units/vector_unit_nd.hpp,
@@ -667,27 +667,27 @@
 2023-07-06  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* units/unit_abbreviation.cpp, units/unit_abbreviation.hpp,
-	units/unit_basic.cpp, units/unit_basic.hpp: time class name changed
+	units/unit_basic.cpp, units/base_units.hpp: time class name changed
 	to time_duration
 
 2023-07-06  Ismael Correa <ismael.correa.castro@gmail.com>
 
-	* units/unit_basic.cpp, units/unit_basic.hpp: time class now
+	* units/unit_basic.cpp, units/base_units.hpp: time class now
 	displays in weeks and in months
 
 2023-07-06  Ismael Correa <ismael.correa.castro@gmail.com>
 
-	* units/unit_basic.cpp, units/unit_basic.hpp: time class now can
+	* units/unit_basic.cpp, units/base_units.hpp: time class now can
 	display in years, days, hours, minutes and seconds
 
 2023-07-06  Ismael Correa <ismael.correa.castro@gmail.com>
 
-	* units/unit_basic.cpp, units/unit_basic.hpp: mass now can construct
+	* units/unit_basic.cpp, units/base_units.hpp: mass now can construct
 	with ppm, ppb, ppt and ppq
 
 2023-07-06  Ismael Correa <ismael.correa.castro@gmail.com>
 
-	* units/unit_basic.cpp, units/unit_basic.hpp: mole class now can
+	* units/unit_basic.cpp, units/base_units.hpp: mole class now can
 	construct with ppm, ppb, ppt and ppq
 
 2023-07-05  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -895,7 +895,7 @@
 	* tests/test_sizeof.cpp, tests/test_units.cpp, units/dimension.cpp,
 	units/dimension.hpp, units/prefix.cpp, units/prefix.hpp,
 	units/scalar_unit.cpp, units/scalar_unit.hpp, units/unit_basic.cpp,
-	units/unit_basic.hpp, units/vector_unit_2d.cpp,
+	units/base_units.hpp, units/vector_unit_2d.cpp,
 	units/vector_unit_3d.cpp, units/vector_unit_nd.cpp: 
 	display_derived() added to scalar_unit. Bugs related to
 	multiplication and division of dimensions solved. sqrt() and
@@ -922,7 +922,7 @@
 
 	* topology/constants.hpp, units/dimension.cpp, units/dimension.hpp,
 	units/prefix.cpp, units/prefix.hpp, units/scalar_unit.cpp,
-	units/scalar_unit.hpp, units/unit_basic.cpp, units/unit_basic.hpp: 
+	units/scalar_unit.hpp, units/unit_basic.cpp, units/base_units.hpp: 
 	byte dimension now calculates in the order of 1024, as it should.
 	full support for conversion factors of dimensions implemented
 
@@ -938,7 +938,7 @@
 
 2023-06-27  Ismael Correa <ismael.correa.castro@gmail.com>
 
-	* units/unit_basic.cpp, units/unit_basic.hpp: constructor with
+	* units/unit_basic.cpp, units/base_units.hpp: constructor with
 	multiple time dimensions added to time class
 
 2023-06-27  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -1416,7 +1416,7 @@
 
 2023-06-06  Ismael Correa <ismael.correa.castro@gmail.com>
 
-	* units/unit_basic.cpp, units/unit_basic.hpp: msci::time now
+	* units/unit_basic.cpp, units/base_units.hpp: msci::time now
 	operates with duration and then it can be used with STL clocks of
 	<chrono>
 
@@ -1434,7 +1434,7 @@
 	predefined_units/dynamics_units.hpp, tests/test_sizeof.cpp,
 	topology/direction.hpp, units/custom_dimension.cpp,
 	units/custom_dimension.hpp, units/dimension.hpp, units/prefix.hpp,
-	units/unit_basic.hpp, units/vector_unit_2d.hpp,
+	units/base_units.hpp, units/vector_unit_2d.hpp,
 	units/vector_unit_3d.hpp, units/vector_unit_nd.hpp, util/matrix.hpp: 
 	header meca_numbers.hpp updated. test_sizeof added inside CMake.
 	README and TODO updated. enums updated to use only 1 byte instead of
@@ -1443,13 +1443,13 @@
 
 2023-06-05  Ismael Correa <ismael.correa.castro@gmail.com>
 
-	* units/unit_basic.hpp: ostream operator not more needed
+	* units/base_units.hpp: ostream operator not more needed
 
 2023-06-05  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* TODO.md, units/unit_abbreviation.cpp,
 	units/unit_abbreviation.hpp, units/unit_basic.cpp,
-	units/unit_basic.hpp: time class now can display as time as a string
+	units/base_units.hpp: time class now can display as time as a string
 	for any case, not only for streams. Literals _m bug fixed
 
 2023-06-05  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -1528,7 +1528,7 @@
 	topology/point_nd.cpp, topology/point_nd.hpp, units/conversion.hpp,
 	units/dimension.cpp, units/dimension.hpp, units/prefix.cpp,
 	units/prefix.hpp, units/scalar_unit.cpp, units/unit_basic.cpp,
-	units/unit_basic.hpp, util/matrix.hpp: coordinates and points now
+	units/base_units.hpp, util/matrix.hpp: coordinates and points now
 	have operators and stream for string cases. Some refactoring and
 	improvements with headers have been done
 
@@ -1599,7 +1599,7 @@
 	topology/point_3d.cpp, topology/point_3d.hpp,
 	topology/point_nd.cpp, topology/point_nd.hpp,
 	units/scalar_unit.cpp, units/scalar_unit.hpp, units/unit_basic.cpp,
-	units/unit_basic.hpp, units/vector_unit_2d.cpp,
+	units/base_units.hpp, units/vector_unit_2d.cpp,
 	units/vector_unit_2d.hpp, units/vector_unit_3d.cpp,
 	units/vector_unit_3d.hpp, units/vector_unit_nd.cpp,
 	units/vector_unit_nd.hpp: coordinates and points of 2d and 3d cases
@@ -1686,7 +1686,7 @@
 	units/dimension.hpp, units/prefix.cpp, units/scalar_unit.cpp,
 	units/scalar_unit.hpp, units/unit_abbreviation.cpp,
 	units/unit_abbreviation.hpp, units/unit_basic.cpp,
-	units/unit_basic.hpp, units/vector_unit_2d.cpp,
+	units/base_units.hpp, units/vector_unit_2d.cpp,
 	units/vector_unit_2d.hpp, units/vector_unit_3d.cpp,
 	units/vector_unit_3d.hpp, units/vector_unit_nd.cpp,
 	units/vector_unit_nd.hpp, util/matrix.hpp, util/types.cpp: Library
@@ -1743,7 +1743,7 @@
 	units/prefix.cpp, units/prefix.hpp, units/scalar_unit.cpp,
 	units/scalar_unit.hpp, units/unit_abbreviation.cpp,
 	units/unit_abbreviation.hpp, units/unit_basic.cpp,
-	units/unit_basic.hpp, units/vector_unit_2d.cpp,
+	units/base_units.hpp, units/vector_unit_2d.cpp,
 	units/vector_unit_2d.hpp, units/vector_unit_3d.cpp,
 	units/vector_unit_3d.hpp, units/vector_unit_nd.cpp,
 	units/vector_unit_nd.hpp, util/is_number.hpp, util/matrix.hpp: Good
@@ -1805,7 +1805,7 @@
 	units/dimension.hpp, units/dimension_container.cpp,
 	units/dimension_container.hpp, units/prefix.cpp, units/prefix.hpp,
 	units/scalar_unit.cpp, units/scalar_unit.hpp, units/unit_basic.cpp,
-	units/unit_basic.hpp, units/vector_unit.cpp, units/vector_unit.hpp,
+	units/base_units.hpp, units/vector_unit.cpp, units/vector_unit.hpp,
 	units/vector_unit_3d.cpp, units/vector_unit_3d.hpp,
 	util/is_number.hpp, util/matrix.hpp: Refactoring of units nearly
 	ready
@@ -1826,7 +1826,7 @@
 	units/auto_vector.cpp, units/auto_vector.hpp, units/{unit.cpp =>
 	scalar_unit.cpp}, units/scalar_unit.hpp, units/unit.hpp,
 	units/unit_abbreviation.hpp, units/unit_basic.cpp,
-	units/unit_basic.hpp, units/vector_unit.cpp, units/vector_unit.hpp,
+	units/base_units.hpp, units/vector_unit.cpp, units/vector_unit.hpp,
 	util/matrix.hpp: new units hierarchy starting by scalar_unit has
 	been started
 
@@ -1919,7 +1919,7 @@
 	units/prefix.cpp, units/prefix.hpp, units/scalar_unit.cpp,
 	units/scalar_unit.hpp, units/unit.cpp, units/unit.hpp,
 	units/unit_abbreviation.cpp, units/unit_abbreviation.hpp,
-	units/unit_basic.cpp, units/unit_basic.hpp, units/vector_unit.cpp,
+	units/unit_basic.cpp, units/base_units.hpp, units/vector_unit.cpp,
 	units/vector_unit.hpp, util/is_number.hpp, util/matrix.hpp,
 	util/types.cpp, util/types.hpp: msci units library updated
 
@@ -2105,7 +2105,7 @@
 	units/prefix.cpp, units/prefix.hpp, units/scalar_unit.cpp,
 	units/scalar_unit.hpp, units/unit.cpp, units/unit.hpp,
 	units/unit_abbreviation.cpp, units/unit_abbreviation.hpp,
-	units/unit_basic.cpp, units/unit_basic.hpp, units/vector_unit.cpp,
+	units/unit_basic.cpp, units/base_units.hpp, units/vector_unit.cpp,
 	units/vector_unit.hpp, {informatics/types => util}/is_number.hpp,
 	{math/linear_algebra => util}/matrix.hpp: msci units library
 
@@ -2333,7 +2333,7 @@
 	units}/unit_abbreviation.cpp, {physics/basic/units =>
 	units}/unit_abbreviation.hpp, {physics/basic/units =>
 	units}/unit_basic.cpp, {physics/basic/units =>
-	units}/unit_basic.hpp, {physics/basic/units =>
+	units}/base_units.hpp, {physics/basic/units =>
 	units}/vector_unit.cpp, {physics/basic/units =>
 	units}/vector_unit.hpp: msic_units library created, separated from
 	the other msci libraries (every msci library has been divided in
@@ -2515,7 +2515,7 @@
 	physics/basic/units/unit.cpp, physics/basic/units/unit.hpp,
 	physics/basic/units/unit_abbreviation.cpp,
 	physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp,
+	physics/basic/units/base_units.hpp,
 	physics/basic/units/vector_unit.cpp,
 	physics/basic/units/vector_unit.hpp: All wstring and related classes
 	have been changed to string and related classes in order to use only
@@ -2631,7 +2631,7 @@
 	physics/basic/units/unit_abbreviation.cpp,
 	physics/basic/units/unit_abbreviation.hpp,
 	physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp,
+	physics/basic/units/base_units.hpp,
 	physics/basic/units/vector_unit.cpp,
 	physics/basic/units/vector_unit.hpp,
 	physics/electromagnetism/electricity/units.cpp,
@@ -2818,7 +2818,7 @@
 	physics/basic/units/unit_abbreviation.cpp,
 	physics/basic/units/unit_abbreviation.hpp,
 	physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp,
+	physics/basic/units/base_units.hpp,
 	physics/basic/units/vector_unit.cpp,
 	physics/basic/units/vector_unit.hpp,
 	physics/electromagnetism/electricity/units.cpp,
@@ -3077,7 +3077,7 @@
 2017-09-12  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp: bug fixed. _angle and
+	physics/basic/units/base_units.hpp: bug fixed. _angle and
 	_solid_angle literals removed
 
 2017-09-12  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -3108,7 +3108,7 @@
 2017-09-12  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp: angle and solid_angle unit
+	physics/basic/units/base_units.hpp: angle and solid_angle unit
 	classes removed in order to used angle_number instead
 
 2017-09-12  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -3514,7 +3514,7 @@
 2017-08-30  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp: class physics::units::time
+	physics/basic/units/base_units.hpp: class physics::units::time
 	operator << finished for time_display and get_finish_date() function
 	created, which displays the day at which the time set will end
 
@@ -3618,7 +3618,7 @@
 2017-08-29  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp: angle and solid_angle literals
+	physics/basic/units/base_units.hpp: angle and solid_angle literals
 	added
 
 2017-08-29  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -3626,7 +3626,7 @@
 	* physics/basic/units/dimension.cpp,
 	physics/basic/units/dimension.hpp,
 	physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp: enum dimension name of angle and
+	physics/basic/units/base_units.hpp: enum dimension name of angle and
 	solid_angle changed to angle_symbol and solid_angle_symbol,
 	respectively, in order to avoid class name collision with new angle
 	and solid_angle classes created
@@ -3641,7 +3641,7 @@
 	* physics/basic/units/dimension_abstract.cpp,
 	physics/basic/units/dimension_abstract.hpp,
 	physics/basic/units/unit.cpp, physics/basic/units/unit.hpp,
-	physics/basic/units/unit_basic.hpp: inline functions added to some
+	physics/basic/units/base_units.hpp: inline functions added to some
 	unit classes
 
 2017-08-29  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -3707,7 +3707,7 @@
 2017-08-27  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp: typecast of class time to
+	physics/basic/units/base_units.hpp: typecast of class time to
 	chrono::seconds class of the std library
 
 2017-08-27  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -3999,7 +3999,7 @@
 2017-08-14  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp: unit literals now return their
+	physics/basic/units/base_units.hpp: unit literals now return their
 	more common class instead of auto_unit. That improves performance
 
 2017-08-14  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -4011,7 +4011,7 @@
 2017-08-11  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp: class mole now can give the
+	physics/basic/units/base_units.hpp: class mole now can give the
 	total amount of particles represented by the mole or by te particles
 	abbreviation
 
@@ -4039,7 +4039,7 @@
 2017-08-11  Ismael Correa <ismael.correa.castro@gmail.com>
 
 	* physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp: basic units now are initialized
+	physics/basic/units/base_units.hpp: basic units now are initialized
 	with macros
 
 2017-08-11  Ismael Correa <ismael.correa.castro@gmail.com>
@@ -4213,7 +4213,7 @@
 	physics/basic/units/unit_abbreviation.cpp,
 	physics/basic/units/unit_abbreviation.hpp,
 	physics/basic/units/unit_basic.cpp,
-	physics/basic/units/unit_basic.hpp,
+	physics/basic/units/base_units.hpp,
 	physics/basic/units/vector_unit.cpp,
 	physics/basic/units/vector_unit.hpp,
 	physics/electromagnetism/electricity/units.hpp,
