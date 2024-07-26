@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED
 #define SCIFIR_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED
 
-#include "../topology/constants.hpp"
+#include "../units/constants.hpp"
 #include "../util/is_number.hpp"
 #include "../units/scalar_unit.hpp"
 

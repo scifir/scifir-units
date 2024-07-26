@@ -3,7 +3,7 @@
 #include "./scalar_unit.hpp"
 #include "./dimension.hpp"
 #include "./prefix.hpp"
-#include "../topology/constants.hpp"
+#include "./constants.hpp"
 
 #include "boost/algorithm/string.hpp"
 

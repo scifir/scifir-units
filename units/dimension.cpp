@@ -1,6 +1,6 @@
 #include "./dimension.hpp"
 
-#include "../topology/constants.hpp"
+#include "./constants.hpp"
 
 #include "boost/algorithm/string.hpp"
 
