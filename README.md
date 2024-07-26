@@ -123,6 +123,46 @@ Now that the library es linked, you can use it inside your code by including the
 
 prefix can have all SI prefixes. dimension has all SI base dimensions, all common abbreviations, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
 
+### Tools of units in real life
+
+#### Base units
+
+- **Length:** Ruler, tape measure, micrometer.
+- **Angles:** Conveyor.
+- **Volume:** Volumetric flask.
+- **Mass:** Balance.
+- **Time:** Chronometer, clock.
+- **Electric current:** Amperimeter, oscilloscope.
+- **Temperature:** Thermometre.
+- **Amount of substance:** Volumetric flask with balance, then calculations.
+- **Luminous intensity:** Photometer.
+
+#### Derived units
+
+- **Force:** Force sensor.
+- **Pressure:** Barometer.
+- **pH meter:** pH.
+- **Geographical position:** GPS receiver.
+- **Voltage:** Voltimeter.
+- **Electrical resistance:** Multimeter.
+- **Wavelength of light waves:** Interferometer.
+- **Astronomical distances:** Astrolabe.
+
+### Electronic sensors of units
+
+- **Acceleration:** Accelerometer.
+- **Angular velocity:** Gyroscope.
+- **Geographical position:** GPS sensor.
+- **Temperature:** Analog temperature sensor, digital temperature sensor, temperature switch, thermocouple ICs.
+- **Infrared light:** IR sensor.
+- **Electric field:** Electric field meter sensor.
+- **Magnetic field:** Magnetic sensor.
+
+### Electronic motors of units
+
+- **Movement:** Electronic motor (very different sizes available).
+- **Valve:** Electronic valve.
+
 ### Folder structure
 
 - **.github/:** Contains configuration files related to the GitHub of scifir-units.
