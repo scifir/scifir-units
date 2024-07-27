@@ -234,7 +234,7 @@ namespace scifir
 				remove_dimension(actual_dimension);
 				if(actual_dimension.is_derived_dimension())
 				{
-					vector<dimension> derived_dimensions = actual_dimension.get_basic_dimensions();
+					vector<dimension> derived_dimensions = actual_dimension.get_simple_dimensions();
 					for(const dimension& derived_dimension : derived_dimensions)
 					{
 						remove_dimension(derived_dimension);
@@ -247,7 +247,7 @@ namespace scifir
 				add_dimension(new_dimension);
 				if(new_dimension.is_derived_dimension())
 				{
-					vector<dimension> new_derived_dimensions = new_dimension.get_basic_dimensions();
+					vector<dimension> new_derived_dimensions = new_dimension.get_simple_dimensions();
 					for(const dimension& new_derived_dimension : new_derived_dimensions)
 					{
 						add_dimension(new_derived_dimension);
@@ -275,7 +275,7 @@ namespace scifir
 				remove_dimension(actual_dimension);
 				if(actual_dimension.is_derived_dimension())
 				{
-					vector<dimension> derived_dimensions = actual_dimension.get_basic_dimensions();
+					vector<dimension> derived_dimensions = actual_dimension.get_simple_dimensions();
 					for(const dimension& derived_dimension : derived_dimensions)
 					{
 						remove_dimension(derived_dimension);
@@ -288,7 +288,7 @@ namespace scifir
 				add_dimension(new_dimension);
 				if(new_dimension.is_derived_dimension())
 				{
-					vector<dimension> new_derived_dimensions = new_dimension.get_basic_dimensions();
+					vector<dimension> new_derived_dimensions = new_dimension.get_simple_dimensions();
 					for(const dimension& new_derived_dimension : new_derived_dimensions)
 					{
 						add_dimension(new_derived_dimension);

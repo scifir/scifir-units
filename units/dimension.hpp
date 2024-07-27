@@ -58,7 +58,7 @@ namespace scifir
 			bool is_base_dimension() const;
 			bool is_derived_dimension() const;
 
-			vector<dimension> get_basic_dimensions() const;
+			vector<dimension> get_simple_dimensions() const;
 
 			void invert();
 

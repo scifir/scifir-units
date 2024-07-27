@@ -1038,7 +1038,7 @@ namespace scifir
 		return !is_base_dimension();
 	}
 
-	vector<dimension> dimension::get_basic_dimensions() const
+	vector<dimension> dimension::get_simple_dimensions() const
 	{
 		vector<dimension> basic_dimensions = vector<dimension>();
 		switch (dimension_type)
@@ -1468,7 +1468,7 @@ namespace scifir
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
 		{
-			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
+			vector<dimension> x_subdimensions = x[i].get_simple_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				if (x[i].dimension_position == dimension::DENOMINATOR)
@@ -1496,7 +1496,7 @@ namespace scifir
 				value /= x[i].get_conversion_factor();
 				value /= x[i].prefix_math();
 			}
-			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
+			vector<dimension> x_subdimensions = x[i].get_simple_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				if (x[i].dimension_position == dimension::DENOMINATOR)
@@ -1746,9 +1746,9 @@ namespace scifir
 
 	bool common_dimension(const dimension& x,const dimension& y)
 	{
-		for (const dimension& x_dimension : x.get_basic_dimensions())
+		for (const dimension& x_dimension : x.get_simple_dimensions())
 		{
-			for (const dimension& y_dimension : y.get_basic_dimensions())
+			for (const dimension& y_dimension : y.get_simple_dimensions())
 			{
 				if (x_dimension.dimension_type == y_dimension.dimension_type and x_dimension.dimension_position == y_dimension.dimension_position)
 				{

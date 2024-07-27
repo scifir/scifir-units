@@ -226,8 +226,8 @@
 * \fn bool dimension::is_derived_dimension() const
 * \brief If the dimension is not a basic dimension, it's considered a derived dimension.
 
-* \fn vector<dimension> dimension::get_basic_dimensions() const
-* \brief Returns the basic dimensions of the dimension, which are different than the dimension, and possible more than one, if the dimension is not basic.
+* \fn vector<dimension> dimension::get_simple_dimensions() const
+* \brief Returns the simple dimensions of the dimension, which are different than the dimension, and more than one, if the dimension is not a simple dimension but a derived dimension.
 
 * \fn void dimension::invert()
 * \brief Changes the position of the dimension to the reverse, from the NUMERATOR to the DENOMINATOR, or from the DENOMINATOR to the NUMERATOR.
