@@ -923,26 +923,26 @@ namespace scifir
 		return false;
 	}
 
-	bool dimension::is_basic_dimension() const
+	bool dimension::is_base_dimension() const
 	{
 		switch(dimension_type)
 		{
 			case dimension::NONE:
-				return true;
+				return false;
 			case dimension::METRE:
 				return true;
 			case dimension::DEGREE:
-				return true;
+				return false;
 			case dimension::RADIAN:
-				return true;
+				return false;
 			case dimension::STERADIAN:
-				return true;
+				return false;
 			case dimension::GRAM:
 				return true;
 			case dimension::SECOND:
 				return true;
 			case dimension::COULOMB:
-				return true;
+				return false;
 			case dimension::KELVIN:
 				return true;
 			case dimension::MOLE:
@@ -950,7 +950,7 @@ namespace scifir
 			case dimension::CANDELA:
 				return true;
 			case dimension::BYTE:
-				return true;
+				return false;
 			case dimension::HERTZ:
 				return false;
 			case dimension::NEWTON:
@@ -962,7 +962,7 @@ namespace scifir
 			case dimension::WATT:
 				return false;
 			case dimension::AMPERE:
-				return false;
+				return true;
 			case dimension::VOLT:
 				return false;
 			case dimension::FARADAY:
@@ -1020,22 +1020,22 @@ namespace scifir
 			case dimension::CUSTOM:
 				return false;
 			case dimension::CUSTOM_BASIC:
-				return true;
+				return false;
 			case dimension::CUSTOM_FULL_SYMBOL:
 				return false;
 			case dimension::MONEY:
-				return true;
+				return false;
 			case dimension::PIXEL:
 				return false;
 			case dimension::MEMO:
-				return true;
+				return false;
 		}
-		return true;
+		return false;
 	}
 
 	bool dimension::is_derived_dimension() const
 	{
-		return !is_basic_dimension();
+		return !is_base_dimension();
 	}
 
 	vector<dimension> dimension::get_basic_dimensions() const
