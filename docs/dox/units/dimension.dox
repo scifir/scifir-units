@@ -218,13 +218,16 @@
 * \brief Returns the math between some prefix and the dimension. The difference with the other prefix_math() function is that the prefix is given as parameter.
 
 * \fn bool dimension::is_simple_dimension() const
-* \brief If the dimension doesn't has more derived dimensions, it's considered a simple dimension.
+* \brief If the dimension doesn't has more derived dimensions, it's a simple dimension.
+
+* \fn bool dimension::is_composite_dimension() const
+* \brief If the dimension has more simple dimensions, it's a composite dimension.
 
 * \fn bool dimension::is_base_dimension() const
 * \brief Returns true if the dimension is an SI base dimension. Following the SI system of units, only are base dimensions the METRE, the GRAM, the SECOND, the AMPERE, the KELVIN, the MOLE and the CANDELA.
 
 * \fn bool dimension::is_derived_dimension() const
-* \brief If the dimension is not a basic dimension, it's considered a derived dimension.
+* \brief If the dimension is not a base dimension, it's considered a derived dimension.
 
 * \fn vector<dimension> dimension::get_simple_dimensions() const
 * \brief Returns the simple dimensions of the dimension, which are different than the dimension, and more than one, if the dimension is not a simple dimension but a derived dimension.

@@ -570,7 +570,9 @@ N-dimensions, inside scifir-units, are called **ND** in classnames. ND classes a
 
 ### Dimensions
 
-Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units. Different to that, a **simple dimension** is a dimension without any derived dimension, and there are more dimensions under than the base dimensions. That's, it's a dimension that's not an abbreviation of two or more other dimensions.
+Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units. Different to that, a **simple dimension** is a dimension without any simple dimension more derived from it. That's, a simple dimension is a dimension that's not an abbreviation of two or more other dimensions.
+
+A **derived dimension** is a dimension that's not a base dimension under the SI system of units. A **composite dimension** is a dimension that's not a simple dimension.
 
 The dimensions that a scalar_unit class can have are available in the enum dimension::type, and are only the SI dimensions or, if there isn't a dimension for an important purpose in the SI system of units, a selected dimension of the different possible options. Only the prefered dimensions have been added to the enum dimension::type, the other dimensions, as for example England units, have been added only as conversion options. With that system, always the same dimensions are used, which simplifies the work inside a laboratory, because then there's less confusion about which dimensions are being used.
 

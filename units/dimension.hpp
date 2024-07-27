@@ -55,6 +55,8 @@ namespace scifir
 			long double prefix_math(const prefix& x_prefix) const;
 
 			bool is_simple_dimension() const;
+			bool is_composite_dimension() const;
+
 			bool is_base_dimension() const;
 			bool is_derived_dimension() const;
 

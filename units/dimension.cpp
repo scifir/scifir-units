@@ -923,6 +923,11 @@ namespace scifir
 		return false;
 	}
 
+	bool dimension::is_composite_dimension() const
+	{
+		return !is_simple_dimension();
+	}
+
 	bool dimension::is_base_dimension() const
 	{
 		switch(dimension_type)
