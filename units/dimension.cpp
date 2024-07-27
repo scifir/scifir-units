@@ -120,6 +120,10 @@ namespace scifir
 		{
 			dimension_type = dimension::BYTE;
 		}
+		else if(dimension_name == "bit")
+		{
+			dimension_type = dimension::BIT;
+		}
 		else if(dimension_name == "Hz")
 		{
 			dimension_type = dimension::HERTZ;
@@ -359,6 +363,8 @@ namespace scifir
 				return "candela";
 			case dimension::BYTE:
 				return "byte";
+			case dimension::BIT:
+				return "bit";
 			case dimension::HERTZ:
 				return "hertz";
 			case dimension::NEWTON:
@@ -474,6 +480,8 @@ namespace scifir
 				return "candelas";
 			case dimension::BYTE:
 				return "bytes";
+			case dimension::BIT:
+				return "bits";
 			case dimension::HERTZ:
 				return "hertz";
 			case dimension::NEWTON:
@@ -594,6 +602,8 @@ namespace scifir
 				return "cd";
 			case dimension::BYTE:
 				return "B";
+			case dimension::BIT:
+				return "bit";
 			case dimension::HERTZ:
 				return "Hz";
 			case dimension::NEWTON:
@@ -714,6 +724,8 @@ namespace scifir
 				return 1.0l;
 			case dimension::BYTE:
 				return 1.0l;
+			case dimension::BIT:
+				return 0.125l;
 			case dimension::HERTZ:
 				return 1.0l;
 			case dimension::NEWTON:
@@ -841,6 +853,8 @@ namespace scifir
 				return true;
 			case dimension::BYTE:
 				return true;
+			case dimension::BIT:
+				return true;
 			case dimension::HERTZ:
 				return true;
 			case dimension::NEWTON:
@@ -956,6 +970,8 @@ namespace scifir
 				return true;
 			case dimension::BYTE:
 				return false;
+			case dimension::BIT:
+				return false;
 			case dimension::HERTZ:
 				return false;
 			case dimension::NEWTON:
@@ -1040,7 +1056,114 @@ namespace scifir
 
 	bool dimension::is_derived_dimension() const
 	{
-		return !is_base_dimension();
+		switch(dimension_type)
+		{
+			case dimension::NONE:
+				return false;
+			case dimension::METRE:
+				return false;
+			case dimension::DEGREE:
+				return true;
+			case dimension::RADIAN:
+				return true;
+			case dimension::STERADIAN:
+				return true;
+			case dimension::GRAM:
+				return false;
+			case dimension::SECOND:
+				return false;
+			case dimension::COULOMB:
+				return true;
+			case dimension::KELVIN:
+				return false;
+			case dimension::MOLE:
+				return false;
+			case dimension::CANDELA:
+				return false;
+			case dimension::BYTE:
+				return false;
+			case dimension::BIT:
+				return false;
+			case dimension::HERTZ:
+				return true;
+			case dimension::NEWTON:
+				return true;
+			case dimension::PASCAL:
+				return true;
+			case dimension::JOULE:
+				return true;
+			case dimension::WATT:
+				return true;
+			case dimension::AMPERE:
+				return false;
+			case dimension::VOLT:
+				return true;
+			case dimension::FARADAY:
+				return true;
+			case dimension::OHM:
+				return true;
+			case dimension::SIEMENS:
+				return true;
+			case dimension::WEBER:
+				return true;
+			case dimension::TESLA:
+				return true;
+			case dimension::HENRY:
+				return true;
+			case dimension::LUMEN:
+				return true;
+			case dimension::LUX:
+				return true;
+			case dimension::BECQUEREL:
+				return true;
+			case dimension::GRAY:
+				return true;
+			case dimension::SIEVERT:
+				return true;
+			case dimension::KATAL:
+				return true;
+			case dimension::ANGSTROM:
+				return false;
+			case dimension::LITRE:
+				return false;
+			case dimension::MINUTE:
+				return false;
+			case dimension::HOUR:
+				return false;
+			case dimension::DAY:
+				return false;
+			case dimension::LIGHT_YEAR:
+				return false;
+			case dimension::ASTRONOMICAL_UNIT:
+				return false;
+			case dimension::PARSEC:
+				return false;
+			case dimension::ELECTRON_VOLT:
+				return false;
+			case dimension::DALTON:
+				return false;
+			case dimension::ATOMIC_MASS_UNIT:
+				return false;
+			case dimension::BARN:
+				return false;
+			case dimension::MOLARITY:
+				return false;
+			case dimension::PARTICLES:
+				return false;
+			case dimension::CUSTOM:
+				return false;
+			case dimension::CUSTOM_BASIC:
+				return false;
+			case dimension::CUSTOM_FULL_SYMBOL:
+				return false;
+			case dimension::MONEY:
+				return false;
+			case dimension::PIXEL:
+				return false;
+			case dimension::MEMO:
+				return false;
+		}
+		return false;
 	}
 
 	vector<dimension> dimension::get_simple_dimensions() const
@@ -1082,6 +1205,9 @@ namespace scifir
 				basic_dimensions.push_back(dimension(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::BYTE:
+				basic_dimensions.push_back(dimension(dimension::BYTE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case dimension::BIT:
 				basic_dimensions.push_back(dimension(dimension::BYTE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::HERTZ:

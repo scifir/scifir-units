@@ -680,6 +680,7 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
 | ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
 | BYTE | B | Byte | Bytes | - | - | Measure of quantity of information.
+| BIT | bit | bit | bits | - | - | Measure of quantity of information, of each binary digit.
 | PIXEL | px | Pixel | Pixels | - | - | Measure the amount of pixels or the position inside a screen.
 
 #### Dimensions of biology
