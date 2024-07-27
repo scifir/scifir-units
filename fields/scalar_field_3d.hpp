@@ -2,7 +2,7 @@
 #define SCIFIR_UNITS_FIELDS_SCALAR_FIELD_3D_HPP_INCLUDED
 
 #include "../units/scalar_unit.hpp"
-#include "../units/unit_basic.hpp"
+#include "../units/base_units.hpp"
 #include "../meca_number/angle.hpp"
 #include "../coordinates/coordinates_3d.hpp"
 #include "../coordinates/coordinates_3dr.hpp"
@@ -93,42 +93,42 @@ namespace scifir
                 return equation(x.x,x.y,x.z);
             }
 
-            scalar_field_3d<T,U> operator+ (const scalar_field_3d<T,U>& x) const
+            scalar_field_3d<T,U> operator +(const scalar_field_3d<T,U>& x) const
             {
                 return scalar_field_3d<T,U>([this,x](const U& new_x,const U& new_y,const U& new_z) -> T { return equation(new_x,new_y,new_z) + x.equation(new_x,new_y,new_z); });
             }
             
-            scalar_field_3d<T,U> operator- (const scalar_field_3d<T,U>& x) const
+            scalar_field_3d<T,U> operator -(const scalar_field_3d<T,U>& x) const
             {
                 return scalar_field_3d<T,U>([this,x](const U& new_x,const U& new_y,const U& new_z) -> T { return equation(new_x,new_y,new_z) - x.equation(new_x,new_y,new_z); });
             }
             
-            scalar_field_3d<T,U> operator* (const scalar_field_3d<T,U>& x) const
+            scalar_field_3d<T,U> operator *(const scalar_field_3d<T,U>& x) const
             {
                 return scalar_field_3d<T,U>([this,x](const U& new_x,const U& new_y,const U& new_z) -> T { return equation(new_x,new_y,new_z) * x.equation(new_x,new_y,new_z); });
             }
             
-            scalar_field_3d<T,U> operator/ (const scalar_field_3d<T,U>& x) const
+            scalar_field_3d<T,U> operator /(const scalar_field_3d<T,U>& x) const
             {
                 return scalar_field_3d<T,U>([this,x](const U& new_x,const U& new_y,const U& new_z) -> T { return equation(new_x,new_y,new_z) / x.equation(new_x,new_y,new_z); });
             }
 
-            scalar_field_3d<T,U> operator+ (const scalar_unit& x) const
+            scalar_field_3d<T,U> operator +(const scalar_unit& x) const
             {
                 return scalar_field_3d<T,U>([this,x](const U& new_x,const U& new_y,const U& new_z) -> T { return equation(new_x,new_y,new_z) + x; });
             }
             
-            scalar_field_3d<T,U> operator- (const scalar_unit& x) const
+            scalar_field_3d<T,U> operator -(const scalar_unit& x) const
             {
                 return scalar_field_3d<T,U>([this,x](const U& new_x,const U& new_y,const U& new_z) -> T { return equation(new_x,new_y,new_z) - x; });
             }
             
-            scalar_field_3d<T,U> operator* (const scalar_unit& x) const
+            scalar_field_3d<T,U> operator *(const scalar_unit& x) const
             {
                 return scalar_field_3d<T,U>([this,x](const U& new_x,const U& new_y,const U& new_z) -> T { return equation(new_x,new_y,new_z) * x; });
             }
             
-            scalar_field_3d<T,U> operator/ (const scalar_unit& x) const
+            scalar_field_3d<T,U> operator /(const scalar_unit& x) const
             {
                 return scalar_field_3d<T,U>([this,x](const U& new_x,const U& new_y,const U& new_z) -> T { return equation(new_x,new_y,new_z) / x; });
             }
@@ -137,25 +137,25 @@ namespace scifir
     };
 
     template<typename T,typename U>
-    scalar_field_3d<T,U> operator+ (const scalar_unit& x,const scalar_field_3d<T,U>& y)
+    scalar_field_3d<T,U> operator +(const scalar_unit& x,const scalar_field_3d<T,U>& y)
     {
         return scalar_field_3d<T,U>([x,y](const U& new_x,const U& new_y,const U& new_z) -> T { return x + y.equation(new_x,new_y,new_z); });
     }
 
     template<typename T,typename U>
-    scalar_field_3d<T,U> operator- (const scalar_unit& x,const scalar_field_3d<T,U>& y)
+    scalar_field_3d<T,U> operator -(const scalar_unit& x,const scalar_field_3d<T,U>& y)
     {
         return scalar_field_3d<T,U>([x,y](const U& new_x,const U& new_y,const U& new_z) -> T { return x - y.equation(new_x,new_y,new_z); });
     }
 
     template<typename T,typename U>
-    scalar_field_3d<T,U> operator* (const scalar_unit& x,const scalar_field_3d<T,U>& y)
+    scalar_field_3d<T,U> operator *(const scalar_unit& x,const scalar_field_3d<T,U>& y)
     {
         return scalar_field_3d<T,U>([x,y](const U& new_x,const U& new_y,const U& new_z) -> T { return x * y.equation(new_x,new_y,new_z); });
     }
 
     template<typename T,typename U>
-    scalar_field_3d<T,U> operator/ (const scalar_unit& x,const scalar_field_3d<T,U>& y)
+    scalar_field_3d<T,U> operator /(const scalar_unit& x,const scalar_field_3d<T,U>& y)
     {
         return scalar_field_3d<T,U>([x,y](const U& new_x,const U& new_y,const U& new_z) -> T { return x / y.equation(new_x,new_y,new_z); });
     }

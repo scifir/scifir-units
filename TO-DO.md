@@ -10,33 +10,30 @@ SCIFIR UNITS - VERSION 2
 // TODO: add operator*, cross_product(), dot_product(), hadamard_product()
 
 // TRAJECTORY AND PARAMETERIZATION
-// TODO: think if to add here the trajectory and the parameterization
+// TODO: finish the trajectory_3d class
+
+// WAVES
+// TODO: think if to add the waves here too
 
 // BUGS AND SIMILAR PROBLEMS (3)
 // TODO: document the light units somewhere
 // TODO: zones must match that the type send corresponds to the data
 // TODO: aid must match that the type send corresponds to the data
 // TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes
-// TODO: add the string literals with the prefixes Q, R, r and q
-// TODO: add the rest of string literals of litre
-// TODO: add to the README.md file the explanation of the not so known dimensions near the start
-// TODO: add to the README.md file all basic units
-// TODO: add the bit dimension
 // TODO: conversion of size_t to and int gives a warning in MSVC
 // TODO: finish testing in Windows all tests
 // TODO: add the Celsius to the conversion
-// TODO: document somewhere the multiples of light year
-// TODO: add to_scalar_unit() function to pixel class
+// TODO: check the derived units here: https://en.wikipedia.org/wiki/SI_derived_unit
+// TODO: look if the SI system of units has another name for abbreviations
+// TODO: look if the SI system of units has another name for dimensions
 
 // TODO: maybe it's needed to change characters of the initialization strings of some vector_unit classes. It's needed to update the file README.md too with that
-// TODO: maybe add a character table inside the documentation to copy the characters of the initialization strings
 // TODO: think of how to implement conversions, do also the test of them
 // TODO: check if the member-variable names of dimension class can be changed
 
 // TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their derived classes
 
 // TODO: custom dimensions should allow to store their names too, not only their symbols
-// TODO: maybe the prefix should be also present in the operator == of dimensions, and then it's needed another function to do what this operator is currently doing
 
 // TODO: display_double() and display_long_double() functions of types.cpp
 
@@ -47,10 +44,9 @@ SCIFIR UNITS - VERSION 2
 // TODO: -Wall gives a warning for vector_unit_nd with end of non-void function
 // TODO: look at the 1.99 of test_coordinates_2d vs the 2 of the float specialization
 
-// BUILD (3)
+// BUILD (2)
 // TODO: support freebsd and openbsd
 // TODO: upload the package to the container registry of github packages
-// TODO: search if there's a way to add multiple jobs to the build with the command cmake --build, similar to make -j
 
 // BUILD - ADVANCED (7)
 // TODO: study bazel and look the files of bazel that are part of Catch2, maybe the same should be done for scifir-units
@@ -81,7 +77,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: verify that are present all functions of coordinates with rotations
 // TODO: report the bug to CATCH of the use of bool()
 // TODO: verify the titles of sections of tests of units, meca_number and special_units
-// TODO: test of basic unit classes
+// TODO: test of base unit classes
 
 // DOCUMENTATION (23)
 // TODO: create all the dox files of the library
@@ -100,6 +96,9 @@ SCIFIR UNITS - VERSION 2
 // TODO: inside vector_unit classes explain how basic units of vector_unit classes work
 // TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
 // TODO: add the symbol of pi in the README.md file with the things to memorize
+// TODO: add the explanation of the definition of each unit inside a file, including conversions
+// TODO: document the imperial system of units (https://en.wikipedia.org/wiki/Imperial_units)
+// TODO: explain how a robot can calculate angles
 
 // TODO: desactivate the search engine in the doxyfile for the doxyfile of development, not the doxyfile of github pages
 // TODO: maybe use two different files Doxyfile, one for master and one for gh-pages
@@ -112,6 +111,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: explain the custom dimensions in the file README.md
 // TODO: display as plain text the <T> inside the md file
 // TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication
+// TODO: add the BIPM to some part of the documentation, where it should be cited
 
 // TODO: document the use of the custom_display "sci"
 // TODO: think on the different cases of use of coordinates and document them, including the use of an origin
@@ -152,6 +152,7 @@ SCIFIR UNITS - VERSION 2
 // VECTOR FIELDS (2)
 // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field
 // TODO: parsing of initialization strings of fields. Allow to declare variables that can be refered by name inside initialization strings of vector fields
+// TODO: create magnetic_field class, and add the string literal _T to the README.md file
 
 // PLOTTING
 // TODO: add functions that allow to use also matplot++ inside the library
@@ -183,6 +184,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: read the ISO 80000
 
 // TODO: finish the test of custom_basic dimensions and document them in the README.md file
+// TODO: maybe is_complex_dimension() for cases were the the dimension is not a simple dimension
 
 // UNITS (9)
 // TODO: solve in some way the problem that vector_unit_3d needs different characters in Windows an inside Linux when initialized with strings
@@ -195,14 +197,15 @@ SCIFIR UNITS - VERSION 2
 // TODO: possibly add the light_scalar_unit class that allows operations with scalar_unit classes, which must contain only one dimension, not a vector<dimension>
 // TODO: function to_latex() for dimensions and scalar_unit
 // TODO: function that displays the scalar_unit as text, with the plural if the scalar_unit has a value greather than 1
+// TODO: maybe change the SI constants to be a base unit instead of a long double
 
 // TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 // TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
 
-// TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all predefined_unit files
+// TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files
 
 // PREDEFINED UNITS (4)
-// TODO: think if to add accoustic and matter predefined units, or if it's not needed
+// TODO: think if to add accoustic and matter derived units, or if it's not needed
 // TODO: delete all field classes that currently are vector_units, and make them fields
 // TODO: think if to add another concentration class, the previous one has been deprecated
 // TODO: move cas_number to the library of scifir-info, or even to another category
@@ -227,6 +230,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: _percentage literal
 // TODO: address class with zid inside
 // TODO: enum of movement maybe should be divided in kind of animal
+// TODO: display() function for pixel class
 
 // EMOTIONAL UNITS (1)
 // TODO: finish the enums of mind.hpp
@@ -264,6 +268,9 @@ SCIFIR UNITS - VERSION 2
 // OPTION 4: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
 // OPTION 4 - TODO: add const to the enum of light_unit
 // AFTER SOME OPTION - TODO: finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation
+
+// DOUBTS
+// TODO: maybe delete the string literals of the prefixes of AU, leave only the string literal without prefix
 
 // ANOTHER PROJECT - LIBRARY OF INFORMATION
 // TODO: isbn class
