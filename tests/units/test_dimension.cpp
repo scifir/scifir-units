@@ -872,7 +872,7 @@ TEST_CASE("dimension class") {
 		CHECK(to_string(c) == "km");
 	}
 
-	SECTION ("create_dimensions(), create_derived_dimensions() and normalize_dimensions()") {
+	SECTION ("create_dimensions(), create_simple_dimensions() and normalize_dimensions()") {
 		vector<dimension> a = create_dimensions("m*s2/C4");
 		CHECK(to_string(a) == "m*s2/C4");
 		CHECK(equal_dimensions(to_string(a),"s2*m/C4"));
@@ -883,24 +883,24 @@ TEST_CASE("dimension class") {
 		CHECK(to_string(c) == "m");
 		vector<dimension> d = create_dimensions("m3");
 		CHECK(to_string(d) == "m3");
-		vector<dimension> e = create_derived_dimensions("N");
+		vector<dimension> e = create_simple_dimensions("N");
 		CHECK(to_string(e) == "kg*m/s2");
-		vector<dimension> f = create_derived_dimensions("N2");
+		vector<dimension> f = create_simple_dimensions("N2");
 		CHECK(to_string(f) == "kg2*m2/s4");
 		vector<dimension> g = create_dimensions("N");
-		vector<dimension> h = create_derived_dimensions(g);
+		vector<dimension> h = create_simple_dimensions(g);
 		CHECK(to_string(h) == "kg*m/s2");
 		vector<dimension> i = create_dimensions("1/N");
-		vector<dimension> j = create_derived_dimensions(i);
+		vector<dimension> j = create_simple_dimensions(i);
 		CHECK(to_string(j) == "s2/kg*m");
 		vector<dimension> k = create_dimensions("hour");
 		long double k2 = 10;
-		vector<dimension> l = create_derived_dimensions(k,k2);
+		vector<dimension> l = create_simple_dimensions(k,k2);
 		CHECK(equal_dimensions(k,l));
 		CHECK(k2 == 36000);
 		vector<dimension> r = create_dimensions("1/hour");
 		long double r2 = 10;
-		vector<dimension> s = create_derived_dimensions(r,r2);
+		vector<dimension> s = create_simple_dimensions(r,r2);
 		CHECK(equal_dimensions(r,s));
 		CHECK(std::fabs(r2 - 0.00277778l) < 0.00000001l);
 		vector<dimension> m = create_dimensions("m*s2/m2*C4");
@@ -975,30 +975,30 @@ TEST_CASE("dimension class") {
 		CHECK(equal_dimensions(y,z) == true);
 		vector<dimension> aa = create_dimensions("m2/s2");
 		long double aa2 = 1.0;
-		vector<dimension> ab = square_dimensions(aa,aa2,2);
+		vector<dimension> ab = square_dimensions(aa,2,aa2);
 		vector<dimension> ac = create_dimensions("m/s");
 		CHECK(equal_dimensions(ab,ac) == true);
 		CHECK(aa2 == 1);
 		vector<dimension> ad = create_dimensions("hour2/m2");
 		long double ad2 = 1.0;
-		vector<dimension> ae = square_dimensions(ad,ad2,2);
+		vector<dimension> ae = square_dimensions(ad,2,ad2);
 		vector<dimension> af = create_dimensions("s/m");
 		CHECK(equal_dimensions(ae,af) == true);
 		CHECK(ad2 == 12960000.0);
 		vector<dimension> ag = create_dimensions("hour4");
 		long double ag2 = 1.0;
-		vector<dimension> ah = square_dimensions(ag,ag2,4);
+		vector<dimension> ah = square_dimensions(ag,4,ag2);
 		vector<dimension> ai = create_dimensions("s");
 		CHECK(equal_dimensions(ah,ai) == true);
 		CHECK(ag2 == 167961600000000.0);
 		vector<dimension> aj = create_dimensions("s3");
 		long double aj2 = 1.0;
-		vector<dimension> ak = square_dimensions(aj,aj2,2);
+		vector<dimension> ak = square_dimensions(aj,2,aj2);
 		CHECK(ak.size() == 0);
 		CHECK(aj2 == 1.0);
 		vector<dimension> al = create_dimensions("1/s2");
 		long double al2 = 4.0;
-		vector<dimension> am = square_dimensions(al,al2,2);
+		vector<dimension> am = square_dimensions(al,2,al2);
 		vector<dimension> an = create_dimensions("1/s");
 		CHECK(equal_dimensions(am,an) == true);
 		CHECK(al2 == 4.0);

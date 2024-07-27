@@ -23,7 +23,7 @@ namespace scifir
 	class dimension;
 
 	vector<dimension> create_dimensions(string init_dimensions);
-	vector<dimension> create_derived_dimensions(const string& init_dimensions);
+	vector<dimension> create_simple_dimensions(const string& init_dimensions);
 
 	class dimension
 	{
@@ -71,7 +71,7 @@ namespace scifir
 			{
 				if (dimension::base_dimensions.count(new_symbol) == 0)
 				{
-					dimension::base_dimensions[new_symbol] = create_derived_dimensions(init_dimensions);
+					dimension::base_dimensions[new_symbol] = create_simple_dimensions(init_dimensions);
 				}
 			}
 
@@ -164,13 +164,13 @@ namespace scifir
 	string to_string(const dimension& x);
 	string to_string(const vector<dimension>& x_dimensions,bool with_brackets = false);
 
-	vector<dimension> create_derived_dimensions(const vector<dimension>& x);
-	vector<dimension> create_derived_dimensions(const vector<dimension>& x,long double& value);
+	vector<dimension> create_simple_dimensions(const vector<dimension>& x);
+	vector<dimension> create_simple_dimensions(const vector<dimension>& x,long double& value);
 
 	vector<dimension> multiply_dimensions(const vector<dimension>& x,const vector<dimension>& y);
 	vector<dimension> multiply_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value);
 	vector<dimension> divide_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value);
-	vector<dimension> square_dimensions(vector<dimension> x,long double& value,int index);
+	vector<dimension> square_dimensions(vector<dimension> x,int index,long double& value);
 	vector<dimension> power_dimensions(const vector<dimension>& x,int exponent);
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x);

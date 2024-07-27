@@ -321,7 +321,7 @@ namespace scifir
 
 	bool scalar_unit::has_empty_dimensions() const
 	{
-		vector<dimension> derived_dimensions = create_derived_dimensions(dimensions);
+		vector<dimension> derived_dimensions = create_simple_dimensions(dimensions);
 		if(derived_dimensions.size() == 0)
 		{
 			return true;
@@ -344,7 +344,7 @@ namespace scifir
 
 	vector<dimension> scalar_unit::get_derived_dimensions() const
 	{
-		return create_derived_dimensions(dimensions);
+		return create_simple_dimensions(dimensions);
 	}
 
 	string scalar_unit::display(int number_of_decimals,bool with_brackets,bool use_close_prefix) const
@@ -380,7 +380,7 @@ namespace scifir
 	{
 		ostringstream output;
 		long double x_value = get_value();
-		vector<dimension> derived_dimensions = create_derived_dimensions(dimensions,x_value);
+		vector<dimension> derived_dimensions = create_simple_dimensions(dimensions,x_value);
 		if (derived_dimensions.size() == 1 and use_close_prefix == true)
 		{
 			int value_scale = int(log10(get_value()));
@@ -418,7 +418,7 @@ namespace scifir
 					new_value /= x_dimension.prefix_math();
 				}
 			}
-			vector<dimension> derived_dimensions = create_derived_dimensions(dimensions);
+			vector<dimension> derived_dimensions = create_simple_dimensions(dimensions);
 			for(const dimension& x_dimension : derived_dimensions)
 			{
 				if (x_dimension.dimension_position == dimension::NUMERATOR)
@@ -730,7 +730,7 @@ namespace scifir
 	scalar_unit sqrt(const scalar_unit& x)
 	{
 		long double new_value = x.get_value();
-		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(), new_value, 2);
+		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(), 2, new_value);
 		new_value = std::sqrt(new_value);
 		return scalar_unit(new_value, new_dimensions);
 	}
@@ -738,7 +738,7 @@ namespace scifir
 	scalar_unit sqrt_nth(const scalar_unit& x, int index)
 	{
 		long double new_value = x.get_value();
-		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(), new_value, index);
+		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(), index, new_value);
 		new_value = std::pow(new_value, 1.0f / index);
 		return scalar_unit(new_value, new_dimensions);
 	}

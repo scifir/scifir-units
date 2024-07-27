@@ -256,7 +256,7 @@
 * \fn vector<dimension> scifir::create_dimensions(string init_dimensions)
 * \brief Creates the dimensions from an initialization string of dimensions
 
-* \fn vector<dimension> scifir::create_derived_dimensions(const string& init_dimensions)
+* \fn vector<dimension> scifir::create_simple_dimensions(const string& init_dimensions)
 * \brief Creates the derived dimensions from an initialization string of dimensions
 
 * \fn string scifir::to_string(const dimension& x)
@@ -265,10 +265,10 @@
 * \fn string scifir::to_string(const vector<dimension>& x_dimensions, bool with_brackets)
 * \brief Creates the string representation of a vector of dimensions. Used to display the dimensions of scalar_unit and all vector_unit classes. The dimensions can be displayed optionally between brackets like '[]' too.
 
-* \fn vector<dimension> scifir::create_derived_dimensions(const vector<dimension>& x)
+* \fn vector<dimension> scifir::create_simple_dimensions(const vector<dimension>& x)
 * \brief Creates all the derived dimensions from a vector of dimensions.
 
-* \fn vector<dimension> scifir::create_derived_dimensions(const vector<dimension>& x, long double& value)
+* \fn vector<dimension> scifir::create_simple_dimensions(const vector<dimension>& x, long double& value)
 * \brief Creates all the derived dimensions from a vector of dimensions, updating also the associated value related to those dimensions based on the prefix math and the conversion factor of the dimension, if that conversion factor is different than one.
 
 * \fn vector<dimension> scifir::multiply_dimensions(const vector<dimension>& x, const vector<dimension>& y)
@@ -280,7 +280,7 @@
 * \fn vector<dimension> scifir::divide_dimensions(vector<dimension> x, const vector<dimension>& y, long double& value)
 * \brief Divides the first vector of dimensions with the other. The result is normalized after, which means that equal dimensions at the numerator and at the denominator are cancelled. It also updates the value associated with those two vectors of dimensions with the prefix m ath and the conversion factor of those dimensions.
 
-* \fn vector<dimension> scifir::square_dimensions(vector<dimension> x, long double& value, int index)
+* \fn vector<dimension> scifir::square_dimensions(vector<dimension> x, int index, long double& value)
 * \brief Squares a vector of dimensions by an index. The value is updated too related to the prefix math and the conversion factor of this operation.
 
 * \fn vector<dimension> scifir::power_dimensions(const vector<dimension>& x, int exponent)

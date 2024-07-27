@@ -1457,13 +1457,13 @@ namespace scifir
 		return dimensions;
 	}
 
-	vector<dimension> create_derived_dimensions(const string& init_dimensions)
+	vector<dimension> create_simple_dimensions(const string& init_dimensions)
 	{
 		vector<dimension> new_dimensions = create_dimensions(init_dimensions);
-		return create_derived_dimensions(new_dimensions);
+		return create_simple_dimensions(new_dimensions);
 	}
 
-	vector<dimension> create_derived_dimensions(const vector<dimension>& x)
+	vector<dimension> create_simple_dimensions(const vector<dimension>& x)
 	{
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
@@ -1481,7 +1481,7 @@ namespace scifir
 		return new_x;
 	}
 
-	vector<dimension> create_derived_dimensions(const vector<dimension>& x,long double& value)
+	vector<dimension> create_simple_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
@@ -1538,7 +1538,7 @@ namespace scifir
 		return normalize_dimensions(x,value);
 	}
 
-	vector<dimension> square_dimensions(vector<dimension> x,long double& value,int index)
+	vector<dimension> square_dimensions(vector<dimension> x,int index,long double& value)
 	{
 		map<dimension::type,int> dimensions_count = map<dimension::type,int>();
 		for (const dimension& x_dimension : x)
@@ -1625,7 +1625,7 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x)
 	{
-		vector<dimension> new_x = create_derived_dimensions(x);
+		vector<dimension> new_x = create_simple_dimensions(x);
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -1675,7 +1675,7 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
 	{
-		vector<dimension> new_x = create_derived_dimensions(x,value);
+		vector<dimension> new_x = create_simple_dimensions(x,value);
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -1768,8 +1768,8 @@ namespace scifir
 
 	bool equal_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
-		vector<dimension> x_derived_dimensions = create_derived_dimensions(x);
-		vector<dimension> y_derived_dimensions = create_derived_dimensions(y);
+		vector<dimension> x_derived_dimensions = create_simple_dimensions(x);
+		vector<dimension> y_derived_dimensions = create_simple_dimensions(y);
 		if (x_derived_dimensions.size() == y_derived_dimensions.size())
 		{
 			vector<unsigned int> skip = vector<unsigned int>();
