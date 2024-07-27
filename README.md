@@ -36,9 +36,15 @@ cout << y << endl; // Prints "50 N 20θ"
 force_2d y2(30_N,10_degree);
 cout << y2 << endl;
 cout << (y + y2) << endl; // Prints the vectorial sum of y + y2
+y2.theta += 10; // Sums 10 degrees to theta of y2
+cout << y2.theta << endl; // Prints theta of y2 "20°"
 
 force_3d z(50_N,20_degree,40_degree); // force_3d is a child class of vector_unit_3d
 cout << z << endl; // Prints "50 N 20θ 40Φ"
+z.theta += 15; // Sums 15 degrees to theta of z
+z.phi += 10; // Sums 10 degrees to phi of z
+cout << z.theta << endl; // Prints theta of z "35°"
+cout << z.phi << endl; // Prints phi of z "50°"
 
 angle a = 100_degree; // angle class is not a scalar_unit
 a++; // Increments a by one unit
