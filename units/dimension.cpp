@@ -1750,7 +1750,7 @@ namespace scifir
 		{
 			for (const dimension& y_dimension : y.get_basic_dimensions())
 			{
-				if (x_dimension == y_dimension)
+				if (x_dimension.dimension_type == y_dimension.dimension_type and x_dimension.dimension_position == y_dimension.dimension_position)
 				{
 					return true;
 				}
@@ -1793,7 +1793,7 @@ namespace scifir
 					{
 						continue;
 					}
-					if (x_dimension == y_derived_dimensions[j])
+					if (x_dimension.dimension_type == y_derived_dimensions[j].dimension_type and x_dimension.dimension_position == y_derived_dimensions[j].dimension_position)
 					{
 						skip.push_back(j);
 						is_equal = true;
@@ -1838,7 +1838,7 @@ namespace scifir
 					{
 						continue;
 					}
-					if (x_dimension == y[j] and x_dimension.prefix == y[j].prefix)
+					if (x_dimension == y[j])
 					{
 						skip.push_back(j);
 						is_equal = true;
@@ -1861,7 +1861,7 @@ namespace scifir
 
 bool operator ==(const scifir::dimension& x,const scifir::dimension& y)
 {
-	if (x.dimension_type == y.dimension_type and x.dimension_position == y.dimension_position)
+	if (x.dimension_type == y.dimension_type and x.dimension_position == y.dimension_position and x.prefix == y.prefix)
 	{
 		return true;
 	}
