@@ -175,26 +175,27 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 
 | Constant | Value
 | ------ | ------
-| HYPERFINE_TRANSITION_FREQUENCY_OF_CS | 9192631770 Hz
-| SPEED_OF_LIGHT | 299792458 m/s
-| PLANCK_CONSTANT | 6.62607015×10−34 J⋅s
-| ELEMENTARY_CHARGE | 1.602176634×10−19 C
-| BOLTZMANN_CONSTANT | 1.380649×10−23 J/K
-| AVOGADRO_CONSTANT | 6.02214076×1023 mol−1
-| LUMINOUS_EFFICACY_OF_540_THZ_RADIATION | 683 lm/W
+| HYPERFINE_TRANSITION_FREQUENCY_OF_CS | $$ 9192631770 \  Hz $$
+| SPEED_OF_LIGHT | $$ 299792458 \  m/s $$
+| PLANCK_CONSTANT | $$ 6.62607015×10^{−34} \  J⋅s $$
+| ELEMENTARY_CHARGE | $$ 1.602176634×10^{−19} \  C $$
+| BOLTZMANN_CONSTANT | $$ 1.380649×10^{−23} \  J/K $$
+| AVOGADRO_CONSTANT | $$ 6.02214076×10^{23} \  mol^{−1} $$
+| LUMINOUS_EFFICACY_OF_540_THZ_RADIATION | $$ 683 \  lm/W $$
 
 ### Folder structure
 
 - **.github/:** Contains configuration files related to the GitHub of scifir-units.
 - **coordinates/:** Contains coordinates classes.
+- **derived_units/:** Contains the derived units of the SI system of units.
 - **docs/:** Contains the documentation.
 - **extra/:** Contains extra files related to the build.
 - **fields/:** Contains the field classes.
 - **meca_number/:** Contains numeric concepts that behave like a number machine, which are angle, complex_number and lab_number.
-- **derived_units/:** Contains the derived units of the SI system of units.
 - **special_units/:** Contains concepts similar to base and derived units, but different than them.
 - **tests/:** Contains the unitary tests.
 - **topology/:** Contains point classes.
+- **trajectories:** Contains trajectory classes.
 - **units/:** Contains the unit classes, dimension, prefix and conversion.
 - **util/:** Contains utilities for programming related to scifir-units, like is_number in template programming, matrix class and primitive type operations.
 
@@ -459,9 +460,15 @@ The conventions for storing informatic data are the following:
 
 ### Consumption of memory
 
+scifir-units is a very lightweight library, all classes require just some bytes to work. Then, it can be used in any electronics project, because the memory requirements can be meet.
+
+The prefix class sizes 1 byte. The dimension class sizes 6 bytes.
+
 The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vector_unit_nd size more than a single float, which uses 4 bytes, but don't size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.
 
 The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.
+
+The coordinates classes have as member-variables scalar_unit classes, and then they size the bytes of the scalar_unit classes, for each scalar_unit class they have.
 
 ## Use cases
 
@@ -587,8 +594,8 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
 | ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
 | METRE | m | Metre | Metres | - | - | Measure of length.
-| DEGREE | θ | Degree | Degrees | $$\frac{\pi}{180} rad$$ | - | Measure of length.
-| RADIAN | rad | Radian | Radians | $$\frac{180}{\pi} θ$$ | - | Measure of the angle, it's the exact measure of the perimeter of the angle, when that angle is drawn as a circle in a math graph.
+| DEGREE | θ | Degree | Degrees | $$\frac{\pi}{180} \  rad$$ | - | Measure of length.
+| RADIAN | rad | Radian | Radians | $$\frac{180}{\pi} \  θ$$ | - | Measure of the angle, it's the exact measure of the perimeter of the angle, when that angle is drawn as a circle in a math graph.
 | STERADIAN | sr | Steradian | Steradians | - | - | Measure of a solid angle, which is defined as an angle in two dimensions.
 | LITRE | L | Litre | Litres | 1 dm3 | dm3 | Measure of volume, frequently used for liquids.
 
@@ -611,8 +618,8 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | PARTICLES | particles | Particles | Particles | mol / (Avogadro number) | - | Amount of particles, without using mol.
 | MOLARITY | M | Molarity | Molarities | - | mol / L | Measure of concentration of a chemical species.
 | KATAL | kat | Katal | Katals | - | mol / s | Catalytic activity.
-| ANGSTROM | Å | Angstrom | Angstroms | - | $$10^{-10} m$$ | Dimension of length, used mainly for wavelengths, inside the laboratory.
-| DALTON | Da | Dalton | Daltons | - | $$1,66053886 * 10^{-24} g$$ | Measure of mass very low that is used for atoms and molecules, at microscopic and quantum scale. One mole of 1 Da is equivalent to 1 g.
+| ANGSTROM | Å | Angstrom | Angstroms | - | $$10^{-10} \  m$$ | Dimension of length, used mainly for wavelengths, inside the laboratory.
+| DALTON | Da | Dalton | Daltons | - | $$1,66053886 * 10^{-24} \  g$$ | Measure of mass very low that is used for atoms and molecules, at microscopic and quantum scale. One mole of 1 Da is equivalent to 1 g.
 | ATOMIC_MASS_UNIT | amu | Atomic mass unit | Atomic mass units | 1 Da | Da | Equivalent name to Dalton.
 
 #### Dimensions of force
@@ -628,7 +635,7 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
 | JOULE | J | Joule | Joules | - | kg * m2 / s2 | Measure of energy.
 | WATT | W | Watt | Watts | N particles (Avogadro number) | kg * m2 / s3 | Amounf of matter.
-| ELECTRON_VOLT | eV | Electron volt | Electron volts | - | $$1.602176634 * 10^{−19} J$$ | Measure of energy, used for quantum physics. It's a very low unit, intended for the quantum scale.
+| ELECTRON_VOLT | eV | Electron volt | Electron volts | - | $$1.602176634 * 10^{−19} \  J$$ | Measure of energy, used for quantum physics. It's a very low unit, intended for the quantum scale.
 
 #### Dimensions of optics
 
@@ -673,7 +680,7 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | BECQUEREL | Bq | Becquerel | Becquerels | - | 1 / s | Measure of radioactivity.
 | GRAY | Gy | Gray | Grays | - | m2 / s2 | Measure of ionising radiation (absorbed dose).
 | SIEVERT | Sv | Sievert | Sieverts | - | J / kg | Measure of ionising radiation (equivalent dose).
-| BARN | Barn |  Barn | Barns | - | $$10^{−28} m2$$  | Represents the transversal section of nucleus and nuclear reactions.
+| BARN | Barn |  Barn | Barns | - | $$10^{−28} \  m2$$  | Represents the transversal section of nucleus and nuclear reactions.
 
 #### Dimensions of informatics
 
