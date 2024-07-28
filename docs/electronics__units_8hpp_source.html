@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>scifir-units: predefined_units/electronics_units.hpp Source File</title>
+<title>scifir-units: derived_units/electronics_units.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_6b14df6650ff0cd07126f59cec692709.html">predefined_units</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3bc2481bac0ca7d8a9c702040aa758a1.html">derived_units</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -71,8 +71,8 @@ $(function() {
 <div class="title">electronics_units.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="electronics__units_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SCIFIR_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SCIFIR_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED</span></div>
+<a href="electronics__units_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SCIFIR_UNITS_DERIVED_UNITS_HARDWARE_UNITS_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SCIFIR_UNITS_DERIVED_UNITS_HARDWARE_UNITS_HPP_INCLUDED</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../units/scalar_unit.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../units/vector_unit_3d.hpp&quot;</span></div>
@@ -88,10 +88,12 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacescifir.html#ac64e4f0f9c285a524a55dc30735dd844">   15</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(permittivity);</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacescifir.html#a7e8e6851ed502d002614ef26f733b530">   16</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(resistivity);</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespacescifir.html#a68c49a2257a64946321723e2ab9c68ff">   17</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(linear_charge_density);</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacescifir.html#a05ef0d5cbaa02a70786ba02def3c4fe7">   18</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(frequency_drift);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SCIFIR_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacescifir.html#a640ba5cf54c7cb20b60c1c94598f89cb">   18</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(surface_charge_density);</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacescifir.html#a65e7ce1c07836a01f2e5f225d310213c">   19</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(volume_charge_density);</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacescifir.html#a05ef0d5cbaa02a70786ba02def3c4fe7">   20</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(frequency_drift);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SCIFIR_UNITS_DERIVED_UNITS_HARDWARE_UNITS_HPP_INCLUDED</span></div>
 <div class="ttc" id="anamespacescifir_html"><div class="ttname"><a href="namespacescifir.html">scifir</a></div><div class="ttdoc">The namespace scifir contains all scifir-units, excepting the string literals, which are outside.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__1d_8cpp_source.html#l00006">coordinates_1d.cpp:7</a></div></div>
 <div class="ttc" id="ascalar__unit_8hpp_html_ab2113e04286d6bffb113bb62617c0cec"><div class="ttname"><a href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a></div><div class="ttdeci">#define SCALAR_UNIT_HPP(name)</div><div class="ttdef"><b>Definition:</b> <a href="scalar__unit_8hpp_source.html#l00034">scalar_unit.hpp:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

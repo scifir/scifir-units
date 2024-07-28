@@ -104,7 +104,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classscifir_1_1zid.html#a487b84842ca920648db3a81874e44844">   31</a></span>&#160;    <a class="code" href="classscifir_1_1zid.html#a952698b9b559fca982259db218a4ca14">zid::zid</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1aid.html">scifir::aid</a>&amp; new_aid,<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; new_country,<span class="keyword">const</span> vector&lt;string&gt;&amp; new_regions) : <a class="code" href="classscifir_1_1aid.html">aid</a>(new_aid),country(new_country),regions(new_regions),zone(),zone_type(<a class="code" href="classscifir_1_1zid.html">zid</a>::REGION)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {}</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classscifir_1_1zid.html#ab53d79b1d08b5253dab75cd978148ffd">   34</a></span>&#160;    <a class="code" href="classscifir_1_1zid.html#a952698b9b559fca982259db218a4ca14">zid::zid</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1aid.html">scifir::aid</a>&amp; new_aid,<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; new_country,<span class="keyword">const</span> vector&lt;string&gt;&amp; new_regions,<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; new_zone) : <a class="code" href="classscifir_1_1aid.html">aid</a>(new_aid),country(new_country),regions(new_regions),zone(new_zone),zone_type(<a class="code" href="classscifir_1_1zid.html">zid</a>::ZONE)</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classscifir_1_1zid.html#abea86f380ab8729ee9c0cdd7d8adc4fd">   34</a></span>&#160;    <a class="code" href="classscifir_1_1zid.html#a952698b9b559fca982259db218a4ca14">zid::zid</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1aid.html">scifir::aid</a>&amp; new_aid,<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a>&amp; new_zid_type,<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; new_country,<span class="keyword">const</span> vector&lt;string&gt;&amp; new_regions,<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; new_zone) : <a class="code" href="classscifir_1_1aid.html">aid</a>(new_aid),country(new_country),regions(new_regions),zone(new_zone),zone_type(new_zid_type)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classscifir_1_1zid.html#a34d6ab9691afec6a54498811a357da38">   37</a></span>&#160;    <a class="code" href="classscifir_1_1zid.html#a952698b9b559fca982259db218a4ca14">zid::zid</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1aid.html">scifir::aid</a>&amp; new_aid,<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; init_zid) : <a class="code" href="classscifir_1_1aid.html">aid</a>(new_aid),regions(),country(),zone(),zone_type(<a class="code" href="classscifir_1_1zid.html">zid</a>::<a class="code" href="namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36ab50339a10e1de285ac99d4c3990b8693">NONE</a>)</div>
@@ -303,130 +303,136 @@ $(function() {
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;C&quot;</span>;</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>:</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;R&quot;</span>;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a>:</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Z&quot;</span>;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        }</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">  239</a></span>&#160;    <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a> <a class="code" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; zone_type_abbreviation)</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;C&quot;</span>)</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">zid::COUNTRY</a>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;R&quot;</span>)</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;Z&quot;</span>)</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">zid::NONE</a>;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a093a778c207548419656659944a46ac4">  260</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#a093a778c207548419656659944a46ac4">operator ==</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y)</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> == y.<a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>)</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == y.<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>)</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        {</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; x.<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.size(); i++)</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>[i] != y.<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>[i])</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            }</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> == y.<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>)</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            }</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        }</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">  293</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">operator !=</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y)</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">return</span> !(x == y);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="zid_8cpp.html#aa59d8c03955794abaec412d34ee50110">  298</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#a093a778c207548419656659944a46ac4">operator ==</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; init_zid_full)</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;{</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="classscifir_1_1zid.html">scifir::zid</a> y = <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>(init_zid_full);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">return</span> (x == y);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>:</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;S&quot;</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a>:</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Z&quot;</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">  241</a></span>&#160;    <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a> <a class="code" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; zone_type_abbreviation)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;C&quot;</span>)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">zid::COUNTRY</a>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;R&quot;</span>)</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;S&quot;</span>)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zone_type_abbreviation == <span class="stringliteral">&quot;Z&quot;</span>)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">zid::NONE</a>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a093a778c207548419656659944a46ac4">  266</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#a093a778c207548419656659944a46ac4">operator ==</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> == y.<a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == y.<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; x.<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.size(); i++)</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>[i] != y.<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>[i])</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> == y.<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>)</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno"><a class="line" href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">  299</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">operator !=</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;{</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">return</span> !(x == y);</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;}</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a0c84efd3e3893b3331380c7aada89306">  304</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">operator !=</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; init_zid_full)</div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="zid_8cpp.html#aa59d8c03955794abaec412d34ee50110">  304</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#a093a778c207548419656659944a46ac4">operator ==</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; init_zid_full)</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;{</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">return</span> !(x == init_zid_full);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;}</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="zid_8cpp.html#afdb2451e9204dfe1db539d3b7015c35c">  309</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#a093a778c207548419656659944a46ac4">operator ==</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; init_zid_full, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x)</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="classscifir_1_1zid.html">scifir::zid</a> y = <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>(init_zid_full);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> (x == y);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <a class="code" href="classscifir_1_1zid.html">scifir::zid</a> y = <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>(init_zid_full);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> (x == y);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a0c84efd3e3893b3331380c7aada89306">  310</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">operator !=</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; init_zid_full)</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> !(x == init_zid_full);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a40c4d7f2051ffd77cda6729cce214976">  315</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">operator !=</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; init_zid_full, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x)</div>
+<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="zid_8cpp.html#afdb2451e9204dfe1db539d3b7015c35c">  315</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#a093a778c207548419656659944a46ac4">operator ==</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; init_zid_full, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x)</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;{</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">return</span> !(init_zid_full == x);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a8172c8995c736ca5bd751e29b788c80b">  320</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zid_8cpp.html#a8172c8995c736ca5bd751e29b788c80b">operator +=</a>(<span class="keywordtype">string</span>&amp; x, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y)</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    ostringstream output;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    output &lt;&lt; y;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    x += output.str();</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno"><a class="line" href="zid_8cpp.html#ab1cad86185890407265a6af3b0275bc1">  327</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="zid_8cpp.html#ab1cad86185890407265a6af3b0275bc1">operator +</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y)</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    ostringstream output;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    output &lt;&lt; x;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    output &lt;&lt; y;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">return</span> output.str();</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a9404a9e73eeea7ef6240c04d1357d020">  335</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="zid_8cpp.html#ab1cad86185890407265a6af3b0275bc1">operator +</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x)</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;{</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    ostringstream output;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    output &lt;&lt; y;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    output &lt;&lt; x;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">return</span> output.str();</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a2c06ffaf34cda3c37a5616423b4a15ac">  343</a></span>&#160;ostream&amp; <a class="code" href="zid_8cpp.html#a2c06ffaf34cda3c37a5616423b4a15ac">operator &lt;&lt;</a>(ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x)</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;{</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">return</span> os &lt;&lt; <a class="code" href="namespacescifir.html#ac87978faacca073a3cfa36500a45409a">to_string</a>(x);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a0bd7ef119f4e1870ffb481c3a5321902">  348</a></span>&#160;istream&amp; <a class="code" href="zid_8cpp.html#a0bd7ef119f4e1870ffb481c3a5321902">operator &gt;&gt;</a>(istream&amp; is, <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x)</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;{</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordtype">char</span> a[256];</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    is.getline(a, 256);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">string</span> b(a);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    boost::trim(b);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    x = <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>(b);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">return</span> is;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="classscifir_1_1zid.html">scifir::zid</a> y = <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>(init_zid_full);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">return</span> (x == y);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;}</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a40c4d7f2051ffd77cda6729cce214976">  321</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">operator !=</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; init_zid_full, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x)</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;{</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">return</span> !(init_zid_full == x);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;}</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a8172c8995c736ca5bd751e29b788c80b">  326</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zid_8cpp.html#a8172c8995c736ca5bd751e29b788c80b">operator +=</a>(<span class="keywordtype">string</span>&amp; x, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;{</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    ostringstream output;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    output &lt;&lt; y;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    x += output.str();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="zid_8cpp.html#ab1cad86185890407265a6af3b0275bc1">  333</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="zid_8cpp.html#ab1cad86185890407265a6af3b0275bc1">operator +</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y)</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    ostringstream output;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    output &lt;&lt; x;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    output &lt;&lt; y;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">return</span> output.str();</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a9404a9e73eeea7ef6240c04d1357d020">  341</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="zid_8cpp.html#ab1cad86185890407265a6af3b0275bc1">operator +</a>(<span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; y, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x)</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;{</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    ostringstream output;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    output &lt;&lt; y;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    output &lt;&lt; x;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span> output.str();</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a2c06ffaf34cda3c37a5616423b4a15ac">  349</a></span>&#160;ostream&amp; <a class="code" href="zid_8cpp.html#a2c06ffaf34cda3c37a5616423b4a15ac">operator &lt;&lt;</a>(ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x)</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;{</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">return</span> os &lt;&lt; <a class="code" href="namespacescifir.html#ac87978faacca073a3cfa36500a45409a">to_string</a>(x);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="zid_8cpp.html#a0bd7ef119f4e1870ffb481c3a5321902">  354</a></span>&#160;istream&amp; <a class="code" href="zid_8cpp.html#a0bd7ef119f4e1870ffb481c3a5321902">operator &gt;&gt;</a>(istream&amp; is, <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>&amp; x)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordtype">char</span> a[256];</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    is.getline(a, 256);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordtype">string</span> b(a);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    boost::trim(b);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    x = <a class="code" href="classscifir_1_1zid.html">scifir::zid</a>(b);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">return</span> is;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
 <div class="ttc" id="aclassscifir_1_1aid_html"><div class="ttname"><a href="classscifir_1_1aid.html">scifir::aid</a></div><div class="ttdoc">Class that stores astronomical ids, not as an integer but with an string as identifier....</div><div class="ttdef"><b>Definition:</b> <a href="aid_8hpp_source.html#l00013">aid.hpp:14</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html"><div class="ttname"><a href="classscifir_1_1zid.html">scifir::zid</a></div><div class="ttdoc">Class that allows to store information about a zone, including the astronomical object inside which t...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00013">zid.hpp:14</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_a0afc38577ecf81ad74164818d2c6b772"><div class="ttname"><a href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">scifir::zid::zone_type</a></div><div class="ttdeci">zid::type zone_type</div><div class="ttdoc">The type of zone. It can be any value of the enum zid::type. The possible values are COUNTRY,...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00041">zid.hpp:41</a></div></div>
@@ -444,19 +450,20 @@ $(function() {
 <div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">scifir::zid::REGION</a></div><div class="ttdeci">@ REGION</div><div class="ttdoc">A region.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">scifir::zid::ZONE</a></div><div class="ttdeci">@ ZONE</div><div class="ttdoc">A zone. A zone is any surface inside an astronomical object, of any shape. It's not necessary to be a...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">scifir::zid::COUNTRY</a></div><div class="ttdeci">@ COUNTRY</div><div class="ttdoc">A country.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">scifir::zid::SETTLEMENT</a></div><div class="ttdeci">@ SETTLEMENT</div><div class="ttdoc">A settlement.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">scifir::zid::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">No zone.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_af913eb84d4643694714120786f7fd0a0"><div class="ttname"><a href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">scifir::zid::country</a></div><div class="ttdeci">string country</div><div class="ttdoc">The country where the zone is. In extraterrestrial planets, it's considered a country any division of...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00039">zid.hpp:39</a></div></div>
 <div class="ttc" id="anamespacescifir_html"><div class="ttname"><a href="namespacescifir.html">scifir</a></div><div class="ttdoc">The namespace scifir contains all scifir-units, excepting the string literals, which are outside.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__1d_8cpp_source.html#l00006">coordinates_1d.cpp:7</a></div></div>
 <div class="ttc" id="anamespacescifir_html_a20683521b4e3fde1fac96fee7ca39e36ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36ab50339a10e1de285ac99d4c3990b8693">scifir::astronomical_body::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">No predefined astronomical body selected.</div></div>
 <div class="ttc" id="anamespacescifir_html_a421182d5f93abcbbaeadc7c14112bdd5"><div class="ttname"><a href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">scifir::to_string</a></div><div class="ttdeci">string to_string(const coordinates_1d&lt; float &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__1d_8cpp_source.html#l00008">coordinates_1d.cpp:8</a></div></div>
-<div class="ttc" id="anamespacescifir_html_a7ec42f20dc4534b6c166a5034631a116"><div class="ttname"><a href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">scifir::create_zone_type</a></div><div class="ttdeci">zid::type create_zone_type(const string &amp;zone_type_abbreviation)</div><div class="ttdoc">Creates an instance of a zid::type with the given string, which is the reverse as the to_string() fun...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00239">zid.cpp:239</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a7ec42f20dc4534b6c166a5034631a116"><div class="ttname"><a href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">scifir::create_zone_type</a></div><div class="ttdeci">zid::type create_zone_type(const string &amp;zone_type_abbreviation)</div><div class="ttdoc">Creates an instance of a zid::type with the given string, which is the reverse as the to_string() fun...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00241">zid.cpp:241</a></div></div>
 <div class="ttc" id="anamespacescifir_html_ac87978faacca073a3cfa36500a45409a"><div class="ttname"><a href="namespacescifir.html#ac87978faacca073a3cfa36500a45409a">scifir::to_string</a></div><div class="ttdeci">string to_string(const zid::type &amp;x)</div><div class="ttdoc">Converts a value of the enum zid::type to its string representation, which is a single letter....</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00223">zid.cpp:223</a></div></div>
-<div class="ttc" id="azid_8cpp_html_a093a778c207548419656659944a46ac4"><div class="ttname"><a href="zid_8cpp.html#a093a778c207548419656659944a46ac4">operator==</a></div><div class="ttdeci">bool operator==(const scifir::zid &amp;x, const scifir::zid &amp;y)</div><div class="ttdoc">Returns true if the type and all data are the same between x and y.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00260">zid.cpp:260</a></div></div>
-<div class="ttc" id="azid_8cpp_html_a0bd7ef119f4e1870ffb481c3a5321902"><div class="ttname"><a href="zid_8cpp.html#a0bd7ef119f4e1870ffb481c3a5321902">operator&gt;&gt;</a></div><div class="ttdeci">istream &amp; operator&gt;&gt;(istream &amp;is, scifir::zid &amp;x)</div><div class="ttdoc">Allows that an istream initializes by string a zid x.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00348">zid.cpp:348</a></div></div>
-<div class="ttc" id="azid_8cpp_html_a2c06ffaf34cda3c37a5616423b4a15ac"><div class="ttname"><a href="zid_8cpp.html#a2c06ffaf34cda3c37a5616423b4a15ac">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;os, const scifir::zid &amp;x)</div><div class="ttdoc">Adds the string representation of the zid x to an output stream os.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00343">zid.cpp:343</a></div></div>
-<div class="ttc" id="azid_8cpp_html_a8172c8995c736ca5bd751e29b788c80b"><div class="ttname"><a href="zid_8cpp.html#a8172c8995c736ca5bd751e29b788c80b">operator+=</a></div><div class="ttdeci">void operator+=(string &amp;x, const scifir::zid &amp;y)</div><div class="ttdoc">Concatenates the string representation of zid y to the string x.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00320">zid.cpp:320</a></div></div>
-<div class="ttc" id="azid_8cpp_html_ab1cad86185890407265a6af3b0275bc1"><div class="ttname"><a href="zid_8cpp.html#ab1cad86185890407265a6af3b0275bc1">operator+</a></div><div class="ttdeci">string operator+(const string &amp;x, const scifir::zid &amp;y)</div><div class="ttdoc">Concatenates x with the string representation of zid y.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00327">zid.cpp:327</a></div></div>
-<div class="ttc" id="azid_8cpp_html_aec3ac19e273a8f4792aa19975d46d5bc"><div class="ttname"><a href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">operator!=</a></div><div class="ttdeci">bool operator!=(const scifir::zid &amp;x, const scifir::zid &amp;y)</div><div class="ttdoc">Returns true if the type or any data is different between x and y.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00293">zid.cpp:293</a></div></div>
+<div class="ttc" id="azid_8cpp_html_a093a778c207548419656659944a46ac4"><div class="ttname"><a href="zid_8cpp.html#a093a778c207548419656659944a46ac4">operator==</a></div><div class="ttdeci">bool operator==(const scifir::zid &amp;x, const scifir::zid &amp;y)</div><div class="ttdoc">Returns true if the type and all data are the same between x and y.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00266">zid.cpp:266</a></div></div>
+<div class="ttc" id="azid_8cpp_html_a0bd7ef119f4e1870ffb481c3a5321902"><div class="ttname"><a href="zid_8cpp.html#a0bd7ef119f4e1870ffb481c3a5321902">operator&gt;&gt;</a></div><div class="ttdeci">istream &amp; operator&gt;&gt;(istream &amp;is, scifir::zid &amp;x)</div><div class="ttdoc">Allows that an istream initializes by string a zid x.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00354">zid.cpp:354</a></div></div>
+<div class="ttc" id="azid_8cpp_html_a2c06ffaf34cda3c37a5616423b4a15ac"><div class="ttname"><a href="zid_8cpp.html#a2c06ffaf34cda3c37a5616423b4a15ac">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;os, const scifir::zid &amp;x)</div><div class="ttdoc">Adds the string representation of the zid x to an output stream os.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00349">zid.cpp:349</a></div></div>
+<div class="ttc" id="azid_8cpp_html_a8172c8995c736ca5bd751e29b788c80b"><div class="ttname"><a href="zid_8cpp.html#a8172c8995c736ca5bd751e29b788c80b">operator+=</a></div><div class="ttdeci">void operator+=(string &amp;x, const scifir::zid &amp;y)</div><div class="ttdoc">Concatenates the string representation of zid y to the string x.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00326">zid.cpp:326</a></div></div>
+<div class="ttc" id="azid_8cpp_html_ab1cad86185890407265a6af3b0275bc1"><div class="ttname"><a href="zid_8cpp.html#ab1cad86185890407265a6af3b0275bc1">operator+</a></div><div class="ttdeci">string operator+(const string &amp;x, const scifir::zid &amp;y)</div><div class="ttdoc">Concatenates x with the string representation of zid y.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00333">zid.cpp:333</a></div></div>
+<div class="ttc" id="azid_8cpp_html_aec3ac19e273a8f4792aa19975d46d5bc"><div class="ttname"><a href="zid_8cpp.html#aec3ac19e273a8f4792aa19975d46d5bc">operator!=</a></div><div class="ttdeci">bool operator!=(const scifir::zid &amp;x, const scifir::zid &amp;y)</div><div class="ttdoc">Returns true if the type or any data is different between x and y.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00299">zid.cpp:299</a></div></div>
 <div class="ttc" id="azid_8hpp_html"><div class="ttname"><a href="zid_8hpp.html">zid.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

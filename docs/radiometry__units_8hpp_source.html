@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>scifir-units: predefined_units/radiometry_units.hpp Source File</title>
+<title>scifir-units: derived_units/radiometry_units.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_6b14df6650ff0cd07126f59cec692709.html">predefined_units</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3bc2481bac0ca7d8a9c702040aa758a1.html">derived_units</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -71,8 +71,8 @@ $(function() {
 <div class="title">radiometry_units.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="radiometry__units_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SCIFIR_UNITS_PREDEFINED_UNITS_RADIOMETRY_UNITS_HPP_INCLUDED</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SCIFIR_UNITS_PREDEFINED_UNITS_RADIOMETRY_UNITS_HPP_INCLUDED</span></div>
+<a href="radiometry__units_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SCIFIR_UNITS_DERIVED_UNITS_RADIOMETRY_UNITS_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SCIFIR_UNITS_DERIVED_UNITS_RADIOMETRY_UNITS_HPP_INCLUDED</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../units/scalar_unit.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../units/vector_unit_3d.hpp&quot;</span></div>
@@ -85,14 +85,13 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacescifir.html#ac15a8286c62215c7ef0b0b15f6e960a4">   12</a></span>&#160;    <a class="code" href="vector__unit__3d_8hpp.html#afd0d0f018241895d8203a88fb8768e33">VECTOR_UNIT_HPP</a>(irradiance);</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacescifir.html#a39027a03c2f88e9f5c500e33b1b77a92">   13</a></span>&#160;    <a class="code" href="vector__unit__3d_8hpp.html#afd0d0f018241895d8203a88fb8768e33">VECTOR_UNIT_HPP</a>(radiant_exposure);</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacescifir.html#a8f7daf8ed364caaba17bfc51886c6405">   14</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(radiant_intensity);</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacescifir.html#a301c92868d977f1b0bb3367690fb4110">   15</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(spectral_intensity);</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacescifir.html#a7a57a35a5f016ce894cd8b8cb8ac506a">   16</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(radiance);</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespacescifir.html#a76f3f5a14abed3e4081e3bfcc3da6413">   17</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(spectral_radiance);</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacescifir.html#a726a4e4dcaaab941900c0fe5f7adb771">   18</a></span>&#160;    <a class="code" href="vector__unit__3d_8hpp.html#afd0d0f018241895d8203a88fb8768e33">VECTOR_UNIT_HPP</a>(radiant_flux);</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacescifir.html#a5fd140f17c179516044c11496fad157a">   19</a></span>&#160;    <a class="code" href="vector__unit__3d_8hpp.html#afd0d0f018241895d8203a88fb8768e33">VECTOR_UNIT_HPP</a>(spectral_flux);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SCIFIR_UNITS_PREDEFINED_UNITS_RADIOMETRY_UNITS_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacescifir.html#a7a57a35a5f016ce894cd8b8cb8ac506a">   15</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(radiance);</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacescifir.html#a76f3f5a14abed3e4081e3bfcc3da6413">   16</a></span>&#160;    <a class="code" href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a>(spectral_radiance);</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespacescifir.html#a726a4e4dcaaab941900c0fe5f7adb771">   17</a></span>&#160;    <a class="code" href="vector__unit__3d_8hpp.html#afd0d0f018241895d8203a88fb8768e33">VECTOR_UNIT_HPP</a>(radiant_flux);</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacescifir.html#a5fd140f17c179516044c11496fad157a">   18</a></span>&#160;    <a class="code" href="vector__unit__3d_8hpp.html#afd0d0f018241895d8203a88fb8768e33">VECTOR_UNIT_HPP</a>(spectral_flux);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SCIFIR_UNITS_DERIVED_UNITS_RADIOMETRY_UNITS_HPP_INCLUDED</span></div>
 <div class="ttc" id="anamespacescifir_html"><div class="ttname"><a href="namespacescifir.html">scifir</a></div><div class="ttdoc">The namespace scifir contains all scifir-units, excepting the string literals, which are outside.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__1d_8cpp_source.html#l00006">coordinates_1d.cpp:7</a></div></div>
 <div class="ttc" id="ascalar__unit_8hpp_html_ab2113e04286d6bffb113bb62617c0cec"><div class="ttname"><a href="scalar__unit_8hpp.html#ab2113e04286d6bffb113bb62617c0cec">SCALAR_UNIT_HPP</a></div><div class="ttdeci">#define SCALAR_UNIT_HPP(name)</div><div class="ttdef"><b>Definition:</b> <a href="scalar__unit_8hpp_source.html#l00034">scalar_unit.hpp:34</a></div></div>
 <div class="ttc" id="avector__unit__3d_8hpp_html_afd0d0f018241895d8203a88fb8768e33"><div class="ttname"><a href="vector__unit__3d_8hpp.html#afd0d0f018241895d8203a88fb8768e33">VECTOR_UNIT_HPP</a></div><div class="ttdeci">#define VECTOR_UNIT_HPP(name)</div><div class="ttdef"><b>Definition:</b> <a href="vector__unit__3d_8hpp_source.html#l00058">vector_unit_3d.hpp:58</a></div></div>

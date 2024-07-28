@@ -210,7 +210,7 @@ topology/point_2d_impl.hpp, topology/point_3d.hpp,
 topology/point_3d_impl.hpp, topology/point_nd.hpp,
 topology/point_nd_impl.hpp, units.hpp, units/conversion.hpp,
 units/dimension.hpp, units/scalar_unit.cpp, units/scalar_unit.hpp,
-units/unit_abbreviation.hpp, units/unit_basic.hpp,
+units/unit_abbreviation.hpp, units/base_units.hpp,
 units/vector_unit_2d.hpp, units/vector_unit_3d.hpp,
 units/vector_unit_nd.hpp, util/matrix.hpp: headers now use relative
 paths instead of absolute path in order to simplify the use of the
@@ -492,7 +492,7 @@ units/conversion.cpp, units/conversion.hpp, units/dimension.cpp,
 units/dimension.hpp, units/prefix.cpp, units/prefix.hpp,
 units/scalar_unit.cpp, units/scalar_unit.hpp,
 units/unit_abbreviation.cpp, units/unit_abbreviation.hpp,
-units/unit_basic.cpp, units/unit_basic.hpp,
+units/unit_basic.cpp, units/base_units.hpp,
 units/vector_unit_2d.cpp, units/vector_unit_2d.hpp,
 units/vector_unit_3d.cpp, units/vector_unit_3d.hpp,
 units/vector_unit_nd.cpp, units/vector_unit_nd.hpp,
@@ -505,15 +505,15 @@ instead of include/msci
 </pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* CMakeLists.txt, tests/test_sizeof.cpp, tests/test_unit_basic.cpp: 
 test of sizeof updated. test of basic units partially implemented
 </pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_abbreviation.cpp, units/unit_abbreviation.hpp,
-units/unit_basic.cpp, units/unit_basic.hpp: time class name changed
+units/unit_basic.cpp, units/base_units.hpp: time class name changed
 to time_duration
-</pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/unit_basic.hpp: time class now
+</pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/base_units.hpp: time class now
 displays in weeks and in months
-</pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/unit_basic.hpp: time class now can
+</pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/base_units.hpp: time class now can
 display in years, days, hours, minutes and seconds
-</pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/unit_basic.hpp: mass now can construct
+</pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/base_units.hpp: mass now can construct
 with ppm, ppb, ppt and ppq
-</pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/unit_basic.hpp: mole class now can
+</pre><p> 2023-07-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/base_units.hpp: mole class now can
 construct with ppm, ppb, ppt and ppq
 </pre><p> 2023-07-05 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* special_units/percentage.cpp, special_units/percentage.hpp,
 tests/test_percentage.cpp: percentage class updated. A good amount
@@ -628,7 +628,7 @@ derived dimensions
 </pre><p> 2023-07-01 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* tests/test_sizeof.cpp, tests/test_units.cpp, units/dimension.cpp,
 units/dimension.hpp, units/prefix.cpp, units/prefix.hpp,
 units/scalar_unit.cpp, units/scalar_unit.hpp, units/unit_basic.cpp,
-units/unit_basic.hpp, units/vector_unit_2d.cpp,
+units/base_units.hpp, units/vector_unit_2d.cpp,
 units/vector_unit_3d.cpp, units/vector_unit_nd.cpp: 
 display_derived() added to scalar_unit. Bugs related to
 multiplication and division of dimensions solved. sqrt() and
@@ -643,7 +643,7 @@ dimension appears too. Some bugs solved
 bug with operations with dimensions solved
 </pre><p> 2023-06-28 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* topology/constants.hpp, units/dimension.cpp, units/dimension.hpp,
 units/prefix.cpp, units/prefix.hpp, units/scalar_unit.cpp,
-units/scalar_unit.hpp, units/unit_basic.cpp, units/unit_basic.hpp: 
+units/scalar_unit.hpp, units/unit_basic.cpp, units/base_units.hpp: 
 byte dimension now calculates in the order of 1024, as it should.
 full support for conversion factors of dimensions implemented
 </pre><p> 2023-06-28 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* topology/constants.hpp, units/dimension.cpp, units/dimension.hpp,
@@ -653,7 +653,7 @@ cases. scalar_unit class now has derived dimensions. derived
 dimensions fully implemented in dimension class. time class not
 displays time as expected. avogadro_constant name changed according
 to code formatting standards
-</pre><p> 2023-06-27 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/unit_basic.hpp: constructor with
+</pre><p> 2023-06-27 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/base_units.hpp: constructor with
 multiple time dimensions added to time class
 </pre><p> 2023-06-27 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* README.md: Message updated
 </pre><p> 2023-06-27 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* CMakeLists.txt, README.md: README.md updated with the new name.
@@ -873,7 +873,7 @@ units/custom_dimension.hpp, units/dimension.cpp,
 units/dimension.hpp: implementations of functions of dimensions
 finished
 </pre><p> 2023-06-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/dimension.cpp: Greek Omega symbol for the resistance added
-</pre><p> 2023-06-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/unit_basic.hpp: msci::time now
+</pre><p> 2023-06-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.cpp, units/base_units.hpp: msci::time now
 operates with duration and then it can be used with STL clocks of
 &lt;chrono&gt;
 </pre><p> 2023-06-06 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/dimension.cpp, units/dimension.hpp: equal_dimensions()
@@ -885,16 +885,16 @@ predefined_units/dynamics_units.cpp,
 predefined_units/dynamics_units.hpp, tests/test_sizeof.cpp,
 topology/direction.hpp, units/custom_dimension.cpp,
 units/custom_dimension.hpp, units/dimension.hpp, units/prefix.hpp,
-units/unit_basic.hpp, units/vector_unit_2d.hpp,
+units/base_units.hpp, units/vector_unit_2d.hpp,
 units/vector_unit_3d.hpp, units/vector_unit_nd.hpp, util/matrix.hpp: 
 header meca_numbers.hpp updated. test_sizeof added inside CMake.
 README and TODO updated. enums updated to use only 1 byte instead of
 4 bytes. custom_dimension advance. vector_unit classes operator ^=
 deleted to match scalar_unit. force changed to be a vector_unit
-</pre><p> 2023-06-05 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/unit_basic.hpp: ostream operator not more needed
+</pre><p> 2023-06-05 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/base_units.hpp: ostream operator not more needed
 </pre><p> 2023-06-05 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* TODO.md, units/unit_abbreviation.cpp,
 units/unit_abbreviation.hpp, units/unit_basic.cpp,
-units/unit_basic.hpp: time class now can display as time as a string
+units/base_units.hpp: time class now can display as time as a string
 for any case, not only for streams. Literals _m bug fixed
 </pre><p> 2023-06-05 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* README.md, compile_commands.json: README updated
 </pre><p> 2023-06-05 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* TODO.md, meca_number/angle.cpp, meca_number/angle.hpp,
@@ -937,7 +937,7 @@ topology/point_3d.cpp, topology/point_3d.hpp,
 topology/point_nd.cpp, topology/point_nd.hpp, units/conversion.hpp,
 units/dimension.cpp, units/dimension.hpp, units/prefix.cpp,
 units/prefix.hpp, units/scalar_unit.cpp, units/unit_basic.cpp,
-units/unit_basic.hpp, util/matrix.hpp: coordinates and points now
+units/base_units.hpp, util/matrix.hpp: coordinates and points now
 have operators and stream for string cases. Some refactoring and
 improvements with headers have been done
 </pre><p> 2023-06-04 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* TODO.md, units/vector_unit_2d.cpp, units/vector_unit_2d.hpp,
@@ -993,7 +993,7 @@ topology/point_2d.cpp, topology/point_2d.hpp,
 topology/point_3d.cpp, topology/point_3d.hpp,
 topology/point_nd.cpp, topology/point_nd.hpp,
 units/scalar_unit.cpp, units/scalar_unit.hpp, units/unit_basic.cpp,
-units/unit_basic.hpp, units/vector_unit_2d.cpp,
+units/base_units.hpp, units/vector_unit_2d.cpp,
 units/vector_unit_2d.hpp, units/vector_unit_3d.cpp,
 units/vector_unit_3d.hpp, units/vector_unit_nd.cpp,
 units/vector_unit_nd.hpp: coordinates and points of 2d and 3d cases
@@ -1074,7 +1074,7 @@ units/conversion.cpp, units/conversion.hpp, units/dimension.cpp,
 units/dimension.hpp, units/prefix.cpp, units/scalar_unit.cpp,
 units/scalar_unit.hpp, units/unit_abbreviation.cpp,
 units/unit_abbreviation.hpp, units/unit_basic.cpp,
-units/unit_basic.hpp, units/vector_unit_2d.cpp,
+units/base_units.hpp, units/vector_unit_2d.cpp,
 units/vector_unit_2d.hpp, units/vector_unit_3d.cpp,
 units/vector_unit_3d.hpp, units/vector_unit_nd.cpp,
 units/vector_unit_nd.hpp, util/matrix.hpp, util/types.cpp: Library
@@ -1128,7 +1128,7 @@ units/conversion.hpp, units/dimension.cpp, units/dimension.hpp,
 units/prefix.cpp, units/prefix.hpp, units/scalar_unit.cpp,
 units/scalar_unit.hpp, units/unit_abbreviation.cpp,
 units/unit_abbreviation.hpp, units/unit_basic.cpp,
-units/unit_basic.hpp, units/vector_unit_2d.cpp,
+units/base_units.hpp, units/vector_unit_2d.cpp,
 units/vector_unit_2d.hpp, units/vector_unit_3d.cpp,
 units/vector_unit_3d.hpp, units/vector_unit_nd.cpp,
 units/vector_unit_nd.hpp, util/is_number.hpp, util/matrix.hpp: Good
@@ -1187,7 +1187,7 @@ units/auto_vector.cpp, units/auto_vector.hpp, units/dimension.cpp,
 units/dimension.hpp, units/dimension_container.cpp,
 units/dimension_container.hpp, units/prefix.cpp, units/prefix.hpp,
 units/scalar_unit.cpp, units/scalar_unit.hpp, units/unit_basic.cpp,
-units/unit_basic.hpp, units/vector_unit.cpp, units/vector_unit.hpp,
+units/base_units.hpp, units/vector_unit.cpp, units/vector_unit.hpp,
 units/vector_unit_3d.cpp, units/vector_unit_3d.hpp,
 util/is_number.hpp, util/matrix.hpp: Refactoring of units nearly
 ready
@@ -1205,7 +1205,7 @@ units/auto_scalar.cpp, units/auto_scalar.hpp,
 units/auto_vector.cpp, units/auto_vector.hpp, units/{unit.cpp =&gt;
 scalar_unit.cpp}, units/scalar_unit.hpp, units/unit.hpp,
 units/unit_abbreviation.hpp, units/unit_basic.cpp,
-units/unit_basic.hpp, units/vector_unit.cpp, units/vector_unit.hpp,
+units/base_units.hpp, units/vector_unit.cpp, units/vector_unit.hpp,
 util/matrix.hpp: new units hierarchy starting by scalar_unit has
 been started
 </pre><p> 2019-06-14 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* units/auto_unit.cpp, units/auto_unit.hpp, units/scalar_unit.cpp,
@@ -1292,7 +1292,7 @@ units/dimension_container.cpp, units/dimension_container.hpp,
 units/prefix.cpp, units/prefix.hpp, units/scalar_unit.cpp,
 units/scalar_unit.hpp, units/unit.cpp, units/unit.hpp,
 units/unit_abbreviation.cpp, units/unit_abbreviation.hpp,
-units/unit_basic.cpp, units/unit_basic.hpp, units/vector_unit.cpp,
+units/unit_basic.cpp, units/base_units.hpp, units/vector_unit.cpp,
 units/vector_unit.hpp, util/is_number.hpp, util/matrix.hpp,
 util/types.cpp, util/types.hpp: msci units library updated
 </pre><p> 2018-08-21 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* CHANGELOG.md, CMakeLists.txt, TODO - units, meca numbers,
@@ -1475,7 +1475,7 @@ units/dimension_container.cpp, units/dimension_container.hpp,
 units/prefix.cpp, units/prefix.hpp, units/scalar_unit.cpp,
 units/scalar_unit.hpp, units/unit.cpp, units/unit.hpp,
 units/unit_abbreviation.cpp, units/unit_abbreviation.hpp,
-units/unit_basic.cpp, units/unit_basic.hpp, units/vector_unit.cpp,
+units/unit_basic.cpp, units/base_units.hpp, units/vector_unit.cpp,
 units/vector_unit.hpp, {informatics/types =&gt; util}/is_number.hpp,
 {math/linear_algebra =&gt; util}/matrix.hpp: msci units library
 </pre><p> 2018-07-29 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* CMakeLists.txt, TODO - units, meca numbers, fields.md, TODO.md,
@@ -1667,7 +1667,7 @@ units}/unit.hpp, {physics/basic/units =&gt;
 units}/unit_abbreviation.cpp, {physics/basic/units =&gt;
 units}/unit_abbreviation.hpp, {physics/basic/units =&gt;
 units}/unit_basic.cpp, {physics/basic/units =&gt;
-units}/unit_basic.hpp, {physics/basic/units =&gt;
+units}/base_units.hpp, {physics/basic/units =&gt;
 units}/vector_unit.cpp, {physics/basic/units =&gt;
 units}/vector_unit.hpp: msic_units library created, separated from
 the other msci libraries (every msci library has been divided in
@@ -1816,7 +1816,7 @@ physics/basic/units/dimension_container.hpp,
 physics/basic/units/unit.cpp, physics/basic/units/unit.hpp,
 physics/basic/units/unit_abbreviation.cpp,
 physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp,
+physics/basic/units/base_units.hpp,
 physics/basic/units/vector_unit.cpp,
 physics/basic/units/vector_unit.hpp: All wstring and related classes
 have been changed to string and related classes in order to use only
@@ -1917,7 +1917,7 @@ physics/basic/units/unit.hpp,
 physics/basic/units/unit_abbreviation.cpp,
 physics/basic/units/unit_abbreviation.hpp,
 physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp,
+physics/basic/units/base_units.hpp,
 physics/basic/units/vector_unit.cpp,
 physics/basic/units/vector_unit.hpp,
 physics/electromagnetism/electricity/units.cpp,
@@ -2098,7 +2098,7 @@ physics/basic/units/unit.hpp,
 physics/basic/units/unit_abbreviation.cpp,
 physics/basic/units/unit_abbreviation.hpp,
 physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp,
+physics/basic/units/base_units.hpp,
 physics/basic/units/vector_unit.cpp,
 physics/basic/units/vector_unit.hpp,
 physics/electromagnetism/electricity/units.cpp,
@@ -2279,7 +2279,7 @@ class unit member-function equal_dimensions() changed to
 has_dimensions() and empty_dimensions() changed to
 has_empty_dimensions()
 </pre><p> 2017-09-12 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp: bug fixed. _angle and
+physics/basic/units/base_units.hpp: bug fixed. _angle and
 _solid_angle literals removed
 </pre><p> 2017-09-12 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/abbreviation.cpp,
 physics/basic/units/abbreviation.hpp,
@@ -2298,7 +2298,7 @@ physics/basic/units/dimension_abstract.cpp,
 physics/basic/units/dimension_abstract.hpp: prefix&amp; changed inside
 constructors by const prefix&amp;
 </pre><p> 2017-09-12 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp: angle and solid_angle unit
+physics/basic/units/base_units.hpp: angle and solid_angle unit
 classes removed in order to used angle_number instead
 </pre><p> 2017-09-12 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit.cpp, physics/basic/units/unit.hpp: unit
 class member-function equal_dimensions(dimension_symbol) deleted in
@@ -2542,7 +2542,7 @@ doesn't changes dimensions because of bug fixed, it loads faster
 </pre><p> 2017-08-30 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit.cpp: operator += and operator -= of class
 unit bug solved
 </pre><p> 2017-08-30 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp: class physics::units::time
+physics/basic/units/base_units.hpp: class physics::units::time
 operator &lt;&lt; finished for time_display and get_finish_date() function
 created, which displays the day at which the time set will end
 </pre><p> 2017-08-30 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit.cpp: bug solved with comparison operators
@@ -2601,12 +2601,12 @@ physics/basic/units/vector_unit.hpp: same_spatial_dimensions()
 function name changed to same_nd() in order to have a more clear
 name
 </pre><p> 2017-08-29 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp: angle and solid_angle literals
+physics/basic/units/base_units.hpp: angle and solid_angle literals
 added
 </pre><p> 2017-08-29 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/dimension.cpp,
 physics/basic/units/dimension.hpp,
 physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp: enum dimension name of angle and
+physics/basic/units/base_units.hpp: enum dimension name of angle and
 solid_angle changed to angle_symbol and solid_angle_symbol,
 respectively, in order to avoid class name collision with new angle
 and solid_angle classes created
@@ -2615,7 +2615,7 @@ K dimensions, and doesn't load the previous constructor
 </pre><p> 2017-08-29 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/dimension_abstract.cpp,
 physics/basic/units/dimension_abstract.hpp,
 physics/basic/units/unit.cpp, physics/basic/units/unit.hpp,
-physics/basic/units/unit_basic.hpp: inline functions added to some
+physics/basic/units/base_units.hpp: inline functions added to some
 unit classes
 </pre><p> 2017-08-29 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/scalar_unit.cpp,
 physics/basic/units/scalar_unit.hpp, physics/basic/units/unit.hpp: 
@@ -2648,7 +2648,7 @@ previously)
 add spaces inside the number to display it clearer. Example: "10 000
 N" instead of "10000 N" for the same purpose
 </pre><p> 2017-08-27 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp: typecast of class time to
+physics/basic/units/base_units.hpp: typecast of class time to
 chrono::seconds class of the std library
 </pre><p> 2017-08-27 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/dimension.cpp,
 physics/basic/units/dimension.hpp,
@@ -2850,13 +2850,13 @@ physics/waves/radiometry/units.cpp,
 physics/waves/radiometry/units.hpp: new important unit classes
 created
 </pre><p> 2017-08-14 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp: unit literals now return their
+physics/basic/units/base_units.hpp: unit literals now return their
 more common class instead of auto_unit. That improves performance
 </pre><p> 2017-08-14 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit.cpp, physics/basic/units/unit.hpp: class
 unit copy assignment created explicitly to avoid warning
 -Wvirtual-move-assign
 </pre><p> 2017-08-11 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp: class mole now can give the
+physics/basic/units/base_units.hpp: class mole now can give the
 total amount of particles represented by the mole or by te particles
 abbreviation
 </pre><p> 2017-08-11 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/auto_scalar.hpp,
@@ -2872,7 +2872,7 @@ to have const operators, as they should be
 physics/basic/units/unit.hpp: class unit operators with other units
 and with numbers now are const, as they should always be
 </pre><p> 2017-08-11 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp: basic units now are initialized
+physics/basic/units/base_units.hpp: basic units now are initialized
 with macros
 </pre><p> 2017-08-11 Ismael Correa <a href="#" onclick="location.href='mai'+'lto:'+'ism'+'ae'+'l.c'+'or'+'rea'+'.c'+'ast'+'ro'+'@gm'+'ai'+'l.c'+'om'; return false;">ismae<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>rrea.<span style="display: none;">.nosp@m.</span>cast<span style="display: none;">.nosp@m.</span>ro@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </p><pre class="fragment">* physics/basic/units/scalar_unit.hpp,
 physics/basic/units/vector_unit.hpp: macros for defining units with
@@ -2983,7 +2983,7 @@ physics/basic/units/unit.hpp,
 physics/basic/units/unit_abbreviation.cpp,
 physics/basic/units/unit_abbreviation.hpp,
 physics/basic/units/unit_basic.cpp,
-physics/basic/units/unit_basic.hpp,
+physics/basic/units/base_units.hpp,
 physics/basic/units/vector_unit.cpp,
 physics/basic/units/vector_unit.hpp,
 physics/electromagnetism/electricity/units.hpp,

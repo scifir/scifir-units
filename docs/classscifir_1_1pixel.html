@@ -174,6 +174,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa54be4b2c5933306414806b0b0c1ac74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06913d78fccaefdcad33d71e502b954e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1pixel.html">pixel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1pixel.html#a06913d78fccaefdcad33d71e502b954e">operator--</a> (int)</td></tr>
 <tr class="separator:a06913d78fccaefdcad33d71e502b954e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b169124096ea992dffcfef81e2ee6b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1scalar__unit.html">scalar_unit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1pixel.html#a7b169124096ea992dffcfef81e2ee6b1">to_scalar_unit</a> () const</td></tr>
+<tr class="separator:a7b169124096ea992dffcfef81e2ee6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -207,7 +209,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="pixel_8cpp_source.html#l00016">16</a> of file <a class="el" href="pixel_8cpp_source.html">pixel.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                 : <a class="code" href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">value</a>(0)</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {}</div>
-<div class="ttc" id="aclassscifir_1_1pixel_html_a1e79500c250b2efae9f1ba0933f85a84"><div class="ttname"><a href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">scifir::pixel::value</a></div><div class="ttdeci">float value</div><div class="ttdef"><b>Definition:</b> <a href="pixel_8hpp_source.html#l00129">pixel.hpp:129</a></div></div>
+<div class="ttc" id="aclassscifir_1_1pixel_html_a1e79500c250b2efae9f1ba0933f85a84"><div class="ttname"><a href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">scifir::pixel::value</a></div><div class="ttdeci">float value</div><div class="ttdef"><b>Definition:</b> <a href="pixel_8hpp_source.html#l00131">pixel.hpp:131</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -404,7 +406,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classscifir_1_1pixel.html#aed5d65834bd7b28963950784fd60d534">initialize_from_string</a>(init_pixel);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="ttc" id="aclassscifir_1_1pixel_html_aed5d65834bd7b28963950784fd60d534"><div class="ttname"><a href="classscifir_1_1pixel.html#aed5d65834bd7b28963950784fd60d534">scifir::pixel::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(const string &amp;init_pixel)</div><div class="ttdef"><b>Definition:</b> <a href="pixel_8cpp_source.html#l00168">pixel.cpp:168</a></div></div>
+<div class="ttc" id="aclassscifir_1_1pixel_html_aed5d65834bd7b28963950784fd60d534"><div class="ttname"><a href="classscifir_1_1pixel.html#aed5d65834bd7b28963950784fd60d534">scifir::pixel::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(const string &amp;init_pixel)</div><div class="ttdef"><b>Definition:</b> <a href="pixel_8cpp_source.html#l00173">pixel.cpp:173</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -502,21 +504,21 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pixel_8cpp_source.html#l00168">168</a> of file <a class="el" href="pixel_8cpp_source.html">pixel.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">if</span> (init_pixel.substr(init_pixel.length() - 3,3) == <span class="stringliteral">&quot; px&quot;</span>)</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">value</a> = stof(init_pixel.substr(0,init_pixel.length() - 3));</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (init_pixel.substr(init_pixel.length() - 2,2) == <span class="stringliteral">&quot;px&quot;</span>)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">value</a> = stof(init_pixel.substr(0,init_pixel.length() - 2));</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <a class="code" href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">value</a> = stof(init_pixel);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="pixel_8cpp_source.html#l00173">173</a> of file <a class="el" href="pixel_8cpp_source.html">pixel.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span> (init_pixel.substr(init_pixel.length() - 3,3) == <span class="stringliteral">&quot; px&quot;</span>)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <a class="code" href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">value</a> = stof(init_pixel.substr(0,init_pixel.length() - 3));</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (init_pixel.substr(init_pixel.length() - 2,2) == <span class="stringliteral">&quot;px&quot;</span>)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <a class="code" href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">value</a> = stof(init_pixel.substr(0,init_pixel.length() - 2));</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <a class="code" href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">value</a> = stof(init_pixel);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1370,6 +1372,31 @@ template&lt;typename T , typename  = typename enable_if&lt;scifir::is_number&lt;
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a7b169124096ea992dffcfef81e2ee6b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b169124096ea992dffcfef81e2ee6b1">&#9670;&nbsp;</a></span>to_scalar_unit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classscifir_1_1scalar__unit.html">scalar_unit</a> scifir::pixel::to_scalar_unit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="pixel_8cpp_source.html#l00168">168</a> of file <a class="el" href="pixel_8cpp_source.html">pixel.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> scalar_unit(<a class="code" href="classscifir_1_1pixel.html#a1e79500c250b2efae9f1ba0933f85a84">value</a>, { dimension(<a class="code" href="classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba6747ebea74889f7864d1d802dc31d5d4">dimension::PIXEL</a>, <a class="code" href="classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711">prefix::NONE</a>, <a class="code" href="classscifir_1_1dimension.html#a0c5cc98c4cc5074dc6d68b9d36aff42aaca5d501f305756a8271b1c629bb2f41c">dimension::NUMERATOR</a>) });</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
+<div class="ttc" id="aclassscifir_1_1dimension_html_a0c5cc98c4cc5074dc6d68b9d36aff42aaca5d501f305756a8271b1c629bb2f41c"><div class="ttname"><a href="classscifir_1_1dimension.html#a0c5cc98c4cc5074dc6d68b9d36aff42aaca5d501f305756a8271b1c629bb2f41c">scifir::dimension::NUMERATOR</a></div><div class="ttdeci">@ NUMERATOR</div><div class="ttdoc">The dimension is at the numerator.</div><div class="ttdef"><b>Definition:</b> <a href="dimension_8hpp_source.html#l00036">dimension.hpp:36</a></div></div>
+<div class="ttc" id="aclassscifir_1_1dimension_html_a7159ee72510ebcc26ee93da8900fb9fba6747ebea74889f7864d1d802dc31d5d4"><div class="ttname"><a href="classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba6747ebea74889f7864d1d802dc31d5d4">scifir::dimension::PIXEL</a></div><div class="ttdeci">@ PIXEL</div><div class="ttdoc">Pixel, plural pixels. it represents the amount of pixels, it can be used as a replacemet of the metre...</div><div class="ttdef"><b>Definition:</b> <a href="dimension_8hpp_source.html#l00033">dimension.hpp:33</a></div></div>
+<div class="ttc" id="aclassscifir_1_1prefix_html_afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711"><div class="ttname"><a href="classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a4d0ddeedf497f3af98ff8f686757e711">scifir::prefix::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">There is no prefix. Then, the dimension is not increased or decreased by some factor.</div><div class="ttdef"><b>Definition:</b> <a href="prefix_8hpp_source.html#l00016">prefix.hpp:16</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a1e79500c250b2efae9f1ba0933f85a84"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e79500c250b2efae9f1ba0933f85a84">&#9670;&nbsp;</a></span>value</h2>
@@ -1391,7 +1418,7 @@ template&lt;typename T , typename  = typename enable_if&lt;scifir::is_number&lt;
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pixel_8hpp_source.html#l00129">129</a> of file <a class="el" href="pixel_8hpp_source.html">pixel.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pixel_8hpp_source.html#l00131">131</a> of file <a class="el" href="pixel_8hpp_source.html">pixel.hpp</a>.</p>
 
 </div>
 </div>

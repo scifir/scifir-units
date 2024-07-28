@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Class that allows to store information about a zone, including the astronomical object inside which the zone is. <b>Initialization string</b> example: "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia".  
+<p>Class that allows to store information about a zone, including the astronomical object inside which the zone is. The zone can be in any astronomical object, not only the Earth is supported. <b>Initialization string</b> example: "(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia".  
  <a href="classscifir_1_1zid.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="zid_8hpp_source.html">zid.hpp</a>&gt;</code></p>
@@ -94,10 +94,14 @@ Collaboration diagram for scifir::zid:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aede3937fecc379a6239ec98d9e99ff93"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">type</a> : int8_t { <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">NONE</a>
+<tr class="memitem:aede3937fecc379a6239ec98d9e99ff93"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">type</a> : int8_t { <br />
+&#160;&#160;<a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">NONE</a>
 , <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">COUNTRY</a>
 , <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">REGION</a>
-, <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">ZONE</a>
+, <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">SETTLEMENT</a>
+, <br />
+&#160;&#160;<a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">ZONE</a>
+<br />
  }</td></tr>
 <tr class="memdesc:aede3937fecc379a6239ec98d9e99ff93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of zone.  <a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">More...</a><br /></td></tr>
 <tr class="separator:aede3937fecc379a6239ec98d9e99ff93"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,9 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a487b84842ca920648db3a81874e44844"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#a487b84842ca920648db3a81874e44844">zid</a> (const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;new_aid, const string &amp;new_country, const vector&lt; string &gt; &amp;new_regions)</td></tr>
 <tr class="memdesc:a487b84842ca920648db3a81874e44844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. It initializes a region as the entire zone of zid, which is the last region specified, the one inside the other regions given if there's more than one region initialized.  <a href="classscifir_1_1zid.html#a487b84842ca920648db3a81874e44844">More...</a><br /></td></tr>
 <tr class="separator:a487b84842ca920648db3a81874e44844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab53d79b1d08b5253dab75cd978148ffd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#ab53d79b1d08b5253dab75cd978148ffd">zid</a> (const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;new_aid, const string &amp;new_country, const vector&lt; string &gt; &amp;new_regions, const string &amp;new_zone)</td></tr>
-<tr class="memdesc:ab53d79b1d08b5253dab75cd978148ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. The aid is new_aid, the country is new_country, the regions are new_regions and zone is new_zone.  <a href="classscifir_1_1zid.html#ab53d79b1d08b5253dab75cd978148ffd">More...</a><br /></td></tr>
-<tr class="separator:ab53d79b1d08b5253dab75cd978148ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea86f380ab8729ee9c0cdd7d8adc4fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#abea86f380ab8729ee9c0cdd7d8adc4fd">zid</a> (const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;new_aid, const <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a> &amp;new_zid_type, const string &amp;new_country, const vector&lt; string &gt; &amp;new_regions, const string &amp;new_zone)</td></tr>
+<tr class="memdesc:abea86f380ab8729ee9c0cdd7d8adc4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. The aid is new_aid, the country is new_country, the regions are new_regions and zone is new_zone. The zone_type can be ZONE or SETTLEMENT.  <a href="classscifir_1_1zid.html#abea86f380ab8729ee9c0cdd7d8adc4fd">More...</a><br /></td></tr>
+<tr class="separator:abea86f380ab8729ee9c0cdd7d8adc4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34d6ab9691afec6a54498811a357da38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1zid.html#a34d6ab9691afec6a54498811a357da38">zid</a> (const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;new_aid, const string &amp;init_zid)</td></tr>
 <tr class="memdesc:a34d6ab9691afec6a54498811a357da38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. The aid is new_aid, init_zid initializes the other member-variables.  <a href="classscifir_1_1zid.html#a34d6ab9691afec6a54498811a357da38">More...</a><br /></td></tr>
 <tr class="separator:a34d6ab9691afec6a54498811a357da38"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,7 +179,7 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a2301819b28c1c3fc954caa4461b09948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class that allows to store information about a zone, including the astronomical object inside which the zone is. <b>Initialization string</b> example: "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia". </p>
+<div class="textblock"><p>Class that allows to store information about a zone, including the astronomical object inside which the zone is. The zone can be in any astronomical object, not only the Earth is supported. <b>Initialization string</b> example: "(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia". </p>
 
 <p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00013">13</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
@@ -199,15 +203,18 @@ Private Member Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67"></a>REGION&#160;</td><td class="fielddoc"><p>A region. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0"></a>SETTLEMENT&#160;</td><td class="fielddoc"><p>A settlement. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b"></a>ZONE&#160;</td><td class="fielddoc"><p>A zone. A zone is any surface inside an astronomical object, of any shape. It's not necessary to be a zone registered by a country or organization, personal zones are allowed. </p>
 </td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="zid_8hpp_source.html#l00016">16</a> of file <a class="el" href="zid_8hpp_source.html">zid.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;: int8_t {<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">NONE</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">COUNTRY</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">REGION</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">ZONE</a>};</div>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;: int8_t {<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">NONE</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">COUNTRY</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">REGION</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">SETTLEMENT</a>,<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">ZONE</a>};</div>
 <div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">scifir::zid::REGION</a></div><div class="ttdeci">@ REGION</div><div class="ttdoc">A region.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">scifir::zid::ZONE</a></div><div class="ttdeci">@ ZONE</div><div class="ttdoc">A zone. A zone is any surface inside an astronomical object, of any shape. It's not necessary to be a...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">scifir::zid::COUNTRY</a></div><div class="ttdeci">@ COUNTRY</div><div class="ttdoc">A country.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">scifir::zid::SETTLEMENT</a></div><div class="ttdeci">@ SETTLEMENT</div><div class="ttdoc">A settlement.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224"><div class="ttname"><a href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">scifir::zid::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">No zone.</div><div class="ttdef"><b>Definition:</b> <a href="zid_8hpp_source.html#l00016">zid.hpp:16</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -392,8 +399,8 @@ Private Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ab53d79b1d08b5253dab75cd978148ffd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab53d79b1d08b5253dab75cd978148ffd">&#9670;&nbsp;</a></span>zid() <span class="overload">[6/8]</span></h2>
+<a id="abea86f380ab8729ee9c0cdd7d8adc4fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea86f380ab8729ee9c0cdd7d8adc4fd">&#9670;&nbsp;</a></span>zid() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,6 +413,12 @@ Private Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classscifir_1_1aid.html">scifir::aid</a> &amp;&#160;</td>
           <td class="paramname"><em>new_aid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93">zid::type</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_zid_type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -438,10 +451,10 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructor. The aid is new_aid, the country is new_country, the regions are new_regions and zone is new_zone. </p>
+<p>Constructor. The aid is new_aid, the country is new_country, the regions are new_regions and zone is new_zone. The zone_type can be ZONE or SETTLEMENT. </p>
 
 <p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00034">34</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                                                                                        : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(new_aid),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(new_country),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(new_regions),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(new_zone),<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>(<a class="code" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a>)</div>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                                                                                                                    : <a class="code" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>(new_aid),<a class="code" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>(new_country),<a class="code" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>(new_regions),<a class="code" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>(new_zone),<a class="code" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>(new_zid_type)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {}</div>
 </div><!-- fragment -->
 </div>
@@ -515,7 +528,7 @@ Private Member Functions</h2></td></tr>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="ttc" id="anamespacescifir_html_a7ec42f20dc4534b6c166a5034631a116"><div class="ttname"><a href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">scifir::create_zone_type</a></div><div class="ttdeci">zid::type create_zone_type(const string &amp;zone_type_abbreviation)</div><div class="ttdoc">Creates an instance of a zid::type with the given string, which is the reverse as the to_string() fun...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00239">zid.cpp:239</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a7ec42f20dc4534b6c166a5034631a116"><div class="ttname"><a href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">scifir::create_zone_type</a></div><div class="ttdeci">zid::type create_zone_type(const string &amp;zone_type_abbreviation)</div><div class="ttdoc">Creates an instance of a zid::type with the given string, which is the reverse as the to_string() fun...</div><div class="ttdef"><b>Definition:</b> <a href="zid_8cpp_source.html#l00241">zid.cpp:241</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
