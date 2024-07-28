@@ -2,8 +2,8 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../units/vector_unit_nd.hpp"
-#include "../../units/unit_basic.hpp"
-#include "../../units/unit_abbreviation.hpp"
+#include "../../units/base_units.hpp"
+#include "../../units/special_names.hpp"
 
 using namespace std;
 using namespace scifir;

@@ -1,9 +1,9 @@
 /** \class scifir::scalar_unit
-* \brief Class that allows to create scalar units, which are composed of a value (as a float) and dimensions. The dimensions can be of any number, and be basic dimensions and/or abbreviations of dimensions. **Initialization string** example: "1 N".
+* \brief Class that allows to create scalar units, which are composed of a value (as a float) and dimensions. The dimensions can be of any number, and be simple dimensions, composite dimensions and/or special names of dimensions. **Initialization string** example: "1 N".
 
-* scalar_unit is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its abbreviations. The abbreviations can be converted to its derived dimensions, too. scalar_unit classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its derived dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly.
+* scalar_unit is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its special names. The special names can be converted to its equivalent dimensions, too. scalar_unit classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its derived dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly.
 * POSSIBLE FEATURES
-* At the present scalar_unit classes use a vector<dimension> to allow to have any number of dimensions, which can be basic or abbreviations. In order to size less, it's possible for some scalar_unit classes to have only one dimension, instead of a vector, that saves memory. With that approach, the dimension needs only 3 bytes. The possibility to switch between a single dimension and a vector<dimension> doesn't yet exists in C++, and so this important feature has been postposed.
+* At the present scalar_unit classes use a vector<dimension> to allow to have any number of dimensions, which can be simple, composite or special names. In order to size less, it's possible for some scalar_unit classes to have only one dimension, instead of a vector, that saves memory. With that approach, the dimension needs only 3 bytes. The possibility to switch between a single dimension and a vector<dimension> doesn't yet exists in C++, and so this important feature has been postposed.
 
 * \fn scalar_unit::scalar_unit()
 * \brief Default constructor, the value is 0 and the dimensions are empty.
@@ -167,12 +167,10 @@
 * \brief **Internal function**. It sets the value and the dimensions of the scalar_unit to the value and dimensions specified by the initialization string of scalar_unit.
 
 * \var scalar_unit::dimensions
-* \brief Dimensions of the scalar_unit. They can be basic dimensions or abbreviations.
+* \brief Dimensions of the scalar_unit. They can be simple dimensions, composite dimensions or special names.
 
 * \var scalar_unit::value
 * \brief Value of the scalar_unit. It changes automatically when the dimensions change.
-
-* \defgroup scalar_unit_functions
 
 * \namespace scifir
 * \brief The namespace scifir contains all scifir-units, excepting the string literals, which are outside.

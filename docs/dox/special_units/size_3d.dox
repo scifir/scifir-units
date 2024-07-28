@@ -2,7 +2,7 @@
 * \brief Class that allows to store and calculate size in 3D, with width, height and depth. The template parameter T allows to select any scalar_unit or numeric type to be the type of the width, the height and the depth (they always have the same type in the same instance). The width, height and depth can be any scalar_unit, usually length, but imaginary spaces with custom dimensions are also allowed. **Initialization string** example: "1 m * 2 m * 4 m".
 
 * \fn size_3d::size_3d()
-* \brief Default constructor. Both width, height and depth are initialized to 0, with the dimensions to the default of their basic unit.
+* \brief Default constructor. Both width, height and depth are initialized to 0, with the dimensions to the default of their base unit.
 
 * \fn size_3d::size_3d(const size_3d<T>& x)
 * \brief Copy constructor. The width, height and depth are copied from the size_3d<T> x.

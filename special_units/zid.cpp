@@ -31,7 +31,7 @@ namespace scifir
 	zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions) : aid(new_aid),country(new_country),regions(new_regions),zone(),zone_type(zid::REGION)
 	{}
 
-	zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone) : aid(new_aid),country(new_country),regions(new_regions),zone(new_zone),zone_type(zid::ZONE)
+	zid::zid(const scifir::aid& new_aid,const zid::type& new_zid_type,const string& new_country,const vector<string>& new_regions,const string& new_zone) : aid(new_aid),country(new_country),regions(new_regions),zone(new_zone),zone_type(new_zid_type)
 	{}
 
 	zid::zid(const scifir::aid& new_aid,const string& init_zid) : aid(new_aid),regions(),country(),zone(),zone_type(zid::NONE)
@@ -230,6 +230,8 @@ namespace scifir
 				return "C";
 			case zid::REGION:
 				return "R";
+			case zid::SETTLEMENT:
+				return "S";
 			case zid::ZONE:
 				return "Z";
 		}
@@ -245,6 +247,10 @@ namespace scifir
 		else if (zone_type_abbreviation == "R")
 		{
 			return zid::REGION;
+		}
+		else if (zone_type_abbreviation == "S")
+		{
+			return zid::SETTLEMENT;
 		}
 		else if (zone_type_abbreviation == "Z")
 		{

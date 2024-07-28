@@ -3,14 +3,17 @@ SCIFIR UNITS - VERSION 2
 // NUMBER OF TODOS: 52
 
 // MATERIAL_VECTOR_UNIT (1)
-// TODO: add operator== and operator!=
+// TODO: add operator == and operator !=
 
 // TENSORS (2)
 // TODO: add display functions without new lines and other equivalents with new lines, they should allow to display like the other units related to dimensions
 // TODO: add operator*, cross_product(), dot_product(), hadamard_product()
 
 // TRAJECTORY AND PARAMETERIZATION
-// TODO: think if to add here the trajectory and the parameterization
+// TODO: finish the trajectory_3d class
+
+// WAVES
+// TODO: think if to add the waves here too
 
 // BUGS AND SIMILAR PROBLEMS (3)
 // TODO: document the light units somewhere
@@ -32,31 +35,26 @@ SCIFIR UNITS - VERSION 2
 // TODO: update the documentation of github pages
 // TODO: support solid_angles, with the literal _sr too
 
-// TODO: check the characters of the initialization strings in all vector_unit classes
-// TODO: try the initialization strings with the unicode characters literally, not with their conversion, inside the tests of vector_unit classes
-// TODO: maybe add a character table inside the documentation to copy the characters of the initialization strings
+// TODO: maybe it's needed to change characters of the initialization strings of some vector_unit classes. It's needed to update the file README.md too with that
 // TODO: think of how to implement conversions, do also the test of them
 // TODO: check if the member-variable names of dimension class can be changed
 
 // TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their derived classes
 
 // TODO: custom dimensions should allow to store their names too, not only their symbols
-// TODO: maybe the prefix should be also present in the operator == of dimensions, and then it's needed another function to do what this operator is currently doing
 
 // TODO: display_double() and display_long_double() functions of types.cpp
 
 // TODO: create percentage<double> and percentage<long double> with ppb, ppt and ppq. Create also the function is_long_percentage() to test for ppb, ppt and ppq
 
-// BUGS AND SIMILAR PROBLEMS - HARD (4)
+// BUGS AND SIMILAR PROBLEMS - HARD (3)
 // TODO: check and correct all the warnings of cl.exe with /Wall
 // TODO: -Wall gives a warning for vector_unit_nd with end of non-void function
 // TODO: look at the 1.99 of test_coordinates_2d vs the 2 of the float specialization
-// TODO: check the literal of Ohm initialization in string class to be used instead of IS_UNIX and IS_WINDOWS in all the code files. Also, possibly it's needed to add IS_UNIX and IS_WINDOWS there
 
-// BUILD (3)
+// BUILD (2)
 // TODO: support freebsd and openbsd
 // TODO: upload the package to the container registry of github packages
-// TODO: search if there's a way to add multiple jobs to the build with the command cmake --build, similar to make -j
 
 // BUILD - ADVANCED (7)
 // TODO: study bazel and look the files of bazel that are part of Catch2, maybe the same should be done for scifir-units
@@ -81,13 +79,13 @@ SCIFIR UNITS - VERSION 2
 // TODO: add the code coverage badge
 // TODO: upload scifir-units to sourceforge too
 
-// TESTS (5)
+// TESTS (6)
 // TODO: finish the tests of all classes
 // TODO: review get_nd() of the tests of vector_unit_nd and coordinates_nd
 // TODO: verify that are present all functions of coordinates with rotations
 // TODO: report the bug to CATCH of the use of bool()
 // TODO: verify the titles of sections of tests of units, meca_number and special_units
-// TODO: test of unit basic classes
+// TODO: test of base unit classes
 
 // DOCUMENTATION (23)
 // TODO: create all the dox files of the library
@@ -122,6 +120,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: explain the custom dimensions in the file README.md
 // TODO: display as plain text the <T> inside the md file
 // TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication
+// TODO: add the BIPM to some part of the documentation, where it should be cited
 
 // TODO: document the use of the custom_display "sci"
 // TODO: think on the different cases of use of coordinates and document them, including the use of an origin
@@ -162,6 +161,7 @@ SCIFIR UNITS - VERSION 2
 // VECTOR FIELDS (2)
 // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field
 // TODO: parsing of initialization strings of fields. Allow to declare variables that can be refered by name inside initialization strings of vector fields
+// TODO: create magnetic_field class, and add the string literal _T to the README.md file
 
 // PLOTTING
 // TODO: add functions that allow to use also matplot++ inside the library
@@ -173,7 +173,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: search if there's a library that displays equations inside the command-line with math format, with math glyphs
 // TODO: to_latex() function that gives the algebraic_expression in latex format
 
-// C++ (6)
+// C++ (7)
 // TODO: use constexpr and consteval to initialize units instantly, possibly use it in more parts of the code
 // TODO: change the use of const-reference to value and std::move in constructors
 // TODO: change the use of const-reference to value and std::move in other places
@@ -181,20 +181,19 @@ SCIFIR UNITS - VERSION 2
 // TODO: if size_t and other similar constants are intended to be used inside normal code
 // TODO: replace boost::split by split of C++20
 // TODO: check is string_view should be used as parameters
+// TODO: use string_view to the enum functions
 
 // DIMENSIONS (7)
 // TODO: support the binary prefixes too
-// TODO: a new function to display dimensions with their full name, including the prefix
-// TODO: functions get_plural(), get_fullname() and get_fullplural()
 // TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
 
-// TODO: allow to initalize degree dimensions by symbol
-// TODO: angle class needs a to_scalar_unit() function that gives an equivalent scalar_unit class with the same value and grade dimension
+// TODO: test dimension class with MSVC for the uses of the special characters
 // TODO: some dimensions like degree, radian and money shouldn't be allowed to have a prefix
 // TODO: check the literal with e
 // TODO: read the ISO 80000
 
 // TODO: finish the test of custom_basic dimensions and document them in the README.md file
+// TODO: maybe is_complex_dimension() for cases were the the dimension is not a simple dimension
 
 // UNITS (9)
 // TODO: solve in some way the problem that vector_unit_3d needs different characters in Windows an inside Linux when initialized with strings
@@ -202,27 +201,30 @@ SCIFIR UNITS - VERSION 2
 // TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them
 // TODO: vector_unit_3d class maybe need the comparison operators with themselves
 // TODO: use the PI of the std library
-// TODO: function point_to() to a point and point_to() to a coordinate
+// TODO: function point_to() to a point and point_to() to a coordinate for vector_unit classes
 // TODO: support the brackets inside is_scalar_unit(), is_complex() and is_lab_number()
 // TODO: possibly add the light_scalar_unit class that allows operations with scalar_unit classes, which must contain only one dimension, not a vector<dimension>
 // TODO: function to_latex() for dimensions and scalar_unit
+// TODO: function that displays the scalar_unit as text, with the plural if the scalar_unit has a value greather than 1
+// TODO: maybe change the SI constants to be a base unit instead of a long double
 
 // TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 // TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
 
-// TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all predefined_unit files
+// TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files
 
 // PREDEFINED UNITS (4)
-// TODO: think if to add accoustic and matter predefined units, or if it's not needed
+// TODO: think if to add accoustic and matter derived units, or if it's not needed
 // TODO: delete all field classes that currently are vector_units, and make them fields
 // TODO: think if to add another concentration class, the previous one has been deprecated
 // TODO: move cas_number to the library of scifir-info, or even to another category
+// TODO: biology units, like heart_rate
 
-// MECA NUMBERS (2)
+// MECA NUMBERS (4)
 // TODO: add the allowed typenames to lab_number, and don't accept any other type
-// TODO: _angle, _grade and _radian literals
-// TODO: angle should read initialization strings in radian too, maybe with "radian" name, possibly "rad" should be supported too
-// TODO: add obtusangle, rect angle, acutangle, etc
+// TODO: angle should read initialization strings in radian too inside the string constructor, maybe with "radian" name, possibly "rad" should be supported too
+// TODO: maybe add obtusangle, rect angle, acutangle, etc
+// TODO: study if to add the gradian
 
 // SPECIAL UNITS - EXTRA (7)
 // TODO: ip class? check networking libraries of C++ and decide if to add it here
@@ -237,6 +239,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: _percentage literal
 // TODO: address class with zid inside
 // TODO: enum of movement maybe should be divided in kind of animal
+// TODO: display() function for pixel class
 
 // EMOTIONAL UNITS (1)
 // TODO: finish the enums of mind.hpp
@@ -274,6 +277,9 @@ SCIFIR UNITS - VERSION 2
 // OPTION 4: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
 // OPTION 4 - TODO: add const to the enum of light_unit
 // AFTER SOME OPTION - TODO: finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation
+
+// DOUBTS
+// TODO: maybe delete the string literals of the prefixes of AU, leave only the string literal without prefix
 
 // ANOTHER PROJECT - LIBRARY OF INFORMATION
 // TODO: isbn class
@@ -344,6 +350,8 @@ SCIFIR UNITS - VERSION 2
 // TODO: add to the ISO of the keyboards some system to write pi, theta, phi, among other symbols, with the keyboard in an easy way, without having to memorize any numeric code
 // TODO: propose an ISO symbol for money in general?
 // TODO: finish the empty array implementation for dimension, in order to have normal dimensions, no custom dimensions, of size 3 instead of size 6
+// TODO: add the symbol '%' to the string literals
+// TODO: add the symbol 'μ' to the string literals
 
 // FUTURE - MECA NUMBERS (POSSIBLE, THINK)
 // TODO: Add names to the meca numbers (angler, laber, etc)

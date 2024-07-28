@@ -69,7 +69,7 @@
 	} \
 \
 const string name::dimensions_match = init_dimensions; \
-const vector<dimension> name::real_dimensions = create_derived_dimensions(init_dimensions)
+const vector<dimension> name::real_dimensions = create_simple_dimensions(init_dimensions)
 
 using namespace std;
 

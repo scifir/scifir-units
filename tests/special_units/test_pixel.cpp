@@ -2,8 +2,8 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../special_units/pixel.hpp"
-#include "../../units/unit_basic.hpp"
-#include "../../units/unit_abbreviation.hpp"
+#include "../../units/base_units.hpp"
+#include "../../units/special_names.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -164,6 +164,12 @@ TEST_CASE("pixel class") {
         pixel s(8.0f);
         --s;
         CHECK(s.get_value() == 7.0f);
+    }
+
+    SECTION("to_scalar_unit() function")
+    {
+        pixel a(40.0f);
+        CHECK(bool(a.to_scalar_unit() == scalar_unit("40 px")));
     }
 
     SECTION("to_string() function of pixel class")

@@ -1,6 +1,6 @@
 #include "./dimension.hpp"
 
-#include "../topology/constants.hpp"
+#include "./constants.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -120,6 +120,10 @@ namespace scifir
 		{
 			dimension_type = dimension::BYTE;
 		}
+		else if(dimension_name == "bit")
+		{
+			dimension_type = dimension::BIT;
+		}
 		else if(dimension_name == "Hz")
 		{
 			dimension_type = dimension::HERTZ;
@@ -150,7 +154,7 @@ namespace scifir
 		}
 		else if(dimension_name == "F")
 		{
-			dimension_type = dimension::FARADAY;
+			dimension_type = dimension::FARAD;
 		}
 		else if(dimension_name == "ohm" or dimension_name == "Ohm" or dimension_name == "Ω")
 		{
@@ -359,6 +363,8 @@ namespace scifir
 				return "candela";
 			case dimension::BYTE:
 				return "byte";
+			case dimension::BIT:
+				return "bit";
 			case dimension::HERTZ:
 				return "hertz";
 			case dimension::NEWTON:
@@ -373,8 +379,8 @@ namespace scifir
 				return "ampere";
 			case dimension::VOLT:
 				return "volt";
-			case dimension::FARADAY:
-				return "faraday";
+			case dimension::FARAD:
+				return "farad";
 			case dimension::OHM:
 				return "ohm";
 			case dimension::SIEMENS:
@@ -474,6 +480,8 @@ namespace scifir
 				return "candelas";
 			case dimension::BYTE:
 				return "bytes";
+			case dimension::BIT:
+				return "bits";
 			case dimension::HERTZ:
 				return "hertz";
 			case dimension::NEWTON:
@@ -488,8 +496,8 @@ namespace scifir
 				return "amperes";
 			case dimension::VOLT:
 				return "volts";
-			case dimension::FARADAY:
-				return "faradays";
+			case dimension::FARAD:
+				return "farads";
 			case dimension::OHM:
 				return "ohms";
 			case dimension::SIEMENS:
@@ -594,6 +602,8 @@ namespace scifir
 				return "cd";
 			case dimension::BYTE:
 				return "B";
+			case dimension::BIT:
+				return "bit";
 			case dimension::HERTZ:
 				return "Hz";
 			case dimension::NEWTON:
@@ -608,7 +618,7 @@ namespace scifir
 				return "A";
 			case dimension::VOLT:
 				return "V";
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				return "F";
 #ifdef IS_UNIX
 			case dimension::OHM:
@@ -714,6 +724,8 @@ namespace scifir
 				return 1.0l;
 			case dimension::BYTE:
 				return 1.0l;
+			case dimension::BIT:
+				return 0.125l;
 			case dimension::HERTZ:
 				return 1.0l;
 			case dimension::NEWTON:
@@ -728,7 +740,7 @@ namespace scifir
 				return 1.0l;
 			case dimension::VOLT:
 				return 1.0l;
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				return 1;
 			case dimension::OHM:
 				return 1.0l;
@@ -803,7 +815,7 @@ namespace scifir
 
 	long double dimension::prefix_math(const scifir::prefix& x_prefix) const
 	{
-		if (dimension_type == dimension::BYTE)
+		if (dimension_type == dimension::BYTE or dimension_type == dimension::BIT)
 		{
 			return std::pow(1024, x_prefix.get_conversion_factor() / 3);
 		}
@@ -841,6 +853,8 @@ namespace scifir
 				return true;
 			case dimension::BYTE:
 				return true;
+			case dimension::BIT:
+				return true;
 			case dimension::HERTZ:
 				return true;
 			case dimension::NEWTON:
@@ -855,7 +869,7 @@ namespace scifir
 				return true;
 			case dimension::VOLT:
 				return false;
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				return false;
 			case dimension::OHM:
 				return false;
@@ -923,26 +937,31 @@ namespace scifir
 		return false;
 	}
 
-	bool dimension::is_basic_dimension() const
+	bool dimension::is_composite_dimension() const
+	{
+		return !is_simple_dimension();
+	}
+
+	bool dimension::is_base_dimension() const
 	{
 		switch(dimension_type)
 		{
 			case dimension::NONE:
-				return true;
+				return false;
 			case dimension::METRE:
 				return true;
 			case dimension::DEGREE:
-				return true;
+				return false;
 			case dimension::RADIAN:
-				return true;
+				return false;
 			case dimension::STERADIAN:
-				return true;
+				return false;
 			case dimension::GRAM:
 				return true;
 			case dimension::SECOND:
 				return true;
 			case dimension::COULOMB:
-				return true;
+				return false;
 			case dimension::KELVIN:
 				return true;
 			case dimension::MOLE:
@@ -950,7 +969,9 @@ namespace scifir
 			case dimension::CANDELA:
 				return true;
 			case dimension::BYTE:
-				return true;
+				return false;
+			case dimension::BIT:
+				return false;
 			case dimension::HERTZ:
 				return false;
 			case dimension::NEWTON:
@@ -962,10 +983,10 @@ namespace scifir
 			case dimension::WATT:
 				return false;
 			case dimension::AMPERE:
-				return false;
+				return true;
 			case dimension::VOLT:
 				return false;
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				return false;
 			case dimension::OHM:
 				return false;
@@ -1020,25 +1041,132 @@ namespace scifir
 			case dimension::CUSTOM:
 				return false;
 			case dimension::CUSTOM_BASIC:
-				return true;
+				return false;
 			case dimension::CUSTOM_FULL_SYMBOL:
 				return false;
 			case dimension::MONEY:
-				return true;
+				return false;
 			case dimension::PIXEL:
 				return false;
 			case dimension::MEMO:
-				return true;
+				return false;
 		}
-		return true;
+		return false;
 	}
 
 	bool dimension::is_derived_dimension() const
 	{
-		return !is_basic_dimension();
+		switch(dimension_type)
+		{
+			case dimension::NONE:
+				return false;
+			case dimension::METRE:
+				return false;
+			case dimension::DEGREE:
+				return true;
+			case dimension::RADIAN:
+				return true;
+			case dimension::STERADIAN:
+				return true;
+			case dimension::GRAM:
+				return false;
+			case dimension::SECOND:
+				return false;
+			case dimension::COULOMB:
+				return true;
+			case dimension::KELVIN:
+				return false;
+			case dimension::MOLE:
+				return false;
+			case dimension::CANDELA:
+				return false;
+			case dimension::BYTE:
+				return false;
+			case dimension::BIT:
+				return false;
+			case dimension::HERTZ:
+				return true;
+			case dimension::NEWTON:
+				return true;
+			case dimension::PASCAL:
+				return true;
+			case dimension::JOULE:
+				return true;
+			case dimension::WATT:
+				return true;
+			case dimension::AMPERE:
+				return false;
+			case dimension::VOLT:
+				return true;
+			case dimension::FARAD:
+				return true;
+			case dimension::OHM:
+				return true;
+			case dimension::SIEMENS:
+				return true;
+			case dimension::WEBER:
+				return true;
+			case dimension::TESLA:
+				return true;
+			case dimension::HENRY:
+				return true;
+			case dimension::LUMEN:
+				return true;
+			case dimension::LUX:
+				return true;
+			case dimension::BECQUEREL:
+				return true;
+			case dimension::GRAY:
+				return true;
+			case dimension::SIEVERT:
+				return true;
+			case dimension::KATAL:
+				return true;
+			case dimension::ANGSTROM:
+				return false;
+			case dimension::LITRE:
+				return false;
+			case dimension::MINUTE:
+				return false;
+			case dimension::HOUR:
+				return false;
+			case dimension::DAY:
+				return false;
+			case dimension::LIGHT_YEAR:
+				return false;
+			case dimension::ASTRONOMICAL_UNIT:
+				return false;
+			case dimension::PARSEC:
+				return false;
+			case dimension::ELECTRON_VOLT:
+				return false;
+			case dimension::DALTON:
+				return false;
+			case dimension::ATOMIC_MASS_UNIT:
+				return false;
+			case dimension::BARN:
+				return false;
+			case dimension::MOLARITY:
+				return false;
+			case dimension::PARTICLES:
+				return false;
+			case dimension::CUSTOM:
+				return false;
+			case dimension::CUSTOM_BASIC:
+				return false;
+			case dimension::CUSTOM_FULL_SYMBOL:
+				return false;
+			case dimension::MONEY:
+				return false;
+			case dimension::PIXEL:
+				return false;
+			case dimension::MEMO:
+				return false;
+		}
+		return false;
 	}
 
-	vector<dimension> dimension::get_basic_dimensions() const
+	vector<dimension> dimension::get_simple_dimensions() const
 	{
 		vector<dimension> basic_dimensions = vector<dimension>();
 		switch (dimension_type)
@@ -1077,6 +1205,9 @@ namespace scifir
 				basic_dimensions.push_back(dimension(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::BYTE:
+				basic_dimensions.push_back(dimension(dimension::BYTE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case dimension::BIT:
 				basic_dimensions.push_back(dimension(dimension::BYTE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::HERTZ:
@@ -1121,7 +1252,7 @@ namespace scifir
 				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::DENOMINATOR));
 				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
 				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
@@ -1457,18 +1588,18 @@ namespace scifir
 		return dimensions;
 	}
 
-	vector<dimension> create_derived_dimensions(const string& init_dimensions)
+	vector<dimension> create_simple_dimensions(const string& init_dimensions)
 	{
 		vector<dimension> new_dimensions = create_dimensions(init_dimensions);
-		return create_derived_dimensions(new_dimensions);
+		return create_simple_dimensions(new_dimensions);
 	}
 
-	vector<dimension> create_derived_dimensions(const vector<dimension>& x)
+	vector<dimension> create_simple_dimensions(const vector<dimension>& x)
 	{
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
 		{
-			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
+			vector<dimension> x_subdimensions = x[i].get_simple_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				if (x[i].dimension_position == dimension::DENOMINATOR)
@@ -1481,7 +1612,7 @@ namespace scifir
 		return new_x;
 	}
 
-	vector<dimension> create_derived_dimensions(const vector<dimension>& x,long double& value)
+	vector<dimension> create_simple_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
@@ -1496,7 +1627,7 @@ namespace scifir
 				value /= x[i].get_conversion_factor();
 				value /= x[i].prefix_math();
 			}
-			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
+			vector<dimension> x_subdimensions = x[i].get_simple_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				if (x[i].dimension_position == dimension::DENOMINATOR)
@@ -1538,7 +1669,7 @@ namespace scifir
 		return normalize_dimensions(x,value);
 	}
 
-	vector<dimension> square_dimensions(vector<dimension> x,long double& value,int index)
+	vector<dimension> square_dimensions(vector<dimension> x,int index,long double& value)
 	{
 		map<dimension::type,int> dimensions_count = map<dimension::type,int>();
 		for (const dimension& x_dimension : x)
@@ -1576,7 +1707,7 @@ namespace scifir
 			}
 			return new_dimensions;
 		}
-		else // If there's more than one type of dimension, creates the derived dimensions of them, and squares the total. If there are abbreviations, they are losed
+		else // If there's more than one type of dimension, creates the simple dimensions of them, and squares the total. If there are special names, they are changed by their simple dimensions
 		{
 			x = normalize_dimensions(x,value);
 			vector<dimension::type> counted_dimensions = vector<dimension::type>();
@@ -1625,7 +1756,7 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x)
 	{
-		vector<dimension> new_x = create_derived_dimensions(x);
+		vector<dimension> new_x = create_simple_dimensions(x);
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -1675,7 +1806,7 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
 	{
-		vector<dimension> new_x = create_derived_dimensions(x,value);
+		vector<dimension> new_x = create_simple_dimensions(x,value);
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -1746,11 +1877,11 @@ namespace scifir
 
 	bool common_dimension(const dimension& x,const dimension& y)
 	{
-		for (const dimension& x_dimension : x.get_basic_dimensions())
+		for (const dimension& x_dimension : x.get_simple_dimensions())
 		{
-			for (const dimension& y_dimension : y.get_basic_dimensions())
+			for (const dimension& y_dimension : y.get_simple_dimensions())
 			{
-				if (x_dimension == y_dimension)
+				if (x_dimension.dimension_type == y_dimension.dimension_type and x_dimension.dimension_position == y_dimension.dimension_position)
 				{
 					return true;
 				}
@@ -1768,8 +1899,8 @@ namespace scifir
 
 	bool equal_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
-		vector<dimension> x_derived_dimensions = create_derived_dimensions(x);
-		vector<dimension> y_derived_dimensions = create_derived_dimensions(y);
+		vector<dimension> x_derived_dimensions = create_simple_dimensions(x);
+		vector<dimension> y_derived_dimensions = create_simple_dimensions(y);
 		if (x_derived_dimensions.size() == y_derived_dimensions.size())
 		{
 			vector<unsigned int> skip = vector<unsigned int>();
@@ -1793,7 +1924,7 @@ namespace scifir
 					{
 						continue;
 					}
-					if (x_dimension == y_derived_dimensions[j])
+					if (x_dimension.dimension_type == y_derived_dimensions[j].dimension_type and x_dimension.dimension_position == y_derived_dimensions[j].dimension_position)
 					{
 						skip.push_back(j);
 						is_equal = true;
@@ -1838,7 +1969,7 @@ namespace scifir
 					{
 						continue;
 					}
-					if (x_dimension == y[j] and x_dimension.prefix == y[j].prefix)
+					if (x_dimension == y[j])
 					{
 						skip.push_back(j);
 						is_equal = true;
@@ -1861,7 +1992,7 @@ namespace scifir
 
 bool operator ==(const scifir::dimension& x,const scifir::dimension& y)
 {
-	if (x.dimension_type == y.dimension_type and x.dimension_position == y.dimension_position)
+	if (x.dimension_type == y.dimension_type and x.dimension_position == y.dimension_position and x.prefix == y.prefix)
 	{
 		return true;
 	}

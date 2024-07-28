@@ -2,8 +2,8 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../units/scalar_unit.hpp"
-#include "../../units/unit_basic.hpp"
-#include "../../units/unit_abbreviation.hpp"
+#include "../../units/base_units.hpp"
+#include "../../units/special_names.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -206,6 +206,9 @@ TEST_CASE("scalar_unit class") {
 		scalar_unit e("50 N*kg");
 		e.change_dimensions("kg");
 		CHECK(bool(e == "50 N*kg"));
+		scalar_unit f("8 bit");
+		f.change_dimensions("B");
+		CHECK(bool(f == "1 B"));
 	}
 
 	SECTION("display_dimensions() of scalar_unit class")

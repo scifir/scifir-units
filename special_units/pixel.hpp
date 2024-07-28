@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED
 #define SCIFIR_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED
 
-#include "../topology/constants.hpp"
+#include "../units/constants.hpp"
 #include "../util/is_number.hpp"
 #include "../units/scalar_unit.hpp"
 
@@ -124,6 +124,8 @@ namespace scifir
 			pixel operator ++(int);
 			pixel& operator --();
 			pixel operator --(int);
+
+			scalar_unit to_scalar_unit() const;
 
 		private:
 			float value;

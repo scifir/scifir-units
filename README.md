@@ -2,13 +2,17 @@
 
 [![Linux build status](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml/badge.svg)](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml)
 
-Welcome! The **Scifir Collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+Welcome! The **Scifir Collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. Also, any **electronic device**, **medical machine**, **electrodomestic** or **vehicle** can be benefited with the use of units and related classes. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+
+The **goal of scifir-units** is to create a very good library of all units of measurement to be used inside any scientific software, which are electronics software, desktop software, command-line applications, or any other. That's the reason of why C++ is the programming language used for scifir-units. To provide all optimizations and features needed, in order to create a library **as good and complete** as possible, is an objective that has been achieved inside this project, as the user can judge looking at the reference. scifir-units is intended to be **basal to develop scientific software**, of any kind, and to provide a solution for all common scientific calculations involving scalar units, vectors, coordinates, among other common math operations. Then, the problem of doing lots of calculus in scientific software has its difficulty reduced a big amount.
 
 The Scifir Collection is under development, but the units are already released. Molecules aren't, but they will by ready soon!
 
 **scifir-units** includes units with dimensions to use, then it's unneeded to care about having the proper dimensions and prefixes when developing scientific software, you can instantiate any value you have on the machine, without performing operations with a calculator first to convert the units to a common prefix. Learn how to use them at the [Wiki](https://github.com/scifir/scifir-units/wiki). It's been developed under **C++20** and uses **cmake** as build automation tool. It's available for **Linux distributions** and **Windows**.
 
 The **current version** of scifir-units is the **beta-version-2.0**. The version 1.0 has never been released because the version 2.0 was better by a great extent. The version 2.0 includes a better inheritance system and a wide simplification of all the programming of the library and, then, a better compilation and a saving of RAM for each instantiation of each class. Because of that reason, the version 2.0 has been preferred over the version 1.0.
+
+Here you can read how to install and use scifir-units, the reference of classes and functions can be read in the [reference of scifir-units](https://scifir.github.io/scifir-units/annotated.html).
 
 ### Team
 
@@ -17,6 +21,191 @@ The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.
 ### Funding
 
 The **Scifir Foundation** is looking for **funding**, in order to do some digital marketing and pay some other needs of the project. If you want to support this libraries, **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/iarfen).
+
+## Short example
+
+```cpp
+length x = 100_km; // length is a child class of scalar_unit, only supports dimensions convertible to metre
+cout << x << endl; // Prints "100 km"
+x.change_dimensions("m");
+cout << x << endl; // Prints "100000 m"
+
+force_2d y(50_N,20_degree); // force_2d is a child class of vector_unit_2d
+cout << y << endl; // Prints "50 N 20θ"
+
+force_2d y2(30_N,10_degree);
+cout << y2 << endl;
+cout << (y + y2) << endl; // Prints the vectorial sum of y + y2
+y2.theta += 10; // Sums 10 degrees to theta of y2
+cout << y2.theta << endl; // Prints theta of y2 "20°"
+
+force_3d z(50_N,20_degree,40_degree); // force_3d is a child class of vector_unit_3d
+cout << z << endl; // Prints "50 N 20θ 40Φ"
+z.theta += 15; // Sums 15 degrees to theta of z
+z.phi += 10; // Sums 10 degrees to phi of z
+cout << z.theta << endl; // Prints theta of z "35°"
+cout << z.phi << endl; // Prints phi of z "50°"
+
+angle a = 100_degree; // angle class is not a scalar_unit
+a++; // Increments a by one unit
+cout << a << endl; // Prints "100°"
+
+coordinates_3d<> b(10_m,5_m,30_m); // coordinates_3d<> has length as dimension of space. float and imaginary dimensions are also supported for the space
+cout << b << endl; // Prints "(10 m,5 m,30 m)"
+
+aid c("(P) universe:milky-way:solar-system:earth"); // aid is an identifier for any astronomical object
+cout << c << endl; // Prints "(P) universe:milky-way:solar-system:earth"
+
+zid d("(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia"); // zid is an identifier for any zone, of any astronomical object
+cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia"
+
+// Among many other features!
+```
+
+### Using the library
+
+First you have to link **scifir-units** to your project. To link scifir-units, after installing it following the steps above, add the following code inside your CMakeLists.txt file:
+
+```
+target_link_libraries(your-project scifir-units)
+```
+
+Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**.
+
+```
+#include "scifir/units.hpp"
+```
+
+### Copy-paste symbols
+
+| Symbol | Use
+| --- | -----
+| θ | String literal of angle and used both in vector_unit_2d and vector_unit_3d.
+| Φ | Angle phi, used in vector_unit_3d.
+| ° | Degree, used in vector_unit_nd.
+| Ω | String literal of resistance.
+| Å | String literal of angstrom.
+| µ | Prefix micro, used as part of the string literals with micro.
+
+### Concepts
+
+- In science, a **scalar unit** is a unit of measurement that adds dimensions to a number, in order to allow to manage concepts represents with numbers better. The dimensions can have prefixes, like kilo and deci, that scale the value by multiples of 10.
+- The **International System of Units**, of abbreviation **SI**, defines the following **base units**: metre (m), second (s), gram (g), electric current (A), temperature (K), amount of substance (mol), luminous intensity (cd).
+- The **decimal prefixes** are part of the SI system of units scale the value of the base unit by a factor. Examples of prefixes are the kilo (k, factor 3), deci (d, factor -1) and milli (m, factor -3).
+- The **derived units**, part of the SI system of units, are the units derived from the base units.
+- The **angle** is not exactly a scalar unit, but is similar. Its main difference with a scalar unit is that it's a mathematical concept, not a concept defined from natural science.
+- As the angle, the **complex number** also is not a scalar unit, because it's a mathematical concept, not defined from natural science.
+- The **laboratory number** allows to work with measures and possible errors of those measures. It's a mathematical concept invented for the laboratory.
+- A **vector unit** is a vector that also has dimensions, like scalar units.
+- A **scalar field** is a function that assigns a scalar unit to each point inside a space.
+- A **vector field** is a function that assigns a vector unit to each point inside a space.
+- The **space** is measured in units of lengths, which in the SI system of units is the metre. Inside scifir-units, it can be used a length, a float or a scalar unit of an imaginary dimension. The scalar_unit is the better system, the float is intended for high-performance computation needs, and the imaginary dimensions are needed when they are being used for some purpose in the project (and that's why they are supported here).
+- A **space of two dimensions** has only two edges, it's an imaginary space that doesn't exist in the real world, but is used for simulations and some reasonings. It's abbreviated **2D**.
+- A **space of three dimensions** has three edges, it can represent both the real world and imaginary worlds. It's abbreviated **3D**.
+- Inside scifir-units, a space of a variable number of dimensions is abbreviated **ND**, of **space of n-dimensions**. ND can be sometimes 2D, sometimes 3D, also it can be 1D if needed, and even a space of a greather number of dimensions.
+- The **coordinates** are the position of an object in the space. There are coordinates for 2D and for 3D spaces, which are different systems of coordinates. For 2D spaces there exist the **cartesian coordinates** and the **polar coordinates**. For 3D space there exist the **cartesian coordinates**, the **cylindrical coordinates** and the **spherical coordinates**. The cartesian coordinates in 3D contain one more component of coordinates than their 2D counterpart.
+- The **points**, although can be thinked as being identical to coordinates, are usually fixed in the space. The coordinates are used for the positions of objects inside the space, and the points for more fixed uses.
+- A **percentage** is a mathematical concept that represents a fraction of some value, the fraction can be better than the value too.
+- **AID**, acronym of **Astronomical ID**, and **ZID**, acronym of **Zone ID**, are two identifiers invented in Scifir that provide a text-based identifier to refer to astronomical objects and zones, respectively. They are considered a special unit inside scifir-units.
+- The **pH** is a concept used in chemistry for measuring the concentration of H+ ions in a solution.
+
+### Class list
+
+- prefix.
+- dimension.
+- scalar_unit.
+- vector_unit_2d, vector_unit_3d, vector_unit_nd.
+- angle.
+- scalar_field_3d<T,U>.
+- coordinates_1d<T>, coordinates_2d<T>, coordinates_3d<T>, coordinates_nd<T>.
+- coordinates_2dr<T>, coordinates_3dr<T>, coordinates_ndr<T>.
+- point_1d<T>, point_2d<T>, point_3d<T>, point_nd<T>.
+- aid, zid.
+- percentage.
+- complex_number<T>.
+- lab_number<T>.
+- size_2d<T>, size_3d<T>, size_nd<T>.
+- pH, pOH.
+
+prefix can have all SI prefixes. dimension has all SI base dimensions, all common special names, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
+
+### Tools of units in real life
+
+#### Base units
+
+- **Length:** Ruler, tape measure, micrometer.
+- **Angles:** Conveyor.
+- **Volume:** Volumetric flask.
+- **Mass:** Balance.
+- **Time:** Chronometer, clock.
+- **Electric current:** Amperimeter, oscilloscope.
+- **Temperature:** Thermometre.
+- **Amount of substance:** Volumetric flask with balance, then calculations.
+- **Luminous intensity:** Photometer.
+
+#### Derived units
+
+- **Pressure:** Barometer.
+- **pH meter:** pH.
+- **Geographical position:** GPS receiver.
+- **Voltage:** Voltimeter.
+- **Electrical resistance:** Multimeter.
+- **Wavelength of light waves:** Interferometer.
+- **Astronomical distances:** Astrolabe.
+
+### Electronic sensors of units
+
+- **Acceleration:** Accelerometer.
+- **Angular velocity:** Gyroscope.
+- **Geographical position:** GPS sensor.
+- **Temperature:** Analog temperature sensor, digital temperature sensor, temperature switch, thermocouple ICs.
+- **Infrared light:** IR sensor.
+- **Electric field:** Electric field meter sensor.
+- **Magnetic field:** Magnetic sensor.
+- **Force:** Force sensor.
+
+### Electronic motors of units
+
+- **Movement:** Electronic motor (very different sizes available).
+- **Valve:** Electronic valve.
+
+### Constants of the SI system
+
+All constants of the SI system of units are implemeneted inside scifir-units, in the file **units/constants.hpp**. They are all **long double** types, use them to calculate anything you need.
+
+| Constant | Value
+| ------ | ------
+| HYPERFINE_TRANSITION_FREQUENCY_OF_CS | $$9192631770 \  Hz$$
+| SPEED_OF_LIGHT | $$299792458 \  m/s$$
+| PLANCK_CONSTANT | $$6.62607015×10^{−34} \  J⋅s$$
+| ELEMENTARY_CHARGE | $$1.602176634×10^{−19} \  C$$
+| BOLTZMANN_CONSTANT | $$1.380649×10^{−23} \  J/K$$
+| AVOGADRO_CONSTANT | $$6.02214076×10^{23} \  mol^{−1}$$
+| LUMINOUS_EFFICACY_OF_540_THZ_RADIATION | $$683 \  lm/W$$
+
+### Folder structure
+
+- **.github/:** Contains configuration files related to the GitHub of scifir-units.
+- **coordinates/:** Contains coordinates classes.
+- **derived_units/:** Contains the derived units of the SI system of units.
+- **docs/:** Contains the documentation.
+- **extra/:** Contains extra files related to the build.
+- **fields/:** Contains the field classes.
+- **meca_number/:** Contains numeric concepts that behave like a number machine, which are angle, complex_number and lab_number.
+- **special_units/:** Contains concepts similar to base and derived units, but different than them.
+- **tests/:** Contains the unitary tests.
+- **topology/:** Contains point classes.
+- **trajectories:** Contains trajectory classes.
+- **units/:** Contains the unit classes, dimension, prefix and conversion.
+- **util/:** Contains utilities for programming related to scifir-units, like is_number in template programming, matrix class and primitive type operations.
+
+## Table of contents
+
+- [Installation](#installation)
+- [Introduction](#introduction)
+- [Use cases](#use-cases)
+- [Core functionalities](#core-functionalities)
+- [Internals](#internals)
 
 ## Installation
 
@@ -152,20 +341,6 @@ You can test scifir-units executing ctest if you want. It's not needed to execut
 ctest --preset=<your-preset>
 ```
 
-## Using the library
-
-First you have to link **scifir-units** to your project. To link scifir-units, after installing it following the steps above, add the following code inside your CMakeLists.txt file:
-
-```
-target_link_libraries(your-project scifir-units)
-```
-
-Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**.
-
-```
-#include "scifir/units.hpp"
-```
-
 ## Introduction
 
 The Scifir Collection is a set of libraries that allows to create the software of scientific inventions, being them scientific machines or just scientific software. This library, scifir-units, allows to handle scalar and vectorial units inside the code. They are very lightweight, they size similar to a float, and can be used extensively to do any math calculation necessary for the invention. The prefixes can be changed, in order to display the units in the more proper dimensions. Also, all the conversions known are supported. Then, instead of the meter, a length can be described by a light-year, an astronomical unit (AU), among other units of measure.
@@ -179,7 +354,7 @@ The unit classes that scifir-units provides are the following:
 
 scalar_unit classes can be used both for scalar units and vector units in 1D. In the case of vector units in 1D, a negative value indicates, as on math, that it points to the left on the x axis. Otherwise, if the value is positive, it points to the right.
 
-All the unit classes have fixed dimensions. Once instantiated, they can't change to a different set of dimensions. Besides that, prefixes and abbreviations can be used freely, every unit can change to any other prefix and use any abbreviation that matches the original dimensions (and no other set of dimensions).
+All the unit classes have fixed dimensions. Once instantiated, they can't change to a different set of dimensions. Besides that, prefixes and special names can be used freely, every unit can change to any other prefix and use any special name that matches the original dimensions (and no other set of dimensions).
 
 There are also special units inside scifir-units. Those special units are aid, color, percentage, pH, pixel, pOH, size_2d, size_3d, size_nd and zid. **Always prefer pH** over pOH, pOH is provided by the library only for very infrequent cases.
 
@@ -197,7 +372,7 @@ The most important classes are the scalar units and the vector units. Vector uni
 
 The classes dimension, prefix and conversion are intended for **internal use** mainly, but they can be used if they are needed.
 
-The basic unit classes that inherit scalar_unit and use, then, too, dimension and prefix classes, are the following:
+The base unit classes that inherit scalar_unit and use, then, too, dimension and prefix classes, are the following:
 
 - length.
 - time_duration.
@@ -208,7 +383,7 @@ The basic unit classes that inherit scalar_unit and use, then, too, dimension an
 - light.
 - data.
 
-Apart from those basic scalar_unit subclasses, there are a great amount of more unit classes defined, that are derived from scalar_unit or from vector_unit. All scalar unit subclasses derive from scalar_unit, and all vector unit subclasses are defined one time for 2d, one time for 3d, one time for nd, and one time for the scalar_unit case. Then, force units, which are vector units, exist as force, force_2d, force_3d and force_nd.
+Apart from those base scalar_unit subclasses, there are a great amount of more unit classes defined, that are derived from scalar_unit or from vector_unit. All scalar unit subclasses derive from scalar_unit, and all vector unit subclasses are defined one time for 2d, one time for 3d, one time for nd, and one time for the scalar_unit case. Then, force units, which are vector units, exist as force, force_2d, force_3d and force_nd.
 
 All those additional unit classes are the following:
 
@@ -285,9 +460,15 @@ The conventions for storing informatic data are the following:
 
 ### Consumption of memory
 
+scifir-units is a very lightweight library, all classes require just some bytes to work. Then, it can be used in any electronics project, because the memory requirements can be meet.
+
+The prefix class sizes 1 byte. The dimension class sizes 6 bytes.
+
 The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vector_unit_nd size more than a single float, which uses 4 bytes, but don't size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.
 
 The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.
+
+The coordinates classes have as member-variables scalar_unit classes, and then they size the bytes of the scalar_unit classes, for each scalar_unit class they have.
 
 ## Use cases
 
@@ -390,135 +571,178 @@ In order to store units inside a file an initialization string should be used. F
 
 ### Space
 
-Inside scifir-units the space can be measured with float or with length. Secondarily, any scalar_unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar_unit classes.
+Inside scifir-units the space can be measured with length or with float. Secondarily, any scalar_unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar_unit classes.
+
+N-dimensions, inside scifir-units, are called **ND** in classnames. ND classes allow to change the number of dimensions of the space where they behave, by just changing their number of values to a different number of them. You can always change the values of ND classes to change the space they operate on to a different space. Then, if you're developing a software where for some reason the space changes from 2D to 3D, or viceversa, you can use ND classes for that purpose.
 
 ### Dimensions
 
-Inside scifir-units a **basic dimension** is a dimension considered basic under the SI system of units. Different to that, a **simple dimension** is a dimension without any derived dimension. That's, it's a dimension that's not an abbreviation of two or more other dimensions.
+Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units. Different to that, a **simple dimension** is a dimension without any simple dimension more derived from it. That's, a simple dimension is a dimension that's not an special name of two or more other dimensions.
+
+A **derived dimension** is a dimension that's not a base dimension under the SI system of units. A **composite dimension** is a dimension that's not a simple dimension.
 
 The dimensions that a scalar_unit class can have are available in the enum dimension::type, and are only the SI dimensions or, if there isn't a dimension for an important purpose in the SI system of units, a selected dimension of the different possible options. Only the prefered dimensions have been added to the enum dimension::type, the other dimensions, as for example England units, have been added only as conversion options. With that system, always the same dimensions are used, which simplifies the work inside a laboratory, because then there's less confusion about which dimensions are being used.
+
+The **base dimensions** inside scifir-units are the base dimensions of the SI system of units, and are then the **metre** (m), **kilogram** (kg), **second** (s), **mole** (mol), **candela** (cd), **kelvin** (K) and **ampere** (A). The byte (B) and the coulomb (C) are considered a simple dimension, but not a base dimension, because they are not a base dimension inside the SI system of units.
+
+Dimensions present in scifir-units not so widely known are the **steradian** (sr, solid angles), **katal** (kat, catalytic activity), **angstrom** (Å, length for wavelengths), **dalton** (Da, mass for atoms and molecules), **atomic mass unit** (same as Da), **electron volt** (eV, measure of very small amounts of energy, mainly for quantum physics), **candela** (cd, luminous intensity), **lumen** (lm, luminous flux), **lux** (lx, illuminance), **siemens** (S, electric cnoductance), **weber** (Wb, magnetic flux), **tesla** (T, magnetic strength), **henry** (H, electric inductance), **astronomical unit** (AU, long astronomic distances), **light year** (ly, very long astronomic distances), **parsec** (pc, very long astronomic distances), **becquerel** (Bq, radioactivity), **gray** (Gy, absorbed dose of ionising radiation), **sievert** (Sv, equivalent dose of ionising radiation), **barn** (Barn, transversal section of nuclear reactions). An invented unit inside Scifir is **memo**, which is used to measure the amount of memory inside the brain.
 
 #### Dimensions of space
 
 Both the degree and the radian are used for measuring angles. When specifying angles in a human readable way, degree is always or nearly always the prefered choice. When specifying angles within mathematical formulas, radians are used, and the degrees can be converted to radians for that purpose. Given the definition of radian, mathematical formulas naturally have their angles needed to be specified in radians.
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| m | Metre | Metres | - | - | Measure of length.
-| θ | Degree | Degrees | $$\frac{\pi}{180} rad$$ | - | Measure of length.
-| rad | Radian | Radians | $$\frac{180}{\pi} θ$$ | - | Measure of the angle, it's the exact measure of the perimeter of the angle, when that angle is drawn as a circle in a math graph.
-| sr | Steradian | Steradians | - | - | Measure of a solid angle, which is defined as an angle in two dimensions.
-| L | Litre | Litres | 1 dm3 | dm3 | Measure of volume, frequently used for liquids.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| METRE | m | Metre | Metres | - | - | Measure of length.
+| DEGREE | θ | Degree | Degrees | $$\frac{\pi}{180} \  rad$$ | - | Measure of length.
+| RADIAN | rad | Radian | Radians | $$\frac{180}{\pi} \  θ$$ | - | Measure of the angle, it's the exact measure of the perimeter of the angle, when that angle is drawn as a circle in a math graph.
+| STERADIAN | sr | Steradian | Steradians | - | - | Measure of a solid angle, which is defined as an angle in two dimensions.
+| LITRE | L | Litre | Litres | 1 dm3 | dm3 | Measure of volume, frequently used for liquids.
 
 #### Dimensions of time
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| s | Second | Seconds | - | - | Measure of time.
-| min | Minute | Minutes | - | 60 s | Measure of time.
-| hour | Hour | Hours | - | 3,600 s | Measure of time.
-| day | Day | Days | - |  86,400 s | Measure of time.
-| Hz | Hertz | Hertz | - | 1 / s | Measure of frequency.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| SECOND | s | Second | Seconds | - | - | Measure of time.
+| MINUTE | min | Minute | Minutes | - | 60 s | Measure of time.
+| HOUR | hour | Hour | Hours | - | 3,600 s | Measure of time.
+| DAY | day | Day | Days | - |  86,400 s | Measure of time.
+| HERTZ | Hz | Hertz | Hertz | - | 1 / s | Measure of frequency.
 
 #### Dimensions of chemistry and matter
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| g | Gram | Grams | - | - | Measure of amount of mass.
-| mol | Mole | Moles | N particles (Avogadro number) | - | Amounf of matter.
-| particles | Particles | Particles | mol / (Avogadro number) | - | Amount of particles, without using mol.
-| M | Molarity | Molarities | - | mol / L | Measure of concentration of a chemical species.
-| kat | Katal | Katals | - | mol / s | Catalytic activity.
-| Å | Angstrom | Angstroms | - | $$10^{-10} m$$ | Dimension of length, used mainly for wavelengths, inside the laboratory.
-| Da | Dalton | Daltons | - | $$1,66053886 * 10^{-24} g$$ | Measure of mass very low that is used for atoms and molecules, at microscopic and quantum scale. One mole of 1 Da is equivalent to 1 g.
-| amu | Atomic mass unit | Atomic mass units | 1 Da | Da | Equivalent name to Dalton.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| GRAM | g | Gram | Grams | - | - | Measure of amount of mass.
+| MOLE | mol | Mole | Moles | N particles (Avogadro number) | - | Amounf of matter.
+| PARTICLES | particles | Particles | Particles | mol / (Avogadro number) | - | Amount of particles, without using mol.
+| MOLARITY | M | Molarity | Molarities | - | mol / L | Measure of concentration of a chemical species.
+| KATAL | kat | Katal | Katals | - | mol / s | Catalytic activity.
+| ANGSTROM | Å | Angstrom | Angstroms | - | $$10^{-10} \  m$$ | Dimension of length, used mainly for wavelengths, inside the laboratory.
+| DALTON | Da | Dalton | Daltons | - | $$1,66053886 * 10^{-24} \  g$$ | Measure of mass very low that is used for atoms and molecules, at microscopic and quantum scale. One mole of 1 Da is equivalent to 1 g.
+| ATOMIC_MASS_UNIT | amu | Atomic mass unit | Atomic mass units | 1 Da | Da | Equivalent name to Dalton.
 
 #### Dimensions of force
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| N | Newton | Newtons | - | kg * m / s2 | Measure of force.
-| Pa | Pascal | Pascals | - | kg / s2 * m | Measure of pressure.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| NEWTON | N | Newton | Newtons | - | kg * m / s2 | Measure of force.
+| PASCAL | Pa | Pascal | Pascals | - | kg / s2 * m | Measure of pressure.
 
 #### Dimensions of energy
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| J | Joule | Joules | - | kg * m2 / s2 | Measure of energy.
-| W | Watt | Watts | N particles (Avogadro number) | kg * m2 / s3 | Amounf of matter.
-| eV | Electron volt | Electron volts | - | $$1.602176634 * 10^{−19} J$$ | Measure of energy, used for quantum physics. It's a very low unit, intended for the quantum scale.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| JOULE | J | Joule | Joules | - | kg * m2 / s2 | Measure of energy.
+| WATT | W | Watt | Watts | N particles (Avogadro number) | kg * m2 / s3 | Amounf of matter.
+| ELECTRON_VOLT | eV | Electron volt | Electron volts | - | $$1.602176634 * 10^{−19} \  J$$ | Measure of energy, used for quantum physics. It's a very low unit, intended for the quantum scale.
 
 #### Dimensions of optics
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| cd | Candela | Candelas | - | - | Measure of luminous intensity.
-| lm | Lumen | Lumens | - | cd * sr | Measure of luminous flux.
-| lx | Lux | Luxes | - | cd * sr / m2 | Measure of illuminance.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| CANDELA | cd | Candela | Candelas | - | - | Measure of luminous intensity.
+| LUMEN | lm | Lumen | Lumens | - | cd * sr | Measure of luminous flux.
+| LUX | lx | Lux | Luxes | - | cd * sr / m2 | Measure of illuminance.
 
 #### Dimensions of heat
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| K | Kelvin | Kelvins | - | - | Measure of temperature.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| KELVIN | K | Kelvin | Kelvins | - | - | Measure of temperature.
 
 #### Dimensions of electricity
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| C | Coulomb | Coulombs | - | - | Measure of electric charge.
-| A | Ampere | Amperes | - | C / s | Measure of electric current.
-| V | Volt | Volts | - | J / C, W / A | Measure of voltage.
-| F | Faraday | Faradays | - | A * s / V | Measure of electric capacitance.
-| Ω | Ohm | Ohms | - | V / A | Measure of electric resistance.
-| S | Siemens | Siemens | - | 1 / Ω | Measure of electric conductance.
-| Wb | Weber | Webers | - | T * m2 | Measure of magnetic flux.
-| T | Tesla | Teslas | - | V * s / m2 | Measure of magnetic strength.
-| H | Henry | Henries | - | V * s / A | Measure of electric inductance.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| COULOMB | C | Coulomb | Coulombs | - | - | Measure of electric charge.
+| AMPERE | A | Ampere | Amperes | - | C / s | Measure of electric current.
+| VOLT | V | Volt | Volts | - | J / C, W / A | Measure of voltage.
+| FARAD | F | Farad | Farads | - | A * s / V | Measure of electric capacitance.
+| OHM | Ω | Ohm | Ohms | - | V / A | Measure of electric resistance.
+| SIEMENS | S | Siemens | Siemens | - | 1 / Ω | Measure of electric conductance.
+| WEBER | Wb | Weber | Webers | - | T * m2 | Measure of magnetic flux.
+| TESLA | T | Tesla | Teslas | - | V * s / m2 | Measure of magnetic strength.
+| HENRY | H | Henry | Henries | - | V * s / A | Measure of electric inductance.
 
 #### Dimensions of astronomy
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| AU | Astronomical unit | Astronomical units | - | 149,597,870,700 m | Measure of long distances, for use in the space.
-| ly | Light year | Light years | 63,241.07 AU | 9,460,730,472,580,800 m | Measure of long distances, for use in the space. It's exactly defined as the amount of distance that the light travels in a year.
-| pc | Parsec | Parsecs | - | 3.2616 ly | Measure of long distances, for use in the space.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| ASTRONOMICAL_UNIT | AU | Astronomical unit | Astronomical units | - | 149,597,870,700 m | Measure of long distances, for use in the space.
+| LIGHT_YEAR | ly | Light year | Light years | 63,241.07 AU | 9,460,730,472,580,800 m | Measure of long distances, for use in the space. It's exactly defined as the amount of distance that the light travels in a year. Prefixes commonly used with light-years when distances are too large are **kly**, **Mly** and **Gly**, any other prefix is possible to use too. Use them if the distance in space is large enough that even ly is small.
+| PARSEC | pc | Parsec | Parsecs | - | 3.2616 ly | Measure of long distances, for use in the space.
 
 #### Dimensions of nuclear physics
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| Bq | Becquerel | Becquerels | - | 1 / s | Measure of radioactivity.
-| Gy | Gray | Grays | - | m2 / s2 | Measure of ionising radiation (absorbed dose).
-| Sv | Sievert | Sieverts | - | J / kg | Measure of ionising radiation (equivalent dose).
-| Barn | Barn | Barns | - | $$10^{−28} m2$$  | Represents the transversal section of nucleus and nuclear reactions.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| BECQUEREL | Bq | Becquerel | Becquerels | - | 1 / s | Measure of radioactivity.
+| GRAY | Gy | Gray | Grays | - | m2 / s2 | Measure of ionising radiation (absorbed dose).
+| SIEVERT | Sv | Sievert | Sieverts | - | J / kg | Measure of ionising radiation (equivalent dose).
+| BARN | Barn |  Barn | Barns | - | $$10^{−28} \  m2$$  | Represents the transversal section of nucleus and nuclear reactions.
 
 #### Dimensions of informatics
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| B | Byte | Bytes | - | - | Measure of quantity of information.
-| px | Pixel | Pixels | - | - | Measure the amount of pixels or the position inside a screen.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| BYTE | B | Byte | Bytes | - | - | Measure of quantity of information.
+| BIT | bit | bit | bits | - | - | Measure of quantity of information, of each binary digit.
+| PIXEL | px | Pixel | Pixels | - | - | Measure the amount of pixels or the position inside a screen.
 
 #### Dimensions of biology
 
 Inside scifir-units, a unit for measuring the quantity of memory inside the brain has been invented, and has been called **memo**.
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| memo | Memo | Memos | - | - | Measure of quantity of memory.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| MEMO | memo | Memo | Memos | - | - | Measure of quantity of memory.
 
 #### Dimensions of economy
 
 The dimension of money inside scifir-units is just money. Apart from scifir-units, inside the same code, you can use the **ISO 4217**, which is the **ISO of currency codes**, after doing all the math with the money dimension, to convert to the final currency needed.
 
-| Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| --- | ----- | ----- | --- | -------------------- | --------------------------
-| money | Money | Money | - | - | Measure of money.
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| MONEY | money | Money | Money | - | - | Measure of money.
 
 #### Custom dimensions
 
 A custom dimension is a dimension of any name, with any derived dimensions, that can be defined inside each project that uses scifir-units. To use custom dimensions, just initialize a scalar_unit or any vector_unit class with a name different than the default dimensions.
+
+The dimension::type enum contains for the custom dimensions the values CUSTOM, CUSTOM_FULL_SYMBOL and CUSTOM_BASIC.
+
+### Prefix
+
+The prefixes are writed before the dimension, both on string literals and initialization strings. In any initialization string of dimensions you can write the symbol of the prefix before the symbol of the dimension.
+
+| prefix::type | Symbol | Scale
+| ------ | --- | ---
+| QUETTA | Q | 30
+| RONNA | R | 27
+| YOTTA | Y | 24
+| ZETTA | Z | 21
+| EXA | E | 18
+| PETA | P | 15
+| TERA | T | 12
+| GIGA | G | 9
+| MEGA | M | 6
+| KILO | k | 3
+| HECTO | h | 2
+| DECA | da | 1
+| NONE | - | 0
+| DECI | d | -1
+| CENTI | c | -2
+| MILLI | m | -3
+| MICRO | µ | -6
+| NANO | n | -9
+| PICO | p | -12
+| FEMTO | f | -15
+| ATTO | a | -18
+| ZEPTO | z | -21
+| YOCTO | y | -24
+| RONTO | r | -27
+| QUECTO | q | -30
 
 ### Angle
 
@@ -567,6 +791,13 @@ float a_radian = x.get_radian();
 x.invert(); // Inverts the angle, the orientation described by this angle points now in the opposite direction
 float y = float(x); // Angles can be converted to float
 ```
+
+#### Angle literals
+
+| Literal | Use
+| ----- | --------------------------
+| _degree | Creates a new angle of the degrees given. **Example:** scifir::angle a = 30_degree.
+| _rad | Creates a new angle of the radians given. The value of the radian is internally converted to degrees, angle class always uses degrees internally. The value can be obtained in radian form using get_radian(). **Example:** scifir::angle a = 5.0_rad.
 
 ### Scalar units
 
@@ -645,24 +876,195 @@ string b = "x: " + x;
 string c = x + " value";
 ```
 
-The basic dimensions of this library, for scalar_unit classes, all the different vector_unit classes, and all other classes that handle units, are the following. They are all in SI units, excepting memo, which is a basic dimension created by Ismael Correa, the author of this library, to measure the size occupied by a memory inside the animal brain, including human brains.
+A derived unit is a child class of a scalar_unit or of one of the vector unit classes (which are vector_unit_2d, vector_unit_3d and vector_unit_nd). A derived unit adds always in his name a suffix _2d, _3d or _nd, if they inherit from vector_unit_2d, vector_unit_3d or vector_unit_nd, respectively.
 
-| Name | Symbol | Description
-| ----- | --- | --------------------------|
-| Length | m | Measures the length occupied in space by an object. |
-| Time | s | Measures the duration in time of some event. |
-| Mass | g | Measures the amount of substance related to the strength of a gravitational field. |
-| Radian | rad | Measures the size of an angle. |
-| Steradian | sr | Measures the size of a solid angle. |
-| Coulomb | C | Measures the amount of charge. |
-| Temperature | K | Measures the amount of hotness or coldness. Microscopically it measures the speed at which the particles that constitute the matter are moving. |
-| Mole | mol | Measures the amount of a substance related to the number of its constituent particles. |
-| Luminous intensity | cd | Measures the intensity of light. |
-| Byte | B | Measures the amount of information. |
-| Money | money | Measures the economic value of an entity. |
-| Memo | memo | Measures the size occupied by a memory inside the brain of an animal, including human brains. Created by Ismael Correa, it's not an official basic dimension of the SI system of units. |
+#### Base unit classes
 
-There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| length | m | scalar_unit | _m and _Tm, _km, etc (all prefixes supported). Also, _AU and _AU, _kAU, etc (all prefixes supported). And also, _pc and _Tpc, _kpc, etc (all prefixes supported) | Measures the length.
+| time_duration | s | scalar_unit | _s and _Ts, _ks, etc (all prefixes supported). There's also _min, _hour and _day | Measures time. Intended to be used in calculations with other scalar_unit classes, for other time uses inside a code use chrono or ctime of the standard library.
+| mass | g | scalar_unit | _g and _Tg, _kg, etc (all prefixes supported). Also, _Da and _amu | Measures the mass.
+| charge | C | scalar_unit | _C and _TC, _kC, etc (all prefixes supported) | Measures the charge.
+| temperature | K | scalar_unit | _K and _TK, _kK, etc (all prefixes supported) | Measures the temperature. The temperature corresponds to the movement of molecules.
+| mole | mol | scalar_unit | _mol and _Tmol, _kmol, etc (all prefixes supported). Also, use _particles for specifying an exact amount of particles. | Amount of matter, by number.
+| light_intensity | cd | scalar_unit | _cd and _Tcd, _kcd, etc (all prefixes supported) | Intensity of light.
+| data | B | scalar_unit | _B and _TB, _kB, etc (all prefixes supported) | Amount of information.
+
+#### Space units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| area | m2 | scalar_unit | For nuclear calculations, you can use _barn and _Tbarn, _kbarn, etc (all prefixes supported). Otherwise use "m2" instead. | Measures the area.
+| volume | m3 | scalar_unit | _L and _TL, _kL, etc (all prefixes supported). You can use m3 too as string, the litre literals aren't the only choice (use the most appropriate for each case). | Measures the volume.
+| volume_4d | m4 | scalar_unit | - | Measures the volume in 4D.
+| curvature | 1/m | scalar_unit | - | Measures the curvature.
+
+#### Kinematics units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| displacement_2d, displacement_3d, displacement_nd | m | vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the displacement.
+| velocity, velocity_2d, velocity_3d, velocity_nd | m/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the velocity of an object.
+| acceleration, acceleration_2d, acceleration_3d, acceleration_nd | m/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The increase of the velocity by time.
+| jerk, jerk_2d, jerk_3d, jerk_nd | m/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The rate of change of the acceleration over time.
+| snap, snap_2d, snap_3d, snap_nd | m/s4 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The fourth derivative of the position vector with respect to time.
+| angular_velocity, angular_velocity_2d, angular_velocity_3d, angular_velocity_nd | rad/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the velocity of an object around a center.
+| angular_acceleration, angular_acceleration_2d, angular_acceleration_3d, angular_acceleration_nd | rad/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The increase of angular velocity by time.
+| angular_momentum, angular_momentum_2d, angular_momentum_3d, angular_momentum_nd | m2*kg/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | A momentum, but related to the angular movement.
+
+#### Dynamics units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| impulse, impulse_2d, impulse_3d, impulse_nd | m*kg/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Measures the amount of change in momentum.
+| force, force_2d, force_3d, force_nd | kg*m/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | _N and _TN, _kN, etc (all prefixes supported) | The force is what changes the acceleration of some matter.
+| torque, torque_2d, torque_3d, torque_nd | kg*m2/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | A force that does a rotation.
+| pressure, pressure_2d, pressure_3d, pressure_nd | kg/m*s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | _Pa and _TPa, _kPa, etc (all prefixes supported) | Force applied to a surface.
+| surface_tension, surface_tension_2d, surface_tension_3d, surface_tension_nd | kg/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Tension in a surface.
+| stiffness | kg/s2 | scalar_unit | - | Extent to which an object resists deformation.
+| moment_of_inertia | m2*kg | scalar_unit | - | Torque needed for a desired angular acceleration about a rotational axis.
+
+#### Electricity units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| electric_current | A | scalar_unit | _A and _TA, _kA, etc (all prefixes supported) | Measures the amount of current.
+| voltage | V | scalar_unit | _V and _TV, _kV, etc (all prefixes supported) | The intensity of the electric force.
+| electric_charge_density | A*s/m3 | scalar_unit | - | Density of the electric charge of a charged object.
+| electric_current_density | A/m2 | scalar_unit | - | Density of the electric current.
+| electric_field_strength, electric_field_strength_2d, electric_field_strength_3d, electric_field_strength_nd | kg*m/A*s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The strength of the electric field.
+| electron_mobility | A*s2/kg | scalar_unit | - | How quickly an electron can move through a metal or semiconductor.
+| inductance | H | scalar_unit | _H and _TH, _kH, etc (all prefixes supported) | The tendency of an electrical conductor to oppose a change in the electric current flowing through it.
+
+#### Fluid dynamics units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| volumetric_flow | m3/s | scalar_unit | - | Quantity of fluid per second.
+| diffusion_coefficient | m2/s | scalar_unit | - | Coefficient of diffusion.
+| compressibility | m*s2/kg | scalar_unit | - | How easy it's to compress the fluid.
+
+#### Magnetism units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| magnetic_flux | Wb | scalar_unit | _Wb and _TWb, _kWb, etc (all prefixes supported) | Amount of magnetism per surface.
+| magnetic_moment, magnetic_moment_2d, magnetic_moment_3d, magnetic_moment_nd | A*m2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Combination of strength and orientation of a magnet or other object that exerts a magnetic field.
+| magnetic_reluctance | A2*s2/kg*m2 | scalar_unit | - | It's a resistance to the magnetism.
+| magnetic_rigidity | kg*m/A*s2 | scalar_unit | - | Resistance to magnetism.
+| magnetomotive_force, magnetomotive_force_2d, magnetomotive_force_3d, magnetomotive_force_nd | A | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | It's the property that gives rise to magnetic fields.
+| magnetic_susceptibility | A2*s2/kg*m | scalar_unit | - | It's a measure of how much a material will become magnetized in an applied magnetic field.
+
+#### Optics units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| optical_power | 1/m | scalar_unit | - | Degree to which a lens, mirror or other optical system converges or diverges light.
+| luminance | cd/m2 | scalar_unit | - | Luminous intensity per unit area of light.
+| illuminance | lx | scalar_unit | _lx and _Tlx, _klx, etc (all prefixes supported) | Luminous flux incident in a surface.
+| luminous_flux | lm | scalar_unit | _lm and _Tlm, _klm, etc (all prefixes supported) | The perceived power of light.
+| luminous_energy | cd*sr*s | scalar_unit | - | Perceived fraction of energy transported by the light waves.
+| luminous_exposure | cd*sr*s/m2 | scalar_unit | - | Amount of light per unit area.
+| luminous_efficacy | lm/W | scalar_unit | - | Measure of how well a light source produces visible light.
+| ionizing_radiation | Gy | scalar_unit | _Gy and _TGy, _kGy, etc (all prefixes supported). Also, _Sv and _TSv, _kSv, etc (all prefixes supported) | Subatomic particles or electromagnetic waves that have sufficient energy to ionize atoms or molecules by detaching electrons from them.
+| absorbed_dose | m2/s3 | scalar_unit | - | Measure of the energy deposited in matter by ionizing radiation per unit mass.
+
+#### Thermodynamics units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| energy | J | scalar_unit | _J and _TJ, _kJ, etc (all prefixes supported). Also, _eV and _TeV, _keV, etc (all prefixes supported) | Entity needed to create a force.
+| action | kg*m2/s | scalar_unit | - | It describes how the balance between kinetic versus potential energy changes with the trajectory.
+| power | W | scalar_unit | _W and _TW, _kW, etc (all prefixes supported) | Energy per second.
+| power_density | kg/m*s3 | scalar_unit | - | Energy per second per volume.
+| entropy | kg*m2/K*s2 | scalar_unit | - | Amount of disorder in nature.
+| heat_capacity | kg*m2/K*s2 | scalar_unit | - | Amount of heat that matter needs to change temperature.
+| heat_flux_density | kg/s3 | scalar_unit | - | Amount of heat per surface.
+| thermal_conductivity | kg*m/K*s3 | scalar_unit | - | How easy matters conducts thermal energy.
+| thermal_diffusivity | m2/s | scalar_unit | - | The diffusivity of the thermal energy.
+| thermal_resistance | K*s3/kg*m2 | scalar_unit | - | The resistance to thermal change.
+| thermal_expansion_coefficient | 1/K | scalar_unit | - | The coefficient at which matter expands due to heat.
+| temperature_gradient, temperature_gradient_2d, temperature_gradient_3d, temperature_gradient_nd | K/m | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The gradient of change of temperature inside the space.
+| energy_flux_density | kg/s3 | scalar_unit | - | Density of a flux of energy.
+
+#### Waves units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| wavenumber | 1/m | scalar_unit | - | Number of times a wave vibrates over a distance.
+| frequency | Hz | scalar_unit | _Hz and _THz, _kHz, etc (all prefixes supported) | Number of repetitions over time.
+
+#### Astronomy units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| specific_angular_momentum, specific_angular_momentum_2d, specific_angular_momentum_3d, specific_angular_momentum_nd | m2/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Angular momentum of a particular celestial body.
+
+#### General chemistry units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| density | g/m3 | scalar_unit | - | Amount of mass per unit of volume.
+| viscosity | m2/s | scalar_unit | - | Resistance to the movement done by the solvent.
+| specific_volume | m3/g | scalar_unit | - | Volume per unit of mass.
+| specific_heat_capacity | m2/s2*K | scalar_unit | - | Heat capacity of a particular substance.
+| specific_entropy | m2/s2*K | scalar_unit | - | Entropy of a substance.
+| specific_energy | m2/s2 | scalar_unit | - | Energy per unit of mass
+| molar_volume | m3/mol | scalar_unit | - | Volume of each mole of a substance.
+| molar_mass | g/mol | scalar_unit | - | Mass of each mole of a substance.
+| molar_heat_capacity | m2*g/s2*K*mol | scalar_unit | - | Heat capacity of each mole of a substance.
+| molar_enthalpy | m2*g/s2*mol | scalar_unit | - | Enthalpy of each mole of a substance.
+| molar_entropy | m2*g/s2*K*mol | scalar_unit | - | Entropy of each mole of a substance.
+| molar_energy | m2*g/s2*mol | scalar_unit | - | Energy of each mole of a substance.
+| molar_conductivity | s3*A2/g*mol | scalar_unit | - | Conductivity of each mole of a substance.
+| energy_density | g/m*s2 | scalar_unit | - | Amount of energy per unit of volume.
+| catalytic_efficiency | m3/s*mol | scalar_unit | - | How efficiently an enzyme converts substrates into products.
+
+#### Substance units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| molarity | M | scalar_unit | _M and _TM, _kM, etc (all prefixes supported) | Amount of moles per volume, usually per litres.
+| molality | mol/g | scalar_unit | - | Amount of moles per mass.
+| linear_mass_density | g/m | scalar_unit | - | Amount of mass per length.
+| area_density | g/m2 | scalar_unit | - | Amount of mass per surface.
+| dynamic_viscosity | g/m*s | scalar_unit | - | Relation between the viscous stresses in a material to the rate of change of a deformation.
+| mass_flow_rate | g/s | scalar_unit | - | Mass per second.
+| catalytic_activity | kat | scalar_unit | _kat and _Tkat, _kkat, etc (all prefixes supported) | Rate of conversion of catalysis, amount of moles per second.
+
+#### Electronics units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| electrical_conductivity | A2*s3/kg*m3 | scalar_unit | - | Amount of current conducted.
+| resistance | Ω | scalar_unit | _Ω and _TΩ, _kΩ, etc (all prefixes supported) | Opposition to the flow of current of a substance.
+| electric_conductance | S | scalar_unit | _S and _TS, _kS, etc (all prefixes supported) | The inverse of the resistance.
+| capacitance | F | scalar_unit | _F and _TF, _kF, etc (all prefixes supported) | Amount of charge that can be stored by a capacitor.
+| permittivity | A2*s4/kg*m3 | scalar_unit | - | The electric polarizability of a dieletric material.
+| resistivity | kg*m3/A2*s3 | scalar_unit | - | How much a material stops the flow of electric current through it.
+| linear_charge_density | C/m | scalar_unit | - | The amount of electric charge per unit length.
+| surface_charge_density | C/m2 | scalar_unit | - | The amount of electric charge per unit area.
+| volume_charge_density | C/m3 | scalar_unit | - | The amount of electric charge per unit volume.
+| frequency_drift | 1/s2 | scalar_unit | - | Offset of an oscillator from its nominal frequency.
+
+#### Radiometry units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| radioactivity | Bq | scalar_unit | _Bq and _TBq, _kBq, etc (all prefixes supported) | Presence of nuclear radiation.
+| radiant_exposure, radiant_exposure_2d, radiant_exposure_3d, radiant_exposure_nd | kg/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Radiant energy received by a surface per unit area.
+| radiant_intensity | kg*m2/s3 | scalar_unit | - | Radiant flux emitted per unit solid angle.
+| radiance | kg/s3 | scalar_unit | - | Radiant flux emitted by a surface per unit solid angle per unit projected area.
+| spectral_radiance | kg/m*s3 | scalar_unit | - | Radiance of a surface per unit frequency or wavelength.
+| radiant_flux, radiant_flux_2d, radiant_flux_3d, radiant_flux_nd | kg*m2/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Radiant energy emitted per unit time.
+| spectral_flux, spectral_flux_2d, spectral_flux_3d, spectral_flux_nd | kg*m/s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Radiant flux per unit frequency or wavelength.
+
+#### Informatics units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| transfer_speed | B/s | scalar_unit | - | Bytes emitted or received per second.
 
 ### Vector units in 2D
 
@@ -1076,4 +1478,4 @@ Internally, the library has some important mechanisms important to be known by a
 
 The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it's used the char symbol[3] of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.
 
-The square of dimensions works in the following way: If the dimension consist only of one type of dimension, independently as if the dimension is a basic dimension or an abbreviation, the dimensions get squared. If the dimension is of more than one type, all the abbreviations are then converted to their derived types, and the total result gets squared. If the dimensions can't be squared because there's an odd number of them, the dimensions are then initialized empty.
+The square of dimensions works in the following way: If the dimension consist only of one type of dimension, independently as if the dimension is a base dimension or a special name, the dimensions get squared. If the dimension is of more than one type, all the special names are then converted to their derived types, and the total result gets squared. If the dimensions can't be squared because there's an odd number of them, the dimensions are then initialized empty.

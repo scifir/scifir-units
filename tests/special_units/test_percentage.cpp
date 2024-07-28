@@ -2,8 +2,8 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../special_units/percentage.hpp"
-#include "../../units/unit_basic.hpp"
-#include "../../units/unit_abbreviation.hpp"
+#include "../../units/base_units.hpp"
+#include "../../units/special_names.hpp"
 
 #include <iostream>
 #include <sstream>

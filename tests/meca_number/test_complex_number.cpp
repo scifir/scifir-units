@@ -2,8 +2,8 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../meca_number/complex_number.hpp"
-#include "../../units/unit_basic.hpp"
-#include "../../predefined_units/space_units.hpp"
+#include "../../units/base_units.hpp"
+#include "../../derived_units/space_units.hpp"
 
 #include <iostream>
 #include <sstream>

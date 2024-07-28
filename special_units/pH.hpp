@@ -3,7 +3,7 @@
 
 #include "../util/is_number.hpp"
 #include "../units/scalar_unit.hpp"
-#include "../predefined_units/chemistry_units.hpp"
+#include "../derived_units/chemistry_units.hpp"
 
 #include "boost/math/constants/constants.hpp"
 

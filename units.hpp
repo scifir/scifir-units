@@ -1,6 +1,7 @@
 #ifndef SCIFIR_UNITS_UNITS_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_HPP_INCLUDED
 
+#include "units/units/constants.hpp"
 #include "units/units/prefix.hpp"
 #include "units/units/dimension.hpp"
 #include "units/units/scalar_unit.hpp"
@@ -8,16 +9,17 @@
 #include "units/units/vector_unit_2d.hpp"
 #include "units/units/vector_unit_3d.hpp"
 #include "units/units/vector_unit_nd.hpp"
-#include "units/units/unit_basic.hpp"
+#include "units/units/base_units.hpp"
 #include "units/units/unit_abbreviation.hpp"
+#include "units/units/special_names.hpp"
 
-#include "units/predefined_units/astronomy_units.hpp"
-#include "units/predefined_units/electronics_units.hpp"
-#include "units/predefined_units/physics_units.hpp"
-#include "units/predefined_units/space_units.hpp"
-#include "units/predefined_units/radiometry_units.hpp"
-#include "units/predefined_units/informatics_units.hpp"
-#include "units/predefined_units/chemistry_units.hpp"
+#include "units/derived_units/astronomy_units.hpp"
+#include "units/derived_units/electronics_units.hpp"
+#include "units/derived_units/physics_units.hpp"
+#include "units/derived_units/space_units.hpp"
+#include "units/derived_units/radiometry_units.hpp"
+#include "units/derived_units/informatics_units.hpp"
+#include "units/derived_units/chemistry_units.hpp"
 
 #include "units/topology/direction.hpp"
 #include "units/topology/point_1d.hpp"

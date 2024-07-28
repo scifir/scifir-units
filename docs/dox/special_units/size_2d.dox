@@ -2,7 +2,7 @@
 * \brief Class that allows to store and calculate size in 2D, with width and height. The template parameter T allows to select any scalar_unit or numeric type to be the type of width and height (they always have the same type in the same instance). The width and height can be any scalar_unit, usually length, but imaginary spaces with custom dimensions are also allowed. **Initialization string** example: "1 m * 2 m".
 
 * \fn size_2d::size_2d()
-* \brief Default constructor. Both width and height are initialized to 0, with the dimensions to the default of their basic unit.
+* \brief Default constructor. Both width and height are initialized to 0, with the dimensions to the default of their base unit.
 
 * \fn size_2d::size_2d(const size_2d<T>& x)
 * \brief Copy constructor. The width and height are copied from the size_2d<T> x.

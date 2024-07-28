@@ -23,14 +23,14 @@ namespace scifir
 	class dimension;
 
 	vector<dimension> create_dimensions(string init_dimensions);
-	vector<dimension> create_derived_dimensions(const string& init_dimensions);
+	vector<dimension> create_simple_dimensions(const string& init_dimensions);
 
 	class dimension
 	{
 		public:
 			enum type : int8_t
 			{
-				NONE, METRE, DEGREE, RADIAN, STERADIAN, SECOND, GRAM, COULOMB, KELVIN, MOLE, CANDELA, BYTE, HERTZ, NEWTON, PASCAL, JOULE, WATT, AMPERE, VOLT, FARADAY, OHM, SIEMENS, WEBER, TESLA, HENRY, LUMEN, LUX, BECQUEREL, GRAY, SIEVERT, KATAL, ANGSTROM, LITRE, MINUTE, HOUR, DAY, LIGHT_YEAR, ASTRONOMICAL_UNIT, PARSEC, ELECTRON_VOLT, DALTON, ATOMIC_MASS_UNIT, BARN, MOLARITY, PARTICLES, CUSTOM, CUSTOM_BASIC, CUSTOM_FULL_SYMBOL, MONEY, PIXEL, MEMO
+				NONE, METRE, DEGREE, RADIAN, STERADIAN, SECOND, GRAM, COULOMB, KELVIN, MOLE, CANDELA, BYTE, BIT, HERTZ, NEWTON, PASCAL, JOULE, WATT, AMPERE, VOLT, FARAD, OHM, SIEMENS, WEBER, TESLA, HENRY, LUMEN, LUX, BECQUEREL, GRAY, SIEVERT, KATAL, ANGSTROM, LITRE, MINUTE, HOUR, DAY, LIGHT_YEAR, ASTRONOMICAL_UNIT, PARSEC, ELECTRON_VOLT, DALTON, ATOMIC_MASS_UNIT, BARN, MOLARITY, PARTICLES, CUSTOM, CUSTOM_BASIC, CUSTOM_FULL_SYMBOL, MONEY, PIXEL, MEMO
 			};
 
 			enum position : int8_t {NO_POSITION, NUMERATOR, DENOMINATOR};
@@ -55,10 +55,12 @@ namespace scifir
 			long double prefix_math(const prefix& x_prefix) const;
 
 			bool is_simple_dimension() const;
-			bool is_basic_dimension() const;
+			bool is_composite_dimension() const;
+
+			bool is_base_dimension() const;
 			bool is_derived_dimension() const;
 
-			vector<dimension> get_basic_dimensions() const;
+			vector<dimension> get_simple_dimensions() const;
 
 			void invert();
 
@@ -71,7 +73,7 @@ namespace scifir
 			{
 				if (dimension::base_dimensions.count(new_symbol) == 0)
 				{
-					dimension::base_dimensions[new_symbol] = create_derived_dimensions(init_dimensions);
+					dimension::base_dimensions[new_symbol] = create_simple_dimensions(init_dimensions);
 				}
 			}
 
@@ -164,13 +166,13 @@ namespace scifir
 	string to_string(const dimension& x);
 	string to_string(const vector<dimension>& x_dimensions,bool with_brackets = false);
 
-	vector<dimension> create_derived_dimensions(const vector<dimension>& x);
-	vector<dimension> create_derived_dimensions(const vector<dimension>& x,long double& value);
+	vector<dimension> create_simple_dimensions(const vector<dimension>& x);
+	vector<dimension> create_simple_dimensions(const vector<dimension>& x,long double& value);
 
 	vector<dimension> multiply_dimensions(const vector<dimension>& x,const vector<dimension>& y);
 	vector<dimension> multiply_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value);
 	vector<dimension> divide_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value);
-	vector<dimension> square_dimensions(vector<dimension> x,long double& value,int index);
+	vector<dimension> square_dimensions(vector<dimension> x,int index,long double& value);
 	vector<dimension> power_dimensions(const vector<dimension>& x,int exponent);
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x);
