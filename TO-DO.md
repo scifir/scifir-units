@@ -17,7 +17,20 @@ SCIFIR UNITS - VERSION 2
 // TODO: zones must match that the type send corresponds to the data
 // TODO: aid must match that the type send corresponds to the data
 // TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes
-// TODO: change the #include paths that are of the same folder to be direct
+// TODO: conversion of size_t to and int gives a warning in MSVC
+// TODO: finish testing in Windows all tests
+// TODO: add the Celsius to dimension::type, add Farenheit and other dimensions as conversions
+// TODO: check the derived units here: https://en.wikipedia.org/wiki/SI_derived_unit
+// TODO: look if the SI system of units has another name for dimensions
+// TODO: function is_dimensionless() for scalar_unit, consider radian, degree and steradian dimensionless
+// TODO: think if to add biological units like alcohol by volume
+// TODO: maybe add constants like the coulomb constant
+// TODO: add the conversions of the CGS system of units, and the FPS system of units
+// TODO: function is_dimensionless() to dimension class
+// TODO: add rankine, among other constants of chemistry
+// TODO: change the name of the data class to a more precise name
+// TODO: update the documentation of github pages
+// TODO: support solid_angles, with the literal _sr too
 
 // TODO: check the characters of the initialization strings in all vector_unit classes
 // TODO: try the initialization strings with the unicode characters literally, not with their conversion, inside the tests of vector_unit classes
@@ -92,6 +105,11 @@ SCIFIR UNITS - VERSION 2
 // TODO: inside scalar_unit explain how basic unit work
 // TODO: inside vector_unit classes explain how basic units of vector_unit classes work
 // TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
+// TODO: add the symbol of pi in the README.md file with the things to memorize
+// TODO: add the explanation of the definition of each unit inside a file, including conversions
+// TODO: document the imperial system of units (https://en.wikipedia.org/wiki/Imperial_units)
+// TODO: explain how a robot can calculate angles
+// TODO: explain how to create lambda functions of mathematical functions with different parts, using if-else for that
 
 // TODO: desactivate the search engine in the doxyfile for the doxyfile of development, not the doxyfile of github pages
 // TODO: maybe use two different files Doxyfile, one for master and one for gh-pages
