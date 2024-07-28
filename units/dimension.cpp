@@ -815,7 +815,7 @@ namespace scifir
 
 	long double dimension::prefix_math(const scifir::prefix& x_prefix) const
 	{
-		if (dimension_type == dimension::BYTE)
+		if (dimension_type == dimension::BYTE or dimension_type == dimension::BIT)
 		{
 			return std::pow(1024, x_prefix.get_conversion_factor() / 3);
 		}

@@ -262,6 +262,18 @@ scifir::data operator"" _MB(unsigned long long int);
 scifir::data operator"" _kB(unsigned long long int);
 scifir::data operator"" _B(unsigned long long int);
 
+scifir::data operator"" _Qbit(unsigned long long int);
+scifir::data operator"" _Rbit(unsigned long long int);
+scifir::data operator"" _Ybit(unsigned long long int);
+scifir::data operator"" _Zbit(unsigned long long int);
+scifir::data operator"" _Ebit(unsigned long long int);
+scifir::data operator"" _Pbit(unsigned long long int);
+scifir::data operator"" _Tbit(unsigned long long int);
+scifir::data operator"" _Gbit(unsigned long long int);
+scifir::data operator"" _Mbit(unsigned long long int);
+scifir::data operator"" _kbit(unsigned long long int);
+scifir::data operator"" _bit(unsigned long long int);
+
 scifir::length operator"" _Qm(long double);
 scifir::length operator"" _Rm(long double);
 scifir::length operator"" _Ym(long double);
@@ -441,5 +453,17 @@ scifir::data operator"" _GB(long double);
 scifir::data operator"" _MB(long double);
 scifir::data operator"" _kB(long double);
 scifir::data operator"" _B(long double);
+
+scifir::data operator"" _Qbit(long double);
+scifir::data operator"" _Rbit(long double);
+scifir::data operator"" _Ybit(long double);
+scifir::data operator"" _Zbit(long double);
+scifir::data operator"" _Ebit(long double);
+scifir::data operator"" _Pbit(long double);
+scifir::data operator"" _Tbit(long double);
+scifir::data operator"" _Gbit(long double);
+scifir::data operator"" _Mbit(long double);
+scifir::data operator"" _kbit(long double);
+scifir::data operator"" _bit(long double);
 
 #endif // SCIFIR_UNITS_UNITS_BASE_UNITS_HPP_INCLUDED

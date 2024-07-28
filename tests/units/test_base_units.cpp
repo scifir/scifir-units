@@ -230,6 +230,18 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_kB == "100 kB"));
 		CHECK(bool(100_B == "100 B"));
 
+		CHECK(bool(100_Qbit == "100 Qbit"));
+		CHECK(bool(100_Rbit == "100 Rbit"));
+		CHECK(bool(100_Ybit == "100 Ybit"));
+		CHECK(bool(100_Zbit == "100 Zbit"));
+		CHECK(bool(100_Ebit == "100 Ebit"));
+		CHECK(bool(100_Pbit == "100 Pbit"));
+		CHECK(bool(100_Tbit == "100 Tbit"));
+		CHECK(bool(100_Gbit == "100 Gbit"));
+		CHECK(bool(100_Mbit == "100 Mbit"));
+		CHECK(bool(100_kbit == "100 kbit"));
+		CHECK(bool(100_bit == "100 bit"));
+
 		CHECK(bool(100.0_Qm == "100 Qm"));
 		CHECK(bool(100.0_Rm == "100 Rm"));
 		CHECK(bool(100.0_Ym == "100 Ym"));
@@ -409,5 +421,17 @@ TEST_CASE("Base units") {
 		CHECK(bool(100.0_MB == "100 MB"));
 		CHECK(bool(100.0_kB == "100 kB"));
 		CHECK(bool(100.0_B == "100 B"));
+
+		CHECK(bool(100.0_Qbit == "100 Qbit"));
+		CHECK(bool(100.0_Rbit == "100 Rbit"));
+		CHECK(bool(100.0_Ybit == "100 Ybit"));
+		CHECK(bool(100.0_Zbit == "100 Zbit"));
+		CHECK(bool(100.0_Ebit == "100 Ebit"));
+		CHECK(bool(100.0_Pbit == "100 Pbit"));
+		CHECK(bool(100.0_Tbit == "100 Tbit"));
+		CHECK(bool(100.0_Gbit == "100 Gbit"));
+		CHECK(bool(100.0_Mbit == "100 Mbit"));
+		CHECK(bool(100.0_kbit == "100 kbit"));
+		CHECK(bool(100.0_bit == "100 bit"));
 	}
 }
