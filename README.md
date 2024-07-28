@@ -127,7 +127,7 @@ Now that the library es linked, you can use it inside your code by including the
 - size_2d<T>, size_3d<T>, size_nd<T>.
 - pH, pOH.
 
-prefix can have all SI prefixes. dimension has all SI base dimensions, all common abbreviations, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
+prefix can have all SI prefixes. dimension has all SI base dimensions, all common special names, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
 
 ### Tools of units in real life
 
@@ -354,7 +354,7 @@ The unit classes that scifir-units provides are the following:
 
 scalar_unit classes can be used both for scalar units and vector units in 1D. In the case of vector units in 1D, a negative value indicates, as on math, that it points to the left on the x axis. Otherwise, if the value is positive, it points to the right.
 
-All the unit classes have fixed dimensions. Once instantiated, they can't change to a different set of dimensions. Besides that, prefixes and abbreviations can be used freely, every unit can change to any other prefix and use any abbreviation that matches the original dimensions (and no other set of dimensions).
+All the unit classes have fixed dimensions. Once instantiated, they can't change to a different set of dimensions. Besides that, prefixes and special names can be used freely, every unit can change to any other prefix and use any special name that matches the original dimensions (and no other set of dimensions).
 
 There are also special units inside scifir-units. Those special units are aid, color, percentage, pH, pixel, pOH, size_2d, size_3d, size_nd and zid. **Always prefer pH** over pOH, pOH is provided by the library only for very infrequent cases.
 
@@ -577,7 +577,7 @@ N-dimensions, inside scifir-units, are called **ND** in classnames. ND classes a
 
 ### Dimensions
 
-Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units. Different to that, a **simple dimension** is a dimension without any simple dimension more derived from it. That's, a simple dimension is a dimension that's not an abbreviation of two or more other dimensions.
+Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units. Different to that, a **simple dimension** is a dimension without any simple dimension more derived from it. That's, a simple dimension is a dimension that's not an special name of two or more other dimensions.
 
 A **derived dimension** is a dimension that's not a base dimension under the SI system of units. A **composite dimension** is a dimension that's not a simple dimension.
 
@@ -1478,4 +1478,4 @@ Internally, the library has some important mechanisms important to be known by a
 
 The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it's used the char symbol[3] of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.
 
-The square of dimensions works in the following way: If the dimension consist only of one type of dimension, independently as if the dimension is a base dimension or an abbreviation, the dimensions get squared. If the dimension is of more than one type, all the abbreviations are then converted to their derived types, and the total result gets squared. If the dimensions can't be squared because there's an odd number of them, the dimensions are then initialized empty.
+The square of dimensions works in the following way: If the dimension consist only of one type of dimension, independently as if the dimension is a base dimension or a special name, the dimensions get squared. If the dimension is of more than one type, all the special names are then converted to their derived types, and the total result gets squared. If the dimensions can't be squared because there's an odd number of them, the dimensions are then initialized empty.

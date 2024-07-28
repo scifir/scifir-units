@@ -192,6 +192,11 @@ if(BUILD_TESTING)
 		add_test(NAME base_units COMMAND test_base_units)
 		set_tests_properties(base_units PROPERTIES LABELS tests)
 
+		add_executable(test_special_names tests/units/test_special_names.cpp)
+		target_link_libraries(test_special_names PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME special_names COMMAND test_special_names)
+		set_tests_properties(special_names PROPERTIES LABELS tests)
+
 		add_executable(test_unit_abbreviation tests/units/test_unit_abbreviation.cpp)
 		target_link_libraries(test_unit_abbreviation PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME unit_abbreviation COMMAND test_unit_abbreviation)

@@ -3,7 +3,7 @@
 #include "catch2/catch_all.hpp"
 #include "../../units/scalar_unit.hpp"
 #include "../../units/base_units.hpp"
-#include "../../units/unit_abbreviation.hpp"
+#include "../../units/special_names.hpp"
 
 #include <iostream>
 #include <sstream>

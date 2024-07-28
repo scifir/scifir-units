@@ -1707,7 +1707,7 @@ namespace scifir
 			}
 			return new_dimensions;
 		}
-		else // If there's more than one type of dimension, creates the derived dimensions of them, and squares the total. If there are abbreviations, they are losed
+		else // If there's more than one type of dimension, creates the simple dimensions of them, and squares the total. If there are special names, they are changed by their simple dimensions
 		{
 			x = normalize_dimensions(x,value);
 			vector<dimension::type> counted_dimensions = vector<dimension::type>();

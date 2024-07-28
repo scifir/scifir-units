@@ -1,6 +1,7 @@
 #ifndef SCIFIR_UNITS_UNITS_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_HPP_INCLUDED
 
+#include "units/units/constants.hpp"
 #include "units/units/prefix.hpp"
 #include "units/units/dimension.hpp"
 #include "units/units/scalar_unit.hpp"
@@ -10,6 +11,7 @@
 #include "units/units/vector_unit_nd.hpp"
 #include "units/units/base_units.hpp"
 #include "units/units/unit_abbreviation.hpp"
+#include "units/units/special_names.hpp"
 
 #include "units/derived_units/astronomy_units.hpp"
 #include "units/derived_units/electronics_units.hpp"
