@@ -658,7 +658,7 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | COULOMB | C | Coulomb | Coulombs | - | - | Measure of electric charge.
 | AMPERE | A | Ampere | Amperes | - | C / s | Measure of electric current.
 | VOLT | V | Volt | Volts | - | J / C, W / A | Measure of voltage.
-| FARADAY | F | Faraday | Faradays | - | A * s / V | Measure of electric capacitance.
+| FARAD | F | Farad | Farads | - | A * s / V | Measure of electric capacitance.
 | OHM | Ω | Ohm | Ohms | - | V / A | Measure of electric resistance.
 | SIEMENS | S | Siemens | Siemens | - | 1 / Ω | Measure of electric conductance.
 | WEBER | Wb | Weber | Webers | - | T * m2 | Measure of magnetic flux.

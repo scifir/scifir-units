@@ -154,7 +154,7 @@ namespace scifir
 		}
 		else if(dimension_name == "F")
 		{
-			dimension_type = dimension::FARADAY;
+			dimension_type = dimension::FARAD;
 		}
 		else if(dimension_name == "ohm" or dimension_name == "Ohm" or dimension_name == "Ω")
 		{
@@ -379,8 +379,8 @@ namespace scifir
 				return "ampere";
 			case dimension::VOLT:
 				return "volt";
-			case dimension::FARADAY:
-				return "faraday";
+			case dimension::FARAD:
+				return "farad";
 			case dimension::OHM:
 				return "ohm";
 			case dimension::SIEMENS:
@@ -496,8 +496,8 @@ namespace scifir
 				return "amperes";
 			case dimension::VOLT:
 				return "volts";
-			case dimension::FARADAY:
-				return "faradays";
+			case dimension::FARAD:
+				return "farads";
 			case dimension::OHM:
 				return "ohms";
 			case dimension::SIEMENS:
@@ -618,7 +618,7 @@ namespace scifir
 				return "A";
 			case dimension::VOLT:
 				return "V";
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				return "F";
 #ifdef IS_UNIX
 			case dimension::OHM:
@@ -740,7 +740,7 @@ namespace scifir
 				return 1.0l;
 			case dimension::VOLT:
 				return 1.0l;
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				return 1;
 			case dimension::OHM:
 				return 1.0l;
@@ -869,7 +869,7 @@ namespace scifir
 				return true;
 			case dimension::VOLT:
 				return false;
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				return false;
 			case dimension::OHM:
 				return false;
@@ -986,7 +986,7 @@ namespace scifir
 				return true;
 			case dimension::VOLT:
 				return false;
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				return false;
 			case dimension::OHM:
 				return false;
@@ -1098,7 +1098,7 @@ namespace scifir
 				return false;
 			case dimension::VOLT:
 				return true;
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				return true;
 			case dimension::OHM:
 				return true;
@@ -1252,7 +1252,7 @@ namespace scifir
 				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::FARADAY:
+			case dimension::FARAD:
 				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::DENOMINATOR));
 				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
 				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));

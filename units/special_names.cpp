@@ -877,127 +877,127 @@ scifir::voltage operator"" _qV(unsigned long long int x)
 
 scifir::capacitance operator"" _QF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _RF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _YF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _ZF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _EF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _PF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _TF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _GF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _MF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _kF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _hF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _daF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _F(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _dF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _cF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _mF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _µF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _nF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _pF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _fF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _aF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _zF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _yF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _rF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _qF(unsigned long long int x)
 {
-	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _QΩ(unsigned long long int x)
@@ -3252,127 +3252,127 @@ scifir::voltage operator"" _qV(long double x)
 
 scifir::capacitance operator"" _QF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _RF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _YF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _ZF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _EF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _PF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _TF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _GF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _MF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _kF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _hF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _daF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _F(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _dF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _cF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _mF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _µF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _nF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _pF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _fF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _aF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _zF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _yF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _rF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::capacitance operator"" _qF(long double x)
 {
-	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARADAY,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::resistance operator"" _QΩ(long double x)

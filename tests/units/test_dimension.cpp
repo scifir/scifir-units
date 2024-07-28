@@ -111,7 +111,7 @@ TEST_CASE("dimension class") {
 		dimension a17("V",dimension::NUMERATOR);
 		CHECK(a17.dimension_type == dimension::VOLT);
 		dimension a18("F",dimension::NUMERATOR);
-		CHECK(a18.dimension_type == dimension::FARADAY);
+		CHECK(a18.dimension_type == dimension::FARAD);
 		dimension a19("ohm",dimension::NUMERATOR);
 		CHECK(a19.dimension_type == dimension::OHM);
 		dimension a19_2("Ohm",dimension::NUMERATOR);
@@ -411,9 +411,9 @@ TEST_CASE("dimension class") {
 		CHECK(a18.is_simple_dimension() == false);
 		CHECK(a18.is_base_dimension() == false);
 		CHECK(a18.is_derived_dimension() == true);
-		dimension a19(dimension::FARADAY,prefix::NONE,dimension::NUMERATOR);
-		CHECK(a19.get_name() == "faraday");
-		CHECK(a19.get_plural() == "faradays");
+		dimension a19(dimension::FARAD,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a19.get_name() == "farad");
+		CHECK(a19.get_plural() == "farads");
 		CHECK(a19.get_symbol() == "F");
 		CHECK(a19.get_conversion_factor() == 1.0l);
 		CHECK(a19.is_simple_dimension() == false);
