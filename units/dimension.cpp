@@ -1302,7 +1302,7 @@ namespace scifir
 		}
 	}
 
-	vector<dimension> dimension::get_simple_dimensions() const
+	vector<dimension> dimension::get_base_dimensions() const
 	{
 		vector<dimension> basic_dimensions = vector<dimension>();
 		switch (dimension_type)
@@ -1724,18 +1724,18 @@ namespace scifir
 		return dimensions;
 	}
 
-	vector<dimension> create_simple_dimensions(const string& init_dimensions)
+	vector<dimension> create_base_dimensions(const string& init_dimensions)
 	{
 		vector<dimension> new_dimensions = create_dimensions(init_dimensions);
-		return create_simple_dimensions(new_dimensions);
+		return create_base_dimensions(new_dimensions);
 	}
 
-	vector<dimension> create_simple_dimensions(const vector<dimension>& x)
+	vector<dimension> create_base_dimensions(const vector<dimension>& x)
 	{
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
 		{
-			vector<dimension> x_subdimensions = x[i].get_simple_dimensions();
+			vector<dimension> x_subdimensions = x[i].get_base_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				if (x[i].dimension_position == dimension::DENOMINATOR)
@@ -1748,7 +1748,7 @@ namespace scifir
 		return new_x;
 	}
 
-	vector<dimension> create_simple_dimensions(const vector<dimension>& x,long double& value)
+	vector<dimension> create_base_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
@@ -1763,7 +1763,7 @@ namespace scifir
 				value /= x[i].get_conversion_factor();
 				value /= x[i].prefix_math();
 			}
-			vector<dimension> x_subdimensions = x[i].get_simple_dimensions();
+			vector<dimension> x_subdimensions = x[i].get_base_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				if (x[i].dimension_position == dimension::DENOMINATOR)
@@ -1892,7 +1892,7 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x)
 	{
-		vector<dimension> new_x = create_simple_dimensions(x);
+		vector<dimension> new_x = create_base_dimensions(x);
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -1942,7 +1942,7 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
 	{
-		vector<dimension> new_x = create_simple_dimensions(x,value);
+		vector<dimension> new_x = create_base_dimensions(x,value);
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -2013,9 +2013,9 @@ namespace scifir
 
 	bool common_dimension(const dimension& x,const dimension& y)
 	{
-		for (const dimension& x_dimension : x.get_simple_dimensions())
+		for (const dimension& x_dimension : x.get_base_dimensions())
 		{
-			for (const dimension& y_dimension : y.get_simple_dimensions())
+			for (const dimension& y_dimension : y.get_base_dimensions())
 			{
 				if (x_dimension.dimension_type == y_dimension.dimension_type and x_dimension.dimension_position == y_dimension.dimension_position)
 				{
@@ -2035,8 +2035,8 @@ namespace scifir
 
 	bool equal_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
-		vector<dimension> x_derived_dimensions = create_simple_dimensions(x);
-		vector<dimension> y_derived_dimensions = create_simple_dimensions(y);
+		vector<dimension> x_derived_dimensions = create_base_dimensions(x);
+		vector<dimension> y_derived_dimensions = create_base_dimensions(y);
 		if (x_derived_dimensions.size() == y_derived_dimensions.size())
 		{
 			vector<unsigned int> skip = vector<unsigned int>();
@@ -2138,7 +2138,7 @@ bool operator ==(const scifir::dimension& x,const scifir::dimension& y)
 	}
 }
 
-bool operator!=(const scifir::dimension& x,const scifir::dimension& y)
+bool operator !=(const scifir::dimension& x,const scifir::dimension& y)
 {
 	return !(x == y);
 }

@@ -46,7 +46,7 @@
 	name##_2d::name##_2d(const name##_2d& x) : vector_unit_2d(x) {} \
 	name##_2d::name##_2d(name##_2d&& x) : vector_unit_2d(std::move(x)) {} \
 const string name##_2d::dimensions_match = init_dimensions; \
-const vector<dimension> name##_2d::real_dimensions = create_simple_dimensions(init_dimensions)
+const vector<dimension> name##_2d::real_dimensions = create_base_dimensions(init_dimensions)
 
 using namespace std;
 

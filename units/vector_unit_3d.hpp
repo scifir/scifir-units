@@ -53,7 +53,7 @@
 	name##_3d::name##_3d(const name##_3d& x) : vector_unit_3d(x) {} \
 	name##_3d::name##_3d(name##_3d&& x) : vector_unit_3d(std::move(x)) {} \
 const string name##_3d::dimensions_match = init_dimensions; \
-const vector<dimension> name##_3d::real_dimensions = create_simple_dimensions(init_dimensions)
+const vector<dimension> name##_3d::real_dimensions = create_base_dimensions(init_dimensions)
 
 #define VECTOR_UNIT_HPP(name) SCALAR_UNIT_HPP(name); \
 VECTOR_UNIT_2D_HPP(name); \

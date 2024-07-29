@@ -241,7 +241,7 @@
 * \fn bool dimension::is_dimensionless() const
 * \brief If the dimension_type is DEGREE, RADIAN or STERADIAN, it's considered dimensionless, following the SI system of units. If the dimension_type is NONE, it's considered dimensionless too.
 
-* \fn vector<dimension> dimension::get_simple_dimensions() const
+* \fn vector<dimension> dimension::get_base_dimensions() const
 * \brief Returns the simple dimensions of the dimension, which are different than the dimension, and more than one, if the dimension is not a simple dimension but a derived dimension.
 
 * \fn void dimension::invert()
@@ -271,7 +271,7 @@
 * \fn vector<dimension> scifir::create_dimensions(string init_dimensions)
 * \brief Creates the dimensions from an initialization string of dimensions
 
-* \fn vector<dimension> scifir::create_simple_dimensions(const string& init_dimensions)
+* \fn vector<dimension> scifir::create_base_dimensions(const string& init_dimensions)
 * \brief Creates the derived dimensions from an initialization string of dimensions
 
 * \fn string scifir::to_string(const dimension& x)
@@ -280,10 +280,10 @@
 * \fn string scifir::to_string(const vector<dimension>& x_dimensions, bool with_brackets)
 * \brief Creates the string representation of a vector of dimensions. Used to display the dimensions of scalar_unit and all vector_unit classes. The dimensions can be displayed optionally between brackets like '[]' too.
 
-* \fn vector<dimension> scifir::create_simple_dimensions(const vector<dimension>& x)
+* \fn vector<dimension> scifir::create_base_dimensions(const vector<dimension>& x)
 * \brief Creates all the derived dimensions from a vector of dimensions.
 
-* \fn vector<dimension> scifir::create_simple_dimensions(const vector<dimension>& x, long double& value)
+* \fn vector<dimension> scifir::create_base_dimensions(const vector<dimension>& x, long double& value)
 * \brief Creates all the derived dimensions from a vector of dimensions, updating also the associated value related to those dimensions based on the prefix math and the conversion factor of the dimension, if that conversion factor is different than one.
 
 * \fn vector<dimension> scifir::multiply_dimensions(const vector<dimension>& x, const vector<dimension>& y)
