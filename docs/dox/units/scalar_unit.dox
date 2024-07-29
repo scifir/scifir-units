@@ -137,10 +137,19 @@
 * \brief Checks if there aren't base dimensions.
 
 * \fn bool scalar_unit::is_dimensionless() const
-* \brief Returns true is there aren't dimensions or if all dimensions are dimensionless.
+* \brief Returns true if there aren't dimensions or if all dimensions are dimensionless.
+
+* \fn bool scalar_unit::has_simple_dimensions() const
+* \brief Returns true if there's only a simple dimension.
+
+* \fn bool scalar_unit::has_composite_dimensions() const
+* \brief Returns true is there's more than one simple dimension.
 
 * \fn string scalar_unit::display_dimensions() const
 * \brief Generates an string of the dimensions of the scalar_unit, with the same format as the initialization string of dimensions.
+
+* \fn dimension::type scalar_unit::get_single_dimension_type() const
+* \brief Returns the dimension::type if there's only one dimension, returns dimension::NONE if there's more than one dimension or if the dimensions are empty.
 
 * \fn vector<dimension> scalar_unit::get_derived_dimensions() const
 * \brief Generates a set of the derived dimensions of the dimensions of the scalar_unit.

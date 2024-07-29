@@ -181,7 +181,11 @@ namespace scifir
 			bool has_dimensions(const scalar_unit& x) const;
 			bool has_empty_dimensions() const;
 			bool is_dimensionless() const;
+			bool has_simple_dimensions() const;
+			bool has_composite_dimensions() const;
 			string display_dimensions() const;
+
+			dimension::type get_single_dimension_type() const;
 
 			//string get_dimensions_match() const;
 			vector<dimension> get_derived_dimensions() const;

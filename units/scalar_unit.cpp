@@ -350,6 +350,34 @@ namespace scifir
 		}
 	}
 
+	bool scalar_unit::has_simple_dimensions() const
+	{
+		if (dimensions.size() == 1)
+		{
+			return dimensions[0].is_simple_dimension();
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	bool scalar_unit::has_composite_dimensions() const
+	{
+		if (dimensions.size() == 0)
+		{
+			return false;
+		}
+		else if (dimensions.size() == 1)
+		{
+			return dimensions[0].is_composite_dimension();
+		}
+		else
+		{
+			return true;
+		}
+	}
+
 	string scalar_unit::display_dimensions() const
 	{
 		return to_string(dimensions);
@@ -359,6 +387,18 @@ namespace scifir
 	{
 		return "";
 	}*/
+
+	dimension::type scalar_unit::get_single_dimension_type() const
+	{
+		if (dimensions.size() == 1)
+		{
+			return dimensions[0].dimension_type;
+		}
+		else
+		{
+			return dimension::NONE;
+		}
+	}
 
 	vector<dimension> scalar_unit::get_derived_dimensions() const
 	{

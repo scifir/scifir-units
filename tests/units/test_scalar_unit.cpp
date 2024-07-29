@@ -205,6 +205,25 @@ TEST_CASE("scalar_unit class") {
 		CHECK(e.is_dimensionless() == true);
 	}
 
+	SECTION("has_simple_dimensions() and has_composite_dimensions() of scalar_unit class")
+	{
+		scalar_unit a("100 degree");
+		CHECK(a.has_simple_dimensions() == true);
+		CHECK(a.has_composite_dimensions() == false);
+		scalar_unit b("100 sr");
+		CHECK(b.has_simple_dimensions() == true);
+		CHECK(b.has_composite_dimensions() == false);
+		scalar_unit c;
+		CHECK(c.has_simple_dimensions() == false);
+		CHECK(c.has_composite_dimensions() == false);
+		scalar_unit d = 50_N;
+		CHECK(d.has_simple_dimensions() == false);
+		CHECK(d.has_composite_dimensions() == true);
+		scalar_unit e("10 m*s/C");
+		CHECK(e.has_simple_dimensions() == false);
+		CHECK(e.has_composite_dimensions() == true);
+	}
+
 	SECTION("change_dimensions() of scalar_unit class")
 	{
 		scalar_unit a = 50_N;
@@ -247,6 +266,18 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(e.get_derived_dimensions()) == "kg*m/s2");
 		scalar_unit f("2 m2");
 		CHECK(f.display_dimensions() == "m2");
+	}
+
+	SECTION("get_single_dimension_type() of scalar_unit class")
+	{
+		scalar_unit a = 20_m;
+		CHECK(a.get_single_dimension_type() == dimension::METRE);
+		scalar_unit b = 30_g;
+		CHECK(b.get_single_dimension_type() == dimension::GRAM);
+		scalar_unit c = 15_s;
+		CHECK(c.get_single_dimension_type() == dimension::SECOND);
+		scalar_unit d("5 m*s");
+		CHECK(d.get_single_dimension_type() == dimension::NONE);
 	}
 
 	SECTION("Display of scalar_unit class")
