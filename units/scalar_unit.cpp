@@ -362,6 +362,11 @@ namespace scifir
 		}
 	}
 
+	bool scalar_unit::has_single_dimensions() const
+	{
+		return (dimensions.size() == 1);
+	}
+
 	bool scalar_unit::has_composite_dimensions() const
 	{
 		if (dimensions.size() == 0)

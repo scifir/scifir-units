@@ -182,6 +182,7 @@ namespace scifir
 			bool has_empty_dimensions() const;
 			bool is_dimensionless() const;
 			bool has_simple_dimensions() const;
+			bool has_single_dimensions() const;
 			bool has_composite_dimensions() const;
 			string display_dimensions() const;
 

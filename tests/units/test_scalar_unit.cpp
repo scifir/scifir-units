@@ -209,18 +209,23 @@ TEST_CASE("scalar_unit class") {
 	{
 		scalar_unit a("100 degree");
 		CHECK(a.has_simple_dimensions() == true);
+		CHECK(a.has_single_dimensions() == true);
 		CHECK(a.has_composite_dimensions() == false);
 		scalar_unit b("100 sr");
 		CHECK(b.has_simple_dimensions() == true);
+		CHECK(b.has_single_dimensions() == true);
 		CHECK(b.has_composite_dimensions() == false);
 		scalar_unit c;
 		CHECK(c.has_simple_dimensions() == false);
+		CHECK(c.has_single_dimensions() == false);
 		CHECK(c.has_composite_dimensions() == false);
 		scalar_unit d = 50_N;
 		CHECK(d.has_simple_dimensions() == false);
+		CHECK(d.has_single_dimensions() == true);
 		CHECK(d.has_composite_dimensions() == true);
 		scalar_unit e("10 m*s/C");
 		CHECK(e.has_simple_dimensions() == false);
+		CHECK(e.has_single_dimensions() == false);
 		CHECK(e.has_composite_dimensions() == true);
 	}
 
