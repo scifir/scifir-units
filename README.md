@@ -586,9 +586,9 @@ N-dimensions, inside scifir-units, are called **ND** in classnames. ND classes a
 
 ### Dimensions
 
-A **SI base dimension** is a base dimension under the SI system of units. A **SI derived dimension** is a derived dimension under the SI system of units.
+A **SI base dimension** is a base dimension under the SI system of units. A **SI derived dimension** is a derived dimension under the SI system of units. The SI base dimensions are the **metre** (m), **kilogram** (kg), **second** (s), **mole** (mol), **candela** (cd), **kelvin** (K) and **ampere** (A).
 
-Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units, excepting AMPERE, which has been changed by COULOMG, among other dimensions more. The other base dimensions inside scifir-units are RADIAN, STERADIAN, BYTE, MONEY, MEMO, and all CUSTOM_BASIC dimensions. A **derived dimension** is any dimension that's not a base dimension.
+Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units, excepting AMPERE, which has been changed by COULOMB, among other dimensions more that have been added. The other base dimensions inside scifir-units are **radian** (rad), **steradian** (sr), **byte** (B), **money** (money), **memo** (memo), and all CUSTOM_BASIC dimensions. A **derived dimension** is any dimension that's not a base dimension.
 
 Different to that, a **simple dimension** is a dimension with only one base dimension. A **composite dimension** is a dimension with more than one base dimension.
 
@@ -597,8 +597,6 @@ A dimension is a **special name** if it has a symbol that means one or more base
 A **single dimension** is a scalar unit or vector unit that has only one dimension, which can be any simple dimension or composite dimension, it's only needed to don't be more than one dimension present in the same unit.
 
 The dimensions that a scalar_unit class can have are available in the enum dimension::type, and are only the SI dimensions or, if there isn't a dimension for an important purpose in the SI system of units, a selected dimension of the different possible options. Only the prefered dimensions have been added to the enum dimension::type, the other dimensions, as for example England units, have been added only as conversion options. With that system, always the same dimensions are used, which simplifies the work inside a laboratory, because then there's less confusion about which dimensions are being used.
-
-The **base dimensions** inside scifir-units are the base dimensions of the SI system of units, and are then the **metre** (m), **kilogram** (kg), **second** (s), **mole** (mol), **candela** (cd), **kelvin** (K) and **ampere** (A). The byte (B) and the coulomb (C) are considered a simple dimension, but not a base dimension, because they are not a base dimension inside the SI system of units.
 
 A dimension inside scifir-units is **dimensionless** if it's dimensionless in the SI system of units. Following that rule, the dimensions degree, radian and steradian are dimensionless. When there's no dimension, because of the value NONE, it's considered dimensionless too.
 
