@@ -53,7 +53,7 @@ namespace scifir
 	SCALAR_UNIT_HPP(magnetic_permeability);
 	SCALAR_UNIT_HPP(magnetization); // TODO: vector_field
 	SCALAR_UNIT_HPP(magnetic_flux);
-	VECTOR_UNIT_HPP(magnetic_strength); // TODO: vector_field
+	VECTOR_UNIT_HPP(magnetic_flux_density); // TODO: vector_field
 	VECTOR_UNIT_HPP(magnetic_moment);
 	SCALAR_UNIT_HPP(magnetic_reluctance);
 	VECTOR_UNIT_HPP(magnetic_vector_potential); // TODO: vector_field

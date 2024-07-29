@@ -45,7 +45,7 @@ namespace scifir
 	SCALAR_UNIT_CPP(magnetic_permeability,"H/m");
 	SCALAR_UNIT_CPP(magnetization,"A/m");
 	SCALAR_UNIT_CPP(magnetic_flux,"Wb");
-	VECTOR_UNIT_CPP(magnetic_strength,"T");
+	VECTOR_UNIT_CPP(magnetic_flux_density,"T");
 	VECTOR_UNIT_CPP(magnetic_moment,"Wb*m");
 	SCALAR_UNIT_CPP(magnetic_reluctance,"1/H");
 	VECTOR_UNIT_CPP(magnetic_vector_potential,"Wb/m");
