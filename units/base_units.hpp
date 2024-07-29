@@ -79,7 +79,7 @@ namespace scifir
 	SCALAR_UNIT_HPP_END();
 
 	SCALAR_UNIT_HPP(light_intensity);
-	SCALAR_UNIT_HPP(data);
+	SCALAR_UNIT_HPP(information_size);
 }
 
 scifir::length operator"" _Qm(unsigned long long int);
@@ -250,29 +250,29 @@ scifir::light_intensity operator"" _ycd(unsigned long long int);
 scifir::light_intensity operator"" _rcd(unsigned long long int);
 scifir::light_intensity operator"" _qcd(unsigned long long int);
 
-scifir::data operator"" _QB(unsigned long long int);
-scifir::data operator"" _RB(unsigned long long int);
-scifir::data operator"" _YB(unsigned long long int);
-scifir::data operator"" _ZB(unsigned long long int);
-scifir::data operator"" _EB(unsigned long long int);
-scifir::data operator"" _PB(unsigned long long int);
-scifir::data operator"" _TB(unsigned long long int);
-scifir::data operator"" _GB(unsigned long long int);
-scifir::data operator"" _MB(unsigned long long int);
-scifir::data operator"" _kB(unsigned long long int);
-scifir::data operator"" _B(unsigned long long int);
+scifir::information_size operator"" _QB(unsigned long long int);
+scifir::information_size operator"" _RB(unsigned long long int);
+scifir::information_size operator"" _YB(unsigned long long int);
+scifir::information_size operator"" _ZB(unsigned long long int);
+scifir::information_size operator"" _EB(unsigned long long int);
+scifir::information_size operator"" _PB(unsigned long long int);
+scifir::information_size operator"" _TB(unsigned long long int);
+scifir::information_size operator"" _GB(unsigned long long int);
+scifir::information_size operator"" _MB(unsigned long long int);
+scifir::information_size operator"" _kB(unsigned long long int);
+scifir::information_size operator"" _B(unsigned long long int);
 
-scifir::data operator"" _Qbit(unsigned long long int);
-scifir::data operator"" _Rbit(unsigned long long int);
-scifir::data operator"" _Ybit(unsigned long long int);
-scifir::data operator"" _Zbit(unsigned long long int);
-scifir::data operator"" _Ebit(unsigned long long int);
-scifir::data operator"" _Pbit(unsigned long long int);
-scifir::data operator"" _Tbit(unsigned long long int);
-scifir::data operator"" _Gbit(unsigned long long int);
-scifir::data operator"" _Mbit(unsigned long long int);
-scifir::data operator"" _kbit(unsigned long long int);
-scifir::data operator"" _bit(unsigned long long int);
+scifir::information_size operator"" _Qbit(unsigned long long int);
+scifir::information_size operator"" _Rbit(unsigned long long int);
+scifir::information_size operator"" _Ybit(unsigned long long int);
+scifir::information_size operator"" _Zbit(unsigned long long int);
+scifir::information_size operator"" _Ebit(unsigned long long int);
+scifir::information_size operator"" _Pbit(unsigned long long int);
+scifir::information_size operator"" _Tbit(unsigned long long int);
+scifir::information_size operator"" _Gbit(unsigned long long int);
+scifir::information_size operator"" _Mbit(unsigned long long int);
+scifir::information_size operator"" _kbit(unsigned long long int);
+scifir::information_size operator"" _bit(unsigned long long int);
 
 scifir::length operator"" _Qm(long double);
 scifir::length operator"" _Rm(long double);
@@ -442,28 +442,28 @@ scifir::light_intensity operator"" _ycd(long double);
 scifir::light_intensity operator"" _rcd(long double);
 scifir::light_intensity operator"" _qcd(long double);
 
-scifir::data operator"" _QB(long double);
-scifir::data operator"" _RB(long double);
-scifir::data operator"" _YB(long double);
-scifir::data operator"" _ZB(long double);
-scifir::data operator"" _EB(long double);
-scifir::data operator"" _PB(long double);
-scifir::data operator"" _TB(long double);
-scifir::data operator"" _GB(long double);
-scifir::data operator"" _MB(long double);
-scifir::data operator"" _kB(long double);
-scifir::data operator"" _B(long double);
+scifir::information_size operator"" _QB(long double);
+scifir::information_size operator"" _RB(long double);
+scifir::information_size operator"" _YB(long double);
+scifir::information_size operator"" _ZB(long double);
+scifir::information_size operator"" _EB(long double);
+scifir::information_size operator"" _PB(long double);
+scifir::information_size operator"" _TB(long double);
+scifir::information_size operator"" _GB(long double);
+scifir::information_size operator"" _MB(long double);
+scifir::information_size operator"" _kB(long double);
+scifir::information_size operator"" _B(long double);
 
-scifir::data operator"" _Qbit(long double);
-scifir::data operator"" _Rbit(long double);
-scifir::data operator"" _Ybit(long double);
-scifir::data operator"" _Zbit(long double);
-scifir::data operator"" _Ebit(long double);
-scifir::data operator"" _Pbit(long double);
-scifir::data operator"" _Tbit(long double);
-scifir::data operator"" _Gbit(long double);
-scifir::data operator"" _Mbit(long double);
-scifir::data operator"" _kbit(long double);
-scifir::data operator"" _bit(long double);
+scifir::information_size operator"" _Qbit(long double);
+scifir::information_size operator"" _Rbit(long double);
+scifir::information_size operator"" _Ybit(long double);
+scifir::information_size operator"" _Zbit(long double);
+scifir::information_size operator"" _Ebit(long double);
+scifir::information_size operator"" _Pbit(long double);
+scifir::information_size operator"" _Tbit(long double);
+scifir::information_size operator"" _Gbit(long double);
+scifir::information_size operator"" _Mbit(long double);
+scifir::information_size operator"" _kbit(long double);
+scifir::information_size operator"" _bit(long double);
 
 #endif // SCIFIR_UNITS_UNITS_BASE_UNITS_HPP_INCLUDED
