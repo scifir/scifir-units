@@ -258,6 +258,7 @@ TEST_CASE("dimension class") {
 		CHECK(a.is_simple_dimension() == true);
 		CHECK(a.is_base_dimension() == false);
 		CHECK(a.is_derived_dimension() == false);
+		CHECK(a.is_dimensionless() == true);
 		dimension a2(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a2.get_name() == "metre");
 		CHECK(a2.get_plural() == "metres");
@@ -267,6 +268,7 @@ TEST_CASE("dimension class") {
 		CHECK(a2.is_composite_dimension() == false);
 		CHECK(a2.is_base_dimension() == true);
 		CHECK(a2.is_derived_dimension() == false);
+		CHECK(a2.is_dimensionless() == false);
 		dimension a3_2(dimension::DEGREE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a3_2.get_name() == "degree");
 		CHECK(a3_2.get_plural() == "degrees");
@@ -275,6 +277,7 @@ TEST_CASE("dimension class") {
 		CHECK(a3_2.is_simple_dimension() == true);
 		CHECK(a3_2.is_base_dimension() == false);
 		CHECK(a3_2.is_derived_dimension() == true);
+		CHECK(a3_2.is_dimensionless() == true);
 		dimension a3(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a3.get_name() == "radian");
 		CHECK(a3.get_plural() == "radians");
@@ -283,6 +286,7 @@ TEST_CASE("dimension class") {
 		CHECK(a3.is_simple_dimension() == true);
 		CHECK(a3.is_base_dimension() == false);
 		CHECK(a3.is_derived_dimension() == true);
+		CHECK(a3.is_dimensionless() == true);
 		dimension a4(dimension::STERADIAN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a4.get_name() == "steradian");
 		CHECK(a4.get_plural() == "steradians");
@@ -291,6 +295,7 @@ TEST_CASE("dimension class") {
 		CHECK(a4.is_simple_dimension() == true);
 		CHECK(a4.is_base_dimension() == false);
 		CHECK(a4.is_derived_dimension() == true);
+		CHECK(a4.is_dimensionless() == true);
 		dimension a5(dimension::SECOND,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a5.get_name() == "second");
 		CHECK(a5.get_plural() == "seconds");

@@ -232,6 +232,9 @@
 * \fn bool dimension::is_derived_dimension() const
 * \brief If the dimension is not a base dimension, it's considered a derived dimension.
 
+* \fn bool dimension::is_dimensionless() const
+* \brief If the dimension_type is DEGREE, RADIAN or STERADIAN, it's considered dimensionless, following the SI system of units. If the dimension_type is NONE, it's considered dimensionless too.
+
 * \fn vector<dimension> dimension::get_simple_dimensions() const
 * \brief Returns the simple dimensions of the dimension, which are different than the dimension, and more than one, if the dimension is not a simple dimension but a derived dimension.
 

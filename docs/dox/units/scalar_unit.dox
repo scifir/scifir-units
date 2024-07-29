@@ -134,7 +134,10 @@
 * \brief Checks if the basic dimensions are the same as other scalar_unit.
 
 * \fn bool scalar_unit::has_empty_dimensions() const
-* \brief Checks if there aren't basic dimensions.
+* \brief Checks if there aren't base dimensions.
+
+* \fn bool scalar_unit::is_dimensionless() const
+* \brief Returns true is there aren't dimensions or if all dimensions are dimensionless.
 
 * \fn string scalar_unit::display_dimensions() const
 * \brief Generates an string of the dimensions of the scalar_unit, with the same format as the initialization string of dimensions.

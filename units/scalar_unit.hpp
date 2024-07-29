@@ -180,6 +180,7 @@ namespace scifir
 			bool has_dimensions(const vector<dimension>& x_dimensions) const;
 			bool has_dimensions(const scalar_unit& x) const;
 			bool has_empty_dimensions() const;
+			bool is_dimensionless() const;
 			string display_dimensions() const;
 
 			//string get_dimensions_match() const;

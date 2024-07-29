@@ -321,14 +321,32 @@ namespace scifir
 
 	bool scalar_unit::has_empty_dimensions() const
 	{
-		vector<dimension> derived_dimensions = create_simple_dimensions(dimensions);
-		if(derived_dimensions.size() == 0)
+		if(dimensions.size() == 0)
 		{
 			return true;
 		}
 		else
 		{
 			return false;
+		}
+	}
+
+	bool scalar_unit::is_dimensionless() const
+	{
+		if (has_empty_dimensions())
+		{
+			return true;
+		}
+		else
+		{
+			for (const dimension& x : dimensions)
+			{
+				if (!x.is_dimensionless())
+				{
+					return false;
+				}
+			}
+			return true;
 		}
 	}
 

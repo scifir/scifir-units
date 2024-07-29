@@ -1166,6 +1166,18 @@ namespace scifir
 		return false;
 	}
 
+	bool dimension::is_dimensionless() const
+	{
+		if (dimension_type == dimension::DEGREE or dimension_type == dimension::RADIAN or dimension_type == dimension::STERADIAN or dimension_type == dimension::NONE)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	vector<dimension> dimension::get_simple_dimensions() const
 	{
 		vector<dimension> basic_dimensions = vector<dimension>();

@@ -171,7 +171,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(d) == "99 g");
 	}
 
-	SECTION("has_dimensions() of scalar_unit_class")
+	SECTION("has_dimensions() of scalar_unit class")
 	{
 		scalar_unit a(100.0f,"g");
 		CHECK(a.has_dimensions("kg") == true);
@@ -181,6 +181,28 @@ TEST_CASE("scalar_unit class") {
 		CHECK(a.has_dimensions(b) == true);
 		scalar_unit c(10.0f,"N");
 		CHECK(a.has_dimensions(c) == false);
+	}
+
+	SECTION("has_empty_dimensions() of scalar_unit class")
+	{
+		scalar_unit a;
+		CHECK(a.has_empty_dimensions() == true);
+		scalar_unit b("100 degree");
+		CHECK(b.has_empty_dimensions() == false);
+	}
+
+	SECTION("is_dimensionless() of scalar_unit class")
+	{
+		scalar_unit a("100 degree");
+		CHECK(a.is_dimensionless() == true);
+		scalar_unit b("6 rad");
+		CHECK(b.is_dimensionless() == true);
+		scalar_unit c("100 sr");
+		CHECK(c.is_dimensionless() == true);
+		scalar_unit d = 100_m;
+		CHECK(d.is_dimensionless() == false);
+		scalar_unit e;
+		CHECK(e.is_dimensionless() == true);
 	}
 
 	SECTION("change_dimensions() of scalar_unit class")
