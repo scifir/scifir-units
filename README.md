@@ -924,6 +924,7 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | surface_tension, surface_tension_2d, surface_tension_3d, surface_tension_nd | kg/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Tension in a surface.
 | stiffness | kg/s2 | scalar_unit | - | Extent to which an object resists deformation.
 | moment_of_inertia | m2*kg | scalar_unit | - | Torque needed for a desired angular acceleration about a rotational axis.
+| yank, yank_2d, yank_3d, yank_nd | N/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Rate of change of force.
 
 #### Electricity units
 
@@ -931,10 +932,10 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | ----- | ----- | ----- | ----------- | --------------------------
 | electric_current | A | scalar_unit | _A and _TA, _kA, etc (all prefixes supported) | Measures the amount of current.
 | voltage | V | scalar_unit | _V and _TV, _kV, etc (all prefixes supported) | The intensity of the electric force.
-| electric_charge_density | A*s/m3 | scalar_unit | - | Density of the electric charge of a charged object.
+| electric_charge_density | C/m3 | scalar_unit | - | Density of the electric charge of a charged object.
 | electric_current_density | A/m2 | scalar_unit | - | Density of the electric current.
-| electric_field_strength, electric_field_strength_2d, electric_field_strength_3d, electric_field_strength_nd | kg*m/A*s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The strength of the electric field.
-| electron_mobility | A*s2/kg | scalar_unit | - | How quickly an electron can move through a metal or semiconductor.
+| electric_field_strength, electric_field_strength_2d, electric_field_strength_3d, electric_field_strength_nd | V/m | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The strength of the electric field.
+| electron_mobility | m2/V*s | scalar_unit | - | How quickly an electron can move through a metal or semiconductor.
 | inductance | H | scalar_unit | _H and _TH, _kH, etc (all prefixes supported) | The tendency of an electrical conductor to oppose a change in the electric current flowing through it.
 
 #### Fluid dynamics units
@@ -949,23 +950,23 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 
 | Name | Dimensions | Type | Literals | Description
 | ----- | ----- | ----- | ----------- | --------------------------
+| magnetic_permeability | H/m | scalar_unit | - | Measure of the magnetization produced in a material in response to an applied magnetic field.
 | magnetic_flux | Wb | scalar_unit | _Wb and _TWb, _kWb, etc (all prefixes supported) | Amount of magnetism per surface.
-| magnetic_moment, magnetic_moment_2d, magnetic_moment_3d, magnetic_moment_nd | A*m2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Combination of strength and orientation of a magnet or other object that exerts a magnetic field.
-| magnetic_reluctance | A2*s2/kg*m2 | scalar_unit | - | It's a resistance to the magnetism.
-| magnetic_rigidity | kg*m/A*s2 | scalar_unit | - | Resistance to magnetism.
-| magnetomotive_force, magnetomotive_force_2d, magnetomotive_force_3d, magnetomotive_force_nd | A | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | It's the property that gives rise to magnetic fields.
-| magnetic_susceptibility | A2*s2/kg*m | scalar_unit | - | It's a measure of how much a material will become magnetized in an applied magnetic field.
+| magnetic_moment, magnetic_moment_2d, magnetic_moment_3d, magnetic_moment_nd | Wb*m | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Combination of strength and orientation of a magnet or other object that exerts a magnetic field.
+| magnetic_reluctance | 1/H | scalar_unit | - | It's a resistance to the magnetism.
+| magnetic_rigidity | T*m | scalar_unit | - | Resistance to magnetism.
+| magnetomotive_force, magnetomotive_force_2d, magnetomotive_force_3d, magnetomotive_force_nd | A*rad | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | It's the property that gives rise to magnetic fields.
+| magnetic_susceptibility | m/H | scalar_unit | - | It's a measure of how much a material will become magnetized in an applied magnetic field.
 
 #### Optics units
 
 | Name | Dimensions | Type | Literals | Description
 | ----- | ----- | ----- | ----------- | --------------------------
 | optical_power | 1/m | scalar_unit | - | Degree to which a lens, mirror or other optical system converges or diverges light.
-| luminance | cd/m2 | scalar_unit | - | Luminous intensity per unit area of light.
 | illuminance | lx | scalar_unit | _lx and _Tlx, _klx, etc (all prefixes supported) | Luminous flux incident in a surface.
 | luminous_flux | lm | scalar_unit | _lm and _Tlm, _klm, etc (all prefixes supported) | The perceived power of light.
-| luminous_energy | cd*sr*s | scalar_unit | - | Perceived fraction of energy transported by the light waves.
-| luminous_exposure | cd*sr*s/m2 | scalar_unit | - | Amount of light per unit area.
+| luminous_energy | lm*s | scalar_unit | - | Perceived fraction of energy transported by the light waves.
+| luminous_exposure | lx*s | scalar_unit | - | Amount of light per unit area.
 | luminous_efficacy | lm/W | scalar_unit | - | Measure of how well a light source produces visible light.
 | ionizing_radiation | Gy | scalar_unit | _Gy and _TGy, _kGy, etc (all prefixes supported). Also, _Sv and _TSv, _kSv, etc (all prefixes supported) | Subatomic particles or electromagnetic waves that have sufficient energy to ionize atoms or molecules by detaching electrons from them.
 | absorbed_dose | m2/s3 | scalar_unit | - | Measure of the energy deposited in matter by ionizing radiation per unit mass.
@@ -979,14 +980,15 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | power | W | scalar_unit | _W and _TW, _kW, etc (all prefixes supported) | Energy per second.
 | power_density | kg/m*s3 | scalar_unit | - | Energy per second per volume.
 | entropy | kg*m2/K*s2 | scalar_unit | - | Amount of disorder in nature.
-| heat_capacity | kg*m2/K*s2 | scalar_unit | - | Amount of heat that matter needs to change temperature.
+| heat_capacity | J/K | scalar_unit | - | Amount of heat that matter needs to change temperature.
 | heat_flux_density | kg/s3 | scalar_unit | - | Amount of heat per surface.
-| thermal_conductivity | kg*m/K*s3 | scalar_unit | - | How easy matters conducts thermal energy.
+| thermal_conductivity | W/m*K | scalar_unit | - | How easy matters conducts thermal energy.
 | thermal_diffusivity | m2/s | scalar_unit | - | The diffusivity of the thermal energy.
-| thermal_resistance | K*s3/kg*m2 | scalar_unit | - | The resistance to thermal change.
+| thermal_resistance | K/W | scalar_unit | - | The resistance to thermal change.
 | thermal_expansion_coefficient | 1/K | scalar_unit | - | The coefficient at which matter expands due to heat.
 | temperature_gradient, temperature_gradient_2d, temperature_gradient_3d, temperature_gradient_nd | K/m | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The gradient of change of temperature inside the space.
 | energy_flux_density | kg/s3 | scalar_unit | - | Density of a flux of energy.
+| fuel_efficiency | 1/m2 | scalar_unit | - | Ratio of the result of conversion of chemical potential energy into kinetic energy or work.
 
 #### Waves units
 
@@ -1008,7 +1010,7 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | density | g/m3 | scalar_unit | - | Amount of mass per unit of volume.
 | viscosity | m2/s | scalar_unit | - | Resistance to the movement done by the solvent.
 | specific_volume | m3/g | scalar_unit | - | Volume per unit of mass.
-| specific_heat_capacity | m2/s2*K | scalar_unit | - | Heat capacity of a particular substance.
+| specific_heat_capacity | J/K*kg | scalar_unit | - | Heat capacity of a particular substance.
 | specific_entropy | m2/s2*K | scalar_unit | - | Entropy of a substance.
 | specific_energy | m2/s2 | scalar_unit | - | Energy per unit of mass
 | molar_volume | m3/mol | scalar_unit | - | Volume of each mole of a substance.
@@ -1037,12 +1039,12 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 
 | Name | Dimensions | Type | Literals | Description
 | ----- | ----- | ----- | ----------- | --------------------------
-| electrical_conductivity | A2*s3/kg*m3 | scalar_unit | - | Amount of current conducted.
+| electrical_conductivity | S/m | scalar_unit | - | Amount of current conducted.
 | resistance | Ω | scalar_unit | _Ω and _TΩ, _kΩ, etc (all prefixes supported) | Opposition to the flow of current of a substance.
 | electric_conductance | S | scalar_unit | _S and _TS, _kS, etc (all prefixes supported) | The inverse of the resistance.
 | capacitance | F | scalar_unit | _F and _TF, _kF, etc (all prefixes supported) | Amount of charge that can be stored by a capacitor.
-| permittivity | A2*s4/kg*m3 | scalar_unit | - | The electric polarizability of a dieletric material.
-| resistivity | kg*m3/A2*s3 | scalar_unit | - | How much a material stops the flow of electric current through it.
+| permittivity | F/m | scalar_unit | - | The electric polarizability of a dieletric material.
+| resistivity | Ω*m | scalar_unit | - | How much a material stops the flow of electric current through it.
 | linear_charge_density | C/m | scalar_unit | - | The amount of electric charge per unit length.
 | surface_charge_density | C/m2 | scalar_unit | - | The amount of electric charge per unit area.
 | volume_charge_density | C/m3 | scalar_unit | - | The amount of electric charge per unit volume.

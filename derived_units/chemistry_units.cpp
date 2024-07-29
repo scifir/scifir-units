@@ -10,7 +10,7 @@ namespace scifir
 	SCALAR_UNIT_CPP(density,"g/m3");
 	SCALAR_UNIT_CPP(viscosity,"m2/s");
 	SCALAR_UNIT_CPP(specific_volume,"m3/g");
-	SCALAR_UNIT_CPP(specific_heat_capacity,"m2/s2*K");
+	SCALAR_UNIT_CPP(specific_heat_capacity,"J/K*kg");
 	SCALAR_UNIT_CPP(specific_entropy,"m2/s2*K");
 	SCALAR_UNIT_CPP(specific_energy,"m2/s2");
 	SCALAR_UNIT_CPP(molar_volume,"m3/mol");

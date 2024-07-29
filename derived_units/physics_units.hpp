@@ -31,6 +31,7 @@ namespace scifir
 	VECTOR_UNIT_HPP(surface_tension);
 	SCALAR_UNIT_HPP(stiffness);
 	SCALAR_UNIT_HPP(moment_of_inertia);
+	VECTOR_UNIT_HPP(yank);
 
 	// ELECTRICITY
 	SCALAR_UNIT_HPP(electric_current);
@@ -49,7 +50,7 @@ namespace scifir
 
 	// MAGNETISM
 	SCALAR_UNIT_HPP(polarization_density); // TODO: vector_field
-	SCALAR_UNIT_HPP(magnetic_permeability); // TODO: vector_field
+	SCALAR_UNIT_HPP(magnetic_permeability);
 	SCALAR_UNIT_HPP(magnetization); // TODO: vector_field
 	SCALAR_UNIT_HPP(magnetic_flux);
 	VECTOR_UNIT_HPP(magnetic_strength); // TODO: vector_field
@@ -62,7 +63,6 @@ namespace scifir
 
 	// OPTICS
 	SCALAR_UNIT_HPP(optical_power);
-	SCALAR_UNIT_HPP(luminance);
 	SCALAR_UNIT_HPP(illuminance);
 	SCALAR_UNIT_HPP(luminous_flux);
 	SCALAR_UNIT_HPP(luminous_energy);
@@ -85,6 +85,7 @@ namespace scifir
 	SCALAR_UNIT_HPP(thermal_expansion_coefficient);
 	VECTOR_UNIT_HPP(temperature_gradient);
 	SCALAR_UNIT_HPP(energy_flux_density);
+	SCALAR_UNIT_HPP(fuel_efficiency);
 
 	// WAVES
 	SCALAR_UNIT_HPP(wavenumber);
