@@ -338,8 +338,17 @@ You can type the command **cpack --help** to check all available generators.
 You can test scifir-units executing ctest if you want. It's not needed to execute those tests in your local computer, but you can do it if for any reason you find it helpful. To build the tests, add the flags **-DBUILD_TESTING=ON** to the first preset command, in order to set the variable BUILD_TESTING to ON, that variable configures the build to build also all the tests.
 
 ```
-ctest --preset=<your-preset>
+ctest --preset=<your-preset> -L tests
 ```
+
+In order to check the code coverage of the unitary tests, execute after that first command the following commands:
+
+```
+ctest --preset=<your-preset> -L tests -T coverage
+gcovr .
+```
+
+gcovr prints the % of coverage for each piece of code, based on gcov data. You can install gcovr through apt in some Linux distributions, for other operating systems search through internet how to install gcovr there, usually it's easy.
 
 ## Introduction
 
