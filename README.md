@@ -586,13 +586,17 @@ N-dimensions, inside scifir-units, are called **ND** in classnames. ND classes a
 
 ### Dimensions
 
-Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units. Different to that, a **simple dimension** is a dimension without any simple dimension more derived from it. That's, a simple dimension is a dimension that's not an special name of two or more other dimensions.
+Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units. A dimension is a **special name** if it has a symbol that means one or more base dimensions of the SI system of units, that's used instead of them. Different to that, a **simple dimension** is a dimension without any simple dimension more derived from it. That's, a simple dimension is a dimension that's not an special name of two or more other dimensions.
 
-A **derived dimension** is a dimension that's not a base dimension under the SI system of units. A **composite dimension** is a dimension that's not a simple dimension.
+A **derived dimension** is, under the SI system of units, a dimension that's not a base dimension. A **composite dimension** is a dimension that's not a simple dimension.
+
+A **single dimension** is a scalar unit or vector unit that has only one dimension, which can be any simple dimension or composite dimension, it's only needed to don't be more than one dimension present in the same unit.
 
 The dimensions that a scalar_unit class can have are available in the enum dimension::type, and are only the SI dimensions or, if there isn't a dimension for an important purpose in the SI system of units, a selected dimension of the different possible options. Only the prefered dimensions have been added to the enum dimension::type, the other dimensions, as for example England units, have been added only as conversion options. With that system, always the same dimensions are used, which simplifies the work inside a laboratory, because then there's less confusion about which dimensions are being used.
 
 The **base dimensions** inside scifir-units are the base dimensions of the SI system of units, and are then the **metre** (m), **kilogram** (kg), **second** (s), **mole** (mol), **candela** (cd), **kelvin** (K) and **ampere** (A). The byte (B) and the coulomb (C) are considered a simple dimension, but not a base dimension, because they are not a base dimension inside the SI system of units.
+
+A dimension inside scifir-units is **dimensionless** if it's dimensionless in the SI system of units. Following that rule, the dimensions degree, radian and steradian are dimensionless. When there's no dimension, because of the value NONE, it's considered dimensionless too.
 
 Dimensions present in scifir-units not so widely known are the **steradian** (sr, solid angles), **katal** (kat, catalytic activity), **angstrom** (Å, length for wavelengths), **dalton** (Da, mass for atoms and molecules), **atomic mass unit** (same as Da), **electron volt** (eV, measure of very small amounts of energy, mainly for quantum physics), **candela** (cd, luminous intensity), **lumen** (lm, luminous flux), **lux** (lx, illuminance), **siemens** (S, electric cnoductance), **weber** (Wb, magnetic flux), **tesla** (T, magnetic strength), **henry** (H, electric inductance), **astronomical unit** (AU, long astronomic distances), **light year** (ly, very long astronomic distances), **parsec** (pc, very long astronomic distances), **becquerel** (Bq, radioactivity), **gray** (Gy, absorbed dose of ionising radiation), **sievert** (Sv, equivalent dose of ionising radiation), **barn** (Barn, transversal section of nuclear reactions). An invented unit inside Scifir is **memo**, which is used to measure the amount of memory inside the brain.
 
