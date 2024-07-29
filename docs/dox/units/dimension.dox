@@ -227,10 +227,16 @@
 * \brief If the dimension has more simple dimensions, it's a composite dimension.
 
 * \fn bool dimension::is_base_dimension() const
-* \brief Returns true if the dimension is an SI base dimension. Following the SI system of units, only are base dimensions the METRE, the GRAM, the SECOND, the AMPERE, the KELVIN, the MOLE and the CANDELA.
+* \brief Returns true if the dimension is a base dimension, which includes all base dimensions of the SI system of units, excepting AMPERE, which has been changed for COULOMB. Additional to the base dimensions of the SI system of units, they are considered base dimensions too RADIAN, STERADIAN, BYTE, MONEY, MEMO, and all CUSTOM_BASIC dimensions.
 
 * \fn bool dimension::is_derived_dimension() const
 * \brief If the dimension is not a base dimension, it's considered a derived dimension.
+
+* \fn bool dimension::is_SI_base_dimension() const
+* \brief Returns true if the dimension is a SI base dimension. Following the SI system of units, only are base dimensions the METRE, the GRAM, the SECOND, the AMPERE, the KELVIN, the MOLE and the CANDELA.
+
+* \fn bool dimension::is_SI_derived_dimension() const
+* \brief If the dimension is not a SI base dimension, it's considered a SI derived dimension.
 
 * \fn bool dimension::is_dimensionless() const
 * \brief If the dimension_type is DEGREE, RADIAN or STERADIAN, it's considered dimensionless, following the SI system of units. If the dimension_type is NONE, it's considered dimensionless too.

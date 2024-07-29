@@ -60,6 +60,9 @@ namespace scifir
 			bool is_base_dimension() const;
 			bool is_derived_dimension() const;
 
+			bool is_SI_base_dimension() const;
+			bool is_SI_derived_dimension() const;
+
 			bool is_dimensionless() const;
 
 			vector<dimension> get_simple_dimensions() const;

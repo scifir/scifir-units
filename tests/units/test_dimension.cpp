@@ -248,7 +248,7 @@ TEST_CASE("dimension class") {
 		CHECK(to_string(t3) == "qm");
 	}
 
-	SECTION ("get_name(), get_symbol(), get_conversion_factor(), is_simple_dmension(), is_base_dimension() of dimension class")
+	SECTION ("get_name(), get_symbol(), get_conversion_factor(), is_simple_dmension(), is_SI_base_dimension() of dimension class")
 	{
 		dimension a(dimension::NONE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a.get_name() == "empty");
@@ -258,6 +258,8 @@ TEST_CASE("dimension class") {
 		CHECK(a.is_simple_dimension() == true);
 		CHECK(a.is_base_dimension() == false);
 		CHECK(a.is_derived_dimension() == false);
+		CHECK(a.is_SI_base_dimension() == false);
+		CHECK(a.is_SI_derived_dimension() == false);
 		CHECK(a.is_dimensionless() == true);
 		dimension a2(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a2.get_name() == "metre");
@@ -268,6 +270,8 @@ TEST_CASE("dimension class") {
 		CHECK(a2.is_composite_dimension() == false);
 		CHECK(a2.is_base_dimension() == true);
 		CHECK(a2.is_derived_dimension() == false);
+		CHECK(a2.is_SI_base_dimension() == true);
+		CHECK(a2.is_SI_derived_dimension() == false);
 		CHECK(a2.is_dimensionless() == false);
 		dimension a3_2(dimension::DEGREE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a3_2.get_name() == "degree");
@@ -277,6 +281,8 @@ TEST_CASE("dimension class") {
 		CHECK(a3_2.is_simple_dimension() == true);
 		CHECK(a3_2.is_base_dimension() == false);
 		CHECK(a3_2.is_derived_dimension() == true);
+		CHECK(a3_2.is_SI_base_dimension() == false);
+		CHECK(a3_2.is_SI_derived_dimension() == true);
 		CHECK(a3_2.is_dimensionless() == true);
 		dimension a3(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a3.get_name() == "radian");
@@ -284,8 +290,10 @@ TEST_CASE("dimension class") {
 		CHECK(a3.get_symbol() == "rad");
 		CHECK(a3.get_conversion_factor() == 1.0l);
 		CHECK(a3.is_simple_dimension() == true);
-		CHECK(a3.is_base_dimension() == false);
-		CHECK(a3.is_derived_dimension() == true);
+		CHECK(a3.is_base_dimension() == true);
+		CHECK(a3.is_derived_dimension() == false);
+		CHECK(a3.is_SI_base_dimension() == false);
+		CHECK(a3.is_SI_derived_dimension() == true);
 		CHECK(a3.is_dimensionless() == true);
 		dimension a4(dimension::STERADIAN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a4.get_name() == "steradian");
@@ -293,8 +301,10 @@ TEST_CASE("dimension class") {
 		CHECK(a4.get_symbol() == "sr");
 		CHECK(a4.get_conversion_factor() == 1.0l);
 		CHECK(a4.is_simple_dimension() == true);
-		CHECK(a4.is_base_dimension() == false);
-		CHECK(a4.is_derived_dimension() == true);
+		CHECK(a4.is_base_dimension() == true);
+		CHECK(a4.is_derived_dimension() == false);
+		CHECK(a4.is_SI_base_dimension() == false);
+		CHECK(a4.is_SI_derived_dimension() == true);
 		CHECK(a4.is_dimensionless() == true);
 		dimension a5(dimension::SECOND,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a5.get_name() == "second");
@@ -304,6 +314,8 @@ TEST_CASE("dimension class") {
 		CHECK(a5.is_simple_dimension() == true);
 		CHECK(a5.is_base_dimension() == true);
 		CHECK(a5.is_derived_dimension() == false);
+		CHECK(a5.is_SI_base_dimension() == true);
+		CHECK(a5.is_SI_derived_dimension() == false);
 		dimension a6(dimension::GRAM,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a6.get_name() == "gram");
 		CHECK(a6.get_plural() == "grams");
@@ -312,14 +324,18 @@ TEST_CASE("dimension class") {
 		CHECK(a6.is_simple_dimension() == true);
 		CHECK(a6.is_base_dimension() == true);
 		CHECK(a6.is_derived_dimension() == false);
+		CHECK(a6.is_SI_base_dimension() == true);
+		CHECK(a6.is_SI_derived_dimension() == false);
 		dimension a7(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a7.get_name() == "coulomb");
 		CHECK(a7.get_plural() == "coulombs");
 		CHECK(a7.get_symbol() == "C");
 		CHECK(a7.get_conversion_factor() == 1.0l);
 		CHECK(a7.is_simple_dimension() == true);
-		CHECK(a7.is_base_dimension() == false);
-		CHECK(a7.is_derived_dimension() == true);
+		CHECK(a7.is_base_dimension() == true);
+		CHECK(a7.is_derived_dimension() == false);
+		CHECK(a7.is_SI_base_dimension() == false);
+		CHECK(a7.is_SI_derived_dimension() == true);
 		dimension a8(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a8.get_name() == "kelvin");
 		CHECK(a8.get_plural() == "kelvins");
@@ -328,6 +344,8 @@ TEST_CASE("dimension class") {
 		CHECK(a8.is_simple_dimension() == true);
 		CHECK(a8.is_base_dimension() == true);
 		CHECK(a8.is_derived_dimension() == false);
+		CHECK(a8.is_SI_base_dimension() == true);
+		CHECK(a8.is_SI_derived_dimension() == false);
 		dimension a9(dimension::MOLE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a9.get_name() == "mole");
 		CHECK(a9.get_plural() == "moles");
@@ -336,6 +354,8 @@ TEST_CASE("dimension class") {
 		CHECK(a9.is_simple_dimension() == true);
 		CHECK(a9.is_base_dimension() == true);
 		CHECK(a9.is_derived_dimension() == false);
+		CHECK(a9.is_SI_base_dimension() == true);
+		CHECK(a9.is_SI_derived_dimension() == false);
 		dimension a10(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a10.get_name() == "candela");
 		CHECK(a10.get_plural() == "candelas");
@@ -344,14 +364,18 @@ TEST_CASE("dimension class") {
 		CHECK(a10.is_simple_dimension() == true);
 		CHECK(a10.is_base_dimension() == true);
 		CHECK(a10.is_derived_dimension() == false);
+		CHECK(a10.is_SI_base_dimension() == true);
+		CHECK(a10.is_SI_derived_dimension() == false);
 		dimension a11(dimension::BYTE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a11.get_name() == "byte");
 		CHECK(a11.get_plural() == "bytes");
 		CHECK(a11.get_symbol() == "B");
 		CHECK(a11.get_conversion_factor() == 1.0l);
 		CHECK(a11.is_simple_dimension() == true);
-		CHECK(a11.is_base_dimension() == false);
+		CHECK(a11.is_base_dimension() == true);
 		CHECK(a11.is_derived_dimension() == false);
+		CHECK(a11.is_SI_base_dimension() == false);
+		CHECK(a11.is_SI_derived_dimension() == false);
 		dimension a11_1(dimension::BIT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a11_1.get_name() == "bit");
 		CHECK(a11_1.get_plural() == "bits");
@@ -359,7 +383,9 @@ TEST_CASE("dimension class") {
 		CHECK(a11_1.get_conversion_factor() == 0.125l);
 		CHECK(a11_1.is_simple_dimension() == true);
 		CHECK(a11_1.is_base_dimension() == false);
-		CHECK(a11_1.is_derived_dimension() == false);
+		CHECK(a11_1.is_derived_dimension() == true);
+		CHECK(a11_1.is_SI_base_dimension() == false);
+		CHECK(a11_1.is_SI_derived_dimension() == false);
 		dimension a12(dimension::HERTZ,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a12.get_name() == "hertz");
 		CHECK(a12.get_plural() == "hertz");
@@ -368,6 +394,8 @@ TEST_CASE("dimension class") {
 		CHECK(a12.is_simple_dimension() == true);
 		CHECK(a12.is_base_dimension() == false);
 		CHECK(a12.is_derived_dimension() == true);
+		CHECK(a12.is_SI_base_dimension() == false);
+		CHECK(a12.is_SI_derived_dimension() == true);
 		dimension a13(dimension::NEWTON,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a13.get_name() == "newton");
 		CHECK(a13.get_plural() == "newtons");
@@ -376,6 +404,8 @@ TEST_CASE("dimension class") {
 		CHECK(a13.is_simple_dimension() == false);
 		CHECK(a13.is_base_dimension() == false);
 		CHECK(a13.is_derived_dimension() == true);
+		CHECK(a13.is_SI_base_dimension() == false);
+		CHECK(a13.is_SI_derived_dimension() == true);
 		dimension a14(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a14.get_name() == "pascal");
 		CHECK(a14.get_plural() == "pascals");
@@ -384,6 +414,8 @@ TEST_CASE("dimension class") {
 		CHECK(a14.is_simple_dimension() == false);
 		CHECK(a14.is_base_dimension() == false);
 		CHECK(a14.is_derived_dimension() == true);
+		CHECK(a14.is_SI_base_dimension() == false);
+		CHECK(a14.is_SI_derived_dimension() == true);
 		dimension a15(dimension::JOULE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a15.get_name() == "joule");
 		CHECK(a15.get_plural() == "joules");
@@ -392,6 +424,8 @@ TEST_CASE("dimension class") {
 		CHECK(a15.is_simple_dimension() == false);
 		CHECK(a15.is_base_dimension() == false);
 		CHECK(a15.is_derived_dimension() == true);
+		CHECK(a15.is_SI_base_dimension() == false);
+		CHECK(a15.is_SI_derived_dimension() == true);
 		dimension a16(dimension::WATT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a16.get_name() == "watt");
 		CHECK(a16.get_plural() == "watts");
@@ -400,14 +434,18 @@ TEST_CASE("dimension class") {
 		CHECK(a16.is_simple_dimension() == false);
 		CHECK(a16.is_base_dimension() == false);
 		CHECK(a16.is_derived_dimension() == true);
+		CHECK(a16.is_SI_base_dimension() == false);
+		CHECK(a16.is_SI_derived_dimension() == true);
 		dimension a17(dimension::AMPERE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a17.get_name() == "ampere");
 		CHECK(a17.get_plural() == "amperes");
 		CHECK(a17.get_symbol() == "A");
 		CHECK(a17.get_conversion_factor() == 1.0l);
 		CHECK(a17.is_simple_dimension() == true);
-		CHECK(a17.is_base_dimension() == true);
-		CHECK(a17.is_derived_dimension() == false);
+		CHECK(a17.is_base_dimension() == false);
+		CHECK(a17.is_derived_dimension() == true);
+		CHECK(a17.is_SI_base_dimension() == true);
+		CHECK(a17.is_SI_derived_dimension() == false);
 		dimension a18(dimension::VOLT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a18.get_name() == "volt");
 		CHECK(a18.get_plural() == "volts");
@@ -416,6 +454,8 @@ TEST_CASE("dimension class") {
 		CHECK(a18.is_simple_dimension() == false);
 		CHECK(a18.is_base_dimension() == false);
 		CHECK(a18.is_derived_dimension() == true);
+		CHECK(a18.is_SI_base_dimension() == false);
+		CHECK(a18.is_SI_derived_dimension() == true);
 		dimension a19(dimension::FARAD,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a19.get_name() == "farad");
 		CHECK(a19.get_plural() == "farads");
@@ -424,6 +464,8 @@ TEST_CASE("dimension class") {
 		CHECK(a19.is_simple_dimension() == false);
 		CHECK(a19.is_base_dimension() == false);
 		CHECK(a19.is_derived_dimension() == true);
+		CHECK(a19.is_SI_base_dimension() == false);
+		CHECK(a19.is_SI_derived_dimension() == true);
 		dimension a20(dimension::OHM,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a20.get_name() == "ohm");
 		CHECK(a20.get_plural() == "ohms");
@@ -432,6 +474,8 @@ TEST_CASE("dimension class") {
 		CHECK(a20.is_simple_dimension() == false);
 		CHECK(a20.is_base_dimension() == false);
 		CHECK(a20.is_derived_dimension() == true);
+		CHECK(a20.is_SI_base_dimension() == false);
+		CHECK(a20.is_SI_derived_dimension() == true);
 		dimension a21(dimension::SIEMENS,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a21.get_name() == "siemens");
 		CHECK(a21.get_plural() == "siemens");
@@ -440,6 +484,8 @@ TEST_CASE("dimension class") {
 		CHECK(a21.is_simple_dimension() == false);
 		CHECK(a21.is_base_dimension() == false);
 		CHECK(a21.is_derived_dimension() == true);
+		CHECK(a21.is_SI_base_dimension() == false);
+		CHECK(a21.is_SI_derived_dimension() == true);
 		dimension a22(dimension::WEBER,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a22.get_name() == "weber");
 		CHECK(a22.get_plural() == "webers");
@@ -448,6 +494,8 @@ TEST_CASE("dimension class") {
 		CHECK(a22.is_simple_dimension() == false);
 		CHECK(a22.is_base_dimension() == false);
 		CHECK(a22.is_derived_dimension() == true);
+		CHECK(a22.is_SI_base_dimension() == false);
+		CHECK(a22.is_SI_derived_dimension() == true);
 		dimension a23(dimension::TESLA,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a23.get_name() == "tesla");
 		CHECK(a23.get_plural() == "teslas");
@@ -456,6 +504,8 @@ TEST_CASE("dimension class") {
 		CHECK(a23.is_simple_dimension() == false);
 		CHECK(a23.is_base_dimension() == false);
 		CHECK(a23.is_derived_dimension() == true);
+		CHECK(a23.is_SI_base_dimension() == false);
+		CHECK(a23.is_SI_derived_dimension() == true);
 		dimension a24(dimension::HENRY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a24.get_name() == "henry");
 		CHECK(a24.get_plural() == "henries");
@@ -464,6 +514,8 @@ TEST_CASE("dimension class") {
 		CHECK(a24.is_simple_dimension() == false);
 		CHECK(a24.is_base_dimension() == false);
 		CHECK(a24.is_derived_dimension() == true);
+		CHECK(a24.is_SI_base_dimension() == false);
+		CHECK(a24.is_SI_derived_dimension() == true);
 		dimension a25(dimension::LUMEN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a25.get_name() == "lumen");
 		CHECK(a25.get_plural() == "lumens");
@@ -472,6 +524,8 @@ TEST_CASE("dimension class") {
 		CHECK(a25.is_simple_dimension() == false);
 		CHECK(a25.is_base_dimension() == false);
 		CHECK(a25.is_derived_dimension() == true);
+		CHECK(a25.is_SI_base_dimension() == false);
+		CHECK(a25.is_SI_derived_dimension() == true);
 		dimension a26(dimension::LUX,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a26.get_name() == "lux");
 		CHECK(a26.get_plural() == "luxes");
@@ -480,6 +534,8 @@ TEST_CASE("dimension class") {
 		CHECK(a26.is_simple_dimension() == false);
 		CHECK(a26.is_base_dimension() == false);
 		CHECK(a26.is_derived_dimension() == true);
+		CHECK(a26.is_SI_base_dimension() == false);
+		CHECK(a26.is_SI_derived_dimension() == true);
 		dimension a27(dimension::BECQUEREL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a27.get_name() == "becquerel");
 		CHECK(a27.get_plural() == "becquerels");
@@ -488,6 +544,8 @@ TEST_CASE("dimension class") {
 		CHECK(a27.is_simple_dimension() == true);
 		CHECK(a27.is_base_dimension() == false);
 		CHECK(a27.is_derived_dimension() == true);
+		CHECK(a27.is_SI_base_dimension() == false);
+		CHECK(a27.is_SI_derived_dimension() == true);
 		dimension a28(dimension::GRAY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a28.get_name() == "gray");
 		CHECK(a28.get_plural() == "grays");
@@ -496,6 +554,8 @@ TEST_CASE("dimension class") {
 		CHECK(a28.is_simple_dimension() == false);
 		CHECK(a28.is_base_dimension() == false);
 		CHECK(a28.is_derived_dimension() == true);
+		CHECK(a28.is_SI_base_dimension() == false);
+		CHECK(a28.is_SI_derived_dimension() == true);
 		dimension a29(dimension::SIEVERT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a29.get_name() == "sievert");
 		CHECK(a29.get_plural() == "sieverts");
@@ -504,6 +564,8 @@ TEST_CASE("dimension class") {
 		CHECK(a29.is_simple_dimension() == false);
 		CHECK(a29.is_base_dimension() == false);
 		CHECK(a29.is_derived_dimension() == true);
+		CHECK(a29.is_SI_base_dimension() == false);
+		CHECK(a29.is_SI_derived_dimension() == true);
 		dimension a30(dimension::KATAL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a30.get_name() == "katal");
 		CHECK(a30.get_plural() == "katals");
@@ -512,6 +574,8 @@ TEST_CASE("dimension class") {
 		CHECK(a30.is_simple_dimension() == false);
 		CHECK(a30.is_base_dimension() == false);
 		CHECK(a30.is_derived_dimension() == true);
+		CHECK(a30.is_SI_base_dimension() == false);
+		CHECK(a30.is_SI_derived_dimension() == true);
 		dimension a31(dimension::ANGSTROM,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a31.get_name() == "angstrom");
 		CHECK(a31.get_plural() == "angstroms");
@@ -519,7 +583,9 @@ TEST_CASE("dimension class") {
 		CHECK(a31.get_conversion_factor() == 1.0l);
 		CHECK(a31.is_simple_dimension() == true);
 		CHECK(a31.is_base_dimension() == false);
-		CHECK(a31.is_derived_dimension() == false);
+		CHECK(a31.is_derived_dimension() == true);
+		CHECK(a31.is_SI_base_dimension() == false);
+		CHECK(a31.is_SI_derived_dimension() == false);
 		dimension a32(dimension::LITRE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a32.get_name() == "litre");
 		CHECK(a32.get_plural() == "litres");
@@ -527,7 +593,9 @@ TEST_CASE("dimension class") {
 		CHECK(a32.get_conversion_factor() == 1.0l);
 		CHECK(a32.is_simple_dimension() == false);
 		CHECK(a32.is_base_dimension() == false);
-		CHECK(a32.is_derived_dimension() == false);
+		CHECK(a32.is_derived_dimension() == true);
+		CHECK(a32.is_SI_base_dimension() == false);
+		CHECK(a32.is_SI_derived_dimension() == false);
 		dimension a33(dimension::MINUTE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a33.get_name() == "minute");
 		CHECK(a33.get_plural() == "minutes");
@@ -535,7 +603,9 @@ TEST_CASE("dimension class") {
 		CHECK(a33.get_conversion_factor() == 60.0l);
 		CHECK(a33.is_simple_dimension() == true);
 		CHECK(a33.is_base_dimension() == false);
-		CHECK(a33.is_derived_dimension() == false);
+		CHECK(a33.is_derived_dimension() == true);
+		CHECK(a33.is_SI_base_dimension() == false);
+		CHECK(a33.is_SI_derived_dimension() == false);
 		dimension a34(dimension::HOUR,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a34.get_name() == "hour");
 		CHECK(a34.get_plural() == "hours");
@@ -543,7 +613,9 @@ TEST_CASE("dimension class") {
 		CHECK(a34.get_conversion_factor() == 3600.0l);
 		CHECK(a34.is_simple_dimension() == true);
 		CHECK(a34.is_base_dimension() == false);
-		CHECK(a34.is_derived_dimension() == false);
+		CHECK(a34.is_derived_dimension() == true);
+		CHECK(a34.is_SI_base_dimension() == false);
+		CHECK(a34.is_SI_derived_dimension() == false);
 		dimension a35(dimension::DAY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a35.get_name() == "day");
 		CHECK(a35.get_plural() == "days");
@@ -551,7 +623,9 @@ TEST_CASE("dimension class") {
 		CHECK(a35.get_conversion_factor() == 86400.0l);
 		CHECK(a35.is_simple_dimension() == true);
 		CHECK(a35.is_base_dimension() == false);
-		CHECK(a35.is_derived_dimension() == false);
+		CHECK(a35.is_derived_dimension() == true);
+		CHECK(a35.is_SI_base_dimension() == false);
+		CHECK(a35.is_SI_derived_dimension() == false);
 		dimension a36_2(dimension::LIGHT_YEAR,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a36_2.get_name() == "light year");
 		CHECK(a36_2.get_plural() == "light years");
@@ -559,7 +633,9 @@ TEST_CASE("dimension class") {
 		CHECK(a36_2.get_conversion_factor() == 9.4607379375591e15);
 		CHECK(a36_2.is_simple_dimension() == true);
 		CHECK(a36_2.is_base_dimension() == false);
-		CHECK(a36_2.is_derived_dimension() == false);
+		CHECK(a36_2.is_derived_dimension() == true);
+		CHECK(a36_2.is_SI_base_dimension() == false);
+		CHECK(a36_2.is_SI_derived_dimension() == false);
 		dimension a36(dimension::ASTRONOMICAL_UNIT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a36.get_name() == "astronomical unit");
 		CHECK(a36.get_plural() == "astronomical units");
@@ -567,7 +643,9 @@ TEST_CASE("dimension class") {
 		CHECK(a36.get_conversion_factor() == 149597870700.0l);
 		CHECK(a36.is_simple_dimension() == true);
 		CHECK(a36.is_base_dimension() == false);
-		CHECK(a36.is_derived_dimension() == false);
+		CHECK(a36.is_derived_dimension() == true);
+		CHECK(a36.is_SI_base_dimension() == false);
+		CHECK(a36.is_SI_derived_dimension() == false);
 		dimension a37(dimension::PARSEC,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a37.get_name() == "parsec");
 		CHECK(a37.get_plural() == "parsecs");
@@ -575,7 +653,9 @@ TEST_CASE("dimension class") {
 		CHECK(a37.get_conversion_factor() == 30856775814913673.0l);
 		CHECK(a37.is_simple_dimension() == true);
 		CHECK(a37.is_base_dimension() == false);
-		CHECK(a37.is_derived_dimension() == false);
+		CHECK(a37.is_derived_dimension() == true);
+		CHECK(a37.is_SI_base_dimension() == false);
+		CHECK(a37.is_SI_derived_dimension() == false);
 		dimension a38(dimension::ELECTRON_VOLT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a38.get_name() == "electron volt");
 		CHECK(a38.get_plural() == "electron volts");
@@ -583,7 +663,9 @@ TEST_CASE("dimension class") {
 		CHECK(a38.get_conversion_factor() == 0.0000000000000000001602176634l);
 		CHECK(a38.is_simple_dimension() == false);
 		CHECK(a38.is_base_dimension() == false);
-		CHECK(a38.is_derived_dimension() == false);
+		CHECK(a38.is_derived_dimension() == true);
+		CHECK(a38.is_SI_base_dimension() == false);
+		CHECK(a38.is_SI_derived_dimension() == false);
 		dimension a39(dimension::DALTON,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a39.get_name() == "dalton");
 		CHECK(a39.get_plural() == "daltons");
@@ -591,7 +673,9 @@ TEST_CASE("dimension class") {
 		CHECK(a39.get_conversion_factor() == 0.00000000000000000000000000166053886l);
 		CHECK(a39.is_simple_dimension() == true);
 		CHECK(a39.is_base_dimension() == false);
-		CHECK(a39.is_derived_dimension() == false);
+		CHECK(a39.is_derived_dimension() == true);
+		CHECK(a39.is_SI_base_dimension() == false);
+		CHECK(a39.is_SI_derived_dimension() == false);
 		dimension a40(dimension::ATOMIC_MASS_UNIT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a40.get_name() == "atomic mass unit");
 		CHECK(a40.get_plural() == "atomic mass units");
@@ -599,7 +683,9 @@ TEST_CASE("dimension class") {
 		CHECK(a40.get_conversion_factor() == 0.00000000000000000000000000166053886l);
 		CHECK(a40.is_simple_dimension() == true);
 		CHECK(a40.is_base_dimension() == false);
-		CHECK(a40.is_derived_dimension() == false);
+		CHECK(a40.is_derived_dimension() == true);
+		CHECK(a40.is_SI_base_dimension() == false);
+		CHECK(a40.is_SI_derived_dimension() == false);
 		dimension a41(dimension::BARN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a41.get_name() == "barn");
 		CHECK(a41.get_plural() == "barns");
@@ -607,7 +693,9 @@ TEST_CASE("dimension class") {
 		CHECK(a41.get_conversion_factor() == 0.0000000000000000000000000001l);
 		CHECK(a41.is_simple_dimension() == false);
 		CHECK(a41.is_base_dimension() == false);
-		CHECK(a41.is_derived_dimension() == false);
+		CHECK(a41.is_derived_dimension() == true);
+		CHECK(a41.is_SI_base_dimension() == false);
+		CHECK(a41.is_SI_derived_dimension() == false);
 		dimension a42(dimension::MOLARITY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a42.get_name() == "molarity");
 		CHECK(a42.get_plural() == "molarities");
@@ -615,7 +703,9 @@ TEST_CASE("dimension class") {
 		CHECK(a42.get_conversion_factor() == 1.0l);
 		CHECK(a42.is_simple_dimension() == false);
 		CHECK(a42.is_base_dimension() == false);
-		CHECK(a42.is_derived_dimension() == false);
+		CHECK(a42.is_derived_dimension() == true);
+		CHECK(a42.is_SI_base_dimension() == false);
+		CHECK(a42.is_SI_derived_dimension() == false);
 		dimension a43(dimension::PARTICLES,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a43.get_name() == "particles");
 		CHECK(a43.get_plural() == "particles");
@@ -623,7 +713,9 @@ TEST_CASE("dimension class") {
 		CHECK(a43.get_conversion_factor() == 1l/AVOGADRO_CONSTANT);
 		CHECK(a43.is_simple_dimension() == true);
 		CHECK(a43.is_base_dimension() == false);
-		CHECK(a43.is_derived_dimension() == false);
+		CHECK(a43.is_derived_dimension() == true);
+		CHECK(a43.is_SI_base_dimension() == false);
+		CHECK(a43.is_SI_derived_dimension() == false);
 		/*dimension a44("hello",dimension::NUMERATOR);
 		CHECK(a44.get_name() == "custom-dimension");
 		CHECK(a44.get_symbol() == "hello");
@@ -631,6 +723,8 @@ TEST_CASE("dimension class") {
 		CHECK(a44.is_simple_dimension() == false);
 		CHECK(a44.is_base_dimension() == false);
 		CHECK(a44.is_derived_dimension() == false);
+		CHECK(a44.is_SI_base_dimension() == false);
+		CHECK(a44.is_SI_derived_dimension() == false);
 		dimension a45(dimension::CUSTOM_BASIC,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a45.get_name() == "custom-basic");
 		CHECK(a45.get_symbol() == "custom-basic");
@@ -638,21 +732,27 @@ TEST_CASE("dimension class") {
 		CHECK(a45.is_simple_dimension() == false);
 		CHECK(a45.is_base_dimension() == false);
 		CHECK(a45.is_derived_dimension() == false);
+		CHECK(a45.is_SI_base_dimension() == false);
+		CHECK(a45.is_SI_derived_dimension() == false);
 		dimension a46(dimension::CUSTOM_FULL_SYMBOL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a46.get_name() == "custom-full-symbol");
 		CHECK(a46.get_symbol() == "");
 		CHECK(a46.get_conversion_factor() == 1.0);
 		CHECK(a46.is_simple_dimension() == false);
 		CHECK(a46.is_base_dimension() == false);
-		CHECK(a46.is_derived_dimension() == false);*/
+		CHECK(a46.is_derived_dimension() == false);
+		CHECK(a46.is_SI_base_dimension() == false);
+		CHECK(a46.is_SI_derived_dimension() == false);*/
 		dimension a47(dimension::MONEY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a47.get_name() == "money");
 		CHECK(a47.get_plural() == "money");
 		CHECK(a47.get_symbol() == "money");
 		CHECK(a47.get_conversion_factor() == 1.0l);
 		CHECK(a47.is_simple_dimension() == true);
-		CHECK(a47.is_base_dimension() == false);
+		CHECK(a47.is_base_dimension() == true);
 		CHECK(a47.is_derived_dimension() == false);
+		CHECK(a47.is_SI_base_dimension() == false);
+		CHECK(a47.is_SI_derived_dimension() == false);
 		dimension a48(dimension::PIXEL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a48.get_name() == "pixel");
 		CHECK(a48.get_plural() == "pixels");
@@ -660,15 +760,19 @@ TEST_CASE("dimension class") {
 		CHECK(a48.get_conversion_factor() == 0.00026l);
 		CHECK(a48.is_simple_dimension() == true);
 		CHECK(a48.is_base_dimension() == false);
-		CHECK(a48.is_derived_dimension() == false);
+		CHECK(a48.is_derived_dimension() == true);
+		CHECK(a48.is_SI_base_dimension() == false);
+		CHECK(a48.is_SI_derived_dimension() == false);
 		dimension a49(dimension::MEMO,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a49.get_name() == "memo");
 		CHECK(a49.get_plural() == "memos");
 		CHECK(a49.get_symbol() == "memo");
 		CHECK(a49.get_conversion_factor() == 1.0l);
 		CHECK(a49.is_simple_dimension() == true);
-		CHECK(a49.is_base_dimension() == false);
+		CHECK(a49.is_base_dimension() == true);
 		CHECK(a49.is_derived_dimension() == false);
+		CHECK(a49.is_SI_base_dimension() == false);
+		CHECK(a49.is_SI_derived_dimension() == false);
 	}
 
 	SECTION("get_fullname() and get_fullplural()")
@@ -904,7 +1008,7 @@ TEST_CASE("dimension class") {
 		CHECK(a.get_symbol() == "usd");
 		CHECK(a.get_conversion_factor() == 1.0l);
 		CHECK(a.is_simple_dimension() == false);
-		CHECK(a.is_base_dimension() == false);
+		CHECK(a.is_SI_base_dimension() == false);
 		CHECK(equal_dimensions(a.get_simple_dimensions(),b));
 		dimension a2("long-dimension",dimension::NUMERATOR);
 		vector<dimension> b2 = { dimension("long-dimension",dimension::NUMERATOR) };
@@ -912,7 +1016,7 @@ TEST_CASE("dimension class") {
 		CHECK(a2.get_symbol() == "long-dimension");
 		CHECK(a2.get_conversion_factor() == 1.0l);
 		CHECK(a2.is_simple_dimension() == false);
-		CHECK(a2.is_base_dimension() == false);
+		CHECK(a2.is_SI_base_dimension() == false);
 		CHECK(equal_dimensions(a2.get_simple_dimensions(),b2));
 	}
 

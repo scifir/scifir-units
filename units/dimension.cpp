@@ -953,6 +953,130 @@ namespace scifir
 			case dimension::DEGREE:
 				return false;
 			case dimension::RADIAN:
+				return true;
+			case dimension::STERADIAN:
+				return true;
+			case dimension::GRAM:
+				return true;
+			case dimension::SECOND:
+				return true;
+			case dimension::COULOMB:
+				return true;
+			case dimension::KELVIN:
+				return true;
+			case dimension::MOLE:
+				return true;
+			case dimension::CANDELA:
+				return true;
+			case dimension::BYTE:
+				return true;
+			case dimension::BIT:
+				return false;
+			case dimension::HERTZ:
+				return false;
+			case dimension::NEWTON:
+				return false;
+			case dimension::PASCAL:
+				return false;
+			case dimension::JOULE:
+				return false;
+			case dimension::WATT:
+				return false;
+			case dimension::AMPERE:
+				return false;
+			case dimension::VOLT:
+				return false;
+			case dimension::FARAD:
+				return false;
+			case dimension::OHM:
+				return false;
+			case dimension::SIEMENS:
+				return false;
+			case dimension::WEBER:
+				return false;
+			case dimension::TESLA:
+				return false;
+			case dimension::HENRY:
+				return false;
+			case dimension::LUMEN:
+				return false;
+			case dimension::LUX:
+				return false;
+			case dimension::BECQUEREL:
+				return false;
+			case dimension::GRAY:
+				return false;
+			case dimension::SIEVERT:
+				return false;
+			case dimension::KATAL:
+				return false;
+			case dimension::ANGSTROM:
+				return false;
+			case dimension::LITRE:
+				return false;
+			case dimension::MINUTE:
+				return false;
+			case dimension::HOUR:
+				return false;
+			case dimension::DAY:
+				return false;
+			case dimension::LIGHT_YEAR:
+				return false;
+			case dimension::ASTRONOMICAL_UNIT:
+				return false;
+			case dimension::PARSEC:
+				return false;
+			case dimension::ELECTRON_VOLT:
+				return false;
+			case dimension::DALTON:
+				return false;
+			case dimension::ATOMIC_MASS_UNIT:
+				return false;
+			case dimension::BARN:
+				return false;
+			case dimension::MOLARITY:
+				return false;
+			case dimension::PARTICLES:
+				return false;
+			case dimension::CUSTOM:
+				return false;
+			case dimension::CUSTOM_BASIC:
+				return true;
+			case dimension::CUSTOM_FULL_SYMBOL:
+				return false;
+			case dimension::MONEY:
+				return true;
+			case dimension::PIXEL:
+				return false;
+			case dimension::MEMO:
+				return true;
+		}
+		return false;
+	}
+
+	bool dimension::is_derived_dimension() const
+	{
+		if (dimension_type == dimension::NONE)
+		{
+			return false;
+		}
+		else
+		{
+			return !is_base_dimension();
+		}
+	}
+
+	bool dimension::is_SI_base_dimension() const
+	{
+		switch(dimension_type)
+		{
+			case dimension::NONE:
+				return false;
+			case dimension::METRE:
+				return true;
+			case dimension::DEGREE:
+				return false;
+			case dimension::RADIAN:
 				return false;
 			case dimension::STERADIAN:
 				return false;
@@ -1054,7 +1178,7 @@ namespace scifir
 		return false;
 	}
 
-	bool dimension::is_derived_dimension() const
+	bool dimension::is_SI_derived_dimension() const
 	{
 		switch(dimension_type)
 		{

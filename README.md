@@ -586,11 +586,13 @@ N-dimensions, inside scifir-units, are called **ND** in classnames. ND classes a
 
 ### Dimensions
 
-Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units. Different to that, a **simple dimension** is a dimension without any simple dimension more derived from it. That's, a simple dimension is a dimension that's not an special name of two or more other dimensions.
+A **SI base dimension** is a base dimension under the SI system of units. A **SI derived dimension** is a derived dimension under the SI system of units.
+
+Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units, excepting AMPERE, which has been changed by COULOMG, among other dimensions more. The other base dimensions inside scifir-units are RADIAN, STERADIAN, BYTE, MONEY, MEMO, and all CUSTOM_BASIC dimensions. A **derived dimension** is any dimension that's not a base dimension.
+
+Different to that, a **simple dimension** is a dimension with only one base dimension. A **composite dimension** is a dimension with more than one base dimension.
 
 A dimension is a **special name** if it has a symbol that means one or more base dimensions of the SI system of units, that's used instead of them. Inside scifir-units, it's called **abbreviation** a special name that's not part of the SI system of units, but instead a special name taken from any other system.
-
-A **derived dimension** is, under the SI system of units, a dimension that's not a base dimension. A **composite dimension** is a dimension that's not a simple dimension.
 
 A **single dimension** is a scalar unit or vector unit that has only one dimension, which can be any simple dimension or composite dimension, it's only needed to don't be more than one dimension present in the same unit.
 
