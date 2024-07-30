@@ -169,7 +169,9 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - **Movement:** Electronic motor (very different sizes available).
 - **Valve:** Electronic valve.
 
-### Constants of the SI system
+### Constants
+
+#### Constants of the SI system of units
 
 All constants of the SI system of units are implemeneted inside scifir-units, in the file **units/constants.hpp**. They are all **long double** types, use them to calculate anything you need.
 
@@ -182,6 +184,18 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 | BOLTZMANN_CONSTANT | $$1.380649×10^{−23} \  J/K$$
 | AVOGADRO_CONSTANT | $$6.02214076×10^{23} \  mol^{−1}$$
 | LUMINOUS_EFFICACY_OF_540_THZ_RADIATION | $$683 \  lm/W$$
+
+#### Important science constants
+
+| Constant | Value | Description
+| ------ | ------ | ---------------
+| GRAVITATIONAL_CONSTANT | $$6.6743×10^{-11} \  N*m2/kg2$$ | Proportionality constant connecting the gravitational force between two bodies.
+| MOLAR_GAS_CONSTANT | $$8.31446261815324 \  J/K*mol$$ | Used the law of ideal gas. Energy per temperature increment per amount of substance.
+| ATOMIC_MASS_CONSTANT | $$1.66053906660×10^{-27} \  Da$$ | Mass of an atom.
+| COULOMB_CONSTANT | $$8.9875517873681764×10^9 \  N*m2/C2$$ | Constant of proportionality for the electrical variables.
+| VACUUM_PERMITTIVITY | $$8.8541878188×10^{-12} \  F/m$$ | Value of the asbolute dielectric permittivity of classical vacuum.
+| RYDBERG_CONSTANT | $$1.0973731568539×10^7 \  1/m$$ | Relates the electromagnetic spectra of an atom.
+| FARADAY_CONSTANT | $$9.64853321233100184×10^4 \  C/mol$$ | It's the electric charge of one mole of elementary carriers.
 
 ### Folder structure
 
@@ -904,7 +918,7 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | temperature | K | scalar_unit | _K and _TK, _kK, etc (all prefixes supported) | Measures the temperature. The temperature corresponds to the movement of molecules.
 | mole | mol | scalar_unit | _mol and _Tmol, _kmol, etc (all prefixes supported). Also, use _particles for specifying an exact amount of particles. | Amount of matter, by number.
 | light_intensity | cd | scalar_unit | _cd and _Tcd, _kcd, etc (all prefixes supported) | Intensity of light.
-| data | B | scalar_unit | _B and _TB, _kB, etc (all prefixes supported) | Amount of information.
+| information_size | B | scalar_unit | _B and _TB, _kB, etc (all prefixes supported) | Amount of information.
 
 #### Space units
 
