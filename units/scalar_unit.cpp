@@ -234,10 +234,10 @@ namespace scifir
 				remove_dimension(actual_dimension);
 				if(actual_dimension.is_composite_dimension())
 				{
-					vector<dimension> derived_dimensions = actual_dimension.get_base_dimensions();
-					for(const dimension& derived_dimension : derived_dimensions)
+					vector<dimension> base_dimensions = actual_dimension.get_base_dimensions();
+					for(const dimension& base_dimension : base_dimensions)
 					{
-						remove_dimension(derived_dimension);
+						remove_dimension(base_dimension);
 					}
 				}
 			}
@@ -258,10 +258,10 @@ namespace scifir
 				add_dimension(new_dimension);
 				if(new_dimension.is_composite_dimension())
 				{
-					vector<dimension> new_derived_dimensions = new_dimension.get_base_dimensions();
-					for(const dimension& new_derived_dimension : new_derived_dimensions)
+					vector<dimension> new_base_dimensions = new_dimension.get_base_dimensions();
+					for(const dimension& new_base_dimension : new_base_dimensions)
 					{
-						add_dimension(new_derived_dimension);
+						add_dimension(new_base_dimension);
 					}
 				}
 			}
@@ -286,10 +286,10 @@ namespace scifir
 				remove_dimension(actual_dimension);
 				if(actual_dimension.is_composite_dimension())
 				{
-					vector<dimension> derived_dimensions = actual_dimension.get_base_dimensions();
-					for(const dimension& derived_dimension : derived_dimensions)
+					vector<dimension> base_dimensions = actual_dimension.get_base_dimensions();
+					for(const dimension& base_dimension : base_dimensions)
 					{
-						remove_dimension(derived_dimension);
+						remove_dimension(base_dimension);
 					}
 				}
 			}
@@ -310,10 +310,10 @@ namespace scifir
 				add_dimension(new_dimension);
 				if(new_dimension.is_composite_dimension())
 				{
-					vector<dimension> new_derived_dimensions = new_dimension.get_base_dimensions();
-					for(const dimension& new_derived_dimension : new_derived_dimensions)
+					vector<dimension> new_base_dimensions = new_dimension.get_base_dimensions();
+					for(const dimension& new_base_dimension : new_base_dimensions)
 					{
-						add_dimension(new_derived_dimension);
+						add_dimension(new_base_dimension);
 					}
 				}
 			}
@@ -427,7 +427,7 @@ namespace scifir
 		}
 	}
 
-	vector<dimension> scalar_unit::get_derived_dimensions() const
+	vector<dimension> scalar_unit::get_base_dimensions() const
 	{
 		return create_base_dimensions(dimensions);
 	}
@@ -461,24 +461,24 @@ namespace scifir
 		return output.str();
 	}
 
-	string scalar_unit::derived_display(int number_of_decimals,bool with_brackets,bool use_close_prefix) const
+	string scalar_unit::base_display(int number_of_decimals,bool with_brackets,bool use_close_prefix) const
 	{
 		ostringstream output;
 		long double x_value = get_value();
-		vector<dimension> derived_dimensions = create_base_dimensions(dimensions,x_value);
-		if (derived_dimensions.size() == 1 and use_close_prefix == true)
+		vector<dimension> base_dimensions = create_base_dimensions(dimensions,x_value);
+		if (base_dimensions.size() == 1 and use_close_prefix == true)
 		{
 			int value_scale = int(log10(get_value()));
-			prefix display_prefix = closest_prefix(derived_dimensions[0].prefix,value_scale);
-			x_value *= derived_dimensions[0].prefix_math();
-			x_value /= derived_dimensions[0].prefix_math(display_prefix);
-			vector<dimension> x_dimensions = derived_dimensions;
+			prefix display_prefix = closest_prefix(base_dimensions[0].prefix,value_scale);
+			x_value *= base_dimensions[0].prefix_math();
+			x_value /= base_dimensions[0].prefix_math(display_prefix);
+			vector<dimension> x_dimensions = base_dimensions;
 			x_dimensions[0].prefix = display_prefix;
-			output << display_float(float(x_value),number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
+			output << display_float(float(x_value),number_of_decimals) << " " << to_string(base_dimensions,with_brackets);
 		}
 		else
 		{
-			output << display_float(float(x_value),number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
+			output << display_float(float(x_value),number_of_decimals) << " " << to_string(base_dimensions,with_brackets);
 		}
 		return output.str();
 	}
@@ -503,8 +503,8 @@ namespace scifir
 					new_value /= x_dimension.prefix_math();
 				}
 			}
-			vector<dimension> derived_dimensions = create_base_dimensions(dimensions);
-			for(const dimension& x_dimension : derived_dimensions)
+			vector<dimension> base_dimensions = create_base_dimensions(dimensions);
+			for(const dimension& x_dimension : base_dimensions)
 			{
 				if (x_dimension.dimension_position == dimension::NUMERATOR)
 				{

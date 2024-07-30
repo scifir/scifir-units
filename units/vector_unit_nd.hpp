@@ -224,7 +224,7 @@ namespace scifir
 			void invert();
 
 			string vectorial_display(int number_of_decimals = 2) const;
-			string vectorial_derived_display(int number_of_decimals = 2) const;
+			string vectorial_base_display(int number_of_decimals = 2) const;
 			string vectorial_custom_display(const string& init_dimensions,int number_of_decimals = 2) const;
 
 			vector<angle> angles;

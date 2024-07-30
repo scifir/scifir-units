@@ -365,10 +365,10 @@ namespace scifir
 		return out.str();
 	}
 
-	string vector_unit_3d::vectorial_derived_display(int number_of_decimals) const
+	string vector_unit_3d::vectorial_base_display(int number_of_decimals) const
 	{
 		ostringstream out;
-		out << derived_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "θ " << display_float(phi.get_value(),number_of_decimals) << "Φ";
+		out << base_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "θ " << display_float(phi.get_value(),number_of_decimals) << "Φ";
 		return out.str();
 	}
 
@@ -391,10 +391,10 @@ namespace scifir
 		return out.str();
 	}
 
-	string vector_unit_3d::vectorial_derived_display(int number_of_decimals) const
+	string vector_unit_3d::vectorial_base_display(int number_of_decimals) const
 	{
 		ostringstream out;
-		out << derived_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "θ " << display_float(phi.get_value(),number_of_decimals) << "Φ";
+		out << base_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "θ " << display_float(phi.get_value(),number_of_decimals) << "Φ";
 		return out.str();
 	}
 

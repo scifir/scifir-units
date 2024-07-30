@@ -697,10 +697,10 @@ namespace scifir
 		return out.str();
 	}
 
-	string vector_unit_nd::vectorial_derived_display(int number_of_decimals) const
+	string vector_unit_nd::vectorial_base_display(int number_of_decimals) const
 	{
 		ostringstream out;
-		out << derived_display(number_of_decimals);
+		out << base_display(number_of_decimals);
 		for (const angle& x_angle : angles)
 		{
 			out << " " << x_angle.display(number_of_decimals);

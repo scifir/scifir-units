@@ -1,7 +1,7 @@
 /** \class scifir::scalar_unit
 * \brief Class that allows to create scalar units, which are composed of a value (as a float) and dimensions. The dimensions can be of any number, and be simple dimensions, composite dimensions and/or special names of dimensions. **Initialization string** example: "1 N".
 
-* scalar_unit is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its special names. The special names can be converted to its equivalent dimensions, too. scalar_unit classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its derived dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly.
+* scalar_unit is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its special names. The special names can be converted to its equivalent dimensions, too. scalar_unit classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its base dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly.
 * POSSIBLE FEATURES
 * At the present scalar_unit classes use a vector<dimension> to allow to have any number of dimensions, which can be simple, composite or special names. In order to size less, it's possible for some scalar_unit classes to have only one dimension, instead of a vector, that saves memory. With that approach, the dimension needs only 3 bytes. The possibility to switch between a single dimension and a vector<dimension> doesn't yet exists in C++, and so this important feature has been postposed.
 
@@ -154,8 +154,8 @@
 * \fn dimension::type scalar_unit::get_single_dimension_type() const
 * \brief Returns the dimension::type if there's only one dimension, returns dimension::NONE if there's more than one dimension or if the dimensions are empty.
 
-* \fn vector<dimension> scalar_unit::get_derived_dimensions() const
-* \brief Generates a set of the derived dimensions of the dimensions of the scalar_unit.
+* \fn vector<dimension> scalar_unit::get_base_dimensions() const
+* \brief Generates a set of the base dimensions of the dimensions of the scalar_unit.
 
 * \fn const vector<dimension>& scalar_unit::get_dimensions() const
 * \brief Read-only getter of the dimensions.
@@ -166,8 +166,8 @@
 * \fn string scalar_unit::display(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const
 * \brief Generates a string representation of the scalar_unit, with the value and the dimensions. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix.
 
-* \fn string scalar_unit::derived_display(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const
-* \brief Generates a string representation of the scalar_unit, with all dimensions converted to their derived counterpart.
+* \fn string scalar_unit::base_display(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const
+* \brief Generates a string representation of the scalar_unit, with its dimensions converted to their base counterpart.
 
 * \fn string scalar_unit::custom_display(const string& init_dimensions, int number_of_decimals=2, bool with_brackets=false) const
 * \brief Generates a string representation of the scalar_unit, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions.

@@ -208,7 +208,7 @@ TEST_CASE("class vector_unit_2d")
 	{
 		vector_unit_2d a(1.0f,"N",20);
 		CHECK(a.vectorial_display() == "1 N 20θ");
-		CHECK(a.vectorial_derived_display() == "1 kg*m/s2 20θ");
+		CHECK(a.vectorial_base_display() == "1 kg*m/s2 20θ");
 		CHECK(a.vectorial_custom_display("g*m/s2") == "1000 g*m/s2 20θ");
 	}
 
@@ -269,7 +269,7 @@ TEST_CASE("class vector_unit_2d")
 	{
 		vector_unit_2d a(1.0f,"N",20);
 		CHECK(a.vectorial_display() == "1 N 20θ");
-		CHECK(a.vectorial_derived_display() == "1 kg*m/s2 20θ");
+		CHECK(a.vectorial_base_display() == "1 kg*m/s2 20θ");
 		CHECK(a.vectorial_custom_display("g*m/s2") == "1000 g*m/s2 20θ");
 	}
 

@@ -2062,15 +2062,15 @@ namespace scifir
 
 	bool equal_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
-		vector<dimension> x_derived_dimensions = create_base_dimensions(x);
-		vector<dimension> y_derived_dimensions = create_base_dimensions(y);
-		if (x_derived_dimensions.size() == y_derived_dimensions.size())
+		vector<dimension> x_base_dimensions = create_base_dimensions(x);
+		vector<dimension> y_base_dimensions = create_base_dimensions(y);
+		if (x_base_dimensions.size() == y_base_dimensions.size())
 		{
 			vector<unsigned int> skip = vector<unsigned int>();
-			for (const dimension& x_dimension: x_derived_dimensions)
+			for (const dimension& x_dimension: x_base_dimensions)
 			{
 				bool is_equal = false;
-				for (unsigned int j = 0; j < y_derived_dimensions.size(); j++)
+				for (unsigned int j = 0; j < y_base_dimensions.size(); j++)
 				{
 					bool skip_j = false;
 					if (skip.size() > 0)
@@ -2087,7 +2087,7 @@ namespace scifir
 					{
 						continue;
 					}
-					if (x_dimension.dimension_type == y_derived_dimensions[j].dimension_type and x_dimension.dimension_position == y_derived_dimensions[j].dimension_position)
+					if (x_dimension.dimension_type == y_base_dimensions[j].dimension_type and x_dimension.dimension_position == y_base_dimensions[j].dimension_position)
 					{
 						skip.push_back(j);
 						is_equal = true;

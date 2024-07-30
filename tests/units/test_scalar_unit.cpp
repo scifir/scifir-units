@@ -282,7 +282,7 @@ TEST_CASE("scalar_unit class") {
 		scalar_unit d = 10_N/5_N;
 		CHECK(d.display_dimensions() == "[empty]");
 		scalar_unit e = 2_N;
-		CHECK(to_string(e.get_derived_dimensions()) == "kg*m/s2");
+		CHECK(to_string(e.get_base_dimensions()) == "kg*m/s2");
 		scalar_unit f("2 m2");
 		CHECK(f.display_dimensions() == "m2");
 	}
@@ -303,19 +303,19 @@ TEST_CASE("scalar_unit class") {
 	{
 		scalar_unit a(1.0f,"N");
 		CHECK(a.display() == "1 N");
-		CHECK(a.derived_display() == "1 kg*m/s2");
+		CHECK(a.base_display() == "1 kg*m/s2");
 		CHECK(a.custom_display("g*m/s2") == "1000 g*m/s2");
 		scalar_unit b("100 m");
 		CHECK(b.display() == "100 m");
 		CHECK(b.display(2,false,true) == "1 hm");
 		scalar_unit c("10 N");
-		CHECK(c.derived_display(2,false,true) == "10 kg*m/s2");
+		CHECK(c.base_display(2,false,true) == "10 kg*m/s2");
 		scalar_unit c2("100 °C");
-		CHECK(c2.derived_display(2,false,false) == "373.14 K");
+		CHECK(c2.base_display(2,false,false) == "373.14 K");
 		scalar_unit d("0 m");
 		CHECK(d.display(2,false,true) == "0 m");
 		scalar_unit e("1 AU");
-		CHECK(e.derived_display(2,false,true) == "1.49598e+11 m");
+		CHECK(e.base_display(2,false,true) == "1.49598e+11 m");
 		scalar_unit f("1 km/hour");
 		CHECK(f.custom_display("m/s",2,true) == "0.27 [m/s]");
 		scalar_unit g = 373.15_K;
