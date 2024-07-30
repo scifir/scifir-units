@@ -255,6 +255,20 @@ TEST_CASE("scalar_unit class") {
 		scalar_unit f("8 bit");
 		f.change_dimensions("B");
 		CHECK(bool(f == "1 B"));
+		scalar_unit g = 100_celsius;
+		g.change_dimensions("K");
+		CHECK(bool(g == "373.15 K"));
+		scalar_unit h = 373.15_K;
+		h.change_dimensions("°C");
+		CHECK(bool(h == "100 °C"));
+		scalar_unit i = 100_celsius;
+		scalar_unit i2 = 100_K;
+		i.change_dimensions(i2);
+		CHECK(bool(i == "373.15 K"));
+		scalar_unit j = 373.15_K;
+		scalar_unit j2 = 100_celsius;
+		j.change_dimensions(j2);
+		CHECK(bool(j == "100 °C"));
 	}
 
 	SECTION("display_dimensions() of scalar_unit class")
@@ -296,12 +310,20 @@ TEST_CASE("scalar_unit class") {
 		CHECK(b.display(2,false,true) == "1 hm");
 		scalar_unit c("10 N");
 		CHECK(c.derived_display(2,false,true) == "10 kg*m/s2");
+		scalar_unit c2("100 °C");
+		CHECK(c2.derived_display(2,false,false) == "373.14 K");
 		scalar_unit d("0 m");
 		CHECK(d.display(2,false,true) == "0 m");
 		scalar_unit e("1 AU");
 		CHECK(e.derived_display(2,false,true) == "1.49598e+11 m");
 		scalar_unit f("1 km/hour");
 		CHECK(f.custom_display("m/s",2,true) == "0.27 [m/s]");
+		scalar_unit g = 373.15_K;
+		CHECK(g.custom_display("°C",2,false) == "99.99 °C");
+		CHECK(g.custom_display("K",2,false) == "373.14 K");
+		scalar_unit h = 100_celsius;
+		CHECK(h.custom_display("°C",2,false) == "100 °C");
+		CHECK(h.custom_display("K",2,false) == "373.14 K");
 		//CHECK(f.custom_display("sci") == "1000e0 m/h");
 	}
 

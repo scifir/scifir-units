@@ -241,6 +241,17 @@ namespace scifir
 					}
 				}
 			}
+			if (dimensions.size() == 1)
+			{
+				if (dimensions[0].dimension_type == dimension::CELSIUS and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::KELVIN and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+				{
+					value += 273.15f;
+				}
+				else if (dimensions[0].dimension_type == dimension::KELVIN and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::CELSIUS and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+				{
+					value -= 273.15f;
+				}
+			}
 			dimensions.clear();
 			for(const dimension& new_dimension : new_dimensions)
 			{
@@ -280,6 +291,17 @@ namespace scifir
 					{
 						remove_dimension(derived_dimension);
 					}
+				}
+			}
+			if (dimensions.size() == 1 and x.get_dimensions().size() == 1)
+			{
+				if (dimensions[0].dimension_type == dimension::CELSIUS and dimensions[0].dimension_position == dimension::NUMERATOR and x.get_dimensions()[0].dimension_type == dimension::KELVIN and x.get_dimensions()[0].dimension_position == dimension::NUMERATOR)
+				{
+					value += 273.15f;
+				}
+				else if (dimensions[0].dimension_type == dimension::KELVIN and dimensions[0].dimension_position == dimension::NUMERATOR and x.get_dimensions()[0].dimension_type == dimension::CELSIUS and x.get_dimensions()[0].dimension_position == dimension::NUMERATOR)
+				{
+					value -= 273.15f;
 				}
 			}
 			dimensions.clear();
@@ -491,6 +513,17 @@ namespace scifir
 				else if (x_dimension.dimension_position == dimension::DENOMINATOR)
 				{
 					new_value /= x_dimension.prefix_math();
+				}
+			}
+			if (dimensions.size() == 1 and new_dimensions.size() == 1)
+			{
+				if (dimensions[0].dimension_type == dimension::CELSIUS and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::KELVIN and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+				{
+					new_value += 273.15l;
+				}
+				else if (dimensions[0].dimension_type == dimension::KELVIN and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::CELSIUS and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+				{
+					new_value -= 273.15l;
 				}
 			}
 			for(const dimension& x_new_dimension : new_dimensions)

@@ -350,6 +350,8 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_rH == "100 rH"));
 		CHECK(bool(100_qH == "100 qH"));
 
+		CHECK(bool(100_celsius == "100 °C"));
+
 		CHECK(bool(100_Qlm == "100 Qlm"));
 		CHECK(bool(100_Rlm == "100 Rlm"));
 		CHECK(bool(100_Ylm == "100 Ylm"));
@@ -843,6 +845,8 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_yH == "100 yH"));
 		CHECK(bool(100.0_rH == "100 rH"));
 		CHECK(bool(100.0_qH == "100 qH"));
+
+		CHECK(bool(100.0_celsius == "100 °C"));
 
 		CHECK(bool(100.0_Qlm == "100 Qlm"));
 		CHECK(bool(100.0_Rlm == "100 Rlm"));

@@ -347,6 +347,8 @@ scifir::inductance operator"" _yH(unsigned long long int);
 scifir::inductance operator"" _rH(unsigned long long int);
 scifir::inductance operator"" _qH(unsigned long long int);
 
+scifir::temperature operator"" _celsius(unsigned long long int);
+
 scifir::luminous_flux operator"" _Qlm(unsigned long long int);
 scifir::luminous_flux operator"" _Rlm(unsigned long long int);
 scifir::luminous_flux operator"" _Ylm(unsigned long long int);
@@ -840,6 +842,8 @@ scifir::inductance operator"" _zH(long double);
 scifir::inductance operator"" _yH(long double);
 scifir::inductance operator"" _rH(long double);
 scifir::inductance operator"" _qH(long double);
+
+scifir::temperature operator"" _celsius(long double);
 
 scifir::luminous_flux operator"" _Qlm(long double);
 scifir::luminous_flux operator"" _Rlm(long double);

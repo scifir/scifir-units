@@ -88,6 +88,8 @@ TEST_CASE("dimension class") {
 		CHECK(a6.dimension_type == dimension::COULOMB);
 		dimension a7("K",dimension::NUMERATOR);
 		CHECK(a7.dimension_type == dimension::KELVIN);
+		dimension a7_2("°C",dimension::NUMERATOR);
+		CHECK(a7_2.dimension_type == dimension::CELSIUS);
 		dimension a8("mol",dimension::NUMERATOR);
 		CHECK(a8.dimension_type == dimension::MOLE);
 		dimension a9("cd",dimension::NUMERATOR);
@@ -346,6 +348,16 @@ TEST_CASE("dimension class") {
 		CHECK(a8.is_derived_dimension() == false);
 		CHECK(a8.is_SI_base_dimension() == true);
 		CHECK(a8.is_SI_derived_dimension() == false);
+		dimension a8_2(dimension::CELSIUS,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a8_2.get_name() == "celsius");
+		CHECK(a8_2.get_plural() == "celsius");
+		CHECK(a8_2.get_symbol() == "°C");
+		CHECK(a8_2.get_conversion_factor() == 1.0l);
+		CHECK(a8_2.is_simple_dimension() == true);
+		CHECK(a8_2.is_base_dimension() == false);
+		CHECK(a8_2.is_derived_dimension() == true);
+		CHECK(a8_2.is_SI_base_dimension() == false);
+		CHECK(a8_2.is_SI_derived_dimension() == true);
 		dimension a9(dimension::MOLE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a9.get_name() == "mole");
 		CHECK(a9.get_plural() == "moles");
@@ -814,6 +826,9 @@ TEST_CASE("dimension class") {
 		dimension a7("K",dimension::NUMERATOR);
 		vector<dimension> b7 = { dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a7.get_base_dimensions(),b7));
+		dimension a7_2("°C",dimension::NUMERATOR);
+		vector<dimension> b7_2 = { dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR) };
+		CHECK(equal_dimensions(a7_2.get_base_dimensions(),b7_2));
 		dimension a8("mol",dimension::NUMERATOR);
 		vector<dimension> b8 = { dimension(dimension::MOLE,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a8.get_base_dimensions(),b8));

@@ -679,6 +679,7 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
 | ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
 | KELVIN | K | Kelvin | Kelvins | - | - | Measure of temperature.
+| CELSIUS | °C | Celsius | Celsius | 1°C = K - 273.15 | K | Measure of temperature, derived from kelvin.
 
 #### Dimensions of electricity
 
@@ -915,7 +916,7 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | time_duration | s | scalar_unit | _s and _Ts, _ks, etc (all prefixes supported). There's also _min, _hour and _day | Measures time. Intended to be used in calculations with other scalar_unit classes, for other time uses inside a code use chrono or ctime of the standard library.
 | mass | g | scalar_unit | _g and _Tg, _kg, etc (all prefixes supported). Also, _Da and _amu | Measures the mass.
 | charge | C | scalar_unit | _C and _TC, _kC, etc (all prefixes supported) | Measures the charge.
-| temperature | K | scalar_unit | _K and _TK, _kK, etc (all prefixes supported) | Measures the temperature. The temperature corresponds to the movement of molecules.
+| temperature | K | scalar_unit | _K and _TK, _kK, etc (all prefixes supported). There's also _celsius | Measures the temperature. The temperature corresponds to the movement of molecules.
 | mole | mol | scalar_unit | _mol and _Tmol, _kmol, etc (all prefixes supported). Also, use _particles for specifying an exact amount of particles. | Amount of matter, by number.
 | light_intensity | cd | scalar_unit | _cd and _Tcd, _kcd, etc (all prefixes supported) | Intensity of light.
 | information_size | B | scalar_unit | _B and _TB, _kB, etc (all prefixes supported) | Amount of information.

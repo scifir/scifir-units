@@ -1625,6 +1625,11 @@ scifir::inductance operator"" _qH(unsigned long long int x)
 	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
+scifir::temperature operator"" _celsius(unsigned long long int x)
+{
+	return scifir::temperature((long double)x, { scifir::dimension(scifir::dimension::CELSIUS,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+}
+
 scifir::luminous_flux operator"" _Qlm(unsigned long long int x)
 {
 	return scifir::luminous_flux((long double)x, { scifir::dimension(scifir::dimension::LUMEN,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
@@ -3998,6 +4003,11 @@ scifir::inductance operator"" _rH(long double x)
 scifir::inductance operator"" _qH(long double x)
 {
 	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::temperature operator"" _celsius(long double x)
+{
+	return scifir::temperature(x, { scifir::dimension(scifir::dimension::CELSIUS,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Qlm(long double x)

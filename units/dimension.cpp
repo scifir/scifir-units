@@ -108,6 +108,10 @@ namespace scifir
 		{
 			dimension_type = dimension::KELVIN;
 		}
+		else if(dimension_name == "°C")
+		{
+			dimension_type = dimension::CELSIUS;
+		}
 		else if(dimension_name == "mol")
 		{
 			dimension_type = dimension::MOLE;
@@ -357,6 +361,8 @@ namespace scifir
 				return "coulomb";
 			case dimension::KELVIN:
 				return "kelvin";
+			case dimension::CELSIUS:
+				return "celsius";
 			case dimension::MOLE:
 				return "mole";
 			case dimension::CANDELA:
@@ -474,6 +480,8 @@ namespace scifir
 				return "coulombs";
 			case dimension::KELVIN:
 				return "kelvins";
+			case dimension::CELSIUS:
+				return "celsius";
 			case dimension::MOLE:
 				return "moles";
 			case dimension::CANDELA:
@@ -596,6 +604,8 @@ namespace scifir
 				return "C";
 			case dimension::KELVIN:
 				return "K";
+			case dimension::CELSIUS:
+				return "°C";
 			case dimension::MOLE:
 				return "mol";
 			case dimension::CANDELA:
@@ -717,6 +727,8 @@ namespace scifir
 			case dimension::COULOMB:
 				return 1.0l;
 			case dimension::KELVIN:
+				return 1.0l;
+			case dimension::CELSIUS:
 				return 1.0l;
 			case dimension::MOLE:
 				return 1.0l;
@@ -847,6 +859,8 @@ namespace scifir
 				return true;
 			case dimension::KELVIN:
 				return true;
+			case dimension::CELSIUS:
+				return true;
 			case dimension::MOLE:
 				return true;
 			case dimension::CANDELA:
@@ -964,6 +978,8 @@ namespace scifir
 				return true;
 			case dimension::KELVIN:
 				return true;
+			case dimension::CELSIUS:
+				return false;
 			case dimension::MOLE:
 				return true;
 			case dimension::CANDELA:
@@ -1088,6 +1104,8 @@ namespace scifir
 				return false;
 			case dimension::KELVIN:
 				return true;
+			case dimension::CELSIUS:
+				return false;
 			case dimension::MOLE:
 				return true;
 			case dimension::CANDELA:
@@ -1200,6 +1218,8 @@ namespace scifir
 				return true;
 			case dimension::KELVIN:
 				return false;
+			case dimension::CELSIUS:
+				return true;
 			case dimension::MOLE:
 				return false;
 			case dimension::CANDELA:
@@ -1332,6 +1352,9 @@ namespace scifir
 				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::KELVIN:
+				basic_dimensions.push_back(dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case dimension::CELSIUS:
 				basic_dimensions.push_back(dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::MOLE:
@@ -1772,6 +1795,10 @@ namespace scifir
 				}
 				new_x.push_back(x_subdimension);
 			}
+		}
+		if (x.size() == 1 and x[0].dimension_type == dimension::CELSIUS and x[0].dimension_position == dimension::NUMERATOR)
+		{
+			value += 273.15l;
 		}
 		return new_x;
 	}
