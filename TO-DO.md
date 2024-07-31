@@ -22,21 +22,24 @@ SCIFIR UNITS - VERSION 2
 // TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes
 // TODO: conversion of size_t to and int gives a warning in MSVC
 // TODO: finish testing in Windows all tests
-// TODO: add the Celsius to dimension::type, add Farenheit and other dimensions as conversions
-// TODO: check the derived units here: https://en.wikipedia.org/wiki/SI_derived_unit
-// TODO: look if the SI system of units has another name for dimensions
-// TODO: function is_dimensionless() for scalar_unit, consider radian, degree and steradian dimensionless
 // TODO: think if to add biological units like alcohol by volume
-// TODO: maybe add constants like the coulomb constant
 // TODO: add the conversions of the CGS system of units, and the FPS system of units
-// TODO: function is_dimensionless() to dimension class
-// TODO: add rankine, among other constants of chemistry
-// TODO: change the name of the data class to a more precise name
-// TODO: update the documentation of github pages
-// TODO: support solid_angles, with the literal _sr too
+// TODO: support solid_angle, with the literal _sr too
+// TODO: think what to do to change dimensions with dimensionless scalar_unit classes
+// TODO: think of how to do the conversion of pixel to metre, maybe it's needed another way
+// TODO: explanation, with code examples, of physics and chemistry laws
+// TODO: function custom_display() has three loops, not two, check if that's correct
+// TODO: test initialization of dimensions with µ inside test_dimension with the constructors of dimensions with metre
+// TODO: there is a bug with is_close_prefix in base_display()
+// TODO: explain in the table of dimensions which is special name, which is base dimension, etc. Also, explain which is simple dimension and which is composite dimension. Also, explain which is SI base dimension and which is SI derived dimension
+// TODO: add the system of origin and reason of why each dimension::type is present
+// TODO: create a derived unit for international units
+// TODO: search if there are more units for pharmacology
 
 // TODO: maybe it's needed to change characters of the initialization strings of some vector_unit classes. It's needed to update the file README.md too with that
 // TODO: think of how to implement conversions, do also the test of them
+// TODO: support the conversion inside the display of scalar_unit
+// TODO: add Farenheit, Rankine and maybe other dimensions of temperature as conversions
 // TODO: check if the member-variable names of dimension class can be changed
 
 // TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their derived classes
@@ -183,6 +186,9 @@ SCIFIR UNITS - VERSION 2
 // TODO: check is string_view should be used as parameters
 // TODO: use string_view to the enum functions
 
+// CONSTANTS
+// TODO: maybe all constant values should be constexpr, and maybe there's a way to make them scalar_unit without needing to have all of them defined at the same time, because that sizes
+
 // DIMENSIONS (7)
 // TODO: support the binary prefixes too
 // TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
@@ -207,6 +213,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: function to_latex() for dimensions and scalar_unit
 // TODO: function that displays the scalar_unit as text, with the plural if the scalar_unit has a value greather than 1
 // TODO: maybe change the SI constants to be a base unit instead of a long double
+// TODO: maybe the dimension memo needs a base unit class
 
 // TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 // TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
@@ -225,6 +232,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: angle should read initialization strings in radian too inside the string constructor, maybe with "radian" name, possibly "rad" should be supported too
 // TODO: maybe add obtusangle, rect angle, acutangle, etc
 // TODO: study if to add the gradian
+// TODO: study if to add the turn
 
 // SPECIAL UNITS - EXTRA (7)
 // TODO: ip class? check networking libraries of C++ and decide if to add it here
