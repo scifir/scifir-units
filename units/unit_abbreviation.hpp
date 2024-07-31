@@ -205,6 +205,8 @@ scifir::scalar_unit operator"" _yIU(unsigned long long int);
 scifir::scalar_unit operator"" _rIU(unsigned long long int);
 scifir::scalar_unit operator"" _qIU(unsigned long long int);
 
+scifir::scalar_unit operator"" _mEq(unsigned long long int);
+
 scifir::mole operator"" _particles(unsigned long long int);
 scifir::scalar_unit operator"" _memo(unsigned long long int);
 scifir::angle operator"" _degree(unsigned long long int);
@@ -408,6 +410,8 @@ scifir::scalar_unit operator"" _zIU(long double);
 scifir::scalar_unit operator"" _yIU(long double);
 scifir::scalar_unit operator"" _rIU(long double);
 scifir::scalar_unit operator"" _qIU(long double);
+
+scifir::scalar_unit operator"" _mEq(long double);
 
 scifir::scalar_unit operator"" _memo(long double);
 scifir::angle operator"" _degree(long double);

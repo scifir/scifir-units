@@ -55,7 +55,7 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
@@ -276,6 +276,10 @@ namespace scifir
 		{
 			dimension_type = dimension::INTERNATIONAL_UNIT;
 		}
+		else if(dimension_name == "mEq")
+		{
+			dimension_type = dimension::MILLIEQUIVALENT;
+		}
 		else if(dimension_name == "")
 		{
 			dimension_type = dimension::NONE;
@@ -455,6 +459,8 @@ namespace scifir
 				return "memo";
 			case dimension::INTERNATIONAL_UNIT:
 				return "international-unit";
+			case dimension::MILLIEQUIVALENT:
+				return "milliequivalent";
 		}
 		return "";
 	}
@@ -576,6 +582,8 @@ namespace scifir
 				return "memos";
 			case dimension::INTERNATIONAL_UNIT:
 				return "international-units";
+			case dimension::MILLIEQUIVALENT:
+				return "milliequivalents";
 		}
 		return "";
 	}
@@ -712,6 +720,8 @@ namespace scifir
 				return "memo";
 			case dimension::INTERNATIONAL_UNIT:
 				return "IU";
+			case dimension::MILLIEQUIVALENT:
+				return "mEq";
 		}
 		return "";
 	}
@@ -827,6 +837,8 @@ namespace scifir
 			case dimension::MEMO:
 				return 1.0l;
 			case dimension::INTERNATIONAL_UNIT:
+				return 1.0l;
+			case dimension::MILLIEQUIVALENT:
 				return 1.0l;
 		}
 		return 1.0l;
@@ -961,6 +973,8 @@ namespace scifir
 				return true;
 			case dimension::INTERNATIONAL_UNIT:
 				return true;
+			case dimension::MILLIEQUIVALENT:
+				return true;
 		}
 		return false;
 	}
@@ -1081,6 +1095,8 @@ namespace scifir
 			case dimension::MEMO:
 				return true;
 			case dimension::INTERNATIONAL_UNIT:
+				return true;
+			case dimension::MILLIEQUIVALENT:
 				return true;
 		}
 		return false;
@@ -1210,6 +1226,8 @@ namespace scifir
 				return false;
 			case dimension::INTERNATIONAL_UNIT:
 				return false;
+			case dimension::MILLIEQUIVALENT:
+				return false;
 		}
 		return false;
 	}
@@ -1325,6 +1343,8 @@ namespace scifir
 			case dimension::MEMO:
 				return false;
 			case dimension::INTERNATIONAL_UNIT:
+				return false;
+			case dimension::MILLIEQUIVALENT:
 				return false;
 		}
 		return false;
@@ -1580,6 +1600,9 @@ namespace scifir
 				break;
 			case dimension::INTERNATIONAL_UNIT:
 				basic_dimensions.push_back(dimension(dimension::INTERNATIONAL_UNIT,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case dimension::MILLIEQUIVALENT:
+				basic_dimensions.push_back(dimension(dimension::MILLIEQUIVALENT,prefix::NONE,dimension::NUMERATOR));
 				break;
 		}
 		return basic_dimensions;

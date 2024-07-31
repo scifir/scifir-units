@@ -182,6 +182,8 @@ TEST_CASE("dimension class") {
 		CHECK(a47.dimension_type == dimension::CUSTOM_FULL_SYMBOL);
 		dimension a48("IU",dimension::NUMERATOR);
 		CHECK(a48.dimension_type == dimension::INTERNATIONAL_UNIT);
+		dimension a49("mEq",dimension::NUMERATOR);
+		CHECK(a49.dimension_type == dimension::MILLIEQUIVALENT);
 	}
 
 	SECTION("Assignments of dimension class")
@@ -797,6 +799,16 @@ TEST_CASE("dimension class") {
 		CHECK(a50.is_derived_dimension() == false);
 		CHECK(a50.is_SI_base_dimension() == false);
 		CHECK(a50.is_SI_derived_dimension() == false);
+		dimension a51(dimension::MILLIEQUIVALENT,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a51.get_name() == "milliequivalent");
+		CHECK(a51.get_plural() == "milliequivalents");
+		CHECK(a51.get_symbol() == "mEq");
+		CHECK(a51.get_conversion_factor() == 1.0l);
+		CHECK(a51.is_simple_dimension() == true);
+		CHECK(a51.is_base_dimension() == true);
+		CHECK(a51.is_derived_dimension() == false);
+		CHECK(a51.is_SI_base_dimension() == false);
+		CHECK(a51.is_SI_derived_dimension() == false);
 	}
 
 	SECTION("get_fullname() and get_fullplural()")

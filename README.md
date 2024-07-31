@@ -735,6 +735,7 @@ Inside scifir-units, a unit for measuring the quantity of memory inside the brai
 | dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
 | ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
 | INTERNATIONAL_UNIT | IU | International unit | International units | - | - | Measure of the effect or biological activity of a substance. It varies for each substance the amount of grams it represents for that substance.
+| MILLIEQUIVALENT | mEq | Milliequivalent | Milliequivalents | - | - | Amount of moles in a given chemical reaction needed to react with an amount of moles of another substance.
 
 #### Dimensions of economy
 

@@ -907,6 +907,11 @@ scifir::scalar_unit operator"" _qIU(unsigned long long int x)
 	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
+scifir::scalar_unit operator"" _mEq(unsigned long long int x)
+{
+	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::MILLIEQUIVALENT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+}
+
 scifir::mole operator"" _particles(unsigned long long int x)
 {
 	return scifir::mole((long double)x, { scifir::dimension(scifir::dimension::PARTICLES,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
@@ -1855,6 +1860,11 @@ scifir::scalar_unit operator"" _rIU(long double x)
 scifir::scalar_unit operator"" _qIU(long double x)
 {
 	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::scalar_unit operator"" _mEq(long double x)
+{
+	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::MILLIEQUIVALENT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::scalar_unit operator"" _memo(long double x)
