@@ -231,11 +231,8 @@ TEST_CASE("dimension class") {
 		CHECK(to_string(m) == "mm");
 		dimension n = dimension("um",dimension::NUMERATOR);
 		CHECK(to_string(n) == "µm");
-		//dimension n2 = dimension("µm",dimension::NUMERATOR);
-		//cout << "n2: " << to_string(n2) << endl;
-		//string n2_icu;
-		//icu::UnicodeString("µm").toUTF8String(n2_icu);
-		//CHECK(to_string(n2) == n2_icu);
+		dimension n2 = dimension("µm",dimension::NUMERATOR);
+		CHECK(to_string(n2) == "µm");
 		dimension o = dimension("nm",dimension::NUMERATOR);
 		CHECK(to_string(o) == "nm");
 		dimension p = dimension("pm",dimension::NUMERATOR);
