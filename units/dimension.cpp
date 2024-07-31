@@ -833,7 +833,7 @@ namespace scifir
 			case dimension::MONEY:
 				return 1.0l;
 			case dimension::PIXEL:
-				return 0.00026l;
+				return 1.0l;
 			case dimension::MEMO:
 				return 1.0l;
 			case dimension::INTERNATIONAL_UNIT:
@@ -1593,7 +1593,7 @@ namespace scifir
 				basic_dimensions.push_back(dimension(dimension::MONEY,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::PIXEL:
-				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::PIXEL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::MEMO:
 				basic_dimensions.push_back(dimension(dimension::MEMO,prefix::NONE,dimension::NUMERATOR));

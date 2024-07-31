@@ -770,7 +770,7 @@ TEST_CASE("dimension class") {
 		CHECK(a48.get_name() == "pixel");
 		CHECK(a48.get_plural() == "pixels");
 		CHECK(a48.get_symbol() == "px");
-		CHECK(a48.get_conversion_factor() == 0.00026l);
+		CHECK(a48.get_conversion_factor() == 1.0l);
 		CHECK(a48.is_simple_dimension() == true);
 		CHECK(a48.is_base_dimension() == false);
 		CHECK(a48.is_derived_dimension() == true);
