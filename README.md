@@ -728,6 +728,14 @@ Inside scifir-units, a unit for measuring the quantity of memory inside the brai
 | ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
 | MEMO | memo | Memo | Memos | - | - | Measure of quantity of memory.
 
+#### Dimensions of pharmacology
+
+**Be careful!** International units (IU) vary in the amount of mass they represent for different substances.
+
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| INTERNATIONAL_UNIT | IU | International unit | International units | - | - | Measure of the effect or biological activity of a substance. It varies for each substance the amount of grams it represents for that substance.
+
 #### Dimensions of economy
 
 The dimension of money inside scifir-units is just money. Apart from scifir-units, inside the same code, you can use the **ISO 4217**, which is the **ISO of currency codes**, after doing all the math with the money dimension, to convert to the final currency needed.

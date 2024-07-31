@@ -272,6 +272,10 @@ namespace scifir
 		{
 			dimension_type = dimension::MEMO;
 		}
+		else if(dimension_name == "IU")
+		{
+			dimension_type = dimension::INTERNATIONAL_UNIT;
+		}
 		else if(dimension_name == "")
 		{
 			dimension_type = dimension::NONE;
@@ -449,6 +453,8 @@ namespace scifir
 				return "pixel";
 			case dimension::MEMO:
 				return "memo";
+			case dimension::INTERNATIONAL_UNIT:
+				return "international-unit";
 		}
 		return "";
 	}
@@ -568,6 +574,8 @@ namespace scifir
 				return "pixels";
 			case dimension::MEMO:
 				return "memos";
+			case dimension::INTERNATIONAL_UNIT:
+				return "international-units";
 		}
 		return "";
 	}
@@ -702,6 +710,8 @@ namespace scifir
 				return "px";
 			case dimension::MEMO:
 				return "memo";
+			case dimension::INTERNATIONAL_UNIT:
+				return "IU";
 		}
 		return "";
 	}
@@ -815,6 +825,8 @@ namespace scifir
 			case dimension::PIXEL:
 				return 0.00026l;
 			case dimension::MEMO:
+				return 1.0l;
+			case dimension::INTERNATIONAL_UNIT:
 				return 1.0l;
 		}
 		return 1.0l;
@@ -947,6 +959,8 @@ namespace scifir
 				return true;
 			case dimension::MEMO:
 				return true;
+			case dimension::INTERNATIONAL_UNIT:
+				return true;
 		}
 		return false;
 	}
@@ -1065,6 +1079,8 @@ namespace scifir
 			case dimension::PIXEL:
 				return false;
 			case dimension::MEMO:
+				return true;
+			case dimension::INTERNATIONAL_UNIT:
 				return true;
 		}
 		return false;
@@ -1192,6 +1208,8 @@ namespace scifir
 				return false;
 			case dimension::MEMO:
 				return false;
+			case dimension::INTERNATIONAL_UNIT:
+				return false;
 		}
 		return false;
 	}
@@ -1305,6 +1323,8 @@ namespace scifir
 			case dimension::PIXEL:
 				return false;
 			case dimension::MEMO:
+				return false;
+			case dimension::INTERNATIONAL_UNIT:
 				return false;
 		}
 		return false;
@@ -1557,6 +1577,9 @@ namespace scifir
 				break;
 			case dimension::MEMO:
 				basic_dimensions.push_back(dimension(dimension::MEMO,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case dimension::INTERNATIONAL_UNIT:
+				basic_dimensions.push_back(dimension(dimension::INTERNATIONAL_UNIT,prefix::NONE,dimension::NUMERATOR));
 				break;
 		}
 		return basic_dimensions;

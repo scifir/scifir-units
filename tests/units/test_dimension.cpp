@@ -41,7 +41,7 @@ TEST_CASE("dimension class") {
 		CHECK(to_string(e) == "km");
 	}
 
-	SECTION("Creation of basic dimension class") {
+	SECTION("Creation of base dimension class") {
 		dimension a = dimension("m",dimension::NUMERATOR);
 		CHECK(a.get_symbol() == "m");
 		dimension b = dimension("s",dimension::NUMERATOR);
@@ -180,6 +180,8 @@ TEST_CASE("dimension class") {
 		CHECK(a46.dimension_type == dimension::NONE);
 		dimension a47("hello",dimension::NUMERATOR);
 		CHECK(a47.dimension_type == dimension::CUSTOM_FULL_SYMBOL);
+		dimension a48("IU",dimension::NUMERATOR);
+		CHECK(a48.dimension_type == dimension::INTERNATIONAL_UNIT);
 	}
 
 	SECTION("Assignments of dimension class")
@@ -785,6 +787,16 @@ TEST_CASE("dimension class") {
 		CHECK(a49.is_derived_dimension() == false);
 		CHECK(a49.is_SI_base_dimension() == false);
 		CHECK(a49.is_SI_derived_dimension() == false);
+		dimension a50(dimension::INTERNATIONAL_UNIT,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a50.get_name() == "international-unit");
+		CHECK(a50.get_plural() == "international-units");
+		CHECK(a50.get_symbol() == "IU");
+		CHECK(a50.get_conversion_factor() == 1.0l);
+		CHECK(a50.is_simple_dimension() == true);
+		CHECK(a50.is_base_dimension() == true);
+		CHECK(a50.is_derived_dimension() == false);
+		CHECK(a50.is_SI_base_dimension() == false);
+		CHECK(a50.is_SI_derived_dimension() == false);
 	}
 
 	SECTION("get_fullname() and get_fullplural()")
