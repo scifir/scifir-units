@@ -1107,6 +1107,12 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | ----- | ----- | ----- | ----------- | --------------------------
 | transfer_speed | B/s | scalar_unit | - | Bytes emitted or received per second.
 
+#### Pharmacology units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| amount_of_effect | IU | scalar_unit | _IU and _TIU, _kIU, etc (all prefixes supported) | Amount of pharmacological effect that some amount of a substance does.
+
 ### Vector units in 2D
 
 Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar_unit, and additional to his member-variables they include the member-variable theta, of class angle (described above).

@@ -40,4 +40,7 @@ namespace scifir
 	SCALAR_UNIT_CPP(dynamic_viscosity,"g/m*s");
 	SCALAR_UNIT_CPP(mass_flow_rate,"g/s");
 	SCALAR_UNIT_CPP(catalytic_activity,"kat");
+
+	// PHARMACOLOGY
+	SCALAR_UNIT_CPP(amount_of_effect,"IU");
 }
