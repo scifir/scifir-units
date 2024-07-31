@@ -108,6 +108,10 @@ namespace scifir
 		{
 			dimension_type = dimension::KELVIN;
 		}
+		else if(dimension_name == "°C")
+		{
+			dimension_type = dimension::CELSIUS;
+		}
 		else if(dimension_name == "mol")
 		{
 			dimension_type = dimension::MOLE;
@@ -268,6 +272,10 @@ namespace scifir
 		{
 			dimension_type = dimension::MEMO;
 		}
+		else if(dimension_name == "IU")
+		{
+			dimension_type = dimension::INTERNATIONAL_UNIT;
+		}
 		else if(dimension_name == "")
 		{
 			dimension_type = dimension::NONE;
@@ -357,6 +365,8 @@ namespace scifir
 				return "coulomb";
 			case dimension::KELVIN:
 				return "kelvin";
+			case dimension::CELSIUS:
+				return "celsius";
 			case dimension::MOLE:
 				return "mole";
 			case dimension::CANDELA:
@@ -443,6 +453,8 @@ namespace scifir
 				return "pixel";
 			case dimension::MEMO:
 				return "memo";
+			case dimension::INTERNATIONAL_UNIT:
+				return "international-unit";
 		}
 		return "";
 	}
@@ -474,6 +486,8 @@ namespace scifir
 				return "coulombs";
 			case dimension::KELVIN:
 				return "kelvins";
+			case dimension::CELSIUS:
+				return "celsius";
 			case dimension::MOLE:
 				return "moles";
 			case dimension::CANDELA:
@@ -560,6 +574,8 @@ namespace scifir
 				return "pixels";
 			case dimension::MEMO:
 				return "memos";
+			case dimension::INTERNATIONAL_UNIT:
+				return "international-units";
 		}
 		return "";
 	}
@@ -596,6 +612,8 @@ namespace scifir
 				return "C";
 			case dimension::KELVIN:
 				return "K";
+			case dimension::CELSIUS:
+				return "°C";
 			case dimension::MOLE:
 				return "mol";
 			case dimension::CANDELA:
@@ -692,6 +710,8 @@ namespace scifir
 				return "px";
 			case dimension::MEMO:
 				return "memo";
+			case dimension::INTERNATIONAL_UNIT:
+				return "IU";
 		}
 		return "";
 	}
@@ -717,6 +737,8 @@ namespace scifir
 			case dimension::COULOMB:
 				return 1.0l;
 			case dimension::KELVIN:
+				return 1.0l;
+			case dimension::CELSIUS:
 				return 1.0l;
 			case dimension::MOLE:
 				return 1.0l;
@@ -804,6 +826,8 @@ namespace scifir
 				return 0.00026l;
 			case dimension::MEMO:
 				return 1.0l;
+			case dimension::INTERNATIONAL_UNIT:
+				return 1.0l;
 		}
 		return 1.0l;
 	}
@@ -847,6 +871,8 @@ namespace scifir
 				return true;
 			case dimension::KELVIN:
 				return true;
+			case dimension::CELSIUS:
+				return true;
 			case dimension::MOLE:
 				return true;
 			case dimension::CANDELA:
@@ -932,6 +958,8 @@ namespace scifir
 			case dimension::PIXEL:
 				return true;
 			case dimension::MEMO:
+				return true;
+			case dimension::INTERNATIONAL_UNIT:
 				return true;
 		}
 		return false;
@@ -953,6 +981,134 @@ namespace scifir
 			case dimension::DEGREE:
 				return false;
 			case dimension::RADIAN:
+				return true;
+			case dimension::STERADIAN:
+				return true;
+			case dimension::GRAM:
+				return true;
+			case dimension::SECOND:
+				return true;
+			case dimension::COULOMB:
+				return true;
+			case dimension::KELVIN:
+				return true;
+			case dimension::CELSIUS:
+				return false;
+			case dimension::MOLE:
+				return true;
+			case dimension::CANDELA:
+				return true;
+			case dimension::BYTE:
+				return true;
+			case dimension::BIT:
+				return false;
+			case dimension::HERTZ:
+				return false;
+			case dimension::NEWTON:
+				return false;
+			case dimension::PASCAL:
+				return false;
+			case dimension::JOULE:
+				return false;
+			case dimension::WATT:
+				return false;
+			case dimension::AMPERE:
+				return false;
+			case dimension::VOLT:
+				return false;
+			case dimension::FARAD:
+				return false;
+			case dimension::OHM:
+				return false;
+			case dimension::SIEMENS:
+				return false;
+			case dimension::WEBER:
+				return false;
+			case dimension::TESLA:
+				return false;
+			case dimension::HENRY:
+				return false;
+			case dimension::LUMEN:
+				return false;
+			case dimension::LUX:
+				return false;
+			case dimension::BECQUEREL:
+				return false;
+			case dimension::GRAY:
+				return false;
+			case dimension::SIEVERT:
+				return false;
+			case dimension::KATAL:
+				return false;
+			case dimension::ANGSTROM:
+				return false;
+			case dimension::LITRE:
+				return false;
+			case dimension::MINUTE:
+				return false;
+			case dimension::HOUR:
+				return false;
+			case dimension::DAY:
+				return false;
+			case dimension::LIGHT_YEAR:
+				return false;
+			case dimension::ASTRONOMICAL_UNIT:
+				return false;
+			case dimension::PARSEC:
+				return false;
+			case dimension::ELECTRON_VOLT:
+				return false;
+			case dimension::DALTON:
+				return false;
+			case dimension::ATOMIC_MASS_UNIT:
+				return false;
+			case dimension::BARN:
+				return false;
+			case dimension::MOLARITY:
+				return false;
+			case dimension::PARTICLES:
+				return false;
+			case dimension::CUSTOM:
+				return false;
+			case dimension::CUSTOM_BASIC:
+				return true;
+			case dimension::CUSTOM_FULL_SYMBOL:
+				return false;
+			case dimension::MONEY:
+				return true;
+			case dimension::PIXEL:
+				return false;
+			case dimension::MEMO:
+				return true;
+			case dimension::INTERNATIONAL_UNIT:
+				return true;
+		}
+		return false;
+	}
+
+	bool dimension::is_derived_dimension() const
+	{
+		if (dimension_type == dimension::NONE)
+		{
+			return false;
+		}
+		else
+		{
+			return !is_base_dimension();
+		}
+	}
+
+	bool dimension::is_SI_base_dimension() const
+	{
+		switch(dimension_type)
+		{
+			case dimension::NONE:
+				return false;
+			case dimension::METRE:
+				return true;
+			case dimension::DEGREE:
+				return false;
+			case dimension::RADIAN:
 				return false;
 			case dimension::STERADIAN:
 				return false;
@@ -964,6 +1120,8 @@ namespace scifir
 				return false;
 			case dimension::KELVIN:
 				return true;
+			case dimension::CELSIUS:
+				return false;
 			case dimension::MOLE:
 				return true;
 			case dimension::CANDELA:
@@ -1050,11 +1208,13 @@ namespace scifir
 				return false;
 			case dimension::MEMO:
 				return false;
+			case dimension::INTERNATIONAL_UNIT:
+				return false;
 		}
 		return false;
 	}
 
-	bool dimension::is_derived_dimension() const
+	bool dimension::is_SI_derived_dimension() const
 	{
 		switch(dimension_type)
 		{
@@ -1076,6 +1236,8 @@ namespace scifir
 				return true;
 			case dimension::KELVIN:
 				return false;
+			case dimension::CELSIUS:
+				return true;
 			case dimension::MOLE:
 				return false;
 			case dimension::CANDELA:
@@ -1162,11 +1324,25 @@ namespace scifir
 				return false;
 			case dimension::MEMO:
 				return false;
+			case dimension::INTERNATIONAL_UNIT:
+				return false;
 		}
 		return false;
 	}
 
-	vector<dimension> dimension::get_simple_dimensions() const
+	bool dimension::is_dimensionless() const
+	{
+		if (dimension_type == dimension::DEGREE or dimension_type == dimension::RADIAN or dimension_type == dimension::STERADIAN or dimension_type == dimension::NONE)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	vector<dimension> dimension::get_base_dimensions() const
 	{
 		vector<dimension> basic_dimensions = vector<dimension>();
 		switch (dimension_type)
@@ -1196,6 +1372,9 @@ namespace scifir
 				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::KELVIN:
+				basic_dimensions.push_back(dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case dimension::CELSIUS:
 				basic_dimensions.push_back(dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::MOLE:
@@ -1399,6 +1578,9 @@ namespace scifir
 			case dimension::MEMO:
 				basic_dimensions.push_back(dimension(dimension::MEMO,prefix::NONE,dimension::NUMERATOR));
 				break;
+			case dimension::INTERNATIONAL_UNIT:
+				basic_dimensions.push_back(dimension(dimension::INTERNATIONAL_UNIT,prefix::NONE,dimension::NUMERATOR));
+				break;
 		}
 		return basic_dimensions;
 	}
@@ -1588,18 +1770,18 @@ namespace scifir
 		return dimensions;
 	}
 
-	vector<dimension> create_simple_dimensions(const string& init_dimensions)
+	vector<dimension> create_base_dimensions(const string& init_dimensions)
 	{
 		vector<dimension> new_dimensions = create_dimensions(init_dimensions);
-		return create_simple_dimensions(new_dimensions);
+		return create_base_dimensions(new_dimensions);
 	}
 
-	vector<dimension> create_simple_dimensions(const vector<dimension>& x)
+	vector<dimension> create_base_dimensions(const vector<dimension>& x)
 	{
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
 		{
-			vector<dimension> x_subdimensions = x[i].get_simple_dimensions();
+			vector<dimension> x_subdimensions = x[i].get_base_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				if (x[i].dimension_position == dimension::DENOMINATOR)
@@ -1612,7 +1794,7 @@ namespace scifir
 		return new_x;
 	}
 
-	vector<dimension> create_simple_dimensions(const vector<dimension>& x,long double& value)
+	vector<dimension> create_base_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
@@ -1627,7 +1809,7 @@ namespace scifir
 				value /= x[i].get_conversion_factor();
 				value /= x[i].prefix_math();
 			}
-			vector<dimension> x_subdimensions = x[i].get_simple_dimensions();
+			vector<dimension> x_subdimensions = x[i].get_base_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				if (x[i].dimension_position == dimension::DENOMINATOR)
@@ -1636,6 +1818,10 @@ namespace scifir
 				}
 				new_x.push_back(x_subdimension);
 			}
+		}
+		if (x.size() == 1 and x[0].dimension_type == dimension::CELSIUS and x[0].dimension_position == dimension::NUMERATOR)
+		{
+			value += 273.15l;
 		}
 		return new_x;
 	}
@@ -1756,7 +1942,7 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x)
 	{
-		vector<dimension> new_x = create_simple_dimensions(x);
+		vector<dimension> new_x = create_base_dimensions(x);
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -1806,7 +1992,7 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
 	{
-		vector<dimension> new_x = create_simple_dimensions(x,value);
+		vector<dimension> new_x = create_base_dimensions(x,value);
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -1877,9 +2063,9 @@ namespace scifir
 
 	bool common_dimension(const dimension& x,const dimension& y)
 	{
-		for (const dimension& x_dimension : x.get_simple_dimensions())
+		for (const dimension& x_dimension : x.get_base_dimensions())
 		{
-			for (const dimension& y_dimension : y.get_simple_dimensions())
+			for (const dimension& y_dimension : y.get_base_dimensions())
 			{
 				if (x_dimension.dimension_type == y_dimension.dimension_type and x_dimension.dimension_position == y_dimension.dimension_position)
 				{
@@ -1899,15 +2085,15 @@ namespace scifir
 
 	bool equal_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
-		vector<dimension> x_derived_dimensions = create_simple_dimensions(x);
-		vector<dimension> y_derived_dimensions = create_simple_dimensions(y);
-		if (x_derived_dimensions.size() == y_derived_dimensions.size())
+		vector<dimension> x_base_dimensions = create_base_dimensions(x);
+		vector<dimension> y_base_dimensions = create_base_dimensions(y);
+		if (x_base_dimensions.size() == y_base_dimensions.size())
 		{
 			vector<unsigned int> skip = vector<unsigned int>();
-			for (const dimension& x_dimension: x_derived_dimensions)
+			for (const dimension& x_dimension: x_base_dimensions)
 			{
 				bool is_equal = false;
-				for (unsigned int j = 0; j < y_derived_dimensions.size(); j++)
+				for (unsigned int j = 0; j < y_base_dimensions.size(); j++)
 				{
 					bool skip_j = false;
 					if (skip.size() > 0)
@@ -1924,7 +2110,7 @@ namespace scifir
 					{
 						continue;
 					}
-					if (x_dimension.dimension_type == y_derived_dimensions[j].dimension_type and x_dimension.dimension_position == y_derived_dimensions[j].dimension_position)
+					if (x_dimension.dimension_type == y_base_dimensions[j].dimension_type and x_dimension.dimension_position == y_base_dimensions[j].dimension_position)
 					{
 						skip.push_back(j);
 						is_equal = true;
@@ -2002,7 +2188,7 @@ bool operator ==(const scifir::dimension& x,const scifir::dimension& y)
 	}
 }
 
-bool operator!=(const scifir::dimension& x,const scifir::dimension& y)
+bool operator !=(const scifir::dimension& x,const scifir::dimension& y)
 {
 	return !(x == y);
 }

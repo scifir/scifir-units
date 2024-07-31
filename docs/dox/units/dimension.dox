@@ -43,6 +43,9 @@
 * \var dimension::KELVIN
 * \brief Kelvin, plural kelvins. **SI dimension** of temperature. Symbol **K**.
 
+* \var dimension::CELSIUS
+* \brief Celsius, plural celsius. **SI dimension** of temperature, derived from kelvin. Symbol **°C**. **Formula:** 1°C = K - 273.15.
+
 * \var dimension::MOLE
 * \brief Mole, plural moles. **SI dimension** of quantity. Symbol **mol**.
 
@@ -172,6 +175,9 @@
 * \var dimension::MEMO
 * \brief Memo, plural memos. Invented unit inside Scifir, it's not part of the SI system of units. It represents a unit of human or animal memory. Each memory of the brain has some size hypothetically measurable in memos. Symbol **memo**.
 
+* \var dimension::INTERNATIONAL_UNIT
+* \brief International unit, plural international units. It measures the amount of effect or biological activity of a substance, for the purpose of easier comparison across similar forms of substances. The international units aren't part of the SI system of units. Symbol **IU**.
+
 * \fn dimension::dimension()
 * \brief Default constructor. The dimension_type is NONE, the dimension_position is NO_POSITION, and the prefix is NONE, the symbol is empty.
 
@@ -221,25 +227,34 @@
 * \brief Returns the math between some prefix and the dimension. The difference with the other prefix_math() function is that the prefix is given as parameter.
 
 * \fn bool dimension::is_simple_dimension() const
-* \brief If the dimension doesn't has more derived dimensions, it's a simple dimension.
+* \brief If the dimension doesn't has more base dimensions, it's a simple dimension.
 
 * \fn bool dimension::is_composite_dimension() const
 * \brief If the dimension has more simple dimensions, it's a composite dimension.
 
 * \fn bool dimension::is_base_dimension() const
-* \brief Returns true if the dimension is an SI base dimension. Following the SI system of units, only are base dimensions the METRE, the GRAM, the SECOND, the AMPERE, the KELVIN, the MOLE and the CANDELA.
+* \brief Returns true if the dimension is a base dimension, which includes all base dimensions of the SI system of units, excepting AMPERE, which has been changed for COULOMB. Additional to the base dimensions of the SI system of units, they are considered base dimensions too RADIAN, STERADIAN, BYTE, MONEY, MEMO, and all CUSTOM_BASIC dimensions.
 
 * \fn bool dimension::is_derived_dimension() const
 * \brief If the dimension is not a base dimension, it's considered a derived dimension.
 
-* \fn vector<dimension> dimension::get_simple_dimensions() const
-* \brief Returns the simple dimensions of the dimension, which are different than the dimension, and more than one, if the dimension is not a simple dimension but a derived dimension.
+* \fn bool dimension::is_SI_base_dimension() const
+* \brief Returns true if the dimension is a SI base dimension. Following the SI system of units, only are base dimensions the METRE, the GRAM, the SECOND, the AMPERE, the KELVIN, the MOLE and the CANDELA.
+
+* \fn bool dimension::is_SI_derived_dimension() const
+* \brief If the dimension is not a SI base dimension, it's considered a SI derived dimension.
+
+* \fn bool dimension::is_dimensionless() const
+* \brief If the dimension_type is DEGREE, RADIAN or STERADIAN, it's considered dimensionless, following the SI system of units. If the dimension_type is NONE, it's considered dimensionless too.
+
+* \fn vector<dimension> dimension::get_base_dimensions() const
+* \brief Returns the base dimensions of the dimensions, which can be the same dimension or all the base dimension this dimension has, if it's a derived dimension.
 
 * \fn void dimension::invert()
 * \brief Changes the position of the dimension to the reverse, from the NUMERATOR to the DENOMINATOR, or from the DENOMINATOR to the NUMERATOR.
 
 * \fn static void dimension::create_custom_dimension(const string& new_symbol, const string& init_dimensions)
-* \brief Creates a new custom dimension, that's stored with its symbol, which is given as an string, and the dimensions it can be derived to, if this custom dimension is not a new basic dimension.
+* \brief Creates a new custom dimension, that's stored with its symbol, which is given as an string, and the base dimensions it has, if this custom dimension is not a new base dimension.
 
 * \fn static char* dimension::create_full_symbol(const string& full_symbol)
 * \brief Creates a new dimension that's stored in the private static map dimension::full_symbols.
@@ -262,8 +277,8 @@
 * \fn vector<dimension> scifir::create_dimensions(string init_dimensions)
 * \brief Creates the dimensions from an initialization string of dimensions
 
-* \fn vector<dimension> scifir::create_simple_dimensions(const string& init_dimensions)
-* \brief Creates the derived dimensions from an initialization string of dimensions
+* \fn vector<dimension> scifir::create_base_dimensions(const string& init_dimensions)
+* \brief Creates the base dimensions from an initialization string of dimensions
 
 * \fn string scifir::to_string(const dimension& x)
 * \brief Creates the string representation of a dimension
@@ -271,11 +286,11 @@
 * \fn string scifir::to_string(const vector<dimension>& x_dimensions, bool with_brackets)
 * \brief Creates the string representation of a vector of dimensions. Used to display the dimensions of scalar_unit and all vector_unit classes. The dimensions can be displayed optionally between brackets like '[]' too.
 
-* \fn vector<dimension> scifir::create_simple_dimensions(const vector<dimension>& x)
-* \brief Creates all the derived dimensions from a vector of dimensions.
+* \fn vector<dimension> scifir::create_base_dimensions(const vector<dimension>& x)
+* \brief Creates all the base dimensions from a vector of dimensions.
 
-* \fn vector<dimension> scifir::create_simple_dimensions(const vector<dimension>& x, long double& value)
-* \brief Creates all the derived dimensions from a vector of dimensions, updating also the associated value related to those dimensions based on the prefix math and the conversion factor of the dimension, if that conversion factor is different than one.
+* \fn vector<dimension> scifir::create_base_dimensions(const vector<dimension>& x, long double& value)
+* \brief Creates all the base dimensions from a vector of dimensions, updating also the associated value related to those dimensions based on the prefix math and the conversion factor of the dimension, if that conversion factor is different than one.
 
 * \fn vector<dimension> scifir::multiply_dimensions(const vector<dimension>& x, const vector<dimension>& y)
 * \brief Multiplies two vectors of dimensions. The result is normalized after, which means that equal dimensions at the numerator and at the denominator are cancelled.
@@ -305,10 +320,10 @@
 * \brief Checks if two initialization strings of dimensions initialize the same basic dimensions.
 
 * \fn bool scifir::equal_dimensions(const vector<dimension>& x, const vector<dimension>& y)
-* brief Checks if the derived dimensions of two vectors of dimensions are equal.
+* brief Checks if the base dimensions of two vectors of dimensions are equal.
 
 * \fn bool scifir::equal_dimensions_and_prefixes(const vector<dimension>& x, const vector<dimension>& y)
-* \brief Checks if the derived dimensions of two vectors of dimensions are equal, and if they have also the same prefixes.
+* \brief Checks if the base dimensions of two vectors of dimensions are equal, and if they have also the same prefixes.
 
 * \fn bool operator ==(const scifir::dimension& x, const scifir::dimension& y)
 * \brief Checks if the dimension type, the position and the prefix of two dimensions are the same.

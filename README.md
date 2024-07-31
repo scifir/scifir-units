@@ -169,7 +169,9 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - **Movement:** Electronic motor (very different sizes available).
 - **Valve:** Electronic valve.
 
-### Constants of the SI system
+### Constants
+
+#### Constants of the SI system of units
 
 All constants of the SI system of units are implemeneted inside scifir-units, in the file **units/constants.hpp**. They are all **long double** types, use them to calculate anything you need.
 
@@ -182,6 +184,18 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 | BOLTZMANN_CONSTANT | $$1.380649×10^{−23} \  J/K$$
 | AVOGADRO_CONSTANT | $$6.02214076×10^{23} \  mol^{−1}$$
 | LUMINOUS_EFFICACY_OF_540_THZ_RADIATION | $$683 \  lm/W$$
+
+#### Important science constants
+
+| Constant | Value | Description
+| ------ | ------ | ---------------
+| GRAVITATIONAL_CONSTANT | $$6.6743×10^{-11} \  N*m2/kg2$$ | Proportionality constant connecting the gravitational force between two bodies.
+| MOLAR_GAS_CONSTANT | $$8.31446261815324 \  J/K*mol$$ | Used the law of ideal gas. Energy per temperature increment per amount of substance.
+| ATOMIC_MASS_CONSTANT | $$1.66053906660×10^{-27} \  Da$$ | Mass of an atom.
+| COULOMB_CONSTANT | $$8.9875517873681764×10^9 \  N*m2/C2$$ | Constant of proportionality for the electrical variables.
+| VACUUM_PERMITTIVITY | $$8.8541878188×10^{-12} \  F/m$$ | Value of the asbolute dielectric permittivity of classical vacuum.
+| RYDBERG_CONSTANT | $$1.0973731568539×10^7 \  1/m$$ | Relates the electromagnetic spectra of an atom.
+| FARADAY_CONSTANT | $$9.64853321233100184×10^4 \  C/mol$$ | It's the electric charge of one mole of elementary carriers.
 
 ### Folder structure
 
@@ -338,8 +352,17 @@ You can type the command **cpack --help** to check all available generators.
 You can test scifir-units executing ctest if you want. It's not needed to execute those tests in your local computer, but you can do it if for any reason you find it helpful. To build the tests, add the flags **-DBUILD_TESTING=ON** to the first preset command, in order to set the variable BUILD_TESTING to ON, that variable configures the build to build also all the tests.
 
 ```
-ctest --preset=<your-preset>
+ctest --preset=<your-preset> -L tests
 ```
+
+In order to check the code coverage of the unitary tests, execute after that first command the following commands:
+
+```
+ctest --preset=<your-preset> -L tests -T coverage
+gcovr .
+```
+
+gcovr prints the % of coverage for each piece of code, based on gcov data. You can install gcovr through apt in some Linux distributions, for other operating systems search through internet how to install gcovr there, usually it's easy.
 
 ## Introduction
 
@@ -577,13 +600,19 @@ N-dimensions, inside scifir-units, are called **ND** in classnames. ND classes a
 
 ### Dimensions
 
-Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units. Different to that, a **simple dimension** is a dimension without any simple dimension more derived from it. That's, a simple dimension is a dimension that's not an special name of two or more other dimensions.
+A **SI base dimension** is a base dimension under the SI system of units. A **SI derived dimension** is a derived dimension under the SI system of units. The SI base dimensions are the **metre** (m), **kilogram** (kg), **second** (s), **mole** (mol), **candela** (cd), **kelvin** (K) and **ampere** (A).
 
-A **derived dimension** is a dimension that's not a base dimension under the SI system of units. A **composite dimension** is a dimension that's not a simple dimension.
+Inside scifir-units a **base dimension** is a dimension considered base under the SI system of units, excepting AMPERE, which has been changed by COULOMB, among other dimensions more that have been added. The other base dimensions inside scifir-units are **radian** (rad), **steradian** (sr), **byte** (B), **money** (money), **memo** (memo), and all CUSTOM_BASIC dimensions. A **derived dimension** is any dimension that's not a base dimension.
+
+Different to that, a **simple dimension** is a dimension with only one base dimension. A **composite dimension** is a dimension with more than one base dimension.
+
+A dimension is a **special name** if it has a symbol that means one or more base dimensions of the SI system of units, that's used instead of them. Inside scifir-units, it's called **abbreviation** a special name that's not part of the SI system of units, but instead a special name taken from any other system.
+
+A **single dimension** is a scalar unit or vector unit that has only one dimension, which can be any simple dimension or composite dimension, it's only needed to don't be more than one dimension present in the same unit.
 
 The dimensions that a scalar_unit class can have are available in the enum dimension::type, and are only the SI dimensions or, if there isn't a dimension for an important purpose in the SI system of units, a selected dimension of the different possible options. Only the prefered dimensions have been added to the enum dimension::type, the other dimensions, as for example England units, have been added only as conversion options. With that system, always the same dimensions are used, which simplifies the work inside a laboratory, because then there's less confusion about which dimensions are being used.
 
-The **base dimensions** inside scifir-units are the base dimensions of the SI system of units, and are then the **metre** (m), **kilogram** (kg), **second** (s), **mole** (mol), **candela** (cd), **kelvin** (K) and **ampere** (A). The byte (B) and the coulomb (C) are considered a simple dimension, but not a base dimension, because they are not a base dimension inside the SI system of units.
+A dimension inside scifir-units is **dimensionless** if it's dimensionless in the SI system of units. Following that rule, the dimensions degree, radian and steradian are dimensionless. When there's no dimension, because of the value NONE, it's considered dimensionless too.
 
 Dimensions present in scifir-units not so widely known are the **steradian** (sr, solid angles), **katal** (kat, catalytic activity), **angstrom** (Å, length for wavelengths), **dalton** (Da, mass for atoms and molecules), **atomic mass unit** (same as Da), **electron volt** (eV, measure of very small amounts of energy, mainly for quantum physics), **candela** (cd, luminous intensity), **lumen** (lm, luminous flux), **lux** (lx, illuminance), **siemens** (S, electric cnoductance), **weber** (Wb, magnetic flux), **tesla** (T, magnetic strength), **henry** (H, electric inductance), **astronomical unit** (AU, long astronomic distances), **light year** (ly, very long astronomic distances), **parsec** (pc, very long astronomic distances), **becquerel** (Bq, radioactivity), **gray** (Gy, absorbed dose of ionising radiation), **sievert** (Sv, equivalent dose of ionising radiation), **barn** (Barn, transversal section of nuclear reactions). An invented unit inside Scifir is **memo**, which is used to measure the amount of memory inside the brain.
 
@@ -650,6 +679,7 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
 | ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
 | KELVIN | K | Kelvin | Kelvins | - | - | Measure of temperature.
+| CELSIUS | °C | Celsius | Celsius | 1°C = K - 273.15 | K | Measure of temperature, derived from kelvin.
 
 #### Dimensions of electricity
 
@@ -697,6 +727,14 @@ Inside scifir-units, a unit for measuring the quantity of memory inside the brai
 | dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
 | ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
 | MEMO | memo | Memo | Memos | - | - | Measure of quantity of memory.
+
+#### Dimensions of pharmacology
+
+**Be careful!** International units (IU) vary in the amount of mass they represent for different substances.
+
+| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
+| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
+| INTERNATIONAL_UNIT | IU | International unit | International units | - | - | Measure of the effect or biological activity of a substance. It varies for each substance the amount of grams it represents for that substance.
 
 #### Dimensions of economy
 
@@ -886,10 +924,10 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | time_duration | s | scalar_unit | _s and _Ts, _ks, etc (all prefixes supported). There's also _min, _hour and _day | Measures time. Intended to be used in calculations with other scalar_unit classes, for other time uses inside a code use chrono or ctime of the standard library.
 | mass | g | scalar_unit | _g and _Tg, _kg, etc (all prefixes supported). Also, _Da and _amu | Measures the mass.
 | charge | C | scalar_unit | _C and _TC, _kC, etc (all prefixes supported) | Measures the charge.
-| temperature | K | scalar_unit | _K and _TK, _kK, etc (all prefixes supported) | Measures the temperature. The temperature corresponds to the movement of molecules.
+| temperature | K | scalar_unit | _K and _TK, _kK, etc (all prefixes supported). There's also _celsius | Measures the temperature. The temperature corresponds to the movement of molecules.
 | mole | mol | scalar_unit | _mol and _Tmol, _kmol, etc (all prefixes supported). Also, use _particles for specifying an exact amount of particles. | Amount of matter, by number.
 | light_intensity | cd | scalar_unit | _cd and _Tcd, _kcd, etc (all prefixes supported) | Intensity of light.
-| data | B | scalar_unit | _B and _TB, _kB, etc (all prefixes supported) | Amount of information.
+| information_size | B | scalar_unit | _B and _TB, _kB, etc (all prefixes supported) | Amount of information.
 
 #### Space units
 
@@ -924,6 +962,7 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | surface_tension, surface_tension_2d, surface_tension_3d, surface_tension_nd | kg/s2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Tension in a surface.
 | stiffness | kg/s2 | scalar_unit | - | Extent to which an object resists deformation.
 | moment_of_inertia | m2*kg | scalar_unit | - | Torque needed for a desired angular acceleration about a rotational axis.
+| yank, yank_2d, yank_3d, yank_nd | N/s | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Rate of change of force.
 
 #### Electricity units
 
@@ -931,10 +970,10 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | ----- | ----- | ----- | ----------- | --------------------------
 | electric_current | A | scalar_unit | _A and _TA, _kA, etc (all prefixes supported) | Measures the amount of current.
 | voltage | V | scalar_unit | _V and _TV, _kV, etc (all prefixes supported) | The intensity of the electric force.
-| electric_charge_density | A*s/m3 | scalar_unit | - | Density of the electric charge of a charged object.
+| electric_charge_density | C/m3 | scalar_unit | - | Density of the electric charge of a charged object.
 | electric_current_density | A/m2 | scalar_unit | - | Density of the electric current.
-| electric_field_strength, electric_field_strength_2d, electric_field_strength_3d, electric_field_strength_nd | kg*m/A*s3 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The strength of the electric field.
-| electron_mobility | A*s2/kg | scalar_unit | - | How quickly an electron can move through a metal or semiconductor.
+| electric_field_strength, electric_field_strength_2d, electric_field_strength_3d, electric_field_strength_nd | V/m | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The strength of the electric field.
+| electron_mobility | m2/V*s | scalar_unit | - | How quickly an electron can move through a metal or semiconductor.
 | inductance | H | scalar_unit | _H and _TH, _kH, etc (all prefixes supported) | The tendency of an electrical conductor to oppose a change in the electric current flowing through it.
 
 #### Fluid dynamics units
@@ -949,23 +988,23 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 
 | Name | Dimensions | Type | Literals | Description
 | ----- | ----- | ----- | ----------- | --------------------------
+| magnetic_permeability | H/m | scalar_unit | - | Measure of the magnetization produced in a material in response to an applied magnetic field.
 | magnetic_flux | Wb | scalar_unit | _Wb and _TWb, _kWb, etc (all prefixes supported) | Amount of magnetism per surface.
-| magnetic_moment, magnetic_moment_2d, magnetic_moment_3d, magnetic_moment_nd | A*m2 | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Combination of strength and orientation of a magnet or other object that exerts a magnetic field.
-| magnetic_reluctance | A2*s2/kg*m2 | scalar_unit | - | It's a resistance to the magnetism.
-| magnetic_rigidity | kg*m/A*s2 | scalar_unit | - | Resistance to magnetism.
-| magnetomotive_force, magnetomotive_force_2d, magnetomotive_force_3d, magnetomotive_force_nd | A | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | It's the property that gives rise to magnetic fields.
-| magnetic_susceptibility | A2*s2/kg*m | scalar_unit | - | It's a measure of how much a material will become magnetized in an applied magnetic field.
+| magnetic_moment, magnetic_moment_2d, magnetic_moment_3d, magnetic_moment_nd | Wb*m | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | Combination of strength and orientation of a magnet or other object that exerts a magnetic field.
+| magnetic_reluctance | 1/H | scalar_unit | - | It's a resistance to the magnetism.
+| magnetic_rigidity | T*m | scalar_unit | - | Resistance to magnetism.
+| magnetomotive_force, magnetomotive_force_2d, magnetomotive_force_3d, magnetomotive_force_nd | A*rad | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | It's the property that gives rise to magnetic fields.
+| magnetic_susceptibility | m/H | scalar_unit | - | It's a measure of how much a material will become magnetized in an applied magnetic field.
 
 #### Optics units
 
 | Name | Dimensions | Type | Literals | Description
 | ----- | ----- | ----- | ----------- | --------------------------
 | optical_power | 1/m | scalar_unit | - | Degree to which a lens, mirror or other optical system converges or diverges light.
-| luminance | cd/m2 | scalar_unit | - | Luminous intensity per unit area of light.
 | illuminance | lx | scalar_unit | _lx and _Tlx, _klx, etc (all prefixes supported) | Luminous flux incident in a surface.
 | luminous_flux | lm | scalar_unit | _lm and _Tlm, _klm, etc (all prefixes supported) | The perceived power of light.
-| luminous_energy | cd*sr*s | scalar_unit | - | Perceived fraction of energy transported by the light waves.
-| luminous_exposure | cd*sr*s/m2 | scalar_unit | - | Amount of light per unit area.
+| luminous_energy | lm*s | scalar_unit | - | Perceived fraction of energy transported by the light waves.
+| luminous_exposure | lx*s | scalar_unit | - | Amount of light per unit area.
 | luminous_efficacy | lm/W | scalar_unit | - | Measure of how well a light source produces visible light.
 | ionizing_radiation | Gy | scalar_unit | _Gy and _TGy, _kGy, etc (all prefixes supported). Also, _Sv and _TSv, _kSv, etc (all prefixes supported) | Subatomic particles or electromagnetic waves that have sufficient energy to ionize atoms or molecules by detaching electrons from them.
 | absorbed_dose | m2/s3 | scalar_unit | - | Measure of the energy deposited in matter by ionizing radiation per unit mass.
@@ -979,14 +1018,15 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | power | W | scalar_unit | _W and _TW, _kW, etc (all prefixes supported) | Energy per second.
 | power_density | kg/m*s3 | scalar_unit | - | Energy per second per volume.
 | entropy | kg*m2/K*s2 | scalar_unit | - | Amount of disorder in nature.
-| heat_capacity | kg*m2/K*s2 | scalar_unit | - | Amount of heat that matter needs to change temperature.
+| heat_capacity | J/K | scalar_unit | - | Amount of heat that matter needs to change temperature.
 | heat_flux_density | kg/s3 | scalar_unit | - | Amount of heat per surface.
-| thermal_conductivity | kg*m/K*s3 | scalar_unit | - | How easy matters conducts thermal energy.
+| thermal_conductivity | W/m*K | scalar_unit | - | How easy matters conducts thermal energy.
 | thermal_diffusivity | m2/s | scalar_unit | - | The diffusivity of the thermal energy.
-| thermal_resistance | K*s3/kg*m2 | scalar_unit | - | The resistance to thermal change.
+| thermal_resistance | K/W | scalar_unit | - | The resistance to thermal change.
 | thermal_expansion_coefficient | 1/K | scalar_unit | - | The coefficient at which matter expands due to heat.
 | temperature_gradient, temperature_gradient_2d, temperature_gradient_3d, temperature_gradient_nd | K/m | scalar_unit, vector_unit_2d, vector_unit_3d, vector_unit_nd | - | The gradient of change of temperature inside the space.
 | energy_flux_density | kg/s3 | scalar_unit | - | Density of a flux of energy.
+| fuel_efficiency | 1/m2 | scalar_unit | - | Ratio of the result of conversion of chemical potential energy into kinetic energy or work.
 
 #### Waves units
 
@@ -1008,7 +1048,7 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | density | g/m3 | scalar_unit | - | Amount of mass per unit of volume.
 | viscosity | m2/s | scalar_unit | - | Resistance to the movement done by the solvent.
 | specific_volume | m3/g | scalar_unit | - | Volume per unit of mass.
-| specific_heat_capacity | m2/s2*K | scalar_unit | - | Heat capacity of a particular substance.
+| specific_heat_capacity | J/K*kg | scalar_unit | - | Heat capacity of a particular substance.
 | specific_entropy | m2/s2*K | scalar_unit | - | Entropy of a substance.
 | specific_energy | m2/s2 | scalar_unit | - | Energy per unit of mass
 | molar_volume | m3/mol | scalar_unit | - | Volume of each mole of a substance.
@@ -1037,12 +1077,12 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 
 | Name | Dimensions | Type | Literals | Description
 | ----- | ----- | ----- | ----------- | --------------------------
-| electrical_conductivity | A2*s3/kg*m3 | scalar_unit | - | Amount of current conducted.
+| electrical_conductivity | S/m | scalar_unit | - | Amount of current conducted.
 | resistance | Ω | scalar_unit | _Ω and _TΩ, _kΩ, etc (all prefixes supported) | Opposition to the flow of current of a substance.
 | electric_conductance | S | scalar_unit | _S and _TS, _kS, etc (all prefixes supported) | The inverse of the resistance.
 | capacitance | F | scalar_unit | _F and _TF, _kF, etc (all prefixes supported) | Amount of charge that can be stored by a capacitor.
-| permittivity | A2*s4/kg*m3 | scalar_unit | - | The electric polarizability of a dieletric material.
-| resistivity | kg*m3/A2*s3 | scalar_unit | - | How much a material stops the flow of electric current through it.
+| permittivity | F/m | scalar_unit | - | The electric polarizability of a dieletric material.
+| resistivity | Ω*m | scalar_unit | - | How much a material stops the flow of electric current through it.
 | linear_charge_density | C/m | scalar_unit | - | The amount of electric charge per unit length.
 | surface_charge_density | C/m2 | scalar_unit | - | The amount of electric charge per unit area.
 | volume_charge_density | C/m3 | scalar_unit | - | The amount of electric charge per unit volume.

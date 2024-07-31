@@ -234,11 +234,22 @@ namespace scifir
 				remove_dimension(actual_dimension);
 				if(actual_dimension.is_composite_dimension())
 				{
-					vector<dimension> derived_dimensions = actual_dimension.get_simple_dimensions();
-					for(const dimension& derived_dimension : derived_dimensions)
+					vector<dimension> base_dimensions = actual_dimension.get_base_dimensions();
+					for(const dimension& base_dimension : base_dimensions)
 					{
-						remove_dimension(derived_dimension);
+						remove_dimension(base_dimension);
 					}
+				}
+			}
+			if (dimensions.size() == 1)
+			{
+				if (dimensions[0].dimension_type == dimension::CELSIUS and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::KELVIN and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+				{
+					value += 273.15f;
+				}
+				else if (dimensions[0].dimension_type == dimension::KELVIN and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::CELSIUS and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+				{
+					value -= 273.15f;
 				}
 			}
 			dimensions.clear();
@@ -247,10 +258,10 @@ namespace scifir
 				add_dimension(new_dimension);
 				if(new_dimension.is_composite_dimension())
 				{
-					vector<dimension> new_derived_dimensions = new_dimension.get_simple_dimensions();
-					for(const dimension& new_derived_dimension : new_derived_dimensions)
+					vector<dimension> new_base_dimensions = new_dimension.get_base_dimensions();
+					for(const dimension& new_base_dimension : new_base_dimensions)
 					{
-						add_dimension(new_derived_dimension);
+						add_dimension(new_base_dimension);
 					}
 				}
 			}
@@ -275,11 +286,22 @@ namespace scifir
 				remove_dimension(actual_dimension);
 				if(actual_dimension.is_composite_dimension())
 				{
-					vector<dimension> derived_dimensions = actual_dimension.get_simple_dimensions();
-					for(const dimension& derived_dimension : derived_dimensions)
+					vector<dimension> base_dimensions = actual_dimension.get_base_dimensions();
+					for(const dimension& base_dimension : base_dimensions)
 					{
-						remove_dimension(derived_dimension);
+						remove_dimension(base_dimension);
 					}
+				}
+			}
+			if (dimensions.size() == 1 and x.get_dimensions().size() == 1)
+			{
+				if (dimensions[0].dimension_type == dimension::CELSIUS and dimensions[0].dimension_position == dimension::NUMERATOR and x.get_dimensions()[0].dimension_type == dimension::KELVIN and x.get_dimensions()[0].dimension_position == dimension::NUMERATOR)
+				{
+					value += 273.15f;
+				}
+				else if (dimensions[0].dimension_type == dimension::KELVIN and dimensions[0].dimension_position == dimension::NUMERATOR and x.get_dimensions()[0].dimension_type == dimension::CELSIUS and x.get_dimensions()[0].dimension_position == dimension::NUMERATOR)
+				{
+					value -= 273.15f;
 				}
 			}
 			dimensions.clear();
@@ -288,10 +310,10 @@ namespace scifir
 				add_dimension(new_dimension);
 				if(new_dimension.is_composite_dimension())
 				{
-					vector<dimension> new_derived_dimensions = new_dimension.get_simple_dimensions();
-					for(const dimension& new_derived_dimension : new_derived_dimensions)
+					vector<dimension> new_base_dimensions = new_dimension.get_base_dimensions();
+					for(const dimension& new_base_dimension : new_base_dimensions)
 					{
-						add_dimension(new_derived_dimension);
+						add_dimension(new_base_dimension);
 					}
 				}
 			}
@@ -321,14 +343,65 @@ namespace scifir
 
 	bool scalar_unit::has_empty_dimensions() const
 	{
-		vector<dimension> derived_dimensions = create_simple_dimensions(dimensions);
-		if(derived_dimensions.size() == 0)
+		if(dimensions.size() == 0)
 		{
 			return true;
 		}
 		else
 		{
 			return false;
+		}
+	}
+
+	bool scalar_unit::is_dimensionless() const
+	{
+		if (has_empty_dimensions())
+		{
+			return true;
+		}
+		else
+		{
+			for (const dimension& x : dimensions)
+			{
+				if (!x.is_dimensionless())
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+	}
+
+	bool scalar_unit::has_simple_dimensions() const
+	{
+		if (dimensions.size() == 1)
+		{
+			return dimensions[0].is_simple_dimension();
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	bool scalar_unit::has_single_dimensions() const
+	{
+		return (dimensions.size() == 1);
+	}
+
+	bool scalar_unit::has_composite_dimensions() const
+	{
+		if (dimensions.size() == 0)
+		{
+			return false;
+		}
+		else if (dimensions.size() == 1)
+		{
+			return dimensions[0].is_composite_dimension();
+		}
+		else
+		{
+			return true;
 		}
 	}
 
@@ -342,9 +415,21 @@ namespace scifir
 		return "";
 	}*/
 
-	vector<dimension> scalar_unit::get_derived_dimensions() const
+	dimension::type scalar_unit::get_single_dimension_type() const
 	{
-		return create_simple_dimensions(dimensions);
+		if (dimensions.size() == 1)
+		{
+			return dimensions[0].dimension_type;
+		}
+		else
+		{
+			return dimension::NONE;
+		}
+	}
+
+	vector<dimension> scalar_unit::get_base_dimensions() const
+	{
+		return create_base_dimensions(dimensions);
 	}
 
 	string scalar_unit::display(int number_of_decimals,bool with_brackets,bool use_close_prefix) const
@@ -376,24 +461,24 @@ namespace scifir
 		return output.str();
 	}
 
-	string scalar_unit::derived_display(int number_of_decimals,bool with_brackets,bool use_close_prefix) const
+	string scalar_unit::base_display(int number_of_decimals,bool with_brackets,bool use_close_prefix) const
 	{
 		ostringstream output;
 		long double x_value = get_value();
-		vector<dimension> derived_dimensions = create_simple_dimensions(dimensions,x_value);
-		if (derived_dimensions.size() == 1 and use_close_prefix == true)
+		vector<dimension> base_dimensions = create_base_dimensions(dimensions,x_value);
+		if (base_dimensions.size() == 1 and use_close_prefix == true)
 		{
 			int value_scale = int(log10(get_value()));
-			prefix display_prefix = closest_prefix(derived_dimensions[0].prefix,value_scale);
-			x_value *= derived_dimensions[0].prefix_math();
-			x_value /= derived_dimensions[0].prefix_math(display_prefix);
-			vector<dimension> x_dimensions = derived_dimensions;
+			prefix display_prefix = closest_prefix(base_dimensions[0].prefix,value_scale);
+			x_value *= base_dimensions[0].prefix_math();
+			x_value /= base_dimensions[0].prefix_math(display_prefix);
+			vector<dimension> x_dimensions = base_dimensions;
 			x_dimensions[0].prefix = display_prefix;
-			output << display_float(float(x_value),number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
+			output << display_float(float(x_value),number_of_decimals) << " " << to_string(base_dimensions,with_brackets);
 		}
 		else
 		{
-			output << display_float(float(x_value),number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
+			output << display_float(float(x_value),number_of_decimals) << " " << to_string(base_dimensions,with_brackets);
 		}
 		return output.str();
 	}
@@ -418,8 +503,8 @@ namespace scifir
 					new_value /= x_dimension.prefix_math();
 				}
 			}
-			vector<dimension> derived_dimensions = create_simple_dimensions(dimensions);
-			for(const dimension& x_dimension : derived_dimensions)
+			vector<dimension> base_dimensions = create_base_dimensions(dimensions);
+			for(const dimension& x_dimension : base_dimensions)
 			{
 				if (x_dimension.dimension_position == dimension::NUMERATOR)
 				{
@@ -428,6 +513,17 @@ namespace scifir
 				else if (x_dimension.dimension_position == dimension::DENOMINATOR)
 				{
 					new_value /= x_dimension.prefix_math();
+				}
+			}
+			if (dimensions.size() == 1 and new_dimensions.size() == 1)
+			{
+				if (dimensions[0].dimension_type == dimension::CELSIUS and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::KELVIN and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+				{
+					new_value += 273.15l;
+				}
+				else if (dimensions[0].dimension_type == dimension::KELVIN and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::CELSIUS and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+				{
+					new_value -= 273.15l;
 				}
 			}
 			for(const dimension& x_new_dimension : new_dimensions)

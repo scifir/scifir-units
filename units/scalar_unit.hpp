@@ -69,7 +69,7 @@
 	} \
 \
 const string name::dimensions_match = init_dimensions; \
-const vector<dimension> name::real_dimensions = create_simple_dimensions(init_dimensions)
+const vector<dimension> name::real_dimensions = create_base_dimensions(init_dimensions)
 
 using namespace std;
 
@@ -180,10 +180,16 @@ namespace scifir
 			bool has_dimensions(const vector<dimension>& x_dimensions) const;
 			bool has_dimensions(const scalar_unit& x) const;
 			bool has_empty_dimensions() const;
+			bool is_dimensionless() const;
+			bool has_simple_dimensions() const;
+			bool has_single_dimensions() const;
+			bool has_composite_dimensions() const;
 			string display_dimensions() const;
 
+			dimension::type get_single_dimension_type() const;
+
 			//string get_dimensions_match() const;
-			vector<dimension> get_derived_dimensions() const;
+			vector<dimension> get_base_dimensions() const;
 			
 			inline const vector<dimension>& get_dimensions() const
 			{
@@ -196,7 +202,7 @@ namespace scifir
 			}
 
 			string display(int number_of_decimals = 2 ,bool with_brackets = false,bool use_close_prefix = false) const;
-			string derived_display(int number_of_decimals = 2,bool with_brackets = false,bool use_close_prefix = false) const;
+			string base_display(int number_of_decimals = 2,bool with_brackets = false,bool use_close_prefix = false) const;
 			string custom_display(const string& init_dimensions,int number_of_decimals = 2,bool with_brackets = false) const;
 
 		protected:

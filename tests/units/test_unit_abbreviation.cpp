@@ -178,6 +178,32 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_rM == "100 rM"));
 		CHECK(bool(100_qM == "100 qM"));
 
+		CHECK(bool(100_QIU == "100 QIU"));
+		CHECK(bool(100_RIU == "100 RIU"));
+		CHECK(bool(100_YIU == "100 YIU"));
+		CHECK(bool(100_ZIU == "100 ZIU"));
+		CHECK(bool(100_EIU == "100 EIU"));
+		CHECK(bool(100_PIU == "100 PIU"));
+		CHECK(bool(100_TIU == "100 TIU"));
+		CHECK(bool(100_GIU == "100 GIU"));
+		CHECK(bool(100_MIU == "100 MIU"));
+		CHECK(bool(100_kIU == "100 kIU"));
+		CHECK(bool(100_hIU == "100 hIU"));
+		CHECK(bool(100_daIU == "100 daIU"));
+		CHECK(bool(100_IU == "100 IU"));
+		CHECK(bool(100_dIU == "100 dIU"));
+		CHECK(bool(100_cIU == "100 cIU"));
+		CHECK(bool(100_mIU == "100 mIU"));
+		CHECK(bool(100_µIU == "100 uIU"));
+		CHECK(bool(100_nIU == "100 nIU"));
+		CHECK(bool(100_pIU == "100 pIU"));
+		CHECK(bool(100_fIU == "100 fIU"));
+		CHECK(bool(100_aIU == "100 aIU"));
+		CHECK(bool(100_zIU == "100 zIU"));
+		CHECK(bool(100_yIU == "100 yIU"));
+		CHECK(bool(100_rIU == "100 rIU"));
+		CHECK(bool(100_qIU == "100 qIU"));
+
 		CHECK(bool(100_memo == "100 memo"));
 		CHECK(bool(100_degree == "100°"));
 		CHECK(bool(to_string(5_rad) == "286.47°"));
@@ -354,6 +380,32 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_yM == "100 yM"));
 		CHECK(bool(100.0_rM == "100 rM"));
 		CHECK(bool(100.0_qM == "100 qM"));
+
+		CHECK(bool(100.0_QIU == "100 QIU"));
+		CHECK(bool(100.0_RIU == "100 RIU"));
+		CHECK(bool(100.0_YIU == "100 YIU"));
+		CHECK(bool(100.0_ZIU == "100 ZIU"));
+		CHECK(bool(100.0_EIU == "100 EIU"));
+		CHECK(bool(100.0_PIU == "100 PIU"));
+		CHECK(bool(100.0_TIU == "100 TIU"));
+		CHECK(bool(100.0_GIU == "100 GIU"));
+		CHECK(bool(100.0_MIU == "100 MIU"));
+		CHECK(bool(100.0_kIU == "100 kIU"));
+		CHECK(bool(100.0_hIU == "100 hIU"));
+		CHECK(bool(100.0_daIU == "100 daIU"));
+		CHECK(bool(100.0_IU == "100 IU"));
+		CHECK(bool(100.0_dIU == "100 dIU"));
+		CHECK(bool(100.0_cIU == "100 cIU"));
+		CHECK(bool(100.0_mIU == "100 mIU"));
+		CHECK(bool(100.0_µIU == "100 uIU"));
+		CHECK(bool(100.0_nIU == "100 nIU"));
+		CHECK(bool(100.0_pIU == "100 pIU"));
+		CHECK(bool(100.0_fIU == "100 fIU"));
+		CHECK(bool(100.0_aIU == "100 aIU"));
+		CHECK(bool(100.0_zIU == "100 zIU"));
+		CHECK(bool(100.0_yIU == "100 yIU"));
+		CHECK(bool(100.0_rIU == "100 rIU"));
+		CHECK(bool(100.0_qIU == "100 qIU"));
 
 		CHECK(bool(100.0_memo == "100 memo"));
 		CHECK(bool(100.0_degree == "100°"));

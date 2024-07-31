@@ -171,7 +171,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(d) == "99 g");
 	}
 
-	SECTION("has_dimensions() of scalar_unit_class")
+	SECTION("has_dimensions() of scalar_unit class")
 	{
 		scalar_unit a(100.0f,"g");
 		CHECK(a.has_dimensions("kg") == true);
@@ -181,6 +181,52 @@ TEST_CASE("scalar_unit class") {
 		CHECK(a.has_dimensions(b) == true);
 		scalar_unit c(10.0f,"N");
 		CHECK(a.has_dimensions(c) == false);
+	}
+
+	SECTION("has_empty_dimensions() of scalar_unit class")
+	{
+		scalar_unit a;
+		CHECK(a.has_empty_dimensions() == true);
+		scalar_unit b("100 degree");
+		CHECK(b.has_empty_dimensions() == false);
+	}
+
+	SECTION("is_dimensionless() of scalar_unit class")
+	{
+		scalar_unit a("100 degree");
+		CHECK(a.is_dimensionless() == true);
+		scalar_unit b("6 rad");
+		CHECK(b.is_dimensionless() == true);
+		scalar_unit c("100 sr");
+		CHECK(c.is_dimensionless() == true);
+		scalar_unit d = 100_m;
+		CHECK(d.is_dimensionless() == false);
+		scalar_unit e;
+		CHECK(e.is_dimensionless() == true);
+	}
+
+	SECTION("has_simple_dimensions() and has_composite_dimensions() of scalar_unit class")
+	{
+		scalar_unit a("100 degree");
+		CHECK(a.has_simple_dimensions() == true);
+		CHECK(a.has_single_dimensions() == true);
+		CHECK(a.has_composite_dimensions() == false);
+		scalar_unit b("100 sr");
+		CHECK(b.has_simple_dimensions() == true);
+		CHECK(b.has_single_dimensions() == true);
+		CHECK(b.has_composite_dimensions() == false);
+		scalar_unit c;
+		CHECK(c.has_simple_dimensions() == false);
+		CHECK(c.has_single_dimensions() == false);
+		CHECK(c.has_composite_dimensions() == false);
+		scalar_unit d = 50_N;
+		CHECK(d.has_simple_dimensions() == false);
+		CHECK(d.has_single_dimensions() == true);
+		CHECK(d.has_composite_dimensions() == true);
+		scalar_unit e("10 m*s/C");
+		CHECK(e.has_simple_dimensions() == false);
+		CHECK(e.has_single_dimensions() == false);
+		CHECK(e.has_composite_dimensions() == true);
 	}
 
 	SECTION("change_dimensions() of scalar_unit class")
@@ -209,6 +255,20 @@ TEST_CASE("scalar_unit class") {
 		scalar_unit f("8 bit");
 		f.change_dimensions("B");
 		CHECK(bool(f == "1 B"));
+		scalar_unit g = 100_celsius;
+		g.change_dimensions("K");
+		CHECK(bool(g == "373.15 K"));
+		scalar_unit h = 373.15_K;
+		h.change_dimensions("°C");
+		CHECK(bool(h == "100 °C"));
+		scalar_unit i = 100_celsius;
+		scalar_unit i2 = 100_K;
+		i.change_dimensions(i2);
+		CHECK(bool(i == "373.15 K"));
+		scalar_unit j = 373.15_K;
+		scalar_unit j2 = 100_celsius;
+		j.change_dimensions(j2);
+		CHECK(bool(j == "100 °C"));
 	}
 
 	SECTION("display_dimensions() of scalar_unit class")
@@ -222,28 +282,48 @@ TEST_CASE("scalar_unit class") {
 		scalar_unit d = 10_N/5_N;
 		CHECK(d.display_dimensions() == "[empty]");
 		scalar_unit e = 2_N;
-		CHECK(to_string(e.get_derived_dimensions()) == "kg*m/s2");
+		CHECK(to_string(e.get_base_dimensions()) == "kg*m/s2");
 		scalar_unit f("2 m2");
 		CHECK(f.display_dimensions() == "m2");
+	}
+
+	SECTION("get_single_dimension_type() of scalar_unit class")
+	{
+		scalar_unit a = 20_m;
+		CHECK(a.get_single_dimension_type() == dimension::METRE);
+		scalar_unit b = 30_g;
+		CHECK(b.get_single_dimension_type() == dimension::GRAM);
+		scalar_unit c = 15_s;
+		CHECK(c.get_single_dimension_type() == dimension::SECOND);
+		scalar_unit d("5 m*s");
+		CHECK(d.get_single_dimension_type() == dimension::NONE);
 	}
 
 	SECTION("Display of scalar_unit class")
 	{
 		scalar_unit a(1.0f,"N");
 		CHECK(a.display() == "1 N");
-		CHECK(a.derived_display() == "1 kg*m/s2");
+		CHECK(a.base_display() == "1 kg*m/s2");
 		CHECK(a.custom_display("g*m/s2") == "1000 g*m/s2");
 		scalar_unit b("100 m");
 		CHECK(b.display() == "100 m");
 		CHECK(b.display(2,false,true) == "1 hm");
 		scalar_unit c("10 N");
-		CHECK(c.derived_display(2,false,true) == "10 kg*m/s2");
+		CHECK(c.base_display(2,false,true) == "10 kg*m/s2");
+		scalar_unit c2("100 °C");
+		CHECK(c2.base_display(2,false,false) == "373.14 K");
 		scalar_unit d("0 m");
 		CHECK(d.display(2,false,true) == "0 m");
 		scalar_unit e("1 AU");
-		CHECK(e.derived_display(2,false,true) == "1.49598e+11 m");
+		CHECK(e.base_display(2,false,true) == "1.49598e+11 m");
 		scalar_unit f("1 km/hour");
 		CHECK(f.custom_display("m/s",2,true) == "0.27 [m/s]");
+		scalar_unit g = 373.15_K;
+		CHECK(g.custom_display("°C",2,false) == "99.99 °C");
+		CHECK(g.custom_display("K",2,false) == "373.14 K");
+		scalar_unit h = 100_celsius;
+		CHECK(h.custom_display("°C",2,false) == "100 °C");
+		CHECK(h.custom_display("K",2,false) == "373.14 K");
 		//CHECK(f.custom_display("sci") == "1000e0 m/h");
 	}
 

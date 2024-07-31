@@ -1375,129 +1375,129 @@ scifir::magnetic_flux operator"" _qWb(unsigned long long int x)
 	return scifir::magnetic_flux((long double)x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _QT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _QT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _RT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _RT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _YT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _YT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _ZT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _ZT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _ET(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _ET(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _PT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _PT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _TT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _TT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _GT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _GT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
-/*scifir::magnetic_strength operator"" _MT(unsigned long long int x)
+/*scifir::magnetic_flux_density operator"" _MT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }*/
 
-scifir::magnetic_strength operator"" _kT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _kT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _hT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _hT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _daT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _daT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _T(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _T(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _dT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _dT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _cT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _cT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _mT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _mT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _µT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _µT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _nT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _nT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _pT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _pT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _fT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _fT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _aT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _aT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _zT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _zT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _yT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _yT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _rT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _rT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _qT(unsigned long long int x)
+scifir::magnetic_flux_density operator"" _qT(unsigned long long int x)
 {
-	return scifir::magnetic_strength((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _QH(unsigned long long int x)
@@ -1623,6 +1623,11 @@ scifir::inductance operator"" _rH(unsigned long long int x)
 scifir::inductance operator"" _qH(unsigned long long int x)
 {
 	return scifir::inductance((long double)x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::temperature operator"" _celsius(unsigned long long int x)
+{
+	return scifir::temperature((long double)x, { scifir::dimension(scifir::dimension::CELSIUS,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Qlm(unsigned long long int x)
@@ -3750,129 +3755,129 @@ scifir::magnetic_flux operator"" _qWb(long double x)
 	return scifir::magnetic_flux(x, { scifir::dimension(scifir::dimension::WEBER,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _QT(long double x)
+scifir::magnetic_flux_density operator"" _QT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _RT(long double x)
+scifir::magnetic_flux_density operator"" _RT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _YT(long double x)
+scifir::magnetic_flux_density operator"" _YT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _ZT(long double x)
+scifir::magnetic_flux_density operator"" _ZT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _ET(long double x)
+scifir::magnetic_flux_density operator"" _ET(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _PT(long double x)
+scifir::magnetic_flux_density operator"" _PT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _TT(long double x)
+scifir::magnetic_flux_density operator"" _TT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _GT(long double x)
+scifir::magnetic_flux_density operator"" _GT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
-/*scifir::magnetic_strength operator"" _MT(long double x)
+/*scifir::magnetic_flux_density operator"" _MT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }*/
 
-scifir::magnetic_strength operator"" _kT(long double x)
+scifir::magnetic_flux_density operator"" _kT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _hT(long double x)
+scifir::magnetic_flux_density operator"" _hT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _daT(long double x)
+scifir::magnetic_flux_density operator"" _daT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _T(long double x)
+scifir::magnetic_flux_density operator"" _T(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _dT(long double x)
+scifir::magnetic_flux_density operator"" _dT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _cT(long double x)
+scifir::magnetic_flux_density operator"" _cT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _mT(long double x)
+scifir::magnetic_flux_density operator"" _mT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _µT(long double x)
+scifir::magnetic_flux_density operator"" _µT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _nT(long double x)
+scifir::magnetic_flux_density operator"" _nT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _pT(long double x)
+scifir::magnetic_flux_density operator"" _pT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _fT(long double x)
+scifir::magnetic_flux_density operator"" _fT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _aT(long double x)
+scifir::magnetic_flux_density operator"" _aT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _zT(long double x)
+scifir::magnetic_flux_density operator"" _zT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _yT(long double x)
+scifir::magnetic_flux_density operator"" _yT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _rT(long double x)
+scifir::magnetic_flux_density operator"" _rT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_strength operator"" _qT(long double x)
+scifir::magnetic_flux_density operator"" _qT(long double x)
 {
-	return scifir::magnetic_strength(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::inductance operator"" _QH(long double x)
@@ -3998,6 +4003,11 @@ scifir::inductance operator"" _rH(long double x)
 scifir::inductance operator"" _qH(long double x)
 {
 	return scifir::inductance(x, { scifir::dimension(scifir::dimension::HENRY,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::temperature operator"" _celsius(long double x)
+{
+	return scifir::temperature(x, { scifir::dimension(scifir::dimension::CELSIUS,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::luminous_flux operator"" _Qlm(long double x)
