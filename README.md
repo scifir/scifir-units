@@ -1519,6 +1519,12 @@ The **pH** class allows to work with pH, which is used inside chemistry software
 
 The **size_2d** class allows to store the data of the width and height of an object in length classes. The **size_3d** allows to store the data of the width, the height and the depth of an object in length classes. The **size_nd** class allows to store lengths corresponding to the dimension of an object in a variable number of dimensions.
 
+## Nutrition
+
+### ABV
+
+The **ABV** class, acronym of Alcohol by Volume, is a unit of measure used for the degrees of alcohol inside alcoholic beverages.
+
 ## Internals
 
 Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.
