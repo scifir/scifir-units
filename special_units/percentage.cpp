@@ -38,7 +38,7 @@ namespace scifir
 		}
 	}
 
-	percentage::percentage(double new_value,percentage::type init_type) : value(float(new_value))
+	percentage::percentage(double new_value,percentage::type init_type) : value()
 	{
 		if (init_type == percentage::PERCENTAGE)
 		{
@@ -54,7 +54,7 @@ namespace scifir
 		}
 	}
 
-	percentage::percentage(long double new_value,percentage::type init_type) : value(float(new_value))
+	percentage::percentage(long double new_value,percentage::type init_type) : value()
 	{
 		if (init_type == percentage::PERCENTAGE)
 		{
@@ -70,7 +70,7 @@ namespace scifir
 		}
 	}
 
-	percentage::percentage(int new_value,percentage::type init_type) : value(float(new_value))
+	percentage::percentage(int new_value,percentage::type init_type) : value()
 	{
 		if (init_type == percentage::PERCENTAGE)
 		{

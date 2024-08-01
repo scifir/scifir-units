@@ -381,5 +381,3 @@ TEST_CASE("percentage class") {
         CHECK(to_string(b2) == "72%");
 	}
 }
-
-
