@@ -122,6 +122,14 @@ TEST_CASE("percentage class") {
 		CHECK(l3.get_value() == 0.0f);
 		percentage l4(30,percentage::PARTS_PER_BILLION);
 		CHECK(l4.get_value() == 0.0f);
+		percentage m(0.3f,percentage::RATIO);
+		CHECK(std::fabs(m.get_value() - 30.0f) < 0.01f);
+		percentage m2(0.3,percentage::RATIO);
+		CHECK(std::fabs(m2.get_value() - 30.0f) < 0.01f);
+		percentage m3(0.3l,percentage::RATIO);
+		CHECK(std::fabs(m3.get_value() - 30.0f) < 0.01f);
+		percentage m4(30,percentage::RATIO);
+		CHECK(m4.get_value() == 0.0f);
 	}
 
 	SECTION("Assignments of percentage class") {
@@ -271,7 +279,6 @@ TEST_CASE("percentage class") {
 		scalar_unit ag = scalar_unit("4 N");
 		scalar_unit ah = af / ag;
 		CHECK(to_string(ah) == "0.5 s2/kg*m");
-		cout << "ag / af: " << to_string(ag / af) << endl;
 		CHECK(to_string(ag / af) == "2 N");
 		percentage ai = percentage("70%");
 		CHECK(ai.get_factor() == 0.7f);

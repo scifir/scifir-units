@@ -51,7 +51,7 @@ TEST_CASE("abv class") {
 		abv k3(0.3l,abv::RATIO);
 		CHECK(std::fabs(k3.get_value() - 30.0f) < 0.01f);
 		abv k4(3,abv::RATIO);
-		CHECK(std::fabs(k4.get_value() - 300.0f) < 0.01f);
+		CHECK(std::fabs(k4.get_value() == 0.0f));
 	}
 
 	SECTION("Assignments of abv class") {

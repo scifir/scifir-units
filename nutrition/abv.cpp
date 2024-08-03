@@ -59,7 +59,7 @@ namespace scifir
 		}
 		else if (init_type == abv::RATIO)
 		{
-			value = float(new_value) * 100.0f;
+			value = 0.0f;
 		}
 	}
 

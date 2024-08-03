@@ -28,6 +28,10 @@ namespace scifir
 		{
 			value = new_value;
 		}
+		else if (init_type == percentage::RATIO)
+		{
+			value = new_value * 100.0f;
+		}
 		else if (init_type == percentage::PARTS_PER_MILLION)
 		{
 			value = new_value / 10000.0f;
@@ -44,6 +48,10 @@ namespace scifir
 		{
 			value = float(new_value);
 		}
+		else if (init_type == percentage::RATIO)
+		{
+			value = float(new_value) * 100.0f;
+		}
 		else if (init_type == percentage::PARTS_PER_MILLION)
 		{
 			value = float(new_value) / 10000.0f;
@@ -59,6 +67,10 @@ namespace scifir
 		if (init_type == percentage::PERCENTAGE)
 		{
 			value = float(new_value);
+		}
+		else if (init_type == percentage::RATIO)
+		{
+			value = float(new_value) * 100.0f;
 		}
 		else if (init_type == percentage::PARTS_PER_MILLION)
 		{
