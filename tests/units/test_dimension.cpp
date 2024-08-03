@@ -258,12 +258,12 @@ TEST_CASE("dimension class") {
 		CHECK(a.get_plural() == "empty");
 		CHECK(a.get_symbol() == "empty");
 		CHECK(a.get_conversion_factor() == 1.0l);
-		CHECK(a.is_simple_dimension() == true);
+		CHECK(a.is_simple_dimension() == false);
 		CHECK(a.is_base_dimension() == false);
 		CHECK(a.is_derived_dimension() == false);
 		CHECK(a.is_SI_base_dimension() == false);
 		CHECK(a.is_SI_derived_dimension() == false);
-		CHECK(a.is_dimensionless() == true);
+		CHECK(a.is_dimensionless() == false);
 		dimension a2(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a2.get_name() == "metre");
 		CHECK(a2.get_plural() == "metres");

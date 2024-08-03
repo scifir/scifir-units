@@ -248,7 +248,7 @@
 * \brief If the dimension is not a SI base dimension, it's considered a SI derived dimension.
 
 * \fn bool dimension::is_dimensionless() const
-* \brief If the dimension_type is DEGREE, RADIAN or STERADIAN, it's considered dimensionless, following the SI system of units. If the dimension_type is NONE, it's considered dimensionless too.
+* \brief If the dimension_type is DEGREE, RADIAN or STERADIAN, it's considered dimensionless, following the SI system of units.
 
 * \fn vector<dimension> dimension::get_base_dimensions() const
 * \brief Returns the base dimensions of the dimensions, which can be the same dimension or all the base dimension this dimension has, if it's a derived dimension.

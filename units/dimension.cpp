@@ -866,7 +866,7 @@ namespace scifir
 		switch(dimension_type)
 		{
 			case dimension::NONE:
-				return true;
+				return false;
 			case dimension::METRE:
 				return true;
 			case dimension::DEGREE:
@@ -981,7 +981,14 @@ namespace scifir
 
 	bool dimension::is_composite_dimension() const
 	{
-		return !is_simple_dimension();
+		if (dimension_type == dimension::NONE)
+		{
+			return false;
+		}
+		else
+		{
+			return !is_simple_dimension();
+		}
 	}
 
 	bool dimension::is_base_dimension() const
@@ -1352,7 +1359,7 @@ namespace scifir
 
 	bool dimension::is_dimensionless() const
 	{
-		if (dimension_type == dimension::DEGREE or dimension_type == dimension::RADIAN or dimension_type == dimension::STERADIAN or dimension_type == dimension::NONE)
+		if (dimension_type == dimension::DEGREE or dimension_type == dimension::RADIAN or dimension_type == dimension::STERADIAN)
 		{
 			return true;
 		}
