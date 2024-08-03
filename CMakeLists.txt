@@ -268,6 +268,11 @@ if(BUILD_TESTING)
 		add_test(NAME aid COMMAND test_aid)
 		set_tests_properties(aid PROPERTIES LABELS tests)
 
+		add_executable(test_body tests/special_units/test_body.cpp)
+		target_link_libraries(test_body PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME body COMMAND test_body)
+		set_tests_properties(body PROPERTIES LABELS tests)
+
 		add_executable(test_mind tests/special_units/test_mind.cpp)
 		target_link_libraries(test_mind PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME mind COMMAND test_mind)
