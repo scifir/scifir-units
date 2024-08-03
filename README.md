@@ -209,6 +209,7 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 - Use pixel inside any digital space that needs it. You can convert to some amount of length, or another different amount of length, in different applications, as needed. The conversion of pixel to length varies depending on the reasoning behind each different use of pixel.
 - The dimension **pixel** should always be avoided, in preference of the class pixel instead. Use this dimension only when it's strictly needed to have a scalar_unit, and then the class pixel can't be used.
 - The dimension **money** is intended to be converted later to some concrete currency, with other libraries and data sources.
+- **IU** should be converted specifically for each different reaction, because the IU unit is defined in science different for each case of use. Then, it doesn't has a direct conversion, and only one formula.
 
 ### Folder structure
 
