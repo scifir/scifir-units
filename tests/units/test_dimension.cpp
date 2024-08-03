@@ -772,8 +772,8 @@ TEST_CASE("dimension class") {
 		CHECK(a48.get_symbol() == "px");
 		CHECK(a48.get_conversion_factor() == 1.0l);
 		CHECK(a48.is_simple_dimension() == true);
-		CHECK(a48.is_base_dimension() == false);
-		CHECK(a48.is_derived_dimension() == true);
+		CHECK(a48.is_base_dimension() == true);
+		CHECK(a48.is_derived_dimension() == false);
 		CHECK(a48.is_SI_base_dimension() == false);
 		CHECK(a48.is_SI_derived_dimension() == false);
 		dimension a49(dimension::MEMO,prefix::NONE,dimension::NUMERATOR);

@@ -1098,7 +1098,7 @@ namespace scifir
 			case dimension::MONEY:
 				return true;
 			case dimension::PIXEL:
-				return false;
+				return true;
 			case dimension::MEMO:
 				return true;
 			case dimension::INTERNATIONAL_UNIT:
