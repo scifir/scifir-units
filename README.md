@@ -197,6 +197,19 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 | RYDBERG_CONSTANT | $$1.0973731568539×10^7 \  1/m$$ | Relates the electromagnetic spectra of an atom.
 | FARADAY_CONSTANT | $$9.64853321233100184×10^4 \  C/mol$$ | It's the electric charge of one mole of elementary carriers.
 
+### Preferences of use
+
+- Always use the dimensions of the SI system over the imperial system, or any other system. Use always the system of units in use of your team, or on the board, with first preference, if there's a system selected.
+- Always **prefer to use the string literals** when instantiating any scalar_unit or other class that uses it. Use the other constructors only if they are strictly needed.
+- Prefer the **light year** over **parsec** and **astronomical units**. Use astronomical units only for distances of the same solar system.
+- Use **degree** over radian, because it's more easy to understand by humans. Use radian when the value in radians is the direct result of some equation, as usually happens.
+- The dimension degree and radian should be avoided in preference of the **angle class**.
+- Use **kelvin** over celsius, because it's the current standard in science.
+- Use the **litre** for volumes of liquids over cubic metres.
+- Use pixel inside any digital space that needs it. You can convert to some amount of length, or another different amount of length, in different applications, as needed. The conversion of pixel to length varies depending on the reasoning behind each different use of pixel.
+- The dimension **pixel** should always be avoided, in preference of the class pixel instead. Use this dimension only when it's strictly needed to have a scalar_unit, and then the class pixel can't be used.
+- The dimension **money** is intended to be converted later to some concrete currency, with other libraries and data sources.
+
 ### Folder structure
 
 - **.github/:** Contains configuration files related to the GitHub of scifir-units.
