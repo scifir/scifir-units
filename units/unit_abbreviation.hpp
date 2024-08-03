@@ -13,6 +13,8 @@
 #include "../special_units/percentage.hpp"
 #include "../special_units/pixel.hpp"
 
+#include "../nutrition/abv.hpp"
+
 scifir::length operator"" _Å(unsigned long long int);
 
 scifir::volume operator"" _QL(unsigned long long int);
@@ -216,6 +218,7 @@ scifir::percentage operator"" _ppm(unsigned long long int);
 scifir::percentage operator"" _ppt(unsigned long long int);
 scifir::percentage operator"" _ppq(unsigned long long int);*/
 scifir::pixel operator"" _px(unsigned long long int);
+scifir::abv operator"" _abv(unsigned long long int);
 
 scifir::length operator"" _Å(long double);
 
@@ -421,5 +424,6 @@ scifir::percentage operator"" _ppm(long double);
 scifir::percentage operator"" _ppt(long double);
 scifir::percentage operator"" _ppq(long double);*/
 scifir::pixel operator"" _px(long double);
+scifir::abv operator"" _abv(long double);
 
 #endif // SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED

@@ -216,6 +216,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_ppt == "100 ppt"));
 		CHECK(bool(100_ppq == "100 ppq"));*/
 		CHECK(bool(100_px == "100 px"));
+		CHECK(bool(100_abv == "100% ABV"));
 
 		CHECK(bool(100.0_Å == "100 angstrom"));
 
@@ -419,5 +420,6 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_ppt == "100 ppt"));
 		CHECK(bool(100.0_ppq == "100 ppq"));*/
 		CHECK(bool(100.0_px == "100 px"));
+		CHECK(bool(100.0_abv == "100% ABV"));
 	}
 }

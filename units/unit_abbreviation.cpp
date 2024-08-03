@@ -957,6 +957,11 @@ scifir::pixel operator"" _px(unsigned long long int x)
 	return scifir::pixel((long double)x);
 }
 
+scifir::abv operator"" _abv(unsigned long long int x)
+{
+	return scifir::abv((long double)x,scifir::abv::PERCENTAGE);
+}
+
 scifir::length operator"" _Å(long double x)
 {
 	return scifir::length(x, { scifir::dimension(scifir::dimension::ANGSTROM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
@@ -1905,4 +1910,9 @@ scifir::percentage operator"" _ppq(long double x)
 scifir::pixel operator"" _px(long double x)
 {
 	return scifir::pixel(x);
+}
+
+scifir::abv operator"" _abv(long double x)
+{
+	return scifir::abv(x,scifir::abv::PERCENTAGE);
 }
