@@ -8,6 +8,8 @@ SCIFIR UNITS - VERSION 2
 // TENSORS (2)
 // TODO: add display functions without new lines and other equivalents with new lines, they should allow to display like the other units related to dimensions
 // TODO: add operator*, cross_product(), dot_product(), hadamard_product()
+// TODO: add a tensor_field inside fields
+// TODO: store the vectors in tensor_unit as spherical coordinates
 
 // TRAJECTORY AND PARAMETERIZATION
 // TODO: finish the trajectory_3d class
@@ -22,13 +24,24 @@ SCIFIR UNITS - VERSION 2
 // TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes
 // TODO: conversion of size_t to and int gives a warning in MSVC
 // TODO: finish testing in Windows all tests
-// TODO: add the Celsius to the conversion
-// TODO: check the derived units here: https://en.wikipedia.org/wiki/SI_derived_unit
-// TODO: look if the SI system of units has another name for abbreviations
-// TODO: look if the SI system of units has another name for dimensions
+// TODO: support solid_angle, with the literal _sr too
+// TODO: explanation, with code examples, of physics and chemistry laws
+// TODO: there is a bug with is_close_prefix in base_display()
+// TODO: add the system of units of origin and reason of why each dimension::type is present in the README.md file
+// TODO: think if area and surface should be simple or composite dimensions
+// TODO: explain the interpretation of dimensions inside scifir-units
+// TODO: warning of to_string() functions of body.hpp
+// TODO: explain how to use the tensors, instead of tensor_unit, inside the README.md file in concepts
+// TODO: add the history of dimensions after preferences of use
+// TODO: add the central inventions of each dimension, like the sundial, the waterclock, etc
+// TODO: explain the current normal instruments of measure in the README.md file, and also that scifir-units is used for their electronic counterpart
 
 // TODO: maybe it's needed to change characters of the initialization strings of some vector_unit classes. It's needed to update the file README.md too with that
 // TODO: think of how to implement conversions, do also the test of them
+// TODO: support the conversion inside the display of scalar_unit
+// TODO: add the old historic systems of units to conversion, and explain them in the README.md file
+// TODO: add the conversions of the CGS system of units, and the FPS system of units
+// TODO: add Farenheit, Rankine and maybe other dimensions of temperature as conversions
 // TODO: check if the member-variable names of dimension class can be changed
 
 // TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their derived classes
@@ -78,6 +91,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: report the bug to CATCH of the use of bool()
 // TODO: verify the titles of sections of tests of units, meca_number and special_units
 // TODO: test of base unit classes
+// TODO: test stof() with bad values
 
 // DOCUMENTATION (23)
 // TODO: create all the dox files of the library
@@ -99,6 +113,8 @@ SCIFIR UNITS - VERSION 2
 // TODO: add the explanation of the definition of each unit inside a file, including conversions
 // TODO: document the imperial system of units (https://en.wikipedia.org/wiki/Imperial_units)
 // TODO: explain how a robot can calculate angles
+// TODO: explain how to create lambda functions of mathematical functions with different parts, using if-else for that
+// TODO: explain how to use mEq in the README.md file, in case of use
 
 // TODO: desactivate the search engine in the doxyfile for the doxyfile of development, not the doxyfile of github pages
 // TODO: maybe use two different files Doxyfile, one for master and one for gh-pages
@@ -174,6 +190,9 @@ SCIFIR UNITS - VERSION 2
 // TODO: check is string_view should be used as parameters
 // TODO: use string_view to the enum functions
 
+// CONSTANTS
+// TODO: maybe all constant values should be constexpr, and maybe there's a way to make them scalar_unit without needing to have all of them defined at the same time, because that sizes
+
 // DIMENSIONS (7)
 // TODO: support the binary prefixes too
 // TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
@@ -183,8 +202,15 @@ SCIFIR UNITS - VERSION 2
 // TODO: check the literal with e
 // TODO: read the ISO 80000
 
+// TODO: scalar_unit should have get_notdimensionless_base_dimensions() and notdimensionless_base_display()
+
+// TODO: finish custom_basic dimensions, change names to CUSTOM_BASE_DIMENSION, CUSTOM_DERIVED_DIMENSION and CUSTOM_DERIVED_DIMENSION_FULL_SYMBOL
 // TODO: finish the test of custom_basic dimensions and document them in the README.md file
 // TODO: maybe is_complex_dimension() for cases were the the dimension is not a simple dimension
+
+// CONVERSION
+// TODO: add the apothecaries system of units, maybe there are more systems to add
+// TODO: possibly add the drop units
 
 // UNITS (9)
 // TODO: solve in some way the problem that vector_unit_3d needs different characters in Windows an inside Linux when initialized with strings
@@ -198,24 +224,32 @@ SCIFIR UNITS - VERSION 2
 // TODO: function to_latex() for dimensions and scalar_unit
 // TODO: function that displays the scalar_unit as text, with the plural if the scalar_unit has a value greather than 1
 // TODO: maybe change the SI constants to be a base unit instead of a long double
+// TODO: maybe the dimension memo needs a base unit class
+// TODO: think if to add functions of statistics here, check if there is a solution in other C++ libraries or if it is good to have them here
+// TODO: follow the schema of numbers of the 22 General Conference on Weights and Measures. Check if there are more rules to add of the General Conferences, too
 
 // TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 // TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
 
 // TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files
 
-// PREDEFINED UNITS (4)
+// DERIVED UNITS (5)
 // TODO: think if to add accoustic and matter derived units, or if it's not needed
 // TODO: delete all field classes that currently are vector_units, and make them fields
 // TODO: think if to add another concentration class, the previous one has been deprecated
 // TODO: move cas_number to the library of scifir-info, or even to another category
 // TODO: biology units, like heart_rate
+// TODO: UNIX time constructor in the string constructor for time_duration
 
 // MECA NUMBERS (4)
 // TODO: add the allowed typenames to lab_number, and don't accept any other type
 // TODO: angle should read initialization strings in radian too inside the string constructor, maybe with "radian" name, possibly "rad" should be supported too
 // TODO: maybe add obtusangle, rect angle, acutangle, etc
 // TODO: study if to add the gradian
+// TODO: study if to add the turn
+// TODO: think if to add minute and second to angle
+// TODO: maybe support prefixes for radians, search if there are prefixes for the other units of angles
+// TODO: add minutes and seconds to degrees
 
 // SPECIAL UNITS - EXTRA (7)
 // TODO: ip class? check networking libraries of C++ and decide if to add it here
@@ -231,6 +265,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: address class with zid inside
 // TODO: enum of movement maybe should be divided in kind of animal
 // TODO: display() function for pixel class
+// TODO: maybe delete the operator = T of percentage class, maybe there are more in similar classes. Try first the different literals of non-floating numeric types
 
 // EMOTIONAL UNITS (1)
 // TODO: finish the enums of mind.hpp
@@ -364,3 +399,5 @@ SCIFIR UNITS - VERSION 2
 // Color model: https://en.wikipedia.org/wiki/Color_model
 // Unit prefix: https://en.wikipedia.org/wiki/Unit_prefix
 // Metric prefix: https://en.wikipedia.org/wiki/Metric_prefix
+// TODO: Euclidean space: https://en.wikipedia.org/wiki/Euclidean_space
+// TODO: https://en.wikipedia.org/wiki/Radian
