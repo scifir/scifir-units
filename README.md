@@ -1571,3 +1571,9 @@ The square of dimensions works in the following way: If the dimension consist on
 There's an important future characteristic important to explain. It's not yet implemented inside the library because it's not totally possible given the current features of the programming languages, maybe in the future there'll exist a way to implement it. That important characteristic is to have another system for storing the dimensions for the case of one simple dimension, without changing the easy implementation that the scalar_unit classes have.
 
 One possible solution for this is to have a light_scalar_unit class to handle the case of scalar unit variables that have only one dimension as member-variable in replacement of the member-variable of vector<dimension> of the scalar_unit class, and never more than one dimension. This approach has the big advantage of allowing a greather similarity with floating-point types, consuming less RAM and running faster, but with the disadvantage of having also now two different classes for variables scalar units and, then, an API that's harder to use, because now it's needed to have different functions for light_scalar_unit classes and for scalar_unit classes.
+
+## Thoughts about units
+
+### Area and volume dimensions
+
+**Area** and **volume**, as thinked by the author of this library, can be considered simple or composite dimensions, depending on the point of view. From the point of view that's used inside the SI system of units, they are composite dimensions because there's more than one base dimension. From another point of view, it can be thinked that, given the fact that the same dimension is present with an exponent, then it's just a simple dimension. With this in mind, it can be thinked a unitary square and a unitary cube as the base of this simple dimension.
