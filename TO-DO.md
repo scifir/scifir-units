@@ -1,15 +1,9 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 264
+**Number of TODOs:** 262
 
 ## MATERIAL_VECTOR_UNIT (1)
 - TODO: add operator == and operator !=
-
-## TENSORS (4)
-- TODO: add display functions without new lines and other equivalents with new lines, they should allow to display like the other units related to dimensions
-- TODO: add operator*, cross_product(), dot_product(), hadamard_product()
-- TODO: add a tensor_field inside fields
-- TODO: store the vectors in tensor_unit as spherical coordinates
 
 ## TRAJECTORY AND PARAMETERIZATION (1)
 - TODO: finish the trajectory_3d class
@@ -17,8 +11,7 @@
 ## WAVES (1)
 - TODO: think if to add the waves here too
 
-## CURRENT (28)
-- TODO: document the light units somewhere
+## CURRENT (22)
 - TODO: zones must match that the type send corresponds to the data
 - TODO: aid must match that the type send corresponds to the data
 - TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes
@@ -27,15 +20,9 @@
 - TODO: support solid_angle, with the literal _sr too
 - TODO: explanation, with code examples, of physics and chemistry laws
 - TODO: there is a bug with is_close_prefix in base_display()
-- TODO: add the system of units of origin and reason of why each dimension::type is present in the README.md file
-- TODO: think if area and surface should be simple or composite dimensions
-- TODO: explain the interpretation of dimensions inside scifir-units
+- TODO: explain the interpretation of composite dimensions inside scifir-units
 - TODO: warning of to_string() functions of body.hpp
-- TODO: explain how to use the tensors, instead of tensor_unit, inside the README.md file in concepts
-- TODO: add the history of dimensions after preferences of use
 - TODO: add the central inventions of each dimension, like the sundial, the waterclock, etc
-- TODO: explain the current normal instruments of measure in the README.md file, and also that scifir-units is used for their electronic counterpart
-- TODO: add the readings section here to other place
 
 - TODO: maybe it's needed to change characters of the initialization strings of some vector_unit classes. It's needed to update the file README.md too with that
 - TODO: think of how to implement conversions, do also the test of them
@@ -94,7 +81,7 @@
 - TODO: test of base unit classes
 - TODO: test stof() with bad values
 
-## DOCUMENTATION (49)
+## DOCUMENTATION (50)
 - TODO: create all the dox files of the library
 - TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
 - TODO: document the use of special characters in prefixes
@@ -116,6 +103,8 @@
 - TODO: explain how a robot can calculate angles
 - TODO: explain how to create lambda functions of mathematical functions with different parts, using if-else for that
 - TODO: explain how to use mEq in the README.md file, in case of use
+- TODO: explain the apotechary system, the english units and the imperial units in a separate page
+- TODO: add a readings section in the README.md file, with some of the urls of the TODO.md file
 
 - TODO: desactivate the search engine in the doxyfile for the doxyfile of development, not the doxyfile of github pages
 - TODO: maybe use two different files Doxyfile, one for master and one for gh-pages
@@ -195,7 +184,7 @@
 - TODO: maybe all constant values should be constexpr, and maybe there's a way to make them scalar_unit without needing to have all of them defined at the same time, because that sizes
 - TODO: add the constants of astronomy
 
-## DIMENSIONS (10)
+## DIMENSIONS (15)
 - TODO: support the binary prefixes too
 - TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
 
@@ -209,6 +198,11 @@
 - TODO: finish custom_basic dimensions, change names to CUSTOM_BASE_DIMENSION, CUSTOM_DERIVED_DIMENSION and CUSTOM_DERIVED_DIMENSION_FULL_SYMBOL
 - TODO: finish the test of custom_basic dimensions and document them in the README.md file
 - TODO: maybe is_complex_dimension() for cases were the the dimension is not a simple dimension
+- TODO: add the planck system of units
+- TODO: add the Gaussian units
+- TODO: add the atomic units
+- TODO: finish the conversion of the imperial units and of the US units (https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems)
+- TODO: add the natural units
 
 ## CONVERSION (2)
 - TODO: add the apothecaries system of units, maybe there are more systems to add
@@ -269,6 +263,9 @@
 - TODO: display() function for pixel class
 - TODO: maybe delete the operator = T of percentage class, maybe there are more in similar classes. Try first the different literals of non-floating numeric types
 
+## TENSORS (1)
+- TODO: check if there's something needed related to tensors, given that scalar_unit, vector_unit and matrix are being used already
+
 ## EMOTIONAL UNITS (1)
 - TODO: finish the enums of mind.hpp
 
@@ -301,7 +298,7 @@
 ## UNITS - ADVANCED - REDUCTION OF MEMORY CONSUMPTION (4 options)
 - OPTION 1: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class. One possibility is to use an empty array and, when it's empty, to send the fixed dimensions of the class instead, and only when changing something to add the dimensions there
 - OPTION 2: divide single dimensions unit of multiple-dimensions unit by adding only one dimension instead of the vector<dimension>
-- OPTION 3: maybe the prefix and the dimension can be removed as member-variables if displaying automatically in some way or another, as it's expressly specified. That is maybe the biggest optimization possible
+- OPTION 3: maybe the prefix and the dimension can be removed as member-variables if displaying automatically in some way or another, as it's expressly specified, in each different class that inherits scalar_unit (excepting vector unit classes). That is maybe the biggest optimization possible
 - OPTION 4: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
 - OPTION 4 - add const to the enum of light_unit
 - AFTER SOME OPTION - finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation
@@ -355,13 +352,14 @@
 - TODO: see what to do to configure optimizations
 - TODO: add scifir-units to the official repository of vcpkg
 
-## MATRIX (6)
+## MATRIX (7)
 - TODO: See if it's best to use template arguments for row and column or if to store those values as member-variables
 - TODO: Multiplication of matrices of different but compatible types
 - TODO: typecast to other matrix-classes of important libraries
 - TODO: Iterator with range to use only one range-for
 - TODO: Check limits of matrices for all operators
 - TODO: Use the GSL to implement the reverse matrix
+- TODO: add the hadamard_product()
 
 ## FUTURE (9)
 - TODO: support the case of n dimensions fixed
@@ -396,3 +394,4 @@
 - Metric prefix: https:##en.wikipedia.org/wiki/Metric_prefix
 - Euclidean space: https:##en.wikipedia.org/wiki/Euclidean_space
 - Radian: https:##en.wikipedia.org/wiki/Radian
+- Metre Convention: https://en.wikipedia.org/wiki/Metre_Convention
