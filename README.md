@@ -139,7 +139,7 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - **Angles:** Conveyor.
 - **Volume:** Volumetric flask.
 - **Mass:** Balance.
-- **Time:** Chronometer, clock.
+- **Time:** Chronometer, clock. Old tools: sundial, waterclock.
 - **Electric current:** Amperimeter, oscilloscope.
 - **Temperature:** Thermometre.
 - **Amount of substance:** Volumetric flask with balance, then calculations.
