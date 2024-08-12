@@ -131,6 +131,11 @@ Now that the library es linked, you can use it inside your code by including the
 
 prefix can have all SI prefixes. dimension has all SI base dimensions, all common special names, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
 
+- All base and derived scalar unit classes inherit directly from scalar_unit class.
+- All base and derived vectorial unit classes in 2D inherit directly from vector_unit_2d class, and end with the **suffix _2d**.
+- All base and derived vectorial unit classes in 3D inherit directly from vector_unit_3d class, and end with the **suffix _3d**.
+- All base and derived vectorial unit classes in ND inherit directly from vector_unit_nd class, and end with the **suffix _nd**.
+
 ### Tools of units in real life
 
 #### Base units
@@ -949,7 +954,7 @@ string b = "x: " + x;
 string c = x + " value";
 ```
 
-A derived unit is a child class of a scalar_unit or of one of the vector unit classes (which are vector_unit_2d, vector_unit_3d and vector_unit_nd). A derived unit adds always in his name a suffix _2d, _3d or _nd, if they inherit from vector_unit_2d, vector_unit_3d or vector_unit_nd, respectively.
+A base and a derived unit is a child class of scalar_unit class or of one of the vector unit classes (which are vector_unit_2d, vector_unit_3d and vector_unit_nd). A base and a derived unit adds always in his name a suffix **_2d**, **_3d** or **_nd**, if they inherit from vector_unit_2d, vector_unit_3d or vector_unit_nd, respectively.
 
 #### Base unit classes
 
@@ -1151,6 +1156,8 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 
 Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar_unit, and additional to his member-variables they include the member-variable theta, of class angle (described above).
 
+Vector unit classes in 2D, representing either base or derived vectorial units, have in their name the **suffix _2d**.
+
 An example of use of it is the following:
 
 ```cpp
@@ -1222,6 +1229,8 @@ cin >> a; // Initializes a with the string given to cin
 ### Vector units in 3D
 
 Vector units in 3D are the most useful vectorial units. They allow to do all the simulations of physics and any other area of science in 3D, which is the most common scenario. To work, they have, as vector_unit_2d, a value, dimensions, and an angle theta, but they include the angle phi. So, they work as spherical coordinates, having cartesian projections for each axis. The class vector_unit_3d inherits from scalar_unit, as vector_unit_2d, but not from vector_unit_2d, evading math errors that would be derived from that, because 2D and 3D dimensions are not mathematically equivalent in 2D (when projecting the x and y axis there appears the angle phi on the equations for the 3D cases).
+
+Vector unit classes in 3D, representing either base or derived vectorial units, have in their name the **suffix _3d**.
 
 An example of use is the following:
 
@@ -1297,6 +1306,8 @@ cin >> a; // Initializes a with the string given to cin
 ### Vector units in ND
 
 Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside scifir-units, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector<angle> member-variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector_unit_2d, and for 3D it has two angles, as vector_unit_3d. For 1D it doesn't has any angle.
+
+Vector unit classes in ND, representing either base or derived vectorial units, have in their name the **suffix _nd**.
 
 An example of use is the following:
 
