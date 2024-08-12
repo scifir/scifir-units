@@ -170,6 +170,13 @@ namespace scifir
 		return scalar_unit(value, { dimension(dimension::PIXEL, prefix::NONE, dimension::NUMERATOR) });
 	}
 
+	string pixel::display(int number_of_decimals) const
+	{
+		ostringstream output;
+		output << display_float(value,number_of_decimals) << " px";
+		return output.str();
+	}
+
 	void pixel::initialize_from_string(const string& init_pixel)
 	{
 		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")
@@ -188,9 +195,7 @@ namespace scifir
 
 	string to_string(const pixel& x)
 	{
-		ostringstream output;
-		output << display_float(x.get_value()) << " px";
-		return output.str();
+		return x.display();
 	}
 
 	bool is_pixel(const string& init_pixel)

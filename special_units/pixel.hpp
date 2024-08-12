@@ -127,6 +127,8 @@ namespace scifir
 
 			scalar_unit to_scalar_unit() const;
 
+			string display(int number_of_decimals = 2) const;
+
 		private:
 			float value;
 
