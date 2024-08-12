@@ -75,6 +75,12 @@ TEST_CASE("aid class") {
 		CHECK(i.galaxy == "milky-way");
 		CHECK(i.solar_system == "solar-system");
 		CHECK(i.astronomical_body == "");
+		aid i2("(G)universe:milky-way:solar-system");
+		CHECK(i2.astronomical_type == aid::NONE);
+		CHECK(i2.universe == "");
+		CHECK(i2.galaxy == "");
+		CHECK(i2.solar_system == "");
+		CHECK(i2.astronomical_body == "");
 		aid j("");
 		CHECK(j.astronomical_type == aid::NONE);
 		CHECK(j.universe == "");

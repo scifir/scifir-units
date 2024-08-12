@@ -58,6 +58,12 @@ TEST_CASE("zid class") {
 		CHECK(d4.regions == vector<string>{"region-metropolitana"});
 		CHECK(d4.zone == "santiago");
 		CHECK(d4.zone_type == zid::SETTLEMENT);
+		zid d5(aid(astronomical_body::EARTH),zid::COUNTRY,"chile",{"region-metropolitana"},"santiago");
+		CHECK(to_string(d5.aid) == "");
+		CHECK(d5.country == "");
+		CHECK(d5.regions.size() == 0);
+		CHECK(d5.zone == "");
+		CHECK(d5.zone_type == zid::NONE);
 		zid e(aid(astronomical_body::EARTH),"(Z) chile:region-metropolitana:santiago:providencia");
 		CHECK(to_string(e.aid) == "(P)universe:milky-way:solar-system:earth");
 		CHECK(e.country == "chile");
@@ -70,6 +76,12 @@ TEST_CASE("zid class") {
 		CHECK(e2.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(e2.zone == "providencia");
 		CHECK(e2.zone_type == zid::ZONE);
+		zid e3(aid(astronomical_body::EARTH),"(C)chile:region-metropolitana:santiago:providencia");
+		CHECK(to_string(e3.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(e3.country == "");
+		CHECK(e3.regions.size() == 0);
+		CHECK(e3.zone == "");
+		CHECK(e3.zone_type == zid::NONE);
 		zid f("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
 		CHECK(to_string(f.aid) == "(P)universe:milky-way:solar-system:earth");
 		CHECK(f.country == "chile");
@@ -82,6 +94,12 @@ TEST_CASE("zid class") {
 		CHECK(f2.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(f2.zone == "providencia");
 		CHECK(f2.zone_type == zid::ZONE);
+		zid f3("(P)universe:milky-way:solar-system:earth (C)chile:region-metropolitana:santiago:providencia");
+		CHECK(to_string(f3.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(f3.country == "");
+		CHECK(f3.regions.size() == 0);
+		CHECK(f3.zone == "");
+		CHECK(f3.zone_type == zid::NONE);
 		zid g("(Z) chile:region-metropolitana:santiago:providencia");
 		CHECK(to_string(g.aid) == "");
 		CHECK(g.country == "chile");
@@ -106,6 +124,12 @@ TEST_CASE("zid class") {
 		CHECK(i.regions == vector<string>{"region-metropolitana"});
 		CHECK(i.zone == "santiago");
 		CHECK(i.zone_type == zid::SETTLEMENT);
+		zid j("(R) chile:region-metropolitana:santiago");
+		CHECK(to_string(j.aid) == "");
+		CHECK(j.country == "chile");
+		CHECK(j.regions == vector<string>{"region-metropolitana","santiago"});
+		CHECK(j.zone == "");
+		CHECK(j.zone_type == zid::REGION);
 	}
 
 	SECTION("Assignments of zid class")
