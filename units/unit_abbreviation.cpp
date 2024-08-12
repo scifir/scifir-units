@@ -932,6 +932,11 @@ scifir::angle operator"" _rad(unsigned long long int x)
 	return scifir::angle((long double)x, scifir::angle::RADIAN);
 }
 
+scifir::percentage operator"" _percentage(unsigned long long int x)
+{
+	return scifir::percentage((long double)x, scifir::percentage::PERCENTAGE);
+}
+
 scifir::percentage operator"" _ppm(unsigned long long int x)
 {
 	return scifir::percentage((long double)x, scifir::percentage::PARTS_PER_MILLION);
@@ -1885,6 +1890,11 @@ scifir::angle operator"" _degree(long double x)
 scifir::angle operator"" _rad(long double x)
 {
 	return scifir::angle(x, scifir::angle::RADIAN);
+}
+
+scifir::percentage operator"" _percentage(long double x)
+{
+	return scifir::percentage(x, scifir::percentage::PERCENTAGE);
 }
 
 scifir::percentage operator"" _ppm(long double x)
