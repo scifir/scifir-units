@@ -82,7 +82,7 @@ Now that the library es linked, you can use it inside your code by including the
 | --- | -----
 | θ | String literal of angle and used both in vector_unit_2d and vector_unit_3d.
 | Φ | Angle phi, used in vector_unit_3d.
-| ° | Degree, used in vector_unit_nd.
+| ° | Degree, used in vector_unit_nd and angle class.
 | Ω | String literal of resistance.
 | Å | String literal of angstrom.
 | µ | Prefix micro, used as part of the string literals with micro.
