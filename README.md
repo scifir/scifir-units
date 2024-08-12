@@ -781,7 +781,7 @@ The dimension of money inside scifir-units is just money. Apart from scifir-unit
 
 #### Custom dimensions
 
-A custom dimension is a dimension of any name, with any derived dimensions, that can be defined inside each project that uses scifir-units. To use custom dimensions, just initialize a scalar_unit or any vector_unit class with a name different than the default dimensions.
+A custom dimension is a dimension of any name, with any number of base dimensions, that can be defined inside each project that uses scifir-units. To use custom dimensions, just initialize a scalar_unit or any vector_unit class with a name different than the default dimensions.
 
 The dimension::type enum contains for the custom dimensions the values CUSTOM, CUSTOM_FULL_SYMBOL and CUSTOM_BASIC.
 
