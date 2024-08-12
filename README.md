@@ -621,7 +621,11 @@ The initialization strings are the following:
 - **coordinates_3dr**: "1 m,7 m,5 m;17° 25°" or "(1 m,7 m,5 m;17° 25°)"
 - **coordinates_ndr**: "1 m,7 m,5 m,8 m;32° 56° 78°" or "(1 m,7 m,5 m,8 m;32° 56° 78°)"
 
-In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.
+In order to store units inside a file an initialization string should be used. To store inside a table of a database, use an initialization string too. For any purpose, when converting some of those classes to an string, the string initialization has to be used always.
+
+### String representation of enum types
+
+All enum types, excepting astronomical_body, have a string representation. The string representation is similar to the initialization string of classes, but is for enum types. The string representation of all enum types corresponds to the value in string form, or to an acronym of it. In the reference of the enum type, the string representation is explained for each value. For example, the value GALAXY of aid::type has a string representation "G". You can get the string representation with the to_string() function of scifir-units of that enum type, like, for example, to_string(aid::type).
 
 ### Space
 
