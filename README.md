@@ -14,6 +14,12 @@ The **current version** of scifir-units is the **beta-version-2.0**. The version
 
 Here you can read how to install and use scifir-units, the reference of classes and functions can be read in the [reference of scifir-units](https://scifir.github.io/scifir-units/annotated.html).
 
+### scifir-units in other programming languages
+
+Although scifir-units currently is only available in C++, it can be created partially (strictly, even totally) in other programming languages. So, if you need this library in other programming languages, just copy the classes you need and change them to be in the other programming language. For java, for example, copying angle class, the name would be Angle, because of the nomenclature of java, and all functions should be identical in behaviour, but in camelCase as name, because that's the format of java. For example, in java, get_value() would be called getValue(). For normal functions, in java, you need to add them inside the class and make them static, because java doesn't supports functions outside classes.
+
+So, to create the **equivalent library** of scifir-units in another programming language, just copy the same API changing the format of the code to follow the code format of the programming language to which you're replicating the library. The names of the functions equivalent to the special operators are instead, for other programming languages, the functions sum(), substract(), multiply() and divide(). Use increment() and decrement() for the operator ++() and the operator --(), respectively.
+
 ### Team
 
 The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.github.io), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at ismael.correa.castro@gmail.com. His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
@@ -70,7 +76,7 @@ First you have to link **scifir-units** to your project. To link scifir-units, a
 target_link_libraries(your-project scifir-units)
 ```
 
-Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**.
+Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**. All classes of scifir-units are inside the **namespace scifir**.
 
 ```
 #include "scifir/units.hpp"
@@ -109,7 +115,7 @@ Now that the library es linked, you can use it inside your code by including the
 - A **percentage** is a mathematical concept that represents a fraction of some value, the fraction can be better than the value too.
 - **AID**, acronym of **Astronomical ID**, and **ZID**, acronym of **Zone ID**, are two identifiers invented in Scifir that provide a text-based identifier to refer to astronomical objects and zones, respectively. They are considered a special unit inside scifir-units.
 - The **pH** is a concept used in chemistry for measuring the concentration of H+ ions in a solution.
-- The **concentrations** different than the molar concentration and the mass concentration are managed with ppm, ppb, ppt and ppq, which is part of the percentage class. Use percentage then for the **volume concentration**, the **mole fraction**, the **mole ratio**, the **mass fraction**, the **mass ratio** and the **volume fraction**.
+- The **concentrations** different than the molar concentration and the mass concentration are managed with ppm, ppb, ppt and ppq, which are part of the percentage class. Use percentage then for the **volume concentration**, the **mole fraction**, the **mole ratio**, the **mass fraction**, the **mass ratio** and the **volume fraction**.
 
 ### Class list
 
