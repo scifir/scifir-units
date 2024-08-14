@@ -14,6 +14,12 @@ The **current version** of scifir-units is the **beta-version-2.0**. The version
 
 Here you can read how to install and use scifir-units, the reference of classes and functions can be read in the [reference of scifir-units](https://scifir.github.io/scifir-units/annotated.html).
 
+### scifir-units in other programming languages
+
+Although scifir-units currently is only available in C++, it can be created partially (strictly, even totally) in other programming languages. So, if you need this library in other programming languages, just copy the classes you need and change them to be in the other programming language. For java, for example, copying angle class, the name would be Angle, because of the nomenclature of java, and all functions should be identical in behaviour, but in camelCase as name, because that's the format of java. For example, in java, get_value() would be called getValue(). For normal functions, in java, you need to add them inside the class and make them static, because java doesn't supports functions outside classes.
+
+So, to create the **equivalent library** of scifir-units in another programming language, just copy the same API changing the format of the code to follow the code format of the programming language to which you're replicating the library. The names of the functions equivalent to the special operators are instead, for other programming languages, the functions sum(), substract(), multiply() and divide(). Use increment() and decrement() for the operator ++() and the operator --(), respectively.
+
 ### Team
 
 The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.github.io), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at ismael.correa.castro@gmail.com. His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
@@ -70,7 +76,7 @@ First you have to link **scifir-units** to your project. To link scifir-units, a
 target_link_libraries(your-project scifir-units)
 ```
 
-Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**.
+Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**. All classes of scifir-units are inside the **namespace scifir**.
 
 ```
 #include "scifir/units.hpp"
@@ -82,7 +88,7 @@ Now that the library es linked, you can use it inside your code by including the
 | --- | -----
 | θ | String literal of angle and used both in vector_unit_2d and vector_unit_3d.
 | Φ | Angle phi, used in vector_unit_3d.
-| ° | Degree, used in vector_unit_nd.
+| ° | Degree, used in vector_unit_nd and angle class.
 | Ω | String literal of resistance.
 | Å | String literal of angstrom.
 | µ | Prefix micro, used as part of the string literals with micro.
@@ -103,11 +109,13 @@ Now that the library es linked, you can use it inside your code by including the
 - A **space of two dimensions** has only two edges, it's an imaginary space that doesn't exist in the real world, but is used for simulations and some reasonings. It's abbreviated **2D**.
 - A **space of three dimensions** has three edges, it can represent both the real world and imaginary worlds. It's abbreviated **3D**.
 - Inside scifir-units, a space of a variable number of dimensions is abbreviated **ND**, of **space of n-dimensions**. ND can be sometimes 2D, sometimes 3D, also it can be 1D if needed, and even a space of a greather number of dimensions.
+- The **tensors** are used inside scifir-units as any other scalar_unit, vector_unit or matrix, there's no tensor class because with those classes it's not needed.
 - The **coordinates** are the position of an object in the space. There are coordinates for 2D and for 3D spaces, which are different systems of coordinates. For 2D spaces there exist the **cartesian coordinates** and the **polar coordinates**. For 3D space there exist the **cartesian coordinates**, the **cylindrical coordinates** and the **spherical coordinates**. The cartesian coordinates in 3D contain one more component of coordinates than their 2D counterpart.
 - The **points**, although can be thinked as being identical to coordinates, are usually fixed in the space. The coordinates are used for the positions of objects inside the space, and the points for more fixed uses.
 - A **percentage** is a mathematical concept that represents a fraction of some value, the fraction can be better than the value too.
 - **AID**, acronym of **Astronomical ID**, and **ZID**, acronym of **Zone ID**, are two identifiers invented in Scifir that provide a text-based identifier to refer to astronomical objects and zones, respectively. They are considered a special unit inside scifir-units.
 - The **pH** is a concept used in chemistry for measuring the concentration of H+ ions in a solution.
+- The **concentrations** different than the molar concentration and the mass concentration are managed with ppm, ppb, ppt and ppq, which are part of the percentage class. Use percentage then for the **volume concentration**, the **mole fraction**, the **mole ratio**, the **mass fraction**, the **mass ratio** and the **volume fraction**.
 
 ### Class list
 
@@ -129,6 +137,11 @@ Now that the library es linked, you can use it inside your code by including the
 
 prefix can have all SI prefixes. dimension has all SI base dimensions, all common special names, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
 
+- All base and derived scalar unit classes inherit directly from scalar_unit class.
+- All base and derived vectorial unit classes in 2D inherit directly from vector_unit_2d class, and end with the **suffix _2d**.
+- All base and derived vectorial unit classes in 3D inherit directly from vector_unit_3d class, and end with the **suffix _3d**.
+- All base and derived vectorial unit classes in ND inherit directly from vector_unit_nd class, and end with the **suffix _nd**.
+
 ### Tools of units in real life
 
 #### Base units
@@ -137,7 +150,7 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - **Angles:** Conveyor.
 - **Volume:** Volumetric flask.
 - **Mass:** Balance.
-- **Time:** Chronometer, clock.
+- **Time:** Chronometer, clock. Old tools: sundial, waterclock.
 - **Electric current:** Amperimeter, oscilloscope.
 - **Temperature:** Thermometre.
 - **Amount of substance:** Volumetric flask with balance, then calculations.
@@ -196,6 +209,30 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 | VACUUM_PERMITTIVITY | $$8.8541878188×10^{-12} \  F/m$$ | Value of the asbolute dielectric permittivity of classical vacuum.
 | RYDBERG_CONSTANT | $$1.0973731568539×10^7 \  1/m$$ | Relates the electromagnetic spectra of an atom.
 | FARADAY_CONSTANT | $$9.64853321233100184×10^4 \  C/mol$$ | It's the electric charge of one mole of elementary carriers.
+
+### Preferences of use
+
+- Always use the dimensions of the SI system over the imperial system, or any other system. Use always the system of units in use of your team, or on the board, with first preference, if there's a system selected.
+- Always **prefer to use the string literals** when instantiating any scalar_unit or other class that uses it. Use the other constructors only if they are strictly needed.
+- Prefer the **light year** over **parsec** and **astronomical units**. Use astronomical units only for distances of the same solar system.
+- Use **degree** over radian, because it's more easy to understand by humans. Use radian when the value in radians is the direct result of some equation, as usually happens.
+- The dimension degree and radian should be avoided in preference of the **angle class**.
+- Use **kelvin** over celsius, because it's the current standard in science.
+- Use the **litre** for volumes of liquids over cubic metres.
+- Use pixel inside any digital space that needs it. You can convert to some amount of length, or another different amount of length, in different applications, as needed. The conversion of pixel to length varies depending on the reasoning behind each different use of pixel.
+- The dimension **pixel** should always be avoided, in preference of the class pixel instead. Use this dimension only when it's strictly needed to have a scalar_unit, and then the class pixel can't be used.
+- The dimension **money** is intended to be converted later to some concrete currency, with other libraries and data sources.
+- **IU** should be converted specifically for each different reaction, because the IU unit is defined in science different for each case of use. Then, it doesn't has a direct conversion, and only one formula.
+
+### History of units of measurement
+
+The first units of measurement have been created in the **prehistory**, by the **summerians**.
+
+The current units of measurement are part of the **SI system of units**, created by the **International Bureau of Weights and Measures (BIPM)**. Some units of measurement have been created by other organizations, like the **International Astronomical Union**. Some scientists have created some of the units of measurement, outside organizations.
+
+Previous to the SI system of units were the **English units**, replaced later by the **Imperial units**. The Imperial units change some previous English units, and maintain the other units. Previous to the English units was the **apothecaries' system**. The apotecharies sysetem includes the pound, the grain, the ounce, among other units, and the English system of units and, later, the Imperial system of units, have added those units from it.
+
+Each country has had his own system of units of measurement, or his own definition of it. Those system nowadays have been mainly replaced by the SI system of units.
 
 ### Folder structure
 
@@ -590,7 +627,11 @@ The initialization strings are the following:
 - **coordinates_3dr**: "1 m,7 m,5 m;17° 25°" or "(1 m,7 m,5 m;17° 25°)"
 - **coordinates_ndr**: "1 m,7 m,5 m,8 m;32° 56° 78°" or "(1 m,7 m,5 m,8 m;32° 56° 78°)"
 
-In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.
+In order to store units inside a file an initialization string should be used. To store inside a table of a database, use an initialization string too. For any purpose, when converting some of those classes to an string, the string initialization has to be used always.
+
+### String representation of enum types
+
+All enum types, excepting astronomical_body, have a string representation. The string representation is similar to the initialization string of classes, but is for enum types. The string representation of all enum types corresponds to the value in string form, or to an acronym of it. In the reference of the enum type, the string representation is explained for each value. For example, the value GALAXY of aid::type has a string representation "G". You can get the string representation with the to_string() function of scifir-units of that enum type, like, for example, to_string(aid::type).
 
 ### Space
 
@@ -616,137 +657,146 @@ A dimension inside scifir-units is **dimensionless** if it's dimensionless in th
 
 Dimensions present in scifir-units not so widely known are the **steradian** (sr, solid angles), **katal** (kat, catalytic activity), **angstrom** (Å, length for wavelengths), **dalton** (Da, mass for atoms and molecules), **atomic mass unit** (same as Da), **electron volt** (eV, measure of very small amounts of energy, mainly for quantum physics), **candela** (cd, luminous intensity), **lumen** (lm, luminous flux), **lux** (lx, illuminance), **siemens** (S, electric cnoductance), **weber** (Wb, magnetic flux), **tesla** (T, magnetic strength), **henry** (H, electric inductance), **astronomical unit** (AU, long astronomic distances), **light year** (ly, very long astronomic distances), **parsec** (pc, very long astronomic distances), **becquerel** (Bq, radioactivity), **gray** (Gy, absorbed dose of ionising radiation), **sievert** (Sv, equivalent dose of ionising radiation), **barn** (Barn, transversal section of nuclear reactions). An invented unit inside Scifir is **memo**, which is used to measure the amount of memory inside the brain.
 
+#### Criterias for inclusion of dimensions
+
+**Any** of the following criterias must be met by a dimension to be added inside scifir-units:
+
+- To be part of the **SI system of units**.
+- To be an important unit of measure, being used widely by scientists, defined inside an important science organization.
+- To be a liked unit of measure different in use and definition than any other official unit of measure, and being used by scientists.
+
 #### Dimensions of space
 
 Both the degree and the radian are used for measuring angles. When specifying angles in a human readable way, degree is always or nearly always the prefered choice. When specifying angles within mathematical formulas, radians are used, and the degrees can be converted to radians for that purpose. Given the definition of radian, mathematical formulas naturally have their angles needed to be specified in radians.
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| METRE | m | Metre | Metres | - | - | Measure of length.
-| DEGREE | θ | Degree | Degrees | $$\frac{\pi}{180} \  rad$$ | - | Measure of length.
-| RADIAN | rad | Radian | Radians | $$\frac{180}{\pi} \  θ$$ | - | Measure of the angle, it's the exact measure of the perimeter of the angle, when that angle is drawn as a circle in a math graph.
-| STERADIAN | sr | Steradian | Steradians | - | - | Measure of a solid angle, which is defined as an angle in two dimensions.
-| LITRE | L | Litre | Litres | 1 dm3 | dm3 | Measure of volume, frequently used for liquids.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| METRE | m | Metre | Metres | Simple, base, SI base | - | - | Metre Convention, France, 1791. | Measure of length.
+| DEGREE | θ | Degree | Degrees | Simple, derived, SI derived | $$\frac{\pi}{180} \  rad$$ | - | Babylonians and/or Summerians. | Measure of length.
+| RADIAN | rad | Radian | Radians | Simple, base, SI derived | $$\frac{180}{\pi} \  θ$$ | - | Roger Cotes, Harmonia mensurarum, 1722. | Measure of the angle, it's the exact measure of the perimeter of the angle, when that angle is drawn as a circle in a math graph. **Special name**.
+| STERADIAN | sr | Steradian | Steradians | Simple, base, SI derived | - | - | 1880 - 1885, France. | Measure of a solid angle, which is defined as an angle in two dimensions. **Special name**.
+| LITRE | L | Litre | Litres | Composite, derived | 1 dm3 | dm3 | 1795, France. | Measure of volume, frequently used for liquids.
 
 #### Dimensions of time
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| SECOND | s | Second | Seconds | - | - | Measure of time.
-| MINUTE | min | Minute | Minutes | - | 60 s | Measure of time.
-| HOUR | hour | Hour | Hours | - | 3,600 s | Measure of time.
-| DAY | day | Day | Days | - |  86,400 s | Measure of time.
-| HERTZ | Hz | Hertz | Hertz | - | 1 / s | Measure of frequency.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| SECOND | s | Second | Seconds | Simple, base, SI base | - | - | 1656, Christiaan Huygens. Summerians. | Measure of time.
+| MINUTE | min | Minute | Minutes | Simple, derived | - | 60 s | Summerians. | Measure of time.
+| HOUR | hour | Hour | Hours | Simple, derived | - | 3,600 s | Summerians. | Measure of time.
+| DAY | day | Day | Days | Simple, derived | - |  86,400 s | Always existed, summerians. | Measure of time.
+| HERTZ | Hz | Hertz | Hertz | Simple, derived, SI derived | - | 1 / s | International Electrotechnical Commission, 1930. | Measure of frequency. **Special name**.
 
 #### Dimensions of chemistry and matter
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| GRAM | g | Gram | Grams | - | - | Measure of amount of mass.
-| MOLE | mol | Mole | Moles | N particles (Avogadro number) | - | Amounf of matter.
-| PARTICLES | particles | Particles | Particles | mol / (Avogadro number) | - | Amount of particles, without using mol.
-| MOLARITY | M | Molarity | Molarities | - | mol / L | Measure of concentration of a chemical species.
-| KATAL | kat | Katal | Katals | - | mol / s | Catalytic activity.
-| ANGSTROM | Å | Angstrom | Angstroms | - | $$10^{-10} \  m$$ | Dimension of length, used mainly for wavelengths, inside the laboratory.
-| DALTON | Da | Dalton | Daltons | - | $$1,66053886 * 10^{-24} \  g$$ | Measure of mass very low that is used for atoms and molecules, at microscopic and quantum scale. One mole of 1 Da is equivalent to 1 g.
-| ATOMIC_MASS_UNIT | amu | Atomic mass unit | Atomic mass units | 1 Da | Da | Equivalent name to Dalton.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| GRAM | g | Gram | Grams | Simple, base, SI base | - | - | French National Convention, 1795. | Measure of amount of mass.
+| MOLE | mol | Mole | Moles | Simple, base, SI base | N particles (Avogadro number) | - | Wilhelm Ostwald, 1893. | Amounf of matter.
+| PARTICLES | particles | Particles | Particles | Simple, derived | mol / (Avogadro number) | - | scifir-units. | Amount of particles, without using mol.
+| MOLARITY | M | Molarity | Molarities | Composite, derived | - | mol / L | 1930. | Measure of concentration of a chemical species.
+| KATAL | kat | Katal | Katals | Composite, derived, SI derived | - | mol / s | International Bureau of Weights and Measures (BIPM), 1999. | Catalytic activity.
+| ANGSTROM | Å | Angstrom | Angstroms | Simple, derived | - | $$10^{-10} \  m$$ | International Union of Cooperation in Solar Research (currently called International Astronomical Union), 1907. | Dimension of length, used mainly for wavelengths, inside the laboratory.
+| DALTON | Da | Dalton | Daltons | Simple, derived | - | $$1,66053886 * 10^{-24} \  g$$ | IUPAC, 1993. | Measure of mass very low that is used for atoms and molecules, at microscopic and quantum scale. One mole of 1 Da is equivalent to 1 g.
+| ATOMIC_MASS_UNIT | amu | Atomic mass unit | Atomic mass units | Simple, derived | 1 Da | Da | 1927. | Equivalent name to Dalton.
 
 #### Dimensions of force
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| NEWTON | N | Newton | Newtons | - | kg * m / s2 | Measure of force.
-| PASCAL | Pa | Pascal | Pascals | - | kg / s2 * m | Measure of pressure.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| NEWTON | N | Newton | Newtons | Composite, derived, SI derived | - | kg * m / s2 | International Bureau of Weights and Measures (BIPM), 1948. | Measure of force. **Special name**.
+| PASCAL | Pa | Pascal | Pascals | Composite, derived, SI derived | - | kg / s2 * m | International Bureau of Weights and Measures (BIPM), 1971. | Measure of pressure. **Special name**.
 
 #### Dimensions of energy
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| JOULE | J | Joule | Joules | - | kg * m2 / s2 | Measure of energy.
-| WATT | W | Watt | Watts | N particles (Avogadro number) | kg * m2 / s3 | Amounf of matter.
-| ELECTRON_VOLT | eV | Electron volt | Electron volts | - | $$1.602176634 * 10^{−19} \  J$$ | Measure of energy, used for quantum physics. It's a very low unit, intended for the quantum scale.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| JOULE | J | Joule | Joules | Composite, derived, SI derived | - | kg * m2 / s2 | Wilhelm Siemens, British Association for the Advancement of Science, 23 August 1882. | Measure of energy. **Special name**.
+| WATT | W | Watt | Watts | Composite, derived, SI derived | N particles (Avogadro number) | kg * m2 / s3 | Wilhelm Siemens, British Association for the Advancement of Science, 23 August 1882. | Amounf of matter. **Special name**.
+| ELECTRON_VOLT | eV | Electron volt | Electron volts | Composite, derived | - | $$1.602176634 * 10^{−19} \  J$$ | After 1909. | Measure of energy, used for quantum physics. It's a very low unit, intended for the quantum scale.
 
 #### Dimensions of optics
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| CANDELA | cd | Candela | Candelas | - | - | Measure of luminous intensity.
-| LUMEN | lm | Lumen | Lumens | - | cd * sr | Measure of luminous flux.
-| LUX | lx | Lux | Luxes | - | cd * sr / m2 | Measure of illuminance.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| CANDELA | cd | Candela | Candelas | Simple, base, SI base | - | - | 1948, International Bureau of Weights and Measures (BIPM). | Measure of luminous intensity.
+| LUMEN | lm | Lumen | Lumens | Composite, derived, SI derived | - | cd * sr | André-Eugène, late 19th century. | Measure of luminous flux. **Special name**.
+| LUX | lx | Lux | Luxes | Composite, derived, SI derived | - | cd * sr / m2 | Bartholomew of Bologna, 13th century. | Measure of illuminance. **Special name**.
 
 #### Dimensions of heat
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| KELVIN | K | Kelvin | Kelvins | - | - | Measure of temperature.
-| CELSIUS | °C | Celsius | Celsius | 1°C = K - 273.15 | K | Measure of temperature, derived from kelvin.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| KELVIN | K | Kelvin | Kelvins | Simple, base, SI base | - | - | Lord Kelvin, 1848. | Measure of temperature.
+| CELSIUS | °C | Celsius | Celsius | Simple, derived, SI derived | 1°C = K - 273.15 | K | Anders Celsius, 1742. | Measure of temperature, derived from kelvin. **Special name**.
 
 #### Dimensions of electricity
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| COULOMB | C | Coulomb | Coulombs | - | - | Measure of electric charge.
-| AMPERE | A | Ampere | Amperes | - | C / s | Measure of electric current.
-| VOLT | V | Volt | Volts | - | J / C, W / A | Measure of voltage.
-| FARAD | F | Farad | Farads | - | A * s / V | Measure of electric capacitance.
-| OHM | Ω | Ohm | Ohms | - | V / A | Measure of electric resistance.
-| SIEMENS | S | Siemens | Siemens | - | 1 / Ω | Measure of electric conductance.
-| WEBER | Wb | Weber | Webers | - | T * m2 | Measure of magnetic flux.
-| TESLA | T | Tesla | Teslas | - | V * s / m2 | Measure of magnetic strength.
-| HENRY | H | Henry | Henries | - | V * s / A | Measure of electric inductance.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| COULOMB | C | Coulomb | Coulombs | Simple, base, SI derived | - | - | International Electrical Congress, 1881. | Measure of electric charge. **Special name**.
+| AMPERE | A | Ampere | Amperes | Simple, derived, SI base | - | C / s | International Exposition of Electricity, 1881. | Measure of electric current.
+| VOLT | V | Volt | Volts | Composite, derived, SI derived | - | J / C, W / A | International Electrical Congress, 1881. | Measure of voltage. **Special name**.
+| FARAD | F | Farad | Farads | Composite, derived, SI derived | - | A * s / V | International Electrical Congress, 1881. | Measure of electric capacitance. **Special name**.
+| OHM | Ω | Ohm | Ohms | Composite, derived, SI derived | - | V / A | International Electrical Congress, 1881. | Measure of electric resistance. **Special name**.
+| SIEMENS | S | Siemens | Siemens | Composite, derived, SI derived | - | 1 / Ω | International Electrical Congress, 1935. | Measure of electric conductance. **Special name**.
+| WEBER | Wb | Weber | Webers | Composite, derived, SI derived | - | T * m2 | International Electrotechnical Commission, 1935. | Measure of magnetic flux. **Special name**.
+| TESLA | T | Tesla | Teslas | Composite, derived, SI derived | - | V * s / m2 | International Bureau of Weights and Measures (BIPM), 1960. | Measure of magnetic strength. **Special name**.
+| HENRY | H | Henry | Henries | Composite, derived, SI derived | - | V * s / A | International Electrical Congress, 1893. | Measure of electric inductance. **Special name**.
 
 #### Dimensions of astronomy
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| ASTRONOMICAL_UNIT | AU | Astronomical unit | Astronomical units | - | 149,597,870,700 m | Measure of long distances, for use in the space.
-| LIGHT_YEAR | ly | Light year | Light years | 63,241.07 AU | 9,460,730,472,580,800 m | Measure of long distances, for use in the space. It's exactly defined as the amount of distance that the light travels in a year. Prefixes commonly used with light-years when distances are too large are **kly**, **Mly** and **Gly**, any other prefix is possible to use too. Use them if the distance in space is large enough that even ly is small.
-| PARSEC | pc | Parsec | Parsecs | - | 3.2616 ly | Measure of long distances, for use in the space.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| ASTRONOMICAL_UNIT | AU | Astronomical unit | Astronomical units | Simple, derived | - | 149,597,870,700 m | International Astronomical Union, 1976. | Measure of long distances, for use in the space.
+| LIGHT_YEAR | ly | Light year | Light years | Simple, derived | 63,241.07 AU | 9,460,730,472,580,800 m | Friedrich Bessel, 1838. | Measure of long distances, for use in the space. It's exactly defined as the amount of distance that the light travels in a year. Prefixes commonly used with light-years when distances are too large are **kly**, **Mly** and **Gly**, any other prefix is possible to use too. Use them if the distance in space is large enough that even ly is small.
+| PARSEC | pc | Parsec | Parsecs | Simple, derived | - | 3.2616 ly | Herbert Hall Turner, 1913. | Measure of long distances, for use in the space.
 
 #### Dimensions of nuclear physics
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| BECQUEREL | Bq | Becquerel | Becquerels | - | 1 / s | Measure of radioactivity.
-| GRAY | Gy | Gray | Grays | - | m2 / s2 | Measure of ionising radiation (absorbed dose).
-| SIEVERT | Sv | Sievert | Sieverts | - | J / kg | Measure of ionising radiation (equivalent dose).
-| BARN | Barn |  Barn | Barns | - | $$10^{−28} \  m2$$  | Represents the transversal section of nucleus and nuclear reactions.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| BECQUEREL | Bq | Becquerel | Becquerels | Simple, derived, SI derived | - | 1 / s | International Commission on Radiation Units and Measurements (ICRU), 1975. | Measure of radioactivity. **Special name**.
+| GRAY | Gy | Gray | Grays | Composite, derived, SI derived | - | m2 / s2 | International Commission on Radiation Units and Measurements (ICRU), 1975. | Measure of ionising radiation (absorbed dose). **Special name**.
+| SIEVERT | Sv | Sievert | Sieverts | Composite, derived, SI derived | - | J / kg | International Commission on Radiation Units and Measurements (ICRU), after 1975. | Measure of ionising radiation (equivalent dose). **Special name**.
+| BARN | Barn |  Barn | Barns | Composite, derived | - | $$10^{−28} \  m2$$  | MG Holloway and CP Baker, 1942. | Represents the transversal section of nucleus and nuclear reactions.
 
 #### Dimensions of informatics
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| BYTE | B | Byte | Bytes | - | - | Measure of quantity of information.
-| BIT | bit | bit | bits | - | - | Measure of quantity of information, of each binary digit.
-| PIXEL | px | Pixel | Pixels | - | - | Measure the amount of pixels or the position inside a screen.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| BYTE | B | Byte | Bytes | Simple, base | - | - | Werner Buchholz, june 1956. | Measure of quantity of information.
+| BIT | bit | bit | bits | Simple, derived | - | - | Claude Shannon, 1948. | Measure of quantity of information, of each binary digit.
+| PIXEL | px | Pixel | Pixels | Simple, base | - | - | SPIE, 1965. | Measure the amount of pixels or the position inside a screen.
 
 #### Dimensions of biology
 
 Inside scifir-units, a unit for measuring the quantity of memory inside the brain has been invented, and has been called **memo**.
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| MEMO | memo | Memo | Memos | - | - | Measure of quantity of memory.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| MEMO | memo | Memo | Memos | Simple, base | - | - | scifir-units, 2022. | Measure of quantity of memory.
 
 #### Dimensions of pharmacology
 
 **Be careful!** International units (IU) vary in the amount of mass they represent for different substances.
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| INTERNATIONAL_UNIT | IU | International unit | International units | - | - | Measure of the effect or biological activity of a substance. It varies for each substance the amount of grams it represents for that substance.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| INTERNATIONAL_UNIT | IU | International unit | International units | Simple, base | - | - | League of Nations Health Organisation, 1931. | Measure of the effect or biological activity of a substance. It varies for each substance the amount of grams it represents for that substance.
+| MILLIEQUIVALENT | mEq | Milliequivalent | Milliequivalents | Simple, base | - | - | Jeremias Benjamin Richter, 1792. | Amount of moles in a given chemical reaction needed to react with an amount of moles of another substance.
 
 #### Dimensions of economy
 
 The dimension of money inside scifir-units is just money. Apart from scifir-units, inside the same code, you can use the **ISO 4217**, which is the **ISO of currency codes**, after doing all the math with the money dimension, to convert to the final currency needed.
 
-| dimension::type | Symbol | Name | Plural | Equivalency | Derived dimensions | Description
-| ------ | --- | ----- | ----- | --- | -------------------- | --------------------------
-| MONEY | money | Money | Money | - | - | Measure of money.
+| dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
+| ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
+| MONEY | money | Money | Money | Simple, base | - | - | 700 BC. | Measure of money.
 
 #### Custom dimensions
 
-A custom dimension is a dimension of any name, with any derived dimensions, that can be defined inside each project that uses scifir-units. To use custom dimensions, just initialize a scalar_unit or any vector_unit class with a name different than the default dimensions.
+A custom dimension is a dimension of any name, with any number of base dimensions, that can be defined inside each project that uses scifir-units. To use custom dimensions, just initialize a scalar_unit or any vector_unit class with a name different than the default dimensions.
 
 The dimension::type enum contains for the custom dimensions the values CUSTOM, CUSTOM_FULL_SYMBOL and CUSTOM_BASIC.
 
@@ -914,7 +964,7 @@ string b = "x: " + x;
 string c = x + " value";
 ```
 
-A derived unit is a child class of a scalar_unit or of one of the vector unit classes (which are vector_unit_2d, vector_unit_3d and vector_unit_nd). A derived unit adds always in his name a suffix _2d, _3d or _nd, if they inherit from vector_unit_2d, vector_unit_3d or vector_unit_nd, respectively.
+A base and a derived unit is a child class of scalar_unit class or of one of the vector unit classes (which are vector_unit_2d, vector_unit_3d and vector_unit_nd). A base and a derived unit adds always in his name a suffix **_2d**, **_3d** or **_nd**, if they inherit from vector_unit_2d, vector_unit_3d or vector_unit_nd, respectively.
 
 #### Base unit classes
 
@@ -1106,9 +1156,17 @@ A derived unit is a child class of a scalar_unit or of one of the vector unit cl
 | ----- | ----- | ----- | ----------- | --------------------------
 | transfer_speed | B/s | scalar_unit | - | Bytes emitted or received per second.
 
+#### Pharmacology units
+
+| Name | Dimensions | Type | Literals | Description
+| ----- | ----- | ----- | ----------- | --------------------------
+| amount_of_effect | IU | scalar_unit | _IU and _TIU, _kIU, etc (all prefixes supported) | Amount of pharmacological effect that some amount of a substance does.
+
 ### Vector units in 2D
 
 Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar_unit, and additional to his member-variables they include the member-variable theta, of class angle (described above).
+
+Vector unit classes in 2D, representing either base or derived vectorial units, have in their name the **suffix _2d**.
 
 An example of use of it is the following:
 
@@ -1181,6 +1239,8 @@ cin >> a; // Initializes a with the string given to cin
 ### Vector units in 3D
 
 Vector units in 3D are the most useful vectorial units. They allow to do all the simulations of physics and any other area of science in 3D, which is the most common scenario. To work, they have, as vector_unit_2d, a value, dimensions, and an angle theta, but they include the angle phi. So, they work as spherical coordinates, having cartesian projections for each axis. The class vector_unit_3d inherits from scalar_unit, as vector_unit_2d, but not from vector_unit_2d, evading math errors that would be derived from that, because 2D and 3D dimensions are not mathematically equivalent in 2D (when projecting the x and y axis there appears the angle phi on the equations for the 3D cases).
+
+Vector unit classes in 3D, representing either base or derived vectorial units, have in their name the **suffix _3d**.
 
 An example of use is the following:
 
@@ -1256,6 +1316,8 @@ cin >> a; // Initializes a with the string given to cin
 ### Vector units in ND
 
 Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside scifir-units, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector<angle> member-variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector_unit_2d, and for 3D it has two angles, as vector_unit_3d. For 1D it doesn't has any angle.
+
+Vector unit classes in ND, representing either base or derived vectorial units, have in their name the **suffix _nd**.
 
 An example of use is the following:
 
@@ -1512,6 +1574,12 @@ The **pH** class allows to work with pH, which is used inside chemistry software
 
 The **size_2d** class allows to store the data of the width and height of an object in length classes. The **size_3d** allows to store the data of the width, the height and the depth of an object in length classes. The **size_nd** class allows to store lengths corresponding to the dimension of an object in a variable number of dimensions.
 
+## Nutrition
+
+### ABV
+
+The **ABV** class, acronym of Alcohol by Volume, is a unit of measure used for the degrees of alcohol inside alcoholic beverages.
+
 ## Internals
 
 Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.
@@ -1519,3 +1587,21 @@ Internally, the library has some important mechanisms important to be known by a
 The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it's used the char symbol[3] of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.
 
 The square of dimensions works in the following way: If the dimension consist only of one type of dimension, independently as if the dimension is a base dimension or a special name, the dimensions get squared. If the dimension is of more than one type, all the special names are then converted to their derived types, and the total result gets squared. If the dimensions can't be squared because there's an odd number of them, the dimensions are then initialized empty.
+
+## Important future characteristics
+
+There's an important future characteristic important to explain. It's not yet implemented inside the library because it's not totally possible given the current features of the programming languages, maybe in the future there'll exist a way to implement it. That important characteristic is to have another system for storing the dimensions for the case of one simple dimension, without changing the easy implementation that the scalar_unit classes have.
+
+One possible solution for this is to have a light_scalar_unit class to handle the case of scalar unit variables that have only one dimension as member-variable in replacement of the member-variable of vector<dimension> of the scalar_unit class, and never more than one dimension. This approach has the big advantage of allowing a greather similarity with floating-point types, consuming less RAM and running faster, but with the disadvantage of having also now two different classes for variables scalar units and, then, an API that's harder to use, because now it's needed to have different functions for light_scalar_unit classes and for scalar_unit classes.
+
+## Thoughts about units
+
+### Interpretation of composite dimensions
+
+Composite dimensions, inside scifir-units, are the dimensions when there's more than one base dimension present. Their interpretation is as follows: the m means it's through a trajectory, the m2 means it's  through a surface, and the m3 means it's through a volume. The second in the denominator means it's per second, the s2 means it's an increase per second of something that happens each second.
+
+Then, the energy, which has the dimensions kg*m2/s2 means the following: the increment per second of mass inside a surface increasing per second.
+
+### Area and volume dimensions
+
+**Area** and **volume**, as thinked by the author of this library, can be considered simple or composite dimensions, depending on the point of view. From the point of view that's used inside the SI system of units, they are composite dimensions because there's more than one base dimension. From another point of view, it can be thinked that, given the fact that the same dimension is present with an exponent, then it's just a simple dimension. With this in mind, it can be thinked a unitary square and a unitary cube as the base of this simple dimension.

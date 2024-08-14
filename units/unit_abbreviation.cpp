@@ -782,129 +782,134 @@ scifir::molarity operator"" _qM(unsigned long long int x)
 	return scifir::molarity((long double)x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _QIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _QIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _RIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _RIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _YIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _YIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _ZIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _ZIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _EIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _EIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _PIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _PIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _TIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _TIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _GIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _GIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _MIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _MIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _kIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _kIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _hIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _hIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _daIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _daIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _IU(unsigned long long int x)
+scifir::amount_of_effect operator"" _IU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _dIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _dIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _cIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _cIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _mIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _mIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _µIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _µIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _nIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _nIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _pIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _pIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _fIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _fIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _aIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _aIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _zIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _zIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _yIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _yIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _rIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _rIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _qIU(unsigned long long int x)
+scifir::amount_of_effect operator"" _qIU(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect((long double)x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::scalar_unit operator"" _mEq(unsigned long long int x)
+{
+	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::MILLIEQUIVALENT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::mole operator"" _particles(unsigned long long int x)
@@ -925,6 +930,11 @@ scifir::angle operator"" _degree(unsigned long long int x)
 scifir::angle operator"" _rad(unsigned long long int x)
 {
 	return scifir::angle((long double)x, scifir::angle::RADIAN);
+}
+
+scifir::percentage operator"" _percentage(unsigned long long int x)
+{
+	return scifir::percentage((long double)x, scifir::percentage::PERCENTAGE);
 }
 
 scifir::percentage operator"" _ppm(unsigned long long int x)
@@ -950,6 +960,11 @@ scifir::percentage operator"" _ppq(unsigned long long int x)
 scifir::pixel operator"" _px(unsigned long long int x)
 {
 	return scifir::pixel((long double)x);
+}
+
+scifir::abv operator"" _abv(unsigned long long int x)
+{
+	return scifir::abv((long double)x,scifir::abv::PERCENTAGE);
 }
 
 scifir::length operator"" _Å(long double x)
@@ -1732,129 +1747,134 @@ scifir::molarity operator"" _qM(long double x)
 	return scifir::molarity(x, { scifir::dimension(scifir::dimension::MOLARITY,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _QIU(long double x)
+scifir::amount_of_effect operator"" _QIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _RIU(long double x)
+scifir::amount_of_effect operator"" _RIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _YIU(long double x)
+scifir::amount_of_effect operator"" _YIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _ZIU(long double x)
+scifir::amount_of_effect operator"" _ZIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _EIU(long double x)
+scifir::amount_of_effect operator"" _EIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _PIU(long double x)
+scifir::amount_of_effect operator"" _PIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _TIU(long double x)
+scifir::amount_of_effect operator"" _TIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _GIU(long double x)
+scifir::amount_of_effect operator"" _GIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _MIU(long double x)
+scifir::amount_of_effect operator"" _MIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _kIU(long double x)
+scifir::amount_of_effect operator"" _kIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _hIU(long double x)
+scifir::amount_of_effect operator"" _hIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _daIU(long double x)
+scifir::amount_of_effect operator"" _daIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _IU(long double x)
+scifir::amount_of_effect operator"" _IU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _dIU(long double x)
+scifir::amount_of_effect operator"" _dIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _cIU(long double x)
+scifir::amount_of_effect operator"" _cIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _mIU(long double x)
+scifir::amount_of_effect operator"" _mIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _µIU(long double x)
+scifir::amount_of_effect operator"" _µIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _nIU(long double x)
+scifir::amount_of_effect operator"" _nIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _pIU(long double x)
+scifir::amount_of_effect operator"" _pIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _fIU(long double x)
+scifir::amount_of_effect operator"" _fIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _aIU(long double x)
+scifir::amount_of_effect operator"" _aIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _zIU(long double x)
+scifir::amount_of_effect operator"" _zIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _yIU(long double x)
+scifir::amount_of_effect operator"" _yIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _rIU(long double x)
+scifir::amount_of_effect operator"" _rIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _qIU(long double x)
+scifir::amount_of_effect operator"" _qIU(long double x)
 {
-	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+	return scifir::amount_of_effect(x, { scifir::dimension(scifir::dimension::INTERNATIONAL_UNIT,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+}
+
+scifir::scalar_unit operator"" _mEq(long double x)
+{
+	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::MILLIEQUIVALENT,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::scalar_unit operator"" _memo(long double x)
@@ -1870,6 +1890,11 @@ scifir::angle operator"" _degree(long double x)
 scifir::angle operator"" _rad(long double x)
 {
 	return scifir::angle(x, scifir::angle::RADIAN);
+}
+
+scifir::percentage operator"" _percentage(long double x)
+{
+	return scifir::percentage(x, scifir::percentage::PERCENTAGE);
 }
 
 scifir::percentage operator"" _ppm(long double x)
@@ -1895,4 +1920,9 @@ scifir::percentage operator"" _ppq(long double x)
 scifir::pixel operator"" _px(long double x)
 {
 	return scifir::pixel(x);
+}
+
+scifir::abv operator"" _abv(long double x)
+{
+	return scifir::abv(x,scifir::abv::PERCENTAGE);
 }

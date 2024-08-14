@@ -172,6 +172,12 @@ TEST_CASE("pixel class") {
         CHECK(bool(a.to_scalar_unit() == scalar_unit("40 px")));
     }
 
+    SECTION("display() function of pixel class")
+    {
+        pixel a(5.0f);
+        CHECK(a.display() == "5 px");
+    }
+
     SECTION("to_string() function of pixel class")
     {
         pixel a(3.0f);

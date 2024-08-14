@@ -28,6 +28,10 @@ namespace scifir
 		{
 			value = new_value;
 		}
+		else if (init_type == percentage::RATIO)
+		{
+			value = new_value * 100.0f;
+		}
 		else if (init_type == percentage::PARTS_PER_MILLION)
 		{
 			value = new_value / 10000.0f;
@@ -38,11 +42,15 @@ namespace scifir
 		}
 	}
 
-	percentage::percentage(double new_value,percentage::type init_type) : value(float(new_value))
+	percentage::percentage(double new_value,percentage::type init_type) : value()
 	{
 		if (init_type == percentage::PERCENTAGE)
 		{
 			value = float(new_value);
+		}
+		else if (init_type == percentage::RATIO)
+		{
+			value = float(new_value) * 100.0f;
 		}
 		else if (init_type == percentage::PARTS_PER_MILLION)
 		{
@@ -54,11 +62,15 @@ namespace scifir
 		}
 	}
 
-	percentage::percentage(long double new_value,percentage::type init_type) : value(float(new_value))
+	percentage::percentage(long double new_value,percentage::type init_type) : value()
 	{
 		if (init_type == percentage::PERCENTAGE)
 		{
 			value = float(new_value);
+		}
+		else if (init_type == percentage::RATIO)
+		{
+			value = float(new_value) * 100.0f;
 		}
 		else if (init_type == percentage::PARTS_PER_MILLION)
 		{
@@ -70,7 +82,7 @@ namespace scifir
 		}
 	}
 
-	percentage::percentage(int new_value,percentage::type init_type) : value(float(new_value))
+	percentage::percentage(int new_value,percentage::type init_type) : value()
 	{
 		if (init_type == percentage::PERCENTAGE)
 		{

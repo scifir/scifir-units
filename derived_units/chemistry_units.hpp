@@ -48,6 +48,9 @@ namespace scifir
 	SCALAR_UNIT_HPP(dynamic_viscosity);
 	SCALAR_UNIT_HPP(mass_flow_rate);
 	SCALAR_UNIT_HPP(catalytic_activity);
+
+	// PHARMACOLOGY
+	SCALAR_UNIT_HPP(amount_of_effect);
 }
 
 #endif // SCIFIR_UNITS_DERIVED_UNITS_ATOMS_UNITS_HPP_INCLUDED

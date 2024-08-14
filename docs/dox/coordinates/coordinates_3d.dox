@@ -1,0 +1,438 @@
+/** \class scifir::coordinates_3d
+* \brief Class that represents the position in 3D spaces. The space can be a length or, for the case of imaginary spaces, any custom dimension. The most interesting feature is the fact that all the coordinates systems in 3D are present at the same time, it's possible to use cartesian, cylindrical or spherical coordinates as needed for the same instance of coordinates, it's not needed to select just one of those systems. The geographical coordinates aren't yet finished.
+
+* \fn coordinates_3d::coordinates_3d()
+* \brief Default constructor. Initializes x, y and z to 0, with the default dimensions.
+
+* \fn coordinates_3d::coordinates_3d(const coordinates_3d<T>& x_coordinates)
+* \brief Copy constructor. Initializes x, y and z to the x, y and z of x_coordinates.
+
+* \fn coordinates_3d::coordinates_3d(coordinates_3d<T>&& x_coordinates)
+* \brief Move constructor. Initializes x, y and z to the x, y and z of x_coordinates.
+
+* \fn coordinates_3d::coordinates_3d(const T& new_x,const T& new_y,const T& new_z)
+* \brief Constructor. Initializes x, y and z to be new_x, new_y and new_z.
+
+* \fn coordinates_3d::coordinates_3d(const T& new_p,const angle& new_theta,T new_z)
+* \brief Constructor. Initializes x, y and z with cylindrical coordinates.
+
+* \fn coordinates_3d::coordinates_3d(const T& new_r,const angle& new_theta,const angle& new_phi)
+* \brief Constructor. Initializes x, y and z with spherical coordinates.
+
+* \fn coordinates_3d::coordinates_3d(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
+* \brief Constructor. Initializes x, y and z with geographical coordinates. Currently geographical coordinates aren't ready.
+
+* \fn coordinates_3d::coordinates_3d(const point_3d<T>& x_point)
+* \brief Constructor. Initializes x, y and z to the x, y and z of x_point.
+
+* \fn coordinates_3d::coordinates_3d(point_3d<T>&& x_point)
+* \brief Constructor. Initializes x, y and z moving the x, y and z of x_point.
+
+* \fn coordinates_3d::coordinates_3d(const string& init_coordinates_3d)
+* \brief Constructor. Initializes x, y and z with the initialization string of coordinates_3d init_coordinates_3d.
+
+* \fn coordinates_3d<T>& coordinates_3d::operator =(const coordinates_3d<T>& x_coordinates)
+* \brief Copy assignment. Assigns x, y and z to the same values as the x, y and z of x_coordinates.
+
+* \fn coordinates_3d<T>& coordinates_3d::operator =(coordinates_3d<T>&& x_coordinates)
+* \brief Move assignment. Assigns x, y and z moved from the x, y and z of x_coordinates.
+
+* \fn coordinates_3d<T>& coordinates_3d::operator =(const point_3d<T>& x_point)
+* \brief Assignment. Assigns x, y and z to the same values as the x, y and z of x_point.
+
+* \fn coordinates_3d<T>& coordinates_3d::operator =(point_3d<T>&& x_point)
+* \brief Assignment. Assigns x, y and z moved from the x, y and z of x_point.
+
+* \fn coordinates_3d<T>& coordinates_3d::operator =(const string& init_coordinates_3d)
+* \brief Assignment. Assigns x, y and z to the values specified in the initialization string of coordinates_3d init_coordinates_3d.
+
+* \fn T coordinates_3d::get_p() const
+* \brief Returns the value of p in cylindrical coordinates.
+
+* \fn angle coordinates_3d::get_theta() const
+* \brief Returns the value of theta in cylindrical and spherical coordinates (it's the same theta).
+
+* \fn T coordinates_3d::get_r() const
+* \brief Returns the value of r in spherical coordinates.
+
+* \fn angle coordinates_3d::get_phi() const
+* \brief Returns the value of phi in spherical coordinates.
+
+* \fn angle coordinates_3d::get_latitude() const
+* \brief Returns the latitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+
+* \fn angle coordinates_3d::get_longitude() const
+* \brief Returns the longitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+
+* \fn T coordinates_3d::get_altitude() const
+* \brief Returns the altitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+
+* \fn void coordinates_3d::set_position(const T& new_x,const T& new_y,const T& new_z)
+* \brief Sets x, y and z to the new_x, new_y and new_z.
+
+* \fn void coordinates_3d::set_position(const T& new_p,const angle& new_theta,T new_z)
+* \brief Sets x, y and z calculated from the cylindrical coordinates given.
+
+* \fn void coordinates_3d::set_position(const T& new_r,const angle& new_theta,const angle& new_phi)
+* \brief Sets x, y and z calculated from the spherical coordinates given.
+
+* \fn void coordinates_3d::set_position(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
+* \brief Sets x, y and z calculated from the geographical coordinates given.
+
+* \fn void coordinates_3d::rotate_in_x(const angle& x_angle)
+* \brief Rotates around the edge x the amount of the param x_angle.
+
+* \fn void coordinates_3d::rotate_in_y(const angle& x_angle)
+* \brief Rotates around the edge y the amount of the param x_angle.
+
+* \fn void coordinates_3d::rotate_in_z(const angle& x_angle)
+* \brief Rotates around the edge z the amount of the param x_angle.
+
+* \fn void coordinates_3d::move(const displacement_3d& x_displacement)
+* \brief Moves x, y and z in the vector x_displacement given.
+
+* \fn void coordinates_3d::move(const T& new_x,const T& new_y,const T& new_z)
+* \brief Moves x in new_x, y in new_y and z in new_z.
+
+* \fn void coordinates_3d::move(const T& new_p,const angle& new_theta,T new_z)
+* \brief Moves x, y and z in the cylindrical coordinates given.
+
+* \fn void coordinates_3d::move(const T& new_r,const angle& new_theta,const angle& new_phi)
+* \brief Moves x, y and z in the spherical coordinates given.
+
+* \fn T coordinates_3d::distance_to_origin() const
+* \brief Calculates the distance to the origin.
+
+* \fn string coordinates_3d::display_cartesian() const
+* \brief Displays the coordinates in cartesian coordinates.
+
+* \fn string coordinates_3d::display_cylindrical() const
+* \brief Displays the coordinates in cylindrical coordinates.
+
+* \fn string coordinates_3d::display_spherical() const
+* \brief Displays the coordinates in spherical coordinates.
+
+* \fn string coordinates_3d::display_geographical() const
+* \brief Displays the coordinates in geographical coordinates.
+
+* \var T coordinates_3d::x
+* \brief The position in the edge x. The space can have dimensions of length or of any custom dimension.
+
+* \var T coordinates_3d::y
+* \brief The position in the edge y. The space can have dimensions of length or of any custom dimension.
+
+* \var T coordinates_3d::z
+* \brief The position in the edge z. The space can have dimensions of length or of any custom dimension.
+
+* \fn void coordinates_3d::initialize_from_string(string init_coordinates_3d)
+* \brief Internal function. Initializes x, y and z with the initialization string of coordinates_3d init_coordinates_3d.
+
+* \class scifir::coordinates_3d<float>
+* \brief Specialization of coordinates_3d, with the same behaviour and functions, that is specialized for float types. It can be used when it's needed to save memory, because a float uses less memory than a scalar_unit.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d()
+* \brief Default constructor. Initializes x, y and z to 0, with the default dimensions.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d(const coordinates_3d<float>& x_coordinates)
+* \brief Copy constructor. Initializes x, y and z to the x, y and z of x_coordinates.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d(coordinates_3d<float>&& x_coordinates)
+* \brief Move constructor. Initializes x, y and z to the x, y and z of x_coordinates.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d(float new_x,float new_y,float new_z)
+* \brief Constructor. Initializes x, y and z to be new_x, new_y and new_z.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d(float new_p,const angle& new_theta,float new_z)
+* \brief Constructor. Initializes x, y and z with cylindrical coordinates.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d(float new_r,const angle& new_theta,const angle& new_phi)
+* \brief Constructor. Initializes x, y and z with spherical coordinates.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d(const angle& new_latitude,const angle& new_longitude,float new_altitude)
+* \brief Constructor. Initializes x, y and z with geographical coordinates. Currently geographical coordinates aren't ready.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d(const point_3d<float>& x_point)
+* \brief Constructor. Initializes x, y and z to the x, y and z of x_point.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d(point_3d<float>&& x_point)
+* \brief Constructor. Initializes x, y and z moving the x, y and z of x_point.
+
+* \fn scifir::coordinates_3d<float>::coordinates_3d(const string& init_coordinates_3d)
+* \brief Constructor. Initializes x, y and z with the initialization string of coordinates_3d init_coordinates_3d.
+
+* \fn coordinates_3d<float>& scifir::coordinates_3d<float>::operator =(const coordinates_3d<float>& x_coordinates)
+* \brief Copy assignment. Assigns x, y and z to the same values as the x, y and z of x_coordinates.
+
+* \fn coordinates_3d<float>& scifir::coordinates_3d<float>::operator =(coordinates_3d<float>&& x_coordinates)
+* \brief Move assignment. Assigns x, y and z moved from the x, y and z of x_coordinates.
+
+* \fn coordinates_3d<float>& scifir::coordinates_3d<float>::operator =(const point_3d<float>& x_point)
+* \brief Assignment. Assigns x, y and z to the same values as the x, y and z of x_point.
+
+* \fn coordinates_3d<float>& scifir::coordinates_3d<float>::operator =(point_3d<float>&& x_point)
+* \brief Assignment. Assigns x, y and z moved from the x, y and z of x_point.
+
+* \fn coordinates_3d<float>& scifir::coordinates_3d<float>::operator =(const string& init_coordinates_3d)
+* \brief Assignment. Assigns x, y and z to the values specified in the initialization string of coordinates_3d init_coordinates_3d.
+
+* \fn float scifir::coordinates_3d<float>::get_p() const
+* \brief Returns the value of p in cylindrical coordinates.
+
+* \fn angle scifir::coordinates_3d<float>::get_theta() const
+* \brief Returns the value of theta in cylindrical and spherical coordinates (it's the same theta).
+
+* \fn float scifir::coordinates_3d<float>::get_r() const
+* \brief Returns the value of r in spherical coordinates.
+
+* \fn angle scifir::coordinates_3d<float>::get_phi() const
+* \brief Returns the value of phi in spherical coordinates.
+
+* \fn angle scifir::coordinates_3d<float>::get_latitude() const
+* \brief Returns the latitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+
+* \fn angle scifir::coordinates_3d<float>::get_longitude() const
+* \brief Returns the longitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+
+* \fn float scifir::coordinates_3d<float>::get_altitude() const
+* \brief Returns the altitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+
+* \fn void scifir::coordinates_3d<float>::set_position(float new_x,float new_y,float new_z)
+* \brief Sets x, y and z to the new_x, new_y and new_z.
+
+* \fn void scifir::coordinates_3d<float>::set_position(float new_p,const angle& new_theta,float new_z)
+* \brief Sets x, y and z calculated from the cylindrical coordinates given.
+
+* \fn void scifir::coordinates_3d<float>::set_position(float new_r,const angle& new_theta,const angle& new_phi)
+* \brief Sets x, y and z calculated from the spherical coordinates given.
+
+* \fn void scifir::coordinates_3d<float>::set_position(const angle& new_latitude,const angle& new_longitude,float new_altitude)
+* \brief Sets x, y and z calculated from the geographical coordinates given.
+
+* \fn void scifir::coordinates_3d<float>::rotate_in_x(const angle& x_angle)
+* \brief Rotates around the edge x the amount of the param x_angle.
+
+* \fn void scifir::coordinates_3d<float>::rotate_in_y(const angle& x_angle)
+* \brief Rotates around the edge y the amount of the param x_angle.
+
+* \fn void scifir::coordinates_3d<float>::rotate_in_z(const angle& x_angle)
+* \brief Rotates around the edge z the amount of the param x_angle.
+
+* \fn void scifir::coordinates_3d<float>::move(const displacement_3d& x_displacement)
+* \brief Moves x, y and z in the vector x_displacement given.
+
+* \fn void scifir::coordinates_3d<float>::move(float new_x,float new_y,float new_z)
+* \brief Moves x in new_x, y in new_y and z in new_z.
+
+* \fn void scifir::coordinates_3d<float>::move(float new_p,const angle& new_theta,float new_z)
+* \brief Moves x, y and z in the cylindrical coordinates given.
+
+* \fn void scifir::coordinates_3d<float>::move(float new_r,const angle& new_theta,const angle& new_phi)
+* \brief Moves x, y and z in the spherical coordinates given.
+
+* \fn float scifir::coordinates_3d<float>::distance_to_origin() const
+* \brief Calculates the distance to the origin.
+
+* \fn string scifir::coordinates_3d<float>::display_cartesian() const
+* \brief Displays the coordinates in cartesian coordinates.
+
+* \fn string scifir::coordinates_3d<float>::display_cylindrical() const
+* \brief Displays the coordinates in cylindrical coordinates.
+
+* \fn string scifir::coordinates_3d<float>::display_spherical() const
+* \brief Displays the coordinates in spherical coordinates.
+
+* \fn string scifir::coordinates_3d<float>::display_geographical() const
+* \brief Displays the coordinates in geographical coordinates.
+
+* \var float scifir::coordinates_3d<float>::x
+* \brief The position in the edge x, with type float.
+
+* \var float scifir::coordinates_3d<float>::y
+* \brief The position in the edge y, with type float.
+
+* \var float scifir::coordinates_3d<float>::z
+* \brief The position in the edge z, with type float.
+
+* \fn void scifir::coordinates_3d<float>::initialize_from_string(string init_coordinates_3d)
+* \brief Internal function. Initializes x, y and z with the initialization string of coordinates_3d init_coordinates_3d.
+
+* \fn string scifir::to_string(const coordinates_3d<T>& x)
+* \brief Returns the string representation of coordinates_3d.
+
+* \fn string scifir::to_string(const coordinates_3d<float>& x)
+* \brief Returns the string representation of coordinates_3d<float>.
+
+* \fn T scifir::distance(const coordinates_3d<T>& x,const coordinates_3d<U>& y)
+* \brief Calculates the distance between two coordinates_3d.
+
+* \fn float scifir::distance(const coordinates_3d<float>& x,const coordinates_3d<float>& y)
+* \brief Calculates the distance between two coordinates_3d<float>.
+
+* \fn T scifir::distance(const coordinates_3d<T>& x,const point_3d<U>& y)
+* \brief Calculates the distance between a coordinates_3d and a point_3d.
+
+* \fn float scifir::distance(const coordinates_3d<float>& x,const point_3d<float>& y)
+* \brief Calculates the distance between a coordinates_3d<float> and a point_3d<float>.
+
+* \fn T scifir::distance(const point_3d<T>& x,const coordinates_3d<U>& y)
+* \brief Calculates the distance between a coordinates_3d and a point_3d.
+
+* \fn float scifir::distance(const point_3d<float>& x,const coordinates_3d<float>& y)
+* \brief Calculates the distance between a coordinates_3d<float> and a point_3d<float>.
+
+* \fn scalar_unit scifir::cartesian_3d_to_cylindrical_p(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
+* \brief Returns the p coordinate of the cylindrical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn angle scifir::cartesian_3d_to_cylindrical_theta(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
+* \brief Returns the theta coordinate of the cylindrical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn scalar_unit scifir::cartesian_3d_to_cylindrical_z(const scalar_unit& x,const scalar_unit& y,const scalar_unit& z)
+* \brief Returns the z coordinate of the cylindrical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn scalar_unit scifir::cartesian_3d_to_spherical_r(const scalar_unit& x,scalar_unit y,scalar_unit z)
+* \brief Returns the r coordinate of the spherical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn angle scifir::cartesian_3d_to_spherical_theta(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
+* \brief Returns the theta coordinate of the spherical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn angle scifir::cartesian_3d_to_spherical_phi(const scalar_unit& x,scalar_unit y,scalar_unit z)
+* \brief Returns the phi coordinate of the spherical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn scalar_unit scifir::spherical_to_cartesian_3d_x(const scalar_unit& r,const angle& theta, const angle& phi)
+* \brief Returns the x coordinate of the cartesian coordinates in 3D given the r, theta and phi of spherical coordinates.
+
+* \fn scalar_unit scifir::spherical_to_cartesian_3d_y(const scalar_unit& r,const angle& theta, const angle& phi)
+* \brief Returns the y coordinate of the cartesian coordinates in 3D given the r, theta and phi of spherical coordinates.
+
+* \fn scalar_unit scifir::spherical_to_cartesian_3d_z(const scalar_unit& r,const angle& theta, const angle& phi)
+* \brief Returns the z coordinate of the cartesian coordinates in 3D given the r, theta and phi of spherical coordinates.
+
+* \fn scalar_unit scifir::spherical_to_cylindrical_p(const scalar_unit& r,const angle& theta, const angle& phi)
+* \brief Returns the p coordinate of the cylindrical coordinates given the r, theta and phi of spherical coordinates.
+
+* \fn angle scifir::spherical_to_cylindrical_theta(const scalar_unit& r,const angle& theta, const angle& phi)
+* \brief Returns the theta coordinate of the cylindrical coordinates given the r, theta and phi of spherical coordinates.
+
+* \fn scalar_unit scifir::spherical_to_cylindrical_z(const scalar_unit& r,const angle& theta, const angle& phi)
+* \brief Returns the z coordinate of the cylindrical coordinates given the r, theta and phi of spherical coordinates.
+
+* \fn scalar_unit scifir::cylindrical_to_cartesian_3d_x(const scalar_unit& p,const angle& theta, const scalar_unit& z)
+* \brief Returns the x coordinate of the cartesian coordinates in 3D given the p, theta and z of cylindrical coordinates.
+
+* \fn scalar_unit scifir::cylindrical_to_cartesian_3d_y(const scalar_unit& p,const angle& theta, const scalar_unit& z)
+* \brief Returns the y coordinate of the cartesian coordinates in 3D given the p, theta and z of cylindrical coordinates.
+
+* \fn scalar_unit scifir::cylindrical_to_cartesian_3d_z(const scalar_unit& p,const angle& theta, const scalar_unit& z)
+* \brief Returns the z coordinate of the cartesian coordinates in 3D given the p, theta and z of cylindrical coordinates.
+
+* \fn scalar_unit scifir::cylindrical_to_spherical_r(const scalar_unit& p,const angle& theta,scalar_unit z)
+* \brief Returns the r coordinate of the spherical coordinates given the p, theta and z of cylindrical coordinates.
+
+* \fn angle scifir::cylindrical_to_spherical_theta(const scalar_unit& p,const angle& theta,const scalar_unit& z)
+* \brief Returns the theta coordinate of the spherical coordinates given the p, theta and z of cylindrical coordinates.
+
+* \fn angle scifir::cylindrical_to_spherical_phi(const scalar_unit& p,const angle& theta,scalar_unit z)
+* \brief Returns the phi coordinate of the spherical coordinates given the p, theta and z of cylindrical coordinates.
+
+* \fn float scifir::cartesian_3d_to_cylindrical_p(float x,float y,float z)
+* \brief Returns the p coordinate of the cylindrical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn angle scifir::cartesian_3d_to_cylindrical_theta(float x,float y,float z)
+* \brief Returns the theta coordinate of the cylindrical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn float scifir::cartesian_3d_to_cylindrical_z(float x,float y,float z)
+* \brief Returns the z coordinate of the cylindrical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn float scifir::cartesian_3d_to_spherical_r(float x,float y,float z)
+* \brief Returns the r coordinate of the spherical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn angle scifir::cartesian_3d_to_spherical_theta(float x,float y,float z)
+* \brief Returns the theta coordinate of the spherical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn angle scifir::cartesian_3d_to_spherical_phi(float x,float y,float z)
+* \brief Returns the phi coordinate of the spherical coordinates given the x, y and z of cartesian coordinates in 3D.
+
+* \fn float scifir::spherical_to_cartesian_3d_x(float r,const angle& theta, const angle& phi)
+* \brief Returns the x coordinate of the cartesian coordinates in 3D given the r, theta and phi of spherical coordinates.
+
+* \fn float scifir::spherical_to_cartesian_3d_y(float r,const angle& theta, const angle& phi)
+* \brief Returns the y coordinate of the cartesian coordinates in 3D given the r, theta and phi of spherical coordinates.
+
+* \fn float scifir::spherical_to_cartesian_3d_z(float r,const angle& theta, const angle& phi)
+* \brief Returns the z coordinate of the cartesian coordinates in 3D given the r, theta and phi of spherical coordinates.
+
+* \fn float scifir::spherical_to_cylindrical_p(float r,const angle& theta, const angle& phi)
+* \brief Returns the p coordinate of the cylindrical coordinates given the r, theta and phi of spherical coordinates.
+
+* \fn angle scifir::spherical_to_cylindrical_theta(float r,const angle& theta, const angle& phi)
+* \brief Returns the theta coordinate of the cylindrical coordinates given the r, theta and phi of spherical coordinates.
+
+* \fn float scifir::spherical_to_cylindrical_z(float r,const angle& theta, const angle& phi)
+* \brief Returns the z coordinate of the cylindrical coordinates given the r, theta and phi of spherical coordinates.
+
+* \fn float scifir::cylindrical_to_cartesian_3d_x(float p,const angle& theta, float z)
+* \brief Returns the x coordinate of the cartesian coordinates in 3D given the p, theta and z of cylindrical coordinates.
+
+* \fn float scifir::cylindrical_to_cartesian_3d_y(float p,const angle& theta, float z)
+* \brief Returns the y coordinate of the cartesian coordinates in 3D given the p, theta and z of cylindrical coordinates.
+
+* \fn float scifir::cylindrical_to_cartesian_3d_z(float p,const angle& theta, float z)
+* \brief Returns the z coordinate of the cartesian coordinates in 3D given the p, theta and z of cylindrical coordinates.
+
+* \fn float scifir::cylindrical_to_spherical_r(float p,const angle& theta, float z)
+* \brief Returns the r coordinate of the spherical coordinates given the p, theta and z of cylindrical coordinates.
+
+* \fn angle scifir::cylindrical_to_spherical_theta(float p,const angle& theta, float z)
+* \brief Returns the theta coordinate of the spherical coordinates given the p, theta and z of cylindrical coordinates.
+
+* \fn angle scifir::cylindrical_to_spherical_phi(float p,const angle& theta, float z)
+* \brief Returns the phi coordinate of the spherical coordinates given the p, theta and z of cylindrical coordinates.
+
+* \fn bool operator ==(const scifir::coordinates_3d<T>& x,const scifir::coordinates_3d<U>& y)
+* \brief Returns true if both coordinates are equal in the three components.
+
+* \fn bool operator !=(const scifir::coordinates_3d<T>& x,const scifir::coordinates_3d<U>& y)
+* \brief Returns true if both coordinates are different.
+
+* \fn bool operator ==(const scifir::coordinates_3d<T>& x,const scifir::point_3d<U>& y)
+* \brief Returns true if the coordinates and the point are equal in the three components.
+
+* \fn bool operator !=(const scifir::coordinates_3d<T>& x,const scifir::point_3d<U>& y)
+* \brief Returns true if the coordinates and the point are different.
+
+* \fn bool operator ==(const scifir::point_3d<T>& x,const scifir::coordinates_3d<U>& y)
+* \brief Returns true if the coordinates and the point are equal in the three components.
+
+* \fn bool operator !=(const scifir::point_3d<T>& x,const scifir::coordinates_3d<U> y)
+* \brief Returns true if the coordinates and the point are different.
+
+* \fn bool operator ==(const scifir::coordinates_3d<T>& x, const string& init_coordinates_3d)
+* \brief Returns true if the coordinates and the initialization string of coordinates_3d represent the same coordinates.
+
+* \fn bool operator !=(const scifir::coordinates_3d<T>& x, const string& init_coordinates_3d)
+* \brief Returns true if the coordinates and the initialization string of coordinates_3d represent different coordinates.
+
+* \fn bool operator ==(const string& init_coordinates_3d, const scifir::coordinates_3d<T>& x)
+* \brief Returns true if the coordinates and the initialization string of coordinates_3d represent the same coordinates.
+
+* \fn bool operator !=(const string& init_coordinates_3d, const scifir::coordinates_3d<T>& x)
+* \brief Returns true if the coordinates and the initialization string of coordinates_3d represent different coordinates.
+
+* \fn void operator +=(string& x, const scifir::coordinates_3d<T>& y)
+* \brief Concatenates to the string x the string representation of the coordinates_3d y.
+
+* \fn string operator +(const string& x,const scifir::coordinates_3d<T>& y)
+* \brief Concatenates the string x and the string representation of the coordinates_3d y.
+
+* \fn string operator +(const scifir::coordinates_3d<T>& x,const string& y)
+* \brief Concatenates the string y and the string representation of the coordinates_3d x.
+
+* \fn ostream& operator <<(ostream& os, const scifir::coordinates_3d<T>& x)
+* \brief Adds the string representation of the coordinates_3d x to an output stream os.
+
+* \fn ostream& operator <<(ostream& os,const scifir::coordinates_3d<float>& x)
+* \brief Adds the string representation of the coordinates_3d<float> x to an output stream os.
+
+* \fn istream& operator >>(istream& is, scifir::coordinates_3d<T>& x)
+* \brief Allows that an istream initializes by string a coordinates_3d x.
+*/

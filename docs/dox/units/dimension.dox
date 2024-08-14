@@ -1,5 +1,5 @@
 /** \class scifir::dimension
-* \brief Class that represents dimensions of the SI system of units. Each dimension sizes 6 bytes, 1 byte for the dimension type, 1 byte for the prefix, 1 byte for the position (which can be the NUMERATOR or the DENOMINATOR), and 3 bytes for the custom dimension (in case it's used one).
+* \brief Class that represents dimensions of the SI system of units. Each dimension sizes 6 bytes, 1 byte for the dimension type, 1 byte for the prefix, 1 byte for the position (which can be the NUMERATOR or the DENOMINATOR), and 3 bytes for the custom dimension (in case it's used one). A **base dimension** is a dimension that doesn't has more base dimensions, a **derived dimension** has always base dimensions from which it's defined.
 
 * \enum scifir::dimension::position
 * \brief Represents the position of the dimension, which can be at the numerator or at the denominator. The value NO_POSITION is used when there's no position specified.
@@ -178,6 +178,9 @@
 * \var dimension::INTERNATIONAL_UNIT
 * \brief International unit, plural international units. It measures the amount of effect or biological activity of a substance, for the purpose of easier comparison across similar forms of substances. The international units aren't part of the SI system of units. Symbol **IU**.
 
+* \var dimension::MILLIEQUIVALENT
+* \brief Milliequivalent, plural Milliequivalents. Amount of moles in a given chemical reaction needed to react with an amount of moles of another substance. Symbol **mEq**.
+
 * \fn dimension::dimension()
 * \brief Default constructor. The dimension_type is NONE, the dimension_position is NO_POSITION, and the prefix is NONE, the symbol is empty.
 
@@ -245,7 +248,7 @@
 * \brief If the dimension is not a SI base dimension, it's considered a SI derived dimension.
 
 * \fn bool dimension::is_dimensionless() const
-* \brief If the dimension_type is DEGREE, RADIAN or STERADIAN, it's considered dimensionless, following the SI system of units. If the dimension_type is NONE, it's considered dimensionless too.
+* \brief If the dimension_type is DEGREE, RADIAN or STERADIAN, it's considered dimensionless, following the SI system of units.
 
 * \fn vector<dimension> dimension::get_base_dimensions() const
 * \brief Returns the base dimensions of the dimensions, which can be the same dimension or all the base dimension this dimension has, if it's a derived dimension.

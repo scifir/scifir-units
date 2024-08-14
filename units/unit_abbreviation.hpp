@@ -13,6 +13,8 @@
 #include "../special_units/percentage.hpp"
 #include "../special_units/pixel.hpp"
 
+#include "../nutrition/abv.hpp"
+
 scifir::length operator"" _Å(unsigned long long int);
 
 scifir::volume operator"" _QL(unsigned long long int);
@@ -179,41 +181,45 @@ scifir::molarity operator"" _yM(unsigned long long int);
 scifir::molarity operator"" _rM(unsigned long long int);
 scifir::molarity operator"" _qM(unsigned long long int);
 
-scifir::scalar_unit operator"" _QIU(unsigned long long int);
-scifir::scalar_unit operator"" _RIU(unsigned long long int);
-scifir::scalar_unit operator"" _YIU(unsigned long long int);
-scifir::scalar_unit operator"" _ZIU(unsigned long long int);
-scifir::scalar_unit operator"" _EIU(unsigned long long int);
-scifir::scalar_unit operator"" _PIU(unsigned long long int);
-scifir::scalar_unit operator"" _TIU(unsigned long long int);
-scifir::scalar_unit operator"" _GIU(unsigned long long int);
-scifir::scalar_unit operator"" _MIU(unsigned long long int);
-scifir::scalar_unit operator"" _kIU(unsigned long long int);
-scifir::scalar_unit operator"" _hIU(unsigned long long int);
-scifir::scalar_unit operator"" _daIU(unsigned long long int);
-scifir::scalar_unit operator"" _IU(unsigned long long int);
-scifir::scalar_unit operator"" _dIU(unsigned long long int);
-scifir::scalar_unit operator"" _cIU(unsigned long long int);
-scifir::scalar_unit operator"" _mIU(unsigned long long int);
-scifir::scalar_unit operator"" _µIU(unsigned long long int);
-scifir::scalar_unit operator"" _nIU(unsigned long long int);
-scifir::scalar_unit operator"" _pIU(unsigned long long int);
-scifir::scalar_unit operator"" _fIU(unsigned long long int);
-scifir::scalar_unit operator"" _aIU(unsigned long long int);
-scifir::scalar_unit operator"" _zIU(unsigned long long int);
-scifir::scalar_unit operator"" _yIU(unsigned long long int);
-scifir::scalar_unit operator"" _rIU(unsigned long long int);
-scifir::scalar_unit operator"" _qIU(unsigned long long int);
+scifir::amount_of_effect operator"" _QIU(unsigned long long int);
+scifir::amount_of_effect operator"" _RIU(unsigned long long int);
+scifir::amount_of_effect operator"" _YIU(unsigned long long int);
+scifir::amount_of_effect operator"" _ZIU(unsigned long long int);
+scifir::amount_of_effect operator"" _EIU(unsigned long long int);
+scifir::amount_of_effect operator"" _PIU(unsigned long long int);
+scifir::amount_of_effect operator"" _TIU(unsigned long long int);
+scifir::amount_of_effect operator"" _GIU(unsigned long long int);
+scifir::amount_of_effect operator"" _MIU(unsigned long long int);
+scifir::amount_of_effect operator"" _kIU(unsigned long long int);
+scifir::amount_of_effect operator"" _hIU(unsigned long long int);
+scifir::amount_of_effect operator"" _daIU(unsigned long long int);
+scifir::amount_of_effect operator"" _IU(unsigned long long int);
+scifir::amount_of_effect operator"" _dIU(unsigned long long int);
+scifir::amount_of_effect operator"" _cIU(unsigned long long int);
+scifir::amount_of_effect operator"" _mIU(unsigned long long int);
+scifir::amount_of_effect operator"" _µIU(unsigned long long int);
+scifir::amount_of_effect operator"" _nIU(unsigned long long int);
+scifir::amount_of_effect operator"" _pIU(unsigned long long int);
+scifir::amount_of_effect operator"" _fIU(unsigned long long int);
+scifir::amount_of_effect operator"" _aIU(unsigned long long int);
+scifir::amount_of_effect operator"" _zIU(unsigned long long int);
+scifir::amount_of_effect operator"" _yIU(unsigned long long int);
+scifir::amount_of_effect operator"" _rIU(unsigned long long int);
+scifir::amount_of_effect operator"" _qIU(unsigned long long int);
+
+scifir::scalar_unit operator"" _mEq(unsigned long long int);
 
 scifir::mole operator"" _particles(unsigned long long int);
 scifir::scalar_unit operator"" _memo(unsigned long long int);
 scifir::angle operator"" _degree(unsigned long long int);
 scifir::angle operator"" _rad(unsigned long long int);
+scifir::percentage operator"" _percentage(unsigned long long int);
 scifir::percentage operator"" _ppm(unsigned long long int);
 /*scifir::percentage operator"" _ppb(unsigned long long int);
 scifir::percentage operator"" _ppt(unsigned long long int);
 scifir::percentage operator"" _ppq(unsigned long long int);*/
 scifir::pixel operator"" _px(unsigned long long int);
+scifir::abv operator"" _abv(unsigned long long int);
 
 scifir::length operator"" _Å(long double);
 
@@ -383,39 +389,43 @@ scifir::molarity operator"" _yM(long double);
 scifir::molarity operator"" _rM(long double);
 scifir::molarity operator"" _qM(long double);
 
-scifir::scalar_unit operator"" _QIU(long double);
-scifir::scalar_unit operator"" _RIU(long double);
-scifir::scalar_unit operator"" _YIU(long double);
-scifir::scalar_unit operator"" _ZIU(long double);
-scifir::scalar_unit operator"" _EIU(long double);
-scifir::scalar_unit operator"" _PIU(long double);
-scifir::scalar_unit operator"" _TIU(long double);
-scifir::scalar_unit operator"" _GIU(long double);
-scifir::scalar_unit operator"" _MIU(long double);
-scifir::scalar_unit operator"" _kIU(long double);
-scifir::scalar_unit operator"" _hIU(long double);
-scifir::scalar_unit operator"" _daIU(long double);
-scifir::scalar_unit operator"" _IU(long double);
-scifir::scalar_unit operator"" _dIU(long double);
-scifir::scalar_unit operator"" _cIU(long double);
-scifir::scalar_unit operator"" _mIU(long double);
-scifir::scalar_unit operator"" _µIU(long double);
-scifir::scalar_unit operator"" _nIU(long double);
-scifir::scalar_unit operator"" _pIU(long double);
-scifir::scalar_unit operator"" _fIU(long double);
-scifir::scalar_unit operator"" _aIU(long double);
-scifir::scalar_unit operator"" _zIU(long double);
-scifir::scalar_unit operator"" _yIU(long double);
-scifir::scalar_unit operator"" _rIU(long double);
-scifir::scalar_unit operator"" _qIU(long double);
+scifir::amount_of_effect operator"" _QIU(long double);
+scifir::amount_of_effect operator"" _RIU(long double);
+scifir::amount_of_effect operator"" _YIU(long double);
+scifir::amount_of_effect operator"" _ZIU(long double);
+scifir::amount_of_effect operator"" _EIU(long double);
+scifir::amount_of_effect operator"" _PIU(long double);
+scifir::amount_of_effect operator"" _TIU(long double);
+scifir::amount_of_effect operator"" _GIU(long double);
+scifir::amount_of_effect operator"" _MIU(long double);
+scifir::amount_of_effect operator"" _kIU(long double);
+scifir::amount_of_effect operator"" _hIU(long double);
+scifir::amount_of_effect operator"" _daIU(long double);
+scifir::amount_of_effect operator"" _IU(long double);
+scifir::amount_of_effect operator"" _dIU(long double);
+scifir::amount_of_effect operator"" _cIU(long double);
+scifir::amount_of_effect operator"" _mIU(long double);
+scifir::amount_of_effect operator"" _µIU(long double);
+scifir::amount_of_effect operator"" _nIU(long double);
+scifir::amount_of_effect operator"" _pIU(long double);
+scifir::amount_of_effect operator"" _fIU(long double);
+scifir::amount_of_effect operator"" _aIU(long double);
+scifir::amount_of_effect operator"" _zIU(long double);
+scifir::amount_of_effect operator"" _yIU(long double);
+scifir::amount_of_effect operator"" _rIU(long double);
+scifir::amount_of_effect operator"" _qIU(long double);
+
+scifir::scalar_unit operator"" _mEq(long double);
 
 scifir::scalar_unit operator"" _memo(long double);
 scifir::angle operator"" _degree(long double);
 scifir::angle operator"" _rad(long double);
+scifir::percentage operator"" _percentage(long double);
 scifir::percentage operator"" _ppm(long double);
 /*scifir::percentage operator"" _ppb(long double);
 scifir::percentage operator"" _ppt(long double);
 scifir::percentage operator"" _ppq(long double);*/
 scifir::pixel operator"" _px(long double);
+scifir::abv operator"" _abv(long double);
 
 #endif // SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED

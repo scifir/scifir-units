@@ -31,8 +31,17 @@ namespace scifir
 	zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions) : aid(new_aid),country(new_country),regions(new_regions),zone(),zone_type(zid::REGION)
 	{}
 
-	zid::zid(const scifir::aid& new_aid,const zid::type& new_zid_type,const string& new_country,const vector<string>& new_regions,const string& new_zone) : aid(new_aid),country(new_country),regions(new_regions),zone(new_zone),zone_type(new_zid_type)
-	{}
+	zid::zid(const scifir::aid& new_aid,const zid::type& new_zid_type,const string& new_country,const vector<string>& new_regions,const string& new_zone) : aid(),country(),regions(),zone(),zone_type(zid::NONE)
+	{
+		if (new_zid_type != zid::COUNTRY and new_zid_type != zid::REGION)
+		{
+			aid = new_aid;
+			regions = new_regions;
+			country = new_country;
+			zone = new_zone;
+			zone_type = new_zid_type;
+		}
+	}
 
 	zid::zid(const scifir::aid& new_aid,const string& init_zid) : aid(new_aid),regions(),country(),zone(),zone_type(zid::NONE)
 	{
@@ -43,25 +52,44 @@ namespace scifir
 			if (values[0].front() == '(' and isalpha(values[0][1]))
 			{
 				zone_type = create_zone_type(values[0].substr(1,1));
+				string new_country;
 				if (values[0][3] != ' ')
 				{
-					country = values[0].substr(3);
+					new_country = values[0].substr(3);
 				}
 				else
 				{
-					country = values[0].substr(4);
+					new_country = values[0].substr(4);
 				}
-				if (values.size() > 2)
+				if (values.size() == 1 and zone_type == zid::COUNTRY)
 				{
-					int total_for_values = int(values.size()) - 1;
+					country = new_country;
+				}
+				if ((values.size() >= 2 and zone_type == zid::REGION) or (values.size() >= 3 and (zone_type == zid::ZONE or zone_type == zid::SETTLEMENT)))
+				{
+					country = new_country;
+					int total_for_values;
+					if (zone_type == zid::REGION)
+					{
+						total_for_values = int(values.size());
+					}
+					else if (zone_type == zid::ZONE or zone_type == zid::SETTLEMENT)
+					{
+						total_for_values = int(values.size()) - 1;
+					}
 					for (int i = 1; i < total_for_values; i++)
 					{
 						regions.push_back(values[i]);
 					}
 				}
-				if (values.size() >= 2)
+				if (values.size() >= 3 and (zone_type == zid::ZONE or zone_type == zid::SETTLEMENT))
 				{
+					country = new_country;
 					zone = values.back();
+				}
+				if (country == "")
+				{
+					zone_type = zid::NONE;
 				}
 			}
 		}
@@ -161,25 +189,44 @@ namespace scifir
 				if (values[0].front() == '(' and isalpha(values[0][1]))
 				{
 					zone_type = create_zone_type(values[0].substr(1,1));
+					string new_country;
 					if (values[0][3] != ' ')
 					{
-						country = values[0].substr(3);
+						new_country = values[0].substr(3);
 					}
 					else
 					{
-						country = values[0].substr(4);
+						new_country = values[0].substr(4);
 					}
-					if (values.size() > 2)
+					if (values.size() == 1 and zone_type == zid::COUNTRY)
 					{
-						int total_for_values = int(values.size()) - 1;
+						country = new_country;
+					}
+					if ((values.size() >= 2 and zone_type == zid::REGION) or (values.size() >= 3 and (zone_type == zid::ZONE or zone_type == zid::SETTLEMENT)))
+					{
+						country = new_country;
+						int total_for_values;
+						if (zone_type == zid::REGION)
+						{
+							total_for_values = int(values.size());
+						}
+						else if (zone_type == zid::ZONE or zone_type == zid::SETTLEMENT)
+						{
+							total_for_values = int(values.size()) - 1;
+						}
 						for (int i = 1; i < total_for_values; i++)
 						{
 							regions.push_back(values[i]);
 						}
 					}
-					if (values.size() >= 2)
+					if (values.size() >= 3 and (zone_type == zid::ZONE or zone_type == zid::SETTLEMENT))
 					{
+						country = new_country;
 						zone = values.back();
+					}
+					if (country == "")
+					{
+						zone_type = zid::NONE;
 					}
 				}
 			}
@@ -190,25 +237,44 @@ namespace scifir
 				if (values[0].front() == '(' and isalpha(values[0][1]))
 				{
 					zone_type = create_zone_type(values[0].substr(1,1));
+					string new_country;
 					if (values[0][3] != ' ')
 					{
-						country = values[0].substr(3);
+						new_country = values[0].substr(3);
 					}
 					else
 					{
-						country = values[0].substr(4);
+						new_country = values[0].substr(4);
 					}
-					if (values.size() > 2)
+					if (values.size() == 1 and zone_type == zid::COUNTRY)
 					{
-						int total_for_values = int(values.size()) - 1;
+						country = new_country;
+					}
+					if ((values.size() >= 2 and zone_type == zid::REGION) or (values.size() >= 3 and (zone_type == zid::ZONE or zone_type == zid::SETTLEMENT)))
+					{
+						country = new_country;
+						int total_for_values;
+						if (zone_type == zid::REGION)
+						{
+							total_for_values = int(values.size());
+						}
+						else if (zone_type == zid::ZONE or zone_type == zid::SETTLEMENT)
+						{
+							total_for_values = int(values.size()) - 1;
+						}
 						for (int i = 1; i < total_for_values; i++)
 						{
 							regions.push_back(values[i]);
 						}
 					}
-					if (values.size() >= 2)
+					if (values.size() >= 3 and (zone_type == zid::ZONE or zone_type == zid::SETTLEMENT))
 					{
+						country = new_country;
 						zone = values.back();
+					}
+					if (country == "")
+					{
+						zone_type = zid::NONE;
 					}
 				}
 			}

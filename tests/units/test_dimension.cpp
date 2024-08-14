@@ -182,6 +182,8 @@ TEST_CASE("dimension class") {
 		CHECK(a47.dimension_type == dimension::CUSTOM_FULL_SYMBOL);
 		dimension a48("IU",dimension::NUMERATOR);
 		CHECK(a48.dimension_type == dimension::INTERNATIONAL_UNIT);
+		dimension a49("mEq",dimension::NUMERATOR);
+		CHECK(a49.dimension_type == dimension::MILLIEQUIVALENT);
 	}
 
 	SECTION("Assignments of dimension class")
@@ -229,11 +231,8 @@ TEST_CASE("dimension class") {
 		CHECK(to_string(m) == "mm");
 		dimension n = dimension("um",dimension::NUMERATOR);
 		CHECK(to_string(n) == "µm");
-		//dimension n2 = dimension("µm",dimension::NUMERATOR);
-		//cout << "n2: " << to_string(n2) << endl;
-		//string n2_icu;
-		//icu::UnicodeString("µm").toUTF8String(n2_icu);
-		//CHECK(to_string(n2) == n2_icu);
+		dimension n2 = dimension("µm",dimension::NUMERATOR);
+		CHECK(to_string(n2) == "µm");
 		dimension o = dimension("nm",dimension::NUMERATOR);
 		CHECK(to_string(o) == "nm");
 		dimension p = dimension("pm",dimension::NUMERATOR);
@@ -259,12 +258,12 @@ TEST_CASE("dimension class") {
 		CHECK(a.get_plural() == "empty");
 		CHECK(a.get_symbol() == "empty");
 		CHECK(a.get_conversion_factor() == 1.0l);
-		CHECK(a.is_simple_dimension() == true);
+		CHECK(a.is_simple_dimension() == false);
 		CHECK(a.is_base_dimension() == false);
 		CHECK(a.is_derived_dimension() == false);
 		CHECK(a.is_SI_base_dimension() == false);
 		CHECK(a.is_SI_derived_dimension() == false);
-		CHECK(a.is_dimensionless() == true);
+		CHECK(a.is_dimensionless() == false);
 		dimension a2(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a2.get_name() == "metre");
 		CHECK(a2.get_plural() == "metres");
@@ -771,10 +770,10 @@ TEST_CASE("dimension class") {
 		CHECK(a48.get_name() == "pixel");
 		CHECK(a48.get_plural() == "pixels");
 		CHECK(a48.get_symbol() == "px");
-		CHECK(a48.get_conversion_factor() == 0.00026l);
+		CHECK(a48.get_conversion_factor() == 1.0l);
 		CHECK(a48.is_simple_dimension() == true);
-		CHECK(a48.is_base_dimension() == false);
-		CHECK(a48.is_derived_dimension() == true);
+		CHECK(a48.is_base_dimension() == true);
+		CHECK(a48.is_derived_dimension() == false);
 		CHECK(a48.is_SI_base_dimension() == false);
 		CHECK(a48.is_SI_derived_dimension() == false);
 		dimension a49(dimension::MEMO,prefix::NONE,dimension::NUMERATOR);
@@ -797,6 +796,16 @@ TEST_CASE("dimension class") {
 		CHECK(a50.is_derived_dimension() == false);
 		CHECK(a50.is_SI_base_dimension() == false);
 		CHECK(a50.is_SI_derived_dimension() == false);
+		dimension a51(dimension::MILLIEQUIVALENT,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a51.get_name() == "milliequivalent");
+		CHECK(a51.get_plural() == "milliequivalents");
+		CHECK(a51.get_symbol() == "mEq");
+		CHECK(a51.get_conversion_factor() == 1.0l);
+		CHECK(a51.is_simple_dimension() == true);
+		CHECK(a51.is_base_dimension() == true);
+		CHECK(a51.is_derived_dimension() == false);
+		CHECK(a51.is_SI_base_dimension() == false);
+		CHECK(a51.is_SI_derived_dimension() == false);
 	}
 
 	SECTION("get_fullname() and get_fullplural()")

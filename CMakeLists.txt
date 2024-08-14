@@ -87,13 +87,14 @@ set(TARGET_H
 coordinates
 fields
 meca_number
+nutrition
 derived_units
 special_units
 topology
 units
 util)
 
-file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp fields/*.cpp meca_number/*.cpp derived_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
+file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp fields/*.cpp meca_number/*.cpp nutrition/*.cpp derived_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
 
 # Project to build
 
@@ -267,6 +268,16 @@ if(BUILD_TESTING)
 		add_test(NAME aid COMMAND test_aid)
 		set_tests_properties(aid PROPERTIES LABELS tests)
 
+		add_executable(test_body tests/special_units/test_body.cpp)
+		target_link_libraries(test_body PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME body COMMAND test_body)
+		set_tests_properties(body PROPERTIES LABELS tests)
+
+		add_executable(test_mind tests/special_units/test_mind.cpp)
+		target_link_libraries(test_mind PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME mind COMMAND test_mind)
+		set_tests_properties(mind PROPERTIES LABELS tests)
+
 		add_executable(test_percentage tests/special_units/test_percentage.cpp)
 		target_link_libraries(test_percentage PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME percentage COMMAND test_percentage)
@@ -321,6 +332,11 @@ if(BUILD_TESTING)
 		target_link_libraries(test_trajectory_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME trajectory_3d COMMAND test_trajectory_3d)
 		set_tests_properties(trajectory_3d PROPERTIES LABELS tests)
+
+		add_executable(test_abv tests/nutrition/test_abv.cpp)
+		target_link_libraries(test_abv PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME abv COMMAND test_abv)
+		set_tests_properties(abv PROPERTIES LABELS tests)
 
 		add_executable(benchmark_units tests/benchmark_units.cpp)
 		target_link_libraries(benchmark_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})

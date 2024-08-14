@@ -17,7 +17,7 @@ namespace scifir
 	class percentage
 	{
 		public:
-			enum type : int8_t {PERCENTAGE,PARTS_PER_MILLION,PARTS_PER_BILLION,PARTS_PER_TRILLION,PARTS_PER_QUATRILLION};
+			enum type : int8_t {PERCENTAGE,RATIO,PARTS_PER_MILLION,PARTS_PER_BILLION,PARTS_PER_TRILLION,PARTS_PER_QUATRILLION};
 
 			percentage();
 			percentage(const percentage& x);
