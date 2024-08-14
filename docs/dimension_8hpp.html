@@ -171,7 +171,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1dimension.html">scifir::dimension</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents dimensions of the SI system of units. Each dimension sizes 6 bytes, 1 byte for the dimension type, 1 byte for the prefix, 1 byte for the position (which can be the NUMERATOR or the DENOMINATOR), and 3 bytes for the custom dimension (in case it's used one).  <a href="classscifir_1_1dimension.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents dimensions of the SI system of units. Each dimension sizes 6 bytes, 1 byte for the dimension type, 1 byte for the prefix, 1 byte for the position (which can be the NUMERATOR or the DENOMINATOR), and 3 bytes for the custom dimension (in case it's used one). A <b>base dimension</b> is a dimension that doesn't has more base dimensions, a <b>derived dimension</b> has always base dimensions from which it's defined.  <a href="classscifir_1_1dimension.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -271,10 +271,10 @@ Functions</h2></td></tr>
 
 <p>Checks if the dimension type and the position of two dimensions are any of them different. The prefix is not compared. </p>
 
-<p class="definition">Definition at line <a class="el" href="dimension_8cpp_source.html#l02191">2191</a> of file <a class="el" href="dimension_8cpp_source.html">dimension.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02192"></a><span class="lineno"> 2192</span>&#160;{</div>
-<div class="line"><a name="l02193"></a><span class="lineno"> 2193</span>&#160;    <span class="keywordflow">return</span> !(x == y);</div>
-<div class="line"><a name="l02194"></a><span class="lineno"> 2194</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="dimension_8cpp_source.html#l02221">2221</a> of file <a class="el" href="dimension_8cpp_source.html">dimension.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l02222"></a><span class="lineno"> 2222</span>&#160;{</div>
+<div class="line"><a name="l02223"></a><span class="lineno"> 2223</span>&#160;    <span class="keywordflow">return</span> !(x == y);</div>
+<div class="line"><a name="l02224"></a><span class="lineno"> 2224</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -306,12 +306,12 @@ Functions</h2></td></tr>
 
 <p>Adds the string representation of a dimension to an output stream. </p>
 
-<p class="definition">Definition at line <a class="el" href="dimension_8cpp_source.html#l02196">2196</a> of file <a class="el" href="dimension_8cpp_source.html">dimension.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02197"></a><span class="lineno"> 2197</span>&#160;{</div>
-<div class="line"><a name="l02198"></a><span class="lineno"> 2198</span>&#160;    <span class="keywordflow">return</span> os &lt;&lt; x.<a class="code" href="classscifir_1_1dimension.html#a29c70958d053bfd9d66bd23b5f9f5319">prefix</a>.<a class="code" href="classscifir_1_1prefix.html#aa465d9bfb7c6cd8669ad545d616a2130">get_symbol</a>() &lt;&lt; x.<a class="code" href="classscifir_1_1dimension.html#a7a9483d3b3fb5708970dbf48730ade58">get_symbol</a>();</div>
-<div class="line"><a name="l02199"></a><span class="lineno"> 2199</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="dimension_8cpp_source.html#l02226">2226</a> of file <a class="el" href="dimension_8cpp_source.html">dimension.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l02227"></a><span class="lineno"> 2227</span>&#160;{</div>
+<div class="line"><a name="l02228"></a><span class="lineno"> 2228</span>&#160;    <span class="keywordflow">return</span> os &lt;&lt; x.<a class="code" href="classscifir_1_1dimension.html#a29c70958d053bfd9d66bd23b5f9f5319">prefix</a>.<a class="code" href="classscifir_1_1prefix.html#aa465d9bfb7c6cd8669ad545d616a2130">get_symbol</a>() &lt;&lt; x.<a class="code" href="classscifir_1_1dimension.html#a7a9483d3b3fb5708970dbf48730ade58">get_symbol</a>();</div>
+<div class="line"><a name="l02229"></a><span class="lineno"> 2229</span>&#160;}</div>
 <div class="ttc" id="aclassscifir_1_1dimension_html_a29c70958d053bfd9d66bd23b5f9f5319"><div class="ttname"><a href="classscifir_1_1dimension.html#a29c70958d053bfd9d66bd23b5f9f5319">scifir::dimension::prefix</a></div><div class="ttdeci">scifir::prefix prefix</div><div class="ttdoc">The prefix of the dimension. It's used along with the symbol of the dimension when printing it.</div><div class="ttdef"><b>Definition:</b> <a href="dimension_8hpp_source.html#l00072">dimension.hpp:72</a></div></div>
-<div class="ttc" id="aclassscifir_1_1dimension_html_a7a9483d3b3fb5708970dbf48730ade58"><div class="ttname"><a href="classscifir_1_1dimension.html#a7a9483d3b3fb5708970dbf48730ade58">scifir::dimension::get_symbol</a></div><div class="ttdeci">string get_symbol() const</div><div class="ttdoc">Returns the symbol of the dimension. In the case of a custom dimension, it returns the custom dimensi...</div><div class="ttdef"><b>Definition:</b> <a href="dimension_8cpp_source.html#l00588">dimension.cpp:588</a></div></div>
+<div class="ttc" id="aclassscifir_1_1dimension_html_a7a9483d3b3fb5708970dbf48730ade58"><div class="ttname"><a href="classscifir_1_1dimension.html#a7a9483d3b3fb5708970dbf48730ade58">scifir::dimension::get_symbol</a></div><div class="ttdeci">string get_symbol() const</div><div class="ttdoc">Returns the symbol of the dimension. In the case of a custom dimension, it returns the custom dimensi...</div><div class="ttdef"><b>Definition:</b> <a href="dimension_8cpp_source.html#l00596">dimension.cpp:596</a></div></div>
 <div class="ttc" id="aclassscifir_1_1prefix_html_aa465d9bfb7c6cd8669ad545d616a2130"><div class="ttname"><a href="classscifir_1_1prefix.html#aa465d9bfb7c6cd8669ad545d616a2130">scifir::prefix::get_symbol</a></div><div class="ttdeci">string get_symbol() const</div><div class="ttdoc">Symbol of the prefix given the prefix_type. The symbol of micro is supported in his Unicode version.</div><div class="ttdef"><b>Definition:</b> <a href="prefix_8cpp_source.html#l00152">prefix.cpp:152</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -344,17 +344,17 @@ Functions</h2></td></tr>
 
 <p>Checks if the dimension type, the position and the prefix of two dimensions are the same. </p>
 
-<p class="definition">Definition at line <a class="el" href="dimension_8cpp_source.html#l02179">2179</a> of file <a class="el" href="dimension_8cpp_source.html">dimension.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02180"></a><span class="lineno"> 2180</span>&#160;{</div>
-<div class="line"><a name="l02181"></a><span class="lineno"> 2181</span>&#160;    <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1dimension.html#a55ebc67dc5f4ce62dbe4a9f888280363">dimension_type</a> == y.<a class="code" href="classscifir_1_1dimension.html#a55ebc67dc5f4ce62dbe4a9f888280363">dimension_type</a> and x.<a class="code" href="classscifir_1_1dimension.html#a308aafa82609f6aca83e2c01175aa948">dimension_position</a> == y.<a class="code" href="classscifir_1_1dimension.html#a308aafa82609f6aca83e2c01175aa948">dimension_position</a> and x.<a class="code" href="classscifir_1_1dimension.html#a29c70958d053bfd9d66bd23b5f9f5319">prefix</a> == y.<a class="code" href="classscifir_1_1dimension.html#a29c70958d053bfd9d66bd23b5f9f5319">prefix</a>)</div>
-<div class="line"><a name="l02182"></a><span class="lineno"> 2182</span>&#160;    {</div>
-<div class="line"><a name="l02183"></a><span class="lineno"> 2183</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l02184"></a><span class="lineno"> 2184</span>&#160;    }</div>
-<div class="line"><a name="l02185"></a><span class="lineno"> 2185</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l02186"></a><span class="lineno"> 2186</span>&#160;    {</div>
-<div class="line"><a name="l02187"></a><span class="lineno"> 2187</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l02188"></a><span class="lineno"> 2188</span>&#160;    }</div>
-<div class="line"><a name="l02189"></a><span class="lineno"> 2189</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="dimension_8cpp_source.html#l02209">2209</a> of file <a class="el" href="dimension_8cpp_source.html">dimension.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l02210"></a><span class="lineno"> 2210</span>&#160;{</div>
+<div class="line"><a name="l02211"></a><span class="lineno"> 2211</span>&#160;    <span class="keywordflow">if</span> (x.<a class="code" href="classscifir_1_1dimension.html#a55ebc67dc5f4ce62dbe4a9f888280363">dimension_type</a> == y.<a class="code" href="classscifir_1_1dimension.html#a55ebc67dc5f4ce62dbe4a9f888280363">dimension_type</a> and x.<a class="code" href="classscifir_1_1dimension.html#a308aafa82609f6aca83e2c01175aa948">dimension_position</a> == y.<a class="code" href="classscifir_1_1dimension.html#a308aafa82609f6aca83e2c01175aa948">dimension_position</a> and x.<a class="code" href="classscifir_1_1dimension.html#a29c70958d053bfd9d66bd23b5f9f5319">prefix</a> == y.<a class="code" href="classscifir_1_1dimension.html#a29c70958d053bfd9d66bd23b5f9f5319">prefix</a>)</div>
+<div class="line"><a name="l02212"></a><span class="lineno"> 2212</span>&#160;    {</div>
+<div class="line"><a name="l02213"></a><span class="lineno"> 2213</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l02214"></a><span class="lineno"> 2214</span>&#160;    }</div>
+<div class="line"><a name="l02215"></a><span class="lineno"> 2215</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l02216"></a><span class="lineno"> 2216</span>&#160;    {</div>
+<div class="line"><a name="l02217"></a><span class="lineno"> 2217</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l02218"></a><span class="lineno"> 2218</span>&#160;    }</div>
+<div class="line"><a name="l02219"></a><span class="lineno"> 2219</span>&#160;}</div>
 <div class="ttc" id="aclassscifir_1_1dimension_html_a308aafa82609f6aca83e2c01175aa948"><div class="ttname"><a href="classscifir_1_1dimension.html#a308aafa82609f6aca83e2c01175aa948">scifir::dimension::dimension_position</a></div><div class="ttdeci">dimension::position dimension_position</div><div class="ttdoc">The position of the dimension, which can be the NUMERATOR, the DENOMINATOR or NO_POSITION....</div><div class="ttdef"><b>Definition:</b> <a href="dimension_8hpp_source.html#l00074">dimension.hpp:74</a></div></div>
 <div class="ttc" id="aclassscifir_1_1dimension_html_a55ebc67dc5f4ce62dbe4a9f888280363"><div class="ttname"><a href="classscifir_1_1dimension.html#a55ebc67dc5f4ce62dbe4a9f888280363">scifir::dimension::dimension_type</a></div><div class="ttdeci">dimension::type dimension_type</div><div class="ttdoc">The type of the dimension.</div><div class="ttdef"><b>Definition:</b> <a href="dimension_8hpp_source.html#l00073">dimension.hpp:73</a></div></div>
 </div><!-- fragment -->

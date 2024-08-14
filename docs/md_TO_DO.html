@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>scifir-units: TO-DO</title>
+<title>scifir-units: SCIFIR UNITS - VERSION 2</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,75 +64,424 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">TO-DO </div>  </div>
+<div class="title">SCIFIR UNITS - VERSION 2 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>SCIFIR UNITS - VERSION 2</p>
-<p>// NUMBER OF TODOS: 52</p>
-<p>// MATERIAL_VECTOR_UNIT (1) // TODO: add operator == and operator !=</p>
-<p>// TENSORS (2) // TODO: add display functions without new lines and other equivalents with new lines, they should allow to display like the other units related to dimensions // TODO: add operator*, <a class="el" href="namespacescifir.html#ac62851b9d931d02184edca7f3db3f1a7" title="Creates a vector_unit_3d as the cross product of the two vectors x and y.">cross_product()</a>, <a class="el" href="namespacescifir.html#a732fc05956fd18f78cd0019c5c023b5c" title="Creates a scalar_unit as the dot product of the two vectors x and y.">dot_product()</a>, hadamard_product()</p>
-<p>// TRAJECTORY AND PARAMETERIZATION // TODO: finish the trajectory_3d class</p>
-<p>// WAVES // TODO: think if to add the waves here too</p>
-<p>// BUGS AND SIMILAR PROBLEMS (3) // TODO: document the light units somewhere // TODO: zones must match that the type send corresponds to the data // TODO: aid must match that the type send corresponds to the data // TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes // TODO: conversion of size_t to and int gives a warning in MSVC // TODO: finish testing in Windows all tests // TODO: think if to add biological units like alcohol by volume // TODO: add the conversions of the CGS system of units, and the FPS system of units // TODO: support solid_angle, with the literal _sr too // TODO: think what to do to change dimensions with dimensionless scalar_unit classes // TODO: think of how to do the conversion of pixel to metre, maybe it's needed another way // TODO: explanation, with code examples, of physics and chemistry laws // TODO: function custom_display() has three loops, not two, check if that's correct // TODO: test initialization of dimensions with µ inside test_dimension with the constructors of dimensions with metre // TODO: there is a bug with is_close_prefix in base_display() // TODO: explain in the table of dimensions which is special name, which is base dimension, etc. Also, explain which is simple dimension and which is composite dimension. Also, explain which is SI base dimension and which is SI derived dimension // TODO: add the system of origin and reason of why each dimension::type is present // TODO: create a derived unit for international units // TODO: search if there are more units for pharmacology</p>
-<p>// TODO: maybe it's needed to change characters of the initialization strings of some vector_unit classes. It's needed to update the file <a class="el" href="README_8md.html">README.md</a> too with that // TODO: think of how to implement conversions, do also the test of them // TODO: support the conversion inside the display of scalar_unit // TODO: add Farenheit, Rankine and maybe other dimensions of temperature as conversions // TODO: check if the member-variable names of dimension class can be changed</p>
-<p>// TODO: complex_number&lt;&gt; and lab_number&lt;&gt; should work with scalar_unit class as template parameter too, not only with their derived classes</p>
-<p>// TODO: custom dimensions should allow to store their names too, not only their symbols</p>
-<p>// TODO: <a class="el" href="namespacescifir.html#a76943d4b7ab2e9ba278182abafa5378a">display_double()</a> and <a class="el" href="namespacescifir.html#ab22ad226e1213d2c21d0f62848c03b39">display_long_double()</a> functions of <a class="el" href="types_8cpp.html">types.cpp</a></p>
-<p>// TODO: create percentage&lt;double&gt; and percentage&lt;long double&gt; with ppb, ppt and ppq. Create also the function is_long_percentage() to test for ppb, ppt and ppq</p>
-<p>// BUGS AND SIMILAR PROBLEMS - HARD (3) // TODO: check and correct all the warnings of cl.exe with /Wall // TODO: -Wall gives a warning for vector_unit_nd with end of non-void function // TODO: look at the 1.99 of test_coordinates_2d vs the 2 of the float specialization</p>
-<p>// BUILD (2) // TODO: support freebsd and openbsd // TODO: upload the package to the container registry of github packages</p>
-<p>// BUILD - ADVANCED (7) // TODO: study bazel and look the files of bazel that are part of Catch2, maybe the same should be done for scifir-units // TODO: see how to support consoles inside the building, if possible // TODO: possibly add the library to conan // TODO: test vcpkg.json uploading scifir-units to vcpkg // TODO: check the welcome file for cpack, maybe it's useful // TODO: support the compilation with Emscripten and add web-assembly as another preset more // TODO: check the configuration options that exist for gcov</p>
-<p>// IDE (2) // TODO: check the extension gcov viewer is working properly // TODO: configure ctest inside Visual Studio Code</p>
-<p>// GITHUB (8) // TODO: update the github action that updates the <a class="el" href="CHANGELOG_8md.html">CHANGELOG.md</a> file, make it work // TODO: release the version 2.0-beta // TODO: add the github action with windows // TODO: add the github action with macos // TODO: add try online badge // TODO: add the release badge // TODO: add the code coverage badge // TODO: upload scifir-units to sourceforge too</p>
-<p>// TESTS (6) // TODO: finish the tests of all classes // TODO: review get_nd() of the tests of vector_unit_nd and coordinates_nd // TODO: verify that are present all functions of coordinates with rotations // TODO: report the bug to CATCH of the use of bool() // TODO: verify the titles of sections of tests of units, meca_number and special_units // TODO: test of base unit classes</p>
-<p>// DOCUMENTATION (23) // TODO: create all the dox files of the library // TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth // TODO: document the use of special characters in prefixes // TODO: document the special character in angle class // TODO: document what is a dimension, what is a derived dimension, and what is a basic dimension // TODO: add the abbreviations in the groups too // TODO: add latex to the factors of prefixes in <a class="el" href="prefix_8dox.html">prefix.dox</a> // TODO: document how the england and united states units work, which are different than the SI system of units // TODO: resolve how to document the string representation of enum types // TODO: explain in initialize_from_string() the use of this function. The explanation of the format of the initialization string should be inside the string constructor and the string assignment // TODO: explain how to use the basic units apart from the scalar_unit class, it doesn't appears inside the reference of Doxygen // TODO: in the <a class="el" href="README_8md.html">README.md</a> file add the explanation of the first thing to learn first, after that the rest of the library // TODO: inside scalar_unit explain how basic unit work // TODO: inside vector_unit classes explain how basic units of vector_unit classes work // TODO: inside <a class="el" href="README_8md.html">README.md</a> file add the conversion of aid::type and zid::type in their explanation // TODO: add the symbol of pi in the <a class="el" href="README_8md.html">README.md</a> file with the things to memorize // TODO: add the explanation of the definition of each unit inside a file, including conversions // TODO: document the imperial system of units (<a href="https://en.wikipedia.org/wiki/Imperial_units">https://en.wikipedia.org/wiki/Imperial_units</a>) // TODO: explain how a robot can calculate angles // TODO: explain how to create lambda functions of mathematical functions with different parts, using if-else for that</p>
-<p>// TODO: desactivate the search engine in the doxyfile for the doxyfile of development, not the doxyfile of github pages // TODO: maybe use two different files Doxyfile, one for master and one for gh-pages // TODO: use a dev_doxyfile for the master branch without the search engine // TODO: add google analytics to the website of scifir-units of github pages</p>
-<p>// TODO: document the coordinates for the universe, publish that too as an standard inside scifir // TODO: check what to do with the libraries of ISOs and document them inside the <a class="el" href="README_8md.html">README.md</a> file. If there isn't a library of ISOs, decide if to create one // TODO: reference books related to the physics, chemistry, biology or math implemented // TODO: explain the custom dimensions in the file <a class="el" href="README_8md.html">README.md</a> // TODO: display as plain text the &lt;T&gt; inside the md file // TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication // TODO: add the BIPM to some part of the documentation, where it should be cited</p>
-<p>// TODO: document the use of the custom_display "sci" // TODO: think on the different cases of use of coordinates and document them, including the use of an origin // TODO: mention the WGS in the part of coordinates // TODO: document the use of fabs() and display() to compare values of units // TODO: document the special initialization of mass and mole with percentage // TODO: add initialization of lab_number&lt;&gt; inside <a class="el" href="README_8md.html">README.md</a> file</p>
-<p>// TODO: add the summary sheet somewhere // TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals // TODO: add a section of "Optional knowledge"</p>
-<p>// TODO: formulas of physics related to units // TODO: formulas of chemistry related to units // TODO: formulas of biology related to units // TODO: document how all the operations of scalars and vector units work mathematically, possibly use mathjax inside markdown to display formulas</p>
-<p>// TODO: think if to add the help of Eclipse, and search if other IDEs use some help too // TODO: decide if to generate documentation for man, and if so, explain that inside the <a class="el" href="README_8md.html">README.md</a> file // TODO: document all the NEWS file</p>
-<p>// TODO: write an specification of scifir-units to be implemented in any programming language. Write there too the generic method for writing bindings which is to maintain all function names and classnames equal, changing only their spelling to snake-case or camel-case as used in the programming language, and also document equivalencies like using static methods in Java inside a class instead of normal functions in C++.</p>
-<p>// COORDINATES AND POINTS (5) // TODO: add coordinates_3d::origin() to allow to initialize with an origin (another coordinates class of the same type), it's specially useful for geographic coordinates</p>
-<p>// TODO: the case when the initialization string contains only the character ',', without a value, has to initialize to zero</p>
-<p>// TODO: display functions of coordinates and point classes should allow to change dimensions for any case, with another function identical in name but with the argument of the string of dimensions // TODO: all display functions of coordinates classes need an int argument to select number of decimals // TODO: is_coordinates_1d(), is_coordinates_2d(), etc</p>
-<p>// COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (3) // TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd // TODO: add the construction with an string for geographic coordinates // TODO: study the geographic coordinates deeply, and see if to add something more related to them</p>
-<p>// VECTOR FIELDS (2) // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field // TODO: parsing of initialization strings of fields. Allow to declare variables that can be refered by name inside initialization strings of vector fields // TODO: create magnetic_field class, and add the string literal _T to the <a class="el" href="README_8md.html">README.md</a> file</p>
-<p>// PLOTTING // TODO: add functions that allow to use also matplot++ inside the library</p>
-<p>// ALGEBRA (5) // TODO: constructor with initialization string // TODO: is_algebraic_expression() and is_algebraic_term() functions // TODO: static variable storing scalar_units, scalar_fields, etc // TODO: search if there's a library that displays equations inside the command-line with math format, with math glyphs // TODO: to_latex() function that gives the algebraic_expression in latex format</p>
-<p>// C++ (7) // TODO: use constexpr and consteval to initialize units instantly, possibly use it in more parts of the code // TODO: change the use of const-reference to value and std::move in constructors // TODO: change the use of const-reference to value and std::move in other places // TODO: use reference when instantiating variables and when it's not needed to instantiate by value inside the body of functions // TODO: if size_t and other similar constants are intended to be used inside normal code // TODO: replace boost::split by split of C++20 // TODO: check is string_view should be used as parameters // TODO: use string_view to the enum functions</p>
-<p>// CONSTANTS // TODO: maybe all constant values should be constexpr, and maybe there's a way to make them scalar_unit without needing to have all of them defined at the same time, because that sizes</p>
-<p>// DIMENSIONS (7) // TODO: support the binary prefixes too // TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)</p>
-<p>// TODO: test dimension class with MSVC for the uses of the special characters // TODO: some dimensions like degree, radian and money shouldn't be allowed to have a prefix // TODO: check the literal with e // TODO: read the ISO 80000</p>
-<p>// TODO: finish the test of custom_basic dimensions and document them in the <a class="el" href="README_8md.html">README.md</a> file // TODO: maybe is_complex_dimension() for cases were the the dimension is not a simple dimension</p>
-<p>// UNITS (9) // TODO: solve in some way the problem that vector_unit_3d needs different characters in Windows an inside Linux when initialized with strings // TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed // TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them // TODO: vector_unit_3d class maybe need the comparison operators with themselves // TODO: use the PI of the std library // TODO: function point_to() to a point and point_to() to a coordinate for vector_unit classes // TODO: support the brackets inside <a class="el" href="namespacescifir.html#a35eaaedc7d36d386d328c0422e08863e" title="Checks if an string is an initialization string of a scalar_unit.">is_scalar_unit()</a>, <a class="el" href="namespacescifir.html#aa28fb8e3c6aa92108db7faac70b47f61">is_complex()</a> and <a class="el" href="namespacescifir.html#a6f938e487f453f713e335dd6f884a413">is_lab_number()</a> // TODO: possibly add the light_scalar_unit class that allows operations with scalar_unit classes, which must contain only one dimension, not a vector&lt;dimension&gt; // TODO: function to_latex() for dimensions and scalar_unit // TODO: function that displays the scalar_unit as text, with the plural if the scalar_unit has a value greather than 1 // TODO: maybe change the SI constants to be a base unit instead of a long double // TODO: maybe the dimension memo needs a base unit class</p>
-<p>// TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr // TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization</p>
-<p>// TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files</p>
-<p>// PREDEFINED UNITS (4) // TODO: think if to add accoustic and matter derived units, or if it's not needed // TODO: delete all field classes that currently are vector_units, and make them fields // TODO: think if to add another concentration class, the previous one has been deprecated // TODO: move cas_number to the library of scifir-info, or even to another category // TODO: biology units, like heart_rate</p>
-<p>// MECA NUMBERS (4) // TODO: add the allowed typenames to lab_number, and don't accept any other type // TODO: angle should read initialization strings in radian too inside the string constructor, maybe with "radian" name, possibly "rad" should be supported too // TODO: maybe add obtusangle, rect angle, acutangle, etc // TODO: study if to add the gradian // TODO: study if to add the turn</p>
-<p>// SPECIAL UNITS - EXTRA (7) // TODO: ip class? check networking libraries of C++ and decide if to add it here // TODO: nutrition_information // TODO: class for geographical position including ZID and coordinates_3d // TODO: class for geographical position in space, using AID and coordinates_3d // TODO: maybe pixel should be called pixel_length // TODO: think if to add a default case for the none value of aid and for the none value of zid // TODO: functions is_aid() and is_zid() // TODO: initialize_from_string() for pH and pOH classes should work with pH and pOH at the start, respectively // TODO: maybe add zoom class, which allows to work with zooms // TODO: _percentage literal // TODO: address class with zid inside // TODO: enum of movement maybe should be divided in kind of animal // TODO: display() function for pixel class</p>
-<p>// EMOTIONAL UNITS (1) // TODO: finish the enums of <a class="el" href="mind_8hpp.html">mind.hpp</a></p>
-<p>// SPECIAL UNITS (4) // TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v() // TODO: pixel_color&lt;&gt;. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color&lt;&gt; // TODO: complex_number&lt;&gt; should have trigonometric functions for complex numbers // TODO: maybe create a mesh_3d class, or vector&lt;point_3d&lt;&gt;&gt;</p>
-<p>// PREDEFINED PHYSICS UNITS (4) // TODO: electric_field which calculates based on coulomb charges // TODO: gravity_field // TODO: possibly magnetic_field? // TODO: electric_current?</p>
-<p>// CONTROL VOLUME (1) // TODO: think what to do with the control_volume</p>
-<p>// UNITS - ADVANCED (9) // TODO: <a class="el" href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c" title="Calculates the square root of the angle x and returns that new angle.">sqrt()</a> and <a class="el" href="namespacescifir.html#a44533727ef4f03e8303664cdd665c2bc" title="Exponentiates a scalar_unit to some numeric type, the dimensions are also exponentiated.">pow()</a> maybe should be direct for created units, instead of passing by scalar_unit again to initialize after that the other unit // TODO: check if it's needed to add a function is_si_basic_dimension() that gives whether the dimension is basic or not in the sense of the SI system of units // TODO: support and UTF32 string constructor for scalar_unit in order to allow to create dimensions directly with some Unicode characters that are not present in UTF8 // TODO: scalar_unit should have is_valid() with some system // TODO: support the conversions with constexpr // TODO: add the operators +,-,* and / in the derived classes of scalar_unit and vector_unit with the same class in order to avoid to check that the dimensions are the same, that saves time // TODO: check the object code resulting by testing different functions of the unit classes // TODO: 2d display of scalar_units and of vector_units (create a scifir_units_2d library for it) // TODO: 3d display of scalar_units and of vector_units (create a scifir_units_3d library for it)</p>
-<p>// UNITS - ADVANCED - REDUCTION OF MEMORY CONSUMPTION (2) // OPTION 1: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class. One possibility is to use an empty array and, when it's empty, to send the fixed dimensions of the class instead, and only when changing something to add the dimensions there // OPTION 2: divide single dimensions unit of multiple-dimensions unit by adding only one dimension instead of the vector&lt;dimension&gt; // OPTION 3: maybe the prefix and the dimension can be removed as member-variables if displaying automatically in some way or another, as it's expressly specified. That is maybe the biggest optimization possible // OPTION 4: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length // OPTION 4 - TODO: add const to the enum of light_unit // AFTER SOME OPTION - TODO: finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation</p>
-<p>// DOUBTS // TODO: maybe delete the string literals of the prefixes of AU, leave only the string literal without prefix</p>
-<p>// ANOTHER PROJECT - LIBRARY OF INFORMATION // TODO: isbn class // TODO: issn class</p>
-<p>// ISOs // TODO: Publish the ISO of geographic location based on aid and zid classes // TODO: See if to make an ISO of an official symbol for money (not a concrete money of a country, but a universal one) // TODO: Add "depth" to an ISO of names for the lengths of objects (width, height and depth are the names). It's needed to have a name in spanish for the depth too // TODO: Maybe create an "ISO" of geographic positioning taking the major axis of the planet, which can be the Earth or not, and adding 50 km to it, in order to have a border of safety in order to be sure that no point remains uncovered by the imaginary sphere that the geographic positioning creates around the planet. It can be used for any planet of the universe. The center of the planet is considered always the geometrical one, not the center of mass, because that last one changes with changes of the distribution of mass inside the planet</p>
-<p>// ISO C++ // TODO: add º to the string literals // TODO: add % to the string literals // TODO: add the possibility to create class names starting with numbers</p>
-<p>// ELECTRONICS // TODO: check sensor libraries and decide which ones to support inside scifir-units (maybe in a new scifir library if needed)</p>
-<p>// PATTERNS // TODO: possibly implement a pattern class using a regular expressions library</p>
-<p>// EXTRA TOOLS // TODO: Create scicalcs, a cli tool that calculates with scifir-units any value</p>
-<p>// PORTS // TODO: Port to C# // TODO: Port to Java // TODO: Port to Octave // TODO: Port to Visual Basic</p>
-<p>// TESTS // TODO: test of sizeof for all unit classes // TODO: benchmark test for scalar_unit, comparing them to a float</p>
-<p>// DOCUMENTATION (9) // TODO: document the point of view of the library of when a dimension is considered "basic" // TODO: document the ISOs important to use with this library // TODO: document a little how to handle currency // TODO: document that the pixel in dimension is only as length, not as a pixel on the screen as is in the pixel class // TODO: document how ppm and ppb work, also in the theorical sense // TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abreviations of the ISO of currencies // TODO: add nomenclature of units // TODO: think if to add the functions of calculations or to add example of calculations in the documentation // TODO: document the explanation of what each unit means, given the defintion of the SI or of the entity that corresponds to reference</p>
-<p>// RELEASE (3) // TODO: configure CMake with cpack // TODO: see what to do to configure optimizations // TODO: add scifir-units to the official repository of vcpkg</p>
-<p>// MATRIX // TODO: See if it's best to use template arguments for row and column or if to store those values as member-variables // TODO: Multiplication of matrices of different but compatible types // TODO: typecast to other matrix-classes of important libraries // TODO: Iterator with range to use only one range-for // TODO: Check limits of matrices for all operators // TODO: Use the GSL to implement the reverse matrix</p>
-<p>// CONSTANTS // TODO: make a list of all important constants of science, with their respective unit. The constants of physics, chemistry and biology should be inside. Also, add the constants of astronomy</p>
-<p>// FUTURE // TODO: support the case of n dimensions fixed // TODO: add the theta and phi characters to C++ variable names, and add them then to the member-variables of vector_unit classes, and any other case of similar use. Add the symbol º to string literals // TODO: add the astronomy coordinates // TODO: add the other orthogonal coordinates, like paraboloidal // TODO: add to the ISO of the keyboards some system to write pi, theta, phi, among other symbols, with the keyboard in an easy way, without having to memorize any numeric code // TODO: propose an ISO symbol for money in general? // TODO: finish the empty array implementation for dimension, in order to have normal dimensions, no custom dimensions, of size 3 instead of size 6 // TODO: add the symbol '' to the string literals // TODO: add the symbol 'μ' to the string literals</p>
-<p>// FUTURE - MECA NUMBERS (POSSIBLE, THINK) // TODO: Add names to the meca numbers (angler, laber, etc) // TODO: The interval number class // TODO: The interval number subclasses of other numbers // TODO: The bounce number class // TODO: The percentage number class (it has to have the calculate function in order to receive a value to be the percentage of) // TODO: Solve the problem with left and right repeated (it's not exclusive for direction_symbol) // TODO: solid_angle class (maybe it isn't a meca number) // TODO: maybe _angle for angle in order to use cos(x),sin(x),etc with degrees</p>
-<p>// READINGS // Unit of measurement: <a href="https://en.wikipedia.org/wiki/Unit_of_measurement">https://en.wikipedia.org/wiki/Unit_of_measurement</a> // International system of units: <a href="https://en.wikipedia.org/wiki/International_System_of_Units">https://en.wikipedia.org/wiki/International_System_of_Units</a> // Angle: <a href="https://en.wikipedia.org/wiki/Angle">https://en.wikipedia.org/wiki/Angle</a> // Metrology: <a href="https://en.wikipedia.org/wiki/Metrology">https://en.wikipedia.org/wiki/Metrology</a> // Color: <a href="https://en.wikipedia.org/wiki/Color">https://en.wikipedia.org/wiki/Color</a> // RGB color model: <a href="https://en.wikipedia.org/wiki/RGB_color_model">https://en.wikipedia.org/wiki/RGB_color_model</a> // Color model: <a href="https://en.wikipedia.org/wiki/Color_model">https://en.wikipedia.org/wiki/Color_model</a> // Unit prefix: <a href="https://en.wikipedia.org/wiki/Unit_prefix">https://en.wikipedia.org/wiki/Unit_prefix</a> // Metric prefix: <a href="https://en.wikipedia.org/wiki/Metric_prefix">https://en.wikipedia.org/wiki/Metric_prefix</a> </p>
+<div class="textblock"><p><b>Number of TODOs:</b> 231</p>
+<h1><a class="anchor" id="autotoc_md110"></a>
+MATERIAL_VECTOR_UNIT (1)</h1>
+<ul>
+<li>TODO: add operator == and operator !=</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md111"></a>
+TRAJECTORY AND PARAMETERIZATION (1)</h1>
+<ul>
+<li>TODO: finish the trajectory_3d class</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md112"></a>
+WAVES (1)</h1>
+<ul>
+<li>TODO: think if to add the waves here too</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md113"></a>
+CURRENT (17)</h1>
+<ul>
+<li>TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes</li>
+<li>TODO: conversion of size_t to and int gives a warning in MSVC</li>
+<li>TODO: finish testing in MSVC all tests</li>
+<li>TODO: support solid_angle, with the literal _sr too</li>
+<li>TODO: explanation, with code examples, of physics and chemistry laws</li>
+<li>TODO: there is a bug with is_close_prefix in base_display()</li>
+<li>TODO: warning of <a class="el" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string()</a> functions of <a class="el" href="body_8hpp.html">body.hpp</a></li>
+<li>TODO: think of how to implement conversions, do also the test of them</li>
+<li>TODO: support the conversion inside the display of scalar_unit</li>
+<li>TODO: add the old historic systems of units to conversion, and explain them in the <a class="el" href="README_8md.html">README.md</a> file</li>
+<li>TODO: add the conversions of the CGS system of units, and the FPS system of units</li>
+<li>TODO: add Farenheit, Rankine and maybe other dimensions of temperature as conversions</li>
+<li>TODO: check if the member-variable names of dimension class can be changed</li>
+<li>TODO: complex_number&lt;&gt; and lab_number&lt;&gt; should work with scalar_unit class as template parameter too, not only with their child classes</li>
+<li>TODO: custom dimensions should allow to store their names too, not only their symbols</li>
+<li>TODO: <a class="el" href="namespacescifir.html#a76943d4b7ab2e9ba278182abafa5378a">display_double()</a> and <a class="el" href="namespacescifir.html#ab22ad226e1213d2c21d0f62848c03b39">display_long_double()</a> functions of <a class="el" href="types_8cpp.html">types.cpp</a></li>
+<li>TODO: create percentage&lt;double&gt; and percentage&lt;long double&gt; with ppb, ppt and ppq. Create also the function is_long_percentage() to test for ppb, ppt and ppq</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md114"></a>
+BUGS AND SIMILAR PROBLEMS - HARD (3)</h1>
+<ul>
+<li>TODO: check and correct all the warnings of cl.exe with /Wall</li>
+<li>TODO: -Wall gives a warning for vector_unit_nd with end of non-void function</li>
+<li>TODO: look at the 1.99 of test_coordinates_2d vs the 2 of the float specialization</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md115"></a>
+BUILD (2)</h1>
+<ul>
+<li>TODO: support freebsd and openbsd</li>
+<li>TODO: upload the package to the container registry of github packages</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md116"></a>
+BUILD - ADVANCED (7)</h1>
+<ul>
+<li>TODO: study bazel and look the files of bazel that are part of Catch2, maybe the same should be done for scifir-units</li>
+<li>TODO: see how to support consoles inside the building, if possible</li>
+<li>TODO: possibly add the library to conan</li>
+<li>TODO: test vcpkg.json uploading scifir-units to vcpkg</li>
+<li>TODO: check the welcome file for cpack, maybe it's useful</li>
+<li>TODO: support the compilation with Emscripten and add web-assembly as another preset more</li>
+<li>TODO: check the configuration options that exist for gcov</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md117"></a>
+IDE (2)</h1>
+<ul>
+<li>TODO: check the extension gcov viewer is working properly</li>
+<li>TODO: configure ctest inside Visual Studio Code</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md118"></a>
+GITHUB (8)</h1>
+<ul>
+<li>TODO: update the github action that updates the <a class="el" href="CHANGELOG_8md.html">CHANGELOG.md</a> file, make it work</li>
+<li>TODO: release the version 2.0-beta</li>
+<li>TODO: add the github action with windows</li>
+<li>TODO: add the github action with macos</li>
+<li>TODO: add try online badge</li>
+<li>TODO: add the release badge</li>
+<li>TODO: add the code coverage badge</li>
+<li>TODO: upload scifir-units to sourceforge too</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md119"></a>
+TESTS (7)</h1>
+<ul>
+<li>TODO: finish the tests of all classes</li>
+<li>TODO: review get_nd() of the tests of vector_unit_nd and coordinates_nd</li>
+<li>TODO: verify that are present all functions of coordinates with rotations</li>
+<li>TODO: report the bug to CATCH of the use of bool()</li>
+<li>TODO: verify the titles of sections of tests of units, meca_number and special_units</li>
+<li>TODO: test of base unit classes</li>
+<li>TODO: test stof() with bad values</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md120"></a>
+DOCUMENTATION (39)</h1>
+<ul>
+<li>TODO: create all the dox files of the library</li>
+<li>TODO: add latex to the factors of prefixes in <a class="el" href="prefix_8dox.html">prefix.dox</a></li>
+<li>TODO: explain in initialize_from_string() the use of this function. The explanation of the format of the initialization string should be inside the string constructor and the string assignment</li>
+<li>TODO: add the description of each file, which is different than the description of the class</li>
+<li>TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals</li>
+<li>TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth</li>
+<li>TODO: inside <a class="el" href="README_8md.html">README.md</a> file add the conversion of aid::type and zid::type in their explanation</li>
+<li>TODO: explain how a robot can calculate angles</li>
+<li>TODO: explain how to create lambda functions of mathematical functions with different parts, using if-else for that</li>
+<li>TODO: explain how to use mEq in the <a class="el" href="README_8md.html">README.md</a> file, in case of use</li>
+<li>TODO: add a readings section in the <a class="el" href="README_8md.html">README.md</a> file, with some of the urls of the TODO.md file</li>
+<li>TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abreviations of the ISO of currencies</li>
+<li>TODO: document the coordinates for the universe, publish that too as an standard inside scifir</li>
+<li>TODO: document the use of the custom_display "sci"</li>
+<li>TODO: think on the different cases of use of coordinates and document them, including the use of an origin</li>
+<li>TODO: mention the WGS in the part of coordinates</li>
+<li>TODO: document the use of fabs() and display() to compare values of units</li>
+<li>TODO: document the special initialization of mass and mole with percentage</li>
+<li>TODO: add initialization of lab_number&lt;&gt; inside <a class="el" href="README_8md.html">README.md</a> file</li>
+<li>TODO: increase the introduction of the <a class="el" href="README_8md.html">README.md</a> file</li>
+<li>TODO: display as plain text the &lt;T&gt; inside the md file</li>
+<li>TODO: add a section of "Optional knowledge"</li>
+<li>TODO: add google analytics to the website of scifir-units of github pages</li>
+<li>TODO: add the abbreviations in the groups too</li>
+<li>TODO: add the explanation of the definition of each unit inside a file, including conversions</li>
+<li>TODO: document how ppm and ppb work, also in the theorical sense</li>
+<li>TODO: explain the apotechary system, the english units, the imperial units and the united states units in a separate page. Explain them in the part of conversion inside the <a class="el" href="README_8md.html">README.md</a> file too</li>
+<li>TODO: add the summary sheet somewhere</li>
+<li>TODO: formulas of physics related to units</li>
+<li>TODO: formulas of chemistry related to units</li>
+<li>TODO: formulas of biology related to units</li>
+<li>TODO: document how all the operations of scalars and vector units work mathematically, possibly use mathjax inside markdown to display formulas</li>
+<li>TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication</li>
+<li>TODO: check what to do with the libraries of ISOs and document them inside the <a class="el" href="README_8md.html">README.md</a> file. If there isn't a library of ISOs, decide if to create one</li>
+<li>TODO: reference books related to the physics, chemistry, biology or math implemented</li>
+<li>TODO: think if to add the help of Eclipse, and search if other IDEs use some help too</li>
+<li>TODO: decide if to generate documentation for man, and if so, explain that inside the <a class="el" href="README_8md.html">README.md</a> file</li>
+<li>TODO: document all the NEWS file</li>
+<li>TODO: write an specification of scifir-units to be implemented in any programming language. Write there too the generic method for writing bindings which is to maintain all function names and classnames equal, changing only their spelling to snake-case or camel-case as used in the programming language, and also document equivalencies like using static methods in Java inside a class instead of normal functions in C++.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md121"></a>
+COORDINATES AND POINTS (5)</h1>
+<ul>
+<li>TODO: add coordinates_3d::origin() to allow to initialize with an origin (another coordinates class of the same type), it's specially useful for geographic coordinates</li>
+<li>TODO: the case when the initialization string contains only the character ',', without a value, has to initialize to zero</li>
+<li>TODO: display functions of coordinates and point classes should allow to change dimensions for any case, with another function identical in name but with the argument of the string of dimensions</li>
+<li>TODO: all display functions of coordinates classes need an int argument to select number of decimals</li>
+<li>TODO: is_coordinates_1d(), is_coordinates_2d(), etc</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md122"></a>
+COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (4)</h1>
+<ul>
+<li>TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd</li>
+<li>TODO: add the construction with an string for geographic coordinates</li>
+<li>TODO: study the geographic coordinates deeply, and see if to add something more related to them</li>
+<li>TODO: get_altitude() can be two different functions</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md123"></a>
+VECTOR FIELDS (3)</h1>
+<ul>
+<li>TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field</li>
+<li>TODO: parsing of initialization strings of fields. Allow to declare variables that can be refered by name inside initialization strings of vector fields</li>
+<li>TODO: create magnetic_field class, and add the string literal _T to the <a class="el" href="README_8md.html">README.md</a> file</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md124"></a>
+PLOTTING (1)</h1>
+<ul>
+<li>TODO: add functions that allow to use also matplot++ inside the library</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md125"></a>
+ALGEBRA (5)</h1>
+<ul>
+<li>TODO: constructor with initialization string</li>
+<li>TODO: is_algebraic_expression() and is_algebraic_term() functions</li>
+<li>TODO: static variable storing scalar_units, scalar_fields, etc</li>
+<li>TODO: search if there's a library that displays equations inside the command-line with math format, with math glyphs</li>
+<li>TODO: to_latex() function that gives the algebraic_expression in latex format</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md126"></a>
+C++ (8)</h1>
+<ul>
+<li>TODO: use constexpr and consteval to initialize units instantly, possibly use it in more parts of the code</li>
+<li>TODO: change the use of const-reference to value and std::move in constructors</li>
+<li>TODO: change the use of const-reference to value and std::move in other places</li>
+<li>TODO: use reference when instantiating variables and when it's not needed to instantiate by value inside the body of functions</li>
+<li>TODO: if size_t and other similar constants are intended to be used inside normal code</li>
+<li>TODO: replace boost::split by split of C++20</li>
+<li>TODO: check is string_view should be used as parameters</li>
+<li>TODO: use string_view to the enum functions</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md127"></a>
+CONSTANTS (2)</h1>
+<ul>
+<li>TODO: maybe all constant values should be constexpr, and maybe there's a way to make them scalar_unit without needing to have all of them defined at the same time, because that sizes</li>
+<li>TODO: add the constants of astronomy</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md128"></a>
+DIMENSIONS (15)</h1>
+<ul>
+<li>TODO: support the binary prefixes too</li>
+<li>TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)</li>
+<li>TODO: test dimension class with MSVC for the uses of the special characters</li>
+<li>TODO: some dimensions like degree, radian and money shouldn't be allowed to have a prefix</li>
+<li>TODO: check the literal with e</li>
+<li>TODO: read the ISO 80000</li>
+<li>TODO: scalar_unit should have get_notdimensionless_base_dimensions() and notdimensionless_base_display()</li>
+<li>TODO: finish custom_basic dimensions, change names to CUSTOM_BASE_DIMENSION, CUSTOM_DERIVED_DIMENSION and CUSTOM_DERIVED_DIMENSION_FULL_SYMBOL</li>
+<li>TODO: finish the test of custom_basic dimensions and document them in the <a class="el" href="README_8md.html">README.md</a> file</li>
+<li>TODO: maybe is_complex_dimension() for cases were the the dimension is not a simple dimension</li>
+<li>TODO: add the planck system of units</li>
+<li>TODO: add the Gaussian units</li>
+<li>TODO: add the atomic units</li>
+<li>TODO: finish the conversion of the imperial units and of the US units (<a href="https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems">https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems</a>)</li>
+<li>TODO: add the natural units</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md129"></a>
+CONVERSION (2)</h1>
+<ul>
+<li>TODO: add the apothecaries system of units, maybe there are more systems to add</li>
+<li>TODO: possibly add the drop units</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md130"></a>
+UNITS (16)</h1>
+<ul>
+<li>TODO: solve in some way the problem that vector_unit_3d needs different characters in Windows an inside Linux when initialized with strings</li>
+<li>TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed</li>
+<li>TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them</li>
+<li>TODO: vector_unit_3d class maybe need the comparison operators with themselves</li>
+<li>TODO: use the PI of the std library</li>
+<li>TODO: function point_to() to a point and point_to() to a coordinate for vector_unit classes</li>
+<li>TODO: support the brackets inside <a class="el" href="namespacescifir.html#a35eaaedc7d36d386d328c0422e08863e" title="Checks if an string is an initialization string of a scalar_unit.">is_scalar_unit()</a>, <a class="el" href="namespacescifir.html#aa28fb8e3c6aa92108db7faac70b47f61">is_complex()</a> and <a class="el" href="namespacescifir.html#a6f938e487f453f713e335dd6f884a413">is_lab_number()</a></li>
+<li>TODO: possibly add the light_scalar_unit class that allows operations with scalar_unit classes, which must contain only one dimension, not a vector&lt;dimension&gt;</li>
+<li>TODO: function to_latex() for dimensions and scalar_unit</li>
+<li>TODO: function that displays the scalar_unit as text, with the plural if the scalar_unit has a value greather than 1</li>
+<li>TODO: maybe the dimension memo needs a base unit class</li>
+<li>TODO: think if to add functions of statistics here, check if there is a solution in other C++ libraries or if it is good to have them here</li>
+<li>TODO: follow the schema of numbers of the 22 General Conference on Weights and Measures. Check if there are more rules to add of the General Conferences, too</li>
+<li>TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr</li>
+<li>TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization</li>
+<li>TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md131"></a>
+DERIVED UNITS (5)</h1>
+<ul>
+<li>TODO: think if to add accoustic and matter derived units, or if it's not needed</li>
+<li>TODO: delete all field classes that currently are vector_units, and make them fields</li>
+<li>TODO: move cas_number to the library of scifir-info, or even to another category</li>
+<li>TODO: biology units, like heart_rate</li>
+<li>TODO: UNIX time constructor in the string constructor for time_duration</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md132"></a>
+MECA NUMBERS (7)</h1>
+<ul>
+<li>TODO: add the allowed typenames to lab_number, and don't accept any other type</li>
+<li>TODO: angle should read initialization strings in radian too inside the string constructor, maybe with "radian" name, possibly "rad" should be supported too</li>
+<li>TODO: maybe add obtusangle, rect angle, acutangle, etc</li>
+<li>TODO: study if to add the gradian</li>
+<li>TODO: study if to add the turn</li>
+<li>TODO: maybe support prefixes for radians, search if there are prefixes for the other units of angles</li>
+<li>TODO: add minutes and seconds to degrees</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md133"></a>
+SPECIAL UNITS (16)</h1>
+<ul>
+<li>TODO: ip class? check networking libraries of C++ and decide if to add it here</li>
+<li>TODO: nutrition_information</li>
+<li>TODO: class for geographical position including ZID and coordinates_3d</li>
+<li>TODO: class for geographical position in space, using AID and coordinates_3d</li>
+<li>TODO: think if to add a default case for the none value of aid and for the none value of zid</li>
+<li>TODO: functions is_aid() and is_zid()</li>
+<li>TODO: initialize_from_string() for pH and pOH classes should work with pH and pOH at the start, respectively</li>
+<li>TODO: maybe add zoom class, which allows to work with zooms</li>
+<li>TODO: address class with zid inside</li>
+<li>TODO: enum of movement maybe should be divided in kind of animal</li>
+<li>TODO: maybe delete the operator = T of percentage class, maybe there are more in similar classes. Try first the different literals of non-floating numeric types</li>
+<li>TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()</li>
+<li>TODO: pixel_color&lt;&gt;. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color&lt;&gt;</li>
+<li>TODO: complex_number&lt;&gt; should have trigonometric functions for complex numbers</li>
+<li>TODO: maybe create a mesh_3d class, or vector&lt;point_3d&lt;&gt;&gt;</li>
+<li>TODO: finish the enums of <a class="el" href="mind_8hpp.html">mind.hpp</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md134"></a>
+TENSORS (1)</h1>
+<ul>
+<li>TODO: check if there's something needed related to tensors, given that scalar_unit, vector_unit and matrix are being used already</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md135"></a>
+PREDEFINED PHYSICS UNITS (4)</h1>
+<ul>
+<li>TODO: electric_field which calculates based on coulomb charges</li>
+<li>TODO: gravity_field</li>
+<li>TODO: possibly magnetic_field?</li>
+<li>TODO: electric_current?</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md136"></a>
+CONTROL VOLUME (1)</h1>
+<ul>
+<li>TODO: think what to do with the control_volume</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md137"></a>
+UNITS - ADVANCED (7)</h1>
+<ul>
+<li>TODO: <a class="el" href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c" title="Calculates the square root of the angle x and returns that new angle.">sqrt()</a> and <a class="el" href="namespacescifir.html#a44533727ef4f03e8303664cdd665c2bc" title="Exponentiates a scalar_unit to some numeric type, the dimensions are also exponentiated.">pow()</a> maybe should be direct for created units, instead of passing by scalar_unit again to initialize after that the other unit</li>
+<li>TODO: scalar_unit should have is_valid() with some system</li>
+<li>TODO: support the conversions with constexpr</li>
+<li>TODO: add the operators +,-,* and / in the derived classes of scalar_unit and vector_unit with the same class in order to avoid to check that the dimensions are the same, that saves time. Maybe use templates for that</li>
+<li>TODO: check the object code resulting by testing different functions of the unit classes</li>
+<li>TODO: 2d display of scalar_units and of vector_units (create a scifir_units_2d library for it)</li>
+<li>TODO: 3d display of scalar_units and of vector_units (create a scifir_units_3d library for it)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md138"></a>
+UNITS - ADVANCED - REDUCTION OF MEMORY CONSUMPTION (4 options)</h1>
+<ul>
+<li>OPTION 1: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class. One possibility is to use an empty array and, when it's empty, to send the fixed dimensions of the class instead, and only when changing something to add the dimensions there</li>
+<li>OPTION 2: divide single dimensions unit of multiple-dimensions unit by adding only one dimension instead of the vector&lt;dimension&gt;</li>
+<li>OPTION 3: maybe the prefix and the dimension can be removed as member-variables if displaying automatically in some way or another, as it's expressly specified, in each different class that inherits scalar_unit (excepting vector unit classes). That is maybe the biggest optimization possible</li>
+<li>OPTION 4: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length</li>
+<li>OPTION 4 - add const to the enum of light_unit</li>
+<li>AFTER SOME OPTION - finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md139"></a>
+DOUBTS (1)</h1>
+<ul>
+<li>TODO: maybe delete the string literals of the prefixes of AU, leave only the string literal without prefix</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md140"></a>
+ANOTHER PROJECT - LIBRARY OF INFORMATION (2)</h1>
+<ul>
+<li>TODO: isbn class</li>
+<li>TODO: issn class</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md141"></a>
+ISOs (4)</h1>
+<ul>
+<li>TODO: Publish the ISO of geographic location based on aid and zid classes</li>
+<li>TODO: See if to make an ISO of an official symbol for money (not a concrete money of a country, but a universal one)</li>
+<li>TODO: Add "depth" to an ISO of names for the lengths of objects (width, height and depth are the names). It's needed to have a name in spanish for the depth too</li>
+<li>TODO: Maybe create an "ISO" of geographic positioning taking the major axis of the planet, which can be the Earth or not, and adding 50 km to it, in order to have a border of safety in order to be sure that no point remains uncovered by the imaginary sphere that the geographic positioning creates around the planet. It can be used for any planet of the universe. The center of the planet is considered always the geometrical one, not the center of mass, because that last one changes with changes of the distribution of mass inside the planet</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md142"></a>
+ISO C++ (3)</h1>
+<ul>
+<li>TODO: add º to the string literals</li>
+<li>TODO: add % to the string literals</li>
+<li>TODO: add the possibility to create class names starting with numbers</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md143"></a>
+ELECTRONICS (1)</h1>
+<ul>
+<li>TODO: check sensor libraries and decide which ones to support inside scifir-units (maybe in a new scifir library if needed)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md144"></a>
+EXTRA TOOLS (1)</h1>
+<ul>
+<li>TODO: Create scicalcs, a cli tool that calculates with scifir-units any value</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md145"></a>
+PORTS (4)</h1>
+<ul>
+<li>TODO: Port to C#</li>
+<li>TODO: Port to Java</li>
+<li>TODO: Port to Octave</li>
+<li>TODO: Port to Visual Basic</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md146"></a>
+RELEASE (2)</h1>
+<ul>
+<li>TODO: see what to do to configure optimizations</li>
+<li>TODO: add scifir-units to the official repository of vcpkg</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md147"></a>
+MATRIX (7)</h1>
+<ul>
+<li>TODO: See if it's best to use template arguments for row and column or if to store those values as member-variables</li>
+<li>TODO: Multiplication of matrices of different but compatible types</li>
+<li>TODO: typecast to other matrix-classes of important libraries</li>
+<li>TODO: Iterator with range to use only one range-for</li>
+<li>TODO: Check limits of matrices for all operators</li>
+<li>TODO: Use the GSL to implement the reverse matrix</li>
+<li>TODO: add the hadamard_product()</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md148"></a>
+FUTURE (9)</h1>
+<ul>
+<li>TODO: support the case of n dimensions fixed</li>
+<li>TODO: add the theta and phi characters to C++ variable names, and add them then to the member-variables of vector_unit classes, and any other case of similar use. Add the symbol º to string literals</li>
+<li>TODO: add the astronomy coordinates</li>
+<li>TODO: add the other orthogonal coordinates, like paraboloidal</li>
+<li>TODO: add to the ISO of the keyboards some system to write pi, theta, phi, among other symbols, with the keyboard in an easy way, without having to memorize any numeric code</li>
+<li>TODO: propose an ISO symbol for money in general?</li>
+<li>TODO: finish the empty array implementation for dimension, in order to have normal dimensions, no custom dimensions, of size 3 instead of size 6</li>
+<li>TODO: add the symbol '' to the string literals</li>
+<li>TODO: add the symbol 'μ' to the string literals</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md149"></a>
+FUTURE - MECA NUMBERS (POSSIBLE, THINK) (8)</h1>
+<ul>
+<li>TODO: Add names to the meca numbers (angler, laber, etc)</li>
+<li>TODO: The interval number class</li>
+<li>TODO: The interval number subclasses of other numbers</li>
+<li>TODO: The bounce number class</li>
+<li>TODO: The percentage number class (it has to have the calculate function in order to receive a value to be the percentage of)</li>
+<li>TODO: Solve the problem with left and right repeated (it's not exclusive for direction_symbol)</li>
+<li>TODO: solid_angle class (maybe it isn't a meca number)</li>
+<li>TODO: maybe _angle for angle in order to use cos(x),sin(x),etc with degrees</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md150"></a>
+READINGS</h1>
+<ul>
+<li>Unit of measurement: <a href="https:##en.wikipedia.org/wiki/Unit_of_measurement">https:##en.wikipedia.org/wiki/Unit_of_measurement</a></li>
+<li>International system of units: <a href="https:##en.wikipedia.org/wiki/International_System_of_Units">https:##en.wikipedia.org/wiki/International_System_of_Units</a></li>
+<li>Angle: <a href="https:##en.wikipedia.org/wiki/Angle">https:##en.wikipedia.org/wiki/Angle</a></li>
+<li>Metrology: <a href="https:##en.wikipedia.org/wiki/Metrology">https:##en.wikipedia.org/wiki/Metrology</a></li>
+<li>Color: <a href="https:##en.wikipedia.org/wiki/Color">https:##en.wikipedia.org/wiki/Color</a></li>
+<li>RGB color model: <a href="https:##en.wikipedia.org/wiki/RGB_color_model">https:##en.wikipedia.org/wiki/RGB_color_model</a></li>
+<li>Color model: <a href="https:##en.wikipedia.org/wiki/Color_model">https:##en.wikipedia.org/wiki/Color_model</a></li>
+<li>Unit prefix: <a href="https:##en.wikipedia.org/wiki/Unit_prefix">https:##en.wikipedia.org/wiki/Unit_prefix</a></li>
+<li>Metric prefix: <a href="https:##en.wikipedia.org/wiki/Metric_prefix">https:##en.wikipedia.org/wiki/Metric_prefix</a></li>
+<li>Euclidean space: <a href="https:##en.wikipedia.org/wiki/Euclidean_space">https:##en.wikipedia.org/wiki/Euclidean_space</a></li>
+<li>Radian: <a href="https:##en.wikipedia.org/wiki/Radian">https:##en.wikipedia.org/wiki/Radian</a></li>
+<li>Metre Convention: <a href="https://en.wikipedia.org/wiki/Metre_Convention">https://en.wikipedia.org/wiki/Metre_Convention</a> </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

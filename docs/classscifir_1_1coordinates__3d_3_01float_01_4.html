@@ -77,103 +77,149 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Specialization of <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a>, with the same behaviour and functions, that is specialized for float types. It can be used when it's needed to save memory, because a float uses less memory than a <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>.  
+ <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a416c96a50ead465ca71e9b6f0876c0d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a416c96a50ead465ca71e9b6f0876c0d0">coordinates_3d</a> ()</td></tr>
+<tr class="memdesc:a416c96a50ead465ca71e9b6f0876c0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Initializes x, y and z to 0, with the default dimensions.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a416c96a50ead465ca71e9b6f0876c0d0">More...</a><br /></td></tr>
 <tr class="separator:a416c96a50ead465ca71e9b6f0876c0d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec0f6b46744b83d299a33520c58cc979"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aec0f6b46744b83d299a33520c58cc979">coordinates_3d</a> (const <a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;x_coordinates)</td></tr>
+<tr class="memdesc:aec0f6b46744b83d299a33520c58cc979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. Initializes x, y and z to the x, y and z of x_coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aec0f6b46744b83d299a33520c58cc979">More...</a><br /></td></tr>
 <tr class="separator:aec0f6b46744b83d299a33520c58cc979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a696ec1aa535a569c1fe00c5731a70b33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a696ec1aa535a569c1fe00c5731a70b33">coordinates_3d</a> (<a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&amp;x_coordinates)</td></tr>
+<tr class="memdesc:a696ec1aa535a569c1fe00c5731a70b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor. Initializes x, y and z to the x, y and z of x_coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a696ec1aa535a569c1fe00c5731a70b33">More...</a><br /></td></tr>
 <tr class="separator:a696ec1aa535a569c1fe00c5731a70b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a3596ba8d7340d12cb941eeeca2f641"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5a3596ba8d7340d12cb941eeeca2f641">coordinates_3d</a> (float new_x, float new_y, float new_z)</td></tr>
+<tr class="memdesc:a5a3596ba8d7340d12cb941eeeca2f641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Initializes x, y and z to be new_x, new_y and new_z.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5a3596ba8d7340d12cb941eeeca2f641">More...</a><br /></td></tr>
 <tr class="separator:a5a3596ba8d7340d12cb941eeeca2f641"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab87734588615d874e681360387953a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aab87734588615d874e681360387953a6">coordinates_3d</a> (float new_p, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_theta, float new_z)</td></tr>
+<tr class="memdesc:aab87734588615d874e681360387953a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Initializes x, y and z with cylindrical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aab87734588615d874e681360387953a6">More...</a><br /></td></tr>
 <tr class="separator:aab87734588615d874e681360387953a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ed7c462d68f42287b31a38d29b96109"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a2ed7c462d68f42287b31a38d29b96109">coordinates_3d</a> (float new_r, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_theta, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_phi)</td></tr>
+<tr class="memdesc:a2ed7c462d68f42287b31a38d29b96109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Initializes x, y and z with spherical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a2ed7c462d68f42287b31a38d29b96109">More...</a><br /></td></tr>
 <tr class="separator:a2ed7c462d68f42287b31a38d29b96109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63c8d57cb20ccbaabe03e53fafcd7222"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a63c8d57cb20ccbaabe03e53fafcd7222">coordinates_3d</a> (const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_latitude, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_longitude, float new_altitude)</td></tr>
+<tr class="memdesc:a63c8d57cb20ccbaabe03e53fafcd7222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Initializes x, y and z with geographical coordinates. Currently geographical coordinates aren't ready.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a63c8d57cb20ccbaabe03e53fafcd7222">More...</a><br /></td></tr>
 <tr class="separator:a63c8d57cb20ccbaabe03e53fafcd7222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fb0d7357914c678d8e625a3625e7543"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a2fb0d7357914c678d8e625a3625e7543">coordinates_3d</a> (const <a class="el" href="classscifir_1_1point__3d.html">point_3d</a>&lt; float &gt; &amp;x_point)</td></tr>
+<tr class="memdesc:a2fb0d7357914c678d8e625a3625e7543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Initializes x, y and z to the x, y and z of x_point.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a2fb0d7357914c678d8e625a3625e7543">More...</a><br /></td></tr>
 <tr class="separator:a2fb0d7357914c678d8e625a3625e7543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9d056ff6723251b33289accf4a9f373"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#af9d056ff6723251b33289accf4a9f373">coordinates_3d</a> (<a class="el" href="classscifir_1_1point__3d.html">point_3d</a>&lt; float &gt; &amp;&amp;x_point)</td></tr>
+<tr class="memdesc:af9d056ff6723251b33289accf4a9f373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Initializes x, y and z moving the x, y and z of x_point.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#af9d056ff6723251b33289accf4a9f373">More...</a><br /></td></tr>
 <tr class="separator:af9d056ff6723251b33289accf4a9f373"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5cfb0381d798deb8a34998a29d5884"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a0f5cfb0381d798deb8a34998a29d5884">coordinates_3d</a> (const string &amp;init_coordinates_3d)</td></tr>
+<tr class="memdesc:a0f5cfb0381d798deb8a34998a29d5884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Initializes x, y and z with the initialization string of <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> init_coordinates_3d.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a0f5cfb0381d798deb8a34998a29d5884">More...</a><br /></td></tr>
 <tr class="separator:a0f5cfb0381d798deb8a34998a29d5884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84e409396362a0d8533c9643f9c7bb7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a84e409396362a0d8533c9643f9c7bb7b">operator=</a> (const <a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;x_coordinates)</td></tr>
-<tr class="separator:a84e409396362a0d8533c9643f9c7bb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23e289f5d2bb32f1989598b4b92a860d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a23e289f5d2bb32f1989598b4b92a860d">operator=</a> (<a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&amp;x_coordinates)</td></tr>
-<tr class="separator:a23e289f5d2bb32f1989598b4b92a860d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a403a58fbdad8a17c403cf4ced68bbcc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a403a58fbdad8a17c403cf4ced68bbcc8">operator=</a> (const <a class="el" href="classscifir_1_1point__3d.html">point_3d</a>&lt; float &gt; &amp;x_point)</td></tr>
-<tr class="separator:a403a58fbdad8a17c403cf4ced68bbcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a452d495a97ba4f0463e221a917af3ffd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a452d495a97ba4f0463e221a917af3ffd">operator=</a> (<a class="el" href="classscifir_1_1point__3d.html">point_3d</a>&lt; float &gt; &amp;&amp;x_point)</td></tr>
-<tr class="separator:a452d495a97ba4f0463e221a917af3ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d5e1bd19b63b498475d497c4c2ad3ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a1d5e1bd19b63b498475d497c4c2ad3ab">operator=</a> (const string &amp;init_coordinates_3d)</td></tr>
-<tr class="separator:a1d5e1bd19b63b498475d497c4c2ad3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af90045410d22ce665b6bf2684fa8cbee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#af90045410d22ce665b6bf2684fa8cbee">operator=</a> (const <a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;x_coordinates)</td></tr>
+<tr class="memdesc:af90045410d22ce665b6bf2684fa8cbee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment. Assigns x, y and z to the same values as the x, y and z of x_coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#af90045410d22ce665b6bf2684fa8cbee">More...</a><br /></td></tr>
+<tr class="separator:af90045410d22ce665b6bf2684fa8cbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba01bfe0d60a5e81664a31eff559a8b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aba01bfe0d60a5e81664a31eff559a8b6">operator=</a> (<a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&amp;x_coordinates)</td></tr>
+<tr class="memdesc:aba01bfe0d60a5e81664a31eff559a8b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment. Assigns x, y and z moved from the x, y and z of x_coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aba01bfe0d60a5e81664a31eff559a8b6">More...</a><br /></td></tr>
+<tr class="separator:aba01bfe0d60a5e81664a31eff559a8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f481fb27270e9b0003e387b2855732"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#af6f481fb27270e9b0003e387b2855732">operator=</a> (const <a class="el" href="classscifir_1_1point__3d.html">point_3d</a>&lt; float &gt; &amp;x_point)</td></tr>
+<tr class="memdesc:af6f481fb27270e9b0003e387b2855732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment. Assigns x, y and z to the same values as the x, y and z of x_point.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#af6f481fb27270e9b0003e387b2855732">More...</a><br /></td></tr>
+<tr class="separator:af6f481fb27270e9b0003e387b2855732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598f578bc6634f577a1a6a17e6d3388b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a598f578bc6634f577a1a6a17e6d3388b">operator=</a> (<a class="el" href="classscifir_1_1point__3d.html">point_3d</a>&lt; float &gt; &amp;&amp;x_point)</td></tr>
+<tr class="memdesc:a598f578bc6634f577a1a6a17e6d3388b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment. Assigns x, y and z moved from the x, y and z of x_point.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a598f578bc6634f577a1a6a17e6d3388b">More...</a><br /></td></tr>
+<tr class="separator:a598f578bc6634f577a1a6a17e6d3388b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe02f800691e047926a9c358668cc264"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#abe02f800691e047926a9c358668cc264">operator=</a> (const string &amp;init_coordinates_3d)</td></tr>
+<tr class="memdesc:abe02f800691e047926a9c358668cc264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment. Assigns x, y and z to the values specified in the initialization string of <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> init_coordinates_3d.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#abe02f800691e047926a9c358668cc264">More...</a><br /></td></tr>
+<tr class="separator:abe02f800691e047926a9c358668cc264"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afee1e5431322b311c6db6e65b5ae4487"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#afee1e5431322b311c6db6e65b5ae4487">get_p</a> () const</td></tr>
+<tr class="memdesc:afee1e5431322b311c6db6e65b5ae4487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of p in cylindrical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#afee1e5431322b311c6db6e65b5ae4487">More...</a><br /></td></tr>
 <tr class="separator:afee1e5431322b311c6db6e65b5ae4487"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6083a5f8e7ed86b5a9125c50ef5e1b59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1angle.html">angle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a6083a5f8e7ed86b5a9125c50ef5e1b59">get_theta</a> () const</td></tr>
+<tr class="memdesc:a6083a5f8e7ed86b5a9125c50ef5e1b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of theta in cylindrical and spherical coordinates (it's the same theta).  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a6083a5f8e7ed86b5a9125c50ef5e1b59">More...</a><br /></td></tr>
 <tr class="separator:a6083a5f8e7ed86b5a9125c50ef5e1b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1a4b69c1df9222691c1bffc03b0d284"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab1a4b69c1df9222691c1bffc03b0d284">get_r</a> () const</td></tr>
+<tr class="memdesc:ab1a4b69c1df9222691c1bffc03b0d284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of r in spherical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab1a4b69c1df9222691c1bffc03b0d284">More...</a><br /></td></tr>
 <tr class="separator:ab1a4b69c1df9222691c1bffc03b0d284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab72f5439348c97dc2858ad5bc03acafb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1angle.html">angle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab72f5439348c97dc2858ad5bc03acafb">get_phi</a> () const</td></tr>
+<tr class="memdesc:ab72f5439348c97dc2858ad5bc03acafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of phi in spherical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab72f5439348c97dc2858ad5bc03acafb">More...</a><br /></td></tr>
 <tr class="separator:ab72f5439348c97dc2858ad5bc03acafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a549a9c1aba791283bbf7b83ea4ff9319"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1angle.html">angle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a549a9c1aba791283bbf7b83ea4ff9319">get_latitude</a> () const</td></tr>
+<tr class="memdesc:a549a9c1aba791283bbf7b83ea4ff9319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the latitude in geographical coordinates. In this case, <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a549a9c1aba791283bbf7b83ea4ff9319">More...</a><br /></td></tr>
 <tr class="separator:a549a9c1aba791283bbf7b83ea4ff9319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a128955a0e7110ea6adbeb9b64cdb08d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscifir_1_1angle.html">angle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a128955a0e7110ea6adbeb9b64cdb08d2">get_longitude</a> () const</td></tr>
+<tr class="memdesc:a128955a0e7110ea6adbeb9b64cdb08d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the longitude in geographical coordinates. In this case, <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a128955a0e7110ea6adbeb9b64cdb08d2">More...</a><br /></td></tr>
 <tr class="separator:a128955a0e7110ea6adbeb9b64cdb08d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c008c1fa88dc7814202938f6c312340"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a2c008c1fa88dc7814202938f6c312340">get_altitude</a> () const</td></tr>
+<tr class="memdesc:a2c008c1fa88dc7814202938f6c312340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the altitude in geographical coordinates. In this case, <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a2c008c1fa88dc7814202938f6c312340">More...</a><br /></td></tr>
 <tr class="separator:a2c008c1fa88dc7814202938f6c312340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad26e5359a95fecf0e37222f68db6f64b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ad26e5359a95fecf0e37222f68db6f64b">set_position</a> (float new_x, float new_y, float new_z)</td></tr>
+<tr class="memdesc:ad26e5359a95fecf0e37222f68db6f64b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets x, y and z to the new_x, new_y and new_z.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ad26e5359a95fecf0e37222f68db6f64b">More...</a><br /></td></tr>
 <tr class="separator:ad26e5359a95fecf0e37222f68db6f64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affb4d98ffe315a700dfac4e5569493ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#affb4d98ffe315a700dfac4e5569493ed">set_position</a> (float new_p, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_theta, float new_z)</td></tr>
+<tr class="memdesc:affb4d98ffe315a700dfac4e5569493ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets x, y and z calculated from the cylindrical coordinates given.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#affb4d98ffe315a700dfac4e5569493ed">More...</a><br /></td></tr>
 <tr class="separator:affb4d98ffe315a700dfac4e5569493ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fb01f61c5039e52b7d0a46d4b81ec7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a9fb01f61c5039e52b7d0a46d4b81ec7e">set_position</a> (float new_r, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_theta, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_phi)</td></tr>
+<tr class="memdesc:a9fb01f61c5039e52b7d0a46d4b81ec7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets x, y and z calculated from the spherical coordinates given.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a9fb01f61c5039e52b7d0a46d4b81ec7e">More...</a><br /></td></tr>
 <tr class="separator:a9fb01f61c5039e52b7d0a46d4b81ec7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91401f23e5aa204f065c23fa3127dea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a91401f23e5aa204f065c23fa3127dea4">set_position</a> (const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_latitude, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_longitude, float new_altitude)</td></tr>
+<tr class="memdesc:a91401f23e5aa204f065c23fa3127dea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets x, y and z calculated from the geographical coordinates given.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a91401f23e5aa204f065c23fa3127dea4">More...</a><br /></td></tr>
 <tr class="separator:a91401f23e5aa204f065c23fa3127dea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71f30a20450618d3fe1873f1dcc146ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a71f30a20450618d3fe1873f1dcc146ac">rotate_in_x</a> (const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;x_angle)</td></tr>
+<tr class="memdesc:a71f30a20450618d3fe1873f1dcc146ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates around the edge x the amount of the param x_angle.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a71f30a20450618d3fe1873f1dcc146ac">More...</a><br /></td></tr>
 <tr class="separator:a71f30a20450618d3fe1873f1dcc146ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf879e7e7ebe79a604a7e097649213a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#abf879e7e7ebe79a604a7e097649213a1">rotate_in_y</a> (const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;x_angle)</td></tr>
+<tr class="memdesc:abf879e7e7ebe79a604a7e097649213a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates around the edge y the amount of the param x_angle.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#abf879e7e7ebe79a604a7e097649213a1">More...</a><br /></td></tr>
 <tr class="separator:abf879e7e7ebe79a604a7e097649213a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6af027d604b2a11b2ca804e846351f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aa6af027d604b2a11b2ca804e846351f7">rotate_in_z</a> (const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;x_angle)</td></tr>
+<tr class="memdesc:aa6af027d604b2a11b2ca804e846351f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates around the edge z the amount of the param x_angle.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aa6af027d604b2a11b2ca804e846351f7">More...</a><br /></td></tr>
 <tr class="separator:aa6af027d604b2a11b2ca804e846351f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34791dc4c891d26a06a218253002a9ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a34791dc4c891d26a06a218253002a9ca">move</a> (const displacement_3d &amp;x_displacement)</td></tr>
+<tr class="memdesc:a34791dc4c891d26a06a218253002a9ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves x, y and z in the vector x_displacement given.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a34791dc4c891d26a06a218253002a9ca">More...</a><br /></td></tr>
 <tr class="separator:a34791dc4c891d26a06a218253002a9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3ea13a2744e3976b21d8684c370ea5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab3ea13a2744e3976b21d8684c370ea5b">move</a> (float new_x, float new_y, float new_z)</td></tr>
+<tr class="memdesc:ab3ea13a2744e3976b21d8684c370ea5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves x in new_x, y in new_y and z in new_z.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab3ea13a2744e3976b21d8684c370ea5b">More...</a><br /></td></tr>
 <tr class="separator:ab3ea13a2744e3976b21d8684c370ea5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa65337bf069d9e1a296a3b2f5760e7ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aa65337bf069d9e1a296a3b2f5760e7ba">move</a> (float new_p, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_theta, float new_z)</td></tr>
+<tr class="memdesc:aa65337bf069d9e1a296a3b2f5760e7ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves x, y and z in the cylindrical coordinates given.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#aa65337bf069d9e1a296a3b2f5760e7ba">More...</a><br /></td></tr>
 <tr class="separator:aa65337bf069d9e1a296a3b2f5760e7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5d13f31893c3a76d0457f847bc883fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ac5d13f31893c3a76d0457f847bc883fc">move</a> (float new_r, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_theta, const <a class="el" href="classscifir_1_1angle.html">angle</a> &amp;new_phi)</td></tr>
+<tr class="memdesc:ac5d13f31893c3a76d0457f847bc883fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves x, y and z in the spherical coordinates given.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ac5d13f31893c3a76d0457f847bc883fc">More...</a><br /></td></tr>
 <tr class="separator:ac5d13f31893c3a76d0457f847bc883fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a636e3a3208257ab8463e79b5364ee1d1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a636e3a3208257ab8463e79b5364ee1d1">distance_to_origin</a> () const</td></tr>
+<tr class="memdesc:a636e3a3208257ab8463e79b5364ee1d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the distance to the origin.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a636e3a3208257ab8463e79b5364ee1d1">More...</a><br /></td></tr>
 <tr class="separator:a636e3a3208257ab8463e79b5364ee1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac38d217b11a48e22b4be0431d158f167"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ac38d217b11a48e22b4be0431d158f167">display_cartesian</a> () const</td></tr>
+<tr class="memdesc:ac38d217b11a48e22b4be0431d158f167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the coordinates in cartesian coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ac38d217b11a48e22b4be0431d158f167">More...</a><br /></td></tr>
 <tr class="separator:ac38d217b11a48e22b4be0431d158f167"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32721dbb6d70fdfe771fb45e593e0c0c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a32721dbb6d70fdfe771fb45e593e0c0c">display_cylindrical</a> () const</td></tr>
+<tr class="memdesc:a32721dbb6d70fdfe771fb45e593e0c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the coordinates in cylindrical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a32721dbb6d70fdfe771fb45e593e0c0c">More...</a><br /></td></tr>
 <tr class="separator:a32721dbb6d70fdfe771fb45e593e0c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38932d5e833e5d1d0cf737a61a64692e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a38932d5e833e5d1d0cf737a61a64692e">display_spherical</a> () const</td></tr>
+<tr class="memdesc:a38932d5e833e5d1d0cf737a61a64692e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the coordinates in spherical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a38932d5e833e5d1d0cf737a61a64692e">More...</a><br /></td></tr>
 <tr class="separator:a38932d5e833e5d1d0cf737a61a64692e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc1638ed40dc036d7f9706f558e82cf7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#afc1638ed40dc036d7f9706f558e82cf7">display_geographical</a> () const</td></tr>
+<tr class="memdesc:afc1638ed40dc036d7f9706f558e82cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the coordinates in geographical coordinates.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#afc1638ed40dc036d7f9706f558e82cf7">More...</a><br /></td></tr>
 <tr class="separator:afc1638ed40dc036d7f9706f558e82cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7aeef908f0caeb892180872746e4c0bf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a></td></tr>
+<tr class="memdesc:a7aeef908f0caeb892180872746e4c0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position in the edge x, with type float.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">More...</a><br /></td></tr>
 <tr class="separator:a7aeef908f0caeb892180872746e4c0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d84abe44a336e8346873a522e4011f3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a></td></tr>
+<tr class="memdesc:a5d84abe44a336e8346873a522e4011f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position in the edge y, with type float.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">More...</a><br /></td></tr>
 <tr class="separator:a5d84abe44a336e8346873a522e4011f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addd03dd2084343d814cb829f3a9d6d72"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">z</a></td></tr>
+<tr class="memdesc:addd03dd2084343d814cb829f3a9d6d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position in the edge z, with type float.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">More...</a><br /></td></tr>
 <tr class="separator:addd03dd2084343d814cb829f3a9d6d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a9aafac39cbc7e873ca68f48ce9c688b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a9aafac39cbc7e873ca68f48ce9c688b6">initialize_from_string</a> (string init_coordinates_3d)</td></tr>
+<tr class="memdesc:a9aafac39cbc7e873ca68f48ce9c688b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal function. Initializes x, y and z with the initialization string of <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> init_coordinates_3d.  <a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a9aafac39cbc7e873ca68f48ce9c688b6">More...</a><br /></td></tr>
 <tr class="separator:a9aafac39cbc7e873ca68f48ce9c688b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
+<div class="textblock"><p>Specialization of <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a>, with the same behaviour and functions, that is specialized for float types. It can be used when it's needed to save memory, because a float uses less memory than a <a class="el" href="classscifir_1_1scalar__unit.html" title="Class that allows to create scalar units, which are composed of a value (as a float) and dimensions....">scalar_unit</a>. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00303">303</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a416c96a50ead465ca71e9b6f0876c0d0"></a>
@@ -199,12 +245,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Default constructor. Initializes x, y and z to 0, with the default dimensions. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00306">306</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                             : <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>(),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>(),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">z</a>()</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            {}</div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a5d84abe44a336e8346873a522e4011f3"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">scifir::coordinates_3d&lt; float &gt;::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00531">coordinates_3d.hpp:531</a></div></div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a7aeef908f0caeb892180872746e4c0bf"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">scifir::coordinates_3d&lt; float &gt;::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00530">coordinates_3d.hpp:530</a></div></div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_addd03dd2084343d814cb829f3a9d6d72"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">scifir::coordinates_3d&lt; float &gt;::z</a></div><div class="ttdeci">float z</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00532">coordinates_3d.hpp:532</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a5d84abe44a336e8346873a522e4011f3"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">scifir::coordinates_3d&lt; float &gt;::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">The position in the edge y, with type float.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00531">coordinates_3d.hpp:531</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a7aeef908f0caeb892180872746e4c0bf"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">scifir::coordinates_3d&lt; float &gt;::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">The position in the edge x, with type float.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00530">coordinates_3d.hpp:530</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_addd03dd2084343d814cb829f3a9d6d72"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">scifir::coordinates_3d&lt; float &gt;::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">The position in the edge z, with type float.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00532">coordinates_3d.hpp:532</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -231,6 +279,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Copy constructor. Initializes x, y and z to the x, y and z of x_coordinates. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00309">309</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                                                       : <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>(x_coordinates.x),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>(x_coordinates.y),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">z</a>(x_coordinates.z)</div>
@@ -261,6 +311,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Move constructor. Initializes x, y and z to the x, y and z of x_coordinates. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00312">312</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                                                                  : <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>(std::move(x_coordinates.x)),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>(std::move(x_coordinates.y)),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">z</a>(std::move(x_coordinates.z))</div>
@@ -308,6 +360,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. Initializes x, y and z to be new_x, new_y and new_z. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00315">315</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                                                                         : <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>(new_x),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>(new_y),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">z</a>(new_z)</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            {}</div>
@@ -354,11 +408,13 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. Initializes x, y and z with cylindrical coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00318">318</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            {</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ad26e5359a95fecf0e37222f68db6f64b">set_position</a>(new_p,new_theta,new_z);</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            }</div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_ad26e5359a95fecf0e37222f68db6f64b"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ad26e5359a95fecf0e37222f68db6f64b">scifir::coordinates_3d&lt; float &gt;::set_position</a></div><div class="ttdeci">void set_position(float new_x, float new_y, float new_z)</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00417">coordinates_3d.hpp:417</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_ad26e5359a95fecf0e37222f68db6f64b"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ad26e5359a95fecf0e37222f68db6f64b">scifir::coordinates_3d&lt; float &gt;::set_position</a></div><div class="ttdeci">void set_position(float new_x, float new_y, float new_z)</div><div class="ttdoc">Sets x, y and z to the new_x, new_y and new_z.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00417">coordinates_3d.hpp:417</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -401,6 +457,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructor. Initializes x, y and z with spherical coordinates. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00323">323</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            {</div>
@@ -449,12 +507,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. Initializes x, y and z with geographical coordinates. Currently geographical coordinates aren't ready. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00328">328</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                                                                                             : <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a416c96a50ead465ca71e9b6f0876c0d0">coordinates_3d</a>()</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            {</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ad26e5359a95fecf0e37222f68db6f64b">set_position</a>(new_latitude,new_longitude,new_altitude);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            }</div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a416c96a50ead465ca71e9b6f0876c0d0"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a416c96a50ead465ca71e9b6f0876c0d0">scifir::coordinates_3d&lt; float &gt;::coordinates_3d</a></div><div class="ttdeci">coordinates_3d()</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00306">coordinates_3d.hpp:306</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a416c96a50ead465ca71e9b6f0876c0d0"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a416c96a50ead465ca71e9b6f0876c0d0">scifir::coordinates_3d&lt; float &gt;::coordinates_3d</a></div><div class="ttdeci">coordinates_3d()</div><div class="ttdoc">Default constructor. Initializes x, y and z to 0, with the default dimensions.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00306">coordinates_3d.hpp:306</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -481,6 +541,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructor. Initializes x, y and z to the x, y and z of x_point. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00333">333</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                                                    : <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>(x_point.x),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>(x_point.y),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">z</a>(x_point.z)</div>
@@ -512,6 +574,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. Initializes x, y and z moving the x, y and z of x_point. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00336">336</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                                               : <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>(std::move(x_point.x)),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>(std::move(x_point.y)),<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">z</a>(std::move(x_point.z))</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            {}</div>
@@ -542,12 +606,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. Initializes x, y and z with the initialization string of <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> init_coordinates_3d. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00339">339</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                                                                       : <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a416c96a50ead465ca71e9b6f0876c0d0">coordinates_3d</a>()</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            {</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a9aafac39cbc7e873ca68f48ce9c688b6">initialize_from_string</a>(init_coordinates_3d);</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            }</div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a9aafac39cbc7e873ca68f48ce9c688b6"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a9aafac39cbc7e873ca68f48ce9c688b6">scifir::coordinates_3d&lt; float &gt;::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(string init_coordinates_3d)</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00535">coordinates_3d.hpp:535</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a9aafac39cbc7e873ca68f48ce9c688b6"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a9aafac39cbc7e873ca68f48ce9c688b6">scifir::coordinates_3d&lt; float &gt;::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(string init_coordinates_3d)</div><div class="ttdoc">Internal function. Initializes x, y and z with the initialization string of coordinates_3d init_coord...</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00535">coordinates_3d.hpp:535</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -574,6 +640,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Displays the coordinates in cartesian coordinates. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00502">502</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;            {</div>
@@ -608,14 +676,16 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Displays the coordinates in cylindrical coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00509">509</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;            {</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                ostringstream out;</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; <a class="code" href="namespacescifir.html#a6fc5f876bdd1abb1118fc73288152eb0">display_float</a>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#afee1e5431322b311c6db6e65b5ae4487">get_p</a>()) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a6083a5f8e7ed86b5a9125c50ef5e1b59">get_theta</a>() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="namespacescifir.html#a6fc5f876bdd1abb1118fc73288152eb0">display_float</a>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">z</a>) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                <span class="keywordflow">return</span> out.str();</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;            }</div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a6083a5f8e7ed86b5a9125c50ef5e1b59"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a6083a5f8e7ed86b5a9125c50ef5e1b59">scifir::coordinates_3d&lt; float &gt;::get_theta</a></div><div class="ttdeci">angle get_theta() const</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00387">coordinates_3d.hpp:387</a></div></div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_afee1e5431322b311c6db6e65b5ae4487"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#afee1e5431322b311c6db6e65b5ae4487">scifir::coordinates_3d&lt; float &gt;::get_p</a></div><div class="ttdeci">float get_p() const</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00382">coordinates_3d.hpp:382</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a6083a5f8e7ed86b5a9125c50ef5e1b59"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a6083a5f8e7ed86b5a9125c50ef5e1b59">scifir::coordinates_3d&lt; float &gt;::get_theta</a></div><div class="ttdeci">angle get_theta() const</div><div class="ttdoc">Returns the value of theta in cylindrical and spherical coordinates (it's the same theta).</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00387">coordinates_3d.hpp:387</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_afee1e5431322b311c6db6e65b5ae4487"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#afee1e5431322b311c6db6e65b5ae4487">scifir::coordinates_3d&lt; float &gt;::get_p</a></div><div class="ttdeci">float get_p() const</div><div class="ttdoc">Returns the value of p in cylindrical coordinates.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00382">coordinates_3d.hpp:382</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -642,15 +712,17 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Displays the coordinates in geographical coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00523">523</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;            {</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                ostringstream out;</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a549a9c1aba791283bbf7b83ea4ff9319">get_latitude</a>() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a128955a0e7110ea6adbeb9b64cdb08d2">get_longitude</a>() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="namespacescifir.html#a6fc5f876bdd1abb1118fc73288152eb0">display_float</a>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a2c008c1fa88dc7814202938f6c312340">get_altitude</a>()) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                <span class="keywordflow">return</span> out.str();</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            }</div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a128955a0e7110ea6adbeb9b64cdb08d2"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a128955a0e7110ea6adbeb9b64cdb08d2">scifir::coordinates_3d&lt; float &gt;::get_longitude</a></div><div class="ttdeci">angle get_longitude() const</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00407">coordinates_3d.hpp:407</a></div></div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a2c008c1fa88dc7814202938f6c312340"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a2c008c1fa88dc7814202938f6c312340">scifir::coordinates_3d&lt; float &gt;::get_altitude</a></div><div class="ttdeci">float get_altitude() const</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00412">coordinates_3d.hpp:412</a></div></div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a549a9c1aba791283bbf7b83ea4ff9319"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a549a9c1aba791283bbf7b83ea4ff9319">scifir::coordinates_3d&lt; float &gt;::get_latitude</a></div><div class="ttdeci">angle get_latitude() const</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00402">coordinates_3d.hpp:402</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a128955a0e7110ea6adbeb9b64cdb08d2"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a128955a0e7110ea6adbeb9b64cdb08d2">scifir::coordinates_3d&lt; float &gt;::get_longitude</a></div><div class="ttdeci">angle get_longitude() const</div><div class="ttdoc">Returns the longitude in geographical coordinates. In this case, coordinates_3d represents all the as...</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00407">coordinates_3d.hpp:407</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a2c008c1fa88dc7814202938f6c312340"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a2c008c1fa88dc7814202938f6c312340">scifir::coordinates_3d&lt; float &gt;::get_altitude</a></div><div class="ttdeci">float get_altitude() const</div><div class="ttdoc">Returns the altitude in geographical coordinates. In this case, coordinates_3d represents all the ast...</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00412">coordinates_3d.hpp:412</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_a549a9c1aba791283bbf7b83ea4ff9319"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a549a9c1aba791283bbf7b83ea4ff9319">scifir::coordinates_3d&lt; float &gt;::get_latitude</a></div><div class="ttdeci">angle get_latitude() const</div><div class="ttdoc">Returns the latitude in geographical coordinates. In this case, coordinates_3d represents all the ast...</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00402">coordinates_3d.hpp:402</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -677,14 +749,16 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Displays the coordinates in spherical coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00516">516</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;            {</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                ostringstream out;</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; <a class="code" href="namespacescifir.html#a6fc5f876bdd1abb1118fc73288152eb0">display_float</a>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab1a4b69c1df9222691c1bffc03b0d284">get_r</a>()) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a6083a5f8e7ed86b5a9125c50ef5e1b59">get_theta</a>() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab72f5439348c97dc2858ad5bc03acafb">get_phi</a>() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                <span class="keywordflow">return</span> out.str();</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            }</div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_ab1a4b69c1df9222691c1bffc03b0d284"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab1a4b69c1df9222691c1bffc03b0d284">scifir::coordinates_3d&lt; float &gt;::get_r</a></div><div class="ttdeci">float get_r() const</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00392">coordinates_3d.hpp:392</a></div></div>
-<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_ab72f5439348c97dc2858ad5bc03acafb"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab72f5439348c97dc2858ad5bc03acafb">scifir::coordinates_3d&lt; float &gt;::get_phi</a></div><div class="ttdeci">angle get_phi() const</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00397">coordinates_3d.hpp:397</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_ab1a4b69c1df9222691c1bffc03b0d284"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab1a4b69c1df9222691c1bffc03b0d284">scifir::coordinates_3d&lt; float &gt;::get_r</a></div><div class="ttdeci">float get_r() const</div><div class="ttdoc">Returns the value of r in spherical coordinates.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00392">coordinates_3d.hpp:392</a></div></div>
+<div class="ttc" id="aclassscifir_1_1coordinates__3d_3_01float_01_4_html_ab72f5439348c97dc2858ad5bc03acafb"><div class="ttname"><a href="classscifir_1_1coordinates__3d_3_01float_01_4.html#ab72f5439348c97dc2858ad5bc03acafb">scifir::coordinates_3d&lt; float &gt;::get_phi</a></div><div class="ttdeci">angle get_phi() const</div><div class="ttdoc">Returns the value of phi in spherical coordinates.</div><div class="ttdef"><b>Definition:</b> <a href="coordinates__3d_8hpp_source.html#l00397">coordinates_3d.hpp:397</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -710,6 +784,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Calculates the distance to the origin. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00497">497</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            {</div>
@@ -743,6 +819,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the altitude in geographical coordinates. In this case, <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00412">412</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            {</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                <span class="keywordflow">return</span> float();</div>
@@ -772,6 +850,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the latitude in geographical coordinates. In this case, <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00402">402</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            {</div>
@@ -804,6 +884,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the longitude in geographical coordinates. In this case, <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00407">407</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            {</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacescifir.html#a6238e1d28db776a5d6497d463cc18a24">scifir::atan</a>(<span class="keywordtype">float</span>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>/<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>));</div>
@@ -835,6 +917,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the value of p in cylindrical coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00382">382</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            {</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                <span class="keywordflow">return</span> float(<a class="code" href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c">std::sqrt</a>(<a class="code" href="namespacescifir.html#a44533727ef4f03e8303664cdd665c2bc">std::pow</a>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>,2) + <a class="code" href="namespacescifir.html#a44533727ef4f03e8303664cdd665c2bc">std::pow</a>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>,2)));</div>
@@ -864,6 +948,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of phi in spherical coordinates. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00397">397</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            {</div>
@@ -896,6 +982,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the value of r in spherical coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00392">392</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            {</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                <span class="keywordflow">return</span> float(<a class="code" href="namespacescifir.html#adeff4b825414d35ce963977f181f1b5c">std::sqrt</a>(<a class="code" href="namespacescifir.html#a44533727ef4f03e8303664cdd665c2bc">std::pow</a>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>,2) + <a class="code" href="namespacescifir.html#a44533727ef4f03e8303664cdd665c2bc">std::pow</a>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>,2) + <a class="code" href="namespacescifir.html#a44533727ef4f03e8303664cdd665c2bc">std::pow</a>(<a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#addd03dd2084343d814cb829f3a9d6d72">z</a>,2)));</div>
@@ -925,6 +1013,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of theta in cylindrical and spherical coordinates (it's the same theta). </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00387">387</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            {</div>
@@ -956,6 +1046,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Internal function. Initializes x, y and z with the initialization string of <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> init_coordinates_3d. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00535">535</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            {</div>
@@ -1032,6 +1124,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Moves x, y and z in the vector x_displacement given. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00469">469</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            {</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a> += float(x_displacement.x_projection());</div>
@@ -1080,6 +1174,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Moves x, y and z in the cylindrical coordinates given. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00483">483</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            {</div>
@@ -1132,6 +1228,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Moves x, y and z in the spherical coordinates given. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00490">490</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            {</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a> += new_r * <a class="code" href="namespacescifir.html#a36d6ffb762d9c276b4229a2bedf3bca9">scifir::cos</a>(new_theta) * <a class="code" href="namespacescifir.html#ad3b92cdb628eeec991c326c1727fdd9e">scifir::sin</a>(new_phi);</div>
@@ -1181,6 +1279,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Moves x in new_x, y in new_y and z in new_z. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00476">476</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            {</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a> += new_x;</div>
@@ -1190,8 +1290,8 @@ Private Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a84e409396362a0d8533c9643f9c7bb7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84e409396362a0d8533c9643f9c7bb7b">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/5]</span></h2>
+<a id="af90045410d22ce665b6bf2684fa8cbee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af90045410d22ce665b6bf2684fa8cbee">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1200,7 +1300,7 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt;float&gt;&amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&#160;</td>
           <td class="paramname"><em>x_coordinates</em></td><td>)</td>
@@ -1214,6 +1314,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Copy assignment. Assigns x, y and z to the same values as the x, y and z of x_coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00344">344</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            {</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a> = x_coordinates.x;</div>
@@ -1224,8 +1326,8 @@ Private Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a403a58fbdad8a17c403cf4ced68bbcc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a403a58fbdad8a17c403cf4ced68bbcc8">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/5]</span></h2>
+<a id="af6f481fb27270e9b0003e387b2855732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f481fb27270e9b0003e387b2855732">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1234,7 +1336,7 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt;float&gt;&amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classscifir_1_1point__3d.html">point_3d</a>&lt; float &gt; &amp;&#160;</td>
           <td class="paramname"><em>x_point</em></td><td>)</td>
@@ -1248,6 +1350,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Assignment. Assigns x, y and z to the same values as the x, y and z of x_point. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00360">360</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            {</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a> = x_point.x;</div>
@@ -1258,8 +1362,8 @@ Private Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a1d5e1bd19b63b498475d497c4c2ad3ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d5e1bd19b63b498475d497c4c2ad3ab">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/5]</span></h2>
+<a id="abe02f800691e047926a9c358668cc264"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe02f800691e047926a9c358668cc264">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1268,7 +1372,7 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt;float&gt;&amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>init_coordinates_3d</em></td><td>)</td>
@@ -1282,6 +1386,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Assignment. Assigns x, y and z to the values specified in the initialization string of <a class="el" href="classscifir_1_1coordinates__3d.html" title="Class that represents the position in 3D spaces. The space can be a length or, for the case of imagin...">coordinates_3d</a> init_coordinates_3d. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00376">376</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            {</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a9aafac39cbc7e873ca68f48ce9c688b6">initialize_from_string</a>(init_coordinates_3d);</div>
@@ -1290,8 +1396,8 @@ Private Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a23e289f5d2bb32f1989598b4b92a860d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23e289f5d2bb32f1989598b4b92a860d">&#9670;&nbsp;</a></span>operator=() <span class="overload">[4/5]</span></h2>
+<a id="aba01bfe0d60a5e81664a31eff559a8b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba01bfe0d60a5e81664a31eff559a8b6">&#9670;&nbsp;</a></span>operator=() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1300,7 +1406,7 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt;float&gt;&amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>x_coordinates</em></td><td>)</td>
@@ -1314,6 +1420,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Move assignment. Assigns x, y and z moved from the x, y and z of x_coordinates. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00352">352</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            {</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a> = std::move(x_coordinates.x);</div>
@@ -1324,8 +1432,8 @@ Private Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a452d495a97ba4f0463e221a917af3ffd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a452d495a97ba4f0463e221a917af3ffd">&#9670;&nbsp;</a></span>operator=() <span class="overload">[5/5]</span></h2>
+<a id="a598f578bc6634f577a1a6a17e6d3388b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598f578bc6634f577a1a6a17e6d3388b">&#9670;&nbsp;</a></span>operator=() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1334,7 +1442,7 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt;float&gt;&amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classscifir_1_1coordinates__3d.html">coordinates_3d</a>&lt; float &gt; &amp; <a class="el" href="classscifir_1_1coordinates__3d.html">scifir::coordinates_3d</a>&lt; float &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classscifir_1_1point__3d.html">point_3d</a>&lt; float &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>x_point</em></td><td>)</td>
@@ -1347,6 +1455,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Assignment. Assigns x, y and z moved from the x, y and z of x_point. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00368">368</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            {</div>
@@ -1382,6 +1492,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Rotates around the edge x the amount of the param x_angle. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00445">445</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            {</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                <span class="keywordtype">float</span> y_coord = <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a5d84abe44a336e8346873a522e4011f3">y</a>;</div>
@@ -1416,6 +1528,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Rotates around the edge y the amount of the param x_angle. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00453">453</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            {</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                <span class="keywordtype">float</span> x_coord = <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a>;</div>
@@ -1449,6 +1563,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Rotates around the edge z the amount of the param x_angle. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00461">461</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            {</div>
@@ -1500,6 +1616,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets x, y and z calculated from the geographical coordinates given. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00438">438</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            {</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a> = new_altitude * <a class="code" href="namespacescifir.html#a36d6ffb762d9c276b4229a2bedf3bca9">scifir::cos</a>(new_latitude) * <a class="code" href="namespacescifir.html#a36d6ffb762d9c276b4229a2bedf3bca9">scifir::cos</a>(new_longitude);</div>
@@ -1548,6 +1666,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets x, y and z calculated from the cylindrical coordinates given. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00424">424</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            {</div>
@@ -1598,6 +1718,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets x, y and z calculated from the spherical coordinates given. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00431">431</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            {</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a> = new_r * <a class="code" href="namespacescifir.html#a36d6ffb762d9c276b4229a2bedf3bca9">scifir::cos</a>(new_theta) * <a class="code" href="namespacescifir.html#ad3b92cdb628eeec991c326c1727fdd9e">scifir::sin</a>(new_phi);</div>
@@ -1647,6 +1769,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets x, y and z to the new_x, new_y and new_z. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00417">417</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            {</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                <a class="code" href="classscifir_1_1coordinates__3d_3_01float_01_4.html#a7aeef908f0caeb892180872746e4c0bf">x</a> = new_x;</div>
@@ -1669,6 +1793,8 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The position in the edge x, with type float. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00530">530</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 
 </div>
@@ -1684,6 +1810,8 @@ Private Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The position in the edge y, with type float. </p>
 
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00531">531</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 
@@ -1701,12 +1829,15 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The position in the edge z, with type float. </p>
+
 <p class="definition">Definition at line <a class="el" href="coordinates__3d_8hpp_source.html#l00532">532</a> of file <a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>coordinates/<a class="el" href="coordinates__3d_8hpp_source.html">coordinates_3d.hpp</a></li>
+<li>docs/dox/coordinates/<a class="el" href="coordinates__3d_8dox.html">coordinates_3d.dox</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

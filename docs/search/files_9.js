@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['news_2emd_1794',['NEWS.md',['../NEWS_8md.html',1,'']]]
+  ['news_2emd_1815',['NEWS.md',['../NEWS_8md.html',1,'']]]
 ];
