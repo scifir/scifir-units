@@ -1,6 +1,6 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 262
+**Number of TODOs:** 231
 
 ## MATERIAL_VECTOR_UNIT (1)
 - TODO: add operator == and operator !=
@@ -11,20 +11,15 @@
 ## WAVES (1)
 - TODO: think if to add the waves here too
 
-## CURRENT (22)
-- TODO: zones must match that the type send corresponds to the data
-- TODO: aid must match that the type send corresponds to the data
+## CURRENT (17)
 - TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes
 - TODO: conversion of size_t to and int gives a warning in MSVC
-- TODO: finish testing in Windows all tests
+- TODO: finish testing in MSVC all tests
 - TODO: support solid_angle, with the literal _sr too
 - TODO: explanation, with code examples, of physics and chemistry laws
 - TODO: there is a bug with is_close_prefix in base_display()
-- TODO: explain the interpretation of composite dimensions inside scifir-units
 - TODO: warning of to_string() functions of body.hpp
-- TODO: add the central inventions of each dimension, like the sundial, the waterclock, etc
 
-- TODO: maybe it's needed to change characters of the initialization strings of some vector_unit classes. It's needed to update the file README.md too with that
 - TODO: think of how to implement conversions, do also the test of them
 - TODO: support the conversion inside the display of scalar_unit
 - TODO: add the old historic systems of units to conversion, and explain them in the README.md file
@@ -32,7 +27,7 @@
 - TODO: add Farenheit, Rankine and maybe other dimensions of temperature as conversions
 - TODO: check if the member-variable names of dimension class can be changed
 
-- TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their derived classes
+- TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their child classes
 
 - TODO: custom dimensions should allow to store their names too, not only their symbols
 
@@ -81,59 +76,46 @@
 - TODO: test of base unit classes
 - TODO: test stof() with bad values
 
-## DOCUMENTATION (50)
+## DOCUMENTATION (39)
 - TODO: create all the dox files of the library
-- TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
-- TODO: document the use of special characters in prefixes
-- TODO: document the special character in angle class
-- TODO: document what is a dimension, what is a derived dimension, and what is a basic dimension
-- TODO: add the abbreviations in the groups too
 - TODO: add latex to the factors of prefixes in prefix.dox
-- TODO: document how the england and united states units work, which are different than the SI system of units
-- TODO: resolve how to document the string representation of enum types
 - TODO: explain in initialize_from_string() the use of this function. The explanation of the format of the initialization string should be inside the string constructor and the string assignment
-- TODO: explain how to use the basic units apart from the scalar_unit class, it doesn't appears inside the reference of Doxygen
-- TODO: in the README.md file add the explanation of the first thing to learn first, after that the rest of the library
-- TODO: inside scalar_unit explain how basic unit work
-- TODO: inside vector_unit classes explain how basic units of vector_unit classes work
+- TODO: add the description of each file, which is different than the description of the class
+
+- TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals
+- TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
 - TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
-- TODO: add the symbol of pi in the README.md file with the things to memorize
-- TODO: add the explanation of the definition of each unit inside a file, including conversions
-- TODO: document the imperial system of units (https:##en.wikipedia.org/wiki/Imperial_units)
 - TODO: explain how a robot can calculate angles
 - TODO: explain how to create lambda functions of mathematical functions with different parts, using if-else for that
 - TODO: explain how to use mEq in the README.md file, in case of use
-- TODO: explain the apotechary system, the english units and the imperial units in a separate page
 - TODO: add a readings section in the README.md file, with some of the urls of the TODO.md file
-
-- TODO: desactivate the search engine in the doxyfile for the doxyfile of development, not the doxyfile of github pages
-- TODO: maybe use two different files Doxyfile, one for master and one for gh-pages
-- TODO: use a dev_doxyfile for the master branch without the search engine
-- TODO: add google analytics to the website of scifir-units of github pages
-
+- TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abreviations of the ISO of currencies
 - TODO: document the coordinates for the universe, publish that too as an standard inside scifir
-- TODO: check what to do with the libraries of ISOs and document them inside the README.md file. If there isn't a library of ISOs, decide if to create one
-- TODO: reference books related to the physics, chemistry, biology or math implemented
-- TODO: explain the custom dimensions in the file README.md
-- TODO: display as plain text the <T> inside the md file
-- TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication
-- TODO: add the BIPM to some part of the documentation, where it should be cited
-
 - TODO: document the use of the custom_display "sci"
 - TODO: think on the different cases of use of coordinates and document them, including the use of an origin
 - TODO: mention the WGS in the part of coordinates
 - TODO: document the use of fabs() and display() to compare values of units
 - TODO: document the special initialization of mass and mole with percentage
 - TODO: add initialization of lab_number<> inside README.md file
-
-- TODO: add the summary sheet somewhere
-- TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals
+- TODO: increase the introduction of the README.md file
+- TODO: display as plain text the <T> inside the md file
 - TODO: add a section of "Optional knowledge"
 
+- TODO: add google analytics to the website of scifir-units of github pages
+
+- TODO: add the abbreviations in the groups too
+- TODO: add the explanation of the definition of each unit inside a file, including conversions
+- TODO: document how ppm and ppb work, also in the theorical sense
+- TODO: explain the apotechary system, the english units, the imperial units and the united states units in a separate page. Explain them in the part of conversion inside the README.md file too
+- TODO: add the summary sheet somewhere
 - TODO: formulas of physics related to units
 - TODO: formulas of chemistry related to units
 - TODO: formulas of biology related to units
 - TODO: document how all the operations of scalars and vector units work mathematically, possibly use mathjax inside markdown to display formulas
+- TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication
+
+- TODO: check what to do with the libraries of ISOs and document them inside the README.md file. If there isn't a library of ISOs, decide if to create one
+- TODO: reference books related to the physics, chemistry, biology or math implemented
 
 - TODO: think if to add the help of Eclipse, and search if other IDEs use some help too
 - TODO: decide if to generate documentation for man, and if so, explain that inside the README.md file
@@ -150,10 +132,11 @@
 - TODO: all display functions of coordinates classes need an int argument to select number of decimals
 - TODO: is_coordinates_1d(), is_coordinates_2d(), etc
 
-## COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (3)
+## COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (4)
 - TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
 - TODO: add the construction with an string for geographic coordinates
 - TODO: study the geographic coordinates deeply, and see if to add something more related to them
+- TODO: get_altitude() can be two different functions
 
 ## VECTOR FIELDS (3)
 - TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field
@@ -180,7 +163,7 @@
 - TODO: check is string_view should be used as parameters
 - TODO: use string_view to the enum functions
 
-## CONSTANTS (1)
+## CONSTANTS (2)
 - TODO: maybe all constant values should be constexpr, and maybe there's a way to make them scalar_unit without needing to have all of them defined at the same time, because that sizes
 - TODO: add the constants of astronomy
 
@@ -208,7 +191,7 @@
 - TODO: add the apothecaries system of units, maybe there are more systems to add
 - TODO: possibly add the drop units
 
-## UNITS (17)
+## UNITS (16)
 - TODO: solve in some way the problem that vector_unit_3d needs different characters in Windows an inside Linux when initialized with strings
 - TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
 - TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them
@@ -219,7 +202,6 @@
 - TODO: possibly add the light_scalar_unit class that allows operations with scalar_unit classes, which must contain only one dimension, not a vector<dimension>
 - TODO: function to_latex() for dimensions and scalar_unit
 - TODO: function that displays the scalar_unit as text, with the plural if the scalar_unit has a value greather than 1
-- TODO: maybe change the SI constants to be a base unit instead of a long double
 - TODO: maybe the dimension memo needs a base unit class
 - TODO: think if to add functions of statistics here, check if there is a solution in other C++ libraries or if it is good to have them here
 - TODO: follow the schema of numbers of the 22 General Conference on Weights and Measures. Check if there are more rules to add of the General Conferences, too
@@ -229,51 +211,42 @@
 
 - TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files
 
-## DERIVED UNITS (6)
+## DERIVED UNITS (5)
 - TODO: think if to add accoustic and matter derived units, or if it's not needed
 - TODO: delete all field classes that currently are vector_units, and make them fields
-- TODO: think if to add another concentration class, the previous one has been deprecated
 - TODO: move cas_number to the library of scifir-info, or even to another category
 - TODO: biology units, like heart_rate
 - TODO: UNIX time constructor in the string constructor for time_duration
 
-## MECA NUMBERS (8)
+## MECA NUMBERS (7)
 - TODO: add the allowed typenames to lab_number, and don't accept any other type
 - TODO: angle should read initialization strings in radian too inside the string constructor, maybe with "radian" name, possibly "rad" should be supported too
 - TODO: maybe add obtusangle, rect angle, acutangle, etc
 - TODO: study if to add the gradian
 - TODO: study if to add the turn
-- TODO: think if to add minute and second to angle
 - TODO: maybe support prefixes for radians, search if there are prefixes for the other units of angles
 - TODO: add minutes and seconds to degrees
 
-## SPECIAL UNITS - EXTRA (14)
+## SPECIAL UNITS (16)
 - TODO: ip class? check networking libraries of C++ and decide if to add it here
 - TODO: nutrition_information
 - TODO: class for geographical position including ZID and coordinates_3d
 - TODO: class for geographical position in space, using AID and coordinates_3d
-- TODO: maybe pixel should be called pixel_length
 - TODO: think if to add a default case for the none value of aid and for the none value of zid
 - TODO: functions is_aid() and is_zid()
 - TODO: initialize_from_string() for pH and pOH classes should work with pH and pOH at the start, respectively
 - TODO: maybe add zoom class, which allows to work with zooms
-- TODO: _percentage literal
 - TODO: address class with zid inside
 - TODO: enum of movement maybe should be divided in kind of animal
-- TODO: display() function for pixel class
 - TODO: maybe delete the operator = T of percentage class, maybe there are more in similar classes. Try first the different literals of non-floating numeric types
-
-## TENSORS (1)
-- TODO: check if there's something needed related to tensors, given that scalar_unit, vector_unit and matrix are being used already
-
-## EMOTIONAL UNITS (1)
-- TODO: finish the enums of mind.hpp
-
-## SPECIAL UNITS (4)
 - TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()
 - TODO: pixel_color<>. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color<>
 - TODO: complex_number<> should have trigonometric functions for complex numbers
 - TODO: maybe create a mesh_3d class, or vector<point_3d<>>
+- TODO: finish the enums of mind.hpp
+
+## TENSORS (1)
+- TODO: check if there's something needed related to tensors, given that scalar_unit, vector_unit and matrix are being used already
 
 ## PREDEFINED PHYSICS UNITS (4)
 - TODO: electric_field which calculates based on coulomb charges
@@ -284,13 +257,11 @@
 ## CONTROL VOLUME (1)
 - TODO: think what to do with the control_volume
 
-## UNITS - ADVANCED (9)
+## UNITS - ADVANCED (7)
 - TODO: sqrt() and pow() maybe should be direct for created units, instead of passing by scalar_unit again to initialize after that the other unit
-- TODO: check if it's needed to add a function is_si_basic_dimension() that gives whether the dimension is basic or not in the sense of the SI system of units
-- TODO: support and UTF32 string constructor for scalar_unit in order to allow to create dimensions directly with some Unicode characters that are not present in UTF8
 - TODO: scalar_unit should have is_valid() with some system
 - TODO: support the conversions with constexpr
-- TODO: add the operators +,-,* and / in the derived classes of scalar_unit and vector_unit with the same class in order to avoid to check that the dimensions are the same, that saves time
+- TODO: add the operators +,-,* and / in the derived classes of scalar_unit and vector_unit with the same class in order to avoid to check that the dimensions are the same, that saves time. Maybe use templates for that
 - TODO: check the object code resulting by testing different functions of the unit classes
 - TODO: 2d display of scalar_units and of vector_units (create a scifir_units_2d library for it)
 - TODO: 3d display of scalar_units and of vector_units (create a scifir_units_3d library for it)
@@ -324,9 +295,6 @@
 ## ELECTRONICS (1)
 - TODO: check sensor libraries and decide which ones to support inside scifir-units (maybe in a new scifir library if needed)
 
-## PATTERNS (1)
-- TODO: possibly implement a pattern class using a regular expressions library
-
 ## EXTRA TOOLS (1)
 - TODO: Create scicalcs, a cli tool that calculates with scifir-units any value
 
@@ -336,19 +304,7 @@
 - TODO: Port to Octave
 - TODO: Port to Visual Basic
 
-## TESTS (2)
-- TODO: test of sizeof for all unit classes
-- TODO: benchmark test for scalar_unit, comparing them to a float
-
-## DOCUMENTATION (5)
-- TODO: document the ISOs important to use with this library
-- TODO: document how ppm and ppb work, also in the theorical sense
-- TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abreviations of the ISO of currencies
-- TODO: add nomenclature of units
-- TODO: think if to add the functions of calculations or to add example of calculations in the documentation
-
-## RELEASE (3)
-- TODO: configure CMake with cpack
+## RELEASE (2)
 - TODO: see what to do to configure optimizations
 - TODO: add scifir-units to the official repository of vcpkg
 
