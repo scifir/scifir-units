@@ -124,15 +124,15 @@ Now that the library es linked, you can use it inside your code by including the
 - scalar_unit.
 - vector_unit_2d, vector_unit_3d, vector_unit_nd.
 - angle.
-- scalar_field_3d<T,U>.
-- coordinates_1d<T>, coordinates_2d<T>, coordinates_3d<T>, coordinates_nd<T>.
-- coordinates_2dr<T>, coordinates_3dr<T>, coordinates_ndr<T>.
-- point_1d<T>, point_2d<T>, point_3d<T>, point_nd<T>.
+- scalar_field_3d\<T,U\>.
+- coordinates_1d\<T\>, coordinates_2d\<T\>, coordinates_3d\<T\>, coordinates_nd\<T\>.
+- coordinates_2dr\<T\>, coordinates_3dr\<T\>, coordinates_ndr\<T\>.
+- point_1d\<T\>, point_2d\<T\>, point_3d\<T\>, point_nd\<T\>.
 - aid, zid.
 - percentage.
-- complex_number<T>.
-- lab_number<T>.
-- size_2d<T>, size_3d<T>, size_nd<T>.
+- complex_number\<T\>.
+- lab_number\<T\>.
+- size_2d\<T\>, size_3d\<T\>, size_nd\<T\>.
 - pH, pOH.
 
 prefix can have all SI prefixes. dimension has all SI base dimensions, all common special names, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
@@ -474,22 +474,22 @@ All those additional unit classes are the following:
 The meca numbers are special numbers that don't behave exactly like an scalar unit:
 
 - angle.
-- complex_number<T>.
-- lab_number<T>.
+- complex_number\<T\>.
+- lab_number\<T\>.
 
 The coordinates classes handle position in space. The point classes also handle position in space. Coordinates are used for positions and points are intended for more stationary cases, like for example vertex of triangles that form a 3D model.
 
-- coordinates_1d<T>.
-- coordinates_2d<T>.
-- coordinates_2dr<T>.
-- coordinates_3d<T>.
-- coordinates_3dr<T>.
-- coordinates_nd<T>.
-- coordinates_ndr<T>.
-- point_1d<T>.
-- point_2d<T>.
-- point_3d<T>.
-- point_nd<T>.
+- coordinates_1d\<T\>.
+- coordinates_2d\<T\>.
+- coordinates_2dr\<T\>.
+- coordinates_3d\<T\>.
+- coordinates_3dr\<T\>.
+- coordinates_nd\<T\>.
+- coordinates_ndr\<T\>.
+- point_1d\<T\>.
+- point_2d\<T\>.
+- point_3d\<T\>.
+- point_nd\<T\>.
 - direction.
 
 The special unit classes handle special cases of values:
@@ -501,9 +501,9 @@ The special unit classes handle special cases of values:
 - pH.
 - pOH.
 - pixel.
-- size_2d<T>.
-- size_3d<T>.
-- size_nd<T>.
+- size_2d\<T\>.
+- size_3d\<T\>.
+- size_nd\<T\>.
 
 ### Data conventions
 
