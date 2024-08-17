@@ -903,7 +903,7 @@ Scalar units can operate with other scalar units, as well as with numeric primit
 
 Scalar units can have any dimension of the SI system of units, or, also, any **custom dimension**. A custom dimension is a dimension with an arbitrary name, which is commonly used inside some fields of science when there's no name for a needed dimension.
 
-An example of use of an scalar unit is the following:
+An example of use of scalar_unit is the following:
 
 ```cpp
 length x = 10_m;
@@ -946,12 +946,15 @@ x.change_dimensions(y); // Now x has dimensions "mm" as y
 ostringstream out;
 out << x; // scalar_unit classes can operate with streams
 
+cout << x.display(); // Displays the scalar_unit up to 2 decimal digits with his dimensions
+cout << x.custom_display("sci"); // Displays the scalar_unit in scientific notation without prefixes for any of his dimensions
+
 length w = 100_m;
 string d = to_string(w); // Creates the string "100 m"
 
 float a = abs(x); // abs() gives the absolute value of the scalar_unit
-scalar_unit b = sqrt(xy); // sqrt() gives the square root of the scalar_unit
-scalar_unit c = pow(a,x); // Dimensions would be "m3"
+scalar_unit b = sqrt(x*y); // sqrt() gives the square root of the scalar_unit
+scalar_unit c = pow(x,3); // Dimensions would be "m3"
 
 if (x.has_dimensions(y)) // Evaluates to true if the two scalar_unit objects have the same dimensions, independent of prefixes
 {}
@@ -1169,6 +1172,21 @@ A base and a derived unit is a child class of scalar_unit class or of one of the
 | Name | Dimensions | Type | Literals | Description
 | ----- | ----- | ----- | ----------- | --------------------------
 | amount_of_effect | IU | scalar_unit | _IU and _TIU, _kIU, etc (all prefixes supported) | Amount of pharmacological effect that some amount of a substance does.
+
+#### Some unique functions of base unit classes
+
+All base unit and derived unit classes inherit scalar_unit and, then, work with their functions. Additional to that, there are some special functions of some base unit classes, described here.
+
+```cpp
+mole a = 1_mol;
+cout << a.number_of_particles(); // Returns the total of particles, using Avogadro number
+
+mole b(30_percentage,1_mol); // Initialiazes 30% of a mole
+mole c("30 %","1 mol"); // Initialiazes 30% of a mole with strings
+
+mass d(30_percentage,10_kg); // Initialiazes 30% of 10 kg
+mass e("30 %","10 kg"); // Initialiazes 30% of 10 kg with strings
+```
 
 ### Vector units in 2D
 
