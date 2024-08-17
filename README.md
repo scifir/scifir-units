@@ -224,6 +224,14 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 - The dimension **money** is intended to be converted later to some concrete currency, with other libraries and data sources.
 - **IU** should be converted specifically for each different reaction, because the IU unit is defined in science different for each case of use. Then, it doesn't has a direct conversion, and only one formula.
 
+### Things to remember
+
+- All **vector unit classes inherit scalar_unit**. Then, vector_unit_2d, vector_unit_3d and vector_unit_nd are also scalar_unit classes.
+- The **display()** function in all classes displays the number truncated to 2 digits of the decimal part by default. The number of digits in the decimal part can be changed to a value different than 2 in each call of that function.
+- When comparing two numerical values, the display() function is truncating the decimal part, and so two classes can display identical but have a decimal part in the portion that hasn't been displayed. Then, the comparison will give false even if the display is equal. If you want to compare only the display of the class, then the comparison has to be done for the display.
+- If you want to compare two numerical values that are similar but not necessarily identical, you can use **std::fabs(a - b) < 0.01f** to test if the values are similar.
+- All coordinates classes have support at the same time all the coordinates systems of their respective number of dimensions, not only cartesian coordinates.
+
 ### History of units of measurement
 
 The first units of measurement have been created in the **prehistory**, by the **summerians**.
