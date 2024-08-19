@@ -226,11 +226,13 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 
 ### Things to remember
 
+- To store scalar_unit classes, any vector unit class, coordinates, and any other class of scifir-units, in a file or in a database, **store it in string form**. For example, to store the scalar_unit "100 m" inside a XML file, just store it as "100 m". Later, when parsing the XML file, you can construct the scalar_unit again, because the string form is the same as the initialization string of scalar_unit.
 - All **vector unit classes inherit scalar_unit**. Then, vector_unit_2d, vector_unit_3d and vector_unit_nd are also scalar_unit classes.
 - The **display()** function in all classes displays the number truncated to 2 digits of the decimal part by default. The number of digits in the decimal part can be changed to a value different than 2 in each call of that function.
 - When comparing two numerical values, the display() function is truncating the decimal part, and so two classes can display identical but have a decimal part in the portion that hasn't been displayed. Then, the comparison will give false even if the display is equal. If you want to compare only the display of the class, then the comparison has to be done for the display.
 - If you want to compare two numerical values that are similar but not necessarily identical, you can use **std::fabs(a - b) < 0.01f** to test if the values are similar.
 - All coordinates classes have support at the same time all the coordinates systems of their respective number of dimensions, not only cartesian coordinates.
+- To create, in your project, derived units, with base dimensions different than the base and derived units defined inside scifir-units, use **SCALAR_UNIT_HPP(new_unit)** and **SCALAR_UNIT_CPP(new_unit,"init_dimensions")** to define new scalar_unit classes. Use **VECTOR_UNIT_HPP** and **VECTOR_UNIT_CPP** in the same manner to define all vector_unit classes (2d, 3d and nd) and also the scalar_unit class. The suffixes _2d, _3d and _nd will be automatically added. Use **VECTOR_UNIT_2D_HPP**, **VECTOR_UNIT_3D_HPP** and **VECTOR_UNIT_ND_HPP** with their respective **VECTOR_UNIT_2D_CPP**, **VECTOR_UNIT_3D_CPP** and **VECTOR_UNIT_ND_CPP** to define only the respective vector unit class without defining the other types too.
 
 ### History of units of measurement
 
