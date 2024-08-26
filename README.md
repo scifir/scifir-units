@@ -426,7 +426,7 @@ Remember that doxygen uses dox files to generate his documentation. You can view
 
 ## Introduction
 
-The Scifir Collection is a set of libraries that allows to create the software of scientific inventions, being them scientific machines or just scientific software. This library, scifir-units, allows to handle scalar and vectorial units inside the code. They are very lightweight, they size similar to a float, and can be used extensively to do any math calculation necessary for the invention. The prefixes can be changed, in order to display the units in the more proper dimensions. Also, all the conversions known are supported. Then, instead of the meter, a length can be described by a light-year, an astronomical unit (AU), among other units of measure.
+The Scifir Collection is a set of libraries that allows to create the software of scientific inventions, being them scientific machines or just scientific software. This library, scifir-units, allows to handle scalar and vectorial units inside the code. They are very lightweight, they size similar to a float, and can be used extensively to do any math calculation necessary for the invention. The prefixes can be changed, in order to display the units in the more proper dimensions. Also, all the conversions known are supported. Then, instead of the metre, a length can be described by a light-year, an astronomical unit (AU), among other units of measure.
 
 The unit classes that scifir-units provides are the following:
 
@@ -1620,6 +1620,60 @@ The **size_2d** class allows to store the data of the width and height of an obj
 ### ABV
 
 The **ABV** class, acronym of Alcohol by Volume, is a unit of measure used for the degrees of alcohol inside alcoholic beverages.
+
+## Code examples of features
+
+### Math intervals for fields
+
+Adding a math interval to a field of scifir-units is easy. Just add it inside a conditional if statement, testing if the values of the parameters are inside the interval. An example is the following:
+
+```cpp
+scalar_field_3d<length,length> a([](const length& x,const length& y,const length& z) -> length { 
+	if (x >= 2_m and x <= 5_m and y >= 1_m and y <= 8_m and z >= 3_m and z <= 15_m)
+	{
+		return (x + 2*y + 5*z);
+	}
+});
+```
+
+### Using mEq
+
+The dimension **mEq** is called **milli-equivalent**, and it corresponds to the amount of mg that are equivalent to an arbitrary amount of another substance in a given chemical reaction. To get the amount of mg needed of a substance, use the mEq of the given chemical reaction with the following math formula:
+
+$$mEq\frac{MW}{V}$$
+
+Where mEq is the **mEq of the given chemical reaction**, MW is the **molecular weight** of the new substance to use as equivalent to the original substance (of which we have calculated the mEq we are using), and V is the **valence** of the new substance.
+
+An example in code that uses mEq is the following:
+
+```cpp
+// mEq.hpp
+
+void calculate_mEq_potassium_reaction();
+
+// mEq.cpp
+
+using namespace scifir;
+
+void calculate_mEq_potassium_reaction()
+{
+	scalar_unit mEq_potassium_reaction = 20_mEq;
+	mass mass_potassium_citrate_monohydrate = mass(mEq_potassium_reaction*324.0f/3,"mg"); // You need to set the MW of the potassium citrate monohydrate, which is 324, and the V of it, which is 3
+	mass mass_potassium_gluconate  = mass(mEq_potassium_reaction*234.245f/1,"mg"); // You need to set the MW of the potassium citrate monohydrate, which is 324, and the V of it, which is 3
+}
+```
+
+### Using the dimension "money"
+
+The dimension money can represent any currency. So, to use it, just select the currency of some country to use as equivalent to 1 money, and convert it to any other currency using the current exchange rate of currencies, which, as you should know of banks, varies every day. Use a web service to get the exchange rate of every currency updated daily.
+
+Remember to use the **ISO 4217 of currencies** to know the abbreviation codes of each currency.
+
+```cpp
+scalar_unit a("100 money");
+cout << "Money (USD): " << a.get_value() << " USD" << endl; // Prints the money in USD
+cout << "Money (CLP): " << (a.get_value() * 750) << " CLP" << endl; // Prints the money in CLP, with an exchange rate of 1 USD to 750 CLP
+```
 
 ## Code examples
 
