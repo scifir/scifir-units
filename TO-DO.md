@@ -1,6 +1,6 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 231
+**Number of TODOs:** 213
 
 ## MATERIAL_VECTOR_UNIT (1)
 - TODO: add operator == and operator !=
@@ -11,14 +11,15 @@
 ## WAVES (1)
 - TODO: think if to add the waves here too
 
-## CURRENT (17)
+## CURRENT (18)
 - TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes
 - TODO: conversion of size_t to and int gives a warning in MSVC
 - TODO: finish testing in MSVC all tests
-- TODO: support solid_angle, with the literal _sr too
+- TODO: solid_angle class, with the literal _sr too
 - TODO: explanation, with code examples, of physics and chemistry laws
 - TODO: there is a bug with is_close_prefix in base_display()
 - TODO: warning of to_string() functions of body.hpp
+- TODO: function write_display() to get the class like the display() but with all the decimal part
 
 - TODO: think of how to implement conversions, do also the test of them
 - TODO: support the conversion inside the display of scalar_unit
@@ -76,30 +77,29 @@
 - TODO: test of base unit classes
 - TODO: test stof() with bad values
 
-## DOCUMENTATION (39)
+## DOCUMENTATION (37)
 - TODO: create all the dox files of the library
 - TODO: add latex to the factors of prefixes in prefix.dox
 - TODO: explain in initialize_from_string() the use of this function. The explanation of the format of the initialization string should be inside the string constructor and the string assignment
 - TODO: add the description of each file, which is different than the description of the class
+- TODO: add in some way or another the base and the derived units to the reference
 
-- TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals
-- TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
-- TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
-- TODO: explain how a robot can calculate angles
-- TODO: explain how to create lambda functions of mathematical functions with different parts, using if-else for that
-- TODO: explain how to use mEq in the README.md file, in case of use
-- TODO: add a readings section in the README.md file, with some of the urls of the TODO.md file
-- TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abreviations of the ISO of currencies
-- TODO: document the coordinates for the universe, publish that too as an standard inside scifir
-- TODO: document the use of the custom_display "sci"
-- TODO: think on the different cases of use of coordinates and document them, including the use of an origin
-- TODO: mention the WGS in the part of coordinates
-- TODO: document the use of fabs() and display() to compare values of units
-- TODO: document the special initialization of mass and mole with percentage
 - TODO: add initialization of lab_number<> inside README.md file
+- TODO: explain that scifir-units uses doxygen to generate the documentation
+- TODO: explain some normal code examples of robotics, medical machines, chemistry machines
+- TODO: explain how to use mEq in the README.md file, in case of use
+- TODO: explain how to create lambda functions of mathematical functions with different parts, using if-else for that
+- TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abbreviations of the ISO of currencies
+- TODO: think on the different cases of use of coordinates and document them, including the use of an origin
+- TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
+- TODO: add to the README.md file an example for creating new unit classes with the macros for them
+- TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
+- TODO: add a readings section in the README.md file, with some of the urls of the TODO.md file
+- TODO: document the coordinates for the universe, publish that too as an standard inside scifir
+- TODO: mention the WGS in the part of coordinates
 - TODO: increase the introduction of the README.md file
-- TODO: display as plain text the <T> inside the md file
 - TODO: add a section of "Optional knowledge"
+- TODO: add a system of surface parameterization of the human body
 
 - TODO: add google analytics to the website of scifir-units of github pages
 
@@ -123,7 +123,7 @@
 
 - TODO: write an specification of scifir-units to be implemented in any programming language. Write there too the generic method for writing bindings which is to maintain all function names and classnames equal, changing only their spelling to snake-case or camel-case as used in the programming language, and also document equivalencies like using static methods in Java inside a class instead of normal functions in C++.
 
-## COORDINATES AND POINTS (5)
+## COORDINATES AND POINTS (6)
 - TODO: add coordinates_3d::origin() to allow to initialize with an origin (another coordinates class of the same type), it's specially useful for geographic coordinates
 
 - TODO: the case when the initialization string contains only the character ',', without a value, has to initialize to zero
@@ -131,6 +131,7 @@
 - TODO: display functions of coordinates and point classes should allow to change dimensions for any case, with another function identical in name but with the argument of the string of dimensions
 - TODO: all display functions of coordinates classes need an int argument to select number of decimals
 - TODO: is_coordinates_1d(), is_coordinates_2d(), etc
+- TODO: to_vector_unit_3d(), to_vector_unit_2d(), respectively, to each coordinates and point class
 
 ## COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (4)
 - TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
@@ -160,14 +161,14 @@
 - TODO: use reference when instantiating variables and when it's not needed to instantiate by value inside the body of functions
 - TODO: if size_t and other similar constants are intended to be used inside normal code
 - TODO: replace boost::split by split of C++20
-- TODO: check is string_view should be used as parameters
+- TODO: check where string_view should be used as parameter instead of string
 - TODO: use string_view to the enum functions
 
 ## CONSTANTS (2)
 - TODO: maybe all constant values should be constexpr, and maybe there's a way to make them scalar_unit without needing to have all of them defined at the same time, because that sizes
 - TODO: add the constants of astronomy
 
-## DIMENSIONS (15)
+## DIMENSIONS (14)
 - TODO: support the binary prefixes too
 - TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
 
@@ -178,9 +179,8 @@
 
 - TODO: scalar_unit should have get_notdimensionless_base_dimensions() and notdimensionless_base_display()
 
-- TODO: finish custom_basic dimensions, change names to CUSTOM_BASE_DIMENSION, CUSTOM_DERIVED_DIMENSION and CUSTOM_DERIVED_DIMENSION_FULL_SYMBOL
+- TODO: finish custom_basic dimensions, change values of enum::type to CUSTOM_BASE_DIMENSION, CUSTOM_DERIVED_DIMENSION and CUSTOM_DERIVED_DIMENSION_FULL_SYMBOL, respectively
 - TODO: finish the test of custom_basic dimensions and document them in the README.md file
-- TODO: maybe is_complex_dimension() for cases were the the dimension is not a simple dimension
 - TODO: add the planck system of units
 - TODO: add the Gaussian units
 - TODO: add the atomic units
@@ -211,39 +211,40 @@
 
 - TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files
 
-## DERIVED UNITS (5)
+## DERIVED UNITS (6)
 - TODO: think if to add accoustic and matter derived units, or if it's not needed
 - TODO: delete all field classes that currently are vector_units, and make them fields
 - TODO: move cas_number to the library of scifir-info, or even to another category
 - TODO: biology units, like heart_rate
 - TODO: UNIX time constructor in the string constructor for time_duration
+- TODO: rename number_of_particles() to get_number_of_particles()
 
 ## MECA NUMBERS (7)
 - TODO: add the allowed typenames to lab_number, and don't accept any other type
-- TODO: angle should read initialization strings in radian too inside the string constructor, maybe with "radian" name, possibly "rad" should be supported too
+- TODO: angle should read initialization strings in radian too inside the string constructor, with "rad" name
 - TODO: maybe add obtusangle, rect angle, acutangle, etc
 - TODO: study if to add the gradian
 - TODO: study if to add the turn
-- TODO: maybe support prefixes for radians, search if there are prefixes for the other units of angles
 - TODO: add minutes and seconds to degrees
+- TODO: maybe support prefixes for radians, search if there are prefixes for the other units of angles
 
 ## SPECIAL UNITS (16)
-- TODO: ip class? check networking libraries of C++ and decide if to add it here
 - TODO: nutrition_information
+- TODO: maybe add zoom class, which allows to work with zooms
+- TODO: address class with zid inside
+- TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()
+- TODO: ip class? check networking libraries of C++ and decide if to add it here
 - TODO: class for geographical position including ZID and coordinates_3d
 - TODO: class for geographical position in space, using AID and coordinates_3d
 - TODO: think if to add a default case for the none value of aid and for the none value of zid
 - TODO: functions is_aid() and is_zid()
 - TODO: initialize_from_string() for pH and pOH classes should work with pH and pOH at the start, respectively
-- TODO: maybe add zoom class, which allows to work with zooms
-- TODO: address class with zid inside
 - TODO: enum of movement maybe should be divided in kind of animal
+- TODO: finish the enums of mind.hpp
 - TODO: maybe delete the operator = T of percentage class, maybe there are more in similar classes. Try first the different literals of non-floating numeric types
-- TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()
 - TODO: pixel_color<>. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color<>
 - TODO: complex_number<> should have trigonometric functions for complex numbers
 - TODO: maybe create a mesh_3d class, or vector<point_3d<>>
-- TODO: finish the enums of mind.hpp
 
 ## TENSORS (1)
 - TODO: check if there's something needed related to tensors, given that scalar_unit, vector_unit and matrix are being used already
@@ -262,7 +263,7 @@
 - TODO: scalar_unit should have is_valid() with some system
 - TODO: support the conversions with constexpr
 - TODO: add the operators +,-,* and / in the derived classes of scalar_unit and vector_unit with the same class in order to avoid to check that the dimensions are the same, that saves time. Maybe use templates for that
-- TODO: check the object code resulting by testing different functions of the unit classes
+- TODO: check the object code resulting by testing different functions of the unit classes, maybe it's possible to optimize assembler there
 - TODO: 2d display of scalar_units and of vector_units (create a scifir_units_2d library for it)
 - TODO: 3d display of scalar_units and of vector_units (create a scifir_units_3d library for it)
 
@@ -275,21 +276,9 @@
 - AFTER SOME OPTION - finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation
 
 ## DOUBTS (1)
-- TODO: maybe delete the string literals of the prefixes of AU, leave only the string literal without prefix
+- TODO: maybe delete the string literals of the prefixes of AU, leave only the string literal _AU without prefix
 
-## ANOTHER PROJECT - LIBRARY OF INFORMATION (2)
-- TODO: isbn class
-- TODO: issn class
-
-## ISOs (4)
-- TODO: Publish the ISO of geographic location based on aid and zid classes
-- TODO: See if to make an ISO of an official symbol for money (not a concrete money of a country, but a universal one)
-- TODO: Add "depth" to an ISO of names for the lengths of objects (width, height and depth are the names). It's needed to have a name in spanish for the depth too
-- TODO: Maybe create an "ISO" of geographic positioning taking the major axis of the planet, which can be the Earth or not, and adding 50 km to it, in order to have a border of safety in order to be sure that no point remains uncovered by the imaginary sphere that the geographic positioning creates around the planet. It can be used for any planet of the universe. The center of the planet is considered always the geometrical one, not the center of mass, because that last one changes with changes of the distribution of mass inside the planet
-
-## ISO C++ (3)
-- TODO: add º to the string literals
-- TODO: add % to the string literals
+## ISO C++ (1)
 - TODO: add the possibility to create class names starting with numbers
 
 ## ELECTRONICS (1)
@@ -297,12 +286,6 @@
 
 ## EXTRA TOOLS (1)
 - TODO: Create scicalcs, a cli tool that calculates with scifir-units any value
-
-## PORTS (4)
-- TODO: Port to C#
-- TODO: Port to Java
-- TODO: Port to Octave
-- TODO: Port to Visual Basic
 
 ## RELEASE (2)
 - TODO: see what to do to configure optimizations
@@ -317,26 +300,39 @@
 - TODO: Use the GSL to implement the reverse matrix
 - TODO: add the hadamard_product()
 
-## FUTURE (9)
+## FUTURE (5)
 - TODO: support the case of n dimensions fixed
-- TODO: add the theta and phi characters to C++ variable names, and add them then to the member-variables of vector_unit classes, and any other case of similar use. Add the symbol º to string literals
 - TODO: add the astronomy coordinates
 - TODO: add the other orthogonal coordinates, like paraboloidal
 - TODO: add to the ISO of the keyboards some system to write pi, theta, phi, among other symbols, with the keyboard in an easy way, without having to memorize any numeric code
-- TODO: propose an ISO symbol for money in general?
 - TODO: finish the empty array implementation for dimension, in order to have normal dimensions, no custom dimensions, of size 3 instead of size 6
-- TODO: add the symbol '%' to the string literals
-- TODO: add the symbol 'μ' to the string literals
 
-## FUTURE - MECA NUMBERS (POSSIBLE, THINK) (8)
+## FUTURE - MECA NUMBERS (POSSIBLE, THINK) (5)
 - TODO: Add names to the meca numbers (angler, laber, etc)
 - TODO: The interval number class
 - TODO: The interval number subclasses of other numbers
 - TODO: The bounce number class
-- TODO: The percentage number class (it has to have the calculate function in order to receive a value to be the percentage of)
 - TODO: Solve the problem with left and right repeated (it's not exclusive for direction_symbol)
-- TODO: solid_angle class (maybe it isn't a meca number)
-- TODO: maybe _angle for angle in order to use cos(x),sin(x),etc with degrees
+
+## ISOs
+- TODO: Publish the ISO of geographic location based on aid and zid classes
+- TODO: See if to make an ISO of an official symbol for money (not a concrete money of a country, but a universal one)
+- TODO: Add "depth" to an ISO of names for the lengths of objects (width, height and depth are the names). It's needed to have a name in spanish for the depth too
+- TODO: Maybe create an "ISO" of geographic positioning taking the major axis of the planet, which can be the Earth or not, and adding 50 km to it, in order to have a border of safety in order to be sure that no point remains uncovered by the imaginary sphere that the geographic positioning creates around the planet. It can be used for any planet of the universe. The center of the planet is considered always the geometrical one, not the center of mass, because that last one changes with changes of the distribution of mass inside the planet
+
+## PORTS
+- TODO: Port to C#
+- TODO: Port to Java
+- TODO: Port to Octave
+- TODO: Port to Visual Basic
+- TODO: Possibly port to JavaScript
+
+## ANOTHER PROJECT - LIBRARY OF INFORMATION
+- TODO: isbn class
+- TODO: issn class
+
+## ANOTHER PROJECT - LIBRARY OF ROBOTICS
+- TODO: body classes
 
 ## READINGS
 - Unit of measurement: https:##en.wikipedia.org/wiki/Unit_of_measurement
