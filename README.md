@@ -266,6 +266,7 @@ Each country has had his own system of units of measurement, or his own definiti
 - [Introduction](#introduction)
 - [Use cases](#use-cases)
 - [Core functionalities](#core-functionalities)
+- [Code examples of features](#code-examples-of-features)
 - [Code examples](#code-examples)
 - [Internals](#internals)
 
@@ -1617,9 +1618,15 @@ The **size_2d** class allows to store the data of the width and height of an obj
 
 ## Nutrition
 
-### ABV
+### abv
 
-The **ABV** class, acronym of Alcohol by Volume, is a unit of measure used for the degrees of alcohol inside alcoholic beverages.
+The **abv** class, acronym of Alcohol by Volume, is a unit of measure used for the degrees of alcohol inside alcoholic beverages.
+
+## Physics
+
+### Mass points
+
+The **mass_point_3d<T>** class allows to do calculations of mass points in 3D spaces. The addition of mass points works as any mass point and gravity center of physics in 3D spaces. The template parameter T allows to specify the dimensions of the space. The mass has always his base dimensions in grams.
 
 ## Code examples of features
 

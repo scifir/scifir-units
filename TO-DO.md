@@ -1,6 +1,6 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 213
+**Number of TODOs:** 224
 
 ## MATERIAL_VECTOR_UNIT (1)
 - TODO: add operator == and operator !=
@@ -68,6 +68,10 @@
 - TODO: add the code coverage badge
 - TODO: upload scifir-units to sourceforge too
 
+## RELEASE (2)
+- TODO: publish scifir-units, beta version, in Universidad de Chile
+- TODO: see other repositories of universities where scifir-units can be published
+
 ## TESTS (7)
 - TODO: finish the tests of all classes
 - TODO: review get_nd() of the tests of vector_unit_nd and coordinates_nd
@@ -77,27 +81,24 @@
 - TODO: test of base unit classes
 - TODO: test stof() with bad values
 
-## DOCUMENTATION (37)
+## DOCUMENTATION (34)
 - TODO: create all the dox files of the library
 - TODO: add latex to the factors of prefixes in prefix.dox
 - TODO: explain in initialize_from_string() the use of this function. The explanation of the format of the initialization string should be inside the string constructor and the string assignment
 - TODO: add the description of each file, which is different than the description of the class
 - TODO: add in some way or another the base and the derived units to the reference
 
-- TODO: add initialization of lab_number<> inside README.md file
-- TODO: explain that scifir-units uses doxygen to generate the documentation
+- TODO: add in the table of contents a link to each documentation of class
 - TODO: explain some normal code examples of robotics, medical machines, chemistry machines
-- TODO: explain how to use mEq in the README.md file, in case of use
-- TODO: explain how to create lambda functions of mathematical functions with different parts, using if-else for that
-- TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abbreviations of the ISO of currencies
-- TODO: think on the different cases of use of coordinates and document them, including the use of an origin
+- TODO: increase the introduction of the README.md file
+- TODO: add initialization of lab_number<> inside README.md file
 - TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
-- TODO: add to the README.md file an example for creating new unit classes with the macros for them
-- TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
 - TODO: add a readings section in the README.md file, with some of the urls of the TODO.md file
+- TODO: add to the README.md file an example for creating new unit classes with the macros for them
+- TODO: think on the different cases of use of coordinates and document them, including the use of an origin
+- TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
 - TODO: document the coordinates for the universe, publish that too as an standard inside scifir
 - TODO: mention the WGS in the part of coordinates
-- TODO: increase the introduction of the README.md file
 - TODO: add a section of "Optional knowledge"
 - TODO: add a system of surface parameterization of the human body
 
@@ -108,9 +109,9 @@
 - TODO: document how ppm and ppb work, also in the theorical sense
 - TODO: explain the apotechary system, the english units, the imperial units and the united states units in a separate page. Explain them in the part of conversion inside the README.md file too
 - TODO: add the summary sheet somewhere
-- TODO: formulas of physics related to units
-- TODO: formulas of chemistry related to units
-- TODO: formulas of biology related to units
+- TODO: formulas of physics related to units, with code examples
+- TODO: formulas of chemistry related to units, with code examples
+- TODO: formulas of biology related to units, with code examples
 - TODO: document how all the operations of scalars and vector units work mathematically, possibly use mathjax inside markdown to display formulas
 - TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication
 
@@ -123,7 +124,7 @@
 
 - TODO: write an specification of scifir-units to be implemented in any programming language. Write there too the generic method for writing bindings which is to maintain all function names and classnames equal, changing only their spelling to snake-case or camel-case as used in the programming language, and also document equivalencies like using static methods in Java inside a class instead of normal functions in C++.
 
-## COORDINATES AND POINTS (6)
+## COORDINATES AND POINTS (7)
 - TODO: add coordinates_3d::origin() to allow to initialize with an origin (another coordinates class of the same type), it's specially useful for geographic coordinates
 
 - TODO: the case when the initialization string contains only the character ',', without a value, has to initialize to zero
@@ -132,12 +133,20 @@
 - TODO: all display functions of coordinates classes need an int argument to select number of decimals
 - TODO: is_coordinates_1d(), is_coordinates_2d(), etc
 - TODO: to_vector_unit_3d(), to_vector_unit_2d(), respectively, to each coordinates and point class
+- TODO: add a constructor with the different types of coordinates systems with an enum at the start, like the constructor with enum of percentage class
 
-## COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (4)
+## COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (6)
 - TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
 - TODO: add the construction with an string for geographic coordinates
 - TODO: study the geographic coordinates deeply, and see if to add something more related to them
 - TODO: get_altitude() can be two different functions
+- TODO: add the ecliptic coordinates system too
+- TODO: add the variant of the ecliptic coordinates system with a selection of the planet or of the params (which is the generic case)
+
+## PHYSICS UNITS (3)
+- TODO: add functions of movement
+- TODO: add functions of gravity
+- TODO: add functions of electricity
 
 ## VECTOR FIELDS (3)
 - TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field
@@ -191,7 +200,7 @@
 - TODO: add the apothecaries system of units, maybe there are more systems to add
 - TODO: possibly add the drop units
 
-## UNITS (16)
+## UNITS (19)
 - TODO: solve in some way the problem that vector_unit_3d needs different characters in Windows an inside Linux when initialized with strings
 - TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
 - TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them
@@ -205,28 +214,34 @@
 - TODO: maybe the dimension memo needs a base unit class
 - TODO: think if to add functions of statistics here, check if there is a solution in other C++ libraries or if it is good to have them here
 - TODO: follow the schema of numbers of the 22 General Conference on Weights and Measures. Check if there are more rules to add of the General Conferences, too
+- TODO: maybe a way to have "tags" in mEq and money classes would work to have it of specific instead of generic purpose
+- TODO: contains_dimensions() to test if some dimensions are present, but not if those dimensions are the only ones present
+- TODO: hide the bad constructors of the derived units of scalar_unit, the constructors that can change the dimensions to a different set of basic dimensions than the real basic dimensions
 
 - TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 - TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
 
 - TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files
 
-## DERIVED UNITS (6)
+## DERIVED UNITS (7)
 - TODO: think if to add accoustic and matter derived units, or if it's not needed
 - TODO: delete all field classes that currently are vector_units, and make them fields
 - TODO: move cas_number to the library of scifir-info, or even to another category
 - TODO: biology units, like heart_rate
 - TODO: UNIX time constructor in the string constructor for time_duration
 - TODO: rename number_of_particles() to get_number_of_particles()
+- TODO: add a function to calculate with mEq inside a child class that uses them
 
-## MECA NUMBERS (7)
+## MECA NUMBERS (9)
 - TODO: add the allowed typenames to lab_number, and don't accept any other type
 - TODO: angle should read initialization strings in radian too inside the string constructor, with "rad" name
+- TODO: initialization with deg for degree too
 - TODO: maybe add obtusangle, rect angle, acutangle, etc
 - TODO: study if to add the gradian
 - TODO: study if to add the turn
 - TODO: add minutes and seconds to degrees
 - TODO: maybe support prefixes for radians, search if there are prefixes for the other units of angles
+- TODO: add atan2 with angle class, and use it where it´s needed in the code
 
 ## SPECIAL UNITS (16)
 - TODO: nutrition_information
