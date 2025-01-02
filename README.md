@@ -166,7 +166,7 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - **Wavelength of light waves:** Interferometer.
 - **Astronomical distances:** Astrolabe.
 
-### Electronic sensors of units
+#### Electronic sensors of units
 
 - **Acceleration:** Accelerometer.
 - **Angular velocity:** Gyroscope.
@@ -177,7 +177,7 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - **Magnetic field:** Magnetic sensor.
 - **Force:** Force sensor.
 
-### Electronic motors of units
+#### Electronic motors of units
 
 - **Movement:** Electronic motor (very different sizes available).
 - **Valve:** Electronic valve.
