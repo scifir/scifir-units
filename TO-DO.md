@@ -1,6 +1,6 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 224
+**Number of TODOs:** 232
 
 ## MATERIAL_VECTOR_UNIT (1)
 - TODO: add operator == and operator !=
@@ -8,18 +8,19 @@
 ## TRAJECTORY AND PARAMETERIZATION (1)
 - TODO: finish the trajectory_3d class
 
-## WAVES (1)
-- TODO: think if to add the waves here too
+## WAVES (2)
+- TODO: add an enum of the types of radio waves AM and FM
+- TODO: wave class with frequency and wavelength scalar_units, with child classes wave_2d and wave_3d that include coordinates_2dr and coordinates_3dr respectively. It can calculate the speed with the frequency and the wavelength, it returns the type of wave based on the value of the frequency
 
 ## CURRENT (18)
-- TODO: initialize_from_string() should test for whitespace at the end both on aid and zid classes
 - TODO: conversion of size_t to and int gives a warning in MSVC
 - TODO: finish testing in MSVC all tests
 - TODO: solid_angle class, with the literal _sr too
 - TODO: explanation, with code examples, of physics and chemistry laws
 - TODO: there is a bug with is_close_prefix in base_display()
 - TODO: warning of to_string() functions of body.hpp
-- TODO: function write_display() to get the class like the display() but with all the decimal part
+- TODO: change the default of display() to be of all decimals instead of two
+- TODO: apparently units.hpp should have the #include directives with ./ at the start
 
 - TODO: think of how to implement conversions, do also the test of them
 - TODO: support the conversion inside the display of scalar_unit
@@ -81,7 +82,7 @@
 - TODO: test of base unit classes
 - TODO: test stof() with bad values
 
-## DOCUMENTATION (34)
+## DOCUMENTATION (36)
 - TODO: create all the dox files of the library
 - TODO: add latex to the factors of prefixes in prefix.dox
 - TODO: explain in initialize_from_string() the use of this function. The explanation of the format of the initialization string should be inside the string constructor and the string assignment
@@ -89,6 +90,7 @@
 - TODO: add in some way or another the base and the derived units to the reference
 
 - TODO: add in the table of contents a link to each documentation of class
+- TODO: add an example of fluiddynamics with scifir-geometry for robotics applications
 - TODO: explain some normal code examples of robotics, medical machines, chemistry machines
 - TODO: increase the introduction of the README.md file
 - TODO: add initialization of lab_number<> inside README.md file
@@ -101,6 +103,7 @@
 - TODO: mention the WGS in the part of coordinates
 - TODO: add a section of "Optional knowledge"
 - TODO: add a system of surface parameterization of the human body
+- TODO: describe in detail how to measure in very small scale for each different base unit
 
 - TODO: add google analytics to the website of scifir-units of github pages
 
@@ -124,7 +127,7 @@
 
 - TODO: write an specification of scifir-units to be implemented in any programming language. Write there too the generic method for writing bindings which is to maintain all function names and classnames equal, changing only their spelling to snake-case or camel-case as used in the programming language, and also document equivalencies like using static methods in Java inside a class instead of normal functions in C++.
 
-## COORDINATES AND POINTS (7)
+## COORDINATES AND POINTS (8)
 - TODO: add coordinates_3d::origin() to allow to initialize with an origin (another coordinates class of the same type), it's specially useful for geographic coordinates
 
 - TODO: the case when the initialization string contains only the character ',', without a value, has to initialize to zero
@@ -134,14 +137,16 @@
 - TODO: is_coordinates_1d(), is_coordinates_2d(), etc
 - TODO: to_vector_unit_3d(), to_vector_unit_2d(), respectively, to each coordinates and point class
 - TODO: add a constructor with the different types of coordinates systems with an enum at the start, like the constructor with enum of percentage class
+- TODO: enum of cardinale points
 
-## COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (6)
+## COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (7)
 - TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
 - TODO: add the construction with an string for geographic coordinates
 - TODO: study the geographic coordinates deeply, and see if to add something more related to them
 - TODO: get_altitude() can be two different functions
 - TODO: add the ecliptic coordinates system too
 - TODO: add the variant of the ecliptic coordinates system with a selection of the planet or of the params (which is the generic case)
+- TODO: add display functions for astronomical_coordinates_3d, with "name ()" for planetary, "Orbit of name ()" for orbital, "name ()" or "Inside name ()" for stellar, "name ()" for central galactic
 
 ## PHYSICS UNITS (3)
 - TODO: add functions of movement
@@ -196,9 +201,10 @@
 - TODO: finish the conversion of the imperial units and of the US units (https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems)
 - TODO: add the natural units
 
-## CONVERSION (2)
+## CONVERSION (3)
 - TODO: add the apothecaries system of units, maybe there are more systems to add
 - TODO: possibly add the drop units
+- TODO: create an enum of all conversion types
 
 ## UNITS (19)
 - TODO: solve in some way the problem that vector_unit_3d needs different characters in Windows an inside Linux when initialized with strings
@@ -217,11 +223,14 @@
 - TODO: maybe a way to have "tags" in mEq and money classes would work to have it of specific instead of generic purpose
 - TODO: contains_dimensions() to test if some dimensions are present, but not if those dimensions are the only ones present
 - TODO: hide the bad constructors of the derived units of scalar_unit, the constructors that can change the dimensions to a different set of basic dimensions than the real basic dimensions
+- TODO: maybe a constructor with float, dimension::type and prefix::type should be added too
 
 - TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 - TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
 
-- TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files
+## BASE UNITS (2)
+- TODO: get_mass(molecular_weight,density) in mole class and get_moles(molecular_weight,density) in mass class
+- TODO: perfect_mole class, maybe inheriting mole class, that allows to store moles and also add or substract by an integer number of molecules, not only by mole. Another option is to just extend the mole class, instead of creating a new class
 
 ## DERIVED UNITS (7)
 - TODO: think if to add accoustic and matter derived units, or if it's not needed
@@ -315,12 +324,13 @@
 - TODO: Use the GSL to implement the reverse matrix
 - TODO: add the hadamard_product()
 
-## FUTURE (5)
+## FUTURE (6)
 - TODO: support the case of n dimensions fixed
 - TODO: add the astronomy coordinates
 - TODO: add the other orthogonal coordinates, like paraboloidal
 - TODO: add to the ISO of the keyboards some system to write pi, theta, phi, among other symbols, with the keyboard in an easy way, without having to memorize any numeric code
 - TODO: finish the empty array implementation for dimension, in order to have normal dimensions, no custom dimensions, of size 3 instead of size 6
+- TODO: make scalar_unit a template class converting the default type of the value member-variable to float type, allowing to use then double or long double there too if it's needed to have more precision. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all derived_unit files (don't add this feature if C++ is not supporting template classes without <>, because otherwise the base syntax of the library is changing too much)
 
 ## FUTURE - MECA NUMBERS (POSSIBLE, THINK) (5)
 - TODO: Add names to the meca numbers (angler, laber, etc)
