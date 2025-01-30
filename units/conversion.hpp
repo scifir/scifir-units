@@ -33,6 +33,11 @@ namespace scifir
 
 			conversion::type conversion_type;
 	};
+
+	inline float fahrenheit_to_kelvin(float x)
+	{
+		return (x - 32.0f)*(5.0f/9.0f) + 273.15f;
+	}
 }
 
 #endif // SCIFIR_UNITS_UNITS_CONVERSION_HPP_INCLUDED
