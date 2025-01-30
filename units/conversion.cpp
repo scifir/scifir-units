@@ -19,7 +19,7 @@ namespace scifir
 			case conversion::HECTARE:
 				return 1.0L;
 			case conversion::DYNE:
-				return 0.0L;
+				return 1.0L;
 			case conversion::BARYE:
 				return 0.0L;
 			case conversion::BAR:
@@ -275,7 +275,10 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::HECTO,dimension::NUMERATOR));
 				break;
 			case conversion::DYNE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::CENTI,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
 			case conversion::BARYE:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
