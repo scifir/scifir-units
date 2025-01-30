@@ -8,7 +8,14 @@ Still in **beta version 2.0** (you can use it!)
 scifir-chemistry, scifir-biology, scifir-geometry, among others, not yet published in GitHub.
 ```
 
-Welcome! **scifir-units** is a **C++ library**, **portable to other programming languages**, that's a fundamental part of the Scifir collection. It allows to create units of measurement, vectors with units of measurement, coordinates, special units of measurement like percentage and pH, among other topics related to units of measurement.
+Welcome! **scifir-units** is a **C++ library**, **portable to other programming languages**, that's a fundamental part of the Scifir collection. It allows to create units of measurement, vectors with units of measurement, coordinates, special units of measurement like percentage and pH, among other topics related to units of measurement. The units of measurement are **very lightweight**, size similar to a float, and can be used to do any math calculation necessary for any electronic invention and digital software. The **prefixes** of the **dimensions** can be changed, in order to display the unit in the more proper dimensions. Also, all the **conversions** are supported.
+
+The unit classes that scifir-units provides are the following:
+
+- **scalar_unit:** Handles scalar units. It covers vectors in 1D too.
+- **vector_unit_2d:** Handles vector units in 2D dimensions. It inherits scalar_unit.
+- **vector_unit_3d:** Handles vector units in 3D dimensions. It inherits scalar_unit.
+- **vector_unit_nd:** Handles vector units in ND dimensions. It inherits scalar_unit.
 
 The **Scifir collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. Also, any **electronic device**, **medical machine**, **electrodomestic** or **vehicle** can be benefited with the use of units and related classes. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easy. Enjoy!
 
@@ -76,6 +83,7 @@ cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chil
 - [Code examples of features](#code-examples-of-features)
 - [Code examples](#code-examples)
 - [Internals](#internals)
+- [Bibliography](#bibliography)
 
 ## Versions
 
@@ -95,7 +103,7 @@ So, to create the **equivalent library** of scifir-units in another programming 
 
 ## Team
 
-The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.github.io), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at ismael.correa.castro@gmail.com. His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
+The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.github.io), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at [ismael.correa.castro@gmail.com](mailto:ismael.correa.castro@gmail.com). His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
 
 ## Funding
 
@@ -456,24 +464,7 @@ The command generates all the documentation of doxygen inside your hard disk. Yo
 
 Remember that doxygen uses dox files to generate his documentation. You can view the dox files of this library in the folder **./docs/dox**.
 
-## Introduction
-
-The Scifir Collection is a set of libraries that allows to create the software of scientific inventions, being them scientific machines or just scientific software. This library, scifir-units, allows to handle scalar and vectorial units inside the code. They are very lightweight, they size similar to a float, and can be used extensively to do any math calculation necessary for the invention. The prefixes can be changed, in order to display the units in the more proper dimensions. Also, all the conversions known are supported. Then, instead of the metre, a length can be described by a light-year, an astronomical unit (AU), among other units of measure.
-
-The unit classes that scifir-units provides are the following:
-
-- **scalar_unit:** Handles scalar units. It covers vectors in 1D too.
-- **vector_unit_2d:** Handles vector units in 2D dimensions. It inherits scalar_unit.
-- **vector_unit_3d:** Handles vector units in 3D dimensions. It inherits scalar_unit.
-- **vector_unit_nd:** Handles vector units in ND dimensions. It inherits scalar_unit.
-
-scalar_unit classes can be used both for scalar units and vector units in 1D. In the case of vector units in 1D, a negative value indicates, as on math, that it points to the left on the x axis. Otherwise, if the value is positive, it points to the right.
-
-All the unit classes have fixed dimensions. Once instantiated, they can't change to a different set of dimensions. Besides that, prefixes and special names can be used freely, every unit can change to any other prefix and use any special name that matches the original dimensions (and no other set of dimensions).
-
-There are also special units inside scifir-units. Those special units are aid, color, percentage, pH, pixel, pOH, size_2d, size_3d, size_nd and zid. **Always prefer pH** over pOH, pOH is provided by the library only for very infrequent cases.
-
-### Class list
+## Extended class list
 
 The most important classes are the scalar units and the vector units. Vector units are in 2D, 3D and ND (a variable number of dimensions).
 
