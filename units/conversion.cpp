@@ -35,11 +35,11 @@ namespace scifir
 			case conversion::MEGABAR:
 				return 100000000000.0L;
 			case conversion::ATMOSPHERE:
-				return 0.0L;
+				return 101325.0L;
 			case conversion::MILIMETRES_MERCURY:
-				return 0.0L;
+				return 133.322387415L;
 			case conversion::TORRICELLI:
-				return 0.0L;
+				return 101325.0L / 760.0L;
 			case conversion::CUBIC_CENTIMETRES:
 				return 0.0L;
 			case conversion::FAHRENHEIT:
@@ -315,13 +315,13 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::ATMOSPHERE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::MILIMETRES_MERCURY:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::TORRICELLI:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::CUBIC_CENTIMETRES:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
