@@ -80,20 +80,19 @@ cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chil
 
 - [Versions](#versions)
 - [Reference](#reference)
+- [Class list](#class-list)
+- [Data conventions](#data-conventions)
+- [Consumption of memory](#consumption-of-memory)
 - [Portability](#portability)
+- [Goal](#goal)
 - [Team](#team)
 - [Funding](#funding)
-- [Goal](#goal)
-- [Class list](#class-list)
 - [Concepts](#concepts)
 - [History of units of measurement](#history-of-units-of-measurement)
 - [Folder structure](#folder-structure)
 - [Installation](#installation)
-- [Data conventions](#data-conventions)
-- [Consumption of memory](#consumption-of-memory)
 - [Use cases](#use-cases)
 - [Core functionalities](#core-functionalities)
-- [Code examples of features](#code-examples-of-features)
 - [Code examples](#code-examples)
 - [Internals](#internals)
 - [Bibliography](#bibliography)
@@ -1584,60 +1583,6 @@ The **abv** class, acronym of Alcohol by Volume, is a unit of measure used for t
 
 The **mass_point_3d<T>** class allows to do calculations of mass points in 3D spaces. The addition of mass points works as any mass point and gravity center of physics in 3D spaces. The template parameter T allows to specify the dimensions of the space. The mass has always his base dimensions in grams.
 
-## Code examples of features
-
-### Math intervals for fields
-
-Adding a math interval to a field of scifir-units is easy. Just add it inside a conditional if statement, testing if the values of the parameters are inside the interval. An example is the following:
-
-```cpp
-scalar_field_3d<length,length> a([](const length& x,const length& y,const length& z) -> length { 
-	if (x >= 2_m and x <= 5_m and y >= 1_m and y <= 8_m and z >= 3_m and z <= 15_m)
-	{
-		return (x + 2*y + 5*z);
-	}
-});
-```
-
-### Using mEq
-
-The dimension **mEq** is called **milli-equivalent**, and it corresponds to the amount of mg that are equivalent to an arbitrary amount of another substance in a given chemical reaction. To get the amount of mg needed of a substance, use the mEq of the given chemical reaction with the following math formula:
-
-$$mEq\frac{MW}{V}$$
-
-Where mEq is the **mEq of the given chemical reaction**, MW is the **molecular weight** of the new substance to use as equivalent to the original substance (of which we have calculated the mEq we are using), and V is the **valence** of the new substance.
-
-An example in code that uses mEq is the following:
-
-```cpp
-// mEq.hpp
-
-void calculate_mEq_potassium_reaction();
-
-// mEq.cpp
-
-using namespace scifir;
-
-void calculate_mEq_potassium_reaction()
-{
-	scalar_unit mEq_potassium_reaction = 20_mEq;
-	mass mass_potassium_citrate_monohydrate = mass(mEq_potassium_reaction*324.0f/3,"mg"); // You need to set the MW of the potassium citrate monohydrate, which is 324, and the V of it, which is 3
-	mass mass_potassium_gluconate  = mass(mEq_potassium_reaction*234.245f/1,"mg"); // You need to set the MW of the potassium citrate monohydrate, which is 324, and the V of it, which is 3
-}
-```
-
-### Using the dimension "money"
-
-The dimension money can represent any currency. So, to use it, just select the currency of some country to use as equivalent to 1 money, and convert it to any other currency using the current exchange rate of currencies, which, as you should know of banks, varies every day. Use a web service to get the exchange rate of every currency updated daily.
-
-Remember to use the **ISO 4217 of currencies** to know the abbreviation codes of each currency.
-
-```cpp
-scalar_unit a("100 money");
-cout << "Money (USD): " << a.get_value() << " USD" << endl; // Prints the money in USD
-cout << "Money (CLP): " << (a.get_value() * 750) << " CLP" << endl; // Prints the money in CLP, with an exchange rate of 1 USD to 750 CLP
-```
-
 ## Code examples
 
 ### Molecules synthetizer
@@ -1748,6 +1693,58 @@ void calculate_angle()
 	coordinates_3d object_b; // With some system, which can be AI or GPS, set the coordinates of object_b
 	angle angle_objects = angle_between(vector_unit_3d::cartesian_3d(object_a.x,object_a.y,object_a.z),vector_unit_3d::cartesian_3d(object_b.x,object_b.y,object_b.z));
 }
+```
+
+### Math intervals for fields
+
+Adding a math interval to a field of scifir-units is easy. Just add it inside a conditional if statement, testing if the values of the parameters are inside the interval. An example is the following:
+
+```cpp
+scalar_field_3d<length,length> a([](const length& x,const length& y,const length& z) -> length { 
+	if (x >= 2_m and x <= 5_m and y >= 1_m and y <= 8_m and z >= 3_m and z <= 15_m)
+	{
+		return (x + 2*y + 5*z);
+	}
+});
+```
+
+### Using mEq
+
+The dimension **mEq** is called **milli-equivalent**, and it corresponds to the amount of mg that are equivalent to an arbitrary amount of another substance in a given chemical reaction. To get the amount of mg needed of a substance, use the mEq of the given chemical reaction with the following math formula:
+
+$$mEq\frac{MW}{V}$$
+
+Where mEq is the **mEq of the given chemical reaction**, MW is the **molecular weight** of the new substance to use as equivalent to the original substance (of which we have calculated the mEq we are using), and V is the **valence** of the new substance.
+
+An example in code that uses mEq is the following:
+
+```cpp
+// mEq.hpp
+
+void calculate_mEq_potassium_reaction();
+
+// mEq.cpp
+
+using namespace scifir;
+
+void calculate_mEq_potassium_reaction()
+{
+	scalar_unit mEq_potassium_reaction = 20_mEq;
+	mass mass_potassium_citrate_monohydrate = mass(mEq_potassium_reaction*324.0f/3,"mg"); // You need to set the MW of the potassium citrate monohydrate, which is 324, and the V of it, which is 3
+	mass mass_potassium_gluconate  = mass(mEq_potassium_reaction*234.245f/1,"mg"); // You need to set the MW of the potassium citrate monohydrate, which is 324, and the V of it, which is 3
+}
+```
+
+### Using the dimension "money"
+
+The dimension money can represent any currency. So, to use it, just select the currency of some country to use as equivalent to 1 money, and convert it to any other currency using the current exchange rate of currencies, which, as you should know of banks, varies every day. Use a web service to get the exchange rate of every currency updated daily.
+
+Remember to use the **ISO 4217 of currencies** to know the abbreviation codes of each currency.
+
+```cpp
+scalar_unit a("100 money");
+cout << "Money (USD): " << a.get_value() << " USD" << endl; // Prints the money in USD
+cout << "Money (CLP): " << (a.get_value() * 750) << " CLP" << endl; // Prints the money in CLP, with an exchange rate of 1 USD to 750 CLP
 ```
 
 ## Internals
