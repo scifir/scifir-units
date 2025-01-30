@@ -233,29 +233,29 @@ namespace scifir
 			case conversion::US_DESSERTSPOON:
 				return 10.0L;
 			case conversion::US_HAND:
-				return 0.0L;
+				return 101.6L;
 			case conversion::US_RACK:
-				return 0.0L;
+				return 44.45L;
 			case conversion::US_BOARD_FOOT:
-				return 0.0L;
+				return 2.36L;
 			case conversion::US_SLUG:
-				return 0.0L;
+				return 14.5939L;
 			case conversion::US_POUNDAL:
-				return 0.0L;
+				return 0.138L;
 			case conversion::US_KIP:
-				return 0.0L;
+				return 4.44822L;
 			case conversion::US_FOOT_POUND:
-				return 0.0L;
+				return 1.356L;
 			case conversion::US_HORSEPOWER:
-				return 0.0L;
+				return 745.7L;
 			case conversion::US_REFRIGERATION_TON:
-				return 0.0L;
+				return 3.516853L;
 			case conversion::US_INCH_MERCURY:
-				return 0.0L;
+				return 3386.39L;
 			case conversion::US_POUND_PER_SQUARE_INCH:
-				return 0.0L;
+				return 6895.0L;
 			case conversion::US_POUND_FOOT:
-				return 0.0L;
+				return 1.355818L;
 			case conversion::QUINTAL:
 				return 0.0L;
 			case conversion::CARAT:
@@ -619,40 +619,43 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_HAND:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_RACK:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_BOARD_FOOT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::DECI,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::DECI,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::DECI,dimension::NUMERATOR));
 				break;
 			case conversion::US_SLUG:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_POUNDAL:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::NEWTON,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_KIP:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::NEWTON,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_FOOT_POUND:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_HORSEPOWER:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::WATT,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_REFRIGERATION_TON:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::WATT,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_INCH_MERCURY:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_POUND_PER_SQUARE_INCH:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_POUND_FOOT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::NEWTON,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::QUINTAL:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
