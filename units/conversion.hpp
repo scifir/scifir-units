@@ -23,23 +23,11 @@ namespace scifir
 			QUINTAL, CARAT, QUAD, BRITISH_THERMAL_UNIT, CUSTOM };
 
 			conversion();
-			explicit conversion(const string& new_unit_to, float new_factor);
-			explicit conversion(const string& new_unit_to, double new_factor);
-			explicit conversion(const string& new_unit_to, long double new_factor);
+			explicit conversion(const conversion::type new_conversion_type);
 
-			inline const long double& get_factor() const
-			{
-				return factor;
-			}
+			long double get_conversion_factor() const;
 
-			inline const string& get_unit_to() const
-			{
-				return unit_to;
-			}
-
-		private:
-			string unit_to;
-			long double factor;
+			conversion::type conversion_type;
 	};
 
 	extern map<string, conversion> get_conversion;

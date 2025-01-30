@@ -47,10 +47,11 @@
 - TODO: -Wall gives a warning for vector_unit_nd with end of non-void function
 - TODO: look at the 1.99 of test_coordinates_2d vs the 2 of the float specialization
 
-## BUILD (2)
+## BUILD (3)
 
 - TODO: support freebsd and openbsd
 - TODO: upload the package to the container registry of github packages
+- TODO: check what to do with the version of catch
 
 ## BUILD - ADVANCED (7)
 

@@ -7,19 +7,122 @@ using namespace std;
 
 namespace scifir
 {
-	conversion::conversion() : unit_to(),factor()
+	conversion::conversion() : conversion_type(conversion::NONE)
 	{}
 
-	conversion::conversion(const string& new_unit_to, float new_factor) : unit_to(new_unit_to),factor((long double)new_factor)
+	conversion::conversion(const conversion::type new_conversion_type) : conversion_type(new_conversion_type)
 	{}
 
-	conversion::conversion(const string& new_unit_to, double new_factor) : unit_to(new_unit_to),factor((long double)new_factor)
-	{}
+	long double conversion::get_conversion_factor() const
+	{
+		switch(conversion_type)
+		{
+			case conversion::NONE:
+				return 0.0L;
+			case conversion::HECTARE:
+				return 0.0L;
+			case conversion::DYNE:
+				return 0.0L;
+			case conversion::BARYE:
+				return 0.0L;
+			case conversion::BAR:
+				return 0.0L;
+			case conversion::ATMOSPHERE:
+				return 0.0L;
+			case conversion::MILIMETRES_MERCURY:
+				return 0.0L;
+			case conversion::TORRICELLI:
+				return 0.0L;
+			case conversion::CUBIC_CENTIMETRES:
+				return 0.0L;
+			case conversion::FAHRENHEIT:
+				return 0.0L;
+			case conversion::HORSEPOWER:
+				return 0.0L;
+			case conversion::WATT_HOUR:
+				return 0.0L;
+			case conversion::KILOWATT_HOUR:
+				return 0.0L;
+			case conversion::IMPERIAL_TWIP:
+				return 0.0L;
+			case conversion::IMPERIAL_THOU:
+				return 0.0L;
+			case conversion::IMPERIAL_BARLEYCORN:
+				return 0.0L;
+			case conversion::IMPERIAL_INCH:
+				return 0.0L;
+			case conversion::IMPERIAL_HAND:
+				return 0.0L;
+			case conversion::IMPERIAL_FOOT:
+				return 0.0L;
+			case conversion::IMPERIAL_YARD:
+				return 0.0L;
+			case conversion::IMPERIAL_CHAIN:
+				return 0.0L;
+			case conversion::IMPERIAL_FURLONG:
+				return 0.0L;
+			case conversion::IMPERIAL_MILE:
+				return 0.0L;
+			case conversion::IMPERIAL_LEAGUE:
+				return 0.0L;
+			case conversion::IMPERIAL_FATHOM:
+				return 0.0L;
+			case conversion::IMPERIAL_CABLE:
+				return 0.0L;
+			case conversion::IMPERIAL_NAUTICAL_MILE:
+				return 0.0L;
+			case conversion::IMPERIAL_LINK:
+				return 0.0L;
+			case conversion::IMPERIAL_ROD:
+				return 0.0L;
+			case conversion::IMPERIAL_PERCH:
+				return 0.0L;
+			case conversion::IMPERIAL_ROOD:
+				return 0.0L;
+			case conversion::IMPERIAL_ACRE:
+				return 0.0L;
+			case conversion::IMPERIAL_SQUARE_MILE:
+				return 0.0L;
+			case conversion::IMPERIAL_FLUID_OUNCE:
+				return 0.0L;
+			case conversion::IMPERIAL_GILL:
+				return 0.0L;
+			case conversion::IMPERIAL_PINT:
+				return 0.0L;
+			case conversion::IMPERIAL_QUART:
+				return 0.0L;
+			case conversion::IMPERIAL_GALLON:
+				return 0.0L;
+			case conversion::IMPERIAL_MINIM:
+				return 0.0L;
+			case conversion::IMPERIAL_FLUID_SCRUPLE:
+				return 0.0L;
+			case conversion::IMPERIAL_FLUID_DRACHM:
+				return 0.0L;
+			case conversion::IMPERIAL_GRAIN:
+				return 0.0L;
+			case conversion::IMPERIAL_DRACHM:
+				return 0.0L;
+			case conversion::IMPERIAL_OUNCE:
+				return 0.0L;
+			case conversion::IMPERIAL_POUND:
+				return 0.0L;
+			case conversion::IMPERIAL_STONE:
+				return 0.0L;
+			case conversion::IMPERIAL_QUARTER:
+				return 0.0L;
+			case conversion::IMPERIAL_HUNDREDWEIGHT:
+				return 0.0L;
+			case conversion::IMPERIAL_TON:
+				return 0.0L;
+			case conversion::IMPERIAL_SLUG:
+				return 0.0L;
+			case conversion::CUSTOM:
+				return 0.0L;
+		};
+	}
 
-	conversion::conversion(const string& new_unit_to, long double new_factor) : unit_to(new_unit_to),factor(new_factor)
-	{}
-
-	map<string, conversion> get_conversion
+	/*map<string, conversion> get_conversion
 	{
 		// Common units
 		{"ha", conversion("hm2", 1.0L)}, // Hectare
@@ -92,5 +195,5 @@ namespace scifir
 		{"hp", conversion("kW", 0.7457L)},
 		{"�F", conversion("K", 5.0L / 9.0L)},
 		{"cc", conversion("mL", 1.0L)}
-	};
+	};*/
 }
