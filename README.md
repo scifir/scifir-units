@@ -123,7 +123,7 @@ The reference of classes and functions can be read in the [reference of scifir-u
 - size_2d\<T\>, size_3d\<T\>, size_nd\<T\>.
 - pH, pOH.
 
-prefix can have **all SI prefixes**. dimension has **all SI base dimensions**, **all SI special names**, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
+prefix class can have **all SI prefixes**. dimension class has **all SI base dimensions**, **all SI special names**, among other more dimensions. coordinates classes and point classes use a space of metre, float or imaginary dimensions. aid class and zid class are a standard for astronomical ids and zone ids invented inside Scifir.
 
 - All base and derived scalar unit classes inherit directly from scalar_unit class.
 - All base and derived vectorial unit classes in 2D inherit directly from vector_unit_2d class, and end with the **suffix _2d**.
@@ -141,6 +141,39 @@ Base unit classes (they inherit scalar_unit):
 - light.
 - data.
 
+## Data conventions
+
+It's mandatory to follow the **data conventions** of Scifir when using scifir-units, which is used not only for this library but also for every Scifir project. The data conventions of Scifir allow to handle data easy without multiple interpretations of the meaning of any value, because it doesn't has ambiguities.
+
+The conventions are the following:
+
+- **Units:** All units are stored identical to their initialization string, as text.
+- **Genes:** Genes are stored by their gene name, following the **scifir nomenclature of genes**.
+- **Molecules:** Molecules are stored by their IUPAC name, canonicalized.
+- **Zones:** Zones are stored by their ZID initialization string.
+- **Positions:** Positions are stored writing their zone, and, in parentheses, the geographic coordinates.
+- **Languages:** Languages are stored by their language code of the ISO of languages.
+- **Countries:** Countries are stored by their country code of the ISO of countries.
+- **Currencies:** Currrencies are stored by their currency code of the ISO of currencies.
+- **Phone numbers:** Phone numbers are stored with their phone code of the ISO of phone codes.
+
+The conventions for storing informatic data are the following:
+
+- **Ip addresses:** Store the ip, as is written.
+- **Computers:** Store computers by their model name, canonicalized.
+
+## Consumption of memory
+
+scifir-units is a very lightweight library, all classes require just some bytes to work. Then, it can be used in any electronics project, because the memory requirements can be meet.
+
+The prefix class sizes 1 byte. The dimension class sizes 6 bytes.
+
+The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vector_unit_nd size more than a single float, which uses 4 bytes, but don't size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.
+
+The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.
+
+The coordinates classes have as member-variables scalar_unit classes, and then they size the bytes of the scalar_unit classes, for each scalar_unit class they have.
+
 ## Portability
 
 ### scifir-units in other programming languages
@@ -149,6 +182,12 @@ Although scifir-units currently is only available in C++, it can be created in o
 
 So, to create the **equivalent library** of scifir-units in another programming language, just copy the same API changing the format of the code to follow the code format of the programming language to which you're replicating the library. The names of the functions equivalent to the special operators are instead, for other programming languages, the functions sum(), substract(), multiply() and divide(). Use increment() and decrement() for the operator ++() and the operator --(), respectively.
 
+## Goal
+
+The **goal of scifir-units** is to create a very good library of all units of measurement to be used inside any scientific software, which are electronics software, desktop software, command-line applications, or any other. That's the reason of why C++ is the programming language used for scifir-units. To provide all optimizations and features needed, in order to create a library **as good and complete** as possible, is an objective that has been achieved inside this project, as the user can judge looking at the reference.
+
+scifir-units is intended to be **basal to develop scientific software**, of any kind, and to provide a solution for all common scientific calculations involving scalar units, vectors, coordinates, among other common math operations. The space has been supported for the 1D, the 2D, the 3D and even the ND case. Then, the problem of doing lots of calculus in scientific software has its difficulty reduced a big amount.
+
 ## Team
 
 The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.github.io), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at [ismael.correa.castro@gmail.com](mailto:ismael.correa.castro@gmail.com). His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
@@ -156,12 +195,6 @@ The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.
 ## Funding
 
 The **Scifir Foundation** is looking for **funding**, in order to do some digital marketing and pay some other needs of the project. If you want to support this libraries, **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/iarfen).
-
-## Goal
-
-The **goal of scifir-units** is to create a very good library of all units of measurement to be used inside any scientific software, which are electronics software, desktop software, command-line applications, or any other. That's the reason of why C++ is the programming language used for scifir-units. To provide all optimizations and features needed, in order to create a library **as good and complete** as possible, is an objective that has been achieved inside this project, as the user can judge looking at the reference.
-
-scifir-units is intended to be **basal to develop scientific software**, of any kind, and to provide a solution for all common scientific calculations involving scalar units, vectors, coordinates, among other common math operations. The space has been supported for the 1D, the 2D, the 3D and even the ND case. Then, the problem of doing lots of calculus in scientific software has its difficulty reduced a big amount.
 
 ## Concepts
 
@@ -475,39 +508,6 @@ doxygen Doxyfile
 The command generates all the documentation of doxygen inside your hard disk. You can then open the documentation in the browser, by opening the file **./docs/index.html** of the documentation generated by doxygen.
 
 Remember that doxygen uses dox files to generate his documentation. You can view the dox files of this library in the folder **./docs/dox**.
-
-## Data conventions
-
-It's mandatory to follow the **data conventions** of Scifir when using scifir-units, which is used not only for this library but also for every Scifir project. The data conventions of Scifir allow to handle data easy without multiple interpretations of the meaning of any value, because it doesn't has ambiguities.
-
-The conventions are the following:
-
-- **Units:** All units are stored identical to their initialization string, as text.
-- **Genes:** Genes are stored by their gene name, following the **scifir nomenclature of genes**.
-- **Molecules:** Molecules are stored by their IUPAC name, canonicalized.
-- **Zones:** Zones are stored by their ZID initialization string.
-- **Positions:** Positions are stored writing their zone, and, in parentheses, the geographic coordinates.
-- **Languages:** Languages are stored by their language code of the ISO of languages.
-- **Countries:** Countries are stored by their country code of the ISO of countries.
-- **Currencies:** Currrencies are stored by their currency code of the ISO of currencies.
-- **Phone numbers:** Phone numbers are stored with their phone code of the ISO of phone codes.
-
-The conventions for storing informatic data are the following:
-
-- **Ip addresses:** Store the ip, as is written.
-- **Computers:** Store computers by their model name, canonicalized.
-
-## Consumption of memory
-
-scifir-units is a very lightweight library, all classes require just some bytes to work. Then, it can be used in any electronics project, because the memory requirements can be meet.
-
-The prefix class sizes 1 byte. The dimension class sizes 6 bytes.
-
-The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vector_unit_nd size more than a single float, which uses 4 bytes, but don't size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.
-
-The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.
-
-The coordinates classes have as member-variables scalar_unit classes, and then they size the bytes of the scalar_unit classes, for each scalar_unit class they have.
 
 ## Use cases
 
