@@ -4,6 +4,7 @@
 #include "./dimension.hpp"
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -26,11 +27,10 @@ namespace scifir
 			explicit conversion(const conversion::type new_conversion_type);
 
 			long double get_conversion_factor() const;
+			vector<dimension> get_conversion_dimensions() const;
 
 			conversion::type conversion_type;
 	};
-
-	extern map<string, conversion> get_conversion;
 }
 
 #endif // SCIFIR_UNITS_UNITS_CONVERSION_HPP_INCLUDED
