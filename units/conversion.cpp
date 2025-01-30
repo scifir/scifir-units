@@ -205,31 +205,31 @@ namespace scifir
 			case conversion::US_HOGSHEAD:
 				return 238.480942392L;
 			case conversion::US_PECK:
-				return 0.0L;
+				return 8.8097675417199L;
 			case conversion::US_BUSHEL:
-				return 0.0L;
+				return 35.239070166879L;
 			case conversion::US_GRAIN:
-				return 0.0L;
+				return 64.79891L;
 			case conversion::US_DRAM:
-				return 0.0L;
+				return 1.771845195L;
 			case conversion::US_OUNCE:
-				return 0.0L;
+				return 28.349523125L;
 			case conversion::US_POUND:
-				return 0.0L;
+				return 453.59237L;
 			case conversion::US_SHORT_HUNDREDWEIGHT:
-				return 0.0L;
+				return 45.359237L;
 			case conversion::US_LONG_HUNDREDWEIGHT:
-				return 0.0L;
+				return 50.80234544L;
 			case conversion::US_SHORT_TON:
-				return 0.0L;
+				return 907.18474L;
 			case conversion::US_LONG_TON:
-				return 0.0L;
+				return 1016.0469088L;
 			case conversion::US_PENNYWEIGHT:
-				return 0.0L;
+				return 1.55517384L;
 			case conversion::US_TROY_OUNCE:
-				return 0.0L;
+				return 31.1034768L;
 			case conversion::US_TROY_POUND:
-				return 0.0L;
+				return 373.2417216L;
 			case conversion::US_DESSERTSPOON:
 				return 0.0L;
 			case conversion::US_HAND:
@@ -577,43 +577,43 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_PECK:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_BUSHEL:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_GRAIN:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_DRAM:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_OUNCE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_POUND:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_SHORT_HUNDREDWEIGHT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_LONG_HUNDREDWEIGHT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_SHORT_TON:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_LONG_TON:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_PENNYWEIGHT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_TROY_OUNCE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_TROY_POUND:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_DESSERTSPOON:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
