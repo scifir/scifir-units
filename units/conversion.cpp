@@ -23,7 +23,17 @@ namespace scifir
 			case conversion::BARYE:
 				return 1.0L;
 			case conversion::BAR:
-				return 0.0L;
+				return 100000.0L;
+			case conversion::MILLIBAR:
+				return 100.0L;
+			case conversion::CENTIBAR:
+				return 1000.0L;
+			case conversion::DECIBAR:
+				return 10000.0L;
+			case conversion::KILOBAR:
+				return 100000000.0L;
+			case conversion::MEGABAR:
+				return 100000000000.0L;
 			case conversion::ATMOSPHERE:
 				return 0.0L;
 			case conversion::MILIMETRES_MERCURY:
@@ -287,7 +297,22 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
 			case conversion::BAR:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::MILLIBAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::CENTIBAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::DECIBAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::KILOBAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::MEGABAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::ATMOSPHERE:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
