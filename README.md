@@ -23,18 +23,18 @@ scifir-chemistry, scifir-biology, scifir-geometry, among others, not yet publish
 
 Welcome! **scifir-units** is a **C++ library**, **portable to other programming languages**, that's a fundamental part of the Scifir collection. It allows to create units of measurement, vectors with units of measurement, coordinates, special units of measurement like percentage and pH, among other topics related to units of measurement. The units of measurement are **very lightweight**, size similar to a float, and can be used to do any math calculation necessary for any electronic invention and digital software. The **prefixes** of the **dimensions** can be changed, in order to display the unit in the more proper dimensions. Also, all the **conversions** are supported.
 
-The unit classes that scifir-units provides are the following:
+The unit classes of scifir-units are:
 
-- **scalar_unit:** Handles scalar units. It covers vectors in 1D too.
-- **vector_unit_2d:** Handles vector units in 2D dimensions. It inherits scalar_unit.
-- **vector_unit_3d:** Handles vector units in 3D dimensions. It inherits scalar_unit.
-- **vector_unit_nd:** Handles vector units in ND dimensions. It inherits scalar_unit.
+- **scalar_unit:** Handles scalar units, with dimensions and prefixes, and supports conversions.
+- **vector_unit_2d:** Handles vector units in 2D dimensions. Inherits scalar_unit.
+- **vector_unit_3d:** Handles vector units in 3D dimensions. Inherits scalar_unit.
+- **vector_unit_nd:** Handles vector units in ND dimensions. Inherits scalar_unit.
 
 The **Scifir collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. Also, any **electronic device**, **medical machine**, **electrodomestic** or **vehicle** can be benefited with the use of units and related classes. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easy. Enjoy!
 
-Learn how to use scifir-units in the website [https://scifir.github.io/scifir-units](https://scifir.github.io/scifir-units)
+Learn how to use scifir-units in the website [https://scifir.github.io/scifir-units](https://scifir.github.io/scifir-units) (that documentation has been done with **doxygen** and uses the **dox files** located in the folder **./docs/dox**).
 
-The documentation has been done with **doxygen** and uses the **dox files** located in the folder **./docs/dox**. scifir-units has been developed under **C++20** and uses **cmake** as build automation tool. It's available for **Linux distributions** and **Windows**.
+scifir-units has been developed under **C++20** and uses **cmake** as build tool. It works in all platforms, including **Linux distributions** and **Windows**.
 
 ## Short example
 
@@ -82,6 +82,7 @@ cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chil
 - [Versions](#versions)
 - [Class list](#class-list)
 - [Data conventions](#data-conventions)
+- [Initialization strings](#initialization-strings)
 - [Consumption of memory](#consumption-of-memory)
 - [Portability](#portability)
 - [Goal](#goal)
@@ -161,6 +162,32 @@ The conventions for storing informatic data are the following:
 
 - **Ip addresses:** Store the ip, as is written.
 - **Computers:** Store computers by their model name, canonicalized.
+
+### Initialization strings
+
+All the unit classes, and also the other related classes of this library, can be constructed with what is called here an **initialization string**. An initialization string is an string used to instantiate the class, and it's also used when converting the class to an string for any purpose (like printing it on the screen).
+
+The initialization strings are the following:
+
+- **dimensions**: "m2 / s", "J / s2 * kg"
+- **angle**: "37°" or "37º"
+- **scalar_unit**: "1 km"
+- **vector_unit_2d**: "5 km 10θ" or "5 km 10°"
+- **vector_unit_3d**: "3 km 10θ 20Φ" or "3 km 10° 20°"
+- **vector_unit_nd**: "3 km 10° 20° 35°"
+- **point_1d**: "3 m" or "(3 m)"
+- **point_2d**: "2 m,4 m" or "(2 m,4 m)"
+- **point_3d**: "1 m,9 m,3 m" or "(1 m,9 m,3 m)"
+- **point_nd**: "3 m,2 m,4 m,1 m" or "(3 m,2 m,4 m,1 m)"
+- **coordinates_1d**: "1 m" or "(1 m)"
+- **coordinates_2d**: "1 m,2 m" or "(1 m,2 m)"
+- **coordinates_3d**: "1 m,7 m,5 m" or "(1 m,7 m,5 m)"
+- **coordinates_nd**: "1 m,7 m,5 m,8 m" or "(1 m,7 m,5 m,8 m)"
+- **coordinates_2dr**: "1 m,2 m;45°" or "(1 m,2 m;45°)"
+- **coordinates_3dr**: "1 m,7 m,5 m;17° 25°" or "(1 m,7 m,5 m;17° 25°)"
+- **coordinates_ndr**: "1 m,7 m,5 m,8 m;32° 56° 78°" or "(1 m,7 m,5 m,8 m;32° 56° 78°)"
+
+In order to store units inside a file an initialization string should be used. To store inside a table of a database, use an initialization string too. For any purpose, when converting some of those classes to an string, the string initialization has to be used always.
 
 ## Consumption of memory
 
@@ -439,32 +466,6 @@ scifir::angle a; // You can use the namespace directly
 ```
 
 All the example code presented here is written assuming you know this namespace scifir.
-
-### Initialization strings
-
-All the unit classes, and also the other related classes of this library, can be constructed with what is called here an **initialization string**. An initialization string is an string used to instantiate the class, and it's also used when converting the class to an string for any purpose (like printing it on the screen).
-
-The initialization strings are the following:
-
-- **dimensions**: "m2 / s", "J / s2 * kg"
-- **angle**: "37°" or "37º"
-- **scalar_unit**: "1 km"
-- **vector_unit_2d**: "5 km 10θ" or "5 km 10°"
-- **vector_unit_3d**: "3 km 10θ 20Φ" or "3 km 10° 20°"
-- **vector_unit_nd**: "3 km 10° 20° 35°"
-- **point_1d**: "3 m" or "(3 m)"
-- **point_2d**: "2 m,4 m" or "(2 m,4 m)"
-- **point_3d**: "1 m,9 m,3 m" or "(1 m,9 m,3 m)"
-- **point_nd**: "3 m,2 m,4 m,1 m" or "(3 m,2 m,4 m,1 m)"
-- **coordinates_1d**: "1 m" or "(1 m)"
-- **coordinates_2d**: "1 m,2 m" or "(1 m,2 m)"
-- **coordinates_3d**: "1 m,7 m,5 m" or "(1 m,7 m,5 m)"
-- **coordinates_nd**: "1 m,7 m,5 m,8 m" or "(1 m,7 m,5 m,8 m)"
-- **coordinates_2dr**: "1 m,2 m;45°" or "(1 m,2 m;45°)"
-- **coordinates_3dr**: "1 m,7 m,5 m;17° 25°" or "(1 m,7 m,5 m;17° 25°)"
-- **coordinates_ndr**: "1 m,7 m,5 m,8 m;32° 56° 78°" or "(1 m,7 m,5 m,8 m;32° 56° 78°)"
-
-In order to store units inside a file an initialization string should be used. To store inside a table of a database, use an initialization string too. For any purpose, when converting some of those classes to an string, the string initialization has to be used always.
 
 ### String representation of enum types
 
