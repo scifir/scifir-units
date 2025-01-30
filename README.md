@@ -74,10 +74,11 @@ cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chil
 - [Copy-paste symbols](#copy-paste-symbols)
 - [Class list](#class-list)
 - [Concepts](#concepts)
-- [History of units of measuremnt](#history-of-units-of-measurement)
+- [History of units of measurement](#history-of-units-of-measurement)
 - [Folder structure](#folder-structure)
 - [Installation](#installation)
-- [Introduction](#introduction)
+- [Data conventions](#data-conventions)
+- [Consumption of memory](#consumption-of-memory)
 - [Use cases](#use-cases)
 - [Core functionalities](#core-functionalities)
 - [Code examples of features](#code-examples-of-features)
@@ -144,12 +145,23 @@ scifir-units is intended to be **basal to develop scientific software**, of any 
 - size_2d\<T\>, size_3d\<T\>, size_nd\<T\>.
 - pH, pOH.
 
-prefix can have all SI prefixes. dimension has all SI base dimensions, all common special names, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
+prefix can have **all SI prefixes**. dimension has **all SI base dimensions**, **all SI special names**, among other more dimensions. coordinates and points use a space of metre, float or imaginary dimensions. aid and zid are a standard for astronomical ids and zone ids invented inside Scifir.
 
 - All base and derived scalar unit classes inherit directly from scalar_unit class.
 - All base and derived vectorial unit classes in 2D inherit directly from vector_unit_2d class, and end with the **suffix _2d**.
 - All base and derived vectorial unit classes in 3D inherit directly from vector_unit_3d class, and end with the **suffix _3d**.
 - All base and derived vectorial unit classes in ND inherit directly from vector_unit_nd class, and end with the **suffix _nd**.
+
+Base unit classes (they inherit scalar_unit):
+
+- length.
+- time_duration.
+- mass.
+- charge.
+- temperature.
+- mole.
+- light.
+- data.
 
 ## Concepts
 
@@ -464,86 +476,7 @@ The command generates all the documentation of doxygen inside your hard disk. Yo
 
 Remember that doxygen uses dox files to generate his documentation. You can view the dox files of this library in the folder **./docs/dox**.
 
-## Extended class list
-
-The most important classes are the scalar units and the vector units. Vector units are in 2D, 3D and ND (a variable number of dimensions).
-
-- scalar_unit.
-- vector_unit_2d.
-- vector_unit_3d.
-- vector_unit_nd.
-- dimension.
-- prefix.
-- conversion.
-
-The classes dimension, prefix and conversion are intended for **internal use** mainly, but they can be used if they are needed.
-
-The base unit classes that inherit scalar_unit and use, then, too, dimension and prefix classes, are the following:
-
-- length.
-- time_duration.
-- mass.
-- charge.
-- temperature.
-- mole.
-- light.
-- data.
-
-Apart from those base scalar_unit subclasses, there are a great amount of more unit classes defined, that are derived from scalar_unit or from vector_unit. All scalar unit subclasses derive from scalar_unit, and all vector unit subclasses are defined one time for 2d, one time for 3d, one time for nd, and one time for the scalar_unit case. Then, force units, which are vector units, exist as force, force_2d, force_3d and force_nd.
-
-All those additional unit classes are the following:
-
-- **Astronomy:** specific_angular_momentum, specific_angular_momentum_2d, specific_angular_momentum_3d, specific_angular_momentum_nd
-- **Chemistry:** density, viscosity, specific_volume, specific_heat_capacity, specific_entropy, specific_energy, molar_volume, molar_mass, molar_heat_capacity, molar_enthalpy, molar_entropy, molar_energy, molar_conductivity, energy_density, catalytic_efficiency
-- **Dynamics:** impulse, impulse_2d, impulse_3d, impulse_nd, force, force_2d, force_3d, force_nd, torque, torque_2d, torque_3d, torque_nd, pressure, pressure_2d, pressure_3d, pressure_nd, surface_tension, surface_tension_2d, surface_tension_3d, surface_tension_nd, stiffness, moment_of_inertia
-- **Electricity:** electric_current, voltage, electric_charge_density, electric_current_density, electric_field_strength, electric_field_strength_2d, electric_field_strength_3d, electric_field_strength_nd, electron_mobility, inductance
-- **Electronics:** electrical_conductivity, resistance, electric_conductance, capacitance, permittivity, resistivity, linear_charge_density, frequency_drift
-- **Fluid dynamics:** volumetric_flow, diffusion_coefficient, compressibility
-- **Informatics:** transfer_speed
-- **Kinematics:** distance, displacement_2d, displacement_3d, displacement_nd, velocity, velocity_2d, velocity_3d, velocity_nd, acceleration, acceleration_2d, acceleration_3d, acceleration_nd, jerk, jerk_2d, jerk_3d, jerk_nd, snap, snap_2d, snap_3d, snap_nd, angular_velocity, angular_velocity_2d, angular_velocity_3d, angular_velocity_nd, angular_acceleration, angular_acceleration_2d, angular_acceleration_3d, angular_acceleration_nd, angular_momentum, angular_momentum_2d, angular_momentum_3d, angular_momentum_nd
-- **Magnetism:** magnetic_flux, magnetic_moment, magnetic_moment_2d, magnetic_moment_3d, magnetic_moment_nd, magnetic_reluctance, magnetic_rigidity, magnetomotive_force, magnetomotive_force_2d, magnetomotive_force_3d, magnetomotive_force_nd, magnetic_susceptibility
-- **Optics:** optical_power, luminance, illuminance, luminous_flux, luminous_energy, luminous_exposure, luminous_efficacy, ionizing_radiation, absorbed_dose
-- **Radiometry:** radioactivity, irradiance, irradiance_2d, irradiance_3d, irradiance_nd, radiant_exposure, radiant_exposure_2d, radiant_exposure_3d, radiant_exposure_nd, radiant_intensity, spectral_intensity, radiance, spectral_radiance, radiant_flux, radiant_flux_2d, radiant_flux_3d, radiant_flux_nd, spectral_flux, spectral_flux_2d, spectral_flux_3d, spectral_flux_nd
-- **Space:** area, volume, volume_4d, curvature
-- **Substance:** molarity, molality, linear_mass_density, area_density, dynamic_viscosity, mass_flow_rate, catalytic_activity
-- **Thermodynamics:** energy, action, power, power_density, enthalpy, entropy, heat_capacity, heat_flux_density, thermal_conductivity, thermal_diffusivity, thermal_resistance, thermal_expansion_coefficient, temperature_gradient, temperature_gradient_2d, temperature_gradient_3d, temperature_gradient_nd, energy_flux_density
-- **Waves:** wavenumber, frequency, wavelength
-
-The meca numbers are special numbers that don't behave exactly like an scalar unit:
-
-- angle.
-- complex_number\<T\>.
-- lab_number\<T\>.
-
-The coordinates classes handle position in space. The point classes also handle position in space. Coordinates are used for positions and points are intended for more stationary cases, like for example vertex of triangles that form a 3D model.
-
-- coordinates_1d\<T\>.
-- coordinates_2d\<T\>.
-- coordinates_2dr\<T\>.
-- coordinates_3d\<T\>.
-- coordinates_3dr\<T\>.
-- coordinates_nd\<T\>.
-- coordinates_ndr\<T\>.
-- point_1d\<T\>.
-- point_2d\<T\>.
-- point_3d\<T\>.
-- point_nd\<T\>.
-- direction.
-
-The special unit classes handle special cases of values:
-
-- aid.
-- zid.
-- color.
-- percentage.
-- pH.
-- pOH.
-- pixel.
-- size_2d\<T\>.
-- size_3d\<T\>.
-- size_nd\<T\>.
-
-### Data conventions
+## Data conventions
 
 It's mandatory to follow the **data conventions** of Scifir when using scifir-units, which is used not only for this library but also for every Scifir project. The data conventions of Scifir allow to handle data easy without multiple interpretations of the meaning of any value, because it doesn't has ambiguities.
 
@@ -564,7 +497,7 @@ The conventions for storing informatic data are the following:
 - **Ip addresses:** Store the ip, as is written.
 - **Computers:** Store computers by their model name, canonicalized.
 
-### Consumption of memory
+## Consumption of memory
 
 scifir-units is a very lightweight library, all classes require just some bytes to work. Then, it can be used in any electronics project, because the memory requirements can be meet.
 
