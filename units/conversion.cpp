@@ -45,9 +45,9 @@ namespace scifir
 			case conversion::FAHRENHEIT:
 				return 1.0L;
 			case conversion::WATT_HOUR:
-				return 0.0L;
+				return 3600.0L;
 			case conversion::KILOWATT_HOUR:
-				return 0.0L;
+				return 3600000.0L;
 			case conversion::IMPERIAL_TWIP:
 				return 0.0L;
 			case conversion::IMPERIAL_THOU:
@@ -330,10 +330,10 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::WATT_HOUR:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::KILOWATT_HOUR:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_TWIP:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
