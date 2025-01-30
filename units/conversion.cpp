@@ -90,17 +90,7 @@ namespace scifir
 		{"kWh", conversion("J", 3600000.0L)},
 		{"HP", conversion("kW", 0.7355L)},
 		{"hp", conversion("kW", 0.7457L)},
-		{"�C", conversion("K", 1.0L)},
 		{"�F", conversion("K", 5.0L / 9.0L)},
-		{"bit", conversion("B", 1.0L / 8.0L)},
-		{"kbit", conversion("B", 125.0L)},
-		{"Mbit", conversion("kB", 125.0L)},
-		{"Gbit", conversion("MB", 125.0L)},
-		{"Tbit", conversion("GB", 125.0L)},
-		{"Pbit", conversion("TB", 125.0L)},
-		{"Ebit", conversion("PB", 125.0L)},
-		{"Zbit", conversion("EB", 125.0L)},
-		{"Ybit", conversion("ZB", 125.0L)},
 		{"cc", conversion("mL", 1.0L)}
 	};
 }
