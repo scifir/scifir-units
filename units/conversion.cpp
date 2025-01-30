@@ -143,19 +143,19 @@ namespace scifir
 			case conversion::US_LEAGUE:
 				return 4.828032L;
 			case conversion::US_FATHOM:
-				return 0.0L;
+				return (1143.0L / 625.0L);
 			case conversion::US_CABLE:
-				return 0.0L;
+				return (3429.0L / 15625.0L);
 			case conversion::US_NAUTICAL_MILE:
-				return 0.0L;
+				return 1.852L;
 			case conversion::US_LINK:
-				return 0.0L;
+				return 0.201168L;
 			case conversion::US_ROD:
-				return 0.0L;
+				return 5.0292L;
 			case conversion::US_CHAIN:
-				return 0.0L;
+				return 20.1168L;
 			case conversion::US_FURLONG:
-				return 0.0L;
+				return 201.168L;
 			case conversion::US_SQUARE_FOOT:
 				return 0.0L;
 			case conversion::US_SQUARE_CHAIN:
@@ -479,25 +479,25 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_FATHOM:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_CABLE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_NAUTICAL_MILE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_LINK:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_ROD:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_CHAIN:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_FURLONG:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_SQUARE_FOOT:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
