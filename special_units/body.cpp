@@ -30,6 +30,7 @@ namespace scifir
 		{
 			return "FLY";
 		}
+		return "";
 	}
 	
 	string to_string(const movement_state& x)
@@ -42,6 +43,7 @@ namespace scifir
 		{
 			return "ACTIVE";
 		}
+		return "";
 	}
 	
 	string to_string(const body_health& x)
@@ -62,5 +64,6 @@ namespace scifir
 		{
 			return "SICK_AND_DAMAGED";
 		}
+		return "";
 	}
 }

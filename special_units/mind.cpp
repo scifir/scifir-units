@@ -18,6 +18,7 @@ namespace scifir
 		{
 			return "MEDITATION";
 		}
+		return "";
 	}
 
     string to_string(const feeling& x)
@@ -34,6 +35,7 @@ namespace scifir
 		{
 			return "LOVE";
 		}
+		return "";
 	}
 
 	string to_string(const emotion& x)
@@ -62,6 +64,7 @@ namespace scifir
 		{
 			return "SAD";
 		}
+		return "";
 	}
 
 	string to_string(const sensation& x)
@@ -94,6 +97,7 @@ namespace scifir
 		{
 			return "TEMPERATURE";
 		}
+		return "";
 	}
 
 	string to_string(const sense& x)
@@ -126,6 +130,7 @@ namespace scifir
 		{
 			return "PROPRIOCEPTION";
 		}
+		return "";
 	}
 
 	string to_string(const conscience_state& x)
@@ -138,5 +143,6 @@ namespace scifir
 		{
 			return "ALTERED";
 		}
+		return "";
 	}
 }
