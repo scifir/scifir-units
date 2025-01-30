@@ -256,8 +256,6 @@ namespace scifir
 				return 0.0L;
 			case conversion::US_POUND_FOOT:
 				return 0.0L;
-			case conversion::US_STONE:
-				return 0.0L;
 			case conversion::QUINTAL:
 				return 0.0L;
 			case conversion::CARAT:
@@ -649,9 +647,6 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_POUND_FOOT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
-				break;
-			case conversion::US_STONE:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::QUINTAL:
