@@ -4,19 +4,21 @@
 
 Welcome! **scifir-units** is a **C++ library**, **portable to other programming languages**, that's a fundamental part of the Scifir collection. It allows to create units of measurement, vectors with units of measurement, coordinates, special units of measurement like percentage and pH, among other topics related to units of measurement.
 
-The **Scifir collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. Also, any **electronic device**, **medical machine**, **electrodomestic** or **vehicle** can be benefited with the use of units and related classes. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+The **Scifir collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. Also, any **electronic device**, **medical machine**, **electrodomestic** or **vehicle** can be benefited with the use of units and related classes. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easy. Enjoy!
 
 ## Goal
 
 The **goal of scifir-units** is to create a very good library of all units of measurement to be used inside any scientific software, which are electronics software, desktop software, command-line applications, or any other. That's the reason of why C++ is the programming language used for scifir-units. To provide all optimizations and features needed, in order to create a library **as good and complete** as possible, is an objective that has been achieved inside this project, as the user can judge looking at the reference. scifir-units is intended to be **basal to develop scientific software**, of any kind, and to provide a solution for all common scientific calculations involving scalar units, vectors, coordinates, among other common math operations. The space has been supported for the 1D, the 2D, the 3D and even the ND case. Then, the problem of doing lots of calculus in scientific software has its difficulty reduced a big amount.
 
-The Scifir Collection is under development, but the units are already released. Molecules aren't, but they will by ready soon!
+The Scifir Collection is **under development**, but the units are already released. Molecules aren't, but they will by ready soon!
 
 **scifir-units** includes units with dimensions to use, then it's unneeded to care about having the proper dimensions and prefixes when developing scientific software, you can instantiate any value you have on the machine, without performing operations with a calculator first to convert the units to a common prefix. Learn how to use them in the website [https://scifir.github.io/scifir-units](https://scifir.github.io/scifir-units). The documetation has been generated with the software **doxygen** and uses of it the **dox files** located in the **./docs/dox** folder. It's been developed under **C++20** and uses **cmake** as build automation tool. It's available for **Linux distributions** and **Windows**.
 
 The **current version** of scifir-units is the **beta-version-2.0**. The version 1.0 has never been released because the version 2.0 was better by a great extent. The version 2.0 includes a better inheritance system and a wide simplification of all the programming of the library and, then, a better compilation and a saving of RAM for each instantiation of each class. Because of that reason, the version 2.0 has been preferred over the version 1.0.
 
-Here you can read how to install and use scifir-units, the reference of classes and functions can be read in the [reference of scifir-units](https://scifir.github.io/scifir-units/annotated.html).
+## Reference
+
+The reference of classes and functions can be read in the [reference of scifir-units](https://scifir.github.io/scifir-units/annotated.html).
 
 ## Portability
 
@@ -1841,3 +1843,13 @@ Some webpages to learn math related to units of measurement, which are very impo
 - Angle: [https://en.wikipedia.org/wiki/Angle](https://en.wikipedia.org/wiki/Angle)
 - Radian: [https://en.wikipedia.org/wiki/Radian](https://en.wikipedia.org/wiki/Radian)
 - Degree: [https://en.wikipedia.org/wiki/Degree_(angle)](https://en.wikipedia.org/wiki/Degree_(angle))
+
+To learn calculus used with units of measurement read the following webpages:
+
+- Scalar field: [https://en.wikipedia.org/wiki/Scalar_field](https://en.wikipedia.org/wiki/Scalar_field)
+- Vector field: [https://en.wikipedia.org/wiki/Vector_field](https://en.wikipedia.org/wiki/Vector_field)
+- Dot product: [https://en.wikipedia.org/wiki/Dot_product](https://en.wikipedia.org/wiki/Dot_product)
+- Cross product: [https://en.wikipedia.org/wiki/Cross_product](https://en.wikipedia.org/wiki/Cross_product)
+- Gradient: [https://en.wikipedia.org/wiki/Gradient](https://en.wikipedia.org/wiki/Gradient)
+- Divergence: [https://en.wikipedia.org/wiki/Divergence](https://en.wikipedia.org/wiki/Divergence)
+- Curl: [https://en.wikipedia.org/wiki/Curl_(mathematics)](https://en.wikipedia.org/wiki/Curl_(mathematics))
