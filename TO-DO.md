@@ -1,6 +1,6 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 228
+**Number of TODOs:** 225
 
 ## MATERIAL_VECTOR_UNIT (1)
 
@@ -15,7 +15,7 @@
 - TODO: add an enum of the types of radio waves AM and FM
 - TODO: wave class with frequency and wavelength scalar_units, with child classes wave_2d and wave_3d that include coordinates_2dr and coordinates_3dr respectively. It can calculate the speed with the frequency and the wavelength, it returns the type of wave based on the value of the frequency
 
-## CURRENT (15)
+## CURRENT (10)
 
 - TODO: conversion of size_t to and int gives a warning in MSVC
 - TODO: finish testing in MSVC all tests
@@ -23,12 +23,6 @@
 - TODO: explanation, with code examples, of physics and chemistry laws
 - TODO: there is a bug with is_close_prefix in base_display()
 - TODO: change the default of display() to be of all decimals instead of two
-
-- TODO: think of how to implement conversions, do also the test of them
-- TODO: support the conversion inside the display of scalar_unit
-- TODO: add the old historic systems of units to conversion, and explain them in the README.md file
-- TODO: add the conversions of the CGS system of units, and the FPS system of units
-- TODO: add Farenheit, Rankine and maybe other dimensions of temperature as conversions
 
 - TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their child classes
 
@@ -105,7 +99,6 @@
 - TODO: add in the table of contents a link to each documentation of class
 - TODO: add an example of fluiddynamics with scifir-geometry for robotics applications
 - TODO: explain some normal code examples of robotics, medical machines, chemistry machines
-- TODO: increase the introduction of the README.md file
 - TODO: add initialization of lab_number<> inside README.md file
 - TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
 - TODO: add a readings section in the README.md file, with some of the urls of the TODO.md file
@@ -220,19 +213,22 @@
 - TODO: add the atomic units
 - TODO: add the natural units (used for atomic physics)
 
-## CONVERSION (6)
+## CONVERSION (9)
 
 - TODO: possibly add the drop units
 - TODO: possibly add the metric horsepower too
 - TODO: decide something to do with the US customary units of dry volume pint, quart and gallon, which have different values than those same units of measurement for fluids, maybe it's needed to define two different customary units with similar names
 - TODO: add the chinese units of measurement as conversions
 - TODO: add the apothecaries system of units, maybe there are more systems to add
-- TODO: search if there are more historical units of measure to add
+- TODO: add the old historic systems of units to conversion, and explain them in the README.md file
 
-## UNITS (19)
+- TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
+- TODO: add the conversions of the CGS system of units, and the FPS system of units
+- TODO: add Farenheit, Rankine and maybe other dimensions of temperature as conversions, finish the inline conversion functions first
+
+## UNITS (18)
 
 - TODO: solve in some way the problem that vector_unit_3d needs different characters in Windows an inside Linux when initialized with strings
-- TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
 - TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them
 - TODO: vector_unit_3d class maybe need the comparison operators with themselves
 - TODO: use the PI of the std library

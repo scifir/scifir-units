@@ -1,8 +1,12 @@
-# scifir-units library
+# scifir-units
 
 [![Linux build status](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml/badge.svg)](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml)
 
-Welcome! The **Scifir Collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. Also, any **electronic device**, **medical machine**, **electrodomestic** or **vehicle** can be benefited with the use of units and related classes. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+Welcome! **scifir-units** is a **C++ library**, **portable to other programming languages**, that's a fundamental part of the Scifir collection. It allows to create units of measurement, vectors with units of measurement, coordinates, special units of measurement like percentage and pH, among other topics related to units of measurement.
+
+The **Scifir collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. Also, any **electronic device**, **medical machine**, **electrodomestic** or **vehicle** can be benefited with the use of units and related classes. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+
+## Goal
 
 The **goal of scifir-units** is to create a very good library of all units of measurement to be used inside any scientific software, which are electronics software, desktop software, command-line applications, or any other. That's the reason of why C++ is the programming language used for scifir-units. To provide all optimizations and features needed, in order to create a library **as good and complete** as possible, is an objective that has been achieved inside this project, as the user can judge looking at the reference. scifir-units is intended to be **basal to develop scientific software**, of any kind, and to provide a solution for all common scientific calculations involving scalar units, vectors, coordinates, among other common math operations. The space has been supported for the 1D, the 2D, the 3D and even the ND case. Then, the problem of doing lots of calculus in scientific software has its difficulty reduced a big amount.
 
@@ -14,17 +18,19 @@ The **current version** of scifir-units is the **beta-version-2.0**. The version
 
 Here you can read how to install and use scifir-units, the reference of classes and functions can be read in the [reference of scifir-units](https://scifir.github.io/scifir-units/annotated.html).
 
+## Portability
+
 ### scifir-units in other programming languages
 
 Although scifir-units currently is only available in C++, it can be created partially (strictly, even totally) in other programming languages. So, if you need this library in other programming languages, just copy the classes you need and change them to be in the other programming language. For java, for example, copying angle class, the name would be Angle, because of the nomenclature of java, and all functions should be identical in behaviour, but in camelCase as name, because that's the format of java. For example, in java, get_value() would be called getValue(). For normal functions, in java, you need to add them inside the class and make them static, because java doesn't supports functions outside classes.
 
 So, to create the **equivalent library** of scifir-units in another programming language, just copy the same API changing the format of the code to follow the code format of the programming language to which you're replicating the library. The names of the functions equivalent to the special operators are instead, for other programming languages, the functions sum(), substract(), multiply() and divide(). Use increment() and decrement() for the operator ++() and the operator --(), respectively.
 
-### Team
+## Team
 
 The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.github.io), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at ismael.correa.castro@gmail.com. His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
 
-### Funding
+## Funding
 
 The **Scifir Foundation** is looking for **funding**, in order to do some digital marketing and pay some other needs of the project. If you want to support this libraries, **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/iarfen).
 
