@@ -157,15 +157,15 @@ namespace scifir
 			case conversion::US_FURLONG:
 				return 201.168L;
 			case conversion::US_SQUARE_FOOT:
-				return 0.0L;
+				return 0.09290341L;
 			case conversion::US_SQUARE_CHAIN:
-				return 0.0L;
+				return 404.68564224L;
 			case conversion::US_ACRE:
-				return 0.0L;
+				return 4046.8564224L;
 			case conversion::US_SECTION:
-				return 0.0L;
+				return 2.589998L;
 			case conversion::US_SURVEY_TOWNSHIP:
-				return 0.0L;
+				return 93.23993L;
 			case conversion::US_CUBIC_INCH:
 				return 0.0L;
 			case conversion::US_CUBIC_FOOT:
@@ -500,19 +500,24 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_SQUARE_FOOT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_SQUARE_CHAIN:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_ACRE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_SECTION:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_SURVEY_TOWNSHIP:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_CUBIC_INCH:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
