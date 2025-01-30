@@ -257,13 +257,13 @@ namespace scifir
 			case conversion::US_POUND_FOOT:
 				return 1.355818L;
 			case conversion::QUINTAL:
-				return 0.0L;
+				return 100.0L;
 			case conversion::CARAT:
-				return 0.0L;
+				return 0.2L;
 			case conversion::QUAD:
-				return 0.0L;
+				return 1.055L;
 			case conversion::BRITISH_THERMAL_UNIT:
-				return 0.0L;
+				return 1.055L;
 			case conversion::CUSTOM:
 				return 0.0L;
 		};
@@ -658,16 +658,16 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::QUINTAL:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::CARAT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::QUAD:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::EXA,dimension::NUMERATOR));
 				break;
 			case conversion::BRITISH_THERMAL_UNIT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::CUSTOM:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
