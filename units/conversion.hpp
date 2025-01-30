@@ -36,7 +36,12 @@ namespace scifir
 
 	inline float fahrenheit_to_kelvin(float x)
 	{
-		return (x - 32.0f)*(5.0f/9.0f) + 273.15f;
+		return (x - 32.0f) * (5.0f / 9.0f) + 273.15f;
+	}
+
+	inline float kelvin_to_fahrenheit(float x)
+	{
+		return (x - 273.15f) * 1.8f + 32.0f;
 	}
 }
 
