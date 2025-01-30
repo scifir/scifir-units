@@ -1853,3 +1853,8 @@ To learn calculus used with units of measurement read the following webpages:
 - Gradient: [https://en.wikipedia.org/wiki/Gradient](https://en.wikipedia.org/wiki/Gradient)
 - Divergence: [https://en.wikipedia.org/wiki/Divergence](https://en.wikipedia.org/wiki/Divergence)
 - Curl: [https://en.wikipedia.org/wiki/Curl_(mathematics)](https://en.wikipedia.org/wiki/Curl_(mathematics))
+
+Related to geographic and to astronomical coordinates the following webpages are useful readings:
+
+- Geographic coordinate system: [https://en.wikipedia.org/wiki/Geographic_coordinate_system](https://en.wikipedia.org/wiki/Geographic_coordinate_system)
+- Astronomical coordinate systems: [https://en.wikipedia.org/wiki/Astronomical_coordinate_systems](https://en.wikipedia.org/wiki/Astronomical_coordinate_systems)
