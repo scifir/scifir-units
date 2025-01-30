@@ -175,35 +175,35 @@ namespace scifir
 			case conversion::US_ACRE_FOOT:
 				return 1.23348183754752L;
 			case conversion::US_MINIM:
-				return 0.0L;
+				return 61.611519921875L;
 			case conversion::US_FLUID_DRAM:
-				return 0.0L;
+				return 3.6966911953125L;
 			case conversion::US_TEASPOON:
-				return 0.0L;
+				return 4.92892159375L;
 			case conversion::US_TABLESPOON:
-				return 0.0L;
+				return 14.78676478125L;
 			case conversion::US_FLUID_OUNCE:
-				return 0.0L;
+				return 29.5735295625L;
 			case conversion::US_SHOT:
-				return 0.0L;
+				return 44.36029434375L;
 			case conversion::US_GILL:
-				return 0.0L;
+				return 118.29411825L;
 			case conversion::US_CUP:
-				return 0.0L;
+				return 236.5882365L;
 			case conversion::US_PINT:
-				return 0.0L;
+				return 0.473176473L;
 			case conversion::US_QUART:
-				return 0.0L;
+				return 0.946352946L;
 			case conversion::US_POTTLE:
-				return 0.0L;
+				return 1.892705892L;
 			case conversion::US_GALLON:
-				return 0.0L;
+				return 3.785411784L;
 			case conversion::US_BARREL:
-				return 0.0L;
+				return 119.240471196L;
 			case conversion::US_OIL_BARREL:
-				return 0.0L;
+				return 158.987294928L;
 			case conversion::US_HOGSHEAD:
-				return 0.0L;
+				return 238.480942392L;
 			case conversion::US_PECK:
 				return 0.0L;
 			case conversion::US_BUSHEL:
@@ -532,49 +532,49 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MEGA,dimension::NUMERATOR));
 				break;
 			case conversion::US_MINIM:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MICRO,dimension::NUMERATOR));
 				break;
 			case conversion::US_FLUID_DRAM:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_TEASPOON:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_TABLESPOON:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_FLUID_OUNCE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_SHOT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_GILL:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_CUP:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_PINT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_QUART:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_POTTLE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_GALLON:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_BARREL:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_OIL_BARREL:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_HOGSHEAD:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_PECK:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
