@@ -41,7 +41,7 @@ namespace scifir
 			case conversion::TORRICELLI:
 				return 101325.0L / 760.0L;
 			case conversion::CUBIC_CENTIMETRES:
-				return 0.0L;
+				return 1.0L;
 			case conversion::FAHRENHEIT:
 				return 0.0L;
 			case conversion::HORSEPOWER:
@@ -324,7 +324,7 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::CUBIC_CENTIMETRES:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::FAHRENHEIT:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
