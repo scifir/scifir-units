@@ -89,39 +89,39 @@ namespace scifir
 			case conversion::IMPERIAL_SQUARE_MILE:
 				return 2589988.110336L;
 			case conversion::IMPERIAL_FLUID_OUNCE:
-				return 0.0L;
+				return 28.4130625L;
 			case conversion::IMPERIAL_GILL:
-				return 0.0L;
+				return 142.0653125L;
 			case conversion::IMPERIAL_PINT:
-				return 0.0L;
+				return 568.26125L;
 			case conversion::IMPERIAL_QUART:
-				return 0.0L;
+				return 1136.5225L;
 			case conversion::IMPERIAL_GALLON:
-				return 0.0L;
+				return 4546.09L;
 			case conversion::IMPERIAL_MINIM:
-				return 0.0L;
+				return 59.1938802083L;
 			case conversion::IMPERIAL_FLUID_SCRUPLE:
-				return 0.0L;
+				return 1.18387760416L;
 			case conversion::IMPERIAL_FLUID_DRACHM:
-				return 0.0L;
+				return 3.5516328125L;
 			case conversion::IMPERIAL_GRAIN:
-				return 0.0L;
+				return 64.79891L;
 			case conversion::IMPERIAL_DRACHM:
-				return 0.0L;
+				return 1.7718451953125L;
 			case conversion::IMPERIAL_OUNCE:
-				return 0.0L;
+				return 28.349523125L;
 			case conversion::IMPERIAL_POUND:
-				return 0.0L;
+				return 0.45359237L;
 			case conversion::IMPERIAL_STONE:
-				return 0.0L;
+				return 6.35029318L;
 			case conversion::IMPERIAL_QUARTER:
-				return 0.0L;
+				return 12.70058636L;
 			case conversion::IMPERIAL_HUNDREDWEIGHT:
-				return 0.0L;
+				return 50.80234544L;
 			case conversion::IMPERIAL_TON:
-				return 0.0L;
+				return 1016.0469088L;
 			case conversion::IMPERIAL_SLUG:
-				return 0.0L;
+				return 14.59390294L;
 			case conversion::IMPERIAL_HORSEPOWER:
 				return 745.7L;
 			case conversion::US_TWIP:
@@ -400,55 +400,55 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_FLUID_OUNCE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_GILL:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_PINT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_QUART:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_GALLON:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_MINIM:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MICRO,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_FLUID_SCRUPLE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_FLUID_DRACHM:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_GRAIN:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_DRACHM:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_OUNCE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_POUND:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_STONE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_QUARTER:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_HUNDREDWEIGHT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_TON:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_SLUG:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::IMPERIAL_HORSEPOWER:
 				conversion_dimensions.push_back(dimension(dimension::WATT,prefix::NONE,dimension::NUMERATOR));
