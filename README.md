@@ -26,38 +26,38 @@ The documentation has been done with **doxygen** and uses the **dox files** loca
 ## Short example
 
 ```cpp
-length x = 100_km; // length is a child class of scalar_unit, only supports dimensions convertible to metre
+scifir::length x = 100_km; // length is a child class of scalar_unit, only supports dimensions convertible to metre
 cout << x << endl; // Prints "100 km"
 x.change_dimensions("m");
 cout << x << endl; // Prints "100000 m"
 
-force_2d y(50_N,20_degree); // force_2d is a child class of vector_unit_2d
+scifir::force_2d y(50_N,20_degree); // force_2d is a child class of vector_unit_2d
 cout << y << endl; // Prints "50 N 20θ"
 
-force_2d y2(30_N,10_degree);
+scifir::force_2d y2(30_N,10_degree);
 cout << y2 << endl;
 cout << (y + y2) << endl; // Prints the vectorial sum of y + y2
 y2.theta += 10; // Sums 10 degrees to theta of y2
 cout << y2.theta << endl; // Prints theta of y2 "20°"
 
-force_3d z(50_N,20_degree,40_degree); // force_3d is a child class of vector_unit_3d
+scifir::force_3d z(50_N,20_degree,40_degree); // force_3d is a child class of vector_unit_3d
 cout << z << endl; // Prints "50 N 20θ 40Φ"
 z.theta += 15; // Sums 15 degrees to theta of z
 z.phi += 10; // Sums 10 degrees to phi of z
 cout << z.theta << endl; // Prints theta of z "35°"
 cout << z.phi << endl; // Prints phi of z "50°"
 
-angle a = 100_degree; // angle class is not a scalar_unit
+scifir::angle a = 100_degree; // angle class is not a scalar_unit
 a++; // Increments a by one unit
 cout << a << endl; // Prints "100°"
 
-coordinates_3d<> b(10_m,5_m,30_m); // coordinates_3d<> has length as dimension of space. float and imaginary dimensions are also supported for the space
+scifir::coordinates_3d<> b(10_m,5_m,30_m); // coordinates_3d<> has length as dimension of space. float and imaginary dimensions are also supported for the space
 cout << b << endl; // Prints "(10 m,5 m,30 m)"
 
-aid c("(P) universe:milky-way:solar-system:earth"); // aid is an identifier for any astronomical object
+scifir::aid c("(P) universe:milky-way:solar-system:earth"); // aid is an identifier for any astronomical object
 cout << c << endl; // Prints "(P) universe:milky-way:solar-system:earth"
 
-zid d("(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia"); // zid is an identifier for any zone, of any astronomical object
+scifir::zid d("(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia"); // zid is an identifier for any zone, of any astronomical object
 cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia"
 
 // Among many other features!
