@@ -231,7 +231,7 @@ namespace scifir
 			case conversion::US_TROY_POUND:
 				return 373.2417216L;
 			case conversion::US_DESSERTSPOON:
-				return 0.0L;
+				return 10.0L;
 			case conversion::US_HAND:
 				return 0.0L;
 			case conversion::US_RACK:
@@ -616,7 +616,7 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_DESSERTSPOON:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_HAND:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
