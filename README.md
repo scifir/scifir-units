@@ -2,6 +2,19 @@
 
 [![Linux build status](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml/badge.svg)](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml)
 
+## Copy-paste symbols
+
+| Symbol | Use
+| --- | -----
+| θ | String literal of angle and used both in vector_unit_2d and vector_unit_3d.
+| Φ | Angle phi, used in vector_unit_3d.
+| ° | Degree, used in vector_unit_nd and angle class.
+| Ω | String literal of resistance.
+| Å | String literal of angstrom.
+| µ | Prefix micro, used as part of the string literals with micro.
+
+## Welcome!
+
 Still in **beta version 2.0** (you can use it!)
 
 ```
@@ -71,7 +84,6 @@ cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chil
 - [Team](#team)
 - [Funding](#funding)
 - [Goal](#goal)
-- [Copy-paste symbols](#copy-paste-symbols)
 - [Class list](#class-list)
 - [Concepts](#concepts)
 - [History of units of measurement](#history-of-units-of-measurement)
@@ -93,17 +105,6 @@ The **current version** of scifir-units is the **beta-version-2.0**. The version
 ## Reference
 
 The reference of classes and functions can be read in the [reference of scifir-units](https://scifir.github.io/scifir-units/annotated.html).
-
-## Copy-paste symbols
-
-| Symbol | Use
-| --- | -----
-| θ | String literal of angle and used both in vector_unit_2d and vector_unit_3d.
-| Φ | Angle phi, used in vector_unit_3d.
-| ° | Degree, used in vector_unit_nd and angle class.
-| Ω | String literal of resistance.
-| Å | String literal of angstrom.
-| µ | Prefix micro, used as part of the string literals with micro.
 
 ## Class list
 
