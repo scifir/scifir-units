@@ -21,7 +21,7 @@ namespace scifir
 			case conversion::DYNE:
 				return 1.0L;
 			case conversion::BARYE:
-				return 0.0L;
+				return 1.0L;
 			case conversion::BAR:
 				return 0.0L;
 			case conversion::ATMOSPHERE:
@@ -281,7 +281,10 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
 			case conversion::BARYE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::CENTI,dimension::DENOMINATOR));
+				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
 			case conversion::BAR:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
