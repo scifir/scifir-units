@@ -221,14 +221,16 @@
 - TODO: add the planck system of units
 - TODO: add the Gaussian units
 - TODO: add the atomic units
-- TODO: finish the conversion of the imperial units and of the US units [https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems](https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems)
-- TODO: add the natural units
+- TODO: add the natural units (used for atomic physics)
 
-## CONVERSION (3)
+- TODO: possibly add the translations of names to some languages
+
+## CONVERSION (4)
 
 - TODO: add the apothecaries system of units, maybe there are more systems to add
 - TODO: possibly add the drop units
-- TODO: create an enum of all conversion types
+- TODO: search if there are more historical units of measure to add
+- TODO: finish the conversion of the imperial units and of the US units [https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems](https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems)
 
 ## UNITS (19)
 
