@@ -125,23 +125,23 @@ namespace scifir
 			case conversion::IMPERIAL_HORSEPOWER:
 				return 745.7L;
 			case conversion::US_TWIP:
-				return 0.0L;
+				return (25.4L / 1440.0L);
 			case conversion::US_MIL:
-				return 0.0L;
+				return 25.4L;
 			case conversion::US_POINT:
-				return 0.0L;
+				return (127.0L / 360.0L);
 			case conversion::US_PICA:
-				return 0.0L;
+				return (127.0L / 30.0L);
 			case conversion::US_INCH:
-				return 0.0L;
+				return 25.4L;
 			case conversion::US_FOOT:
-				return 0.0L;
+				return 0.3048L;
 			case conversion::US_YARD:
-				return 0.0L;
+				return 0.9144L;
 			case conversion::US_MILE:
-				return 0.0L;
+				return 1.609344L;
 			case conversion::US_LEAGUE:
-				return 0.0L;
+				return 4.828032L;
 			case conversion::US_FATHOM:
 				return 0.0L;
 			case conversion::US_CABLE:
@@ -452,31 +452,31 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::WATT,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_TWIP:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_MIL:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MICRO,dimension::NUMERATOR));
 				break;
 			case conversion::US_POINT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_PICA:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_INCH:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_FOOT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_YARD:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_MILE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_LEAGUE:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_FATHOM:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
