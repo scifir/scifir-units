@@ -29,6 +29,8 @@ namespace scifir
 			long double get_conversion_factor() const;
 			vector<dimension> get_conversion_dimensions() const;
 
+			bool is_special_conversion() const;
+
 			conversion::type conversion_type;
 	};
 }

@@ -43,7 +43,7 @@ namespace scifir
 			case conversion::CUBIC_CENTIMETRES:
 				return 1.0L;
 			case conversion::FAHRENHEIT:
-				return 0.0L;
+				return 1.0L;
 			case conversion::HORSEPOWER:
 				return 0.0L;
 			case conversion::WATT_HOUR:
@@ -327,7 +327,7 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::FAHRENHEIT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::HORSEPOWER:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
@@ -667,5 +667,17 @@ namespace scifir
 				break;
 		};
 		return conversion_dimensions;
+	}
+
+	bool conversion::is_special_conversion() const
+	{
+		if (conversion_type == conversion::FAHRENHEIT)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }
