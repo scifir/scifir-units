@@ -1819,3 +1819,19 @@ Then, the energy, which has the dimensions kg*m2/s2 means the following: the inc
 ### Area and volume dimensions
 
 **Area** and **volume**, as thinked by the author of this library, can be considered simple or composite dimensions, depending on the point of view. From the point of view that's used inside the SI system of units, they are composite dimensions because there's more than one base dimension. From another point of view, it can be thinked that, given the fact that the same dimension is present with an exponent, then it's just a simple dimension. With this in mind, it can be thinked a unitary square and a unitary cube as the base of this simple dimension.
+
+## Bibliography
+
+Some webpages to learn about units of measurement are the following:
+
+- International System of Units: [https://en.wikipedia.org/wiki/International_System_of_Units](https://en.wikipedia.org/wiki/International_System_of_Units)
+- International Bureau of Weights and Measures (BIPM): [https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures](https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures)
+- Imperial units: [https://en.wikipedia.org/wiki/Imperial_units](https://en.wikipedia.org/wiki/Imperial_units)
+- US customary units: [https://en.wikipedia.org/wiki/United_States_customary_units](https://en.wikipedia.org/wiki/United_States_customary_units)
+- Comparison of imperial units and US customary units: [https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems](https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems)
+
+Some webpages to learn math related to units of measurement, which are very important topics to learn deep in math when working in science, are the following:
+
+- Angle: [https://en.wikipedia.org/wiki/Angle](https://en.wikipedia.org/wiki/Angle)
+- Radian: [https://en.wikipedia.org/wiki/Radian](https://en.wikipedia.org/wiki/Radian)
+- Degree: [https://en.wikipedia.org/wiki/Degree_(angle)](https://en.wikipedia.org/wiki/Degree_(angle))
