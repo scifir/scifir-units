@@ -489,7 +489,6 @@ namespace scifir
 		long double new_value = get_value();
 		if (init_dimensions != "sci")
 		{
-			vector<dimension> new_dimensions = create_dimensions(init_dimensions);
 			for(const dimension& x_dimension : dimensions)
 			{
 				if (x_dimension.dimension_position == dimension::NUMERATOR)
@@ -515,6 +514,7 @@ namespace scifir
 					new_value /= x_dimension.prefix_math();
 				}
 			}
+			vector<dimension> new_dimensions = create_dimensions(init_dimensions);
 			if (dimensions.size() == 1 and new_dimensions.size() == 1)
 			{
 				if (dimensions[0].dimension_type == dimension::CELSIUS and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::KELVIN and new_dimensions[0].dimension_position == dimension::NUMERATOR)
