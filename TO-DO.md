@@ -1,6 +1,6 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 229
+**Number of TODOs:** 228
 
 ## MATERIAL_VECTOR_UNIT (1)
 
@@ -15,23 +15,20 @@
 - TODO: add an enum of the types of radio waves AM and FM
 - TODO: wave class with frequency and wavelength scalar_units, with child classes wave_2d and wave_3d that include coordinates_2dr and coordinates_3dr respectively. It can calculate the speed with the frequency and the wavelength, it returns the type of wave based on the value of the frequency
 
-## CURRENT (18)
+## CURRENT (15)
 
 - TODO: conversion of size_t to and int gives a warning in MSVC
 - TODO: finish testing in MSVC all tests
 - TODO: solid_angle class, with the literal "_sr" too
 - TODO: explanation, with code examples, of physics and chemistry laws
 - TODO: there is a bug with is_close_prefix in base_display()
-- TODO: warning of to_string() functions of body.hpp
 - TODO: change the default of display() to be of all decimals instead of two
-- TODO: apparently units.hpp should have the #include directives with ./ at the start
 
 - TODO: think of how to implement conversions, do also the test of them
 - TODO: support the conversion inside the display of scalar_unit
 - TODO: add the old historic systems of units to conversion, and explain them in the README.md file
 - TODO: add the conversions of the CGS system of units, and the FPS system of units
 - TODO: add Farenheit, Rankine and maybe other dimensions of temperature as conversions
-- TODO: check if the member-variable names of dimension class can be changed
 
 - TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their child classes
 
@@ -79,12 +76,13 @@
 - TODO: add the code coverage badge
 - TODO: upload scifir-units to sourceforge too
 
-## RELEASE (4)
+## RELEASE (5)
 
 - TODO: publish scifir-units, beta version, in Universidad de Chile
 - TODO: see other repositories of universities where scifir-units can be published
 - TODO: see what to do to configure optimizations
 - TODO: add scifir-units to the official repository of vcpkg
+- TODO: add google analytics to the github pages of scifir-units
 
 ## TESTS (7)
 
@@ -96,7 +94,7 @@
 - TODO: test of base unit classes
 - TODO: test stof() with bad values
 
-## DOCUMENTATION (36)
+## DOCUMENTATION (35)
 
 - TODO: create all the dox files of the library
 - TODO: add latex to the factors of prefixes in prefix.dox
@@ -119,8 +117,6 @@
 - TODO: add a section of "Optional knowledge"
 - TODO: add a system of surface parameterization of the human body
 - TODO: describe in detail how to measure in very small scale for each different base unit
-
-- TODO: add google analytics to the website of scifir-units of github pages
 
 - TODO: add the abbreviations in the groups too
 - TODO: add the explanation of the definition of each unit inside a file, including conversions
@@ -205,7 +201,7 @@
 - TODO: maybe all constant values should be constexpr, and maybe there's a way to make them scalar_unit without needing to have all of them defined at the same time, because that sizes
 - TODO: add the constants of astronomy
 
-## DIMENSIONS (14)
+## DIMENSIONS (15)
 
 - TODO: support the binary prefixes too
 - TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
@@ -224,14 +220,14 @@
 - TODO: add the atomic units
 - TODO: add the natural units (used for atomic physics)
 
-- TODO: possibly add the translations of names to some languages
+## CONVERSION (6)
 
-## CONVERSION (4)
-
-- TODO: add the apothecaries system of units, maybe there are more systems to add
 - TODO: possibly add the drop units
+- TODO: possibly add the metric horsepower too
+- TODO: decide something to do with the US customary units of dry volume pint, quart and gallon, which have different values than those same units of measurement for fluids, maybe it's needed to define two different customary units with similar names
+- TODO: add the chinese units of measurement as conversions
+- TODO: add the apothecaries system of units, maybe there are more systems to add
 - TODO: search if there are more historical units of measure to add
-- TODO: finish the conversion of the imperial units and of the US units [https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems](https://en.wikipedia.org/wiki/Comparison_of_the_imperial_and_US_customary_measurement_systems)
 
 ## UNITS (19)
 
