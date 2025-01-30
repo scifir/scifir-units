@@ -167,13 +167,13 @@ namespace scifir
 			case conversion::US_SURVEY_TOWNSHIP:
 				return 93.23993L;
 			case conversion::US_CUBIC_INCH:
-				return 0.0L;
+				return 16.387064L;
 			case conversion::US_CUBIC_FOOT:
-				return 0.0L;
+				return 28.316846592L;
 			case conversion::US_CUBIC_YARD:
-				return 0.0L;
+				return 764.554857984L;
 			case conversion::US_ACRE_FOOT:
-				return 0.0L;
+				return 1.23348183754752L;
 			case conversion::US_MINIM:
 				return 0.0L;
 			case conversion::US_FLUID_DRAM:
@@ -520,16 +520,16 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_CUBIC_INCH:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
 				break;
 			case conversion::US_CUBIC_FOOT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_CUBIC_YARD:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_ACRE_FOOT:
-				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MEGA,dimension::NUMERATOR));
 				break;
 			case conversion::US_MINIM:
 				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
