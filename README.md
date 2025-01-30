@@ -56,6 +56,27 @@ cout << d << endl; // Prints "(P) universe:milky-way:solar-system:earth (Z) chil
 // Among many other features!
 ```
 
+## Table of contents
+
+- [Versions](#versions)
+- [Reference](#reference)
+- [Portability](#portability)
+- [Team](#team)
+- [Funding](#funding)
+- [Goal](#goal)
+- [Copy-paste symbols](#copy-paste-symbols)
+- [Class list](#class-list)
+- [Concepts](#concepts)
+- [History of units of measuremnt](#history-of-units-of-measurement)
+- [Folder structure](#folder-structure)
+- [Installation](#installation)
+- [Introduction](#introduction)
+- [Use cases](#use-cases)
+- [Core functionalities](#core-functionalities)
+- [Code examples of features](#code-examples-of-features)
+- [Code examples](#code-examples)
+- [Internals](#internals)
+
 ## Versions
 
 The **current version** of scifir-units is the **beta-version-2.0**. The version 1.0 has never been released because the version 2.0 was better by a great extent. The version 2.0 includes a better inheritance system and a wide simplification of all the programming of the library and, then, a better compilation and a saving of RAM for each instantiation of each class. Because of that reason, the version 2.0 has been preferred over the version 1.0.
@@ -68,7 +89,7 @@ The reference of classes and functions can be read in the [reference of scifir-u
 
 ### scifir-units in other programming languages
 
-Although scifir-units currently is only available in C++, it can be created partially (strictly, even totally) in other programming languages. So, if you need this library in other programming languages, just copy the classes you need and change them to be in the other programming language. For java, for example, copying angle class, the name would be Angle, because of the nomenclature of java, and all functions should be identical in behaviour, but in camelCase as name, because that's the format of java. For example, in java, get_value() would be called getValue(). For normal functions, in java, you need to add them inside the class and make them static, because java doesn't supports functions outside classes.
+Although scifir-units currently is only available in C++, it can be created in other programming languages. So, if you need this library in other programming languages, just copy the classes you need and change them to be in the other programming language. For java, for example, copying angle class, the name would be Angle, because of the nomenclature of java, and all functions should be identical in behaviour, but in camelCase as name, because that's the format of java. For example, in java, get_value() would be called getValue(). For normal functions, in java, you need to add them inside the class and make them static, because java doesn't supports functions outside classes.
 
 So, to create the **equivalent library** of scifir-units in another programming language, just copy the same API changing the format of the code to follow the code format of the programming language to which you're replicating the library. The names of the functions equivalent to the special operators are instead, for other programming languages, the functions sum(), substract(), multiply() and divide(). Use increment() and decrement() for the operator ++() and the operator --(), respectively.
 
@@ -86,21 +107,7 @@ The **goal of scifir-units** is to create a very good library of all units of me
 
 scifir-units is intended to be **basal to develop scientific software**, of any kind, and to provide a solution for all common scientific calculations involving scalar units, vectors, coordinates, among other common math operations. The space has been supported for the 1D, the 2D, the 3D and even the ND case. Then, the problem of doing lots of calculus in scientific software has its difficulty reduced a big amount.
 
-### Using the library
-
-First you have to link **scifir-units** to your project. To link scifir-units, after installing it following the steps above, add the following code inside your CMakeLists.txt file:
-
-```
-target_link_libraries(your-project scifir-units)
-```
-
-Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**. All classes of scifir-units are inside the **namespace scifir**.
-
-```
-#include "scifir/units.hpp"
-```
-
-### Copy-paste symbols
+## Copy-paste symbols
 
 | Symbol | Use
 | --- | -----
@@ -111,31 +118,7 @@ Now that the library es linked, you can use it inside your code by including the
 | Å | String literal of angstrom.
 | µ | Prefix micro, used as part of the string literals with micro.
 
-### Concepts
-
-- In science, a **scalar unit** is a unit of measurement that adds dimensions to a number, in order to allow to manage concepts represents with numbers better. The dimensions can have prefixes, like kilo and deci, that scale the value by multiples of 10.
-- The **International System of Units**, of abbreviation **SI**, defines the following **base units**: metre (m), second (s), gram (g), electric current (A), temperature (K), amount of substance (mol), luminous intensity (cd).
-- The **decimal prefixes** are part of the SI system of units scale the value of the base unit by a factor. Examples of prefixes are the kilo (k, factor 3), deci (d, factor -1) and milli (m, factor -3).
-- The **derived units**, part of the SI system of units, are the units derived from the base units.
-- The **angle** is not exactly a scalar unit, but is similar. Its main difference with a scalar unit is that it's a mathematical concept, not a concept defined from natural science.
-- As the angle, the **complex number** also is not a scalar unit, because it's a mathematical concept, not defined from natural science.
-- The **laboratory number** allows to work with measures and possible errors of those measures. It's a mathematical concept invented for the laboratory.
-- A **vector unit** is a vector that also has dimensions, like scalar units.
-- A **scalar field** is a function that assigns a scalar unit to each point inside a space.
-- A **vector field** is a function that assigns a vector unit to each point inside a space.
-- The **space** is measured in units of lengths, which in the SI system of units is the metre. Inside scifir-units, it can be used a length, a float or a scalar unit of an imaginary dimension. The scalar_unit is the better system, the float is intended for high-performance computation needs, and the imaginary dimensions are needed when they are being used for some purpose in the project (and that's why they are supported here).
-- A **space of two dimensions** has only two edges, it's an imaginary space that doesn't exist in the real world, but is used for simulations and some reasonings. It's abbreviated **2D**.
-- A **space of three dimensions** has three edges, it can represent both the real world and imaginary worlds. It's abbreviated **3D**.
-- Inside scifir-units, a space of a variable number of dimensions is abbreviated **ND**, of **space of n-dimensions**. ND can be sometimes 2D, sometimes 3D, also it can be 1D if needed, and even a space of a greather number of dimensions.
-- The **tensors** are used inside scifir-units as any other scalar_unit, vector_unit or matrix, there's no tensor class because with those classes it's not needed.
-- The **coordinates** are the position of an object in the space. There are coordinates for 2D and for 3D spaces, which are different systems of coordinates. For 2D spaces there exist the **cartesian coordinates** and the **polar coordinates**. For 3D space there exist the **cartesian coordinates**, the **cylindrical coordinates** and the **spherical coordinates**. The cartesian coordinates in 3D contain one more component of coordinates than their 2D counterpart.
-- The **points**, although can be thinked as being identical to coordinates, are usually fixed in the space. The coordinates are used for the positions of objects inside the space, and the points for more fixed uses.
-- A **percentage** is a mathematical concept that represents a fraction of some value, the fraction can be better than the value too.
-- **AID**, acronym of **Astronomical ID**, and **ZID**, acronym of **Zone ID**, are two identifiers invented in Scifir that provide a text-based identifier to refer to astronomical objects and zones, respectively. They are considered a special unit inside scifir-units.
-- The **pH** is a concept used in chemistry for measuring the concentration of H+ ions in a solution.
-- The **concentrations** different than the molar concentration and the mass concentration are managed with ppm, ppb, ppt and ppq, which are part of the percentage class. Use percentage then for the **volume concentration**, the **mole fraction**, the **mole ratio**, the **mass fraction**, the **mass ratio** and the **volume fraction**.
-
-### Class list
+## Class list
 
 - prefix.
 - dimension.
@@ -159,6 +142,30 @@ prefix can have all SI prefixes. dimension has all SI base dimensions, all commo
 - All base and derived vectorial unit classes in 2D inherit directly from vector_unit_2d class, and end with the **suffix _2d**.
 - All base and derived vectorial unit classes in 3D inherit directly from vector_unit_3d class, and end with the **suffix _3d**.
 - All base and derived vectorial unit classes in ND inherit directly from vector_unit_nd class, and end with the **suffix _nd**.
+
+## Concepts
+
+- In science, a **scalar unit** is a unit of measurement that adds dimensions to a number, in order to allow to manage concepts represents with numbers better. The dimensions can have prefixes, like kilo and deci, that scale the value by multiples of 10.
+- The **International System of Units**, of abbreviation **SI**, defines the following **base units**: metre (m), second (s), gram (g), electric current (A), temperature (K), amount of substance (mol), luminous intensity (cd).
+- The **decimal prefixes** are part of the SI system of units scale the value of the base unit by a factor. Examples of prefixes are the kilo (k, factor 3), deci (d, factor -1) and milli (m, factor -3).
+- The **derived units**, part of the SI system of units, are the units derived from the base units.
+- The **angle** is not exactly a scalar unit, but is similar. Its main difference with a scalar unit is that it's a mathematical concept, not a concept defined from natural science.
+- As the angle, the **complex number** also is not a scalar unit, because it's a mathematical concept, not defined from natural science.
+- The **laboratory number** allows to work with measures and possible errors of those measures. It's a mathematical concept invented for the laboratory.
+- A **vector unit** is a vector that also has dimensions, like scalar units.
+- A **scalar field** is a function that assigns a scalar unit to each point inside a space.
+- A **vector field** is a function that assigns a vector unit to each point inside a space.
+- The **space** is measured in units of lengths, which in the SI system of units is the metre. Inside scifir-units, it can be used a length, a float or a scalar unit of an imaginary dimension. The scalar_unit is the better system, the float is intended for high-performance computation needs, and the imaginary dimensions are needed when they are being used for some purpose in the project (and that's why they are supported here).
+- A **space of two dimensions** has only two edges, it's an imaginary space that doesn't exist in the real world, but is used for simulations and some reasonings. It's abbreviated **2D**.
+- A **space of three dimensions** has three edges, it can represent both the real world and imaginary worlds. It's abbreviated **3D**.
+- Inside scifir-units, a space of a variable number of dimensions is abbreviated **ND**, of **space of n-dimensions**. ND can be sometimes 2D, sometimes 3D, also it can be 1D if needed, and even a space of a greather number of dimensions.
+- The **tensors** are used inside scifir-units as any other scalar_unit, vector_unit or matrix, there's no tensor class because with those classes it's not needed.
+- The **coordinates** are the position of an object in the space. There are coordinates for 2D and for 3D spaces, which are different systems of coordinates. For 2D spaces there exist the **cartesian coordinates** and the **polar coordinates**. For 3D space there exist the **cartesian coordinates**, the **cylindrical coordinates** and the **spherical coordinates**. The cartesian coordinates in 3D contain one more component of coordinates than their 2D counterpart.
+- The **points**, although can be thinked as being identical to coordinates, are usually fixed in the space. The coordinates are used for the positions of objects inside the space, and the points for more fixed uses.
+- A **percentage** is a mathematical concept that represents a fraction of some value, the fraction can be better than the value too.
+- **AID**, acronym of **Astronomical ID**, and **ZID**, acronym of **Zone ID**, are two identifiers invented in Scifir that provide a text-based identifier to refer to astronomical objects and zones, respectively. They are considered a special unit inside scifir-units.
+- The **pH** is a concept used in chemistry for measuring the concentration of H+ ions in a solution.
+- The **concentrations** different than the molar concentration and the mass concentration are managed with ppm, ppb, ppt and ppq, which are part of the percentage class. Use percentage then for the **volume concentration**, the **mole fraction**, the **mole ratio**, the **mass fraction**, the **mass ratio** and the **volume fraction**.
 
 ### Tools of units in real life
 
@@ -252,7 +259,7 @@ All constants of the SI system of units are implemeneted inside scifir-units, in
 - All coordinates classes have support at the same time all the coordinates systems of their respective number of dimensions, not only cartesian coordinates.
 - To create, in your project, derived units, with base dimensions different than the base and derived units defined inside scifir-units, use **SCALAR_UNIT_HPP(new_unit)** and **SCALAR_UNIT_CPP(new_unit,"init_dimensions")** to define new scalar_unit classes. Use **VECTOR_UNIT_HPP** and **VECTOR_UNIT_CPP** in the same manner to define all vector_unit classes (2d, 3d and nd) and also the scalar_unit class. The suffixes _2d, _3d and _nd will be automatically added. Use **VECTOR_UNIT_2D_HPP**, **VECTOR_UNIT_3D_HPP** and **VECTOR_UNIT_ND_HPP** with their respective **VECTOR_UNIT_2D_CPP**, **VECTOR_UNIT_3D_CPP** and **VECTOR_UNIT_ND_CPP** to define only the respective vector unit class without defining the other types too.
 
-### History of units of measurement
+## History of units of measurement
 
 The first units of measurement have been created in the **prehistory**, by the **summerians**.
 
@@ -262,7 +269,7 @@ Previous to the SI system of units were the **English units**, replaced later by
 
 Each country has had his own system of units of measurement, or his own definition of it. Those system nowadays have been mainly replaced by the SI system of units.
 
-### Folder structure
+## Folder structure
 
 - **.github/:** Contains configuration files related to the GitHub of scifir-units.
 - **coordinates/:** Contains coordinates classes.
@@ -278,23 +285,29 @@ Each country has had his own system of units of measurement, or his own definiti
 - **units/:** Contains the unit classes, dimension, prefix and conversion.
 - **util/:** Contains utilities for programming related to scifir-units, like is_number in template programming, matrix class and primitive type operations.
 
-## Table of contents
-
-- [Installation](#installation)
-- [Introduction](#introduction)
-- [Use cases](#use-cases)
-- [Core functionalities](#core-functionalities)
-- [Code examples of features](#code-examples-of-features)
-- [Code examples](#code-examples)
-- [Internals](#internals)
-
 ## Installation
 
 To install **scifir-units** you have to use **CMake** and **make**. scifir-units can be compiled with **g++**, **clang++** and **msvc**. Also, **nvcc** and **dpcpp** can also be used. The compilers for microcontrollers can also be used.
 
-scifir-units uses **icu** and **boost** libraries. Of boost, it uses boost-system. You have to install those two libraries in order to install scifir-units. To do so, use **apt** in Ubuntu and Debian, **yum** for Fedora and similar distributions, or another package manager if your Linux distribution doesn't use those two. Inside Windows, install those libraries through **vcpkg**, if you want to build scifir-units as lib or dll, or through **mingw**, if you want to use scifir-units as on Linux distributions.
+scifir-units uses **icu** and **boost** libraries. Of boost, it uses boost-system. You have to install those two libraries in order to install scifir-units. To do so, use **apt** in Ubuntu and Debian, **yum** for Fedora and similar distributions, or another package manager if your Linux distribution doesn't use those. Inside Windows, install those libraries through **vcpkg** if you want to build scifir-units as lib or dll, or through **mingw** if you want to use scifir-units as on Linux distributions.
 
 Also, if you want to compile the tests, you'll need the library **catch2**, which you can install with the same package manager that you have used to install icu and boost.
+
+### Add scifir-units inside your build
+
+First you have to link **scifir-units** to your project. To link scifir-units, after installing it following the steps above, add the following code inside your CMakeLists.txt file:
+
+```
+target_link_libraries(your-project scifir-units)
+```
+
+Now that the library es linked, you can use it inside your code by including the **header "scifir/units.hpp"**. All classes of scifir-units are inside the **namespace scifir**.
+
+```
+#include "scifir/units.hpp"
+```
+
+### Build options
 
 If you want to change the compiler to use you have to use the argument **-DCMAKE_CXX_COMPILER** in the first cmake command, the cmake command with the --preset argument. There, you can specify, for example, -DCMAKE_CXX_COMPILER=clang++, to use the **clang++** compiler. You can also specify flags for the compiler using the argument **-DCMAKE_CXX_FLAGS**.
 
@@ -302,7 +315,7 @@ The environment variables needed to be set in your operating system to build sci
 
 If, for any reason, you need to configure something inside your local installation of cmake to build scifir-units, or if you have any problem building scifir-units, check the documentation of cmake here: [https://www.cmake.org/documentation](https://www.cmake.org/documentation). cmake is a software easy to use, and you shouldn't need more than some days of study (thinking that you don't know cmake yet) to fully learn it.
 
-#### Configuring cmake for boost
+### Configuring cmake for boost
 
 To build scifir-units you need to configure cmake to find boost with the module **FindBoost.cmake**. To do so, set the environment variables of cmake called **CMAKE_INCLUDE_PATH** to the include directory (usually **/usr/include** in Linux) and **CMAKE_LIBRARY_PATH** to the link directory (usually **/usr/lib** in Linux). The include directory usually doesn't change with Linux distributions, but the link directory does. The link directory can be, for example, **/usr/lib/x86_64-gnu-linux** in Debian, **/usr/lib64** in Fedora, **/usr/lib** in Arch Linux, other Linux distributions have others link directories.
 
