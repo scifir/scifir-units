@@ -167,9 +167,9 @@ The conventions for storing informatic data are the following:
 
 All the unit classes, and also the other related classes of this library, can be constructed with what is called here an **initialization string**. An initialization string is an string used to instantiate the class, and it's also used when converting the class to an string for any purpose (like printing it on the screen).
 
-The initialization strings are the following:
+The initialization strings are like the following examples:
 
-- **dimensions**: "m2 / s", "J / s2 * kg"
+- **vector\<dimension\>**: "m2 / s", "J / s2 * kg"
 - **angle**: "37°" or "37º"
 - **scalar_unit**: "1 km"
 - **vector_unit_2d**: "5 km 10θ" or "5 km 10°"
