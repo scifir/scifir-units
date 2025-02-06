@@ -2119,6 +2119,10 @@ namespace scifir
 		vector<dimension> y_base_dimensions = create_base_dimensions(y);
 		if (x_base_dimensions.size() == y_base_dimensions.size())
 		{
+			if (x_base_dimensions.size() == 0)
+			{
+				return true;
+			}
 			vector<unsigned int> skip = vector<unsigned int>();
 			for (const dimension& x_dimension: x_base_dimensions)
 			{

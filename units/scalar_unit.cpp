@@ -55,7 +55,6 @@ namespace scifir
 
 	scalar_unit::scalar_unit(const string& init_scalar) : scalar_unit()
 	{
-		//static_assert(is_valid_scalar_unit("asdf"),"invalid initialization string");
 		initialize_from_string(init_scalar);
 	}
 
@@ -167,7 +166,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Exponent of dimensions doesn't exist" << endl;
+			cerr << "Exponent with dimensions doesn't exist" << endl;
 			return scalar_unit();
 		}
 	}

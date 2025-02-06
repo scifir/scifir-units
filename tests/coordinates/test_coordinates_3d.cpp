@@ -3,6 +3,8 @@
 #include "catch2/catch_all.hpp"
 #include "../../coordinates/coordinates_3d.hpp"
 
+#include <iostream>
+
 using namespace std;
 using namespace scifir;
 
@@ -162,6 +164,14 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		/*CHECK(c.get_latitude() == angle(0.0f));
 		CHECK(c.get_longitude() == angle(29.74f));
 		CHECK(c.get_altitude() == "0 m");*/
+	}
+
+	SECTION("Geographic coordinates of coordinates_3d<> class")
+	{
+		coordinates_3d<> a(100000_m,100000_m,6371000_m);
+		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
+		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(to_string(a.get_altitude()) == "15806.6 m");
 	}
 
 	SECTION("set_position(), rotate() and move() of coordinates_3d<> class")

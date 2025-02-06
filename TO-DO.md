@@ -1,6 +1,6 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 225
+**Number of TODOs:** 220
 
 ## MATERIAL_VECTOR_UNIT (1)
 
@@ -22,7 +22,7 @@
 - TODO: solid_angle class, with the literal "_sr" too
 - TODO: explanation, with code examples, of physics and chemistry laws
 - TODO: there is a bug with is_close_prefix in base_display()
-- TODO: change the default of display() to be of all decimals instead of two
+- TODO: maybe change the default of display() to be of all decimals instead of two
 
 - TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their child classes
 
@@ -38,11 +38,10 @@
 - TODO: -Wall gives a warning for vector_unit_nd with end of non-void function
 - TODO: look at the 1.99 of test_coordinates_2d vs the 2 of the float specialization
 
-## BUILD (3)
+## BUILD (2)
 
 - TODO: support freebsd and openbsd
 - TODO: upload the package to the container registry of github packages
-- TODO: check what to do with the version of catch
 
 ## BUILD - ADVANCED (7)
 
@@ -88,28 +87,34 @@
 - TODO: test of base unit classes
 - TODO: test stof() with bad values
 
-## DOCUMENTATION (35)
+## DOCUMENTATION (30)
+
+### DOCUMENTATION - DOXYGEN (7)
 
 - TODO: create all the dox files of the library
 - TODO: add latex to the factors of prefixes in prefix.dox
 - TODO: explain in initialize_from_string() the use of this function. The explanation of the format of the initialization string should be inside the string constructor and the string assignment
 - TODO: add the description of each file, which is different than the description of the class
 - TODO: add in some way or another the base and the derived units to the reference
+- TODO: think if to add the help of Eclipse, and search if other IDEs use some help too
+- TODO: decide if to generate documentation for man, and if so, explain that inside the README.md file
 
-- TODO: add in the table of contents a link to each documentation of class
-- TODO: add an example of fluiddynamics with scifir-geometry for robotics applications
+### DOCUMENTATION - README (12)
+
 - TODO: explain some normal code examples of robotics, medical machines, chemistry machines
-- TODO: add initialization of lab_number<> inside README.md file
 - TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
-- TODO: add a readings section in the README.md file, with some of the urls of the TODO.md file
-- TODO: add to the README.md file an example for creating new unit classes with the macros for them
 - TODO: think on the different cases of use of coordinates and document them, including the use of an origin
-- TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
 - TODO: document the coordinates for the universe, publish that too as an standard inside scifir
 - TODO: mention the WGS in the part of coordinates
-- TODO: add a section of "Optional knowledge"
-- TODO: add a system of surface parameterization of the human body
+- TODO: add to the README.md file an example for creating new unit classes with the macros for them
+- TODO: add an example of fluiddynamics with scifir-geometry for robotics applications
 - TODO: describe in detail how to measure in very small scale for each different base unit
+- TODO: check what to do with the libraries of ISOs and document them inside the README.md file. If there isn't a library of ISOs, decide if to create one
+- TODO: add initialization of lab_number<> inside README.md file
+- TODO: add a system of surface parameterization of the human body
+- TODO: common use cases of each dimension, like eV is for quantum purposes, pc for space travel, etc
+
+### DOCUMENTATION - DOXYGEN PAGES (10)
 
 - TODO: add the abbreviations in the groups too
 - TODO: add the explanation of the definition of each unit inside a file, including conversions
@@ -122,13 +127,9 @@
 - TODO: document how all the operations of scalars and vector units work mathematically, possibly use mathjax inside markdown to display formulas
 - TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication
 
-- TODO: check what to do with the libraries of ISOs and document them inside the README.md file. If there isn't a library of ISOs, decide if to create one
-- TODO: reference books related to the physics, chemistry, biology or math implemented
+### DOCUMENTATION - OTHERS (2)
 
-- TODO: think if to add the help of Eclipse, and search if other IDEs use some help too
-- TODO: decide if to generate documentation for man, and if so, explain that inside the README.md file
 - TODO: document all the NEWS file
-
 - TODO: write an specification of scifir-units to be implemented in any programming language. Write there too the generic method for writing bindings which is to maintain all function names and classnames equal, changing only their spelling to snake-case or camel-case as used in the programming language, and also document equivalencies like using static methods in Java inside a class instead of normal functions in C++.
 
 ## COORDINATES AND POINTS (8)
@@ -144,11 +145,9 @@
 - TODO: add a constructor with the different types of coordinates systems with an enum at the start, like the constructor with enum of percentage class
 - TODO: enum of cardinale points
 
-## COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (7)
+## COORDINATES AND POINTS - GEOGRAPHIC COORDINATES (5)
 
-- TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
 - TODO: add the construction with an string for geographic coordinates
-- TODO: study the geographic coordinates deeply, and see if to add something more related to them
 - TODO: get_altitude() can be two different functions
 - TODO: add the ecliptic coordinates system too
 - TODO: add the variant of the ecliptic coordinates system with a selection of the planet or of the params (which is the generic case)
@@ -244,9 +243,11 @@
 - TODO: contains_dimensions() to test if some dimensions are present, but not if those dimensions are the only ones present
 - TODO: hide the bad constructors of the derived units of scalar_unit, the constructors that can change the dimensions to a different set of basic dimensions than the real basic dimensions
 - TODO: maybe a constructor with float, dimension::type and prefix::type should be added too
+- TODO: apparently divide dimensions doesn't deletes repeated dimensions, and doesn't then gives empty dimensions when there are, because it conserves dimensions both in the numerator and in the denominator
+- TODO: maybe change the use of operator ^ to allow dimensions, and also accept it for angle() when giving a scalar_unit as parameter, document the math fact that dimensions aren't supposely allowed in exponents and as angles, but that, after doing this TODO, it has been allowed in this library in order to simplify the work
 
-- TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
-- TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
+- TODO: regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
+- TODO: detect when there's the same dimension at the numerator and at the denominator of the string initialization
 
 ## BASE UNITS (2)
 
