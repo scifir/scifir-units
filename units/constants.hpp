@@ -2,6 +2,8 @@
 #define SCIFIR_UNITS_UNITS_CONSTANTS_HPP_INCLUDED
 
 #include "boost/math/constants/constants.hpp"
+#include "./scalar_unit.hpp"
+#include "./base_units.hpp"
 
 using namespace std;
 
@@ -23,6 +25,9 @@ namespace scifir
 	const long double VACUUM_PERMITTIVITY = 8.8541878188e-12;
 	const long double RYDBERG_CONSTANT = 1.0973731568539e7;
 	const long double FARADAY_CONSTANT = 9.64853321233100184e4;
+
+	const scalar_unit WGS84_EARTH_SEMIAXIS_A = 6378137_m;
+	const scalar_unit WGS84_EARTH_SEMIAXIS_B = 6356752.314245_m;
 }
 
 #endif // SCIFIR_UNITS_UNITS_CONSTANTS_HPP_INCLUDED

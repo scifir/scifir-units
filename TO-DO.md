@@ -1,6 +1,6 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 220
+**Number of TODOs:** 207
 
 ## MATERIAL_VECTOR_UNIT (1)
 
@@ -38,10 +38,9 @@
 - TODO: -Wall gives a warning for vector_unit_nd with end of non-void function
 - TODO: look at the 1.99 of test_coordinates_2d vs the 2 of the float specialization
 
-## BUILD (2)
+## BUILD (1)
 
 - TODO: support freebsd and openbsd
-- TODO: upload the package to the container registry of github packages
 
 ## BUILD - ADVANCED (7)
 
@@ -53,12 +52,11 @@
 - TODO: support the compilation with Emscripten and add web-assembly as another preset more
 - TODO: check the configuration options that exist for gcov
 
-## IDE (2)
+## IDE (1)
 
 - TODO: check the extension gcov viewer is working properly
-- TODO: configure ctest inside Visual Studio Code
 
-## GITHUB (8)
+## DEPLOY - GITHUB AND OTHERS (9)
 
 - TODO: update the github action that updates the CHANGELOG.md file, make it work
 - TODO: release the version 2.0-beta
@@ -68,6 +66,7 @@
 - TODO: add the release badge
 - TODO: add the code coverage badge
 - TODO: upload scifir-units to sourceforge too
+- TODO: upload the package to the container registry of github packages
 
 ## RELEASE (5)
 
@@ -145,10 +144,11 @@
 - TODO: add a constructor with the different types of coordinates systems with an enum at the start, like the constructor with enum of percentage class
 - TODO: enum of cardinale points
 
-## COORDINATES AND POINTS - GEOGRAPHIC COORDINATES (5)
+## COORDINATES AND POINTS - GEOGRAPHIC COORDINATES (6)
 
 - TODO: add the construction with an string for geographic coordinates
 - TODO: get_altitude() can be two different functions
+- TODO: add the new functions of coordinates to pending classes (coordinates_3d\<float\> class, point_3d classes, coordinates_3dr classes, coordinates_nd classes and coordinates_ndr classes)
 - TODO: add the ecliptic coordinates system too
 - TODO: add the variant of the ecliptic coordinates system with a selection of the planet or of the params (which is the generic case)
 - TODO: add display functions for astronomical_coordinates_3d, with "name ()" for planetary, "Orbit of name ()" for orbital, "name ()" or "Inside name ()" for stellar, "name ()" for central galactic

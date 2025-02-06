@@ -117,21 +117,19 @@ namespace scifir
 
 			angle get_latitude() const
 			{
-				scalar_unit a = 6378137_m;
-				scalar_unit b = 6356752.3142_m;
-				scalar_unit e_square = (scifir::pow(a,2) - scifir::pow(b,2))/scifir::pow(a,2);
-				scalar_unit e_prim_square = (scifir::pow(a,2) - scifir::pow(b,2))/scifir::pow(b,2);
+				scalar_unit e_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_A,2);
+				scalar_unit e_prim_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_B,2);
 				scalar_unit p = scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
-				scalar_unit F = 54.0f * scifir::pow(b,2) * scifir::pow(z,2);
-				long double G = std::pow(p.get_value(),2) + (1.0f - e_square.get_value()) * std::pow(z.get_value(),2) - e_square.get_value() * (std::pow(a.get_value(),2) - std::pow(b.get_value(),2));
+				scalar_unit F = 54.0f * scifir::pow(WGS84_EARTH_SEMIAXIS_B,2) * scifir::pow(z,2);
+				long double G = std::pow(p.get_value(),2) + (1.0f - e_square.get_value()) * std::pow(z.get_value(),2) - e_square.get_value() * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
 				long double c = (scifir::pow(e_square,2) * F * scifir::pow(p,2)).get_value() / std::pow(G,3);
 				long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
 				long double k = s + 1.0f + (1.0f/s);
 				scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),"m4"));
 				scalar_unit Q = scifir::sqrt(1.0f + 2.0f * scifir::pow(e_square,2) * P);
-				scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(a,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
+				scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
 				scalar_unit V = scifir::sqrt(scifir::pow(p - e_square * r0,2) + (1.0f - e_square) * scifir::pow(z,2));
-				scalar_unit z0 = scifir::pow(b,2)*z/(a * V);
+				scalar_unit z0 = scifir::pow(WGS84_EARTH_SEMIAXIS_B,2)*z/(WGS84_EARTH_SEMIAXIS_A * V);
 				return scifir::atan(float((z + e_prim_square * z0)/p));
 			}
 
@@ -142,22 +140,20 @@ namespace scifir
 
 			scalar_unit get_altitude() const
 			{
-				scalar_unit a = 6378137_m;
-				scalar_unit b = 6356752.3142_m;
-				scalar_unit e_square = (scifir::pow(a,2) - scifir::pow(b,2))/scifir::pow(a,2);
-				scalar_unit e_prim_square = (scifir::pow(a,2) - scifir::pow(b,2))/scifir::pow(b,2);
+				scalar_unit e_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_A,2);
+				scalar_unit e_prim_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_B,2);
 				scalar_unit p = scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
-				scalar_unit F = 54.0f * scifir::pow(b,2) * scifir::pow(z,2);
-				long double G = std::pow(p.get_value(),2) + (1.0f - e_square.get_value()) * std::pow(z.get_value(),2) - e_square.get_value() * (std::pow(a.get_value(),2) - std::pow(b.get_value(),2));
+				scalar_unit F = 54.0f * scifir::pow(WGS84_EARTH_SEMIAXIS_B,2) * scifir::pow(z,2);
+				long double G = std::pow(p.get_value(),2) + (1.0f - e_square.get_value()) * std::pow(z.get_value(),2) - e_square.get_value() * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
 				long double c = (scifir::pow(e_square,2) * F * scifir::pow(p,2)).get_value() / std::pow(G,3);
 				long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
 				long double k = s + 1.0f + (1.0f/s);
 				scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),"m4"));
 				scalar_unit Q = scifir::sqrt(1.0f + 2.0f * scifir::pow(e_square,2) * P);
-				scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(a,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
+				scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
 				scalar_unit U = scifir::sqrt(scifir::pow(p - e_square * r0,2) + scifir::pow(z,2));
 				scalar_unit V = scifir::sqrt(scifir::pow(p - e_square * r0,2) + (1.0f - e_square) * scifir::pow(z,2));
-				return scalar_unit(U.get_value() * (1.0f - std::pow(b.get_value(),2) / (a.get_value() * V.get_value())),"m");
+				return scalar_unit(U.get_value() * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V.get_value())),"m");
 			}
 
 			void set_position(const T& new_x,const T& new_y,const T& new_z)
