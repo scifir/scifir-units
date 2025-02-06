@@ -192,9 +192,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(bool(b.get_theta() == angle()));
 		CHECK(bool(b.get_r() == length()));
 		CHECK(bool(b.get_phi() == angle()));
-		/*CHECK(c.get_latitude() == angle(0.0f));
-		CHECK(c.get_longitude() == angle(29.74f));
-		CHECK(c.get_altitude() == "0 m");*/
 	}
 
 	SECTION("Values of different coordinates systems of coordinates_nd<float> class")
@@ -209,9 +206,22 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(bool(b.get_theta() == angle()));
 		CHECK(b.get_r() == 0.0f);
 		CHECK(bool(b.get_phi() == angle()));
-		/*CHECK(c.get_latitude() == angle(0.0f));
-		CHECK(c.get_longitude() == angle(29.74f));
-		CHECK(c.get_altitude() == "0 m");*/
+	}
+
+	SECTION("Geographic coordinates of coordinates_nd<> class")
+	{
+		coordinates_nd<> a(vector<length>{100000_m,100000_m,6371000_m});
+		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
+		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(to_string(a.get_altitude()) == "15806.6 m");
+	}
+
+	SECTION("Geographic coordinates of coordinates_nd<float> class")
+	{
+		coordinates_nd<float> a(vector<float>{100000.0f,100000.0f,6371000.0f});
+		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
+		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(std::fabs(a.get_altitude() - 15806.44f) < 0.01f);
 	}
 
 	SECTION("set_position(), rotate() and move() of coordinates_nd<> class")

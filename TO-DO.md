@@ -1,6 +1,6 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 207
+**Number of TODOs:** 206
 
 ## MATERIAL_VECTOR_UNIT (1)
 
@@ -144,11 +144,10 @@
 - TODO: add a constructor with the different types of coordinates systems with an enum at the start, like the constructor with enum of percentage class
 - TODO: enum of cardinale points
 
-## COORDINATES AND POINTS - GEOGRAPHIC COORDINATES (6)
+## COORDINATES AND POINTS - GEOGRAPHIC COORDINATES (5)
 
 - TODO: add the construction with an string for geographic coordinates
 - TODO: get_altitude() can be two different functions
-- TODO: add the new functions of coordinates to pending classes (coordinates_3d\<float\> class, point_3d classes, coordinates_3dr classes, coordinates_nd classes and coordinates_ndr classes)
 - TODO: add the ecliptic coordinates system too
 - TODO: add the variant of the ecliptic coordinates system with a selection of the planet or of the params (which is the generic case)
 - TODO: add display functions for astronomical_coordinates_3d, with "name ()" for planetary, "Orbit of name ()" for orbital, "name ()" or "Inside name ()" for stellar, "name ()" for central galactic

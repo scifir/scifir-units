@@ -59,13 +59,13 @@
 * \brief Returns the value of phi in spherical coordinates.
 
 * \fn angle coordinates_3d::get_latitude() const
-* \brief Returns the latitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+* \brief Returns the latitude in LLA geographical coordinates. In this case, coordinates_3d represents all the Earth inside an ellipsoid as in the standard WGS84.
 
 * \fn angle coordinates_3d::get_longitude() const
-* \brief Returns the longitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+* \brief Returns the longitude in LLA geographical coordinates. In this case, coordinates_3d represents all the Earth inside an ellipsoid as in the standard WGS84.
 
 * \fn scalar_unit coordinates_3d::get_altitude() const
-* \brief Returns the altitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+* \brief Returns the altitude in LLA geographical coordinates. In this case, coordinates_3d represents all the Earth inside an ellipsoid as in the standard WGS84.
 
 * \fn void coordinates_3d::set_position(const T& new_x,const T& new_y,const T& new_z)
 * \brief Sets x, y and z to the new_x, new_y and new_z.
