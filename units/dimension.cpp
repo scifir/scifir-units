@@ -1974,6 +1974,10 @@ namespace scifir
 	vector<dimension> normalize_dimensions(const vector<dimension>& x)
 	{
 		vector<dimension> new_x = create_base_dimensions(x);
+		if (new_x.size() == 1)
+		{
+			return x;
+		}
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -1987,6 +1991,7 @@ namespace scifir
 						if (j == skip_dimensions[k])
 						{
 							skip = true;
+							break;
 						}
 					}
 					if (skip)
@@ -2011,6 +2016,7 @@ namespace scifir
 				if (i == skip_dimensions[j])
 				{
 					skip = true;
+					break;
 				}
 			}
 			if (!skip)
@@ -2024,6 +2030,10 @@ namespace scifir
 	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<dimension> new_x = create_base_dimensions(x,value);
+		if (new_x.size() == 1)
+		{
+			return x;
+		}
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -2037,6 +2047,7 @@ namespace scifir
 						if (j == skip_dimensions[k])
 						{
 							skip = true;
+							break;
 						}
 					}
 					if (skip)
