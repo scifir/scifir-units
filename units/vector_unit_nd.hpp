@@ -63,6 +63,14 @@ namespace scifir
 			vector_unit_nd();
 			vector_unit_nd(const vector_unit_nd& x);
 			vector_unit_nd(vector_unit_nd&& x);
+			explicit vector_unit_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles,dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR);
 			explicit vector_unit_nd(float new_value,const string& init_dimensions);
 			explicit vector_unit_nd(float new_value,const string& init_dimensions,const vector<float>& new_angles);
 			explicit vector_unit_nd(float new_value,const string& init_dimensions,const vector<angle>& new_angles);

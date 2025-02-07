@@ -17,7 +17,31 @@ namespace scifir
 	
 	vector_unit_2d::vector_unit_2d(vector_unit_2d&& x) : scalar_unit(std::move(x)),theta(std::move(x.theta))
 	{}
-	
+
+	vector_unit_2d::vector_unit_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
 	vector_unit_2d::vector_unit_2d(float new_value,const string& init_dimensions,float new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
 	{}
 	

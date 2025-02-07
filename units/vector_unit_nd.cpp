@@ -16,6 +16,50 @@ namespace scifir
 	vector_unit_nd::vector_unit_nd(vector_unit_nd&& x) : scalar_unit(std::move(x)),angles(std::move(x.angles))
 	{}
 
+	vector_unit_nd::vector_unit_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),angles(new_angles)
+	{}
+
+	vector_unit_nd::vector_unit_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),angles(new_angles)
+	{}
+
+	vector_unit_nd::vector_unit_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),angles(new_angles)
+	{}
+
+	vector_unit_nd::vector_unit_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),angles(new_angles)
+	{}
+
 	vector_unit_nd::vector_unit_nd(float new_value,const string& init_dimensions) : scalar_unit(new_value,init_dimensions),angles()
 	{}
 

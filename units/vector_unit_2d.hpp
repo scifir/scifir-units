@@ -58,6 +58,14 @@ namespace scifir
 			vector_unit_2d();
 			vector_unit_2d(const vector_unit_2d& x);
 			vector_unit_2d(vector_unit_2d&& x);
+			explicit vector_unit_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta,dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR);
 			explicit vector_unit_2d(float new_value,const string& init_dimensions,float new_theta); // Example of initialization (10,"N",50)
 			explicit vector_unit_2d(float new_value,const string& init_dimensions,const angle& new_theta); // Example of initialization (10,"N",50ª)
 			explicit vector_unit_2d(double new_value,const string& init_dimensions,float new_theta); // Example of initialization (10,"N",50)

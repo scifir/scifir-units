@@ -75,6 +75,14 @@ namespace scifir
 			vector_unit_3d();
 			vector_unit_3d(const vector_unit_3d& x);
 			vector_unit_3d(vector_unit_3d&& x);
+			explicit vector_unit_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi,dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR);
 			explicit vector_unit_3d(float new_value,const string& init_dimensions,float new_theta,float new_phi);
 			explicit vector_unit_3d(float new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi);
 			explicit vector_unit_3d(double new_value,const string& init_dimensions,float new_theta,float new_phi);
