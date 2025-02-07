@@ -29,6 +29,21 @@ namespace scifir
 		return *this;
 	}
 
+	angle point_3d<float>::get_latitude() const
+	{
+		return ECEF_to_LLA_latitude(x,y,z);
+	}
+
+	angle point_3d<float>::get_longitude() const
+	{
+		return ECEF_to_LLA_longitude(x,y,z);
+	}
+
+	float point_3d<float>::get_altitude() const
+	{
+		return ECEF_to_LLA_altitude(x,y,z);
+	}
+
 	string to_string(const point_3d<float>& x)
 	{
 		return x.display_cartesian();

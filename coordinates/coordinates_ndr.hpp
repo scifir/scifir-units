@@ -437,43 +437,38 @@ namespace scifir
 
 			angle get_latitude() const
 			{
-				scalar_unit e_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_A,2);
-				scalar_unit e_prim_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_B,2);
-				scalar_unit p = scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2));
-				scalar_unit F = 54.0f * scifir::pow(WGS84_EARTH_SEMIAXIS_B,2) * scifir::pow(values[2],2);
-				long double G = std::pow(p.get_value(),2) + (1.0f - e_square.get_value()) * std::pow(values[2].get_value(),2) - e_square.get_value() * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
-				long double c = (scifir::pow(e_square,2) * F * scifir::pow(p,2)).get_value() / std::pow(G,3);
-				long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
-				long double k = s + 1.0f + (1.0f/s);
-				scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),"m4"));
-				scalar_unit Q = scifir::sqrt(1.0f + 2.0f * scifir::pow(e_square,2) * P);
-				scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(values[2],2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
-				scalar_unit V = scifir::sqrt(scifir::pow(p - e_square * r0,2) + (1.0f - e_square) * scifir::pow(values[2],2));
-				scalar_unit z0 = scifir::pow(WGS84_EARTH_SEMIAXIS_B,2)*values[2]/(WGS84_EARTH_SEMIAXIS_A * V);
-				return scifir::atan(float((values[2] + e_prim_square * z0)/p));
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_latitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return angle();
+				}
 			}
 
 			angle get_longitude() const
 			{
-				return angle(std::atan2(float(values[1]),float(values[0])),angle::RADIAN);
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_longitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return angle();
+				}
 			}
 
 			scalar_unit get_altitude() const
 			{
-				scalar_unit e_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_A,2);
-				scalar_unit e_prim_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_B,2);
-				scalar_unit p = scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2));
-				scalar_unit F = 54.0f * scifir::pow(WGS84_EARTH_SEMIAXIS_B,2) * scifir::pow(values[2],2);
-				long double G = std::pow(p.get_value(),2) + (1.0f - e_square.get_value()) * std::pow(values[2].get_value(),2) - e_square.get_value() * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
-				long double c = (scifir::pow(e_square,2) * F * scifir::pow(p,2)).get_value() / std::pow(G,3);
-				long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
-				long double k = s + 1.0f + (1.0f/s);
-				scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),"m4"));
-				scalar_unit Q = scifir::sqrt(1.0f + 2.0f * scifir::pow(e_square,2) * P);
-				scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(values[2],2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
-				scalar_unit U = scifir::sqrt(scifir::pow(p - e_square * r0,2) + scifir::pow(values[2],2));
-				scalar_unit V = scifir::sqrt(scifir::pow(p - e_square * r0,2) + (1.0f - e_square) * scifir::pow(values[2],2));
-				return scalar_unit(U.get_value() * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V.get_value())),"m");
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_altitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return scalar_unit();
+				}
 			}
 
 			void point_to(direction::name x)
@@ -1529,43 +1524,38 @@ namespace scifir
 
 			angle get_latitude() const
 			{
-				long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
-				long double e_prim_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2);
-				long double p = std::sqrt(std::pow(values[0],2) + std::pow(values[1],2));
-				long double F = 54.0f * std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) * std::pow(values[2],2);
-				long double G = std::pow(p,2) + (1.0f - e_square) * std::pow(values[2],2) - e_square * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
-				long double c = std::pow(e_square,2) * F * std::pow(p,2) / std::pow(G,3);
-				long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
-				long double k = s + 1.0f + (1.0f/s);
-				long double P = F/(3.0f * std::pow(k,2) * std::pow(G,2));
-				long double Q = std::sqrt(1.0f + 2.0f * std::pow(e_square,2) * P);
-				long double r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + std::sqrt((1.0f/2.0f) * std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * std::pow(values[2],2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * std::pow(p,2));
-				long double V = std::sqrt(std::pow(p - e_square * r0,2) + (1.0f - e_square) * std::pow(values[2],2));
-				long double z0 = std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2)*values[2]/(WGS84_EARTH_SEMIAXIS_A.get_value() * V);
-				return scifir::atan(float((values[2] + e_prim_square * z0)/p));
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_latitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return angle();
+				}
 			}
 
 			angle get_longitude() const
 			{
-				return angle(std::atan2(float(values[1]),float(values[0])),angle::RADIAN);
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_longitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return angle();
+				}
 			}
 
 			float get_altitude() const
 			{
-				long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
-				long double e_prim_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2);
-				long double p = std::sqrt(std::pow(values[0],2) + std::pow(values[1],2));
-				long double F = 54.0f * std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) * std::pow(values[2],2);
-				long double G = std::pow(p,2) + (1.0f - e_square) * std::pow(values[2],2) - e_square * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
-				long double c = std::pow(e_square,2) * F * std::pow(p,2) / std::pow(G,3);
-				long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
-				long double k = s + 1.0f + (1.0f/s);
-				long double P = F/(3.0f * std::pow(k,2) * std::pow(G,2));
-				long double Q = std::sqrt(1.0f + 2.0f * std::pow(e_square,2) * P);
-				long double r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + std::sqrt((1.0f/2.0f) * std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * std::pow(values[2],2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * std::pow(p,2));
-				long double U = std::sqrt(std::pow(p - e_square * r0,2) + std::pow(values[2],2));
-				long double V = std::sqrt(std::pow(p - e_square * r0,2) + (1.0f - e_square) * std::pow(values[2],2));
-				return U * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V));
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_altitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return 0.0f;
+				}
 			}
 
 			void point_to(direction::name x)
