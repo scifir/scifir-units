@@ -5,9 +5,8 @@
 #include "../util/is_number.hpp"
 #include "../units/scalar_unit.hpp"
 
-#include "boost/math/constants/constants.hpp"
-
 #include <cmath>
+#include <numbers>
 #include <string>
 
 using namespace std;
@@ -16,12 +15,12 @@ namespace scifir
 {
 	inline float radian_to_degree(float x)
 	{
-		return x * 180.0f / PI;
+		return x * 180.0f / std::numbers::pi_v<float>;
 	}
 
 	inline float degree_to_radian(float x)
 	{
-		return x * PI / 180.0f;
+		return x * std::numbers::pi_v<float> / 180.0f;
 	}
 
 	class angle

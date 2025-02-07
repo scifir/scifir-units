@@ -1,7 +1,6 @@
 #ifndef SCIFIR_UNITS_UNITS_CONSTANTS_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_CONSTANTS_HPP_INCLUDED
 
-#include "boost/math/constants/constants.hpp"
 #include "./scalar_unit.hpp"
 #include "./base_units.hpp"
 
@@ -9,7 +8,6 @@ using namespace std;
 
 namespace scifir
 {
-	constexpr float PI = boost::math::constants::pi<float>();
 	const long double HYPERFINE_TRANSITION_FREQUENCY_OF_CS = 9192631770.0l;
 	const long double SPEED_OF_LIGHT = 299792458.0l;
 	const long double PLANCK_CONSTANT = 6.62607015e-34;

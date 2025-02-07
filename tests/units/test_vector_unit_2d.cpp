@@ -132,7 +132,6 @@ TEST_CASE("class vector_unit_2d")
 		CHECK(to_string(e + vector_unit_2d(100.0f,"m",20)) == "200 m 20θ");
 		CHECK(to_string(e + vector_unit_2d(100.0f,"g",20)) == "0 [empty] 0θ");
 		vector_unit_2d f(100.0f,"m",20);
-		cout << "f -: " << to_string(f - vector_unit_2d(20.0f,"m",20)) << endl;
 		CHECK(to_string(f - vector_unit_2d(20.0f,"m",20)) == "80 m 20θ");
 		CHECK(to_string(f - vector_unit_2d(100.0f,"g",20)) == "0 [empty] 0θ");
 	}

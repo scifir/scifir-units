@@ -6,6 +6,7 @@
 
 #include <cmath>
 #include <iostream>
+#include <numbers>
 #include <set>
 #include <sstream>
 #include <string>
@@ -735,7 +736,7 @@ namespace scifir
 			case dimension::METRE:
 				return 1.0l;
 			case dimension::DEGREE:
-				return PI / 180.0l;
+				return std::numbers::pi_v<float> / 180.0l;
 			case dimension::RADIAN:
 				return 1.0l;
 			case dimension::STERADIAN:

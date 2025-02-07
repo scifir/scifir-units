@@ -280,7 +280,7 @@ TEST_CASE("dimension class") {
 		CHECK(a3_2.get_name() == "degree");
 		CHECK(a3_2.get_plural() == "degrees");
 		CHECK(a3_2.get_symbol() == "θ");
-		CHECK(a3_2.get_conversion_factor() == PI / 180.0l);
+		CHECK(a3_2.get_conversion_factor() == std::numbers::pi_v<float> / 180.0l);
 		CHECK(a3_2.is_simple_dimension() == true);
 		CHECK(a3_2.is_base_dimension() == false);
 		CHECK(a3_2.is_derived_dimension() == true);
