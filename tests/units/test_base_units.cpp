@@ -75,7 +75,9 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_ym == "100 ym"));
 		CHECK(bool(100_rm == "100 rm"));
 		CHECK(bool(100_qm == "100 qm"));
-		
+		CHECK(bool(100e2_m == "10000 m"));
+		CHECK(bool(100.0e2_m == "10000 m"));
+
 		CHECK(bool(100_s == "100 s"));
 		CHECK(bool(100_ms == "100 ms"));
 		CHECK(bool(100_us == "100 us"));
@@ -87,7 +89,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_ys == "100 ys"));
 		CHECK(bool(100_rs == "100 rs"));
 		CHECK(bool(100_qs == "100 qs"));
-		
+
 		CHECK(bool(100_Qg == "100 Qg"));
 		CHECK(bool(100_Rg == "100 Rg"));
 		CHECK(bool(100_Yg == "100 Yg"));
