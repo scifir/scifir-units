@@ -25,7 +25,7 @@ namespace scifir
 		long double c = (scifir::pow(e_square,2) * F * scifir::pow(p,2)).get_value() / std::pow(G,3);
 		long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
 		long double k = s + 1.0f + (1.0f/s);
-		scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),"m4"));
+		scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),{ dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) }));
 		scalar_unit Q = scifir::sqrt(1.0f + 2.0f * scifir::pow(e_square,2) * P);
 		scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
 		scalar_unit V = scifir::sqrt(scifir::pow(p - e_square * r0,2) + (1.0f - e_square) * scifir::pow(z,2));
@@ -48,12 +48,12 @@ namespace scifir
 		long double c = (scifir::pow(e_square,2) * F * scifir::pow(p,2)).get_value() / std::pow(G,3);
 		long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
 		long double k = s + 1.0f + (1.0f/s);
-		scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),"m4"));
+		scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),{ dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) }));
 		scalar_unit Q = scifir::sqrt(1.0f + 2.0f * scifir::pow(e_square,2) * P);
 		scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
 		scalar_unit U = scifir::sqrt(scifir::pow(p - e_square * r0,2) + scifir::pow(z,2));
 		scalar_unit V = scifir::sqrt(scifir::pow(p - e_square * r0,2) + (1.0f - e_square) * scifir::pow(z,2));
-		return scalar_unit(U.get_value() * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V.get_value())),"m");
+		return scalar_unit(U.get_value() * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V.get_value())),{ dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) });
 	}
 
 	inline angle ECEF_to_LLA_latitude(float x, float y, float z)
