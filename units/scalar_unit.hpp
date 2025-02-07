@@ -81,6 +81,10 @@ namespace scifir
 			scalar_unit();
 			scalar_unit(const scalar_unit& x);
 			scalar_unit(scalar_unit&& x);
+			explicit scalar_unit(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit scalar_unit(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit scalar_unit(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit scalar_unit(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
 			explicit scalar_unit(float new_value, const string& init_dimensions);
 			explicit scalar_unit(double new_value, const string& init_dimensions);
 			explicit scalar_unit(long double new_value, const string& init_dimensions);

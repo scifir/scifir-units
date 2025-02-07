@@ -29,6 +29,18 @@ namespace scifir
 	scalar_unit::scalar_unit(scalar_unit&& x) : dimensions(std::move(x.get_dimensions())),value(std::move(x.get_value()))
 	{}
 
+	scalar_unit::scalar_unit(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : dimensions({ dimension(new_dimension,new_prefix,new_position) }),value(new_value)
+	{}
+	
+	scalar_unit::scalar_unit(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : dimensions({ dimension(new_dimension,new_prefix,new_position) }),value(float(new_value))
+	{}
+	
+	scalar_unit::scalar_unit(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : dimensions({ dimension(new_dimension,new_prefix,new_position) }),value(float(new_value))
+	{}
+	
+	scalar_unit::scalar_unit(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : dimensions({ dimension(new_dimension,new_prefix,new_position) }),value(float(new_value))
+	{}
+
 	scalar_unit::scalar_unit(float new_value, const string& init_dimensions) : dimensions(create_dimensions(init_dimensions)),value(new_value)
 	{}
 
