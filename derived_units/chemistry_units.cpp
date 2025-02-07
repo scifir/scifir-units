@@ -23,15 +23,6 @@ namespace scifir
 	SCALAR_UNIT_CPP(energy_density,"g/m*s2");
 	SCALAR_UNIT_CPP(catalytic_efficiency,"m3/s*mol");
 
-	cas_number::cas_number(string new_value) : value(new_value)
-	{
-	}
-
-	string cas_number::display() const
-	{
-		return value;
-	}
-
 	// SUBSTANCE
 	SCALAR_UNIT_CPP(molarity,"M");
 	SCALAR_UNIT_CPP(molality,"mol/g");
