@@ -635,11 +635,10 @@ namespace scifir
 			{
 				string_value.replace(search_10,4,"e");
 			}
-			stringstream ss(string_value);
-			ss >> value;
 			const vector<dimension> new_dimensions = create_dimensions(init_scalar.substr(i));
 			if (real_dimensions.size() == 0 or equal_dimensions(new_dimensions,real_dimensions))
 			{
+				stringstream ss(string_value);
 				ss >> value;
 				dimensions = new_dimensions;
 			}
