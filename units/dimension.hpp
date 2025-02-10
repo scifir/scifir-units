@@ -5,6 +5,8 @@
 
 #include "boost/algorithm/string.hpp"
 
+#include "unicode/uchar.h"
+
 #include <algorithm>
 #include <cstring>
 #include <cstddef>
@@ -182,6 +184,8 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x);
 	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value);
+
+	bool is_dimension_char(const UChar32& x);
 
 	bool common_dimension(const dimension& x,const dimension& y);
 	bool equal_dimensions(const string& init_dimensions_x,const string& init_dimensions_y);

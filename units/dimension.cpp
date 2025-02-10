@@ -4,6 +4,9 @@
 
 #include "boost/algorithm/string.hpp"
 
+#include "unicode/unistr.h"
+#include "unicode/uchar.h"
+
 #include <cmath>
 #include <iostream>
 #include <numbers>
@@ -56,7 +59,7 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "Ω" and init_dimension != "Ohm" and init_dimension != "ohm" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
@@ -1758,41 +1761,45 @@ namespace scifir
 		int new_scale = 1;
 		int new_size = 1;
 		int new_start = 0;
-		string new_dimension_str;
+		icu::UnicodeString new_dimension_str;
 		vector<dimension> dimensions = vector<dimension>();
-		for(unsigned int j = 0; j < init_dimensions.size(); j++)
+		icu::UnicodeString x_unicode = icu::UnicodeString(init_dimensions.c_str());
+		int total_chars = x_unicode.countChar32();
+		for(unsigned int j = 0; j < total_chars; j++)
 		{
-			if(init_dimensions[j] == '1' and init_dimensions[j + 1] == '/')
+			if(x_unicode[j] == UChar32(U'1') and x_unicode[j + 1] == UChar32(U'/'))
 			{
 				new_sign = dimension::DENOMINATOR;
 			}
-			if(isalpha(init_dimensions[j]) and (!isalpha(init_dimensions[j + 1]) or (j + 1) == init_dimensions.size()))
+			if(is_dimension_char(x_unicode[j]) and (!is_dimension_char(x_unicode[j + 1]) or (j + 1) == total_chars))
 			{
-				new_dimension_str = init_dimensions.substr(new_start, new_size);
-				if(isdigit(init_dimensions[j + 1]))
+				new_dimension_str = x_unicode.tempSubString(new_start, new_size);
+				if(u_isdigit(x_unicode[j + 1]))
 				{
-					new_scale = stoi(init_dimensions.substr(j + 1, 1));
+					new_scale = u_charDigitValue(x_unicode[j + 1]);
 				}
 			}
-			if(init_dimensions[j] == '*')
+			if(x_unicode[j] == UChar32(U'*'))
 			{
 				new_size = 0;
 				new_start = j + 1;
 			}
-			else if(init_dimensions[j] == '/')
+			else if(x_unicode[j] == UChar32(U'/'))
 			{
 				new_sign = dimension::DENOMINATOR;
 				new_size = 0;
 				new_start = j + 1;
 			}
-			if(!new_dimension_str.empty())
+			if(!new_dimension_str.countChar32() == 0)
 			{
-				dimension new_dimension = dimension(new_dimension_str,new_sign);
+				string new_dimension_str_stl = "";
+				new_dimension_str.toUTF8String(new_dimension_str_stl);
+				dimension new_dimension = dimension(new_dimension_str_stl,new_sign);
 				for (int k = 0; k < new_scale; k++)
 				{
 					dimensions.push_back(new_dimension);
 				}
-				new_dimension_str.clear();
+				new_dimension_str.remove();
 				new_scale = 1;
 				new_size = 0;
 			}
@@ -2101,6 +2108,11 @@ namespace scifir
 			}
 		}
 		return new_dimensions;
+	}
+
+	bool is_dimension_char(const UChar32& x)
+	{
+		return u_isalpha(x) || x == UChar32(U'Ω') || x == UChar32(U'Å') || x == UChar32(U'θ') || x == UChar32(U'°');
 	}
 
 	bool common_dimension(const dimension& x,const dimension& y)

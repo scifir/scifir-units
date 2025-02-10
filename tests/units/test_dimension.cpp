@@ -1121,6 +1121,9 @@ TEST_CASE("dimension class") {
 		vector<dimension> t = create_dimensions("m2*s2/m4*C3");
 		vector<dimension> u = normalize_dimensions(t);
 		CHECK(to_string(u) == "s2/m2*C3");
+		vector<dimension> v = create_dimensions("Ω");
+		vector<dimension> w = create_dimensions("ohm");
+		CHECK(equal_dimensions(v,w));
 	}
 
 	SECTION ("prefix_math() of dimesion_class")
