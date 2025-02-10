@@ -1170,6 +1170,11 @@ TEST_CASE("dimension class") {
 		vector<dimension> o = divide_dimensions(m,n,m2);
 		vector<dimension> p = create_dimensions("g");
 		CHECK(equal_dimensions(o,p) == true);
+		vector<dimension> m5 = create_dimensions("g*hour");
+		vector<dimension> n3 = create_dimensions("g*s");
+		long double m6 = 1.0;
+		vector<dimension> o3 = divide_dimensions(m5,n3,m6);
+		CHECK(o3.size() == 0);
 		CHECK(m2 == 3600);
 		vector<dimension> q = create_dimensions("g*khour");
 		vector<dimension> r = create_dimensions("s");

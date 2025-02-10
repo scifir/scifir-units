@@ -47,11 +47,11 @@
 			static const vector<dimension> real_dimensions; \
 	}
 
-#define VECTOR_UNIT_ND_CPP(name,init_dimensions) name##_nd::name##_nd() : vector_unit_nd() {} \
+#define VECTOR_UNIT_ND_CPP(name,init_real_dimensions) name##_nd::name##_nd() : vector_unit_nd() {} \
 	name##_nd::name##_nd(const name##_nd& x) : vector_unit_nd(x) {} \
 	name##_nd::name##_nd(name##_nd&& x) : vector_unit_nd(std::move(x)) {} \
-const string name##_nd::dimensions_match = init_dimensions; \
-const vector<dimension> name##_nd::real_dimensions = create_base_dimensions(init_dimensions)
+const string name##_nd::dimensions_match = init_real_dimensions; \
+const vector<dimension> name##_nd::real_dimensions = create_base_dimensions(init_real_dimensions)
 
 using namespace std;
 

@@ -767,7 +767,7 @@ namespace scifir
 	{
 		vector<string> values;
 		boost::split(values,init_vector_nd,boost::is_any_of(" "));
-		scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+		scalar_unit::initialize_from_string(values[0] + " " + values[1],vector<dimension>());
 		if (values.size() > 2)
 		{
 			angles.clear();

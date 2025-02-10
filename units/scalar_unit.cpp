@@ -67,7 +67,7 @@ namespace scifir
 
 	scalar_unit::scalar_unit(const string& init_scalar) : scalar_unit()
 	{
-		initialize_from_string(init_scalar);
+		initialize_from_string(init_scalar,vector<dimension>());
 	}
 
 	scalar_unit& scalar_unit::operator =(const scalar_unit& x)
@@ -100,7 +100,7 @@ namespace scifir
 
 	scalar_unit& scalar_unit::operator =(const string& init_scalar)
 	{
-		initialize_from_string(init_scalar);
+		initialize_from_string(init_scalar,vector<dimension>());
 		return *this;
 	}
 
@@ -606,7 +606,7 @@ namespace scifir
 		}
 	}
 
-	void scalar_unit::initialize_from_string(string init_scalar)
+	void scalar_unit::initialize_from_string(string init_scalar,const vector<dimension>& real_dimensions)
 	{
 		if(!isdigit(init_scalar[0]))
 		{
@@ -637,7 +637,12 @@ namespace scifir
 			}
 			stringstream ss(string_value);
 			ss >> value;
-			dimensions = create_dimensions(init_scalar.substr(i));
+			const vector<dimension> new_dimensions = create_dimensions(init_scalar.substr(i));
+			if (real_dimensions.size() == 0 or equal_dimensions(new_dimensions,real_dimensions))
+			{
+				ss >> value;
+				dimensions = new_dimensions;
+			}
 		}
 	}
 

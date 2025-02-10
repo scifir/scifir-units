@@ -16,13 +16,25 @@
 #define SCALAR_UNIT_HPP_BEGIN(name) class name : public scalar_unit \
 	{	\
 		public: \
-			using scalar_unit::scalar_unit; \
 			name(); \
 			name(const scalar_unit&); \
 			name(scalar_unit&&); \
+			explicit name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(float new_value, const string& init_dimensions); \
+			explicit name(double new_value, const string& init_dimensions); \
+			explicit name(long double new_value, const string& init_dimensions); \
+			explicit name(int new_value, const string& init_dimensions); \
+			explicit name(float new_value, const vector<dimension>& new_dimensions); \
+			explicit name(double new_value, const vector<dimension>& new_dimensions); \
+			explicit name(long double new_value, const vector<dimension>& new_dimensions); \
+			explicit name(int new_value, const vector<dimension>& new_dimensions); \
+			explicit name(const string& init_scalar); \
 			using scalar_unit::operator =; \
-			using scalar_unit::operator+=; \
-			using scalar_unit::operator-=
+			using scalar_unit::operator +=; \
+			using scalar_unit::operator -=
 
 #define SCALAR_UNIT_HPP_END() \
 \
@@ -34,19 +46,31 @@
 #define SCALAR_UNIT_HPP(name) class name : public scalar_unit \
 	{	\
 		public: \
-			using scalar_unit::scalar_unit; \
 			name(); \
 			name(const scalar_unit&); \
 			name(scalar_unit&&); \
+			explicit name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(float new_value, const string& init_dimensions); \
+			explicit name(double new_value, const string& init_dimensions); \
+			explicit name(long double new_value, const string& init_dimensions); \
+			explicit name(int new_value, const string& init_dimensions); \
+			explicit name(float new_value, const vector<dimension>& new_dimensions); \
+			explicit name(double new_value, const vector<dimension>& new_dimensions); \
+			explicit name(long double new_value, const vector<dimension>& new_dimensions); \
+			explicit name(int new_value, const vector<dimension>& new_dimensions); \
+			explicit name(const string& init_scalar); \
 			using scalar_unit::operator =; \
-			using scalar_unit::operator+=; \
-			using scalar_unit::operator-=; \
+			using scalar_unit::operator +=; \
+			using scalar_unit::operator -=; \
 \
 			static const string dimensions_match; \
 			static const vector<dimension> real_dimensions; \
 	}
 
-#define SCALAR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() { \
+#define SCALAR_UNIT_CPP(name,init_real_dimensions) name::name() : scalar_unit() { \
 	scalar_unit::dimensions = name::real_dimensions; \
 } \
 \
@@ -67,9 +91,49 @@
 			dimensions = std::move(x.get_dimensions()); \
 		} \
 	} \
+	name::name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
+	{} \
 \
-const string name::dimensions_match = init_dimensions; \
-const vector<dimension> name::real_dimensions = create_base_dimensions(init_dimensions)
+	name::name(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
+	{} \
+\
+	name::name(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
+	{} \
+\
+	name::name(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
+	{} \
+\
+	name::name(float new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
+	{} \
+\
+	name::name(double new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
+	{} \
+\
+	name::name(long double new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
+	{} \
+\
+	name::name(int new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
+	{} \
+\
+	name::name(float new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
+	{} \
+\
+	name::name(double new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
+	{} \
+\
+	name::name(long double new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
+	{} \
+\
+	name::name(int new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
+	{} \
+\
+	name::name(const string& init_scalar) : scalar_unit() \
+	{ \
+		initialize_from_string(init_scalar,name::real_dimensions); \
+	} \
+\
+const string name::dimensions_match = init_real_dimensions; \
+const vector<dimension> name::real_dimensions = create_base_dimensions(init_real_dimensions)
 
 using namespace std;
 
@@ -215,7 +279,7 @@ namespace scifir
 
 			void add_dimension(const dimension& new_dimension);
 			void remove_dimension(const dimension& old_dimension);
-			void initialize_from_string(string init_scalar);
+			void initialize_from_string(string init_scalar,const vector<dimension>& real_dimensions);
 	};
 
 	string to_string(const scalar_unit& x);

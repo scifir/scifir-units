@@ -337,7 +337,7 @@ namespace scifir
 		boost::split(values,init_vector_2d,boost::is_any_of(" "));
 		if (values.size() == 3)
 		{
-			scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+			scalar_unit::initialize_from_string(values[0] + " " + values[1],vector<dimension>());
 			theta = angle(values[2]);
 		}
 	}

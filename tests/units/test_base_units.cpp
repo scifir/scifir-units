@@ -44,8 +44,8 @@ TEST_CASE("Base units") {
 	}
 
 	SECTION("mole class") {
-		scifir::mole a = scifir::mole("1 ppm","1000000 g");
-		CHECK(to_string(a) == "1 g");
+		scifir::mole a = scifir::mole("1 ppm","1000000 mol");
+		CHECK(to_string(a) == "1 mol");
 	}
 
 	SECTION("Base unit literals")
