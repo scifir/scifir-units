@@ -645,6 +645,15 @@ namespace scifir
 		}
 	}
 
+	void scalar_unit::check_dimensions(const vector<dimension>& real_dimensions)
+	{
+		if (!has_dimensions(real_dimensions))
+		{
+			value = 0;
+			dimensions.clear();
+		}
+	}
+
 	string to_string(const scalar_unit& x)
 	{
 		return x.display(2);

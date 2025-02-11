@@ -92,40 +92,64 @@
 		} \
 	} \
 	name::name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(float new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(double new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(long double new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(int new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(float new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(double new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(long double new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(int new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
-	{} \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
 \
 	name::name(const string& init_scalar) : scalar_unit() \
 	{ \
@@ -280,6 +304,7 @@ namespace scifir
 			void add_dimension(const dimension& new_dimension);
 			void remove_dimension(const dimension& old_dimension);
 			void initialize_from_string(string init_scalar,const vector<dimension>& real_dimensions);
+			void check_dimensions(const vector<dimension>& real_dimensions);
 	};
 
 	string to_string(const scalar_unit& x);
