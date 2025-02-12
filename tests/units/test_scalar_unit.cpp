@@ -81,7 +81,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(d) == "5 K");
 	}
 
-	SECTION("Float cast")
+	SECTION("float cast")
 	{
 		scalar_unit a = 50_g;
 		CHECK(float(a) == 50.0f);
