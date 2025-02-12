@@ -17,8 +17,8 @@
 	{	\
 		public: \
 			name(); \
-			name(const scalar_unit&); \
-			name(scalar_unit&&); \
+			name(const name&); \
+			name(name&&); \
 			explicit name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
 			explicit name(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
 			explicit name(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
@@ -32,6 +32,10 @@
 			explicit name(long double new_value, const vector<dimension>& new_dimensions); \
 			explicit name(int new_value, const vector<dimension>& new_dimensions); \
 			explicit name(const string& init_scalar); \
+			explicit name(const scalar_unit&); \
+			explicit name(scalar_unit&&); \
+			name& operator =(const name&); \
+			name& operator =(name&&); \
 			using scalar_unit::operator =; \
 			using scalar_unit::operator +=; \
 			using scalar_unit::operator -=
@@ -47,8 +51,8 @@
 	{	\
 		public: \
 			name(); \
-			name(const scalar_unit&); \
-			name(scalar_unit&&); \
+			name(const name&); \
+			name(name&&); \
 			explicit name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
 			explicit name(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
 			explicit name(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
@@ -62,6 +66,10 @@
 			explicit name(long double new_value, const vector<dimension>& new_dimensions); \
 			explicit name(int new_value, const vector<dimension>& new_dimensions); \
 			explicit name(const string& init_scalar); \
+			explicit name(const scalar_unit&); \
+			explicit name(scalar_unit&&); \
+			name& operator =(const name&); \
+			name& operator =(name&&); \
 			using scalar_unit::operator =; \
 			using scalar_unit::operator +=; \
 			using scalar_unit::operator -=; \
@@ -74,23 +82,18 @@
 	scalar_unit::dimensions = name::real_dimensions; \
 } \
 \
-	name::name(const scalar_unit& x) \
+	name::name(const name& x) : scalar_unit()  \
 	{ \
-		if (x.has_dimensions(name::real_dimensions)) \
-		{ \
-			value = x.get_value(); \
-			dimensions = x.get_dimensions(); \
-		} \
+		value = x.get_value(); \
+		dimensions = x.get_dimensions(); \
 	} \
 \
-	name::name(scalar_unit&& x) \
+	name::name(name&& x) : scalar_unit() \
 	{ \
-		if (x.has_dimensions(name::real_dimensions)) \
-		{ \
-			value = std::move(x.get_value()); \
-			dimensions = std::move(x.get_dimensions()); \
-		} \
+		value = std::move(x.get_value()); \
+		dimensions = std::move(x.get_dimensions()); \
 	} \
+\
 	name::name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
 	{ \
 		scalar_unit::check_dimensions(name::real_dimensions); \
@@ -154,6 +157,38 @@
 	name::name(const string& init_scalar) : scalar_unit() \
 	{ \
 		initialize_from_string(init_scalar,name::real_dimensions); \
+	} \
+\
+	name::name(const scalar_unit& x) : scalar_unit()  \
+	{ \
+		if (x.has_dimensions(name::real_dimensions)) \
+		{ \
+			value = x.get_value(); \
+			dimensions = x.get_dimensions(); \
+		} \
+	} \
+\
+	name::name(scalar_unit&& x) : scalar_unit()  \
+	{ \
+		if (x.has_dimensions(name::real_dimensions)) \
+		{ \
+			value = std::move(x.get_value()); \
+			dimensions = std::move(x.get_dimensions()); \
+		} \
+	} \
+\
+	name& name::operator =(const name& x) \
+	{ \
+		value = x.get_value(); \
+		dimensions = x.get_dimensions(); \
+		return *this; \
+	} \
+\
+	name& name::operator =(name&& x) \
+	{ \
+		value = std::move(x.get_value()); \
+		dimensions = std::move(x.get_dimensions()); \
+		return *this; \
 	} \
 \
 const string name::dimensions_match = init_real_dimensions; \

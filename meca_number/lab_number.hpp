@@ -28,7 +28,7 @@ namespace scifir
 			lab_number(lab_number<T>&& x) : value(std::move(x.value)),error_value(std::move(x.error_value))
 			{}
 
-			explicit lab_number(const T& x,const T& y) : value(x),error_value(y)
+			explicit lab_number(const scalar_unit& x,const scalar_unit& y) : value(x),error_value(y)
 			{}
 
 			explicit lab_number(const string& x,const string& y) : value(x),error_value(y)
@@ -61,14 +61,16 @@ namespace scifir
 				return *this;
 			}
 
-			lab_number<T> operator +(const lab_number<T>& x) const
+			template<typename U>
+			lab_number<scalar_unit> operator +(const lab_number<U>& x) const
 			{
-				return lab_number<T>(value + x.value,error_value + x.error_value);
+				return lab_number<scalar_unit>(value + x.value,error_value + x.error_value);
 			}
 
-			lab_number<T> operator -(const lab_number<T>& x) const
+			template<typename U>
+			lab_number<scalar_unit> operator -(const lab_number<U>& x) const
 			{
-				return lab_number<T>(value - x.value,error_value - x.error_value);
+				return lab_number<scalar_unit>(value - x.value,error_value - x.error_value);
 			}
 
 			template<typename U>
@@ -83,13 +85,15 @@ namespace scifir
 				return lab_number<scalar_unit>(value / x.value,error_value / x.error_value);
 			}
 
-			void operator +=(const lab_number<T>& x)
+			template<typename U>
+			void operator +=(const lab_number<U>& x)
 			{
 				value += x.value;
 				error_value += x.error_value;
 			}
 
-			void operator -=(const lab_number<T>& x)
+			template<typename U>
+			void operator -=(const lab_number<U>& x)
 			{
 				value -= x.value;
 				error_value -= x.error_value;

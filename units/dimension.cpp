@@ -59,7 +59,7 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "Ω" and init_dimension != "Ohm" and init_dimension != "ohm" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Hz" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension != "°C" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "Ω" and init_dimension != "Ohm" and init_dimension != "ohm" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "Å" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
@@ -1589,7 +1589,8 @@ namespace scifir
 				break;
 			case dimension::CUSTOM:
 			{
-				return dimension::base_dimensions[symbol];
+				//return dimension::base_dimensions[symbol];
+				break;
 			}
 			case dimension::CUSTOM_BASIC:
 			{
@@ -1598,7 +1599,8 @@ namespace scifir
 			}
 			case dimension::CUSTOM_FULL_SYMBOL:
 			{
-				return dimension::base_dimensions[dimension::get_full_symbol(symbol)];
+				break;
+				//return dimension::base_dimensions[dimension::get_full_symbol(symbol)];
 			}
 			case dimension::MONEY:
 				basic_dimensions.push_back(dimension(dimension::MONEY,prefix::NONE,dimension::NUMERATOR));
@@ -1773,7 +1775,7 @@ namespace scifir
 			}
 			if(is_dimension_char(x_unicode[j]) and (!is_dimension_char(x_unicode[j + 1]) or (j + 1) == total_chars))
 			{
-				new_dimension_str = x_unicode.tempSubString(new_start, new_size);
+				new_dimension_str = x_unicode.tempSubString(new_start,new_size);
 				if(u_isdigit(x_unicode[j + 1]))
 				{
 					new_scale = u_charDigitValue(x_unicode[j + 1]);
@@ -1792,9 +1794,67 @@ namespace scifir
 			}
 			if(!new_dimension_str.countChar32() == 0)
 			{
-				string new_dimension_str_stl = "";
-				new_dimension_str.toUTF8String(new_dimension_str_stl);
-				dimension new_dimension = dimension(new_dimension_str_stl,new_sign);
+				dimension new_dimension;
+				string new_dimension_str_stl2 = "";
+				new_dimension_str.toUTF8String(new_dimension_str_stl2);
+				if(new_dimension_str.countChar32() == 1)
+				{
+					if(new_dimension_str[0] == 0x03A9)
+					{
+						new_dimension = dimension(dimension::OHM,prefix::NONE,new_sign);
+					}
+					else if(new_dimension_str[0] == 0x00C5)
+					{
+						new_dimension = dimension(dimension::ANGSTROM,prefix::NONE,new_sign);
+					}
+					else if(new_dimension_str[0] == 0x03B8)
+					{
+						new_dimension = dimension(dimension::DEGREE,prefix::NONE,new_sign);
+					}
+					else
+					{
+						string new_dimension_str_stl = "";
+						new_dimension_str.toUTF8String(new_dimension_str_stl);
+						new_dimension = dimension(new_dimension_str_stl,new_sign);
+					}
+				}
+				else
+				{
+					if(new_dimension_str[new_dimension_str.countChar32() - 1] == 0x03A9)
+					{
+						string new_prefix_str = "";
+						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 1).toUTF8String(new_prefix_str);
+						prefix new_prefix(new_prefix_str);
+						new_dimension = dimension(dimension::OHM,new_prefix,new_sign);
+					}
+					else if(new_dimension_str[new_dimension_str.countChar32() - 1] == 0x00C5)
+					{
+						string new_prefix_str = "";
+						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 1).toUTF8String(new_prefix_str);
+						prefix new_prefix(new_prefix_str);
+						new_dimension = dimension(dimension::ANGSTROM,new_prefix,new_sign);
+					}
+					else if(new_dimension_str[new_dimension_str.countChar32() - 1] == 0x03B8)
+					{
+						string new_prefix_str = "";
+						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 1).toUTF8String(new_prefix_str);
+						prefix new_prefix(new_prefix_str);
+						new_dimension = dimension(dimension::DEGREE,new_prefix,new_sign);
+					}
+					else if(new_dimension_str[new_dimension_str.countChar32() - 2] == 0x00B0 && new_dimension_str[new_dimension_str.countChar32() - 1] == 0x0043)
+					{
+						string new_prefix_str = "";
+						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 2).toUTF8String(new_prefix_str);
+						prefix new_prefix(new_prefix_str);
+						new_dimension = dimension(dimension::CELSIUS,new_prefix,new_sign);
+					}
+					else
+					{
+						string new_dimension_str_stl = "";
+						new_dimension_str.toUTF8String(new_dimension_str_stl);
+						new_dimension = dimension(new_dimension_str_stl,new_sign);
+					}
+				}
 				for (int k = 0; k < new_scale; k++)
 				{
 					dimensions.push_back(new_dimension);
@@ -1970,7 +2030,7 @@ namespace scifir
 		vector<dimension> new_dimensions = vector<dimension>();
 		for (const dimension& x_dimension: x)
 		{
-			for (int j = 1; j <= exponent; j++)
+			for (unsigned int j = 1; j <= exponent; j++)
 			{
 				new_dimensions.push_back(x_dimension);
 			}

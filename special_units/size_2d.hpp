@@ -25,7 +25,7 @@ namespace scifir
 			size_2d(size_2d<T>&& x) : width(std::move(x.width)),height(std::move(x.height))
 			{}
 
-			explicit size_2d(const T& new_width,const T& new_height) : width(new_width),height(new_height)
+			explicit size_2d(const scalar_unit& new_width,const scalar_unit& new_height) : width(new_width),height(new_height)
 			{}
 
 			explicit size_2d(const string& new_width,const string& new_height) : width(new_width),height(new_height)
@@ -56,23 +56,27 @@ namespace scifir
 				return *this;
 			}
 
-			size_2d<T> operator +(const size_2d<T>& x) const
+			template<typename U>
+			size_2d<T> operator +(const size_2d<U>& x) const
 			{
 				return size_2d<T>(width + x.width,height + x.height);
 			}
 
-			size_2d<T> operator -(const size_2d<T>& x) const
+			template<typename U>
+			size_2d<T> operator -(const size_2d<U>& x) const
 			{
 				return size_2d<T>(width - x.width,height - x.height);
 			}
 
-			void operator +=(const size_2d<T>& x)
+			template<typename U>
+			void operator +=(const size_2d<U>& x)
 			{
 				width += x.width;
 				height += x.height;
 			}
 
-			void operator -=(const size_2d<T>& x)
+			template<typename U>
+			void operator -=(const size_2d<U>& x)
 			{
 				width -= x.width;
 				height -= x.height;

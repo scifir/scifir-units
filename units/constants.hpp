@@ -2,7 +2,6 @@
 #define SCIFIR_UNITS_UNITS_CONSTANTS_HPP_INCLUDED
 
 #include "./scalar_unit.hpp"
-#include "./base_units.hpp"
 
 using namespace std;
 

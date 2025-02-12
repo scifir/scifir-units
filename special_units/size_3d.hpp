@@ -25,7 +25,7 @@ namespace scifir
 			size_3d(size_3d<T>&& x) : width(std::move(x.width)),height(std::move(x.height)),depth(std::move(x.depth))
 			{}
 
-			explicit size_3d(const T& new_width,const T& new_height,const T& new_depth) : width(new_width),height(new_height),depth(new_depth)
+			explicit size_3d(const scalar_unit& new_width,const scalar_unit& new_height,const scalar_unit& new_depth) : width(new_width),height(new_height),depth(new_depth)
 			{}
 
 			explicit size_3d(const string& new_width,const string& new_height,const string& new_depth) : width(new_width),height(new_height),depth(new_depth)
@@ -58,24 +58,28 @@ namespace scifir
 				return *this;
 			}
 
-			size_3d<T> operator +(const size_3d<T>& x) const
+			template<typename U>
+			size_3d<T> operator +(const size_3d<U>& x) const
 			{
 				return size_3d<T>(width + x.width,height + x.height,depth + x.depth);
 			}
 
-			size_3d<T> operator -(const size_3d<T>& x) const
+			template<typename U>
+			size_3d<T> operator -(const size_3d<U>& x) const
 			{
 				return size_3d<T>(width - x.width,height - x.height,depth - x.depth);
 			}
 
-			void operator +=(const size_3d<T>& x)
+			template<typename U>
+			void operator +=(const size_3d<U>& x)
 			{
 				width += x.width;
 				height += x.height;
 				depth += x.depth;
 			}
 
-			void operator -=(const size_3d<T>& x)
+			template<typename U>
+			void operator -=(const size_3d<U>& x)
 			{
 				width -= x.width;
 				height -= x.height;

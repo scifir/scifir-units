@@ -36,11 +36,6 @@
 #include "./units/coordinates/coordinates_ndr.hpp"
 #include "./units/coordinates/astronomical_coordinates_3d.hpp"
 
-#include "./units/topology/point_1d_impl.hpp"
-#include "./units/topology/point_2d_impl.hpp"
-#include "./units/topology/point_3d_impl.hpp"
-#include "./units/topology/point_nd_impl.hpp"
-
 #include "./units/special_units/aid.hpp"
 #include "./units/special_units/color.hpp"
 #include "./units/special_units/percentage.hpp"

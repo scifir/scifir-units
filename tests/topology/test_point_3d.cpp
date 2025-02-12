@@ -2,7 +2,6 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../topology/point_3d.hpp"
-#include "../../topology/point_3d_impl.hpp"
 #include "../../coordinates/coordinates_3d.hpp"
 
 using namespace std;

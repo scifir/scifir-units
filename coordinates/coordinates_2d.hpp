@@ -26,18 +26,20 @@ namespace scifir
 			coordinates_2d(coordinates_2d<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
 			{}
 
-			explicit coordinates_2d(const T& new_x,const T& new_y) : x(new_x),y(new_y)
+			explicit coordinates_2d(const scalar_unit& new_x,const scalar_unit& new_y) : x(new_x),y(new_y)
 			{}
 
-			explicit coordinates_2d(const T& new_p,const angle& new_theta)
+			explicit coordinates_2d(const scalar_unit& new_p,const angle& new_theta)
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit coordinates_2d(const scifir::point_2d<T>& new_point) : x(new_point.x),y(new_point.y)
+			template<typename U>
+			explicit coordinates_2d(const scifir::point_2d<U>& new_point) : x(new_point.x),y(new_point.y)
 			{}
 
-			explicit coordinates_2d(scifir::point_2d<T>&& new_point) : x(std::move(new_point.x)),y(std::move(new_point.y))
+			template<typename U>
+			explicit coordinates_2d(scifir::point_2d<U>&& new_point) : x(std::move(new_point.x)),y(std::move(new_point.y))
 			{}
 
 			explicit coordinates_2d(const string& init_coordinates_2d) : coordinates_2d()
@@ -81,7 +83,7 @@ namespace scifir
 
 			T get_p() const
 			{
-				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
+				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2)));
 			}
 
 			angle get_theta() const
@@ -89,13 +91,13 @@ namespace scifir
 				return angle(radian_to_degree(std::atan2(y.get_value(),x.get_value())));
 			}
 
-			void set_position(const T& new_x,const T& new_y)
+			void set_position(const scalar_unit& new_x,const scalar_unit& new_y)
 			{
 				x = new_x;
 				y = new_y;
 			}
 
-			void set_position(const T& new_p,const angle& new_theta)
+			void set_position(const scalar_unit& new_p,const angle& new_theta)
 			{
 				x = T(new_p * scifir::cos(new_theta));
 				y = T(new_p * scifir::sin(new_theta));
@@ -115,13 +117,13 @@ namespace scifir
 				y += x_displacement.y_projection();
 			}
 
-			void move(const T& new_x,const T& new_y)
+			void move(const scalar_unit& new_x,const scalar_unit& new_y)
 			{
 				x += new_x;
 				y += new_y;
 			}
 
-			void move(const T& new_p,const angle& new_theta)
+			void move(const scalar_unit& new_p,const angle& new_theta)
 			{
 				x += new_p * scifir::cos(new_theta);
 				y += new_p * scifir::sin(new_theta);
@@ -129,7 +131,7 @@ namespace scifir
 
 			T distance_to_origin() const
 			{
-				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
+				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2)));
 			}
 
 			string display_cartesian() const
@@ -350,7 +352,7 @@ namespace scifir
 	template<typename T,typename U>
 	T distance(const coordinates_2d<T>& x,const coordinates_2d<U>& y)
 	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
+		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2)));
 	}
 
 	float distance(const coordinates_2d<float>& x,const coordinates_2d<float>& y);
@@ -358,7 +360,7 @@ namespace scifir
 	template<typename T,typename U>
 	T distance(const coordinates_2d<T>& x,const point_2d<U>& y)
 	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
+		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2)));
 	}
 
 	float distance(const coordinates_2d<float>& x,const point_2d<float>& y);
@@ -366,7 +368,7 @@ namespace scifir
 	template<typename T,typename U>
 	T distance(const point_2d<T>& x,const coordinates_2d<U>& y)
 	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
+		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2)));
 	}
 
 	float distance(const point_2d<float>& x,const coordinates_2d<float>& y);

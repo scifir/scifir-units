@@ -26,8 +26,14 @@ namespace scifir
 			size_nd(size_nd<T>&& x) : widths(std::move(x.widths))
 			{}
 
-			explicit size_nd(const vector<T>& new_widths) : widths(new_widths)
-			{}
+			template<typename U>
+			explicit size_nd(const vector<U>& new_widths) : widths()
+			{
+				for(const U& new_width : new_widths)
+				{
+					widths.push_back(T(new_width));
+				}
+			}
 
 			explicit size_nd(const vector<string>& new_widths) : widths()
 			{
@@ -70,14 +76,16 @@ namespace scifir
 				return widths.size();
 			}
 
-			size_nd<T> operator +(const size_nd<T>& x) const
+			template<typename U>
+			size_nd<T> operator +(const size_nd<U>& x) const
 			{
 				if (get_nd() == x.get_nd())
 				{
-					vector<T> new_widths = widths;
-					for (int i = 0; i < new_widths.size(); i++)
+					vector<T> new_widths = vector<T>();
+					for (unsigned int i = 0; i < widths.size(); i++)
 					{
-						new_widths[i] += x.widths[i];
+						new_widths.push_back(widths[i]);
+						new_widths[i] += T(x.widths[i]);
 					}
 					return size_nd<T>(new_widths);
 				}
@@ -87,14 +95,16 @@ namespace scifir
 				}
 			}
 
-			size_nd<T> operator -(const size_nd<T>& x) const
+			template<typename U>
+			size_nd<T> operator -(const size_nd<U>& x) const
 			{
 				if (get_nd() == x.get_nd())
 				{
-					vector<T> new_widths = widths;
-					for (int i = 0; i < new_widths.size(); i++)
+					vector<T> new_widths = vector<T>();
+					for (unsigned int i = 0; i < widths.size(); i++)
 					{
-						new_widths[i] -= x.widths[i];
+						new_widths.push_back(widths[i]);
+						new_widths[i] -= T(x.widths[i]);
 					}
 					return size_nd<T>(new_widths);
 				}
@@ -104,24 +114,26 @@ namespace scifir
 				}
 			}
 
-			void operator +=(const size_nd<T>& x)
+			template<typename U>
+			void operator +=(const size_nd<U>& x)
 			{
 				if (get_nd() == x.get_nd())
 				{
-					for (int i = 0; i < widths.size(); i++)
+					for (unsigned int i = 0; i < widths.size(); i++)
 					{
-						widths[i] += x.widths[i];
+						widths[i] += T(x.widths[i]);
 					}
 				}
 			}
 
-			void operator -=(const size_nd<T>& x)
+			template<typename U>
+			void operator -=(const size_nd<U>& x)
 			{
 				if (get_nd() == x.get_nd())
 				{
-					for (int i = 0; i < widths.size(); i++)
+					for (unsigned int i = 0; i < widths.size(); i++)
 					{
-						widths[i] -= x.widths[i];
+						widths[i] -= T(x.widths[i]);
 					}
 				}
 			}
@@ -130,7 +142,7 @@ namespace scifir
 			{
 				vector<dimension> new_dimensions = create_dimensions(widths[0].get_dimensions()[0].get_symbol() + std::to_string(get_nd()));
 				float new_value = 1;
-				for (int i = 0; i < widths.size(); i++)
+				for (unsigned int i = 0; i < widths.size(); i++)
 				{
 					new_value *= widths[i].get_value();
 				}
@@ -143,9 +155,12 @@ namespace scifir
 				{
 					ostringstream output;
 					output << widths[0];
-					for (int i = 1; i < widths.size(); i++)
+					if (widths.size() > 1)
 					{
-						output << " * " << widths[i];
+						for (unsigned int i = 1; i < widths.size(); i++)
+						{
+							output << " * " << widths[i];
+						}
 					}
 					return output.str();
 				}
@@ -300,9 +315,12 @@ namespace scifir
 				{
 					ostringstream output;
 					output << display_float(widths[0],2);
-					for (unsigned int i = 1; i < widths.size(); i++)
+					if (widths.size() > 1)
 					{
-						output << " * " << display_float(widths[i],2);
+						for (unsigned int i = 1; i < widths.size(); i++)
+						{
+							output << " * " << display_float(widths[i],2);
+						}
 					}
 					return output.str();
 				}

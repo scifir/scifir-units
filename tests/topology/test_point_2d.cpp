@@ -2,7 +2,6 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../topology/point_2d.hpp"
-#include "../../topology/point_2d_impl.hpp"
 #include "../../coordinates/coordinates_2d.hpp"
 #include "../../util/types.hpp"
 

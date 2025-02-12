@@ -39,7 +39,7 @@ TEST_CASE("class size_3d<T> and size_3d<float>") {
 		size_3d<float> c2(2.0f,3.0f,1.0f);
 		size_3d<float> c(std::move(c2));
 		CHECK(to_string(c) == "2 * 3 * 1");
-		size_3d d(1.0f,1.0f,2.0f);
+		size_3d<float> d(1.0f,1.0f,2.0f);
 		CHECK(to_string(d) == "1 * 1 * 2");
 		size_3d<float> e("1","1","3");
 		CHECK(to_string(e) == "1 * 1 * 3");

@@ -28,27 +28,31 @@ namespace scifir
 			point_3d(point_3d<T>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
 			{}
 
-			explicit point_3d(const T& new_x,const T& new_y,const T& new_z) : x(new_x),y(new_y),z(new_z)
+			explicit point_3d(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z) : x(new_x),y(new_y),z(new_z)
 			{}
 
-			explicit point_3d(const T& new_p,const angle& new_theta,T new_z)
+			explicit point_3d(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit point_3d(const T& new_r,const angle& new_theta,const angle& new_phi)
+			explicit point_3d(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit point_3d(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
+			explicit point_3d(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude)
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit point_3d(const coordinates_3d<T>& x_coordinates);
+			template<typename U>
+			explicit point_3d(const coordinates_3d<U>& x_coordinates) : x(T(x_coordinates.x)),y(T(x_coordinates.y)),z(T(x_coordinates.z))
+			{}
 
-			explicit point_3d(coordinates_3d<T>&& x_coordinates);
+			template<typename U>
+			explicit point_3d(coordinates_3d<U>&& x_coordinates) : x(T(std::move(x_coordinates.x))),y(T(std::move(x_coordinates.y))),z(T(std::move(x_coordinates.z)))
+			{}
 
 			explicit point_3d(const string& init_point_3d) : point_3d()
 			{
@@ -71,9 +75,23 @@ namespace scifir
 				return *this;
 			}
 
-			point_3d<T>& operator =(const coordinates_3d<T>&);
+			template<typename U>
+			point_3d<T>& operator =(const coordinates_3d<U>& x_coordinates)
+			{
+				x = T(x_coordinates.x);
+				y = T(x_coordinates.y);
+				z = T(x_coordinates.z);
+				return *this;
+			}
 
-			point_3d<T>& operator =(coordinates_3d<T>&&);
+			template<typename U>
+			point_3d<T>& operator =(coordinates_3d<U>&& x_coordinates)
+			{
+				x = T(std::move(x_coordinates.x));
+				y = T(std::move(x_coordinates.y));
+				z = T(std::move(x_coordinates.z));
+				return *this;
+			}
 
 			point_3d<T>& operator =(const string& init_point_3d)
 			{
@@ -83,7 +101,7 @@ namespace scifir
 
 			T get_p() const
 			{
-				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
+				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2)));
 			}
 
 			angle get_theta() const
@@ -93,7 +111,7 @@ namespace scifir
 
 			T get_r() const
 			{
-				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
+				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)));
 			}
 
 			angle get_phi() const
@@ -116,14 +134,14 @@ namespace scifir
 				return ECEF_to_LLA_altitude(x,y,z);
 			}
 
-			void set_position(const T& new_x,const T& new_y,const T& new_z)
+			void set_position(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z)
 			{
 				x = new_x;
 				y = new_y;
 				z = new_z;
 			}
 
-			void set_position(const T& new_p,const angle& new_theta,T new_z)
+			void set_position(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				new_z.change_dimensions(new_p);
 				x = T(new_p * scifir::cos(new_theta));
@@ -131,14 +149,14 @@ namespace scifir
 				z = new_z;
 			}
 
-			void set_position(const T& new_r,const angle& new_theta,const angle& new_phi)
+			void set_position(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				x = T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
 				y = T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
 				z = T(new_r * scifir::cos(new_phi));
 			}
 
-			void set_position(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
+			void set_position(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude)
 			{
 				x = T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
 				y = T(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
@@ -176,14 +194,14 @@ namespace scifir
 				z += x_displacement.z_projection();
 			}
 
-			void move(const T& new_x,const T& new_y,const T& new_z)
+			void move(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z)
 			{
 				x += new_x;
 				y += new_y;
 				z += new_z;
 			}
 
-			void move(const T& new_p,const angle& new_theta,T new_z)
+			void move(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				new_z.change_dimensions(new_p);
 				x += T(new_p * scifir::cos(new_theta));
@@ -191,7 +209,7 @@ namespace scifir
 				z += new_z;
 			}
 
-			void move(const T& new_r,const angle& new_theta,const angle& new_phi)
+			void move(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				x += T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
 				y += T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
@@ -200,7 +218,7 @@ namespace scifir
 
 			T distance_to_origin() const
 			{
-				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
+				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)));
 			}
 
 			string display_cartesian() const
@@ -553,7 +571,7 @@ namespace scifir
 	template<typename T,typename U>
 	T distance(const point_3d<T>& x,const point_3d<U>& y)
 	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
+		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2)));
 	}
 
 	float distance(const point_3d<float>& x,const point_3d<float>& y);

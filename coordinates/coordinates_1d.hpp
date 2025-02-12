@@ -26,13 +26,15 @@ namespace scifir
 			coordinates_1d(coordinates_1d<T>&& x_coordinates) : x(std::move(x_coordinates.x))
 			{}
 
-			explicit coordinates_1d(const T& new_x) : x(new_x)
+			explicit coordinates_1d(const scalar_unit& new_x) : x(new_x)
 			{}
 
-			explicit coordinates_1d(const point_1d<T>& new_point) : x(new_point.x)
+			template<typename U>
+			explicit coordinates_1d(const point_1d<U>& new_point) : x(new_point.x)
 			{}
 
-			explicit coordinates_1d(point_1d<T>&& new_point) : x(std::move(new_point.x))
+			template<typename U>
+			explicit coordinates_1d(point_1d<U>&& new_point) : x(std::move(new_point.x))
 			{}
 
 			explicit coordinates_1d(const string& init_coordinates_1d) : coordinates_1d()
@@ -70,12 +72,12 @@ namespace scifir
 				return *this;
 			}
 
-			void set_position(const T& new_x)
+			void set_position(const scalar_unit& new_x)
 			{
 				x = new_x;
 			}
 
-			void move(const T& x_value)
+			void move(const scalar_unit& x_value)
 			{
 				x += x_value;
 			}
@@ -216,7 +218,7 @@ namespace scifir
 	template<typename T,typename U>
 	T distance(const coordinates_1d<T>& x,const coordinates_1d<U>& y)
 	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2));
+		return T(scifir::sqrt(scifir::pow(x.x - y.x,2)));
 	}
 	
 	float distance(const coordinates_1d<float>& x,const coordinates_1d<float>& y);
@@ -224,7 +226,7 @@ namespace scifir
 	template<typename T,typename U>
 	T distance(const coordinates_1d<T>& x,const point_1d<U>& y)
 	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2));
+		return T(scifir::sqrt(scifir::pow(x.x - y.x,2)));
 	}
 
 	float distance(const coordinates_1d<float>& x,const point_1d<float>& y);
@@ -232,7 +234,7 @@ namespace scifir
 	template<typename T,typename U>
 	T distance(const point_1d<T>& x,const coordinates_1d<U>& y)
 	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2));
+		return T(scifir::sqrt(scifir::pow(x.x - y.x,2)));
 	}
 
 	float distance(const point_1d<float>& x,const coordinates_1d<float>& y);

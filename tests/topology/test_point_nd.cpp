@@ -2,7 +2,6 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../topology/point_nd.hpp"
-#include "../../topology/point_nd_impl.hpp"
 #include "../../coordinates/coordinates_nd.hpp"
 
 using namespace std;

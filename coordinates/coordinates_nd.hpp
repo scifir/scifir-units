@@ -28,52 +28,70 @@ namespace scifir
 			coordinates_nd(coordinates_nd<T>&& x) : values(std::move(x.values))
 			{}
 
-			explicit coordinates_nd(const vector<T>& new_values) : values(new_values)
-			{}
-
-			explicit coordinates_nd(const T& new_x) : values()
+			template<typename U>
+			explicit coordinates_nd(const vector<U>& new_values) : values()
 			{
-				values.push_back(new_x);
+				for(const U& x_value : new_values)
+				{
+					values.push_back(T(x_value));
+				}
 			}
 
-			explicit coordinates_nd(const T& new_x,const T& new_y) : values()
+			explicit coordinates_nd(const scalar_unit& new_x) : values()
 			{
-				values.push_back(new_x);
-				values.push_back(new_y);
+				values.push_back(T(new_x));
 			}
 
-			explicit coordinates_nd(const T& new_p,const angle& new_theta) : values()
+			explicit coordinates_nd(const scalar_unit& new_x,const scalar_unit& new_y) : values()
+			{
+				values.push_back(T(new_x));
+				values.push_back(T(new_y));
+			}
+
+			explicit coordinates_nd(const scalar_unit& new_p,const angle& new_theta) : values()
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit coordinates_nd(const T& new_x,const T& new_y,const T& new_z) : values()
+			explicit coordinates_nd(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z) : values()
 			{
-				values.push_back(new_x);
-				values.push_back(new_y);
-				values.push_back(new_z);
+				values.push_back(T(new_x));
+				values.push_back(T(new_y));
+				values.push_back(T(new_z));
 			}
 
-			explicit coordinates_nd(const T& new_p,const angle& new_theta,T new_z) : values()
+			explicit coordinates_nd(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z) : values()
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit coordinates_nd(const T& new_r,const angle& new_theta,const angle& new_phi) : values()
+			explicit coordinates_nd(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi) : values()
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit coordinates_nd(const angle& new_latitude,const angle& new_longitude,const T& new_altitude) : values()
+			explicit coordinates_nd(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude) : values()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_nd(const point_nd<T>& new_point) : values(new_point.values)
-			{}
+			template<typename U>
+			explicit coordinates_nd(const point_nd<U>& new_point) : values()
+			{
+				for(const U& x_value : new_point.values)
+				{
+					values.push_back(T(x_value));
+				}
+			}
 
-			explicit coordinates_nd(point_nd<T>&& new_point) : values(std::move(new_point.values))
-			{}
+			template<typename U>
+			explicit coordinates_nd(point_nd<U>&& new_point) : values()
+			{
+				for(const U& x_value : new_point.values)
+				{
+					values.push_back(T(std::move(x_value)));
+				}
+			}
 
 			explicit coordinates_nd(const string& init_coordinates_nd) : values()
 			{
@@ -124,7 +142,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2));
+					return T(scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2)));
 				}
 				else
 				{
@@ -148,7 +166,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2));
+					return T(scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)));
 				}
 				else
 				{
@@ -204,44 +222,44 @@ namespace scifir
 				}
 			}
 
-			void set_position(const T& new_x)
+			void set_position(const scalar_unit& new_x)
 			{
 				values.clear();
-				values.push_back(new_x);
+				values.push_back(T(new_x));
 			}
 
-			void set_position(const T& new_x,const T& new_y)
+			void set_position(const scalar_unit& new_x,const scalar_unit& new_y)
 			{
 				values.clear();
-				values.push_back(new_x);
-				values.push_back(new_y);
+				values.push_back(T(new_x));
+				values.push_back(T(new_y));
 			}
 
-			void set_position(const T& new_p,const angle& new_theta)
+			void set_position(const scalar_unit& new_p,const angle& new_theta)
 			{
 				values.clear();
 				values.push_back(T(new_p * scifir::cos(new_theta)));
 				values.push_back(T(new_p * scifir::sin(new_theta)));
 			}
 
-			void set_position(const T& new_x,const T& new_y,const T& new_z)
+			void set_position(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z)
 			{
 				values.clear();
-				values.push_back(new_x);
-				values.push_back(new_y);
-				values.push_back(new_z);
+				values.push_back(T(new_x));
+				values.push_back(T(new_y));
+				values.push_back(T(new_z));
 			}
 
-			void set_position(const T& new_p,const angle& new_theta,T new_z)
+			void set_position(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				values.clear();
 				new_z.change_dimensions(new_p);
 				values.push_back(T(new_p * scifir::cos(new_theta)));
 				values.push_back(T(new_p * scifir::sin(new_theta)));
-				values.push_back(new_z);
+				values.push_back(T(new_z));
 			}
 
-			void set_position(const T& new_r,const angle& new_theta,const angle& new_phi)
+			void set_position(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				values.clear();
 				values.push_back(T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi)));
@@ -249,7 +267,7 @@ namespace scifir
 				values.push_back(T(new_r * scifir::cos(new_phi)));
 			}
 
-			void set_position(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
+			void set_position(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude)
 			{
 				values.clear();
 				values.push_back(T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude)));
@@ -257,7 +275,7 @@ namespace scifir
 				values.push_back(T(new_altitude * scifir::sin(new_latitude)));
 			}
 
-			void set_position(const vector<T>& new_values)
+			void set_position(const vector<scalar_unit>& new_values)
 			{
 				values.clear();
 				values = new_values;
@@ -302,7 +320,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_x)
+			void move(const scalar_unit& new_x)
 			{
 				if (values.size() == 1)
 				{
@@ -319,7 +337,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_x,const T& new_y)
+			void move(const scalar_unit& new_x,const scalar_unit& new_y)
 			{
 				if (values.size() == 2)
 				{
@@ -328,7 +346,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_p,const angle& new_theta)
+			void move(const scalar_unit& new_p,const angle& new_theta)
 			{
 				if (values.size() == 2)
 				{
@@ -347,7 +365,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_x,const T& new_y,const T& new_z)
+			void move(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z)
 			{
 				if (values.size() == 3)
 				{
@@ -357,7 +375,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_p,const angle& new_theta,T new_z)
+			void move(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				if (values.size() == 3)
 				{
@@ -368,7 +386,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_r,const angle& new_theta,const angle& new_phi)
+			void move(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				if (values.size() == 3)
 				{
@@ -389,7 +407,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_r,const vector<angle>& new_angles)
+			void move(const scalar_unit& new_r,const vector<angle>& new_angles)
 			{
 				displacement_nd x_displacement = displacement_nd(new_r,new_angles);
 				move(x_displacement);
@@ -402,7 +420,7 @@ namespace scifir
 				{
 					x_T += scifir::pow(values[i],2);
 				}
-				return scifir::sqrt(x_T);
+				return T(scifir::sqrt(x_T));
 			}
 
 			string display_cartesian_2d() const
@@ -1137,7 +1155,7 @@ namespace scifir
 			{
 				x_length += scifir::pow(x.values[i] - y.values[i],2);
 			}
-			return scifir::sqrt(x_length);
+			return T(scifir::sqrt(x_length));
 		}
 		else
 		{
@@ -1157,7 +1175,7 @@ namespace scifir
 			{
 				x_length += scifir::pow(x.values[i] - y.values[i],2);
 			}
-			return scifir::sqrt(x_length);
+			return T(scifir::sqrt(x_length));
 		}
 		else
 		{
@@ -1177,7 +1195,7 @@ namespace scifir
 			{
 				x_length += scifir::pow(x.values[i] - y.values[i],2);
 			}
-			return scifir::sqrt(x_length);
+			return T(scifir::sqrt(x_length));
 		}
 		else
 		{

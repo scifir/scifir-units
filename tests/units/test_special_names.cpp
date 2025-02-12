@@ -11,7 +11,8 @@ using namespace std;
 using namespace scifir;
 
 TEST_CASE("Special names literals") {
-	SECTION("Special names literals") {
+	SECTION("Special names literals")
+	{
 		CHECK(bool(100_QHz == "100 QHz"));
 		CHECK(bool(100_RHz == "100 RHz"));
 		CHECK(bool(100_YHz == "100 YHz"));
