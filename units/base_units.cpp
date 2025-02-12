@@ -396,7 +396,7 @@ namespace scifir
 		value = new_percentage * value;
 	}
 
-	int mole::number_of_particles() const
+	int mole::get_number_of_particles() const
 	{
 		return 1;
 		/*if (scalar_unit::actual_dimensions.count(particles))

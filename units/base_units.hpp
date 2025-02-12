@@ -98,7 +98,7 @@ namespace scifir
 			mole(const percentage& new_percentage,const mole& new_mole);
 			mole(const string& init_percentage,const string& init_mole);
 
-			int number_of_particles() const;
+			int get_number_of_particles() const;
 	SCALAR_UNIT_HPP_END();
 
 	SCALAR_UNIT_HPP(light_intensity);
