@@ -184,6 +184,8 @@ TEST_CASE("dimension class") {
 		CHECK(a48.dimension_type == dimension::INTERNATIONAL_UNIT);
 		dimension a49("mEq",dimension::NUMERATOR);
 		CHECK(a49.dimension_type == dimension::MILLIEQUIVALENT);
+		dimension a50("dB",dimension::NUMERATOR);
+		CHECK(a50.dimension_type == dimension::DECIBEL);
 	}
 
 	SECTION("Assignments of dimension class")
@@ -806,6 +808,16 @@ TEST_CASE("dimension class") {
 		CHECK(a51.is_derived_dimension() == false);
 		CHECK(a51.is_SI_base_dimension() == false);
 		CHECK(a51.is_SI_derived_dimension() == false);
+		dimension a52(dimension::DECIBEL,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a52.get_name() == "decibel");
+		CHECK(a52.get_plural() == "decibels");
+		CHECK(a52.get_symbol() == "dB");
+		CHECK(a52.get_conversion_factor() == 1.0l);
+		CHECK(a52.is_simple_dimension() == true);
+		CHECK(a52.is_base_dimension() == true);
+		CHECK(a52.is_derived_dimension() == false);
+		CHECK(a52.is_SI_base_dimension() == false);
+		CHECK(a52.is_SI_derived_dimension() == false);
 	}
 
 	SECTION("get_fullname() and get_fullplural()")
