@@ -21,10 +21,42 @@
 #define VECTOR_UNIT_3D_HPP_BEGIN(name) class name##_3d : public vector_unit_3d \
 	{	\
 		public: \
-			using vector_unit_3d::vector_unit_3d; \
 			name##_3d(); \
 			name##_3d(const name##_3d&); \
 			name##_3d(name##_3d&&); \
+			explicit name##_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi,dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(float new_value,const string& init_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(float new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(double new_value,const string& init_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(long double new_value,const string& init_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(long double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(int new_value,const string& init_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(int new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(float new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(long double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(int new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(const scalar_unit& x,float new_theta,float new_phi); \
+			explicit name##_3d(const scalar_unit& x,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(const string& init_scalar,float new_theta,float new_phi); \
+			explicit name##_3d(const string& init_scalar,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(const string& init_vector_3d); \
+			explicit name##_3d(const vector_unit_3d& init_vector_3d); \
+			explicit name##_3d(vector_unit_3d&& init_vector_3d); \
+			name##_3d& operator =(const name##_3d& x); \
+			name##_3d& operator =(name##_3d&& x); \
 			using vector_unit_3d::operator =; \
 			using vector_unit_3d::operator+=; \
 			using vector_unit_3d::operator-=
@@ -37,10 +69,42 @@
 #define VECTOR_UNIT_3D_HPP(name) class name##_3d : public vector_unit_3d \
 	{	\
 		public: \
-			using vector_unit_3d::vector_unit_3d; \
 			name##_3d(); \
 			name##_3d(const name##_3d&); \
 			name##_3d(name##_3d&&); \
+			explicit name##_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi,dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_3d(float new_value,const string& init_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(float new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(double new_value,const string& init_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(long double new_value,const string& init_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(long double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(int new_value,const string& init_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(int new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(float new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(long double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(int new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi); \
+			explicit name##_3d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(const scalar_unit& x,float new_theta,float new_phi); \
+			explicit name##_3d(const scalar_unit& x,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(const string& init_scalar,float new_theta,float new_phi); \
+			explicit name##_3d(const string& init_scalar,const angle& new_theta,const angle& new_phi); \
+			explicit name##_3d(const string& init_vector_3d); \
+			explicit name##_3d(const vector_unit_3d& init_vector_3d); \
+			explicit name##_3d(vector_unit_3d&& init_vector_3d); \
+			name##_3d& operator =(const name##_3d& x); \
+			name##_3d& operator =(name##_3d&& x); \
 			using vector_unit_3d::operator =; \
 			using vector_unit_3d::operator+=; \
 			using vector_unit_3d::operator-=; \
@@ -52,6 +116,172 @@
 #define VECTOR_UNIT_3D_CPP(name,init_real_dimensions) name##_3d::name##_3d() : vector_unit_3d() {} \
 	name##_3d::name##_3d(const name##_3d& x) : vector_unit_3d(x) {} \
 	name##_3d::name##_3d(name##_3d&& x) : vector_unit_3d(std::move(x)) {} \
+	name##_3d::name##_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position) : vector_unit_3d(new_value,new_dimension,new_prefix,new_theta,new_phi,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position) : vector_unit_3d(new_value,new_dimension,new_prefix,new_theta,new_phi,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position) : vector_unit_3d(new_value,new_dimension,new_prefix,new_theta,new_phi,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position) : vector_unit_3d(new_value,new_dimension,new_prefix,new_theta,new_phi,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position) : vector_unit_3d(new_value,new_dimension,new_prefix,new_theta,new_phi,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position) : vector_unit_3d(new_value,new_dimension,new_prefix,new_theta,new_phi,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position) : vector_unit_3d(new_value,new_dimension,new_prefix,new_theta,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position) : vector_unit_3d(new_value,new_dimension,new_prefix,new_theta,new_phi,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(float new_value,const string& init_dimensions,float new_theta,float new_phi) : vector_unit_3d(new_value,init_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(float new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : vector_unit_3d(new_value,init_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(double new_value,const string& init_dimensions,float new_theta,float new_phi) : vector_unit_3d(new_value,init_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : vector_unit_3d(new_value,init_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(long double new_value,const string& init_dimensions,float new_theta,float new_phi) : vector_unit_3d(new_value,init_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(long double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : vector_unit_3d(new_value,init_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(int new_value,const string& init_dimensions,float new_theta,float new_phi) : vector_unit_3d(new_value,init_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(int new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : vector_unit_3d(new_value,init_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(float new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : vector_unit_3d(new_value,new_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : vector_unit_3d(new_value,new_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : vector_unit_3d(new_value,new_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : vector_unit_3d(new_value,new_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(long double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : vector_unit_3d(new_value,new_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : vector_unit_3d(new_value,new_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(int new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : vector_unit_3d(new_value,new_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : vector_unit_3d(new_value,new_dimensions,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(const scalar_unit& x,float new_theta,float new_phi) : vector_unit_3d(x,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(const scalar_unit& x,const angle& new_theta,const angle& new_phi) : vector_unit_3d(x,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(const string& init_scalar,float new_theta,float new_phi) : vector_unit_3d(init_scalar,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(const string& init_scalar,const angle& new_theta,const angle& new_phi) : vector_unit_3d(init_scalar,new_theta,new_phi) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(const string& init_vector_3d) : vector_unit_3d() \
+	{ \
+		vector_unit_3d::initialize_from_string(init_vector_3d); \
+	} \
+\
+	name##_3d::name##_3d(const vector_unit_3d& x) : vector_unit_3d(x) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d::name##_3d(vector_unit_3d&& x) : vector_unit_3d(x) \
+	{ \
+		scalar_unit::check_dimensions(name##_3d::real_dimensions); \
+	} \
+\
+	name##_3d& name##_3d::operator =(const name##_3d& x) \
+	{ \
+		vector_unit_3d::operator =(x); \
+		return *this; \
+	} \
+\
+	name##_3d& name##_3d::operator =(name##_3d&& x) \
+	{ \
+		vector_unit_3d::operator =(std::move(x)); \
+		return *this; \
+	} \
 const string name##_3d::dimensions_match = init_real_dimensions; \
 const vector<dimension> name##_3d::real_dimensions = create_base_dimensions(init_real_dimensions)
 
@@ -238,7 +468,7 @@ namespace scifir
 			angle theta;
 			angle phi;
 
-		private:
+		protected:
 			void initialize_from_string(string init_vector_3d);
 	};
 

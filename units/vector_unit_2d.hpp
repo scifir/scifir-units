@@ -14,10 +14,42 @@
 #define VECTOR_UNIT_2D_HPP_BEGIN(name) class name##_2d : public vector_unit_2d \
 	{	\
 		public: \
-			using vector_unit_2d::vector_unit_2d; \
 			name##_2d(); \
 			name##_2d(const name##_2d&); \
 			name##_2d(name##_2d&&); \
+			explicit name##_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta,dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(float new_value,const string& init_dimensions,float new_theta); \
+			explicit name##_2d(float new_value,const string& init_dimensions,const angle& new_theta); \
+			explicit name##_2d(double new_value,const string& init_dimensions,float new_theta); \
+			explicit name##_2d(double new_value,const string& init_dimensions,const angle& new_theta); \
+			explicit name##_2d(long double new_value,const string& init_dimensions,float new_theta); \
+			explicit name##_2d(long double new_value,const string& init_dimensions,const angle& new_theta); \
+			explicit name##_2d(int new_value,const string& init_dimensions,float new_theta); \
+			explicit name##_2d(int new_value,const string& init_dimensions,const angle& new_theta); \
+			explicit name##_2d(float new_value,const vector<dimension>& new_dimensions,float new_theta); \
+			explicit name##_2d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta); \
+			explicit name##_2d(double new_value,const vector<dimension>& new_dimensions,float new_theta); \
+			explicit name##_2d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta); \
+			explicit name##_2d(long double new_value,const vector<dimension>& new_dimensions,float new_theta); \
+			explicit name##_2d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta); \
+			explicit name##_2d(int new_value,const vector<dimension>& new_dimensions,float new_theta); \
+			explicit name##_2d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta); \
+			explicit name##_2d(const scalar_unit& x,float new_theta); \
+			explicit name##_2d(const scalar_unit& x,const angle& new_theta); \
+			explicit name##_2d(const string& init_scalar,float new_theta); \
+			explicit name##_2d(const string& init_scalar,const angle& new_theta); \
+			explicit name##_2d(const string& init_vector_2d); \
+			explicit name##_2d(const vector_unit_2d& x); \
+			explicit name##_2d(vector_unit_2d&& x); \
+			name##_2d& operator =(const name##_2d& x); \
+			name##_2d& operator =(name##_2d&& x); \
 			using vector_unit_2d::operator =; \
 			using vector_unit_2d::operator+=; \
 			using vector_unit_2d::operator-=
@@ -30,10 +62,42 @@
 #define VECTOR_UNIT_2D_HPP(name) class name##_2d : public vector_unit_2d \
 	{	\
 		public: \
-			using vector_unit_2d::vector_unit_2d; \
 			name##_2d(); \
 			name##_2d(const name##_2d&); \
 			name##_2d(name##_2d&&); \
+			explicit name##_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta,dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_2d(float new_value,const string& init_dimensions,float new_theta); \
+			explicit name##_2d(float new_value,const string& init_dimensions,const angle& new_theta); \
+			explicit name##_2d(double new_value,const string& init_dimensions,float new_theta); \
+			explicit name##_2d(double new_value,const string& init_dimensions,const angle& new_theta); \
+			explicit name##_2d(long double new_value,const string& init_dimensions,float new_theta); \
+			explicit name##_2d(long double new_value,const string& init_dimensions,const angle& new_theta); \
+			explicit name##_2d(int new_value,const string& init_dimensions,float new_theta); \
+			explicit name##_2d(int new_value,const string& init_dimensions,const angle& new_theta); \
+			explicit name##_2d(float new_value,const vector<dimension>& new_dimensions,float new_theta); \
+			explicit name##_2d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta); \
+			explicit name##_2d(double new_value,const vector<dimension>& new_dimensions,float new_theta); \
+			explicit name##_2d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta); \
+			explicit name##_2d(long double new_value,const vector<dimension>& new_dimensions,float new_theta); \
+			explicit name##_2d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta); \
+			explicit name##_2d(int new_value,const vector<dimension>& new_dimensions,float new_theta); \
+			explicit name##_2d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta); \
+			explicit name##_2d(const scalar_unit& x,float new_theta); \
+			explicit name##_2d(const scalar_unit& x,const angle& new_theta); \
+			explicit name##_2d(const string& init_scalar,float new_theta); \
+			explicit name##_2d(const string& init_scalar,const angle& new_theta); \
+			explicit name##_2d(const string& init_vector_2d); \
+			explicit name##_2d(const vector_unit_2d& x); \
+			explicit name##_2d(vector_unit_2d&& x); \
+			name##_2d& operator =(const name##_2d& x); \
+			name##_2d& operator =(name##_2d&& x); \
 			using vector_unit_2d::operator =; \
 			using vector_unit_2d::operator+=; \
 			using vector_unit_2d::operator-=; \
@@ -45,6 +109,182 @@
 #define VECTOR_UNIT_2D_CPP(name,init_real_dimensions) name##_2d::name##_2d() : vector_unit_2d() {} \
 	name##_2d::name##_2d(const name##_2d& x) : vector_unit_2d(x) {} \
 	name##_2d::name##_2d(name##_2d&& x) : vector_unit_2d(std::move(x)) {} \
+	name##_2d::name##_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : vector_unit_2d(new_value,new_dimension,new_prefix,new_theta,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : vector_unit_2d(new_value,new_dimension,new_prefix,new_theta,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : vector_unit_2d(new_value,new_dimension,new_prefix,new_theta,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : vector_unit_2d(new_value,new_dimension,new_prefix,new_theta,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : vector_unit_2d(new_value,new_dimension,new_prefix,new_theta,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : vector_unit_2d(new_value,new_dimension,new_prefix,new_theta,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : vector_unit_2d(new_value,new_dimension,new_prefix,new_theta,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : vector_unit_2d(new_value,new_dimension,new_prefix,new_theta,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(float new_value,const string& init_dimensions,float new_theta) : vector_unit_2d(new_value,init_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(float new_value,const string& init_dimensions,const angle& new_theta) : vector_unit_2d(new_value,init_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(double new_value,const string& init_dimensions,float new_theta) : vector_unit_2d(new_value,init_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(double new_value,const string& init_dimensions,const angle& new_theta) : vector_unit_2d(new_value,init_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(long double new_value,const string& init_dimensions,float new_theta) : vector_unit_2d(new_value,init_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(long double new_value,const string& init_dimensions,const angle& new_theta) : vector_unit_2d(new_value,init_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(int new_value,const string& init_dimensions,float new_theta) : vector_unit_2d(new_value,init_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(int new_value,const string& init_dimensions,const angle& new_theta) : vector_unit_2d(new_value,init_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(float new_value,const vector<dimension>& new_dimensions,float new_theta) : vector_unit_2d(new_value,new_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta) : vector_unit_2d(new_value,new_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(double new_value,const vector<dimension>& new_dimensions,float new_theta) : vector_unit_2d(new_value,new_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta) : vector_unit_2d(new_value,new_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(long double new_value,const vector<dimension>& new_dimensions,float new_theta) : vector_unit_2d(new_value,new_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta) : vector_unit_2d(new_value,new_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(int new_value,const vector<dimension>& new_dimensions,float new_theta) : vector_unit_2d(new_value,new_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta) : vector_unit_2d(new_value,new_dimensions,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(const scalar_unit& x,float new_theta) : vector_unit_2d(x,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(const scalar_unit& x,const angle& new_theta) : vector_unit_2d(x,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(const string& init_scalar,float new_theta) : vector_unit_2d(init_scalar,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(const string& init_scalar,const angle& new_theta) : vector_unit_2d(init_scalar,new_theta) \
+	{ \
+		scalar_unit::check_dimensions(name##_2d::real_dimensions); \
+	} \
+\
+	name##_2d::name##_2d(const string& init_vector_2d) : vector_unit_2d() \
+	{ \
+		vector_unit_2d::initialize_from_string(init_vector_2d); \
+	} \
+\
+	name##_2d::name##_2d(const vector_unit_2d& x) : vector_unit_2d()  \
+	{ \
+		if (x.has_dimensions(name##_2d::real_dimensions)) \
+		{ \
+			value = x.get_value(); \
+			dimensions = x.get_dimensions(); \
+			theta = x.theta; \
+		} \
+	} \
+\
+	name##_2d::name##_2d(vector_unit_2d&& x) : vector_unit_2d()  \
+	{ \
+		if (x.has_dimensions(name##_2d::real_dimensions)) \
+		{ \
+			value = std::move(x.get_value()); \
+			dimensions = std::move(x.get_dimensions()); \
+			theta = std::move(x.theta); \
+		} \
+	} \
+\
+	name##_2d& name##_2d::operator =(const name##_2d& x) \
+	{ \
+		vector_unit_2d::operator =(x); \
+		return *this; \
+	} \
+\
+	name##_2d& name##_2d::operator =(name##_2d&& x) \
+	{ \
+		vector_unit_2d::operator =(std::move(x)); \
+		return *this; \
+	} \
 const string name##_2d::dimensions_match = init_real_dimensions; \
 const vector<dimension> name##_2d::real_dimensions = create_base_dimensions(init_real_dimensions)
 
@@ -206,7 +446,7 @@ namespace scifir
 
 			angle theta;
 
-		private:
+		protected:
 			void initialize_from_string(string init_vector_2d);
 	};
 
