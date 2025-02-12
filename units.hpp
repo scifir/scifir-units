@@ -20,6 +20,7 @@
 #include "./units/derived_units/radiometry_units.hpp"
 #include "./units/derived_units/informatics_units.hpp"
 #include "./units/derived_units/chemistry_units.hpp"
+#include "./units/derived_units/biology_units.hpp"
 
 #include "./units/topology/direction.hpp"
 #include "./units/topology/point_1d.hpp"
@@ -47,7 +48,9 @@
 #include "./units/special_units/size_nd.hpp"
 #include "./units/special_units/zid.hpp"
 
+#include "./units/meca_number/angle.hpp"
 #include "./units/meca_number/lab_number.hpp"
+#include "./units/meca_number/complex_number.hpp"
 
 #include "./units/util/matrix.hpp"
 
