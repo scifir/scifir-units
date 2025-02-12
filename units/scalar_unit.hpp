@@ -332,6 +332,8 @@ namespace scifir
 			string base_display(int number_of_decimals = 2,bool with_brackets = false,bool use_close_prefix = false) const;
 			string custom_display(const string& init_dimensions,int number_of_decimals = 2,bool with_brackets = false) const;
 
+			string to_latex(const string& init_dimensions,int number_of_decimals = 2,bool with_brackets = false) const;
+
 		protected:
 			vector<dimension> dimensions;
 			float value;

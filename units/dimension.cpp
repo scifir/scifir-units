@@ -1756,6 +1756,145 @@ namespace scifir
 		return out.str();
 	}
 
+	string to_latex(const vector<dimension>& x_dimensions,bool with_brackets)
+	{
+		ostringstream out;
+		bool is_fraction = false;
+		if (x_dimensions.size() > 0)
+		{
+			vector<dimension::type> printed_dimensions = vector<dimension::type>();
+			map<prefix,int> counted_prefixes = map<prefix,int>();
+			bool first_print = true;
+			for (const dimension& x_dimension : x_dimensions)
+			{
+				if (x_dimension.dimension_position == dimension::NUMERATOR)
+				{
+					bool printed = false;
+					for (const dimension::type& print_dimension : printed_dimensions)
+					{
+						if (print_dimension == x_dimension.dimension_type)
+						{
+							printed = true;
+						}
+					}
+					if (printed == true)
+					{
+						continue;
+					}
+					counted_prefixes = map<prefix,int>();
+					for (const dimension& y_dimension : x_dimensions)
+					{
+						if (x_dimension.dimension_type == y_dimension.dimension_type)
+						{
+							counted_prefixes[y_dimension.prefix]++;
+						}
+					}
+					for (const auto& x_prefix : counted_prefixes)
+					{
+						if (!first_print)
+						{
+							out << "*";
+						}
+						out << x_prefix.first << x_dimension.get_symbol();
+						if (x_prefix.second > 1)
+						{
+							out << "^" << x_prefix.second;
+						}
+						first_print = false;
+					}
+					printed_dimensions.push_back(x_dimension.dimension_type);
+				}
+			}
+			printed_dimensions.clear();
+			bool first_negative_iteration = true;
+			bool first_negative_prefix = true;
+			for (const dimension& x_dimension : x_dimensions)
+			{
+				if (x_dimension.dimension_position == dimension::DENOMINATOR)
+				{
+					is_fraction = true;
+					if (first_negative_iteration == true)
+					{
+						if (first_print)
+						{
+							out << "1";
+						}
+						out << "}{";
+						first_negative_iteration = false;
+					}
+					bool printed = false;
+					for (const dimension::type& print_dimension : printed_dimensions)
+					{
+						if (print_dimension == x_dimension.dimension_type)
+						{
+							printed = true;
+						}
+					}
+					if (printed == true)
+					{
+						continue;
+					}
+					counted_prefixes = map<prefix,int>();
+					for (const dimension& y_dimension : x_dimensions)
+					{
+						if (x_dimension.dimension_type == y_dimension.dimension_type)
+						{
+							counted_prefixes[y_dimension.prefix]++;
+						}
+					}
+					for (const auto& x_prefix : counted_prefixes)
+					{
+						if (first_negative_prefix == false)
+						{
+							out << "*";
+						}
+						out << x_prefix.first << x_dimension.get_symbol();
+						if (x_prefix.second > 1)
+						{
+							out << "^" << x_prefix.second;
+						}
+						first_negative_prefix = false;
+					}
+					printed_dimensions.push_back(x_dimension.dimension_type);
+				}
+			}
+			if (is_fraction)
+			{
+				out << "}";
+			}
+			if (with_brackets)
+			{
+				out << "]";
+			}
+		}
+		else
+		{
+			out << "[empty]";
+		}
+		if (is_fraction)
+		{
+			if (with_brackets)
+			{
+				return "[\frac{" + out.str();
+			}
+			else
+			{
+				return "\frac{" + out.str();
+			}
+		}
+		else
+		{
+			if (with_brackets)
+			{
+				return "[" + out.str();
+			}
+			else
+			{
+				return out.str();
+			}
+		}
+	}
+
 	vector<dimension> create_dimensions(string init_dimensions)
 	{
 		boost::algorithm::erase_all(init_dimensions, " ");

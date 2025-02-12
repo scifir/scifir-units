@@ -173,6 +173,8 @@ namespace scifir
 	string to_string(const dimension& x);
 	string to_string(const vector<dimension>& x_dimensions,bool with_brackets = false);
 
+	string to_latex(const vector<dimension>& x_dimensions,bool with_brackets = false);
+
 	vector<dimension> create_base_dimensions(const vector<dimension>& x);
 	vector<dimension> create_base_dimensions(const vector<dimension>& x,long double& value);
 

@@ -335,6 +335,15 @@ TEST_CASE("scalar_unit class") {
 		//CHECK(f.custom_display("sci") == "1000e0 m/h");
 	}
 
+	SECTION("to_latex() function of scalar_unit class")
+	{
+		scalar_unit a(100.0f,"N");
+		CHECK(bool(a.to_latex("",2,true) == "100 [N]"));
+		CHECK(bool(a.to_latex("",2,false) == "100 N"));
+		CHECK(bool(a.to_latex("kg*m/s2",2,true) == "100 [\frac{kg*m}{s^2}]"));
+		CHECK(bool(a.to_latex("kg*m/s2",2,false) == "100 \frac{kg*m}{s^2}"));
+	}
+
 	SECTION("is_scalar_unit() function")
 	{
 		CHECK(is_scalar_unit("1 m") == true);
