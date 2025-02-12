@@ -90,6 +90,9 @@ namespace scifir
 	// WAVES
 	SCALAR_UNIT_HPP(wavenumber);
 	SCALAR_UNIT_HPP(frequency);
+
+	// ACCOUSTICS
+	SCALAR_UNIT_HPP(sound_power);
 	
 	typedef length wavelength;
 }

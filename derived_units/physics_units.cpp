@@ -82,4 +82,7 @@ namespace scifir
 	// WAVES
 	SCALAR_UNIT_CPP(wavenumber,"1/m");
 	SCALAR_UNIT_CPP(frequency,"Hz");
+
+	// ACCOUSTICS
+	SCALAR_UNIT_CPP(sound_power,"dB");
 }
