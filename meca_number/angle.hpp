@@ -18,15 +18,65 @@ namespace scifir
 		return x * 180.0f / std::numbers::pi_v<float>;
 	}
 
+	inline float gradian_to_degree(float x)
+	{
+		return x * 0.9f;
+	}
+
+	inline float turn_to_degree(float x)
+	{
+		return x * 360.0f;
+	}
+
 	inline float degree_to_radian(float x)
 	{
 		return x * std::numbers::pi_v<float> / 180.0f;
 	}
 
+	inline float gradian_to_radian(float x)
+	{
+		return x * 0.015708f;
+	}
+
+	inline float turn_to_radian(float x)
+	{
+		return x * 2 * std::numbers::pi_v<float>;
+	}
+
+	inline float degree_to_gradian(float x)
+	{
+		return x / 0.9f;
+	}
+
+	inline float radian_to_gradian(float x)
+	{
+		return x * 200.0f / std::numbers::pi_v<float>;
+	}
+
+	inline float turn_to_gradian(float x)
+	{
+		return x * 400.f;
+	}
+
+	inline float degree_to_turn(float x)
+	{
+		return x / 360.0f;
+	}
+
+	inline float radian_to_turn(float x)
+	{
+		return x / (2.0f * std::numbers::pi_v<float>);
+	}
+
+	inline float gradian_to_turn(float x)
+	{
+		return x / 400.0f;
+	}
+
 	class angle
 	{
 		public:
-			enum type : int8_t {DEGREE,RADIAN};
+			enum type : int8_t {DEGREE,RADIAN,GRADIAN,TURN};
 
 			angle();
 			angle(const angle& x);
