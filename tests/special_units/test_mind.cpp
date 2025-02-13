@@ -21,6 +21,7 @@ TEST_CASE("mind functions") {
 		CHECK(to_string(feeling::SADNESS) == "SADNESS");
 		CHECK(to_string(feeling::RANCOR) == "RANCOR");
 		CHECK(to_string(feeling::LOVE) == "LOVE");
+		CHECK(to_string(feeling::HAPPINESS) == "HAPPINESS");
 	}
 
 	SECTION("to_string() of emotion") {

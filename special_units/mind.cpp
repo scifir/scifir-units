@@ -35,6 +35,10 @@ namespace scifir
 		{
 			return "LOVE";
 		}
+		else if (x == feeling::HAPPINESS)
+		{
+			return "HAPPINESS";
+		}
 		return "";
 	}
 

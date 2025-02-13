@@ -9,7 +9,7 @@ namespace scifir
 {
     enum class alert_state { VIGIL, SLEEP, MEDITATION };
 
-    enum class feeling { SADNESS, RANCOR, LOVE };
+    enum class feeling { SADNESS, RANCOR, LOVE, HAPPINESS };
 
     enum class emotion { HAPPY, EXCITED, TENDER, SCARED, ANGRY, SAD };
 
