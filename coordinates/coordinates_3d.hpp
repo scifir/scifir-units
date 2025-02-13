@@ -36,7 +36,7 @@ namespace scifir
 
 	inline angle ECEF_to_LLA_longitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
 	{
-		return angle(std::atan2(float(y),float(x)),angle::RADIAN);
+		return scifir::atan2(float(y),float(x));
 	}
 
 	inline scalar_unit ECEF_to_LLA_altitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
@@ -77,7 +77,7 @@ namespace scifir
 
 	inline angle ECEF_to_LLA_longitude(float x, float y, float z)
 	{
-		return angle(std::atan2(y,x),angle::RADIAN);
+		return scifir::atan2(y,x);
 	}
 
 	inline float ECEF_to_LLA_altitude(float x, float y, float z)

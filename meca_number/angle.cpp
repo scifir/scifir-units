@@ -391,6 +391,11 @@ namespace scifir
 		return angle(radian_to_degree(std::atan(x)));
 	}
 
+	angle atan2(float y,float x)
+	{
+		return angle(radian_to_degree(std::atan2(y,x)));
+	}
+
 	float sinh(const angle& x)
 	{
 		return std::sinh(x.get_radian());

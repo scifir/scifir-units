@@ -179,6 +179,7 @@ namespace scifir
 	angle asin(float x);
 	angle acos(float x);
 	angle atan(float x);
+	angle atan2(float y,float x);
 	float sinh(const angle& x);
 	float cosh(const angle& x);
 	float tanh(const angle& x);

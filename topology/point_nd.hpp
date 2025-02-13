@@ -747,7 +747,7 @@ namespace scifir
 
 			angle get_longitude() const
 			{
-				return angle(std::atan2(float(values[1]),float(values[0])),angle::RADIAN);
+				return scifir::atan2(float(values[1]),float(values[0]));
 			}
 
 			float get_altitude() const

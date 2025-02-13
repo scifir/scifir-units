@@ -368,7 +368,7 @@ namespace scifir
 
 	angle angle_between(const vector_unit_2d& x,const vector_unit_2d& y)
 	{
-		return angle(radian_to_degree(std::atan2(float(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection()),float(y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()))));
+		return scifir::atan2(float(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection()),float(y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()));
 	}
 
 	bool same_direction(const vector_unit_2d& x, const vector_unit_2d& y)
