@@ -25,7 +25,7 @@ TEST_CASE("pOH class") {
         CHECK(c.get_value() == 5.0f);
         pOH d = pOH(4.0f);
         CHECK(d.get_value() == 4.0f);
-        pOH e = pOH("3");
+        pOH e = pOH("pOH 3");
         CHECK(e.get_value() == 3.0f);
         scalar_unit f2 = 30_g;
         pOH f = pOH(f2 / 10_g);
@@ -134,8 +134,8 @@ TEST_CASE("pOH class") {
     SECTION("Display of pOH")
     {
         pOH a(6.5f);
-        CHECK(a.display() == "6.5");
-        CHECK(to_string(a) == "6.5");
+        CHECK(a.display() == "pOH 6.5");
+        CHECK(to_string(a) == "pOH 6.5");
     }
 
     SECTION("Normalize value of pOH")
@@ -179,24 +179,24 @@ TEST_CASE("pOH class") {
 
     SECTION("String operators with pOH class")
     {
-        CHECK(bool(pOH(3.0f) == "3.0"));
-        CHECK(bool(pOH(3.0f) != "2.0"));
-        CHECK(bool("3.0" == pOH(3.0f)));
-        CHECK(bool("2.0" != pOH(3.0f)));
-        string a = "pOH: ";
+        CHECK(bool(pOH(3.0f) == "pOH 3.0"));
+        CHECK(bool(pOH(3.0f) != "pOH 2.0"));
+        CHECK(bool("pOH 3.0" == pOH(3.0f)));
+        CHECK(bool("pOH 2.0" != pOH(3.0f)));
+        string a = "a ";
         a += pOH(4.0f);
-        CHECK(a == "pOH: 4");
-        CHECK(("pOH: " + pOH(5.0f)) == "pOH: 5");
-        CHECK((pOH(5.0f) + " pOH") == "5 pOH");
+        CHECK(a == "a pOH 4");
+        CHECK(("a " + pOH(5.0f)) == "a pOH 5");
+        CHECK((pOH(5.0f) + " a") == "pOH 5 a");
     }
 
     SECTION("Stream operators of pOH class")
     {
         ostringstream a;
         a << pOH(8.0f);
-        CHECK(a.str() == "8");
+        CHECK(a.str() == "pOH 8");
         stringstream b;
-        b << "3.0";
+        b << "pOH 3.0";
         pOH b2;
         b >> b2;
         CHECK(b2.get_value() == 3.0f);

@@ -25,7 +25,7 @@ TEST_CASE("pH class") {
         CHECK(c.get_value() == 5.0f);
         pH d = pH(4.0f);
         CHECK(d.get_value() == 4.0f);
-        pH e = pH("3");
+        pH e = pH("pH 3");
         CHECK(e.get_value() == 3.0f);
         scalar_unit f2 = 30_g;
         pH f = pH(f2 / 10_g);
@@ -134,8 +134,8 @@ TEST_CASE("pH class") {
     SECTION("Display of pH")
     {
         pH a(6.5f);
-        CHECK(a.display() == "6.5");
-        CHECK(to_string(a) == "6.5");
+        CHECK(a.display() == "pH 6.5");
+        CHECK(to_string(a) == "pH 6.5");
     }
 
     SECTION("Normalize value of pH")
@@ -179,24 +179,24 @@ TEST_CASE("pH class") {
 
     SECTION("String operators with pH class")
     {
-        CHECK(bool(pH(3.0f) == "3.0"));
-        CHECK(bool(pH(3.0f) != "2.0"));
-        CHECK(bool("3.0" == pH(3.0f)));
-        CHECK(bool("2.0" != pH(3.0f)));
-        string a = "pH: ";
+        CHECK(bool(pH(3.0f) == "pH 3.0"));
+        CHECK(bool(pH(3.0f) != "pH 2.0"));
+        CHECK(bool("pH 3.0" == pH(3.0f)));
+        CHECK(bool("pH 2.0" != pH(3.0f)));
+        string a = "a ";
         a += pH(4.0f);
-        CHECK(a == "pH: 4");
-        CHECK(("pH: " + pH(5.0f)) == "pH: 5");
-        CHECK((pH(5.0f) + " pH") == "5 pH");
+        CHECK(a == "a pH 4");
+        CHECK(("a " + pH(5.0f)) == "a pH 5");
+        CHECK((pH(5.0f) + " a") == "pH 5 a");
     }
 
     SECTION("Stream operators of pH class")
     {
         ostringstream a;
         a << pH(8.0f);
-        CHECK(a.str() == "8");
+        CHECK(a.str() == "pH 8");
         stringstream b;
-        b << "3.0";
+        b << "pH 3.0";
         pH b2;
         b >> b2;
         CHECK(b2.get_value() == 3.0f);

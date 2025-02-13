@@ -27,10 +27,14 @@ namespace scifir
 		normalize_value();
 	}
 	
-	pOH::pOH(const string& init_pOH) : value()
+	pOH::pOH(const string& init_pOH) : value(0.0f)
 	{
-		value = stof(init_pOH);
-		normalize_value();
+		if (init_pOH.substr(0,4) == "pOH ")
+		{
+			value = stof(init_pOH.substr(4));
+			normalize_value();
+			return;
+		}
 	}
 
 	pOH::pOH(const scalar_unit& x)
@@ -169,6 +173,7 @@ namespace scifir
 	string pOH::display(int number_of_decimals) const
 	{
 		ostringstream output;
+		output << "pOH ";
 		if (value == -0.0f)
 		{
 			output << 0;

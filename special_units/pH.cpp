@@ -28,10 +28,14 @@ namespace scifir
 		normalize_value();
 	}
 
-	pH::pH(const string& init_pH) : value()
+	pH::pH(const string& init_pH) : value(0.0f)
 	{
-		value = stof(init_pH);
-		normalize_value();
+		if (init_pH.substr(0,3) == "pH ")
+		{
+			value = stof(init_pH.substr(3));
+			normalize_value();
+			return;
+		}
 	}
 
 	pH::pH(const scalar_unit& x)
@@ -171,6 +175,7 @@ namespace scifir
 	string pH::display(int number_of_decimals) const
 	{
 		ostringstream output;
+		output << "pH ";
 		if (value == -0.0f)
 		{
 			output << 0;
