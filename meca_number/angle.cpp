@@ -264,6 +264,19 @@ namespace scifir
 
 	void angle::initialize_from_string(string init_angle)
 	{
+		if(init_angle.length() >= 5)
+		{
+			if (init_angle.substr(init_angle.length() - 4) == " deg")
+			{
+				value = stof(init_angle.substr(0,init_angle.length() - 4));
+				return;
+			}
+			else if (init_angle.substr(init_angle.length() - 4) == " rad")
+			{
+				value = radian_to_degree(stof(init_angle.substr(0,init_angle.length() - 4)));
+				return;
+			}
+		}
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
 		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
 		{

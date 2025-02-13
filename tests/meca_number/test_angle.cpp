@@ -31,6 +31,10 @@ TEST_CASE("angle class") {
         CHECK(h.get_value() == 10.0f);
         angle i("15º");
         CHECK(i.get_value() == 15.0f);
+        angle i2("15 deg");
+        CHECK(i2.get_value() == 15.0f);
+        angle i3("0.349 rad");
+        CHECK(i3.display() == "19.99°");
         scalar_unit j2("7 N");
         angle j(j2);
         CHECK(j.get_value() == 0.0f);
