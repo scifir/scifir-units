@@ -189,6 +189,8 @@ The **Scifir Foundation** is looking for **funding**, in order to do some digita
 
 ## Learn scifir-units
 
+The documentation is **short to read**! Take profit then to read it entirely!
+
 - [Portability](https://github.com/scifir/scifir-units/tree/master/docs/readme/portability.md)
 - [Goal](https://github.com/scifir/scifir-units/tree/master/docs/readme/goal.md)
 - [Code examples](https://github.com/scifir/scifir-units/tree/master/docs/readme/code_examples.md)
