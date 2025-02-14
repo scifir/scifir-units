@@ -16,6 +16,8 @@ using namespace std;
 
 namespace scifir
 {
+	enum class cardinale_point { NORTH, SOUTH, EAST, WEST };
+
 	inline angle ECEF_to_LLA_latitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
 	{
 		scalar_unit e_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_A,2);
@@ -668,6 +670,8 @@ namespace scifir
 			}
 	};
 
+	string to_string(cardinale_point x);
+
 	template<typename T>
 	string to_string(const coordinates_3d<T>& x)
 	{
@@ -675,6 +679,8 @@ namespace scifir
 	}
 
 	string to_string(const coordinates_3d<float>& x);
+
+	cardinale_point create_cardinale_point(const string& x);
 
 	template<typename T,typename U>
 	T distance(const coordinates_3d<T>& x,const coordinates_3d<U>& y)

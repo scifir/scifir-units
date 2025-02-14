@@ -449,4 +449,20 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		iss >> b;
 		CHECK(to_string(b) == "(1,2,1)");
 	}
+
+	SECTION("cardinale_point to string")
+	{
+		CHECK(to_string(cardinale_point::NORTH) == "NORTH");
+		CHECK(to_string(cardinale_point::SOUTH) == "SOUTH");
+		CHECK(to_string(cardinale_point::EAST) == "EAST");
+		CHECK(to_string(cardinale_point::WEST) == "WEST");
+	}
+
+	SECTION("string to cardinale_point")
+	{
+		CHECK(create_cardinale_point("NORTH") == cardinale_point::NORTH);
+		CHECK(create_cardinale_point("SOUTH") == cardinale_point::SOUTH);
+		CHECK(create_cardinale_point("EAST") == cardinale_point::EAST);
+		CHECK(create_cardinale_point("WEST") == cardinale_point::WEST);
+	}
 }
