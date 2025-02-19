@@ -39,6 +39,8 @@ scifir-units has been developed under **C++20** and uses **cmake** as build tool
 ## Short example
 
 ```cpp
+#include "scifir/units.hpp"
+
 scifir::length x = 100_km; // length is a child class of scalar_unit, only supports dimensions convertible to metre
 cout << x << endl; // Prints "100 km"
 x.change_dimensions("m");
@@ -191,15 +193,29 @@ The **Scifir Foundation** is looking for **funding**, in order to do some digita
 
 The documentation is **short to read**! Take profit then to read it entirely!
 
+### First information
+
+- [Code examples](https://github.com/scifir/scifir-units/tree/master/docs/readme/code_examples.md)
 - [Portability](https://github.com/scifir/scifir-units/tree/master/docs/readme/portability.md)
 - [Goal](https://github.com/scifir/scifir-units/tree/master/docs/readme/goal.md)
-- [Code examples](https://github.com/scifir/scifir-units/tree/master/docs/readme/code_examples.md)
+- [Installation](https://github.com/scifir/scifir-units/tree/master/docs/readme/installation_brief.md)
+
+### Learn the library
+
+- [Introduction](https://github.com/scifir/scifir-units/tree/master/docs/readme/introduction.md)
+- [Scalar unit classes](https://github.com/scifir/scifir-units/tree/master/docs/readme/scalar_units.md)
+- [Vector unit classes](https://github.com/scifir/scifir-units/tree/master/docs/readme/vector_units.md)
+- [Meca numbers](https://github.com/scifir/scifir-units/tree/master/docs/readme/meca_numbers.md)
+- [Coordinates and points](https://github.com/scifir/scifir-units/tree/master/docs/readme/coordinates_and_points.md)
+- [Special units](https://github.com/scifir/scifir-units/tree/master/docs/readme/special_units.md)
+- [Dimensions](https://github.com/scifir/scifir-units/tree/master/docs/readme/dimensions.md)
+
+### Complementary information
+
+- [Folder structure](https://github.com/scifir/scifir-units/tree/master/docs/readme/folder_structure.md)
 - [Concepts](https://github.com/scifir/scifir-units/tree/master/docs/readme/concepts.md)
 - [History of units of measurement](https://github.com/scifir/scifir-units/tree/master/docs/readme/history.md)
-- [Folder structure](https://github.com/scifir/scifir-units/tree/master/docs/readme/folder_structure.md)
-- [Installation brief](https://github.com/scifir/scifir-units/tree/master/docs/readme/installation_brief.md)
 - [Use cases](https://github.com/scifir/scifir-units/tree/master/docs/readme/use_cases.md)
-- [Core functionalities](https://github.com/scifir/scifir-units/tree/master/docs/readme/core_functionalities.md)
 - [Nutrition](https://github.com/scifir/scifir-units/tree/master/docs/readme/nutrition.md)
 - [Physics](https://github.com/scifir/scifir-units/tree/master/docs/readme/physics.md)
 - [Internals](https://github.com/scifir/scifir-units/tree/master/docs/readme/internals.md)
