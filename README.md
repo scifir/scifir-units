@@ -169,18 +169,6 @@ The initialization strings are like the following examples:
 
 In order to store units inside a file an initialization string should be used. To store inside a table of a database, use an initialization string too. For any purpose, when converting some of those classes to an string, the string initialization has to be used always.
 
-## Consumption of memory
-
-scifir-units is a very lightweight library, all classes require just some bytes to work. Then, it can be used in any electronics project, because the memory requirements can be meet.
-
-The prefix class sizes 1 byte. The dimension class sizes 6 bytes.
-
-The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vector_unit_nd size more than a single float, which uses 4 bytes, but don't size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.
-
-The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.
-
-The coordinates classes have as member-variables scalar_unit classes, and then they size the bytes of the scalar_unit classes, for each scalar_unit class they have.
-
 ## Team
 
 The **Scifir Collection** is developed by [Ismael Correa Castro](https://iarfen.github.io), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at [ismael.correa.castro@gmail.com](mailto:ismael.correa.castro@gmail.com). His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
@@ -195,30 +183,37 @@ The documentation is **short to read**! Take profit then to read it entirely!
 
 ### First information
 
-- [Code examples](https://github.com/scifir/scifir-units/tree/master/docs/readme/code_examples.md)
-- [Portability](https://github.com/scifir/scifir-units/tree/master/docs/readme/portability.md)
 - [Goal](https://github.com/scifir/scifir-units/tree/master/docs/readme/goal.md)
+- [Code examples](https://github.com/scifir/scifir-units/tree/master/docs/readme/code_examples.md)
+- [Use cases](https://github.com/scifir/scifir-units/tree/master/docs/readme/use_cases.md)
 - [Installation](https://github.com/scifir/scifir-units/tree/master/docs/readme/installation_brief.md)
+- [Portability](https://github.com/scifir/scifir-units/tree/master/docs/readme/portability.md)
 
 ### Learn the library
 
 - [Introduction](https://github.com/scifir/scifir-units/tree/master/docs/readme/introduction.md)
-- [Scalar unit classes](https://github.com/scifir/scifir-units/tree/master/docs/readme/scalar_units.md)
-- [Vector unit classes](https://github.com/scifir/scifir-units/tree/master/docs/readme/vector_units.md)
+- [Scalar units](https://github.com/scifir/scifir-units/tree/master/docs/readme/scalar_units.md)
+- [Vector units](https://github.com/scifir/scifir-units/tree/master/docs/readme/vector_units.md)
 - [Meca numbers](https://github.com/scifir/scifir-units/tree/master/docs/readme/meca_numbers.md)
 - [Coordinates and points](https://github.com/scifir/scifir-units/tree/master/docs/readme/coordinates_and_points.md)
 - [Special units](https://github.com/scifir/scifir-units/tree/master/docs/readme/special_units.md)
 - [Dimensions](https://github.com/scifir/scifir-units/tree/master/docs/readme/dimensions.md)
 
-### Complementary information
+#### Last part
 
-- [Folder structure](https://github.com/scifir/scifir-units/tree/master/docs/readme/folder_structure.md)
-- [Concepts](https://github.com/scifir/scifir-units/tree/master/docs/readme/concepts.md)
-- [History of units of measurement](https://github.com/scifir/scifir-units/tree/master/docs/readme/history.md)
-- [Use cases](https://github.com/scifir/scifir-units/tree/master/docs/readme/use_cases.md)
 - [Nutrition](https://github.com/scifir/scifir-units/tree/master/docs/readme/nutrition.md)
 - [Physics](https://github.com/scifir/scifir-units/tree/master/docs/readme/physics.md)
+
+### Our code topics
+
+- [Folder structure](https://github.com/scifir/scifir-units/tree/master/docs/readme/folder_structure.md)
+- [Consumption of memory](https://github.com/scifir/scifir-units/tree/master/docs/readme/consumption_of_memory.md)
 - [Internals](https://github.com/scifir/scifir-units/tree/master/docs/readme/internals.md)
 - [Important future characteristics](https://github.com/scifir/scifir-units/tree/master/docs/readme/important_future_characteristics.md)
+
+### Complementary information
+
+- [Concepts](https://github.com/scifir/scifir-units/tree/master/docs/readme/concepts.md)
+- [History of units of measurement](https://github.com/scifir/scifir-units/tree/master/docs/readme/history.md)
 - [Thoughts about units](https://github.com/scifir/scifir-units/tree/master/docs/readme/thoughts_about_units.md)
 - [Bibliography](https://github.com/scifir/scifir-units/tree/master/docs/readme/bibliography.md)
