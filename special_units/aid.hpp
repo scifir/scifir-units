@@ -19,10 +19,7 @@ namespace scifir
 			aid(const aid& x);
 			aid(aid&& x);
 			explicit aid(const scifir::astronomical_body& predefined_astronomical_body);
-			explicit aid(const aid::type& new_astronomical_type,const string& new_universe);
-			explicit aid(const string& new_universe,const string& new_galaxy);
-			explicit aid(const string& new_universe,const string& new_galaxy,const string& new_solar_system);
-			explicit aid(const aid::type& new_astronomical_type,const string& new_universe,const string& new_galaxy,const string& new_solar_system,const string& new_astronomical_body);
+			explicit aid(const aid::type& new_astronomical_type,const string& new_astro1,const string& new_astro2 = "",const string& new_astro3 = "",const string& new_astro4 = "");
 			explicit aid(const string& init_aid);
 
 			aid& operator =(const aid& x);

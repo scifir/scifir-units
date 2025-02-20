@@ -309,29 +309,53 @@ namespace scifir
 		}
 	}
 
-	aid::aid(const aid::type& new_astronomical_type,const string& new_universe) : universe(),galaxy(),solar_system(),astronomical_body(),astronomical_type(aid::NONE)
+	aid::aid(const aid::type& new_astronomical_type,const string& new_astro1,const string& new_astro2,const string& new_astro3,const string& new_astro4) : universe(),galaxy(),solar_system(),astronomical_body(),astronomical_type(aid::NONE)
 	{
 		if (new_astronomical_type == aid::UNIVERSE)
 		{
-			universe = new_universe;
+			universe = new_astro1;
 			astronomical_type = aid::UNIVERSE;
 		}
-	}
-
-	aid::aid(const string& new_universe,const string& new_galaxy) : universe(new_universe),galaxy(new_galaxy),solar_system(),astronomical_body(),astronomical_type(aid::GALAXY)
-	{}
-
-	aid::aid(const string& new_universe,const string& new_galaxy,const string& new_solar_system) : universe(new_universe),galaxy(new_galaxy),solar_system(new_solar_system),astronomical_body(),astronomical_type(aid::SOLAR_SYSTEM)
-	{}
-
-	aid::aid(const aid::type& new_astronomical_type,const string& new_universe,const string& new_galaxy,const string& new_solar_system,const string& new_astronomical_body) : universe(),galaxy(),solar_system(),astronomical_body(),astronomical_type(aid::NONE)
-	{
-		if (new_astronomical_type != aid::UNIVERSE and new_astronomical_type != aid::GALAXY and new_astronomical_type != aid::SOLAR_SYSTEM)
+		else if (new_astronomical_type == aid::GALAXY)
 		{
-			universe = new_universe;
-			galaxy = new_galaxy;
-			solar_system = new_solar_system;
-			astronomical_body = new_astronomical_body;
+			if (new_astro2 != "")
+			{
+				universe = new_astro2;
+			}
+			else
+			{
+				universe = "universe";
+			}
+			galaxy = new_astro1;
+			astronomical_type = aid::GALAXY;
+		}
+		else if (new_astronomical_type == aid::SOLAR_SYSTEM)
+		{
+			if (new_astro3 != "")
+			{
+				universe = new_astro3;
+			}
+			else
+			{
+				universe = "universe";
+			}
+			galaxy = new_astro1;
+			solar_system = new_astro2;
+			astronomical_type = aid::SOLAR_SYSTEM;
+		}
+		else if (new_astronomical_type != aid::UNIVERSE and new_astronomical_type != aid::GALAXY and new_astronomical_type != aid::SOLAR_SYSTEM and new_astronomical_type != aid::NONE)
+		{
+			if (new_astro4 != "")
+			{
+				universe = new_astro4;
+			}
+			else
+			{
+				universe = "universe";
+			}
+			galaxy = new_astro1;
+			solar_system = new_astro2;
+			astronomical_body = new_astro3;
 			astronomical_type = new_astronomical_type;
 		}
 	}
@@ -424,56 +448,91 @@ namespace scifir
 		string aid_type;
 		if (values[0].front() == '(' and isalpha(values[0][1]))
 		{
-			string new_universe;
+			string new_value1;
 			if (isalpha(values[0][2]))
 			{
 				astronomical_type = create_astronomical_type(values[0].substr(1,2));
-				if (values[0][4] != ' ')
+				if (values[0].at(4) != ' ')
 				{
-					new_universe = values[0].substr(4);
+					new_value1 = values[0].substr(4);
 				}
 				else
 				{
-					new_universe = values[0].substr(5);
+					new_value1 = values[0].substr(5);
 				}
 			}
 			else
 			{
 				astronomical_type = create_astronomical_type(values[0].substr(1,1));
-				if (values[0][3] != ' ')
+				if (values[0].at(3) != ' ')
 				{
-					new_universe = values[0].substr(3);
+					new_value1 = values[0].substr(3);
 				}
 				else
 				{
-					new_universe = values[0].substr(4);
+					new_value1 = values[0].substr(4);
 				}
 			}
-			if (values.size() == 4 and astronomical_type != aid::UNIVERSE and astronomical_type != aid::GALAXY and astronomical_type != aid::SOLAR_SYSTEM)
+			if (astronomical_type != aid::UNIVERSE and astronomical_type != aid::GALAXY and astronomical_type != aid::SOLAR_SYSTEM)
 			{
-				universe = new_universe;
-				galaxy = values[1];
-				solar_system = values[2];
-				astronomical_body = values[3];
+				if (values.size() == 4)
+				{
+					universe = new_value1;
+					galaxy = values[1];
+					solar_system = values[2];
+					astronomical_body = values[3];
+				}
+				else if (values.size() == 3)
+				{
+					universe = "universe";
+					galaxy = new_value1;
+					solar_system = values[1];
+					astronomical_body = values[2];
+				}
+				else
+				{
+					astronomical_type = aid::NONE;
+				}
 			}
-			else if (values.size() == 3 and astronomical_type == aid::SOLAR_SYSTEM)
+			else if (astronomical_type == aid::SOLAR_SYSTEM)
 			{
-				universe = new_universe;
-				galaxy = values[1];
-				solar_system = values[2];
+				if (values.size() == 3)
+				{
+					universe = new_value1;
+					galaxy = values[1];
+					solar_system = values[2];
+				}
+				else if (values.size() == 2)
+				{
+					universe = "universe";
+					galaxy = new_value1;
+					solar_system = values[1];
+				}
+				else
+				{
+					astronomical_type = aid::NONE;
+				}
 			}
-			else if (values.size() == 2 and astronomical_type == aid::GALAXY)
+			else if (astronomical_type == aid::GALAXY)
 			{
-				universe = new_universe;
-				galaxy = values[1];
+				if (values.size() == 2)
+				{
+					universe = new_value1;
+					galaxy = values[1];
+				}
+				else if (values.size() == 1)
+				{
+					universe = "universe";
+					galaxy = new_value1;
+				}
+				else
+				{
+					astronomical_type = aid::NONE;
+				}
 			}
-			else if (values.size() == 1 and astronomical_type == aid::UNIVERSE)
+			else if (astronomical_type == aid::UNIVERSE)
 			{
-				universe = new_universe;
-			}
-			if (universe == "")
-			{
-				astronomical_type = aid::NONE;
+				universe = new_value1;
 			}
 		}
 	}
@@ -483,22 +542,30 @@ namespace scifir
 		if (astronomical_type != aid::NONE)
 		{
 			ostringstream out;
-			out << "(" << to_string(astronomical_type) << ")";
+			out << "(" << to_string(astronomical_type) << ") ";
 			if (astronomical_type == aid::UNIVERSE)
 			{
 				out << universe;
 			}
 			else if (astronomical_type == aid::GALAXY)
 			{
-				out << universe << ":" << galaxy;
+				if (universe != "" and universe != "universe")
+				{
+					out << universe << ":";
+				}
+				out << galaxy;
 			}
 			else if (astronomical_type == aid::SOLAR_SYSTEM)
 			{
-				out << universe << ":" << galaxy << ":" << solar_system;
+				if (universe != "" and universe != "universe")
+				{
+					out << universe << ":";
+				}
+				out << galaxy << ":" << solar_system;
 			}
 			else
 			{
-				if (universe != "")
+				if (universe != "" and universe != "universe")
 				{
 					out << universe << ":";
 				}

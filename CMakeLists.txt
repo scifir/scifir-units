@@ -203,6 +203,11 @@ if(BUILD_TESTING)
 		add_test(NAME unit_abbreviation COMMAND test_unit_abbreviation)
 		set_tests_properties(unit_abbreviation PROPERTIES LABELS tests)
 
+		add_executable(test_address tests/coordinates/test_address.cpp)
+		target_link_libraries(test_address PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME address COMMAND test_address)
+		set_tests_properties(address PROPERTIES LABELS tests)
+
 		add_executable(test_coordinates_1d tests/coordinates/test_coordinates_1d.cpp)
 		target_link_libraries(test_coordinates_1d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME coordinates_1d COMMAND test_coordinates_1d)

@@ -141,7 +141,11 @@ namespace scifir
 		if (country != "")
 		{
 			ostringstream out;
-			out << to_string(aid) << " (" << to_string(zone_type) << ") " << country << ":";
+			out << to_string(aid) << " (" << to_string(zone_type) << ") " << country;
+			if (regions.size() > 0 and zone != "")
+			{
+				out << ":";
+			}
 			for (const string& x_region : regions)
 			{
 				out << x_region << ":";
