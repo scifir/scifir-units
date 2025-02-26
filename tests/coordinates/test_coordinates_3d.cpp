@@ -44,6 +44,24 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
 	}
 
+	SECTION("Constructors of coordinates_3d<> class with the enum of type of 3d coordinates")
+	{
+		coordinates_3d<> a(coordinates_3d<>::CARTESIAN,"1 m","5 m","3 m");
+		CHECK(to_string(a) == "(1 m,5 m,3 m)");
+		coordinates_3d<> b(coordinates_3d<>::CYLINDRICAL,"2 m","45\u00B0","3 m");
+		CHECK(to_string(b) == "(1.41 m,1.41 m,3 m)");
+		coordinates_3d<> c(coordinates_3d<>::SPHERICAL,"2 m","45\u00B0","20\u00B0");
+		CHECK(to_string(c) == "(0.48 m,0.48 m,1.87 m)");
+		coordinates_3d<> d(coordinates_3d<>::GEODESIC,"88.736865\u00B0","45\u00B0","15806.7 m");
+		CHECK((d.x.get_value() - std::fabs(100000) < 0.01f));
+		CHECK((d.y.get_value() - std::fabs(100000) < 0.01f));
+		CHECK((d.z.get_value() - std::fabs(6371000) < 0.01f));
+		coordinates_3d<> e(coordinates_3d<>::GEODESIC,"-88.736865\u00B0","45\u00B0","15806.6 m");
+		CHECK((e.x.get_value() - std::fabs(100000) < 0.01f));
+		CHECK((e.y.get_value() - std::fabs(100000) < 0.01f));
+		CHECK((e.z.get_value() + std::fabs(-6371000) < 0.01f));
+	}
+
 	SECTION("Constructors of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a;

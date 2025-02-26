@@ -59,6 +59,30 @@ namespace scifir
 		return scalar_unit(U.get_value() * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V.get_value())),{ dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) });
 	}
 
+	inline scalar_unit LLA_to_ECEF_x(const angle& latitude,const angle& longitude,scalar_unit altitude)
+	{
+		long double e_square = 0.00669437999014l;
+		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
+		altitude.change_dimensions("m");
+		return (n + altitude) * scifir::cos(latitude) * scifir::cos(longitude);
+	}
+
+	inline scalar_unit LLA_to_ECEF_y(const angle& latitude,const angle& longitude,scalar_unit altitude)
+	{
+		long double e_square = 0.00669437999014l;
+		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
+		altitude.change_dimensions("m");
+		return (n + altitude) * scifir::cos(latitude) * scifir::sin(longitude);
+	}
+
+	inline scalar_unit LLA_to_ECEF_z(const angle& latitude,const angle& longitude,scalar_unit altitude)
+	{
+		long double e_square = 0.00669437999014l;
+		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
+		altitude.change_dimensions("m");
+		return ((1 - e_square) * n + altitude) * scifir::sin(latitude);
+	}
+
 	inline angle ECEF_to_LLA_latitude(float x, float y, float z)
 	{
 		long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
@@ -104,6 +128,8 @@ namespace scifir
 	class coordinates_3d
 	{
 		public:
+			enum type { CARTESIAN, CYLINDRICAL, SPHERICAL, GEODESIC };
+
 			coordinates_3d() : x(),y(),z()
 			{}
 
@@ -129,6 +155,26 @@ namespace scifir
 			explicit coordinates_3d(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude) : coordinates_3d()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
+			}
+
+			explicit coordinates_3d(coordinates_3d::type coordinates_type, const string& coord1, const string& coord2, const string& coord3) : coordinates_3d()
+			{
+				if (coordinates_type == coordinates_3d<>::CARTESIAN)
+				{
+					set_position(T(coord1),T(coord2),T(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::CYLINDRICAL)
+				{
+					set_position(T(coord1),angle(coord2),T(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::SPHERICAL)
+				{
+					set_position(T(coord1),angle(coord2),angle(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::GEODESIC)
+				{
+					set_position(angle(coord1),angle(coord2),T(coord3));
+				}
 			}
 
 			template<typename U>
@@ -243,9 +289,9 @@ namespace scifir
 
 			void set_position(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude)
 			{
-				x = T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
-				y = T(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
-				z = T(new_altitude * scifir::sin(new_latitude));
+				x = LLA_to_ECEF_x(new_latitude,new_longitude,new_altitude);
+				y = LLA_to_ECEF_y(new_latitude,new_longitude,new_altitude);
+				z = LLA_to_ECEF_z(new_latitude,new_longitude,new_altitude);
 			}
 
 			void rotate_in_x(const angle& x_angle)
