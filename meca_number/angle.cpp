@@ -323,12 +323,9 @@ namespace scifir
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
 		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
 		{
-			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
+			value = stof(init_angle);
+			normalize_value();
 		}
-		init_angle.clear();
-		init_angle_unicode.toUTF8String(init_angle);
-		value = stof(init_angle);
-		normalize_value();
 	}
 
 	string to_string(const angle& x)
