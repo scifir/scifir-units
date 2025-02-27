@@ -29,6 +29,8 @@ TEST_CASE("angle class") {
         CHECK(g.get_value() == 5.0f);
         angle h("10°");
         CHECK(h.get_value() == 10.0f);
+        angle h2("10.768°");
+        CHECK(h2.get_value() == 10.768f);
         angle i("15º");
         CHECK(i.get_value() == 15.0f);
         angle i2("15 deg");
