@@ -208,11 +208,13 @@ namespace scifir
 				return degree_to_radian(value);
 			}
 
-		private:
+		protected:
 			float value;
 
-			void normalize_value();
 			void initialize_from_string(string init_angle);
+
+		private:
+			void normalize_value();
 	};
 
 	string to_string(const angle& x);

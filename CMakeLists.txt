@@ -243,6 +243,16 @@ if(BUILD_TESTING)
 		add_test(NAME coordinates_ndr COMMAND test_coordinates_ndr)
 		set_tests_properties(coordinates_ndr PROPERTIES LABELS tests)
 
+		add_executable(test_latitude tests/coordinates/test_latitude.cpp)
+		target_link_libraries(test_latitude PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME latitude COMMAND test_latitude)
+		set_tests_properties(latitude PROPERTIES LABELS tests)
+
+		add_executable(test_longitude tests/coordinates/test_longitude.cpp)
+		target_link_libraries(test_longitude PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME longitude COMMAND test_longitude)
+		set_tests_properties(longitude PROPERTIES LABELS tests)
+
 		add_executable(test_direction tests/topology/test_direction.cpp)
 		target_link_libraries(test_direction PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME direction COMMAND test_direction)
