@@ -321,7 +321,7 @@ namespace scifir
 			return;
 		}
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
+		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA) or init_angle_unicode.endsWith(0x03B8) or init_angle_unicode.endsWith(0x03A6))
 		{
 			value = stof(init_angle);
 			normalize_value();

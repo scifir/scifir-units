@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch2/catch_all.hpp"
-#include "../../special_units/aid.hpp"
+#include "../../coordinates/aid.hpp"
 
 #include <iostream>
 #include <sstream>

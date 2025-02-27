@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch2/catch_all.hpp"
-#include "../../special_units/percentage.hpp"
+#include "../../meca_number/percentage.hpp"
 #include "../../units/base_units.hpp"
 #include "../../units/special_names.hpp"
 

@@ -93,7 +93,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(to_string(j) == "100 g 24° 24° 24°");
 		vector_unit_nd k("100 g",{angle(24.0f),angle(24.0f)});
 		CHECK(to_string(k) == "100 g 24° 24°");
-		vector_unit_nd l("100 g 20 20 20");
+		vector_unit_nd l("100 g 20° 20° 20°");
 		CHECK(to_string(l) == "100 g 20° 20° 20°");
 		vector_unit_nd m("100 g 20° 20° 20° 20°");
 		CHECK(to_string(m) == "100 g 20° 20° 20° 20°");

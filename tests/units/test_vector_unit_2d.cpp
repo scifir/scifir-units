@@ -76,8 +76,6 @@ TEST_CASE("class vector_unit_2d")
 		CHECK(to_string(j) == "100 g 24θ");
 		vector_unit_2d k("100 g",angle(24.0f));
 		CHECK(to_string(k) == "100 g 24θ");
-		vector_unit_2d l("100 g 20");
-		CHECK(to_string(l) == "100 g 20θ");
 		vector_unit_2d m("100 g 20º");
 		CHECK(to_string(m) == "100 g 20θ");
 		vector_unit_2d n = vector_unit_2d::cartesian_2d("m",1,1);

@@ -1,8 +1,7 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch2/catch_all.hpp"
-#include "../../special_units/zid.hpp"
-#include "../../special_units/aid.hpp"
+#include "../../coordinates/zid.hpp"
 
 #include <iostream>
 #include <sstream>

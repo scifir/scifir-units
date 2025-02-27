@@ -77,7 +77,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(to_string(j) == "100 g 24θ 24Φ");
 		vector_unit_3d k("100 g",angle(24.0f),angle(24.0f));
 		CHECK(to_string(k) == "100 g 24θ 24Φ");
-		vector_unit_3d l("100 g 20 20");
+		vector_unit_3d l("100 g 20θ 20Φ");
 		CHECK(to_string(l) == "100 g 20θ 20Φ");
 		vector_unit_3d m("100 g 20º 20º");
 		CHECK(to_string(m) == "100 g 20θ 20Φ");

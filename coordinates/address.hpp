@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_SPECIAL_UNITS_ADDRESS_HPP_INCLUDED
 #define SCIFIR_UNITS_SPECIAL_UNITS_ADDRESS_HPP_INCLUDED
 
-#include "../special_units/zid.hpp"
+#include "./zid.hpp"
 
 #include <cstdint>
 #include <sstream>

@@ -3,6 +3,7 @@
 #include "../meca_number/angle.hpp"
 #include "../meca_number/complex_number.hpp"
 #include "../meca_number/lab_number.hpp"
+#include "../meca_number/percentage.hpp"
 #include "../units/scalar_unit.hpp"
 #include "../units/base_units.hpp"
 #include "../units/vector_unit_2d.hpp"
@@ -20,15 +21,14 @@
 #include "../coordinates/coordinates_3dr.hpp"
 #include "../coordinates/coordinates_nd.hpp"
 #include "../coordinates/coordinates_ndr.hpp"
-#include "../special_units/aid.hpp"
-#include "../special_units/percentage.hpp"
+#include "../coordinates/aid.hpp"
+#include "../coordinates/zid.hpp"
 #include "../special_units/pH.hpp"
 #include "../special_units/pixel.hpp"
 #include "../special_units/pOH.hpp"
 #include "../special_units/size_2d.hpp"
 #include "../special_units/size_3d.hpp"
 #include "../special_units/size_nd.hpp"
-#include "../special_units/zid.hpp"
 
 #include <iostream>
 #include <string>

@@ -11,7 +11,7 @@
 #include "../derived_units/chemistry_units.hpp"
 #include "../derived_units/biology_units.hpp"
 
-#include "../special_units/percentage.hpp"
+#include "../meca_number/percentage.hpp"
 #include "../special_units/pixel.hpp"
 
 #include "../nutrition/abv.hpp"

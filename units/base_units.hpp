@@ -3,7 +3,7 @@
 
 #include "./prefix.hpp"
 #include "./scalar_unit.hpp"
-#include "../special_units/percentage.hpp"
+#include "../meca_number/percentage.hpp"
 
 #include <chrono>
 #include <iostream>
