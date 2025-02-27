@@ -347,11 +347,13 @@ TEST_CASE("scalar_unit class") {
 	SECTION("is_scalar_unit() function")
 	{
 		CHECK(is_scalar_unit("1 m") == true);
+		CHECK(is_scalar_unit("1 [m]") == true);
 		CHECK(is_scalar_unit("7 m2") == true);
 		CHECK(is_scalar_unit("2 m/s2") == true);
 		CHECK(is_scalar_unit("5 m2/s2") == true);
 		CHECK(is_scalar_unit("2m") == false);
 		CHECK(is_scalar_unit("7 $") == false);
+		CHECK(is_scalar_unit("7 [$]") == false);
 		CHECK(is_scalar_unit("8 $2") == false);
 		CHECK(is_scalar_unit("2 m$") == false);
 		CHECK(is_scalar_unit("2 m2$") == false);

@@ -817,8 +817,22 @@ namespace scifir
 		{
 			return false;
 		}
+		bool brackets_present = false;
+		if (init_scalar.at(current_pos + 1) == '[')
+		{
+			if (init_scalar.at(init_scalar.size() - 1) != ']')
+			{
+				return false;
+			}
+			current_pos++;
+			brackets_present = true;
+		}
 		vector<string> values;
-		boost::split(values,init_scalar.substr(current_pos),boost::is_any_of("/"));
+		boost::split(values,init_scalar.substr(current_pos + 1,init_scalar.size() - 1),boost::is_any_of("/"));
+		if (brackets_present)
+		{
+			values[values.size() - 1] = values[values.size() - 1].substr(0,values[values.size() - 1].size() - 1);
+		}
 		if (values.size() == 1)
 		{
 			vector<string> subvalues;
