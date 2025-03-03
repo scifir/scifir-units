@@ -11,7 +11,47 @@ using namespace std;
 using namespace scifir;
 
 TEST_CASE("Base units") {
-	SECTION("Functionalities of base units") {
+	SECTION("Constructors of base unit classes")
+	{
+		length a;
+		CHECK(to_string(a) == "0 m");
+		mass b = 100_g;
+		mass c(b);
+		CHECK(to_string(c) == "100 g");
+		mass b2 = 100_g;
+		mass c2(std::move(b2));
+		CHECK(to_string(c2) == "100 g");
+		temperature h(30.0f, dimension::KELVIN, prefix::KILO);
+		CHECK(to_string(h) == "30 kK");
+		temperature h2(30.0, dimension::KELVIN, prefix::KILO);
+		CHECK(to_string(h2) == "30 kK");
+		temperature h3(30.0l, dimension::KELVIN, prefix::KILO);
+		CHECK(to_string(h3) == "30 kK");
+		temperature h4(30, dimension::KELVIN, prefix::KILO);
+		CHECK(to_string(h4) == "30 kK");
+		mass d(100.0f,"g");
+		CHECK(to_string(d) == "100 g");
+		mass d2(100.0,"g");
+		CHECK(to_string(d2) == "100 g");
+		mass d3(100.0l,"g");
+		CHECK(to_string(d3) == "100 g");
+		mass d4(100,"g");
+		CHECK(to_string(d4) == "100 g");
+		mass e(100.0f,{dimension("g",dimension::NUMERATOR)});
+		CHECK(to_string(e) == "100 g");
+		mass e2(100.0,{dimension("g",dimension::NUMERATOR)});
+		CHECK(to_string(e2) == "100 g");
+		mass e3(100.0l,{dimension("g",dimension::NUMERATOR)});
+		CHECK(to_string(e3) == "100 g");
+		mass e4(100,{dimension("g",dimension::NUMERATOR)});
+		CHECK(to_string(e4) == "100 g");
+		mass f("100 g");
+		CHECK(to_string(f) == "100 g");
+		mass g("2E5 g");
+		CHECK(to_string(g) == "200000 g");
+	}
+
+	SECTION("Functionalities of base unit classes") {
 		mass a("10 g");
 		CHECK(to_string(a) == "10 g");
 		mass b("10 g");
