@@ -69,14 +69,7 @@ namespace scifir
 
 	longitude::longitude(const angle& x)
 	{
-		if (x.get_value() < -180.0f)
-		{
-			value = 180.0f - std::abs(value);
-		}
-		else if (x.get_value() > 180.0f)
-		{
-			value = std::abs(value) - 180.0f;
-		}
+		initialize_from_angle(x);
 	}
 
 	longitude& longitude::operator =(const longitude& x)

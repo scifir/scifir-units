@@ -29,12 +29,12 @@ namespace scifir
 		return *this;
 	}
 
-	angle point_3d<float>::get_latitude() const
+	latitude point_3d<float>::get_latitude() const
 	{
 		return ECEF_to_LLA_latitude(x,y,z);
 	}
 
-	angle point_3d<float>::get_longitude() const
+	longitude point_3d<float>::get_longitude() const
 	{
 		return ECEF_to_LLA_longitude(x,y,z);
 	}

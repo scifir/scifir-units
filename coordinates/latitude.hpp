@@ -27,6 +27,7 @@ namespace scifir
 			explicit latitude(int new_value);
 			explicit latitude(const string& init_latitude);
 			explicit latitude(const scalar_unit& x);
+			explicit latitude(const angle& x);
 
 			latitude& operator =(const latitude& x);
 			latitude& operator =(latitude&& x);

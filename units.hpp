@@ -31,6 +31,8 @@
 #include "./units/coordinates/coordinates_1d.hpp"
 #include "./units/coordinates/coordinates_2d.hpp"
 #include "./units/coordinates/coordinates_2dr.hpp"
+#include "./units/coordinates/latitude.hpp"
+#include "./units/coordinates/longitude.hpp"
 #include "./units/coordinates/coordinates_3d.hpp"
 #include "./units/coordinates/coordinates_3dr.hpp"
 #include "./units/coordinates/coordinates_nd.hpp"

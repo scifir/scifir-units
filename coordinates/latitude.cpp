@@ -67,6 +67,11 @@ namespace scifir
 		}
 	}
 
+	latitude::latitude(const angle& x) : angle()
+	{
+		initialize_from_angle(x);
+	}
+
 	latitude& latitude::operator =(const latitude& x)
 	{
 		value = x.get_value();

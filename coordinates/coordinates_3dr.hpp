@@ -144,12 +144,12 @@ namespace scifir
 				return angle(scifir::acos_degree(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
 				return ECEF_to_LLA_latitude(x,y,z);
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
 				return ECEF_to_LLA_longitude(x,y,z);
 			}
@@ -602,12 +602,12 @@ namespace scifir
 				return angle(scifir::acos_degree(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
 				return ECEF_to_LLA_latitude(x,y,z);
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
 				return ECEF_to_LLA_longitude(x,y,z);
 			}

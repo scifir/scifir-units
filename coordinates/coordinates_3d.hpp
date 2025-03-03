@@ -7,6 +7,8 @@
 #include "../derived_units/physics_units.hpp"
 #include "../util/types.hpp"
 #include "../units/constants.hpp"
+#include "./latitude.hpp"
+#include "./longitude.hpp"
 
 #include <iostream>
 #include <string>
@@ -18,7 +20,7 @@ namespace scifir
 {
 	enum class cardinale_point { NORTH, SOUTH, EAST, WEST };
 
-	inline angle ECEF_to_LLA_latitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
+	inline latitude ECEF_to_LLA_latitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
 	{
 		scalar_unit e_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_A,2);
 		scalar_unit e_prim_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_B,2);
@@ -33,12 +35,12 @@ namespace scifir
 		scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
 		scalar_unit V = scifir::sqrt(scifir::pow(p - e_square * r0,2) + (1.0f - e_square) * scifir::pow(z,2));
 		scalar_unit z0 = scifir::pow(WGS84_EARTH_SEMIAXIS_B,2)*z/(WGS84_EARTH_SEMIAXIS_A * V);
-		return scifir::atan(float((z + e_prim_square * z0)/p));
+		return latitude(scifir::atan(float((z + e_prim_square * z0)/p)));
 	}
 
-	inline angle ECEF_to_LLA_longitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
+	inline longitude ECEF_to_LLA_longitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
 	{
-		return scifir::atan2(float(y),float(x));
+		return longitude(scifir::atan2(float(y),float(x)));
 	}
 
 	inline scalar_unit ECEF_to_LLA_altitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
@@ -83,7 +85,7 @@ namespace scifir
 		return ((1 - e_square) * n + altitude) * scifir::sin(latitude);
 	}
 
-	inline angle ECEF_to_LLA_latitude(float x, float y, float z)
+	inline latitude ECEF_to_LLA_latitude(float x, float y, float z)
 	{
 		long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
 		long double e_prim_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2);
@@ -98,12 +100,12 @@ namespace scifir
 		long double r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + std::sqrt((1.0f/2.0f) * std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * std::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * std::pow(p,2));
 		long double V = std::sqrt(std::pow(p - e_square * r0,2) + (1.0f - e_square) * std::pow(z,2));
 		long double z0 = std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2)*z/(WGS84_EARTH_SEMIAXIS_A.get_value() * V);
-		return scifir::atan(float((z + e_prim_square * z0)/p));
+		return latitude(scifir::atan(float((z + e_prim_square * z0)/p)));
 	}
 
-	inline angle ECEF_to_LLA_longitude(float x, float y, float z)
+	inline longitude ECEF_to_LLA_longitude(float x, float y, float z)
 	{
-		return scifir::atan2(y,x);
+		return longitude(scifir::atan2(y,x));
 	}
 
 	inline float ECEF_to_LLA_altitude(float x, float y, float z)
@@ -250,12 +252,12 @@ namespace scifir
 				return angle(scifir::acos_degree(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
 				return ECEF_to_LLA_latitude(x,y,z);
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
 				return ECEF_to_LLA_longitude(x,y,z);
 			}
@@ -534,12 +536,12 @@ namespace scifir
 				return angle(scifir::acos_degree(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
 				return ECEF_to_LLA_latitude(x,y,z);
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
 				return ECEF_to_LLA_longitude(x,y,z);
 			}

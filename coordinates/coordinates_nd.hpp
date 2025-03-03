@@ -186,7 +186,7 @@ namespace scifir
 				}
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
 				if (get_nd() == 3)
 				{
@@ -194,11 +194,11 @@ namespace scifir
 				}
 				else
 				{
-					return angle();
+					return latitude();
 				}
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
 				if (get_nd() == 3)
 				{
@@ -206,7 +206,7 @@ namespace scifir
 				}
 				else
 				{
-					return angle();
+					return longitude();
 				}
 			}
 
@@ -740,7 +740,7 @@ namespace scifir
 				}
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
 				if (get_nd() == 3)
 				{
@@ -748,11 +748,11 @@ namespace scifir
 				}
 				else
 				{
-					return angle();
+					return latitude();
 				}
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
 				if (get_nd() == 3)
 				{
@@ -760,7 +760,7 @@ namespace scifir
 				}
 				else
 				{
-					return angle();
+					return longitude();
 				}
 			}
 

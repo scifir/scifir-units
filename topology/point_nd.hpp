@@ -4,6 +4,9 @@
 #include "../derived_units/physics_units.hpp"
 #include "../units/base_units.hpp"
 #include "../util/types.hpp"
+#include "../coordinates/latitude.hpp"
+#include "../coordinates/longitude.hpp"
+#include "../coordinates/coordinates_3d.hpp"
 
 #include <iostream>
 #include <string>
@@ -193,7 +196,7 @@ namespace scifir
 				}
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
 				if (get_nd() == 3)
 				{
@@ -201,11 +204,11 @@ namespace scifir
 				}
 				else
 				{
-					return angle();
+					return latitude();
 				}
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
 				if (get_nd() == 3)
 				{
@@ -213,7 +216,7 @@ namespace scifir
 				}
 				else
 				{
-					return angle();
+					return longitude();
 				}
 			}
 
@@ -734,9 +737,17 @@ namespace scifir
 				}
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
-				long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_latitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return latitude();
+				}
+				/*long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
 				long double e_prim_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2);
 				long double p = std::sqrt(std::pow(values[0],2) + std::pow(values[1],2));
 				long double F = 54.0f * std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) * std::pow(values[2],2);
@@ -749,12 +760,20 @@ namespace scifir
 				long double r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + std::sqrt((1.0f/2.0f) * std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * std::pow(values[2],2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * std::pow(p,2));
 				long double V = std::sqrt(std::pow(p - e_square * r0,2) + (1.0f - e_square) * std::pow(values[2],2));
 				long double z0 = std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2)*values[2]/(WGS84_EARTH_SEMIAXIS_A.get_value() * V);
-				return scifir::atan(float((values[2] + e_prim_square * z0)/p));
+				return scifir::atan(float((values[2] + e_prim_square * z0)/p));*/
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
-				return scifir::atan2(float(values[1]),float(values[0]));
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_longitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return longitude();
+				}
+				/*return scifir::atan2(float(values[1]),float(values[0]));*/
 			}
 
 			float get_altitude() const
