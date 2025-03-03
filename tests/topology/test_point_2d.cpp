@@ -36,6 +36,8 @@ TEST_CASE("class point_2d<T> and point_2d<float>")
 		CHECK(to_string(e) == "(1 m,5 m)");
 		point_2d<> f("100 m,90\u00B0");
 		CHECK(to_string(f) == "(0 m,100 m)");
+		point_2d<> g(",");
+		CHECK(to_string(g) == "(0 m,0 m)");
 	}
 
 	SECTION("Constructors of point_2d<float> class")

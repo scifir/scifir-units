@@ -1099,6 +1099,20 @@ namespace scifir
 				{
 					boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
 				}
+				for (const string& x_value : init_values)
+				{
+					if (x_value == "")
+					{
+						return;
+					}
+				}
+				for (const string& x_value : init_angles)
+				{
+					if (x_value == "")
+					{
+						return;
+					}
+				}
 				if (init_values.size() == 2 and init_angles.size() == 1)
 				{
 					if (is_angle(init_values[1]))

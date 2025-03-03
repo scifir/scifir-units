@@ -55,6 +55,8 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(to_string(f) == "(1.41 m,1.41 m,3 m)");
 		point_nd<> g("2 m,45\u00B0,20\u00B0");
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
+		point_nd<> h(",,");
+		CHECK(to_string(h) == "[empty]");
 	}
 
 	SECTION("Constructors of point_nd<float> class")

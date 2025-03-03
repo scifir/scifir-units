@@ -38,6 +38,8 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		CHECK(to_string(d) == "(1 m,5 m;0\u00B0)");
 		coordinates_2dr<> e("100 m,90\u00B0;0\u00B0");
 		CHECK(to_string(e) == "(0 m,100 m;0\u00B0)");
+		coordinates_2dr<> f(",;");
+		CHECK(to_string(f) == "(0 m,0 m;0\u00B0)");
 	}
 
 	SECTION("Constructors of coordinates_2dr<float> class")

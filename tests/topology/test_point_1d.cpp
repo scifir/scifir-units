@@ -36,6 +36,8 @@ TEST_CASE("class point_1d<T> and point_1d<float>")
 		CHECK(to_string(d) == "(1 m)");
 		point_1d<> e("1 m");
 		CHECK(to_string(e) == "(1 m)");
+		point_1d<> f("");
+		CHECK(to_string(f) == "(0 m)");
 	}
 
 	SECTION("Constructors of point_1d<float> class")

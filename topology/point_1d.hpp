@@ -111,7 +111,7 @@ namespace scifir
 				{
 					init_point_1d.erase(init_point_1d.size()-1,1);
 				}
-				x = T(init_point_1d);
+				x = scalar_unit(T(init_point_1d));
 			}
 	};
 

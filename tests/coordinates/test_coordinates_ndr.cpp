@@ -62,6 +62,8 @@ TEST_CASE("class coordinates_ndr<T> and coordinates_ndr<float>")
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m;15\u00B0,25\u00B0)");
 		coordinates_ndr<> h("2 m,4 m,5 m,3 m;15\u00B0,25\u00B0,10\u00B0");
 		CHECK(to_string(h) == "(2 m,4 m,5 m,3 m;15\u00B0,25\u00B0,10\u00B0)");
+		coordinates_ndr<> i(",;");
+		CHECK(to_string(i) == "[empty]");
 	}
 
 	SECTION("Constructors of coordinates_ndr<float> class")

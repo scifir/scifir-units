@@ -36,6 +36,8 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		CHECK(to_string(d) == "(1 m)");
 		coordinates_1d<> e("1 m");
 		CHECK(to_string(e) == "(1 m)");
+		coordinates_1d<> f("");
+		CHECK(to_string(f) == "(0 m)");
 	}
 
 	SECTION("Constructors of coordinates_1d<float> class")

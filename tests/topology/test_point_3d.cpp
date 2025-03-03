@@ -41,6 +41,8 @@ TEST_CASE("class point_3d<T> and point_3d<float>")
 		CHECK(to_string(f) == "(1.41 m,1.41 m,3 m)");
 		point_3d<> g("2 m,45\u00B0,20\u00B0");
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
+		point_3d<> h(",,");
+		CHECK(to_string(h) == "(0 m,0 m,0 m)");
 	}
 
 	SECTION("Constructors of point_3d<float> class")
