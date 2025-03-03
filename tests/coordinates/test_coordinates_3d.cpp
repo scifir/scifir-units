@@ -162,6 +162,15 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
 	}
 
+	SECTION("Origin of coordinates_3d<> class")
+	{
+		coordinates_3d<> a(2_m,3_m,5_m);
+		coordinates_3d<> b = coordinates_3d<>::origin(a,coordinates_3d<>(1_m,8_m,3_m));
+		CHECK(b.x == 3_m);
+		CHECK(b.y == 11_m);
+		CHECK(b.z == 8_m);
+	}
+
 	SECTION("Values of different coordinates systems of coordinates_3d<> class")
 	{
 		coordinates_3d<> a(7_m,4_m,2_m);

@@ -232,6 +232,13 @@ namespace scifir
 				return *this;
 			}
 
+			static coordinates_3d<T> origin(const coordinates_3d<T>& origin,const coordinates_3d<T>& coordinates)
+			{
+				coordinates_3d<T> new_coordinates(origin);
+				new_coordinates.move(coordinates.x,coordinates.y,coordinates.z);
+				return new_coordinates;
+			}
+
 			T get_p() const
 			{
 				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2)));
@@ -465,6 +472,26 @@ namespace scifir
 			explicit coordinates_3d(const angle& new_latitude,const angle& new_longitude,float new_altitude) : coordinates_3d()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
+			}
+
+			explicit coordinates_3d(coordinates_3d<length>::type coordinates_type, const string& coord1, const string& coord2, const string& coord3) : coordinates_3d()
+			{
+				if (coordinates_type == coordinates_3d<length>::CARTESIAN)
+				{
+					set_position(stof(coord1),stof(coord2),stof(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<length>::CYLINDRICAL)
+				{
+					set_position(stof(coord1),angle(coord2),stof(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<length>::SPHERICAL)
+				{
+					set_position(stof(coord1),angle(coord2),angle(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<length>::GEODESIC)
+				{
+					set_position(angle(coord1),angle(coord2),stof(coord3));
+				}
 			}
 
 			explicit coordinates_3d(const point_3d<float>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
