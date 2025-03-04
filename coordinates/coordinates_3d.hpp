@@ -1,7 +1,6 @@
 #ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED
 
-#include "../topology/point_3d.hpp"
 #include "../meca_number/angle.hpp"
 #include "../units/base_units.hpp"
 #include "../derived_units/physics_units.hpp"
@@ -179,14 +178,6 @@ namespace scifir
 				}
 			}
 
-			template<typename U>
-			explicit coordinates_3d(const point_3d<U>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
-			{}
-
-			template<typename U>
-			explicit coordinates_3d(point_3d<U>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
-			{}
-
 			explicit coordinates_3d(const string& init_coordinates_3d) : coordinates_3d()
 			{
 				initialize_from_string(init_coordinates_3d);
@@ -205,24 +196,6 @@ namespace scifir
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
 				z = std::move(x_coordinates.z);
-				return *this;
-			}
-
-			template<typename U>
-			coordinates_3d<T>& operator =(const point_3d<U>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				z = x_point.z;
-				return *this;
-			}
-
-			template<typename U>
-			coordinates_3d<T>& operator =(point_3d<U>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
-				z = std::move(x_point.z);
 				return *this;
 			}
 
@@ -494,12 +467,6 @@ namespace scifir
 				}
 			}
 
-			explicit coordinates_3d(const point_3d<float>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
-			{}
-
-			explicit coordinates_3d(point_3d<float>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
-			{}
-
 			explicit coordinates_3d(const string& init_coordinates_3d) : coordinates_3d()
 			{
 				initialize_from_string(init_coordinates_3d);
@@ -518,22 +485,6 @@ namespace scifir
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
 				z = std::move(x_coordinates.z);
-				return *this;
-			}
-
-			coordinates_3d<float>& operator =(const point_3d<float>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				z = x_point.z;
-				return *this;
-			}
-
-			coordinates_3d<float>& operator =(point_3d<float>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
-				z = std::move(x_point.z);
 				return *this;
 			}
 
@@ -765,22 +716,6 @@ namespace scifir
 
 	float distance(const coordinates_3d<float>& x,const coordinates_3d<float>& y);
 
-	template<typename T,typename U>
-	T distance(const coordinates_3d<T>& x,const point_3d<U>& y)
-	{
-		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2)));
-	}
-
-	float distance(const coordinates_3d<float>& x,const point_3d<float>& y);
-
-	template<typename T,typename U>
-	T distance(const point_3d<T>& x,const coordinates_3d<U>& y)
-	{
-		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2)));
-	}
-
-	float distance(const point_3d<float>& x,const coordinates_3d<float>& y);
-
 	inline scalar_unit cartesian_3d_to_cylindrical_p(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
 	{
 		y.change_dimensions(x);
@@ -986,44 +921,6 @@ bool operator ==(const scifir::coordinates_3d<T>& x,const scifir::coordinates_3d
 
 template<typename T,typename U>
 bool operator !=(const scifir::coordinates_3d<T>& x,const scifir::coordinates_3d<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::coordinates_3d<T>& x,const scifir::point_3d<U>& y)
-{
-	if (x.x == y.x and x.y == y.y and x.z == y.z)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::coordinates_3d<T>& x,const scifir::point_3d<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::point_3d<T>& x,const scifir::coordinates_3d<U>& y)
-{
-	if (x.x == y.x and x.y == y.y and x.z == y.z)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::point_3d<T>& x,const scifir::coordinates_3d<U> y)
 {
 	return !(x == y);
 }

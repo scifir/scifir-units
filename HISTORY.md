@@ -24,4 +24,4 @@ The coordinate classes were allowing to store the coordinate data in one of the 
 
 ## Topology
 
-The topology classes have been very easy to create and to use. They are very lightweight, which makes them perfect to handle positions in space. The four point classes it contains, point_1d, point_2d, point_3d and point_nd, have been added to scifir-units, in place of scifir-geometry, because of his utility and operation with the coordinates classes. Without them here, it's needed to cross-link with the library scifir-geometry, which was making building more complex.
+The topology classes are deprecated, in favor of the use of coordinates classes. When they were existing, they were very lightweight, which was making them perfect to handle positions in space. The four point classes it contains, point_1d, point_2d, point_3d and point_nd, have been added to scifir-units, in place of scifir-geometry, because of his utility and operation with the coordinates classes. Without them here, it's needed to cross-link with the library scifir-geometry, which was making building more complex.

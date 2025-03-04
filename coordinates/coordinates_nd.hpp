@@ -1,7 +1,6 @@
 #ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
 
-#include "../topology/point_nd.hpp"
 #include "../derived_units/physics_units.hpp"
 #include "../units/base_units.hpp"
 #include "../util/types.hpp"
@@ -108,24 +107,6 @@ namespace scifir
 				}
 			}
 
-			template<typename U>
-			explicit coordinates_nd(const point_nd<U>& new_point) : values()
-			{
-				for(const U& x_value : new_point.values)
-				{
-					values.push_back(T(x_value));
-				}
-			}
-
-			template<typename U>
-			explicit coordinates_nd(point_nd<U>&& new_point) : values()
-			{
-				for(const U& x_value : new_point.values)
-				{
-					values.push_back(T(std::move(x_value)));
-				}
-			}
-
 			explicit coordinates_nd(const string& init_coordinates_nd) : values()
 			{
 				initialize_from_string(init_coordinates_nd);
@@ -140,18 +121,6 @@ namespace scifir
 			coordinates_nd<T>& operator =(coordinates_nd<T>&& x_coordinates)
 			{
 				values = std::move(x_coordinates.values);
-				return *this;
-			}
-
-			coordinates_nd<T>& operator =(const point_nd<T>& x_point)
-			{
-				values = x_point.values;
-				return *this;
-			}
-
-			coordinates_nd<T>& operator =(point_nd<T>&& x_point)
-			{
-				values = std::move(x_point.values);
 				return *this;
 			}
 
@@ -684,12 +653,6 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_nd(const point_nd<float>& new_point) : values(new_point.values)
-			{}
-
-			explicit coordinates_nd(point_nd<float>&& new_point) : values(std::move(new_point.values))
-			{}
-
 			explicit coordinates_nd(const string& init_coordinates_nd) : values()
 			{
 				initialize_from_string(init_coordinates_nd);
@@ -704,18 +667,6 @@ namespace scifir
 			coordinates_nd<float>& operator =(coordinates_nd<float>&& x_coordinates)
 			{
 				values = std::move(x_coordinates.values);
-				return *this;
-			}
-
-			coordinates_nd<float>& operator =(const point_nd<float>& x_point)
-			{
-				values = x_point.values;
-				return *this;
-			}
-
-			coordinates_nd<float>& operator =(point_nd<float>&& x_point)
-			{
-				values = std::move(x_point.values);
 				return *this;
 			}
 
@@ -1217,46 +1168,6 @@ namespace scifir
 	}
 
 	float distance(const coordinates_nd<float>& x,const coordinates_nd<float>& y);
-
-	template<typename T,typename U>
-	T distance(const coordinates_nd<T>& x,const point_nd<U>& y)
-	{
-		if (x.get_nd() == y.get_nd())
-		{
-			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x.values.size(); i++)
-			{
-				x_length += scifir::pow(x.values[i] - y.values[i],2);
-			}
-			return T(scifir::sqrt(x_length));
-		}
-		else
-		{
-			return T();
-		}
-	}
-
-	float distance(const coordinates_nd<float>& x,const point_nd<float>& y);
-
-	template<typename T,typename U>
-	T distance(const point_nd<T>& x,const coordinates_nd<U>& y)
-	{
-		if (x.get_nd() == y.get_nd())
-		{
-			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x.values.size(); i++)
-			{
-				x_length += scifir::pow(x.values[i] - y.values[i],2);
-			}
-			return T(scifir::sqrt(x_length));
-		}
-		else
-		{
-			return T();
-		}
-	}
-
-	float distance(const point_nd<float>& x,const coordinates_nd<float>& y);
 }
 
 template<typename T,typename U>
@@ -1281,58 +1192,6 @@ bool operator ==(const scifir::coordinates_nd<T>& x,const scifir::coordinates_nd
 
 template<typename T,typename U>
 bool operator !=(const scifir::coordinates_nd<T>& x,const scifir::coordinates_nd<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::coordinates_nd<T>& x,const scifir::point_nd<U>& y)
-{
-	if (x.values.size() == y.values.size())
-	{
-		for (int i = 0 ; i < x.values.size(); i++)
-		{
-			if (x.values[i] != y.values[i])
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::coordinates_nd<T>& x,const scifir::point_nd<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::point_nd<T>& x,const scifir::coordinates_nd<U>& y)
-{
-	if (x.values.size() == y.values.size())
-	{
-		for (int i = 0 ; i < x.values.size(); i++)
-		{
-			if (x.values[i] != y.values[i])
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::point_nd<T>& x,const scifir::coordinates_nd<U>& y)
 {
 	return !(x == y);
 }

@@ -1,7 +1,6 @@
 #ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_3DR_HPP_INCLUDED
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_3DR_HPP_INCLUDED
 
-#include "../topology/point_3d.hpp"
 #include "../meca_number/angle.hpp"
 #include "./coordinates_3d.hpp"
 #include "../units/base_units.hpp"
@@ -46,14 +45,6 @@ namespace scifir
 			}
 
 			template<typename U>
-			explicit coordinates_3dr(const point_3d<U>& x_point,const angle& new_theta,const angle& new_phi) : x(x_point.x),y(x_point.y),z(x_point.z),theta(new_theta),phi(new_phi)
-			{}
-
-			template<typename U>
-			explicit coordinates_3dr(point_3d<U>&& x_point,const angle& new_theta,const angle& new_phi) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z)),theta(new_theta),phi(new_phi)
-			{}
-
-			template<typename U>
 			explicit coordinates_3dr(const coordinates_3d<U>& x_coordinates,const angle& new_theta,const angle& new_phi) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(new_theta),phi(new_phi)
 			{}
 
@@ -83,22 +74,6 @@ namespace scifir
 				z = std::move(x_coordinates.z);
 				theta = std::move(x_coordinates.theta);
 				phi = std::move(x_coordinates.phi);
-				return *this;
-			}
-
-			coordinates_3dr<T>& operator =(const point_3d<T>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				z = x_point.z;
-				return *this;
-			}
-
-			coordinates_3dr<T>& operator =(point_3d<T>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
-				z = std::move(x_point.z);
 				return *this;
 			}
 
@@ -514,12 +489,6 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_3dr(const point_3d<float>& x_point,const angle& new_theta,const angle& new_phi) : x(x_point.x),y(x_point.y),z(x_point.z),theta(new_theta),phi(new_phi)
-			{}
-
-			explicit coordinates_3dr(point_3d<float>&& x_point,const angle& new_theta,const angle& new_phi) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z)),theta(new_theta),phi(new_phi)
-			{}
-
 			explicit coordinates_3dr(const coordinates_3d<float>& x_coordinates,const angle& new_theta,const angle& new_phi) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(new_theta),phi(new_phi)
 			{}
 
@@ -548,22 +517,6 @@ namespace scifir
 				z = std::move(x_coordinates.z);
 				theta = std::move(x_coordinates.theta);
 				phi = std::move(x_coordinates.phi);
-				return *this;
-			}
-
-			coordinates_3dr<float>& operator =(const point_3d<float>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				z = x_point.z;
-				return *this;
-			}
-
-			coordinates_3dr<float>& operator =(point_3d<float>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
-				z = std::move(x_point.z);
 				return *this;
 			}
 
@@ -970,22 +923,6 @@ namespace scifir
 	}
 
 	float distance(const coordinates_3d<float>& x,const coordinates_3dr<float>& y);
-
-	template<typename T,typename U>
-	T distance(const coordinates_3dr<T>& x,const point_3d<U>& y)
-	{
-		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2)));
-	}
-
-	float distance(const coordinates_3dr<float>& x,const point_3d<float>& y);
-
-	template<typename T,typename U>
-	T distance(const point_3d<T>& x,const coordinates_3dr<U>& y)
-	{
-		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2)));
-	}
-
-	float distance(const point_3d<float>& x,const coordinates_3dr<float>& y);
 }
 
 template<typename T,typename U>
@@ -1041,44 +978,6 @@ bool operator ==(const scifir::coordinates_3d<T>& x,const scifir::coordinates_3d
 
 template<typename T,typename U>
 bool operator !=(const scifir::coordinates_3d<T>& x,const scifir::coordinates_3dr<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::coordinates_3dr<T>& x,const scifir::point_3d<U>& y)
-{
-	if (x.x == y.x and x.y == y.y and x.z == y.z)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::coordinates_3dr<T>& x,const scifir::point_3d<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::point_3d<T>& x,const scifir::coordinates_3dr<U>& y)
-{
-	if (x.x == y.x and x.y == y.y and x.z == y.z)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::point_3d<T>& x,const scifir::coordinates_3dr<U>& y)
 {
 	return !(x == y);
 }

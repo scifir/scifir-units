@@ -28,12 +28,6 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(to_string(b3) == "(0 m,0 m,100 m)");
 		//coordinates_3d<> b4(angle(0),angle(0),10_m);
 		//CHECK(to_string(b4) == "(0 m,0 m,100 m)");
-		point_3d<> c2(100_m,1_m,2_m);
-		coordinates_3d<> c(c2);
-		CHECK(to_string(c) == "(100 m,1 m,2 m)");
-		point_3d<> c4(100_m,1_m,2_m);
-		coordinates_3d<> c3(std::move(c4));
-		CHECK(to_string(c3) == "(100 m,1 m,2 m)");
 		coordinates_3d<> d("(1 m,5 m,2 m)");
 		CHECK(to_string(d) == "(1 m,5 m,2 m)");
 		coordinates_3d<> e("1 m,5 m,2 m");
@@ -82,12 +76,6 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(to_string(b3) == "(0,0,100)");
 		//coordinates_3d<> b4(angle(0),angle(0),10_m);
 		//CHECK(to_string(b4) == "(0 m,0 m,100 m)");
-		point_3d<float> c2(100.0f,1.0f,2.0f);
-		coordinates_3d<float> c(c2);
-		CHECK(to_string(c) == "(100,1,2)");
-		point_3d<float> c4(100.0f,1.0f,2.0f);
-		coordinates_3d<float> c3(std::move(c4));
-		CHECK(to_string(c3) == "(100,1,2)");
 		coordinates_3d<float> d("(1,5,2)");
 		CHECK(to_string(d) == "(1,5,2)");
 		coordinates_3d<float> e("1,5,2");
@@ -109,13 +97,6 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		b = std::move(b2);
 		CHECK(to_string(b) == "(5 m,5 m,1 m)");
 		coordinates_3d<> c;
-		point_3d<> c2(100_m,1_m,2_m);
-		c = c2;
-		CHECK(to_string(c) == "(100 m,1 m,2 m)");
-		coordinates_3d<> c3;
-		point_3d<> c4(100_m,1_m,2_m);
-		c3 = std::move(c4);
-		CHECK(to_string(c3) == "(100 m,1 m,2 m)");
 		coordinates_3d<> d;
 		d = "(1 m,5 m,2 m)";
 		CHECK(to_string(d) == "(1 m,5 m,2 m)");
@@ -141,13 +122,6 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		b = std::move(b2);
 		CHECK(to_string(b) == "(5,5,1)");
 		coordinates_3d<float> c;
-		point_3d<float> c2(100.0f,1.0f,2.0f);
-		c = c2;
-		CHECK(to_string(c) == "(100,1,2)");
-		coordinates_3d<float> c3;
-		point_3d<float> c4(100.0f,1.0f,2.0f);
-		c3 = std::move(c4);
-		CHECK(to_string(c3) == "(100,1,2)");
 		coordinates_3d<float> d;
 		d = "(1,5,2)";
 		CHECK(to_string(d) == "(1,5,2)");
@@ -316,11 +290,6 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		coordinates_3d<> a(7_m,3_m,1_m);
 		coordinates_3d<> b(6_m,2_m,1_m);
 		CHECK(distance(a,b).display() == "1.41 m");
-		point_3d<> c(7_m,3_m,1_m);
-		CHECK(distance(a,c).display() == "0 m");
-		CHECK(distance(c,a).display() == "0 m");
-		CHECK(distance(b,c).display() == "1.41 m");
-		CHECK(distance(c,b).display() == "1.41 m");
 	}
 
 	SECTION("distance() of coordinates_3d<float> class")
@@ -328,11 +297,6 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		coordinates_3d<float> a(7.0f,3.0f,1.0f);
 		coordinates_3d<float> b(6.0f,2.0f,1.0f);
 		CHECK(std::fabs(distance(a,b) - 1.41f) < 0.01f);
-		point_3d<float> c(7.0f,3.0f,1.0f);
-		CHECK(std::fabs(distance(a,c) - 0.0f) < 0.01f);
-		CHECK(std::fabs(distance(c,a) - 0.0f) < 0.01f);
-		CHECK(std::fabs(distance(b,c) - 1.41f) < 0.01f);
-		CHECK(std::fabs(distance(c,b) - 1.41f) < 0.01f);
 	}
 
 	SECTION("Conversion of cartesian 3d and cylindrical coordinates for the scalar_unit case")
@@ -403,12 +367,6 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
-		point_3d<> d(7_m,3_m,1_m);
-		point_3d<> e(5_m,1_m,1_m);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("Relational operators of coordinates_3d<float> class")
@@ -419,12 +377,6 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
-		point_3d<float> d(7.0f,3.0f,1.0f);
-		point_3d<float> e(5.0f,1.0f,1.0f);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("String operators of coordinates_3d<> class")

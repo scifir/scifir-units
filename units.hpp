@@ -22,12 +22,6 @@
 #include "./units/derived_units/chemistry_units.hpp"
 #include "./units/derived_units/biology_units.hpp"
 
-#include "./units/topology/direction.hpp"
-#include "./units/topology/point_1d.hpp"
-#include "./units/topology/point_2d.hpp"
-#include "./units/topology/point_3d.hpp"
-#include "./units/topology/point_nd.hpp"
-
 #include "./units/coordinates/coordinates_1d.hpp"
 #include "./units/coordinates/coordinates_2d.hpp"
 #include "./units/coordinates/coordinates_2dr.hpp"
@@ -40,6 +34,7 @@
 #include "./units/coordinates/astronomical_coordinates_3d.hpp"
 #include "./units/coordinates/aid.hpp"
 #include "./units/coordinates/zid.hpp"
+#include "./units/coordinates/direction.hpp"
 
 #include "./units/special_units/color.hpp"
 #include "./units/special_units/pH.hpp"

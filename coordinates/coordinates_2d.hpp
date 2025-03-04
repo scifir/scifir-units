@@ -1,7 +1,6 @@
 #ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED
 
-#include "../topology/point_2d.hpp"
 #include "../units/base_units.hpp"
 #include "../derived_units/physics_units.hpp"
 #include "../util/types.hpp"
@@ -48,14 +47,6 @@ namespace scifir
 				}
 			}
 
-			template<typename U>
-			explicit coordinates_2d(const scifir::point_2d<U>& new_point) : x(new_point.x),y(new_point.y)
-			{}
-
-			template<typename U>
-			explicit coordinates_2d(scifir::point_2d<U>&& new_point) : x(std::move(new_point.x)),y(std::move(new_point.y))
-			{}
-
 			explicit coordinates_2d(const string& init_coordinates_2d) : coordinates_2d()
 			{
 				initialize_from_string(init_coordinates_2d);
@@ -72,20 +63,6 @@ namespace scifir
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
-				return *this;
-			}
-
-			coordinates_2d<T>& operator =(const point_2d<T>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				return *this;
-			}
-
-			coordinates_2d<T>& operator =(point_2d<T>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
 				return *this;
 			}
 
@@ -232,12 +209,6 @@ namespace scifir
 				}
 			}
 
-			explicit coordinates_2d(const scifir::point_2d<float>& new_point) : x(new_point.x),y(new_point.y)
-			{}
-
-			explicit coordinates_2d(scifir::point_2d<float>&& new_point) : x(std::move(new_point.x)),y(std::move(new_point.y))
-			{}
-
 			explicit coordinates_2d(const string& init_coordinates_2d) : coordinates_2d()
 			{
 				initialize_from_string(init_coordinates_2d);
@@ -254,20 +225,6 @@ namespace scifir
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
-				return *this;
-			}
-
-			coordinates_2d<float>& operator =(const point_2d<float>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				return *this;
-			}
-
-			coordinates_2d<float>& operator =(point_2d<float>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
 				return *this;
 			}
 
@@ -390,22 +347,6 @@ namespace scifir
 
 	float distance(const coordinates_2d<float>& x,const coordinates_2d<float>& y);
 
-	template<typename T,typename U>
-	T distance(const coordinates_2d<T>& x,const point_2d<U>& y)
-	{
-		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2)));
-	}
-
-	float distance(const coordinates_2d<float>& x,const point_2d<float>& y);
-
-	template<typename T,typename U>
-	T distance(const point_2d<T>& x,const coordinates_2d<U>& y)
-	{
-		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2)));
-	}
-
-	float distance(const point_2d<float>& x,const coordinates_2d<float>& y);
-
 	inline scalar_unit cartesian_2d_to_polar_p(const scalar_unit& x,scalar_unit y)
 	{
 		y.change_dimensions(x);
@@ -464,44 +405,6 @@ bool operator ==(const scifir::coordinates_2d<T>& x,const scifir::coordinates_2d
 
 template<typename T,typename U>
 bool operator !=(const scifir::coordinates_2d<T>& x,const scifir::coordinates_2d<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::coordinates_2d<T>& x,const scifir::point_2d<U>& y)
-{
-	if (x.x == y.x and x.y == y.y)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::coordinates_2d<T>& x,const scifir::point_2d<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::point_2d<T>& x,const scifir::coordinates_2d<U>& y)
-{
-	if (x.x == y.x and x.y == y.y)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::point_2d<T>& x,const scifir::coordinates_2d<U>& y)
 {
 	return !(x == y);
 }

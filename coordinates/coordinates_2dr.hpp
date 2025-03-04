@@ -2,8 +2,7 @@
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_2DR_HPP_INCLUDED
 
 #include "./coordinates_2d.hpp"
-#include "../topology/direction.hpp"
-#include "../topology/point_2d.hpp"
+#include "../coordinates/direction.hpp"
 #include "../meca_number/angle.hpp"
 #include "../util/types.hpp"
 
@@ -36,14 +35,6 @@ namespace scifir
 			}
 
 			template<typename U>
-			explicit coordinates_2dr(const scifir::point_2d<U>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
-			{}
-
-			template<typename U>
-			explicit coordinates_2dr(scifir::point_2d<U>&& new_point,const angle& new_theta) : x(std::move(new_point.x)),y(std::move(new_point.y)),theta(new_theta)
-			{}
-
-			template<typename U>
 			explicit coordinates_2dr(const scifir::coordinates_2d<U>& new_coordinates,const angle& new_theta) : x(new_coordinates.x),y(new_coordinates.y),theta(new_theta)
 			{}
 
@@ -69,20 +60,6 @@ namespace scifir
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
 				theta = std::move(x_coordinates.theta);
-				return *this;
-			}
-
-			coordinates_2dr<T>& operator =(const point_2d<T>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				return *this;
-			}
-
-			coordinates_2dr<T>& operator =(point_2d<T>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
 				return *this;
 			}
 
@@ -279,12 +256,6 @@ namespace scifir
 				set_position(new_p,new_polar_theta);
 			}
 
-			explicit coordinates_2dr(const scifir::point_2d<float>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
-			{}
-
-			explicit coordinates_2dr(scifir::point_2d<float>&& new_point,const angle& new_theta) : x(std::move(new_point.x)),y(std::move(new_point.y)),theta(new_theta)
-			{}
-
 			explicit coordinates_2dr(const scifir::coordinates_2d<float>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
 			{}
 
@@ -309,20 +280,6 @@ namespace scifir
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
 				theta = std::move(x_coordinates.theta);
-				return *this;
-			}
-
-			coordinates_2dr<float>& operator =(const point_2d<float>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				return *this;
-			}
-
-			coordinates_2dr<float>& operator =(point_2d<float>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
 				return *this;
 			}
 
@@ -522,22 +479,6 @@ namespace scifir
 	}
 
 	float distance(const coordinates_2d<float>& x,const coordinates_2dr<float>& y);
-
-	template<typename T,typename U>
-	T distance(const coordinates_2dr<T>& x,const point_2d<U>& y)
-	{
-		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2)));
-	}
-
-	float distance(const coordinates_2dr<float>& x,const point_2d<float>& y);
-
-	template<typename T,typename U>
-	T distance(const point_2d<T>& x,const coordinates_2dr<U>& y)
-	{
-		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2)));
-	}
-
-	float distance(const point_2d<float>& x,const coordinates_2dr<float>& y);
 }
 
 template<typename T,typename U>
@@ -593,44 +534,6 @@ bool operator ==(const scifir::coordinates_2d<T>& x,const scifir::coordinates_2d
 
 template<typename T,typename U>
 bool operator !=(const scifir::coordinates_2d<T>& x,const scifir::coordinates_2dr<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::coordinates_2dr<T>& x,const scifir::point_2d<U>& y)
-{
-	if (x.x == y.x and x.y == y.y)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::coordinates_2dr<T>& x,const scifir::point_2d<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::point_2d<T>& x,const scifir::coordinates_2dr<U>& y)
-{
-	if (x.x == y.x and x.y == y.y)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::point_2d<T>& x,const scifir::coordinates_2dr<U>& y)
 {
 	return !(x == y);
 }

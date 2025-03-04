@@ -96,7 +96,6 @@ The **current version** of scifir-units is the **beta-version-2.0**. The version
 - scalar_field_3d\<T,U\>.
 - coordinates_1d\<T\>, coordinates_2d\<T\>, coordinates_3d\<T\>, coordinates_nd\<T\>.
 - coordinates_2dr\<T\>, coordinates_3dr\<T\>, coordinates_ndr\<T\>.
-- point_1d\<T\>, point_2d\<T\>, point_3d\<T\>, point_nd\<T\>.
 - aid, zid.
 - percentage.
 - complex_number\<T\>.
@@ -155,10 +154,6 @@ The initialization strings are like the following examples:
 - **vector_unit_2d**: "5 km 10θ" or "5 km 10°"
 - **vector_unit_3d**: "3 km 10θ 20Φ" or "3 km 10° 20°"
 - **vector_unit_nd**: "3 km 10° 20° 35°"
-- **point_1d**: "3 m" or "(3 m)"
-- **point_2d**: "2 m,4 m" or "(2 m,4 m)"
-- **point_3d**: "1 m,9 m,3 m" or "(1 m,9 m,3 m)"
-- **point_nd**: "3 m,2 m,4 m,1 m" or "(3 m,2 m,4 m,1 m)"
 - **coordinates_1d**: "1 m" or "(1 m)"
 - **coordinates_2d**: "1 m,2 m" or "(1 m,2 m)"
 - **coordinates_3d**: "1 m,7 m,5 m" or "(1 m,7 m,5 m)"
@@ -197,7 +192,7 @@ The documentation is **short to read**! Take profit then to read it entirely!
 - [Scalar units](https://github.com/scifir/scifir-units/tree/master/docs/readme/scalar_units.md)
 - [Vector units](https://github.com/scifir/scifir-units/tree/master/docs/readme/vector_units.md)
 - [Meca numbers](https://github.com/scifir/scifir-units/tree/master/docs/readme/meca_numbers.md)
-- [Coordinates and points](https://github.com/scifir/scifir-units/tree/master/docs/readme/coordinates_and_points.md)
+- [Coordinates](https://github.com/scifir/scifir-units/tree/master/docs/readme/coordinates_and_points.md)
 - [Special units](https://github.com/scifir/scifir-units/tree/master/docs/readme/special_units.md)
 - [Dimensions](https://github.com/scifir/scifir-units/tree/master/docs/readme/dimensions.md)
 

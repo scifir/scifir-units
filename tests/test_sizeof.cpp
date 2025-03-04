@@ -9,11 +9,7 @@
 #include "../units/vector_unit_2d.hpp"
 #include "../units/vector_unit_3d.hpp"
 #include "../units/vector_unit_nd.hpp"
-#include "../topology/direction.hpp"
-#include "../topology/point_1d.hpp"
-#include "../topology/point_2d.hpp"
-#include "../topology/point_3d.hpp"
-#include "../topology/point_nd.hpp"
+#include "../coordinates/direction.hpp"
 #include "../coordinates/coordinates_1d.hpp"
 #include "../coordinates/coordinates_2d.hpp"
 #include "../coordinates/coordinates_2dr.hpp"
@@ -55,16 +51,6 @@ int main()
 	cout << "vector_unit_nd: " << sizeof(vector_unit_nd) << endl;
 	cout << endl;
 	cout << "direction: " << sizeof(direction) << endl;
-	cout << "point_1d<>: " << sizeof(point_1d<>) << endl;
-	cout << "point_2d<>: " << sizeof(point_2d<>) << endl;
-	cout << "point_3d<>: " << sizeof(point_3d<>) << endl;
-	cout << "point_nd<>: " << sizeof(point_nd<>) << endl;
-	cout << endl;
-	cout << "point_1d<float>: " << sizeof(point_1d<float>) << endl;
-	cout << "point_2d<float>: " << sizeof(point_2d<float>) << endl;
-	cout << "point_3d<float>: " << sizeof(point_3d<float>) << endl;
-	cout << "point_nd<float>: " << sizeof(point_nd<float>) << endl;
-	cout << endl;
 	cout << "coordinates_1d<>: " << sizeof(coordinates_1d<>) << endl;
 	cout << "coordinates_2d<>: " << sizeof(coordinates_2d<>) << endl;
 	cout << "coordinates_2dr<>: " << sizeof(coordinates_2dr<>) << endl;

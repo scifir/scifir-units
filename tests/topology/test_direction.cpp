@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch2/catch_all.hpp"
-#include "../../topology/direction.hpp"
+#include "../../coordinates/direction.hpp"
 #include "../../util/types.hpp"
 
 using namespace std;

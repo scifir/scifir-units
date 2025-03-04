@@ -2,7 +2,6 @@
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_NDR_HPP_INCLUDED
 
 #include "./coordinates_nd.hpp"
-#include "../topology/point_nd.hpp"
 #include "../derived_units/physics_units.hpp"
 #include "../units/base_units.hpp"
 #include "../util/types.hpp"
@@ -127,64 +126,6 @@ namespace scifir
 			}
 
 			template<typename U>
-			explicit coordinates_ndr(const point_nd<U>& new_point,const vector<float>& new_angles) : values(),angles()
-			{
-				if (new_point.values.size() == (new_angles.size() + 1))
-				{
-					for(const U& x_value : new_point.values)
-					{
-						values.push_back(T(x_value));
-					}
-					for(const float& x_angle : new_angles)
-					{
-						angles.push_back(angle(x_angle));
-					}
-				}
-			}
-
-			template<typename U>
-			explicit coordinates_ndr(point_nd<U>&& new_point,const vector<float>& new_angles) : values(),angles()
-			{
-				if (new_point.values.size() == (new_angles.size() + 1))
-				{
-					for(const U& x_value : new_point.values)
-					{
-						values.push_back(T(std::move(x_value)));
-					}
-					for(const float& x_angle : new_angles)
-					{
-						angles.push_back(angle(x_angle));
-					}
-				}
-			}
-
-			template<typename U>
-			explicit coordinates_ndr(const point_nd<U>& new_point,const vector<angle>& new_angles) : values(),angles()
-			{
-				if (new_point.values.size() == (new_angles.size() + 1))
-				{
-					for(const U& x_value : new_point.values)
-					{
-						values.push_back(T(x_value));
-					}
-					angles = new_angles;
-				}
-			}
-
-			template<typename U>
-			explicit coordinates_ndr(point_nd<U>&& new_point,const vector<angle>& new_angles) : values(),angles()
-			{
-				if (new_point.values.size() == (new_angles.size() + 1))
-				{
-					for(const U& x_value : new_point.values)
-					{
-						values.push_back(T(std::move(x_value)));
-					}
-					angles = new_angles;
-				}
-			}
-
-			template<typename U>
 			explicit coordinates_ndr(const coordinates_nd<U>& new_coordinates,const vector<float>& new_angles) : values(),angles()
 			{
 				if (new_coordinates.values.size() == (new_angles.size() + 1))
@@ -263,35 +204,6 @@ namespace scifir
 				{
 					values = std::move(x_coordinates.values);
 					angles = std::move(x_coordinates.angles);
-				}
-				return *this;
-			}
-
-			template<typename U>
-			coordinates_ndr<T>& operator =(const point_nd<U>& x_point)
-			{
-				if (x_point.values.size() == (angles.size() + 1))
-				{
-					values.clear();
-					for(const U& x_value : x_point.values)
-					{
-						values.push_back(T(x_value));
-					}
-					values = x_point.values;
-				}
-				return *this;
-			}
-
-			template<typename U>
-			coordinates_ndr<T>& operator =(point_nd<U>&& x_point)
-			{
-				if (x_point.values.size() == (angles.size() + 1))
-				{
-					values.clear();
-					for(const U& x_value : x_point.values)
-					{
-						values.push_back(T(std::move(x_value)));
-					}
 				}
 				return *this;
 			}
@@ -1302,48 +1214,6 @@ namespace scifir
 				angles.push_back(new_phi);
 			}
 
-			explicit coordinates_ndr(const point_nd<float>& new_point,const vector<float>& new_angles) : values(),angles()
-			{
-				if (new_point.values.size() == (new_angles.size() + 1))
-				{
-					values = new_point.values;
-					for(const float& x_angle : new_angles)
-					{
-						angles.push_back(angle(x_angle));
-					}
-				}
-			}
-
-			explicit coordinates_ndr(point_nd<float>&& new_point,const vector<float>& new_angles) : values(),angles()
-			{
-				if (new_point.values.size() == (new_angles.size() + 1))
-				{
-					values = std::move(new_point.values);
-					for(const float& x_angle : new_angles)
-					{
-						angles.push_back(angle(x_angle));
-					}
-				}
-			}
-
-			explicit coordinates_ndr(const point_nd<float>& new_point,const vector<angle>& new_angles) : values(),angles()
-			{
-				if (new_point.values.size() == (new_angles.size() + 1))
-				{
-					values = new_point.values;
-					angles = new_angles;
-				}
-			}
-
-			explicit coordinates_ndr(point_nd<float>&& new_point,const vector<angle>& new_angles) : values(),angles()
-			{
-				if (new_point.values.size() == (new_angles.size() + 1))
-				{
-					values = std::move(new_point.values);
-					angles = new_angles;
-				}
-			}
-
 			explicit coordinates_ndr(const coordinates_nd<float>& new_coordinates,const vector<float>& new_angles) : values(),angles()
 			{
 				if (new_coordinates.values.size() == (new_angles.size() + 1))
@@ -1407,24 +1277,6 @@ namespace scifir
 				{
 					values = std::move(x_coordinates.values);
 					angles = std::move(x_coordinates.angles);
-				}
-				return *this;
-			}
-
-			coordinates_ndr<float>& operator =(const point_nd<float>& x_point)
-			{
-				if (x_point.values.size() == (angles.size() + 1))
-				{
-					values = x_point.values;
-				}
-				return *this;
-			}
-
-			coordinates_ndr<float>& operator =(point_nd<float>&& x_point)
-			{
-				if (x_point.values.size() == (angles.size() + 1))
-				{
-					values = std::move(x_point.values);
 				}
 				return *this;
 			}
@@ -2380,46 +2232,6 @@ namespace scifir
 	}
 
 	float distance(const coordinates_nd<float>& x,const coordinates_ndr<float>& y);
-
-	template<typename T,typename U>
-	T distance(const coordinates_ndr<T>& x,const point_nd<U>& y)
-	{
-		if (x.get_nd() == y.get_nd())
-		{
-			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x.get_values().size(); i++)
-			{
-				x_length += scifir::pow(x.get_value(i) - y.values[i],2);
-			}
-			return T(scifir::sqrt(x_length));
-		}
-		else
-		{
-			return T();
-		}
-	}
-
-	float distance(const coordinates_ndr<float>& x,const point_nd<float>& y);
-
-	template<typename T,typename U>
-	T distance(const point_nd<T>& x,const coordinates_ndr<U>& y)
-	{
-		if (x.get_nd() == y.get_nd())
-		{
-			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x.values.size(); i++)
-			{
-				x_length += scifir::pow(x.values[i] - y.get_value(i),2);
-			}
-			return T(scifir::sqrt(x_length));
-		}
-		else
-		{
-			return T();
-		}
-	}
-
-	float distance(const point_nd<float>& x,const coordinates_ndr<float>& y);
 }
 
 template<typename T,typename U>
@@ -2496,58 +2308,6 @@ bool operator ==(const scifir::coordinates_nd<T>& x,const scifir::coordinates_nd
 
 template<typename T,typename U>
 bool operator !=(const scifir::coordinates_nd<T>& x,const scifir::coordinates_ndr<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::point_nd<U>& y)
-{
-	if (x.get_values().size() == y.values.size())
-	{
-		for (int i = 0 ; i < x.get_values().size(); i++)
-		{
-			if (x.get_value(i) != y.values[i])
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::coordinates_ndr<T>& x,const scifir::point_nd<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<U>& y)
-{
-	if (x.values.size() == y.get_values().size())
-	{
-		for (int i = 0 ; i < x.values.size(); i++)
-		{
-			if (x.values[i] != y.get_value(i))
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<U>& y)
 {
 	return !(x == y);
 }

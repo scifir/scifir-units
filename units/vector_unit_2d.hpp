@@ -4,7 +4,7 @@
 #include "./scalar_unit.hpp"
 #include "../meca_number/angle.hpp"
 #include "../util/is_number.hpp"
-#include "../topology/direction.hpp"
+#include "../coordinates/direction.hpp"
 
 #include "boost/algorithm/string.hpp"
 
