@@ -1,5 +1,5 @@
-#ifndef SCIFIR_UNITS_PHYSICS_POINT_3D_INCLUDED
-#define SCIFIR_UNITS_PHYSICS_POINT_3D_INCLUDED
+#ifndef SCIFIR_UNITS_PHYSICS_MASS_POINT_3D_INCLUDED
+#define SCIFIR_UNITS_PHYSICS_MASS_POINT_3D_INCLUDED
 
 #include "../coordinates/coordinates_3d.hpp"
 #include "../units/base_units.hpp"
@@ -90,4 +90,4 @@ bool operator !=(const scifir::mass_point_3d<T>& x,const scifir::mass_point_3d<U
 	return !(x == y);
 }
 
-#endif // SCIFIR_UNITS_PHYSICS_POINT_3D_INCLUDED
+#endif // SCIFIR_UNITS_PHYSICS_MASS_POINT_3D_INCLUDED
