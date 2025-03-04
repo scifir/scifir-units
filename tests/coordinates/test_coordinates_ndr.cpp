@@ -2,6 +2,7 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../coordinates/coordinates_ndr.hpp"
+#include "../../units/unit_abbreviation.hpp"
 
 using namespace std;
 using namespace scifir;
@@ -224,6 +225,16 @@ TEST_CASE("class coordinates_ndr<T> and coordinates_ndr<float>")
 		coordinates_ndr<float> h;
 		h = "2,4,5,3;15\u00B0,25\u00B0,10\u00B0";
 		CHECK(to_string(h) == "(2,4,5,3;15\u00B0,25\u00B0,10\u00B0)");
+	}
+
+	SECTION("Origin of coordinates_ndr<> class")
+	{
+		coordinates_ndr<> a(vector<length>{2_m,3_m,5_m,4_m},vector<angle>{20_degree,30_degree,15_degree});
+		coordinates_ndr<> b = coordinates_ndr<>::origin(a,coordinates_ndr<>(vector<length>{1_m,8_m,3_m,2_m},vector<angle>{20_degree,30_degree,15_degree}));
+		CHECK(b.get_value(0) == 3_m);
+		CHECK(b.get_value(1) == 11_m);
+		CHECK(b.get_value(2) == 8_m);
+		CHECK(b.get_value(3) == 6_m);
 	}
 
 	SECTION("nd functions of coordinates_ndr<> class")

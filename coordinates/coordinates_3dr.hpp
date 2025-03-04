@@ -124,6 +124,13 @@ namespace scifir
 				return *this;
 			}
 
+			static coordinates_3dr<T> origin(const coordinates_3dr<T>& origin,const coordinates_3dr<T>& coordinates)
+			{
+				coordinates_3dr<T> new_coordinates(origin);
+				new_coordinates.move(coordinates.x,coordinates.y,coordinates.z);
+				return new_coordinates;
+			}
+
 			T get_p() const
 			{
 				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2)));

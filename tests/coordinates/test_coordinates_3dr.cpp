@@ -3,6 +3,7 @@
 #include "catch2/catch_all.hpp"
 #include "../../coordinates/coordinates_3dr.hpp"
 #include "../../units/special_names.hpp"
+#include "../../units/unit_abbreviation.hpp"
 
 using namespace std;
 using namespace scifir;
@@ -175,6 +176,15 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		coordinates_3dr<float> g;
 		g = "2,45\u00B0,20\u00B0;20\u00B0,40\u00B0";
 		CHECK(to_string(g) == "(0.48,0.48,1.87;20\u00B0,40\u00B0)");
+	}
+
+	SECTION("Origin of coordinates_3dr<> class")
+	{
+		coordinates_3dr<> a(2_m,3_m,5_m,angle(30.0f),angle(20.0f));
+		coordinates_3dr<> b = coordinates_3dr<>::origin(a,coordinates_3dr<>(1_m,8_m,3_m,30.0_degree,20.0_degree));
+		CHECK(b.x == 3_m);
+		CHECK(b.y == 11_m);
+		CHECK(b.z == 8_m);
 	}
 
 	SECTION("Values of different coordinates systems of coordinates_3dr<> class")

@@ -5,6 +5,7 @@
 #include "../derived_units/physics_units.hpp"
 #include "../units/base_units.hpp"
 #include "../util/types.hpp"
+#include "./coordinates_2d.hpp"
 #include "./coordinates_3d.hpp"
 
 #include <iostream>
@@ -75,6 +76,38 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
+			explicit coordinates_nd(coordinates_2d<>::type coordinates_type, const string& coord1, const string& coord2) : coordinates_nd()
+			{
+				if (coordinates_type == coordinates_2d<>::CARTESIAN)
+				{
+					set_position(T(coord1),T(coord2));
+				}
+				else if (coordinates_type == coordinates_2d<>::POLAR)
+				{
+					set_position(T(coord1),angle(coord2));
+				}
+			}
+
+			explicit coordinates_nd(coordinates_3d<>::type coordinates_type, const string& coord1, const string& coord2, const string& coord3) : coordinates_nd()
+			{
+				if (coordinates_type == coordinates_3d<>::CARTESIAN)
+				{
+					set_position(T(coord1),T(coord2),T(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::CYLINDRICAL)
+				{
+					set_position(T(coord1),angle(coord2),T(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::SPHERICAL)
+				{
+					set_position(T(coord1),angle(coord2),angle(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::GEODESIC)
+				{
+					set_position(angle(coord1),angle(coord2),T(coord3));
+				}
+			}
+
 			template<typename U>
 			explicit coordinates_nd(const point_nd<U>& new_point) : values()
 			{
@@ -126,6 +159,16 @@ namespace scifir
 			{
 				initialize_from_string(init_coordinates_nd);
 				return *this;
+			}
+
+			static coordinates_nd<T> origin(const coordinates_nd<T>& origin,const coordinates_nd<T>& coordinates)
+			{
+				coordinates_nd<T> new_coordinates(origin);
+				for (unsigned int i = 0; i < coordinates.values.size(); i++)
+				{
+					new_coordinates.values[i] += coordinates.values[i];
+				}
+				return new_coordinates;
 			}
 
 			bool is_nd(int i) const

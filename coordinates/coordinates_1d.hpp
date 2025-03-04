@@ -72,6 +72,13 @@ namespace scifir
 				return *this;
 			}
 
+			static coordinates_1d<T> origin(const coordinates_1d<T>& origin,const coordinates_1d<T>& coordinates)
+			{
+				coordinates_1d<T> new_coordinates(origin);
+				new_coordinates.move(coordinates.x);
+				return new_coordinates;
+			}
+
 			void set_position(const scalar_unit& new_x)
 			{
 				x = new_x;

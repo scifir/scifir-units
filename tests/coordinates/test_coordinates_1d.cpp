@@ -117,6 +117,13 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		CHECK(to_string(h) == "(1)");
 	}
 
+	SECTION("Origin of coordinates_1d<> class")
+	{
+		coordinates_1d<> a(2_m);
+		coordinates_1d<> b = coordinates_1d<>::origin(a,coordinates_1d<>(1_m));
+		CHECK(b.x == 3_m);
+	}
+
 	SECTION("move(), set_position() and distance_to_origin() of coordinates_1d<> class")
 	{
 		coordinates_1d<> a(5_m);

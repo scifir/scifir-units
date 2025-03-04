@@ -125,6 +125,14 @@ TEST_CASE("class coordinates_2d<T> and coordinates_2d<float>")
 		CHECK(to_string(i) == "(0,100)");
 	}
 
+	SECTION("Origin of coordinates_2d<> class")
+	{
+		coordinates_2d<> a(2_m,3_m);
+		coordinates_2d<> b = coordinates_2d<>::origin(a,coordinates_2d<>(1_m,8_m));
+		CHECK(b.x == 3_m);
+		CHECK(b.y == 11_m);
+	}
+
 	SECTION("Polar coordinates of coordinates_2d<> class")
 	{
 		coordinates_2d a(5_m,angle(20.0f));

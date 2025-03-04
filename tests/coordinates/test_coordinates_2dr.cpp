@@ -2,6 +2,7 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../coordinates/coordinates_2dr.hpp"
+#include "../../units/unit_abbreviation.hpp"
 
 using namespace std;
 using namespace scifir;
@@ -142,6 +143,14 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		coordinates_2dr<float> j;
 		j = "100,90\u00B0;0\u00B0";
 		CHECK(to_string(j) == "(0,100;0\u00B0)");
+	}
+
+	SECTION("Origin of coordinates_2dr<> class")
+	{
+		coordinates_2dr<> a(2_m,3_m,20_degree);
+		coordinates_2dr<> b = coordinates_2dr<>::origin(a,coordinates_2dr<>(1_m,8_m,30_degree));
+		CHECK(b.x == 3_m);
+		CHECK(b.y == 11_m);
 	}
 
 	SECTION("Polar coordinates of coordinates_2dr<> class")

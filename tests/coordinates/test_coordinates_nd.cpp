@@ -182,6 +182,16 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
 	}
 
+	SECTION("Origin of coordinates_nd<> class")
+	{
+		coordinates_nd<> a(vector<length>{2_m,3_m,5_m,4_m});
+		coordinates_nd<> b = coordinates_nd<>::origin(a,coordinates_nd<>(vector<length>{1_m,8_m,3_m,2_m}));
+		CHECK(b.values[0] == 3_m);
+		CHECK(b.values[1] == 11_m);
+		CHECK(b.values[2] == 8_m);
+		CHECK(b.values[3] == 6_m);
+	}
+
 	SECTION("Values of different coordinates systems of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(7_m,4_m,2_m);

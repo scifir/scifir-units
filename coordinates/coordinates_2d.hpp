@@ -17,6 +17,8 @@ namespace scifir
 	class coordinates_2d
 	{
 		public:
+			enum type { CARTESIAN, POLAR };
+
 			coordinates_2d() : x(),y()
 			{}
 
@@ -29,9 +31,21 @@ namespace scifir
 			explicit coordinates_2d(const scalar_unit& new_x,const scalar_unit& new_y) : x(new_x),y(new_y)
 			{}
 
-			explicit coordinates_2d(const scalar_unit& new_p,const angle& new_theta)
+			explicit coordinates_2d(const scalar_unit& new_p,const angle& new_theta) : coordinates_2d()
 			{
 				set_position(new_p,new_theta);
+			}
+
+			explicit coordinates_2d(coordinates_2d::type coordinates_type, const string& coord1, const string& coord2) : coordinates_2d()
+			{
+				if (coordinates_type == coordinates_2d<length>::CARTESIAN)
+				{
+					set_position(T(coord1),T(coord2));
+				}
+				else if (coordinates_type == coordinates_2d<length>::POLAR)
+				{
+					set_position(T(coord1),angle(coord2));
+				}
 			}
 
 			template<typename U>
@@ -79,6 +93,13 @@ namespace scifir
 			{
 				initialize_from_string(init_coordinates_2d);
 				return *this;
+			}
+
+			static coordinates_2d<T> origin(const coordinates_2d<T>& origin,const coordinates_2d<T>& coordinates)
+			{
+				coordinates_2d<T> new_coordinates(origin);
+				new_coordinates.move(coordinates.x,coordinates.y);
+				return new_coordinates;
 			}
 
 			T get_p() const
@@ -197,6 +218,18 @@ namespace scifir
 			explicit coordinates_2d(float new_p,const angle& new_theta)
 			{
 				set_position(new_p,new_theta);
+			}
+
+			explicit coordinates_2d(coordinates_2d<length>::type coordinates_type, const string& coord1, const string& coord2) : coordinates_2d()
+			{
+				if (coordinates_type == coordinates_2d<length>::CARTESIAN)
+				{
+					set_position(stof(coord1),stof(coord2));
+				}
+				else if (coordinates_type == coordinates_2d<length>::POLAR)
+				{
+					set_position(stof(coord1),angle(coord2));
+				}
 			}
 
 			explicit coordinates_2d(const scifir::point_2d<float>& new_point) : x(new_point.x),y(new_point.y)

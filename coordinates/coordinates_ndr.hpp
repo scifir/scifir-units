@@ -330,6 +330,16 @@ namespace scifir
 				return *this;
 			}
 
+			static coordinates_ndr<T> origin(const coordinates_ndr<T>& origin,const coordinates_ndr<T>& coordinates)
+			{
+				coordinates_ndr<T> new_coordinates(origin);
+				for (unsigned int i = 0; i < coordinates.values.size(); i++)
+				{
+					new_coordinates.get_value(i) += coordinates.get_value(i);
+				}
+				return new_coordinates;
+			}
+
 			bool is_nd(int i) const
 			{
 				return values.size() == i;
