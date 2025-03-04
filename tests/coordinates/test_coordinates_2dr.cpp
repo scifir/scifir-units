@@ -63,6 +63,8 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		CHECK(to_string(e) == "(1,5;40\u00B0)");
 		coordinates_2dr<float> f("100,90\u00B0;40\u00B0");
 		CHECK(to_string(f) == "(0,100;40\u00B0)");
+		coordinates_2dr<float> g(",;");
+		CHECK(to_string(g) == "(0,0;0\u00B0)");
 	}
 
 	SECTION("Assignments of coordinates_2dr<> class")

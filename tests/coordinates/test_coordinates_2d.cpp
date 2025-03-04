@@ -53,6 +53,8 @@ TEST_CASE("class coordinates_2d<T> and coordinates_2d<float>")
 		CHECK(to_string(e) == "(1,5)");
 		coordinates_2d<float> f("100,90\u00B0");
 		CHECK(to_string(f) == "(0,100)");
+		coordinates_2d<float> g(",");
+		CHECK(to_string(g) == "(0,0)");
 	}
 
 	SECTION("Assignments of coordinates_2d<> class")

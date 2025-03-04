@@ -84,6 +84,8 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(to_string(f) == "(1.41,1.41,3)");
 		coordinates_3d<float> g("2,45\u00B0,20\u00B0");
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
+		coordinates_3d<float> h(",,");
+		CHECK(to_string(h) == "(0,0,0)");
 	}
 
 	SECTION("Assignments of coordinates_3d<> class")

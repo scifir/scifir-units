@@ -435,6 +435,10 @@ namespace scifir
 				}
 				if (init_values.size() == 2 and init_angles.size() == 1)
 				{
+					if (init_values[0] == "" or init_values[1] == "" or init_angles[0] == "")
+					{
+						return;
+					}
 					if (is_angle(init_values[1]))
 					{
 						set_position(stof(init_values[0]),angle(init_values[1]));

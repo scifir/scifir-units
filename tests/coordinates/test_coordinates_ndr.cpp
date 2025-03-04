@@ -109,6 +109,8 @@ TEST_CASE("class coordinates_ndr<T> and coordinates_ndr<float>")
 		CHECK(to_string(g) == "(0.48,0.48,1.87;15\u00B0,25\u00B0)");
 		coordinates_ndr<float> h("2,4,5,3;15\u00B0,25\u00B0,10\u00B0");
 		CHECK(to_string(h) == "(2,4,5,3;15\u00B0,25\u00B0,10\u00B0)");
+		coordinates_ndr<float> i(",;");
+		CHECK(to_string(i) == "[empty]");
 	}
 
 	SECTION("Assignments of coordinates_ndr<> class")

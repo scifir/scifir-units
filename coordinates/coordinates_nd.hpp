@@ -1068,6 +1068,13 @@ namespace scifir
 					init_coordinates_nd.erase(init_coordinates_nd.size()-1,1);
 				}
 				boost::split(init_values,init_coordinates_nd,boost::is_any_of(","));
+				for (const string& x_value : init_values)
+				{
+					if (x_value == "")
+					{
+						return;
+					}
+				}
 				if (init_values.size() == 2)
 				{
 					if (is_angle(init_values[1]))

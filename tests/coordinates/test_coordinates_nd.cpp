@@ -86,6 +86,8 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(to_string(f) == "(1.41,1.41,3)");
 		coordinates_nd<float> g("2,45\u00B0,20\u00B0");
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
+		coordinates_nd<float> h(",,");
+		CHECK(to_string(h) == "[empty]");
 	}
 
 	SECTION("Assignments of coordinates_nd<> class")

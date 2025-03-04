@@ -172,7 +172,10 @@ namespace scifir
 				{
 					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
 				}
-				x = stof(init_coordinates_1d);
+				if (init_coordinates_1d != "")
+				{
+					x = stof(init_coordinates_1d);
+				}
 			}
 	};
 

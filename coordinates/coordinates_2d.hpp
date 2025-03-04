@@ -319,6 +319,10 @@ namespace scifir
 				boost::split(values,init_coordinates_2d,boost::is_any_of(","));
 				if (values.size() == 2)
 				{
+					if (values[0] == "" or values[1] == "")
+					{
+						return;
+					}
 					if (is_angle(values[1]))
 					{
 						set_position(stof(values[0]),angle(values[1]));

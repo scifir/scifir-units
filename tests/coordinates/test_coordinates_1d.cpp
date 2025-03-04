@@ -51,6 +51,8 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		CHECK(to_string(d) == "(1)");
 		coordinates_1d<float> e("1");
 		CHECK(to_string(e) == "(1)");
+		coordinates_1d<float> f("");
+		CHECK(to_string(f) == "(0)");
 	}
 
 	SECTION("Assignments of coordinates_1d<> class")

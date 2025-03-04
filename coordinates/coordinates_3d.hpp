@@ -661,6 +661,10 @@ namespace scifir
 				boost::split(values,init_coordinates_3d,boost::is_any_of(","));
 				if (values.size() == 3)
 				{
+					if (values[0] == "" or values[1] == "" or values[2] == "")
+					{
+						return;
+					}
 					if (is_angle(values[0]))
 					{
 						if (is_angle(values[1]))
