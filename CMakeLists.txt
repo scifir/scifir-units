@@ -342,6 +342,16 @@ if(BUILD_TESTING)
 		add_test(NAME mass_point_3d COMMAND test_mass_point_3d)
 		set_tests_properties(mass_point_3d PROPERTIES LABELS tests)
 
+		add_executable(test_charge_point_2d tests/physics/test_charge_point_2d.cpp)
+		target_link_libraries(test_charge_point_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME charge_point_2d COMMAND test_charge_point_2d)
+		set_tests_properties(charge_point_2d PROPERTIES LABELS tests)
+
+		add_executable(test_charge_point_3d tests/physics/test_charge_point_3d.cpp)
+		target_link_libraries(test_charge_point_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME charge_point_3d COMMAND test_charge_point_3d)
+		set_tests_properties(charge_point_3d PROPERTIES LABELS tests)
+
 		add_executable(benchmark_units tests/benchmark_units.cpp)
 		target_link_libraries(benchmark_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME benchmark_units COMMAND benchmark_units)
