@@ -208,7 +208,7 @@ TEST_CASE("angle class") {
         CHECK(gradian_to_turn(200.0f) == 0.5f);
     }
 
-    SECTION("is_angle function")
+    SECTION("is_angle() function")
     {
         CHECK(is_angle("10°") == true);
         CHECK(is_angle("10.0°") == true);

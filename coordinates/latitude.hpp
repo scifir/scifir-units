@@ -44,6 +44,8 @@ namespace scifir
 			void initialize_from_angle(const angle& x);
 			void initialize_from_string(string init_latitude);
 	};
+
+	bool is_latitude(const string& init_latitude);
 }
 
 #endif // SCIFIR_UNITS_COORDINATES_LATITUDE_HPP_INCLUDED

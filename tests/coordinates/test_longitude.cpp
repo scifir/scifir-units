@@ -113,4 +113,21 @@ TEST_CASE("longitude class") {
         a.invert();
         CHECK(a.get_value() == -135.0f);
     }
+
+    SECTION("is_longitude() function")
+    {
+        CHECK(is_longitude("10°") == true);
+        CHECK(is_longitude("10°") == true);
+        CHECK(is_longitude("10°E") == true);
+        CHECK(is_longitude("10°W") == true);
+        CHECK(is_longitude("10.0°") == true);
+        CHECK(is_longitude("10 deg") == false);
+        CHECK(is_longitude("10 rad") == false);
+        CHECK(is_longitude("10 grad") == false);
+        CHECK(is_longitude("10 tr") == false);
+        CHECK(is_longitude("10A°") == false);
+        CHECK(is_longitude("10") == false);
+        CHECK(is_longitude("10.0.9°") == false);
+        CHECK(is_longitude("") == false);
+    }
 }

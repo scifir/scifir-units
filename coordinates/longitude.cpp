@@ -191,4 +191,61 @@ namespace scifir
 			normalize_value();
 		}
 	}
+
+	bool is_longitude(const string& init_longitude)
+	{
+		if (init_longitude.length() == 0)
+		{
+			return false;
+		}
+		bool cardinale_point_present = false;
+		if (init_longitude.substr(init_longitude.length() - 1) == "E")
+		{
+			cardinale_point_present = true;
+		}
+		else if (init_longitude.substr(init_longitude.length() - 1) == "W")
+		{
+			cardinale_point_present = true;
+		}
+		int start_point = 0;
+		if (cardinale_point_present == false && init_longitude[0] == '-')
+		{
+			start_point++;
+		}
+		icu::UnicodeString x_unicode = icu::UnicodeString(init_longitude.c_str());
+		int total_chars = x_unicode.countChar32();
+		if (cardinale_point_present)
+		{
+			total_chars--;
+		}
+		bool loop = false;
+		if (x_unicode[total_chars - 1] == 0x00B0 || x_unicode[total_chars - 1] == 0x00BA)
+		{
+			loop = true;
+		}
+		if (loop == false)
+		{
+			return false;
+		}
+		bool dot_present = false;
+		for (int i = start_point; i < (total_chars - 1); i++)
+		{
+			if (x_unicode[i] == '.')
+			{
+				if (dot_present)
+				{
+					return false;
+				}
+				else
+				{
+					dot_present = true;
+				}
+			}
+			else if (!u_isdigit(x_unicode[i]))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
 }

@@ -60,15 +60,17 @@ namespace scifir
 		return scalar_unit(U.get_value() * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V.get_value())),{ dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) });
 	}
 
-	inline scalar_unit LLA_to_ECEF_x(const angle& latitude,const angle& longitude,scalar_unit altitude)
+	inline scalar_unit LLA_to_ECEF_x(const latitude& latitude,const longitude& longitude,scalar_unit altitude)
 	{
+		cout << "latitude:" << latitude << endl;
+		cout << "longitude:" << longitude << endl;
 		long double e_square = 0.00669437999014l;
 		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
 		altitude.change_dimensions("m");
 		return (n + altitude) * scifir::cos(latitude) * scifir::cos(longitude);
 	}
 
-	inline scalar_unit LLA_to_ECEF_y(const angle& latitude,const angle& longitude,scalar_unit altitude)
+	inline scalar_unit LLA_to_ECEF_y(const latitude& latitude,const longitude& longitude,scalar_unit altitude)
 	{
 		long double e_square = 0.00669437999014l;
 		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
@@ -76,7 +78,7 @@ namespace scifir
 		return (n + altitude) * scifir::cos(latitude) * scifir::sin(longitude);
 	}
 
-	inline scalar_unit LLA_to_ECEF_z(const angle& latitude,const angle& longitude,scalar_unit altitude)
+	inline scalar_unit LLA_to_ECEF_z(const latitude& latitude,const longitude& longitude,scalar_unit altitude)
 	{
 		long double e_square = 0.00669437999014l;
 		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
@@ -174,7 +176,7 @@ namespace scifir
 				}
 				else if (coordinates_type == coordinates_3d<>::GEODESIC)
 				{
-					set_position(angle(coord1),angle(coord2),T(coord3));
+					set_position(latitude(coord1),longitude(coord2),T(coord3));
 				}
 			}
 
@@ -269,7 +271,7 @@ namespace scifir
 				z = T(new_r * scifir::cos(new_phi));
 			}
 
-			void set_position(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude)
+			void set_position(const latitude& new_latitude,const longitude& new_longitude,const scalar_unit& new_altitude)
 			{
 				x = LLA_to_ECEF_x(new_latitude,new_longitude,new_altitude);
 				y = LLA_to_ECEF_y(new_latitude,new_longitude,new_altitude);
@@ -381,13 +383,16 @@ namespace scifir
 				boost::split(values,init_coordinates_3d,boost::is_any_of(","));
 				if (values.size() == 3)
 				{
-					if (is_angle(values[0]))
+					if (is_latitude(values[0]))
 					{
-						if (is_angle(values[1]))
+						if (is_longitude(values[1]))
 						{
 							if (!is_angle(values[2]))
 							{
-								set_position(angle(values[0]),angle(values[1]),T(values[2]));
+								cout << "values[0]: " << values[0] << endl;
+								cout << "values[1]: " << values[1] << endl;
+								cout << "values[2]: " << values[2] << endl;
+								set_position(latitude(values[0]),longitude(values[1]),T(values[2]));
 							}
 						}
 					}
@@ -665,9 +670,9 @@ namespace scifir
 					{
 						return;
 					}
-					if (is_angle(values[0]))
+					if (is_latitude(values[0]))
 					{
-						if (is_angle(values[1]))
+						if (is_longitude(values[1]))
 						{
 							if (!is_angle(values[2]))
 							{

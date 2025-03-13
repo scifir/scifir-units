@@ -113,4 +113,21 @@ TEST_CASE("latitude class") {
         a.invert();
         CHECK(a.get_value() == -45.0f);
     }
+
+    SECTION("is_latitude() function")
+    {
+        CHECK(is_latitude("10°") == true);
+        CHECK(is_latitude("10°") == true);
+        CHECK(is_latitude("10°N") == true);
+        CHECK(is_latitude("10°S") == true);
+        CHECK(is_latitude("10.0°") == true);
+        CHECK(is_latitude("10 deg") == false);
+        CHECK(is_latitude("10 rad") == false);
+        CHECK(is_latitude("10 grad") == false);
+        CHECK(is_latitude("10 tr") == false);
+        CHECK(is_latitude("10A°") == false);
+        CHECK(is_latitude("10") == false);
+        CHECK(is_latitude("10.0.9°") == false);
+        CHECK(is_latitude("") == false);
+    }
 }

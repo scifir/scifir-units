@@ -44,6 +44,8 @@ namespace scifir
 			void initialize_from_angle(const angle& x);
 			void initialize_from_string(string init_longitude);
 	};
+
+	bool is_longitude(const string& init_longitude);
 }
 
 #endif // SCIFIR_UNITS_COORDINATES_LONGITUDE_HPP_INCLUDED

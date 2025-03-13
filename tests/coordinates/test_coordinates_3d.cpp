@@ -38,6 +38,8 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
 		coordinates_3d<> h(",,");
 		CHECK(to_string(h) == "(0 m,0 m,0 m)");
+		coordinates_3d<> i("88.736865\u00B0N,45\u00B0E,15806.7 m");
+		CHECK(to_string(i) == "(99999.8 m,99999.8 m,6.371e+06 m)");
 	}
 
 	SECTION("Constructors of coordinates_3d<> class with the enum of type of 3d coordinates")

@@ -1051,9 +1051,9 @@ namespace scifir
 				}
 				else if (init_values.size() == 3 and init_angles.size() == 2)
 				{
-					if (is_angle(init_values[0]))
+					if (is_latitude(init_values[0]))
 					{
-						if (is_angle(init_values[1]))
+						if (is_longitude(init_values[1]))
 						{
 							if (!is_angle(init_values[2]))
 							{
@@ -2087,9 +2087,9 @@ namespace scifir
 				}
 				else if (init_values.size() == 3 and init_angles.size() == 2)
 				{
-					if (is_angle(init_values[0]))
+					if (is_latitude(init_values[0]))
 					{
-						if (is_angle(init_values[1]))
+						if (is_longitude(init_values[1]))
 						{
 							if (!is_angle(init_values[2]))
 							{
