@@ -187,6 +187,11 @@ if(BUILD_TESTING)
 		add_test(NAME lab_number COMMAND test_lab_number)
 		set_tests_properties(lab_number PROPERTIES LABELS tests)
 
+		add_executable(test_percentage tests/meca_number/test_percentage.cpp)
+		target_link_libraries(test_percentage PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME percentage COMMAND test_percentage)
+		set_tests_properties(percentage PROPERTIES LABELS tests)
+
 		add_executable(test_base_units tests/units/test_base_units.cpp)
 		target_link_libraries(test_base_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME base_units COMMAND test_base_units)
@@ -271,11 +276,6 @@ if(BUILD_TESTING)
 		target_link_libraries(test_mind PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME mind COMMAND test_mind)
 		set_tests_properties(mind PROPERTIES LABELS tests)
-
-		add_executable(test_percentage tests/special_units/test_percentage.cpp)
-		target_link_libraries(test_percentage PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
-		add_test(NAME percentage COMMAND test_percentage)
-		set_tests_properties(percentage PROPERTIES LABELS tests)
 
 		add_executable(test_pH tests/special_units/test_pH.cpp)
 		target_link_libraries(test_pH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
