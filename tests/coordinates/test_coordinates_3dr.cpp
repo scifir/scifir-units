@@ -157,7 +157,7 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 	SECTION("Origin of coordinates_3dr<> class")
 	{
 		coordinates_3dr<> a(2_m,3_m,5_m,angle(30.0f),angle(20.0f));
-		coordinates_3dr<> b = coordinates_3dr<>::origin(a,coordinates_3dr<>(1_m,8_m,3_m,30.0_degree,20.0_degree));
+		coordinates_3dr<> b = coordinates_3dr<>::origin(a,coordinates_3dr<>(1_m,8_m,3_m,30.0_deg,20.0_deg));
 		CHECK(b.x == 3_m);
 		CHECK(b.y == 11_m);
 		CHECK(b.z == 8_m);

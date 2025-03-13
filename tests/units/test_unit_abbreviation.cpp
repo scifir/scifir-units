@@ -207,7 +207,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_mEq == "100 mEq"));
 
 		CHECK(bool(100_memo == "100 memo"));
-		CHECK(bool(100_degree == "100°"));
+		CHECK(bool(100_deg == "100°"));
 		CHECK(bool(to_string(5_rad) == "286.47°"));
 		CHECK(bool(100_particles == "100 particles"));
 		CHECK(bool(100_particles == "100 particles"));
@@ -414,7 +414,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_mEq == "100 mEq"));
 
 		CHECK(bool(100.0_memo == "100 memo"));
-		CHECK(bool(100.0_degree == "100°"));
+		CHECK(bool(100.0_deg == "100°"));
 		CHECK(bool(to_string(5.0_rad) == "286.47°"));
 		CHECK(bool(30.0_percentage == "30%"));
 		CHECK(bool(100.0_ppm == "100 ppm"));

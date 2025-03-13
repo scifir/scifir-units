@@ -123,8 +123,8 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 
 	SECTION("Origin of coordinates_2dr<> class")
 	{
-		coordinates_2dr<> a(2_m,3_m,20_degree);
-		coordinates_2dr<> b = coordinates_2dr<>::origin(a,coordinates_2dr<>(1_m,8_m,30_degree));
+		coordinates_2dr<> a(2_m,3_m,20_deg);
+		coordinates_2dr<> b = coordinates_2dr<>::origin(a,coordinates_2dr<>(1_m,8_m,30_deg));
 		CHECK(b.x == 3_m);
 		CHECK(b.y == 11_m);
 	}

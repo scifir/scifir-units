@@ -1,7 +1,7 @@
 # SCIFIR UNITS - VERSION 2
 
 **Number of TODOs:** 195
-**Number of TODOs to release version 2:** 38
+**Number of TODOs to release version 2:** 37
 
 ## POSSIBLE OR MANDATORY READINGS (1)
 
@@ -9,6 +9,7 @@
 
 ## CURRENT (9)
 
+- TODO**: fuse to_string() and display() in lots of cases
 - TODO: conversion of size_t to and int gives a warning in MSVC
 - TODO: finish testing in MSVC all tests
 - TODO: solid_angle class, with the literal "_sr" too
@@ -180,7 +181,7 @@
 - TODO*: template functions is_scalar_unit<>,is_vector_unit_2d<>,is_vector_unit_3d<>,is_vector_unit_nd<>
 - TODO*: support the brackets inside is_complex_number() and is_lab_number()
 - TODO*: contains_dimensions() to test if some dimensions are present, but not if those dimensions are the only ones present
-- TODO*: maybe change the use of operator ^ to allow dimensions, and also accept it for angle() when giving a scalar_unit as parameter, document the math fact that dimensions aren't supposely allowed in exponents and as angles, but that, after doing this TODO, it has been allowed in this library in order to simplify the work
+- TODO*: to_dimensions("") function
 
 - TODO: is_number(), is_integer_number(), is_decimal_number()
 - TODO: function point_to() to a point and point_to() to a coordinate for vector_unit classes
@@ -195,7 +196,7 @@
 ## BASE UNITS (3)
 
 - TODO: coordinates_1d<>, without the bug of constructors, should initialize inside the string initialization without scalar_unit first
-- TODO: Functions like get_mass(molecular_weight,density) in mole class and get_moles(molecular_weight,density) in mass class but normal functions, inside chemistry
+- TODO: functions like get_mass(molecular_weight,density) in mole class and get_moles(molecular_weight,density) in mass class but normal functions, inside chemistry
 - TODO: perfect_mole class, maybe inheriting mole class, that allows to store moles and also add or substract by an integer number of molecules, not only by mole. Another option is to just extend the mole class, instead of creating a new class
 
 ## DERIVED UNITS (5)
@@ -217,17 +218,19 @@
 - TODO: typecast to other matrix-classes of important libraries
 - TODO: use the GSL to implement the reverse matrix
 
-## MECA NUMBERS (2)
+## MECA NUMBERS (3)
 
 - TODO*: add the allowed typenames to lab_number, and don't accept any other type
 - TODO: complex_number<> should have trigonometric functions for complex numbers
+- TODO: think if to add microdegrees and millidegrees
 
-## SPECIAL UNITS (9)
+## SPECIAL UNITS (10)
 
 - TODO*: constructors of zid class should be updated to follow the constructors of aid class
 - TODO*: functions is_aid() and is_zid()
 - TODO: maybe add zoom class, which allows to work with zooms
 
+- TODO: change body and mind to biology, and pH and pOH to chemistry
 - TODO: nutrition_information
 - TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()
 - TODO: enum of movement maybe should be divided in kind of animal
@@ -235,24 +238,21 @@
 - TODO: pixel_color<>. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color<>
 - TODO: maybe create a mesh_3d class, or vector<coordinates_3d<>>
 
-## COORDINATES (8)
+## COORDINATES (7)
 
-- TODO**: test the cases of empty initialization for coordinates classes specialized to float types
 - TODO*: add a constructor with the different types of coordinates systems with an enum at the start, like the constructor with enum of percentage class
 - TODO*: all display functions of coordinates classes need an int argument to select number of decimals
 - TODO*: is_coordinates_1d(), is_coordinates_2d(), etc
 
-- TODO: delete point classes!
-- TODO: to_vector_unit_3d(), to_vector_unit_2d(), respectively, to each coordinates and point class
-- TODO: display functions of coordinates and point classes should allow to change dimensions for any case, with another function identical in name but with the argument of the string of dimensions
+- TODO: to_vector_unit_3d(), to_vector_unit_2d(), respectively, to each coordinates class
+- TODO: display functions of coordinates classes should allow to change dimensions for any case, with another function identical in name but with the argument of the string of dimensions
 - TODO: add minutes and seconds to degrees for latitude and longitude, document that minutes and seconds are not for degrees of angles, add the function to convert degrees to sexagesimal degrees, returning a struct
 - TODO: possibly add the enum to latitude and longitude of DEGREE and SEXAGESIMAL_DEGREE values
 
-## COORDINATES - GEOGRAPHIC COORDINATES (8)
+## COORDINATES - GEOGRAPHIC COORDINATES (7)
 
-- TODO*: add the construction with an string for geographic coordinates
-- TODO*: class for geographical position in space, using AID and coordinates_3d
-- TODO*: class for geographical position including ZID and coordinates_3d
+- TODO*: string constructor for astronomical_coordinates
+- TODO*: string constructor for zone_coordinates
 - TODO*: get_altitude() can be two different functions
 - TODO*: add display functions for astronomical_coordinates_3d, with "name ()" for planetary, "Orbit of name ()" for orbital, "name ()" or "Inside name ()" for stellar, "name ()" for central galactic
 - TODO*: add the ecliptic coordinates system inside the astronomical_coordinates_3d

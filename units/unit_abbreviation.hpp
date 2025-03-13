@@ -212,7 +212,7 @@ scifir::scalar_unit operator"" _mEq(unsigned long long int);
 
 scifir::mole operator"" _particles(unsigned long long int);
 scifir::brain_memory operator"" _memo(unsigned long long int);
-scifir::angle operator"" _degree(unsigned long long int);
+scifir::angle operator"" _deg(unsigned long long int);
 scifir::angle operator"" _rad(unsigned long long int);
 scifir::percentage operator"" _percentage(unsigned long long int);
 scifir::percentage operator"" _ppm(unsigned long long int);
@@ -421,7 +421,7 @@ scifir::amount_of_effect operator"" _qIU(long double);
 scifir::scalar_unit operator"" _mEq(long double);
 
 scifir::scalar_unit operator"" _memo(long double);
-scifir::angle operator"" _degree(long double);
+scifir::angle operator"" _deg(long double);
 scifir::angle operator"" _rad(long double);
 scifir::percentage operator"" _percentage(long double);
 scifir::percentage operator"" _ppm(long double);

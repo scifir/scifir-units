@@ -922,7 +922,7 @@ scifir::brain_memory operator"" _memo(unsigned long long int x)
 	return scifir::brain_memory((long double)x, { scifir::dimension(scifir::dimension::MEMO,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::angle operator"" _degree(unsigned long long int x)
+scifir::angle operator"" _deg(unsigned long long int x)
 {
 	return scifir::angle((long double)x, scifir::angle::DEGREE);
 }
@@ -1887,7 +1887,7 @@ scifir::scalar_unit operator"" _memo(long double x)
 	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::MEMO,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::angle operator"" _degree(long double x)
+scifir::angle operator"" _deg(long double x)
 {
 	return scifir::angle(x, scifir::angle::DEGREE);
 }

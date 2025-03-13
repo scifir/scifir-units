@@ -198,8 +198,8 @@ TEST_CASE("class coordinates_ndr<T> and coordinates_ndr<float>")
 
 	SECTION("Origin of coordinates_ndr<> class")
 	{
-		coordinates_ndr<> a(vector<length>{2_m,3_m,5_m,4_m},vector<angle>{20_degree,30_degree,15_degree});
-		coordinates_ndr<> b = coordinates_ndr<>::origin(a,coordinates_ndr<>(vector<length>{1_m,8_m,3_m,2_m},vector<angle>{20_degree,30_degree,15_degree}));
+		coordinates_ndr<> a(vector<length>{2_m,3_m,5_m,4_m},vector<angle>{20_deg,30_deg,15_deg});
+		coordinates_ndr<> b = coordinates_ndr<>::origin(a,coordinates_ndr<>(vector<length>{1_m,8_m,3_m,2_m},vector<angle>{20_deg,30_deg,15_deg}));
 		CHECK(b.get_value(0) == 3_m);
 		CHECK(b.get_value(1) == 11_m);
 		CHECK(b.get_value(2) == 8_m);
