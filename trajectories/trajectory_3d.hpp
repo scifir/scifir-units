@@ -5,7 +5,6 @@
 #include "../units/base_units.hpp"
 #include "../meca_number/angle.hpp"
 #include "../coordinates/coordinates_3d.hpp"
-#include "../coordinates/coordinates_3dr.hpp"
 
 #include <functional>
 
