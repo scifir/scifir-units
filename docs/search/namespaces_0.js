@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scifir_1760',['scifir',['../namespacescifir.html',1,'']]]
+  ['scifir_0',['scifir',['../namespacescifir.html',1,'']]]
 ];

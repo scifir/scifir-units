@@ -1,5 +1,27 @@
 var searchData=
 [
-  ['joule_354',['JOULE',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fbabe339881eb1362c3182749f9dd54e3cb',1,'scifir::dimension']]],
-  ['jupiter_355',['JUPITER',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36a9addb0a7ad564b27bee117bfc75b23cb',1,'scifir']]]
+  ['back_0',['BACK',['../classscifir_1_1direction.html#a3f9d1fd5a6c5f61b9fb49c4e56938319a6f375fea0f3d26c57072608359d509dc',1,'scifir::direction']]],
+  ['barn_1',['BARN',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba2ef28355046604f1fcfb9bdd8284e620',1,'scifir::dimension']]],
+  ['base_20unit_20classes_2',['Base unit classes',['../index.html#autotoc_md74',1,'']]],
+  ['base_20units_3',['Base units',['../index.html#autotoc_md16',1,'']]],
+  ['base_5fdimensions_4',['base_dimensions',['../classscifir_1_1dimension.html#a5ca30a7cabdc8a807705ea6949f33fab',1,'scifir::dimension']]],
+  ['base_5fdisplay_5',['base_display',['../classscifir_1_1scalar__unit.html#acfb6df762582ed865e593141e1aef317',1,'scifir::scalar_unit']]],
+  ['base_5funits_2ecpp_6',['base_units.cpp',['../base__units_8cpp.html',1,'']]],
+  ['base_5funits_2ehpp_7',['base_units.hpp',['../base__units_8hpp.html',1,'']]],
+  ['becquerel_8',['BECQUEREL',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba1275a0a24b60736d4c65027afd77a473',1,'scifir::dimension']]],
+  ['biology_9',['Dimensions of biology',['../index.html#autotoc_md66',1,'']]],
+  ['bit_10',['BIT',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba97ac28776fce0cab0d8ab97e27cc6e0e',1,'scifir::dimension']]],
+  ['blue_11',['blue',['../classscifir_1_1color.html#a31c2a90e4accda723a5829d6f198b7bd',1,'scifir::color']]],
+  ['body_2ecpp_12',['body.cpp',['../body_8cpp.html',1,'']]],
+  ['body_2ehpp_13',['body.hpp',['../body_8hpp.html',1,'']]],
+  ['body_5fhealth_14',['body_health',['../namespacescifir.html#af67b1c36abc4fa5927cda202ec598749',1,'scifir']]],
+  ['boltzmann_5fconstant_15',['BOLTZMANN_CONSTANT',['../namespacescifir.html#a30531fb5c340548f3877fd352dfc9ff1',1,'scifir']]],
+  ['boost_16',['Configuring cmake for boost',['../index.html#autotoc_md28',1,'']]],
+  ['bottom_17',['BOTTOM',['../classscifir_1_1direction.html#a3f9d1fd5a6c5f61b9fb49c4e56938319a98f9679e7fcaa201ea32ecad8be036b8',1,'scifir::direction']]],
+  ['bottom_5fback_18',['BOTTOM_BACK',['../classscifir_1_1direction.html#a3f9d1fd5a6c5f61b9fb49c4e56938319af9efb3ea2745425d431a0171b134d8ec',1,'scifir::direction']]],
+  ['bottom_5ffront_19',['BOTTOM_FRONT',['../classscifir_1_1direction.html#a3f9d1fd5a6c5f61b9fb49c4e56938319acc5900251cd00271c33ea49e71c0586d',1,'scifir::direction']]],
+  ['bugs_20and_20similar_20problems_20hard_203_20',['BUGS AND SIMILAR PROBLEMS - HARD (3)',['../md_TO-DO.html#autotoc_md114',1,'']]],
+  ['build_202_21',['BUILD (2)',['../md_TO-DO.html#autotoc_md115',1,'']]],
+  ['build_20advanced_207_22',['BUILD - ADVANCED (7)',['../md_TO-DO.html#autotoc_md116',1,'']]],
+  ['byte_23',['BYTE',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fbabc56146b90f20ed603262911b9dd3cda',1,'scifir::dimension']]]
 ];
