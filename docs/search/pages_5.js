@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['library_0',['scifir-units library',['../index.html',1,'']]]
+  ['news_0',['NEWS',['../md_NEWS.html',1,'']]]
 ];

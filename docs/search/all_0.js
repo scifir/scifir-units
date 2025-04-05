@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['1_0',['1',['../md_TO-DO.html#autotoc_md136',1,'CONTROL VOLUME (1)'],['../md_TO-DO.html#autotoc_md139',1,'DOUBTS (1)'],['../md_TO-DO.html#autotoc_md143',1,'ELECTRONICS (1)'],['../md_TO-DO.html#autotoc_md144',1,'EXTRA TOOLS (1)'],['../md_TO-DO.html#autotoc_md110',1,'MATERIAL_VECTOR_UNIT (1)'],['../md_TO-DO.html#autotoc_md124',1,'PLOTTING (1)'],['../md_TO-DO.html#autotoc_md134',1,'TENSORS (1)'],['../md_TO-DO.html#autotoc_md111',1,'TRAJECTORY AND PARAMETERIZATION (1)'],['../md_TO-DO.html#autotoc_md112',1,'WAVES (1)']]],
-  ['15_1',['DIMENSIONS (15)',['../md_TO-DO.html#autotoc_md128',1,'']]],
-  ['16_2',['16',['../md_TO-DO.html#autotoc_md133',1,'SPECIAL UNITS (16)'],['../md_TO-DO.html#autotoc_md130',1,'UNITS (16)']]],
-  ['17_3',['CURRENT (17)',['../md_TO-DO.html#autotoc_md113',1,'']]],
-  ['1d_4',['Coordinates and points in 1D',['../index.html#autotoc_md94',1,'']]]
+  ['1_0',['1',['../md_TO-DO.html#autotoc_md60',1,'ASTRONOMY (1)'],['../md_TO-DO.html#autotoc_md31',1,'BUILD (1)'],['../md_TO-DO.html#autotoc_md61',1,'CONTROL VOLUME (1)'],['../md_TO-DO.html#autotoc_md33',1,'IDE (1)'],['../md_TO-DO.html#autotoc_md55',1,'MATERIAL_VECTOR_UNIT (1)'],['../md_TO-DO.html#autotoc_md69',1,'POSSIBLE - ELECTRONICS (1)'],['../md_TO-DO.html#autotoc_md70',1,'POSSIBLE - EXTRA TOOLS (1)'],['../md_TO-DO.html#autotoc_md67',1,'POSSIBLE - ISO C++ (1)'],['../md_TO-DO.html#autotoc_md64',1,'POSSIBLE - PLOTTING (1)'],['../md_TO-DO.html#autotoc_md68',1,'POSSIBLE - TENSORS (1)'],['../md_TO-DO.html#autotoc_md28',1,'POSSIBLE OR MANDATORY READINGS (1)'],['../md_TO-DO.html#autotoc_md44',1,'PREFIX (1)'],['../md_TO-DO.html#autotoc_md56',1,'TRAJECTORY AND PARAMETERIZATION (1)']]],
+  ['10_1',['10',['../md_TO-DO.html#autotoc_md42',1,'C++ (10)'],['../md_TO-DO.html#autotoc_md45',1,'DIMENSIONS (10)'],['../md_TO-DO.html#autotoc_md40',1,'DOCUMENTATION - DOXYGEN PAGES (10)'],['../md_TO-DO.html#autotoc_md52',1,'SPECIAL UNITS (10)'],['../md_TO-DO.html#autotoc_md47',1,'UNITS (10)']]],
+  ['14_2',['DOCUMENTATION - README (14)',['../md_TO-DO.html#autotoc_md39',1,'']]]
 ];

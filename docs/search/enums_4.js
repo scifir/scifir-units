@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['feeling_0',['feeling',['../namespacescifir.html#a83fe32b03d40fdd5728b2e413123bee5',1,'scifir']]]
+  ['type_0',['type',['../classscifir_1_1address.html#a09cacff0328060f48a50e251ab9cdf40',1,'scifir::address::type'],['../classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6',1,'scifir::aid::type'],['../classscifir_1_1coordinates__2d.html#aa26359727fc8f3ca6adc854db3b55694',1,'scifir::coordinates_2d::type'],['../classscifir_1_1coordinates__3d.html#a1ab65467728f65f91ae4d921013885dc',1,'scifir::coordinates_3d::type'],['../classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93',1,'scifir::zid::type'],['../classscifir_1_1angle.html#a414ab17c4da94bdd62235d1f2245c0f4',1,'scifir::angle::type'],['../classscifir_1_1percentage.html#a4df11500cbcd110e6656e3bfcc5ac79a',1,'scifir::percentage::type'],['../classscifir_1_1conversion.html#ad7c946be30914aae134d11d1c6f0b808',1,'scifir::conversion::type'],['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fb',1,'scifir::dimension::type'],['../classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5',1,'scifir::prefix::type']]]
 ];

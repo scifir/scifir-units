@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['8_0',['8',['../md_TO-DO.html#autotoc_md126',1,'C++ (8)'],['../md_TO-DO.html#autotoc_md149',1,'FUTURE - MECA NUMBERS (POSSIBLE, THINK) (8)'],['../md_TO-DO.html#autotoc_md118',1,'GITHUB (8)']]]
+  ['7_0',['7',['../md_TO-DO.html#autotoc_md32',1,'BUILD - ADVANCED (7)'],['../md_TO-DO.html#autotoc_md53',1,'COORDINATES (7)'],['../md_TO-DO.html#autotoc_md54',1,'COORDINATES - GEOGRAPHIC COORDINATES (7)'],['../md_TO-DO.html#autotoc_md38',1,'DOCUMENTATION - DOXYGEN (7)'],['../md_TO-DO.html#autotoc_md50',1,'MATRIX (7)'],['../md_TO-DO.html#autotoc_md65',1,'UNITS - ADVANCED (7)']]]
 ];

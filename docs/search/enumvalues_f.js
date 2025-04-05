@@ -13,5 +13,5 @@ var searchData=
   ['pixel_10',['PIXEL',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba6747ebea74889f7864d1d802dc31d5d4',1,'scifir::dimension']]],
   ['planet_11',['PLANET',['../classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6af8b18432501a85d75990fac5ec693dcb',1,'scifir::aid']]],
   ['pluto_12',['PLUTO',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36ac4c2ac18b2a720fc13131814ca2f2298',1,'scifir']]],
-  ['proprioception_13',['PROPRIOCEPTION',['../namespacescifir.html#ab490bfba0c9d5ac0143e1235df6805c5a1dd09ac05196f9a4b8345dd490fb5afb',1,'scifir']]]
+  ['polar_13',['POLAR',['../classscifir_1_1coordinates__2d.html#aa26359727fc8f3ca6adc854db3b55694a4d82466bc32a0245566da5f16c7fce86',1,'scifir::coordinates_2d']]]
 ];

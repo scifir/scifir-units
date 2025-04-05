@@ -563,7 +563,7 @@ Private Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   94</span>            }</div>
 <div class="line"><span class="lineno">   95</span>        }</div>
 <div class="line"><span class="lineno">   96</span>    }</div>
-<div class="ttc" id="anamespacescifir_html_a7ec42f20dc4534b6c166a5034631a116"><div class="ttname"><a href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">scifir::create_zone_type</a></div><div class="ttdeci">zid::type create_zone_type(const string &amp;zone_type_abbreviation)</div><div class="ttdoc">Creates an instance of a zid::type with the given string, which is the reverse as the to_string() fun...</div><div class="ttdef"><b>Definition</b> <a href="zid_8cpp_source.html#l00307">zid.cpp:307</a></div></div>
+<div class="ttc" id="anamespacescifir_html_a7ec42f20dc4534b6c166a5034631a116"><div class="ttname"><a href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">scifir::create_zone_type</a></div><div class="ttdeci">zid::type create_zone_type(const string &amp;zone_type_abbreviation)</div><div class="ttdoc">Creates an instance of a zid::type with the given string, which is the reverse as the to_string() fun...</div><div class="ttdef"><b>Definition</b> <a href="zid_8cpp_source.html#l00311">zid.cpp:311</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -598,7 +598,7 @@ Private Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   99</span>    {</div>
 <div class="line"><span class="lineno">  100</span>        <a class="code hl_function" href="classscifir_1_1zid.html#a2301819b28c1c3fc954caa4461b09948">initialize_from_string</a>(init_zid_full);</div>
 <div class="line"><span class="lineno">  101</span>    }</div>
-<div class="ttc" id="aclassscifir_1_1zid_html_a2301819b28c1c3fc954caa4461b09948"><div class="ttname"><a href="classscifir_1_1zid.html#a2301819b28c1c3fc954caa4461b09948">scifir::zid::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(const string &amp;init_zid_full)</div><div class="ttdoc">Internal function. It's used by the string constructor and the string assignment of zid to initialize...</div><div class="ttdef"><b>Definition</b> <a href="zid_8cpp_source.html#l00177">zid.cpp:177</a></div></div>
+<div class="ttc" id="aclassscifir_1_1zid_html_a2301819b28c1c3fc954caa4461b09948"><div class="ttname"><a href="classscifir_1_1zid.html#a2301819b28c1c3fc954caa4461b09948">scifir::zid::initialize_from_string</a></div><div class="ttdeci">void initialize_from_string(const string &amp;init_zid_full)</div><div class="ttdoc">Internal function. It's used by the string constructor and the string assignment of zid to initialize...</div><div class="ttdef"><b>Definition</b> <a href="zid_8cpp_source.html#l00181">zid.cpp:181</a></div></div>
 <div class="ttc" id="aclassscifir_1_1zid_html_a952698b9b559fca982259db218a4ca14"><div class="ttname"><a href="classscifir_1_1zid.html#a952698b9b559fca982259db218a4ca14">scifir::zid::zid</a></div><div class="ttdeci">zid()</div><div class="ttdoc">Default constructor. There's no data about any zone, the aid member-variable is also empty.</div><div class="ttdef"><b>Definition</b> <a href="zid_8cpp_source.html#l00012">zid.cpp:12</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -626,20 +626,24 @@ Private Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  141</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><span class="lineno">  142</span>        {</div>
 <div class="line"><span class="lineno">  143</span>            ostringstream out;</div>
-<div class="line"><span class="lineno">  144</span>            out &lt;&lt; <a class="code hl_function" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string</a>(<a class="code hl_variable" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>) &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_function" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string</a>(<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>) &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
-<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x_region : <a class="code hl_variable" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>)</div>
+<div class="line"><span class="lineno">  144</span>            out &lt;&lt; <a class="code hl_function" href="namespacescifir.html#a55aef4d5616f29c80bdf521cdedc6d0a">to_string</a>(<a class="code hl_variable" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a>) &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_function" href="namespacescifir.html#a55aef4d5616f29c80bdf521cdedc6d0a">to_string</a>(<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>) &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a>;</div>
+<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.size() &gt; 0 and <a class="code hl_variable" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><span class="lineno">  146</span>            {</div>
-<div class="line"><span class="lineno">  147</span>                out &lt;&lt; x_region &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><span class="lineno">  147</span>                out &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
 <div class="line"><span class="lineno">  148</span>            }</div>
-<div class="line"><span class="lineno">  149</span>            out &lt;&lt; <a class="code hl_variable" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>;</div>
-<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">return</span> out.str();</div>
-<div class="line"><span class="lineno">  151</span>        }</div>
-<div class="line"><span class="lineno">  152</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  153</span>        {</div>
-<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  149</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x_region : <a class="code hl_variable" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>)</div>
+<div class="line"><span class="lineno">  150</span>            {</div>
+<div class="line"><span class="lineno">  151</span>                out &lt;&lt; x_region &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><span class="lineno">  152</span>            }</div>
+<div class="line"><span class="lineno">  153</span>            out &lt;&lt; <a class="code hl_variable" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>;</div>
+<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">return</span> out.str();</div>
 <div class="line"><span class="lineno">  155</span>        }</div>
-<div class="line"><span class="lineno">  156</span>    }</div>
-<div class="ttc" id="anamespacescifir_html_a421182d5f93abcbbaeadc7c14112bdd5"><div class="ttname"><a href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">scifir::to_string</a></div><div class="ttdeci">string to_string(const coordinates_1d&lt; float &gt; &amp;x)</div><div class="ttdef"><b>Definition</b> <a href="coordinates__1d_8cpp_source.html#l00008">coordinates_1d.cpp:8</a></div></div>
+<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  157</span>        {</div>
+<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  159</span>        }</div>
+<div class="line"><span class="lineno">  160</span>    }</div>
+<div class="ttc" id="anamespacescifir_html_a55aef4d5616f29c80bdf521cdedc6d0a"><div class="ttname"><a href="namespacescifir.html#a55aef4d5616f29c80bdf521cdedc6d0a">scifir::to_string</a></div><div class="ttdeci">string to_string(const aid &amp;x)</div><div class="ttdoc">Creates a string representation of aid, it's for aid equivalent to the display() function of aid.</div><div class="ttdef"><b>Definition</b> <a href="aid_8cpp_source.html#l00582">aid.cpp:582</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -717,112 +721,112 @@ Private Member Functions</h2></td></tr>
 
 <p><b>Internal function</b>. It's used by the string constructor and the string assignment of zid to initialize the member-variables using the initialization string init_zid_full. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00177">177</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  178</span>    {</div>
-<div class="line"><span class="lineno">  179</span>        <span class="keywordflow">if</span> (init_zid_full != <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><span class="lineno">  180</span>        {</div>
-<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">if</span> (!(init_zid_full[1] == <span class="charliteral">&#39;C&#39;</span> or init_zid_full[1] == <span class="charliteral">&#39;R&#39;</span> or init_zid_full[1] == <span class="charliteral">&#39;Z&#39;</span>))</div>
-<div class="line"><span class="lineno">  182</span>            {</div>
-<div class="line"><span class="lineno">  183</span>                std::size_t last_whitespace = init_zid_full.find(<span class="stringliteral">&quot; (&quot;</span>);</div>
-<div class="line"><span class="lineno">  184</span>                <span class="keywordtype">string</span> init_aid = init_zid_full.substr(0,last_whitespace);</div>
-<div class="line"><span class="lineno">  185</span>                <span class="keywordtype">string</span> init_zid = init_zid_full.substr(last_whitespace + 1);</div>
-<div class="line"><span class="lineno">  186</span>                <a class="code hl_variable" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> = <a class="code hl_class" href="classscifir_1_1aid.html">scifir::aid</a>(init_aid);</div>
-<div class="line"><span class="lineno">  187</span>                vector&lt;string&gt; values;</div>
-<div class="line"><span class="lineno">  188</span>                boost::split(values,init_zid,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
-<div class="line"><span class="lineno">  189</span>                <span class="keywordflow">if</span> (values[0].front() == <span class="charliteral">&#39;(&#39;</span> and isalpha(values[0][1]))</div>
-<div class="line"><span class="lineno">  190</span>                {</div>
-<div class="line"><span class="lineno">  191</span>                    <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code hl_function" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a>(values[0].substr(1,1));</div>
-<div class="line"><span class="lineno">  192</span>                    <span class="keywordtype">string</span> new_country;</div>
-<div class="line"><span class="lineno">  193</span>                    <span class="keywordflow">if</span> (values[0][3] != <span class="charliteral">&#39; &#39;</span>)</div>
-<div class="line"><span class="lineno">  194</span>                    {</div>
-<div class="line"><span class="lineno">  195</span>                        new_country = values[0].substr(3);</div>
-<div class="line"><span class="lineno">  196</span>                    }</div>
-<div class="line"><span class="lineno">  197</span>                    <span class="keywordflow">else</span></div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00181">181</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>    {</div>
+<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">if</span> (init_zid_full != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  184</span>        {</div>
+<div class="line"><span class="lineno">  185</span>            <span class="keywordflow">if</span> (!(init_zid_full[1] == <span class="charliteral">&#39;C&#39;</span> or init_zid_full[1] == <span class="charliteral">&#39;R&#39;</span> or init_zid_full[1] == <span class="charliteral">&#39;Z&#39;</span>))</div>
+<div class="line"><span class="lineno">  186</span>            {</div>
+<div class="line"><span class="lineno">  187</span>                std::size_t last_whitespace = init_zid_full.find(<span class="stringliteral">&quot; (&quot;</span>);</div>
+<div class="line"><span class="lineno">  188</span>                <span class="keywordtype">string</span> init_aid = init_zid_full.substr(0,last_whitespace);</div>
+<div class="line"><span class="lineno">  189</span>                <span class="keywordtype">string</span> init_zid = init_zid_full.substr(last_whitespace + 1);</div>
+<div class="line"><span class="lineno">  190</span>                <a class="code hl_variable" href="classscifir_1_1zid.html#a8640d975f65cda5aeb22413cc16b0683">aid</a> = <a class="code hl_class" href="classscifir_1_1aid.html">scifir::aid</a>(init_aid);</div>
+<div class="line"><span class="lineno">  191</span>                vector&lt;string&gt; values;</div>
+<div class="line"><span class="lineno">  192</span>                boost::split(values,init_zid,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
+<div class="line"><span class="lineno">  193</span>                <span class="keywordflow">if</span> (values[0].front() == <span class="charliteral">&#39;(&#39;</span> and isalpha(values[0][1]))</div>
+<div class="line"><span class="lineno">  194</span>                {</div>
+<div class="line"><span class="lineno">  195</span>                    <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code hl_function" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a>(values[0].substr(1,1));</div>
+<div class="line"><span class="lineno">  196</span>                    <span class="keywordtype">string</span> new_country;</div>
+<div class="line"><span class="lineno">  197</span>                    <span class="keywordflow">if</span> (values[0][3] != <span class="charliteral">&#39; &#39;</span>)</div>
 <div class="line"><span class="lineno">  198</span>                    {</div>
-<div class="line"><span class="lineno">  199</span>                        new_country = values[0].substr(4);</div>
+<div class="line"><span class="lineno">  199</span>                        new_country = values[0].substr(3);</div>
 <div class="line"><span class="lineno">  200</span>                    }</div>
-<div class="line"><span class="lineno">  201</span>                    <span class="keywordflow">if</span> (values.size() == 1 and <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">zid::COUNTRY</a>)</div>
+<div class="line"><span class="lineno">  201</span>                    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  202</span>                    {</div>
-<div class="line"><span class="lineno">  203</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
+<div class="line"><span class="lineno">  203</span>                        new_country = values[0].substr(4);</div>
 <div class="line"><span class="lineno">  204</span>                    }</div>
-<div class="line"><span class="lineno">  205</span>                    <span class="keywordflow">if</span> ((values.size() &gt;= 2 and <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>) or (values.size() &gt;= 3 and (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>)))</div>
+<div class="line"><span class="lineno">  205</span>                    <span class="keywordflow">if</span> (values.size() == 1 and <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">zid::COUNTRY</a>)</div>
 <div class="line"><span class="lineno">  206</span>                    {</div>
 <div class="line"><span class="lineno">  207</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
-<div class="line"><span class="lineno">  208</span>                        <span class="keywordtype">int</span> total_for_values;</div>
-<div class="line"><span class="lineno">  209</span>                        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>)</div>
-<div class="line"><span class="lineno">  210</span>                        {</div>
-<div class="line"><span class="lineno">  211</span>                            total_for_values = int(values.size());</div>
-<div class="line"><span class="lineno">  212</span>                        }</div>
-<div class="line"><span class="lineno">  213</span>                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>)</div>
+<div class="line"><span class="lineno">  208</span>                    }</div>
+<div class="line"><span class="lineno">  209</span>                    <span class="keywordflow">if</span> ((values.size() &gt;= 2 and <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>) or (values.size() &gt;= 3 and (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>)))</div>
+<div class="line"><span class="lineno">  210</span>                    {</div>
+<div class="line"><span class="lineno">  211</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
+<div class="line"><span class="lineno">  212</span>                        <span class="keywordtype">int</span> total_for_values;</div>
+<div class="line"><span class="lineno">  213</span>                        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>)</div>
 <div class="line"><span class="lineno">  214</span>                        {</div>
-<div class="line"><span class="lineno">  215</span>                            total_for_values = int(values.size()) - 1;</div>
+<div class="line"><span class="lineno">  215</span>                            total_for_values = int(values.size());</div>
 <div class="line"><span class="lineno">  216</span>                        }</div>
-<div class="line"><span class="lineno">  217</span>                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
+<div class="line"><span class="lineno">  217</span>                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>)</div>
 <div class="line"><span class="lineno">  218</span>                        {</div>
-<div class="line"><span class="lineno">  219</span>                            <a class="code hl_variable" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
+<div class="line"><span class="lineno">  219</span>                            total_for_values = int(values.size()) - 1;</div>
 <div class="line"><span class="lineno">  220</span>                        }</div>
-<div class="line"><span class="lineno">  221</span>                    }</div>
-<div class="line"><span class="lineno">  222</span>                    <span class="keywordflow">if</span> (values.size() &gt;= 3 and (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>))</div>
-<div class="line"><span class="lineno">  223</span>                    {</div>
-<div class="line"><span class="lineno">  224</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
-<div class="line"><span class="lineno">  225</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
-<div class="line"><span class="lineno">  226</span>                    }</div>
-<div class="line"><span class="lineno">  227</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><span class="lineno">  228</span>                    {</div>
-<div class="line"><span class="lineno">  229</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">zid::NONE</a>;</div>
+<div class="line"><span class="lineno">  221</span>                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
+<div class="line"><span class="lineno">  222</span>                        {</div>
+<div class="line"><span class="lineno">  223</span>                            <a class="code hl_variable" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
+<div class="line"><span class="lineno">  224</span>                        }</div>
+<div class="line"><span class="lineno">  225</span>                    }</div>
+<div class="line"><span class="lineno">  226</span>                    <span class="keywordflow">if</span> (values.size() &gt;= 3 and (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>))</div>
+<div class="line"><span class="lineno">  227</span>                    {</div>
+<div class="line"><span class="lineno">  228</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
+<div class="line"><span class="lineno">  229</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
 <div class="line"><span class="lineno">  230</span>                    }</div>
-<div class="line"><span class="lineno">  231</span>                }</div>
-<div class="line"><span class="lineno">  232</span>            }</div>
-<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  234</span>            {</div>
-<div class="line"><span class="lineno">  235</span>                vector&lt;string&gt; values;</div>
-<div class="line"><span class="lineno">  236</span>                boost::split(values,init_zid_full,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
-<div class="line"><span class="lineno">  237</span>                <span class="keywordflow">if</span> (values[0].front() == <span class="charliteral">&#39;(&#39;</span> and isalpha(values[0][1]))</div>
-<div class="line"><span class="lineno">  238</span>                {</div>
-<div class="line"><span class="lineno">  239</span>                    <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code hl_function" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a>(values[0].substr(1,1));</div>
-<div class="line"><span class="lineno">  240</span>                    <span class="keywordtype">string</span> new_country;</div>
-<div class="line"><span class="lineno">  241</span>                    <span class="keywordflow">if</span> (values[0][3] != <span class="charliteral">&#39; &#39;</span>)</div>
-<div class="line"><span class="lineno">  242</span>                    {</div>
-<div class="line"><span class="lineno">  243</span>                        new_country = values[0].substr(3);</div>
-<div class="line"><span class="lineno">  244</span>                    }</div>
-<div class="line"><span class="lineno">  245</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  231</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  232</span>                    {</div>
+<div class="line"><span class="lineno">  233</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">zid::NONE</a>;</div>
+<div class="line"><span class="lineno">  234</span>                    }</div>
+<div class="line"><span class="lineno">  235</span>                }</div>
+<div class="line"><span class="lineno">  236</span>            }</div>
+<div class="line"><span class="lineno">  237</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  238</span>            {</div>
+<div class="line"><span class="lineno">  239</span>                vector&lt;string&gt; values;</div>
+<div class="line"><span class="lineno">  240</span>                boost::split(values,init_zid_full,boost::is_any_of(<span class="stringliteral">&quot;:&quot;</span>));</div>
+<div class="line"><span class="lineno">  241</span>                <span class="keywordflow">if</span> (values[0].front() == <span class="charliteral">&#39;(&#39;</span> and isalpha(values[0][1]))</div>
+<div class="line"><span class="lineno">  242</span>                {</div>
+<div class="line"><span class="lineno">  243</span>                    <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code hl_function" href="namespacescifir.html#a7ec42f20dc4534b6c166a5034631a116">create_zone_type</a>(values[0].substr(1,1));</div>
+<div class="line"><span class="lineno">  244</span>                    <span class="keywordtype">string</span> new_country;</div>
+<div class="line"><span class="lineno">  245</span>                    <span class="keywordflow">if</span> (values[0][3] != <span class="charliteral">&#39; &#39;</span>)</div>
 <div class="line"><span class="lineno">  246</span>                    {</div>
-<div class="line"><span class="lineno">  247</span>                        new_country = values[0].substr(4);</div>
+<div class="line"><span class="lineno">  247</span>                        new_country = values[0].substr(3);</div>
 <div class="line"><span class="lineno">  248</span>                    }</div>
-<div class="line"><span class="lineno">  249</span>                    <span class="keywordflow">if</span> (values.size() == 1 and <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">zid::COUNTRY</a>)</div>
+<div class="line"><span class="lineno">  249</span>                    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  250</span>                    {</div>
-<div class="line"><span class="lineno">  251</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
+<div class="line"><span class="lineno">  251</span>                        new_country = values[0].substr(4);</div>
 <div class="line"><span class="lineno">  252</span>                    }</div>
-<div class="line"><span class="lineno">  253</span>                    <span class="keywordflow">if</span> ((values.size() &gt;= 2 and <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>) or (values.size() &gt;= 3 and (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>)))</div>
+<div class="line"><span class="lineno">  253</span>                    <span class="keywordflow">if</span> (values.size() == 1 and <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ad6b42a6ad18320790258a0b2118b0dfc">zid::COUNTRY</a>)</div>
 <div class="line"><span class="lineno">  254</span>                    {</div>
 <div class="line"><span class="lineno">  255</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
-<div class="line"><span class="lineno">  256</span>                        <span class="keywordtype">int</span> total_for_values;</div>
-<div class="line"><span class="lineno">  257</span>                        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>)</div>
-<div class="line"><span class="lineno">  258</span>                        {</div>
-<div class="line"><span class="lineno">  259</span>                            total_for_values = int(values.size());</div>
-<div class="line"><span class="lineno">  260</span>                        }</div>
-<div class="line"><span class="lineno">  261</span>                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>)</div>
+<div class="line"><span class="lineno">  256</span>                    }</div>
+<div class="line"><span class="lineno">  257</span>                    <span class="keywordflow">if</span> ((values.size() &gt;= 2 and <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>) or (values.size() &gt;= 3 and (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>)))</div>
+<div class="line"><span class="lineno">  258</span>                    {</div>
+<div class="line"><span class="lineno">  259</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
+<div class="line"><span class="lineno">  260</span>                        <span class="keywordtype">int</span> total_for_values;</div>
+<div class="line"><span class="lineno">  261</span>                        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a0dd46d9814390ae3fa2da2a9ad0b2a67">zid::REGION</a>)</div>
 <div class="line"><span class="lineno">  262</span>                        {</div>
-<div class="line"><span class="lineno">  263</span>                            total_for_values = int(values.size()) - 1;</div>
+<div class="line"><span class="lineno">  263</span>                            total_for_values = int(values.size());</div>
 <div class="line"><span class="lineno">  264</span>                        }</div>
-<div class="line"><span class="lineno">  265</span>                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
+<div class="line"><span class="lineno">  265</span>                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>)</div>
 <div class="line"><span class="lineno">  266</span>                        {</div>
-<div class="line"><span class="lineno">  267</span>                            <a class="code hl_variable" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
+<div class="line"><span class="lineno">  267</span>                            total_for_values = int(values.size()) - 1;</div>
 <div class="line"><span class="lineno">  268</span>                        }</div>
-<div class="line"><span class="lineno">  269</span>                    }</div>
-<div class="line"><span class="lineno">  270</span>                    <span class="keywordflow">if</span> (values.size() &gt;= 3 and (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>))</div>
-<div class="line"><span class="lineno">  271</span>                    {</div>
-<div class="line"><span class="lineno">  272</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
-<div class="line"><span class="lineno">  273</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
-<div class="line"><span class="lineno">  274</span>                    }</div>
-<div class="line"><span class="lineno">  275</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><span class="lineno">  276</span>                    {</div>
-<div class="line"><span class="lineno">  277</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">zid::NONE</a>;</div>
+<div class="line"><span class="lineno">  269</span>                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; total_for_values; i++)</div>
+<div class="line"><span class="lineno">  270</span>                        {</div>
+<div class="line"><span class="lineno">  271</span>                            <a class="code hl_variable" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>.push_back(values[i]);</div>
+<div class="line"><span class="lineno">  272</span>                        }</div>
+<div class="line"><span class="lineno">  273</span>                    }</div>
+<div class="line"><span class="lineno">  274</span>                    <span class="keywordflow">if</span> (values.size() &gt;= 3 and (<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93a4244a9153bec0171d83629f04120762b">zid::ZONE</a> or <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> == <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93ae19306fb78e9371044293c47b0f00be0">zid::SETTLEMENT</a>))</div>
+<div class="line"><span class="lineno">  275</span>                    {</div>
+<div class="line"><span class="lineno">  276</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> = new_country;</div>
+<div class="line"><span class="lineno">  277</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a> = values.back();</div>
 <div class="line"><span class="lineno">  278</span>                    }</div>
-<div class="line"><span class="lineno">  279</span>                }</div>
-<div class="line"><span class="lineno">  280</span>            }</div>
-<div class="line"><span class="lineno">  281</span>        }</div>
-<div class="line"><span class="lineno">  282</span>    }</div>
+<div class="line"><span class="lineno">  279</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  280</span>                    {</div>
+<div class="line"><span class="lineno">  281</span>                        <a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a> = <a class="code hl_enumvalue" href="classscifir_1_1zid.html#aede3937fecc379a6239ec98d9e99ff93afb48e0050929503c479df9d39e874224">zid::NONE</a>;</div>
+<div class="line"><span class="lineno">  282</span>                    }</div>
+<div class="line"><span class="lineno">  283</span>                }</div>
+<div class="line"><span class="lineno">  284</span>            }</div>
+<div class="line"><span class="lineno">  285</span>        }</div>
+<div class="line"><span class="lineno">  286</span>    }</div>
 <div class="ttc" id="aclassscifir_1_1aid_html"><div class="ttname"><a href="classscifir_1_1aid.html">scifir::aid</a></div><div class="ttdoc">Class that stores astronomical ids, not as an integer but with an string as identifier....</div><div class="ttdef"><b>Definition</b> <a href="aid_8hpp_source.html#l00013">aid.hpp:14</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -931,24 +935,24 @@ Private Member Functions</h2></td></tr>
 
 <p>Returns a string representation of zid, without the string representation of his aid. </p>
 
-<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00158">158</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  159</span>    {</div>
-<div class="line"><span class="lineno">  160</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><span class="lineno">  161</span>        {</div>
-<div class="line"><span class="lineno">  162</span>            ostringstream out;</div>
-<div class="line"><span class="lineno">  163</span>            out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; <a class="code hl_function" href="namespacescifir.html#a421182d5f93abcbbaeadc7c14112bdd5">to_string</a>(<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>) &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
-<div class="line"><span class="lineno">  164</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x_region : <a class="code hl_variable" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>)</div>
-<div class="line"><span class="lineno">  165</span>            {</div>
-<div class="line"><span class="lineno">  166</span>                out &lt;&lt; x_region &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
-<div class="line"><span class="lineno">  167</span>            }</div>
-<div class="line"><span class="lineno">  168</span>            out &lt;&lt; <a class="code hl_variable" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>;</div>
-<div class="line"><span class="lineno">  169</span>            <span class="keywordflow">return</span> out.str();</div>
-<div class="line"><span class="lineno">  170</span>        }</div>
-<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  172</span>        {</div>
-<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<p class="definition">Definition at line <a class="el" href="zid_8cpp_source.html#l00162">162</a> of file <a class="el" href="zid_8cpp_source.html">zid.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>    {</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  165</span>        {</div>
+<div class="line"><span class="lineno">  166</span>            ostringstream out;</div>
+<div class="line"><span class="lineno">  167</span>            out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; <a class="code hl_function" href="namespacescifir.html#a55aef4d5616f29c80bdf521cdedc6d0a">to_string</a>(<a class="code hl_variable" href="classscifir_1_1zid.html#a0afc38577ecf81ad74164818d2c6b772">zone_type</a>) &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; <a class="code hl_variable" href="classscifir_1_1zid.html#af913eb84d4643694714120786f7fd0a0">country</a> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><span class="lineno">  168</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; x_region : <a class="code hl_variable" href="classscifir_1_1zid.html#abbc005ce6c42fee41d748760ad749a04">regions</a>)</div>
+<div class="line"><span class="lineno">  169</span>            {</div>
+<div class="line"><span class="lineno">  170</span>                out &lt;&lt; x_region &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><span class="lineno">  171</span>            }</div>
+<div class="line"><span class="lineno">  172</span>            out &lt;&lt; <a class="code hl_variable" href="classscifir_1_1zid.html#ad4b9f266b2222fc7dd186de8a08332c3">zone</a>;</div>
+<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">return</span> out.str();</div>
 <div class="line"><span class="lineno">  174</span>        }</div>
-<div class="line"><span class="lineno">  175</span>    }</div>
+<div class="line"><span class="lineno">  175</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  176</span>        {</div>
+<div class="line"><span class="lineno">  177</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  178</span>        }</div>
+<div class="line"><span class="lineno">  179</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1044,8 +1048,8 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>special_units/<a class="el" href="zid_8hpp_source.html">zid.hpp</a></li>
-<li>special_units/<a class="el" href="zid_8cpp_source.html">zid.cpp</a></li>
+<li>coordinates/<a class="el" href="zid_8hpp_source.html">zid.hpp</a></li>
+<li>coordinates/<a class="el" href="zid_8cpp_source.html">zid.cpp</a></li>
 <li>docs/dox/special_units/<a class="el" href="zid_8dox.html">zid.dox</a></li>
 </ul>
 </div><!-- contents -->
