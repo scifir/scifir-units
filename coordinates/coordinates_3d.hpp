@@ -62,8 +62,6 @@ namespace scifir
 
 	inline scalar_unit LLA_to_ECEF_x(const latitude& latitude,const longitude& longitude,scalar_unit altitude)
 	{
-		cout << "latitude:" << latitude << endl;
-		cout << "longitude:" << longitude << endl;
 		long double e_square = 0.00669437999014l;
 		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
 		altitude.change_dimensions("m");
@@ -368,7 +366,7 @@ namespace scifir
 			T y;
 			T z;
 
-		private:
+		protected:
 			void initialize_from_string(string init_coordinates_3d)
 			{
 				vector<string> values;
