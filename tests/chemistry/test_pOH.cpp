@@ -1,8 +1,8 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch2/catch_all.hpp"
-#include "../../special_units/pOH.hpp"
-#include "../../special_units/pH.hpp"
+#include "../../chemistry/pOH.hpp"
+#include "../../chemistry/pH.hpp"
 #include "../../units/base_units.hpp"
 #include "../../units/special_names.hpp"
 

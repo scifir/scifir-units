@@ -37,9 +37,7 @@
 #include "./units/coordinates/direction.hpp"
 
 #include "./units/special_units/color.hpp"
-#include "./units/special_units/pH.hpp"
 #include "./units/special_units/pixel.hpp"
-#include "./units/special_units/pOH.hpp"
 #include "./units/special_units/size_2d.hpp"
 #include "./units/special_units/size_3d.hpp"
 #include "./units/special_units/size_nd.hpp"
@@ -48,6 +46,12 @@
 #include "./units/meca_number/lab_number.hpp"
 #include "./units/meca_number/complex_number.hpp"
 #include "./units/meca_number/percentage.hpp"
+
+#include "./units/biology/body.hpp"
+#include "./units/biology/mind.hpp"
+
+#include "./units/chemistry/pH.hpp"
+#include "./units/chemistry/pOH.hpp"
 
 #include "./units/util/matrix.hpp"
 

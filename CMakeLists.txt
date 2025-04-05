@@ -83,6 +83,8 @@ endif()
 # Files to compile
 
 set(TARGET_H
+biology
+chemistry
 coordinates
 fields
 meca_number
@@ -93,7 +95,7 @@ topology
 units
 util)
 
-file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp fields/*.cpp meca_number/*.cpp nutrition/*.cpp derived_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
+file(GLOB_RECURSE TARGET_SRC biology/*.cpp chemistry/*.cpp coordinates/*.cpp fields/*.cpp meca_number/*.cpp nutrition/*.cpp derived_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
 
 # Project to build
 
@@ -267,22 +269,22 @@ if(BUILD_TESTING)
 		add_test(NAME aid COMMAND test_aid)
 		set_tests_properties(aid PROPERTIES LABELS tests)
 
-		add_executable(test_body tests/special_units/test_body.cpp)
+		add_executable(test_body tests/biology/test_body.cpp)
 		target_link_libraries(test_body PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME body COMMAND test_body)
 		set_tests_properties(body PROPERTIES LABELS tests)
 
-		add_executable(test_mind tests/special_units/test_mind.cpp)
+		add_executable(test_mind tests/biology/test_mind.cpp)
 		target_link_libraries(test_mind PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME mind COMMAND test_mind)
 		set_tests_properties(mind PROPERTIES LABELS tests)
 
-		add_executable(test_pH tests/special_units/test_pH.cpp)
+		add_executable(test_pH tests/chemistry/test_pH.cpp)
 		target_link_libraries(test_pH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME pH COMMAND test_pH)
 		set_tests_properties(pH PROPERTIES LABELS tests)
 
-		add_executable(test_pOH tests/special_units/test_pOH.cpp)
+		add_executable(test_pOH tests/chemistry/test_pOH.cpp)
 		target_link_libraries(test_pOH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME pOH COMMAND test_pOH)
 		set_tests_properties(pOH PROPERTIES LABELS tests)

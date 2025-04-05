@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch2/catch_all.hpp"
-#include "../../special_units/body.hpp"
+#include "../../biology/body.hpp"
 
 #include <iostream>
 #include <sstream>
