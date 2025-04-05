@@ -2,6 +2,7 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../coordinates/coordinates_2dr.hpp"
+#include "../../units/unit_abbreviation.hpp"
 
 using namespace std;
 using namespace scifir;
@@ -22,12 +23,6 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		CHECK(to_string(b) == "(100 m,10 m;0\u00B0)");
 		coordinates_2dr<> b2(100_m,angle(90),angle(0));
 		CHECK(to_string(b2) == "(0 m,100 m;0\u00B0)");
-		point_2d<> c2(100_m,1_m);
-		coordinates_2dr<> c(c2,angle(0));
-		CHECK(to_string(c) == "(100 m,1 m;0\u00B0)");
-		point_2d<> c3(100_m,1_m);
-		coordinates_2dr<> c4(std::move(c3),angle(0));
-		CHECK(to_string(c4) == "(100 m,1 m;0\u00B0)");
 		coordinates_2d<> c5(100_m,1_m);
 		coordinates_2dr<> c6(c5,angle(0));
 		CHECK(to_string(c6) == "(100 m,1 m;0\u00B0)");
@@ -38,6 +33,8 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		CHECK(to_string(d) == "(1 m,5 m;0\u00B0)");
 		coordinates_2dr<> e("100 m,90\u00B0;0\u00B0");
 		CHECK(to_string(e) == "(0 m,100 m;0\u00B0)");
+		coordinates_2dr<> f(",;");
+		CHECK(to_string(f) == "(0 m,0 m;0\u00B0)");
 	}
 
 	SECTION("Constructors of coordinates_2dr<float> class")
@@ -54,12 +51,6 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		CHECK(to_string(b) == "(100,10;40\u00B0)");
 		coordinates_2dr<float> b2(100,angle(90.0f),angle(40.0f));
 		CHECK(to_string(b2) == "(0,100;40\u00B0)");
-		point_2d<float> c2(100,1);
-		coordinates_2dr<float> c(c2,angle(40.0f));
-		CHECK(to_string(c) == "(100,1;40\u00B0)");
-		point_2d<float> c4(100,1);
-		coordinates_2dr<float> c3(std::move(c4),angle(40.0f));
-		CHECK(to_string(c3) == "(100,1;40\u00B0)");
 		coordinates_2d<float> c6(100,1);
 		coordinates_2dr<float> c5(c6,angle(40.0f));
 		CHECK(to_string(c5) == "(100,1;40\u00B0)");
@@ -72,6 +63,8 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		CHECK(to_string(e) == "(1,5;40\u00B0)");
 		coordinates_2dr<float> f("100,90\u00B0;40\u00B0");
 		CHECK(to_string(f) == "(0,100;40\u00B0)");
+		coordinates_2dr<float> g(",;");
+		CHECK(to_string(g) == "(0,0;0\u00B0)");
 	}
 
 	SECTION("Assignments of coordinates_2dr<> class")
@@ -85,13 +78,6 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		c = move(d);
 		CHECK(to_string(c) == "(30 m,4 m;40\u00B0)");
 		coordinates_2dr<> e(10_m,6_m,angle(40.0f));
-		point_2d<> f(15_m,2_m);
-		e = f;
-		CHECK(to_string(e) == "(15 m,2 m;40\u00B0)");
-		coordinates_2dr<> e2(10_m,6_m,angle(40.0f));
-		point_2d<> f2(15_m,2_m);
-		e2 = std::move(f2);
-		CHECK(to_string(e2) == "(15 m,2 m;40\u00B0)");
 		coordinates_2dr<> g(10_m,6_m,angle(40.0f));
 		coordinates_2d<> h(15_m,2_m);
 		g = h;
@@ -119,13 +105,6 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		c = move(d);
 		CHECK(to_string(c) == "(30,4;40\u00B0)");
 		coordinates_2dr<float> e(10,6,angle(40.0f));
-		point_2d<float> f(15,2);
-		e = f;
-		CHECK(to_string(e) == "(15,2;40\u00B0)");
-		coordinates_2dr<float> e2(10,6,angle(40.0f));
-		point_2d<float> f2(15,2);
-		e2 = std::move(f2);
-		CHECK(to_string(e2) == "(15,2;40\u00B0)");
 		coordinates_2dr<float> g(10,6,angle(40.0f));
 		coordinates_2d<float> h(15,2);
 		g = h;
@@ -140,6 +119,14 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		coordinates_2dr<float> j;
 		j = "100,90\u00B0;0\u00B0";
 		CHECK(to_string(j) == "(0,100;0\u00B0)");
+	}
+
+	SECTION("Origin of coordinates_2dr<> class")
+	{
+		coordinates_2dr<> a(2_m,3_m,20_deg);
+		coordinates_2dr<> b = coordinates_2dr<>::origin(a,coordinates_2dr<>(1_m,8_m,30_deg));
+		CHECK(b.x == 3_m);
+		CHECK(b.y == 11_m);
 	}
 
 	SECTION("Polar coordinates of coordinates_2dr<> class")
@@ -227,10 +214,6 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		coordinates_2dr<> a(10_m,10_m,angle(40.0f));
 		coordinates_2dr<> b(15_m,10_m,angle(40.0f));
 		CHECK(to_string(distance(a,b)) == "5 m");
-		coordinates_2dr<> c(20_m,15_m,angle(40.0f));
-		point_2d<> d(35_m,10_m);
-		CHECK(to_string(distance(c,d)) == "15.81 m");
-		CHECK(to_string(distance(d,c)) == "15.81 m");
 		coordinates_2dr<> e(20_m,15_m,angle(40.0f));
 		coordinates_2d<> f(35_m,10_m);
 		CHECK(to_string(distance(e,f)) == "15.81 m");
@@ -242,10 +225,6 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		coordinates_2dr<float> a(10,10,angle(40.0f));
 		coordinates_2dr<float> b(15,10,angle(40.0f));
 		CHECK(display_float(distance(a,b),2) == "5");
-		coordinates_2dr<float> c(20,15,angle(40.0f));
-		point_2d<float> d(35,10);
-		CHECK(display_float(distance(c,d),2) == "15.81");
-		CHECK(display_float(distance(d,c),2) == "15.81");
 		coordinates_2dr<float> e(20,15,angle(40.0f));
 		coordinates_2d<float> f(35,10);
 		CHECK(display_float(distance(e,f),2) == "15.81");
@@ -260,12 +239,6 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
-		point_2d d(7_m,3_m);
-		point_2d e(5_m,1_m);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("Relational operators of coordinates_2dr<float> class")
@@ -276,12 +249,6 @@ TEST_CASE("class coordinates_2dr<T> and coordinates_2dr<float>")
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
-		point_2d<float> d(7,3);
-		point_2d<float> e(5,1);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("String operators of coordinates_2dr<> class")

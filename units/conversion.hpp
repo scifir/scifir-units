@@ -4,6 +4,7 @@
 #include "./dimension.hpp"
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -12,27 +13,36 @@ namespace scifir
 	class conversion
 	{
 		public:
+			enum type { NONE, HECTARE, DYNE, BARYE, BAR, MILLIBAR, CENTIBAR, DECIBAR, KILOBAR, MEGABAR, ATMOSPHERE, MILIMETRES_MERCURY, TORRICELLI, CUBIC_CENTIMETRES, FAHRENHEIT, WATT_HOUR, KILOWATT_HOUR,
+
+			/* Imperial units */
+			IMPERIAL_TWIP, IMPERIAL_THOU, IMPERIAL_BARLEYCORN, IMPERIAL_INCH, IMPERIAL_HAND, IMPERIAL_FOOT, IMPERIAL_YARD, IMPERIAL_CHAIN, IMPERIAL_FURLONG, IMPERIAL_MILE, IMPERIAL_LEAGUE, IMPERIAL_FATHOM, IMPERIAL_CABLE, IMPERIAL_NAUTICAL_MILE, IMPERIAL_LINK, IMPERIAL_ROD, IMPERIAL_PERCH, IMPERIAL_ROOD, IMPERIAL_ACRE, IMPERIAL_SQUARE_MILE, IMPERIAL_FLUID_OUNCE, IMPERIAL_GILL, IMPERIAL_PINT, IMPERIAL_QUART, IMPERIAL_GALLON, IMPERIAL_MINIM, IMPERIAL_FLUID_SCRUPLE, IMPERIAL_FLUID_DRACHM, IMPERIAL_GRAIN, IMPERIAL_DRACHM, IMPERIAL_OUNCE, IMPERIAL_POUND, IMPERIAL_STONE, IMPERIAL_QUARTER, IMPERIAL_HUNDREDWEIGHT, IMPERIAL_TON, IMPERIAL_SLUG, IMPERIAL_HORSEPOWER,
+
+			/* US customary units of measurement */
+			US_TWIP, US_MIL, US_POINT, US_PICA, US_INCH, US_FOOT, US_YARD, US_MILE, US_LEAGUE, US_FATHOM, US_CABLE, US_NAUTICAL_MILE, US_LINK, US_ROD, US_CHAIN, US_FURLONG, US_SQUARE_FOOT, US_SQUARE_CHAIN, US_ACRE, US_SECTION, US_SURVEY_TOWNSHIP, US_CUBIC_INCH, US_CUBIC_FOOT, US_CUBIC_YARD, US_ACRE_FOOT, US_MINIM, US_FLUID_DRAM, US_TEASPOON, US_TABLESPOON, US_FLUID_OUNCE, US_SHOT, US_GILL, US_CUP, US_PINT, US_QUART, US_POTTLE, US_GALLON, US_BARREL, US_OIL_BARREL, US_HOGSHEAD,  US_PECK, US_BUSHEL, US_GRAIN, US_DRAM, US_OUNCE, US_POUND, US_SHORT_HUNDREDWEIGHT, US_LONG_HUNDREDWEIGHT, US_SHORT_TON, US_LONG_TON, US_PENNYWEIGHT, US_TROY_OUNCE, US_TROY_POUND, US_DESSERTSPOON,  US_HAND, US_RACK, US_BOARD_FOOT, US_SLUG, US_POUNDAL, US_KIP, US_FOOT_POUND, US_HORSEPOWER, US_REFRIGERATION_TON, US_INCH_MERCURY, US_POUND_PER_SQUARE_INCH, US_POUND_FOOT,
+
+			QUINTAL, CARAT, QUAD, BRITISH_THERMAL_UNIT, CUSTOM };
+
 			conversion();
-			explicit conversion(const string& new_unit_to, float new_factor);
-			explicit conversion(const string& new_unit_to, double new_factor);
-			explicit conversion(const string& new_unit_to, long double new_factor);
+			explicit conversion(const conversion::type new_conversion_type);
 
-			inline const long double& get_factor() const
-			{
-				return factor;
-			}
+			long double get_conversion_factor() const;
+			vector<dimension> get_conversion_dimensions() const;
 
-			inline const string& get_unit_to() const
-			{
-				return unit_to;
-			}
+			bool is_special_conversion() const;
 
-		private:
-			string unit_to;
-			long double factor;
+			conversion::type conversion_type;
 	};
 
-	extern map<string, conversion> get_conversion;
+	inline float fahrenheit_to_kelvin(float x)
+	{
+		return (x - 32.0f) * (5.0f / 9.0f) + 273.15f;
+	}
+
+	inline float kelvin_to_fahrenheit(float x)
+	{
+		return (x - 273.15f) * 1.8f + 32.0f;
+	}
 }
 
 #endif // SCIFIR_UNITS_UNITS_CONVERSION_HPP_INCLUDED

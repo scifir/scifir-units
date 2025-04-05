@@ -5,6 +5,8 @@
 
 #include "boost/algorithm/string.hpp"
 
+#include "unicode/uchar.h"
+
 #include <algorithm>
 #include <cstring>
 #include <cstddef>
@@ -30,7 +32,7 @@ namespace scifir
 		public:
 			enum type : int8_t
 			{
-				NONE, METRE, DEGREE, RADIAN, STERADIAN, SECOND, GRAM, COULOMB, KELVIN, CELSIUS, MOLE, CANDELA, BYTE, BIT, HERTZ, NEWTON, PASCAL, JOULE, WATT, AMPERE, VOLT, FARAD, OHM, SIEMENS, WEBER, TESLA, HENRY, LUMEN, LUX, BECQUEREL, GRAY, SIEVERT, KATAL, ANGSTROM, LITRE, MINUTE, HOUR, DAY, LIGHT_YEAR, ASTRONOMICAL_UNIT, PARSEC, ELECTRON_VOLT, DALTON, ATOMIC_MASS_UNIT, BARN, MOLARITY, PARTICLES, CUSTOM, CUSTOM_BASIC, CUSTOM_FULL_SYMBOL, MONEY, PIXEL, MEMO, INTERNATIONAL_UNIT, MILLIEQUIVALENT
+				NONE, METRE, DEGREE, RADIAN, STERADIAN, SECOND, GRAM, COULOMB, KELVIN, CELSIUS, MOLE, CANDELA, BYTE, BIT, HERTZ, NEWTON, PASCAL, JOULE, WATT, AMPERE, VOLT, FARAD, OHM, SIEMENS, WEBER, TESLA, HENRY, LUMEN, LUX, BECQUEREL, GRAY, SIEVERT, KATAL, ANGSTROM, LITRE, MINUTE, HOUR, DAY, LIGHT_YEAR, ASTRONOMICAL_UNIT, PARSEC, ELECTRON_VOLT, DALTON, ATOMIC_MASS_UNIT, BARN, MOLARITY, PARTICLES, CUSTOM, CUSTOM_BASIC, CUSTOM_FULL_SYMBOL, MONEY, PIXEL, MEMO, INTERNATIONAL_UNIT, MILLIEQUIVALENT, DECIBEL
 			};
 
 			enum position : int8_t {NO_POSITION, NUMERATOR, DENOMINATOR};
@@ -171,6 +173,8 @@ namespace scifir
 	string to_string(const dimension& x);
 	string to_string(const vector<dimension>& x_dimensions,bool with_brackets = false);
 
+	string to_latex(const vector<dimension>& x_dimensions,bool with_brackets = false);
+
 	vector<dimension> create_base_dimensions(const vector<dimension>& x);
 	vector<dimension> create_base_dimensions(const vector<dimension>& x,long double& value);
 
@@ -182,6 +186,8 @@ namespace scifir
 
 	vector<dimension> normalize_dimensions(const vector<dimension>& x);
 	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value);
+
+	bool is_dimension_char(const UChar32& x);
 
 	bool common_dimension(const dimension& x,const dimension& y);
 	bool equal_dimensions(const string& init_dimensions_x,const string& init_dimensions_y);

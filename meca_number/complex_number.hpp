@@ -15,7 +15,7 @@ using namespace std;
 
 namespace scifir
 {
-	template<typename T>
+	template<class T>
 	class complex_number
 	{
 		public:
@@ -28,13 +28,13 @@ namespace scifir
 			complex_number(complex_number<T>&& x) : real(std::move(x.real)),imaginary(std::move(x.imaginary))
 			{}
 
-			explicit complex_number(const T& x,const T& y) : real(x),imaginary(y)
+			explicit complex_number(const scalar_unit& x,const scalar_unit& y) : real(x),imaginary(y)
 			{}
 
-			explicit complex_number(const string& x,const string& y) : real(x),imaginary(y)
+			explicit complex_number(const string& x,const string& y) : real(T(x)),imaginary(T(y))
 			{}
 
-			explicit complex_number(const string& init_complex_number)
+			explicit complex_number(const string& init_complex_number) : complex_number()
 			{
 				if (init_complex_number.find("+") != string::npos or init_complex_number.find("-") != string::npos)
 				{
@@ -46,8 +46,8 @@ namespace scifir
 						boost::trim(numbers[1]);
 						if (numbers[1].substr(numbers[1].length() - 3) == "(i)")
 						{
-							real = scalar_unit(numbers[0]);
-							imaginary = scalar_unit(numbers[1].substr(0,numbers[1].length() - 3));
+							real = T(numbers[0]);
+							imaginary = T(numbers[1].substr(0,numbers[1].length() - 3));
 							if (init_complex_number.find("-") != string::npos)
 							{
 								imaginary *= -1;
@@ -81,14 +81,16 @@ namespace scifir
 				return *this;
 			}
 
-			complex_number<T> operator +(const complex_number<T>& x) const
+			template<typename U>
+			complex_number<T> operator +(const complex_number<U>& x) const
 			{
-				return complex_number<T>(real + x.real,imaginary + x.imaginary);
+				return complex_number<T>(T(real + x.real),T(imaginary + x.imaginary));
 			}
 
-			complex_number<T> operator -(const complex_number<T>& x) const
+			template<typename U>
+			complex_number<T> operator -(const complex_number<U>& x) const
 			{
-				return complex_number<T>(real - x.real,imaginary - x.imaginary);
+				return complex_number<T>(T(real - x.real),T(imaginary - x.imaginary));
 			}
 
 			template<typename U>
@@ -105,13 +107,15 @@ namespace scifir
 				return complex_number<scalar_unit>(new_real,new_imaginary);
 			}
 
-			void operator +=(const complex_number<T>& x)
+			template<typename U>
+			void operator +=(const complex_number<U>& x)
 			{
 				real += x.real;
 				imaginary += x.imaginary;
 			}
 
-			void operator -=(const complex_number<T>& x)
+			template<typename U>
+			void operator -=(const complex_number<U>& x)
 			{
 				real -= x.real;
 				imaginary -= x.imaginary;
@@ -124,14 +128,14 @@ namespace scifir
 
 			T get_r() const
 			{
-				return scifir::sqrt((real^2) + (imaginary^2));
+				return T(scifir::sqrt(scifir::pow(real,2) + scifir::pow(imaginary,2)));
 			}
 
 			angle get_argument() const
 			{
 				if (imaginary != 0 and real > 0)
 				{
-					return angle(2 * scifir::atan(float(imaginary / (real + (scifir::sqrt((real^2) + (imaginary^2)))))));
+					return angle(2 * scifir::atan(float(imaginary / (real + scifir::sqrt((scifir::pow(real,2) + scifir::pow(imaginary,2)))))));
 				}
 				else if (real < 0 and imaginary == 0)
 				{
@@ -181,7 +185,7 @@ namespace scifir
 	template<typename T>
 	T abs(const complex_number<T>& x)
 	{
-		return scifir::sqrt((x.real^2) + (x.imaginary^2));
+		return T(scifir::sqrt(scifir::pow(x.real,2) + scifir::pow(x.imaginary,2)));
 	}
 
 	template<typename T>

@@ -22,12 +22,6 @@
 * \fn coordinates_3d::coordinates_3d(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
 * \brief Constructor. Initializes x, y and z with geographical coordinates. Currently geographical coordinates aren't ready.
 
-* \fn coordinates_3d::coordinates_3d(const point_3d<T>& x_point)
-* \brief Constructor. Initializes x, y and z to the x, y and z of x_point.
-
-* \fn coordinates_3d::coordinates_3d(point_3d<T>&& x_point)
-* \brief Constructor. Initializes x, y and z moving the x, y and z of x_point.
-
 * \fn coordinates_3d::coordinates_3d(const string& init_coordinates_3d)
 * \brief Constructor. Initializes x, y and z with the initialization string of coordinates_3d init_coordinates_3d.
 
@@ -36,12 +30,6 @@
 
 * \fn coordinates_3d<T>& coordinates_3d::operator =(coordinates_3d<T>&& x_coordinates)
 * \brief Move assignment. Assigns x, y and z moved from the x, y and z of x_coordinates.
-
-* \fn coordinates_3d<T>& coordinates_3d::operator =(const point_3d<T>& x_point)
-* \brief Assignment. Assigns x, y and z to the same values as the x, y and z of x_point.
-
-* \fn coordinates_3d<T>& coordinates_3d::operator =(point_3d<T>&& x_point)
-* \brief Assignment. Assigns x, y and z moved from the x, y and z of x_point.
 
 * \fn coordinates_3d<T>& coordinates_3d::operator =(const string& init_coordinates_3d)
 * \brief Assignment. Assigns x, y and z to the values specified in the initialization string of coordinates_3d init_coordinates_3d.
@@ -59,13 +47,13 @@
 * \brief Returns the value of phi in spherical coordinates.
 
 * \fn angle coordinates_3d::get_latitude() const
-* \brief Returns the latitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+* \brief Returns the latitude in LLA geographical coordinates. In this case, coordinates_3d represents all the Earth inside an ellipsoid as in the standard WGS84.
 
 * \fn angle coordinates_3d::get_longitude() const
-* \brief Returns the longitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+* \brief Returns the longitude in LLA geographical coordinates. In this case, coordinates_3d represents all the Earth inside an ellipsoid as in the standard WGS84.
 
-* \fn T coordinates_3d::get_altitude() const
-* \brief Returns the altitude in geographical coordinates. In this case, coordinates_3d represents all the astronomical object surrounded by an imaginary sphere of the geographical coordinates.
+* \fn scalar_unit coordinates_3d::get_altitude() const
+* \brief Returns the altitude in LLA geographical coordinates. In this case, coordinates_3d represents all the Earth inside an ellipsoid as in the standard WGS84.
 
 * \fn void coordinates_3d::set_position(const T& new_x,const T& new_y,const T& new_z)
 * \brief Sets x, y and z to the new_x, new_y and new_z.
@@ -151,12 +139,6 @@
 * \fn scifir::coordinates_3d<float>::coordinates_3d(const angle& new_latitude,const angle& new_longitude,float new_altitude)
 * \brief Constructor. Initializes x, y and z with geographical coordinates. Currently geographical coordinates aren't ready.
 
-* \fn scifir::coordinates_3d<float>::coordinates_3d(const point_3d<float>& x_point)
-* \brief Constructor. Initializes x, y and z to the x, y and z of x_point.
-
-* \fn scifir::coordinates_3d<float>::coordinates_3d(point_3d<float>&& x_point)
-* \brief Constructor. Initializes x, y and z moving the x, y and z of x_point.
-
 * \fn scifir::coordinates_3d<float>::coordinates_3d(const string& init_coordinates_3d)
 * \brief Constructor. Initializes x, y and z with the initialization string of coordinates_3d init_coordinates_3d.
 
@@ -165,12 +147,6 @@
 
 * \fn coordinates_3d<float>& scifir::coordinates_3d<float>::operator =(coordinates_3d<float>&& x_coordinates)
 * \brief Move assignment. Assigns x, y and z moved from the x, y and z of x_coordinates.
-
-* \fn coordinates_3d<float>& scifir::coordinates_3d<float>::operator =(const point_3d<float>& x_point)
-* \brief Assignment. Assigns x, y and z to the same values as the x, y and z of x_point.
-
-* \fn coordinates_3d<float>& scifir::coordinates_3d<float>::operator =(point_3d<float>&& x_point)
-* \brief Assignment. Assigns x, y and z moved from the x, y and z of x_point.
 
 * \fn coordinates_3d<float>& scifir::coordinates_3d<float>::operator =(const string& init_coordinates_3d)
 * \brief Assignment. Assigns x, y and z to the values specified in the initialization string of coordinates_3d init_coordinates_3d.
@@ -267,18 +243,6 @@
 
 * \fn float scifir::distance(const coordinates_3d<float>& x,const coordinates_3d<float>& y)
 * \brief Calculates the distance between two coordinates_3d<float>.
-
-* \fn T scifir::distance(const coordinates_3d<T>& x,const point_3d<U>& y)
-* \brief Calculates the distance between a coordinates_3d and a point_3d.
-
-* \fn float scifir::distance(const coordinates_3d<float>& x,const point_3d<float>& y)
-* \brief Calculates the distance between a coordinates_3d<float> and a point_3d<float>.
-
-* \fn T scifir::distance(const point_3d<T>& x,const coordinates_3d<U>& y)
-* \brief Calculates the distance between a coordinates_3d and a point_3d.
-
-* \fn float scifir::distance(const point_3d<float>& x,const coordinates_3d<float>& y)
-* \brief Calculates the distance between a coordinates_3d<float> and a point_3d<float>.
 
 * \fn scalar_unit scifir::cartesian_3d_to_cylindrical_p(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
 * \brief Returns the p coordinate of the cylindrical coordinates given the x, y and z of cartesian coordinates in 3D.
@@ -393,18 +357,6 @@
 
 * \fn bool operator !=(const scifir::coordinates_3d<T>& x,const scifir::coordinates_3d<U>& y)
 * \brief Returns true if both coordinates are different.
-
-* \fn bool operator ==(const scifir::coordinates_3d<T>& x,const scifir::point_3d<U>& y)
-* \brief Returns true if the coordinates and the point are equal in the three components.
-
-* \fn bool operator !=(const scifir::coordinates_3d<T>& x,const scifir::point_3d<U>& y)
-* \brief Returns true if the coordinates and the point are different.
-
-* \fn bool operator ==(const scifir::point_3d<T>& x,const scifir::coordinates_3d<U>& y)
-* \brief Returns true if the coordinates and the point are equal in the three components.
-
-* \fn bool operator !=(const scifir::point_3d<T>& x,const scifir::coordinates_3d<U> y)
-* \brief Returns true if the coordinates and the point are different.
 
 * \fn bool operator ==(const scifir::coordinates_3d<T>& x, const string& init_coordinates_3d)
 * \brief Returns true if the coordinates and the initialization string of coordinates_3d represent the same coordinates.

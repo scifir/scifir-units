@@ -1,106 +1,690 @@
 #include "./conversion.hpp"
-#include "./dimension.hpp"
-
-#include <string>
 
 using namespace std;
 
 namespace scifir
 {
-	conversion::conversion() : unit_to(),factor()
+	conversion::conversion() : conversion_type(conversion::NONE)
 	{}
 
-	conversion::conversion(const string& new_unit_to, float new_factor) : unit_to(new_unit_to),factor((long double)new_factor)
+	conversion::conversion(const conversion::type new_conversion_type) : conversion_type(new_conversion_type)
 	{}
 
-	conversion::conversion(const string& new_unit_to, double new_factor) : unit_to(new_unit_to),factor((long double)new_factor)
-	{}
-
-	conversion::conversion(const string& new_unit_to, long double new_factor) : unit_to(new_unit_to),factor(new_factor)
-	{}
-
-	map<string, conversion> get_conversion
+	long double conversion::get_conversion_factor() const
 	{
-		// Common units
-		{"ha", conversion("hm2", 1.0L)}, // Hectare
-		{"dyn", conversion("N", 0.00001L)}, // Dyne
-		{"Ba", conversion("Pa", 0.1L)}, // Barye
-		{"bar", conversion("Pa", 100000.0L)}, // Bar
-		{"atm", conversion("Pa", 101325.0L)}, // Atmosphere
-		{"mmHg", conversion("Pa", 133.322387415L)}, // mmHg
-		{"Torr", conversion("Pa", 101325.0L / 760.0L)}, // Torricelli
-		// England units
-		{"in", conversion("mm", 25.4L)},
-		{"inch", conversion("mm", 25.4L)},
-		{"ft", conversion("m", 0.3048L)},
-		{"foot", conversion("m", 0.3048L)},
-		{"yd", conversion("m", 0.9144L)},
-		{"yard", conversion("m", 0.9144L)},
-		{"mi", conversion("km", 1.609L)},
-		{"mile", conversion("km", 1.609L)},
-		{"acre", conversion("hm2", 0.4047L)},
-		{"gal(us)", conversion("", 3.785L)},
-		{"gallon(us)", conversion("", 3.785L)},
-		{"fluid_ounce(us)", conversion("m", 29.5735295641119L)},
-		{"quart(us)", conversion("", 0.94635294605158L)},
-		{"pint(us)", conversion("", 0.47317647302579L)},
-		{"gal(imperial)", conversion("", 4.54609000011111L)},
-		{"gallon(imperial)", conversion("", 4.54609000011111L)},
-		{"fluid_ounce(imperial)", conversion("m", 28.4130625006944L)},
-		{"quart(imperial)", conversion("", 1.13652250002778L)},
-		{"pint(imperial)", conversion("", 0.568261250013888L)},
-		{"cup(us)", conversion("m", 236.588236512895L)},
-		{"tablespoon(us)", conversion("m", 14.7867647820559L)},
-		{"teaspoon(us)", conversion("m", 4.92892159401865L)},
-		{"cup(imperial)", conversion("m", 284.130625014338L)},
-		{"tablespoon(imperial)", conversion("m", 17.7581640707895L)},
-		{"teaspoon(imperial)", conversion("m", 5.91938802359649L)},
-		{"cup", conversion("m", 250.0L)},
-		{"tablespoon", conversion("m", 15.0000000147868L)},
-		{"teaspoon", conversion("m", 5.00000000027252L)},
-		{"barrel(us)", conversion("", 119.240471202499L)},
-		{"barrel(imperial)", conversion("", 163.659240008909L)},
-		{"barrel(us_fed)", conversion("", 117.347765310396L)},
-		{"gill(us)", conversion("m", 118.294118256447L)},
-		{"gill(imperial)", conversion("m", 142.065312507169L)},
-		{"shot", conversion("m", 44.3602943461678L)},
-		{"oz", conversion("g", 28.35L)},
-		{"ounce", conversion("g", 28.35L)},
-		{"lb", conversion("kg", 0.4536L)},
-		{"pound", conversion("kg", 0.4536L)},
-		{"quarter(us)",conversion("kg",11.3398092595095L)},
-		{"quarter(imperial)",conversion("kg",12.7005863706506L)},
-		{"ton", conversion("kg", 1000.0L)},
-		{"ton(us)", conversion("kg", 907.184740760757L)},
-		{"ton(imperial)", conversion("kg", 1016.04690965205L)},
-		{"stone(us)", conversion("kg", 5.66990462975473L)},
-		{"stone(imperial)", conversion("kg", 6.3502931853253L)},
-		{"quintal", conversion("kg", 100.000000083915L)},
-		{"carat", conversion("g", 0.2L)},
-		{"grain", conversion("g", 0.0647989100543398L)},
-		{"lbf", conversion("N", 4.448L)},
-		{"pound_force", conversion("N", 4.448L)},
-		{"tnf", conversion("kN", 8.896L)},
-		{"ton_force", conversion("kN", 8.896L)},
-		{"psi", conversion("Pa", 6894.76L)},
-		{"Btu", conversion("J", 1055.0L)},
-		{"ft-lbf", conversion("J", 1356.0L)},
-		{"foot_pound_force", conversion("J", 1356.0L)},
-		{"Wh", conversion("J", 3600.0L)},
-		{"kWh", conversion("J", 3600000.0L)},
-		{"HP", conversion("kW", 0.7355L)},
-		{"hp", conversion("kW", 0.7457L)},
-		{"�C", conversion("K", 1.0L)},
-		{"�F", conversion("K", 5.0L / 9.0L)},
-		{"bit", conversion("B", 1.0L / 8.0L)},
-		{"kbit", conversion("B", 125.0L)},
-		{"Mbit", conversion("kB", 125.0L)},
-		{"Gbit", conversion("MB", 125.0L)},
-		{"Tbit", conversion("GB", 125.0L)},
-		{"Pbit", conversion("TB", 125.0L)},
-		{"Ebit", conversion("PB", 125.0L)},
-		{"Zbit", conversion("EB", 125.0L)},
-		{"Ybit", conversion("ZB", 125.0L)},
-		{"cc", conversion("mL", 1.0L)}
-	};
+		switch(conversion_type)
+		{
+			case conversion::NONE:
+				return 0.0L;
+			case conversion::HECTARE:
+				return 1.0L;
+			case conversion::DYNE:
+				return 1.0L;
+			case conversion::BARYE:
+				return 1.0L;
+			case conversion::BAR:
+				return 100000.0L;
+			case conversion::MILLIBAR:
+				return 100.0L;
+			case conversion::CENTIBAR:
+				return 1000.0L;
+			case conversion::DECIBAR:
+				return 10000.0L;
+			case conversion::KILOBAR:
+				return 100000000.0L;
+			case conversion::MEGABAR:
+				return 100000000000.0L;
+			case conversion::ATMOSPHERE:
+				return 101325.0L;
+			case conversion::MILIMETRES_MERCURY:
+				return 133.322387415L;
+			case conversion::TORRICELLI:
+				return 101325.0L / 760.0L;
+			case conversion::CUBIC_CENTIMETRES:
+				return 1.0L;
+			case conversion::FAHRENHEIT:
+				return 1.0L;
+			case conversion::WATT_HOUR:
+				return 3600.0L;
+			case conversion::KILOWATT_HOUR:
+				return 3600000.0L;
+			case conversion::IMPERIAL_TWIP:
+				return 0.0000176389L;
+			case conversion::IMPERIAL_THOU:
+				return 0.0000254L;
+			case conversion::IMPERIAL_BARLEYCORN:
+				return 0.0084667L;
+			case conversion::IMPERIAL_INCH:
+				return 0.0254L;
+			case conversion::IMPERIAL_HAND:
+				return 0.1016L;
+			case conversion::IMPERIAL_FOOT:
+				return 0.3048L;
+			case conversion::IMPERIAL_YARD:
+				return 0.9144L;
+			case conversion::IMPERIAL_CHAIN:
+				return 20.1168L;
+			case conversion::IMPERIAL_FURLONG:
+				return 201.168L;
+			case conversion::IMPERIAL_MILE:
+				return 1609.344L;
+			case conversion::IMPERIAL_LEAGUE:
+				return 4828.032L;
+			case conversion::IMPERIAL_FATHOM:
+				return 1.852L;
+			case conversion::IMPERIAL_CABLE:
+				return 185.2L;
+			case conversion::IMPERIAL_NAUTICAL_MILE:
+				return 1852.0L;
+			case conversion::IMPERIAL_LINK:
+				return 0.201168L;
+			case conversion::IMPERIAL_ROD:
+				return 5.0292L;
+			case conversion::IMPERIAL_PERCH:
+				return 25.29285264L;
+			case conversion::IMPERIAL_ROOD:
+				return 1011.7141056L;
+			case conversion::IMPERIAL_ACRE:
+				return 4046.8564224L;
+			case conversion::IMPERIAL_SQUARE_MILE:
+				return 2589988.110336L;
+			case conversion::IMPERIAL_FLUID_OUNCE:
+				return 28.4130625L;
+			case conversion::IMPERIAL_GILL:
+				return 142.0653125L;
+			case conversion::IMPERIAL_PINT:
+				return 568.26125L;
+			case conversion::IMPERIAL_QUART:
+				return 1136.5225L;
+			case conversion::IMPERIAL_GALLON:
+				return 4546.09L;
+			case conversion::IMPERIAL_MINIM:
+				return 59.1938802083L;
+			case conversion::IMPERIAL_FLUID_SCRUPLE:
+				return 1.18387760416L;
+			case conversion::IMPERIAL_FLUID_DRACHM:
+				return 3.5516328125L;
+			case conversion::IMPERIAL_GRAIN:
+				return 64.79891L;
+			case conversion::IMPERIAL_DRACHM:
+				return 1.7718451953125L;
+			case conversion::IMPERIAL_OUNCE:
+				return 28.349523125L;
+			case conversion::IMPERIAL_POUND:
+				return 0.45359237L;
+			case conversion::IMPERIAL_STONE:
+				return 6.35029318L;
+			case conversion::IMPERIAL_QUARTER:
+				return 12.70058636L;
+			case conversion::IMPERIAL_HUNDREDWEIGHT:
+				return 50.80234544L;
+			case conversion::IMPERIAL_TON:
+				return 1016.0469088L;
+			case conversion::IMPERIAL_SLUG:
+				return 14.59390294L;
+			case conversion::IMPERIAL_HORSEPOWER:
+				return 745.7L;
+			case conversion::US_TWIP:
+				return (25.4L / 1440.0L);
+			case conversion::US_MIL:
+				return 25.4L;
+			case conversion::US_POINT:
+				return (127.0L / 360.0L);
+			case conversion::US_PICA:
+				return (127.0L / 30.0L);
+			case conversion::US_INCH:
+				return 25.4L;
+			case conversion::US_FOOT:
+				return 0.3048L;
+			case conversion::US_YARD:
+				return 0.9144L;
+			case conversion::US_MILE:
+				return 1.609344L;
+			case conversion::US_LEAGUE:
+				return 4.828032L;
+			case conversion::US_FATHOM:
+				return (1143.0L / 625.0L);
+			case conversion::US_CABLE:
+				return (3429.0L / 15625.0L);
+			case conversion::US_NAUTICAL_MILE:
+				return 1.852L;
+			case conversion::US_LINK:
+				return 0.201168L;
+			case conversion::US_ROD:
+				return 5.0292L;
+			case conversion::US_CHAIN:
+				return 20.1168L;
+			case conversion::US_FURLONG:
+				return 201.168L;
+			case conversion::US_SQUARE_FOOT:
+				return 0.09290341L;
+			case conversion::US_SQUARE_CHAIN:
+				return 404.68564224L;
+			case conversion::US_ACRE:
+				return 4046.8564224L;
+			case conversion::US_SECTION:
+				return 2.589998L;
+			case conversion::US_SURVEY_TOWNSHIP:
+				return 93.23993L;
+			case conversion::US_CUBIC_INCH:
+				return 16.387064L;
+			case conversion::US_CUBIC_FOOT:
+				return 28.316846592L;
+			case conversion::US_CUBIC_YARD:
+				return 764.554857984L;
+			case conversion::US_ACRE_FOOT:
+				return 1.23348183754752L;
+			case conversion::US_MINIM:
+				return 61.611519921875L;
+			case conversion::US_FLUID_DRAM:
+				return 3.6966911953125L;
+			case conversion::US_TEASPOON:
+				return 4.92892159375L;
+			case conversion::US_TABLESPOON:
+				return 14.78676478125L;
+			case conversion::US_FLUID_OUNCE:
+				return 29.5735295625L;
+			case conversion::US_SHOT:
+				return 44.36029434375L;
+			case conversion::US_GILL:
+				return 118.29411825L;
+			case conversion::US_CUP:
+				return 236.5882365L;
+			case conversion::US_PINT:
+				return 0.473176473L;
+			case conversion::US_QUART:
+				return 0.946352946L;
+			case conversion::US_POTTLE:
+				return 1.892705892L;
+			case conversion::US_GALLON:
+				return 3.785411784L;
+			case conversion::US_BARREL:
+				return 119.240471196L;
+			case conversion::US_OIL_BARREL:
+				return 158.987294928L;
+			case conversion::US_HOGSHEAD:
+				return 238.480942392L;
+			case conversion::US_PECK:
+				return 8.8097675417199L;
+			case conversion::US_BUSHEL:
+				return 35.239070166879L;
+			case conversion::US_GRAIN:
+				return 64.79891L;
+			case conversion::US_DRAM:
+				return 1.771845195L;
+			case conversion::US_OUNCE:
+				return 28.349523125L;
+			case conversion::US_POUND:
+				return 453.59237L;
+			case conversion::US_SHORT_HUNDREDWEIGHT:
+				return 45.359237L;
+			case conversion::US_LONG_HUNDREDWEIGHT:
+				return 50.80234544L;
+			case conversion::US_SHORT_TON:
+				return 907.18474L;
+			case conversion::US_LONG_TON:
+				return 1016.0469088L;
+			case conversion::US_PENNYWEIGHT:
+				return 1.55517384L;
+			case conversion::US_TROY_OUNCE:
+				return 31.1034768L;
+			case conversion::US_TROY_POUND:
+				return 373.2417216L;
+			case conversion::US_DESSERTSPOON:
+				return 10.0L;
+			case conversion::US_HAND:
+				return 101.6L;
+			case conversion::US_RACK:
+				return 44.45L;
+			case conversion::US_BOARD_FOOT:
+				return 2.36L;
+			case conversion::US_SLUG:
+				return 14.5939L;
+			case conversion::US_POUNDAL:
+				return 0.138L;
+			case conversion::US_KIP:
+				return 4.44822L;
+			case conversion::US_FOOT_POUND:
+				return 1.356L;
+			case conversion::US_HORSEPOWER:
+				return 745.7L;
+			case conversion::US_REFRIGERATION_TON:
+				return 3.516853L;
+			case conversion::US_INCH_MERCURY:
+				return 3386.39L;
+			case conversion::US_POUND_PER_SQUARE_INCH:
+				return 6895.0L;
+			case conversion::US_POUND_FOOT:
+				return 1.355818L;
+			case conversion::QUINTAL:
+				return 100.0L;
+			case conversion::CARAT:
+				return 0.2L;
+			case conversion::QUAD:
+				return 1.055L;
+			case conversion::BRITISH_THERMAL_UNIT:
+				return 1.055L;
+			case conversion::CUSTOM:
+				return 0.0L;
+		};
+		return 0.0L;
+	}
+
+	vector<dimension> conversion::get_conversion_dimensions() const
+	{
+		vector<dimension> conversion_dimensions = vector<dimension>();
+		switch(conversion_type)
+		{
+			case conversion::NONE:
+				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::HECTARE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::HECTO,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::HECTO,dimension::NUMERATOR));
+				break;
+			case conversion::DYNE:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::CENTI,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				break;
+			case conversion::BARYE:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::CENTI,dimension::DENOMINATOR));
+				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				break;
+			case conversion::BAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::MILLIBAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::CENTIBAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::DECIBAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::KILOBAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::MEGABAR:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::ATMOSPHERE:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::MILIMETRES_MERCURY:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::TORRICELLI:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::CUBIC_CENTIMETRES:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::FAHRENHEIT:
+				conversion_dimensions.push_back(dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::WATT_HOUR:
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::KILOWATT_HOUR:
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_TWIP:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_THOU:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_BARLEYCORN:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_INCH:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_HAND:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_FOOT:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_YARD:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_CHAIN:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_FURLONG:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_MILE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_LEAGUE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_FATHOM:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_CABLE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_NAUTICAL_MILE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_LINK:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_ROD:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_PERCH:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_ROOD:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_ACRE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_SQUARE_MILE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_FLUID_OUNCE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_GILL:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_PINT:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_QUART:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_GALLON:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_MINIM:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MICRO,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_FLUID_SCRUPLE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_FLUID_DRACHM:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_GRAIN:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_DRACHM:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_OUNCE:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_POUND:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_STONE:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_QUARTER:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_HUNDREDWEIGHT:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_TON:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_SLUG:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::IMPERIAL_HORSEPOWER:
+				conversion_dimensions.push_back(dimension(dimension::WATT,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_TWIP:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_MIL:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MICRO,dimension::NUMERATOR));
+				break;
+			case conversion::US_POINT:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_PICA:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_INCH:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_FOOT:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_YARD:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_MILE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_LEAGUE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_FATHOM:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_CABLE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_NAUTICAL_MILE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_LINK:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_ROD:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_CHAIN:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_FURLONG:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_SQUARE_FOOT:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_SQUARE_CHAIN:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_ACRE:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_SECTION:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_SURVEY_TOWNSHIP:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_CUBIC_INCH:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_CUBIC_FOOT:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_CUBIC_YARD:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_ACRE_FOOT:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MEGA,dimension::NUMERATOR));
+				break;
+			case conversion::US_MINIM:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MICRO,dimension::NUMERATOR));
+				break;
+			case conversion::US_FLUID_DRAM:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_TEASPOON:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_TABLESPOON:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_FLUID_OUNCE:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_SHOT:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_GILL:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_CUP:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_PINT:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_QUART:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_POTTLE:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_GALLON:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_BARREL:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_OIL_BARREL:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_HOGSHEAD:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_PECK:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_BUSHEL:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_GRAIN:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_DRAM:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_OUNCE:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_POUND:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_SHORT_HUNDREDWEIGHT:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_LONG_HUNDREDWEIGHT:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_SHORT_TON:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_LONG_TON:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_PENNYWEIGHT:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_TROY_OUNCE:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_TROY_POUND:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_DESSERTSPOON:
+				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_HAND:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_RACK:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::MILLI,dimension::NUMERATOR));
+				break;
+			case conversion::US_BOARD_FOOT:
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::DECI,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::DECI,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::DECI,dimension::NUMERATOR));
+				break;
+			case conversion::US_SLUG:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_POUNDAL:
+				conversion_dimensions.push_back(dimension(dimension::NEWTON,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_KIP:
+				conversion_dimensions.push_back(dimension(dimension::NEWTON,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_FOOT_POUND:
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_HORSEPOWER:
+				conversion_dimensions.push_back(dimension(dimension::WATT,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_REFRIGERATION_TON:
+				conversion_dimensions.push_back(dimension(dimension::WATT,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::US_INCH_MERCURY:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_POUND_PER_SQUARE_INCH:
+				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::US_POUND_FOOT:
+				conversion_dimensions.push_back(dimension(dimension::NEWTON,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::QUINTAL:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				break;
+			case conversion::CARAT:
+				conversion_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::QUAD:
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::EXA,dimension::NUMERATOR));
+				break;
+			case conversion::BRITISH_THERMAL_UNIT:
+				conversion_dimensions.push_back(dimension(dimension::JOULE,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case conversion::CUSTOM:
+				conversion_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
+				break;
+		};
+		return conversion_dimensions;
+	}
+
+	bool conversion::is_special_conversion() const
+	{
+		if (conversion_type == conversion::FAHRENHEIT)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }

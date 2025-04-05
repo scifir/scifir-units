@@ -1,11 +1,13 @@
 #ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED
 
-#include "../topology/point_3d.hpp"
 #include "../meca_number/angle.hpp"
 #include "../units/base_units.hpp"
 #include "../derived_units/physics_units.hpp"
 #include "../util/types.hpp"
+#include "../units/constants.hpp"
+#include "./latitude.hpp"
+#include "./longitude.hpp"
 
 #include <iostream>
 #include <string>
@@ -15,10 +17,120 @@ using namespace std;
 
 namespace scifir
 {
+	enum class cardinale_point { NORTH, SOUTH, EAST, WEST };
+
+	inline latitude ECEF_to_LLA_latitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
+	{
+		scalar_unit e_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_A,2);
+		scalar_unit e_prim_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_B,2);
+		scalar_unit p = scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
+		scalar_unit F = 54.0f * scifir::pow(WGS84_EARTH_SEMIAXIS_B,2) * scifir::pow(z,2);
+		long double G = std::pow(p.get_value(),2) + (1.0f - e_square.get_value()) * std::pow(z.get_value(),2) - e_square.get_value() * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
+		long double c = (scifir::pow(e_square,2) * F * scifir::pow(p,2)).get_value() / std::pow(G,3);
+		long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
+		long double k = s + 1.0f + (1.0f/s);
+		scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),{ dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) }));
+		scalar_unit Q = scifir::sqrt(1.0f + 2.0f * scifir::pow(e_square,2) * P);
+		scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
+		scalar_unit V = scifir::sqrt(scifir::pow(p - e_square * r0,2) + (1.0f - e_square) * scifir::pow(z,2));
+		scalar_unit z0 = scifir::pow(WGS84_EARTH_SEMIAXIS_B,2)*z/(WGS84_EARTH_SEMIAXIS_A * V);
+		return latitude(scifir::atan(float((z + e_prim_square * z0)/p)));
+	}
+
+	inline longitude ECEF_to_LLA_longitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
+	{
+		return longitude(scifir::atan2(float(y),float(x)));
+	}
+
+	inline scalar_unit ECEF_to_LLA_altitude(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
+	{
+		scalar_unit e_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_A,2);
+		scalar_unit e_prim_square = (scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) - scifir::pow(WGS84_EARTH_SEMIAXIS_B,2))/scifir::pow(WGS84_EARTH_SEMIAXIS_B,2);
+		scalar_unit p = scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
+		scalar_unit F = 54.0f * scifir::pow(WGS84_EARTH_SEMIAXIS_B,2) * scifir::pow(z,2);
+		long double G = std::pow(p.get_value(),2) + (1.0f - e_square.get_value()) * std::pow(z.get_value(),2) - e_square.get_value() * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
+		long double c = (scifir::pow(e_square,2) * F * scifir::pow(p,2)).get_value() / std::pow(G,3);
+		long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
+		long double k = s + 1.0f + (1.0f/s);
+		scalar_unit P = F/(3.0f * std::pow(k,2) * scalar_unit(std::pow(G,2),{ dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) }));
+		scalar_unit Q = scifir::sqrt(1.0f + 2.0f * scifir::pow(e_square,2) * P);
+		scalar_unit r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + scifir::sqrt((1.0f/2.0f) * scifir::pow(WGS84_EARTH_SEMIAXIS_A,2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * scifir::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * scifir::pow(p,2));
+		scalar_unit U = scifir::sqrt(scifir::pow(p - e_square * r0,2) + scifir::pow(z,2));
+		scalar_unit V = scifir::sqrt(scifir::pow(p - e_square * r0,2) + (1.0f - e_square) * scifir::pow(z,2));
+		return scalar_unit(U.get_value() * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V.get_value())),{ dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) });
+	}
+
+	inline scalar_unit LLA_to_ECEF_x(const latitude& latitude,const longitude& longitude,scalar_unit altitude)
+	{
+		long double e_square = 0.00669437999014l;
+		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
+		altitude.change_dimensions("m");
+		return (n + altitude) * scifir::cos(latitude) * scifir::cos(longitude);
+	}
+
+	inline scalar_unit LLA_to_ECEF_y(const latitude& latitude,const longitude& longitude,scalar_unit altitude)
+	{
+		long double e_square = 0.00669437999014l;
+		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
+		altitude.change_dimensions("m");
+		return (n + altitude) * scifir::cos(latitude) * scifir::sin(longitude);
+	}
+
+	inline scalar_unit LLA_to_ECEF_z(const latitude& latitude,const longitude& longitude,scalar_unit altitude)
+	{
+		long double e_square = 0.00669437999014l;
+		long double n = WGS84_EARTH_SEMIAXIS_A.get_value() / std::sqrt(1 - e_square * scifir::sin(latitude) * scifir::sin(latitude));
+		altitude.change_dimensions("m");
+		return ((1 - e_square) * n + altitude) * scifir::sin(latitude);
+	}
+
+	inline latitude ECEF_to_LLA_latitude(float x, float y, float z)
+	{
+		long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
+		long double e_prim_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2);
+		long double p = std::sqrt(std::pow(x,2) + std::pow(y,2));
+		long double F = 54.0f * std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) * std::pow(z,2);
+		long double G = std::pow(p,2) + (1.0f - e_square) * std::pow(z,2) - e_square * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
+		long double c = std::pow(e_square,2) * F * std::pow(p,2) / std::pow(G,3);
+		long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
+		long double k = s + 1.0f + (1.0f/s);
+		long double P = F/(3.0f * std::pow(k,2) * std::pow(G,2));
+		long double Q = std::sqrt(1.0f + 2.0f * std::pow(e_square,2) * P);
+		long double r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + std::sqrt((1.0f/2.0f) * std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * std::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * std::pow(p,2));
+		long double V = std::sqrt(std::pow(p - e_square * r0,2) + (1.0f - e_square) * std::pow(z,2));
+		long double z0 = std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2)*z/(WGS84_EARTH_SEMIAXIS_A.get_value() * V);
+		return latitude(scifir::atan(float((z + e_prim_square * z0)/p)));
+	}
+
+	inline longitude ECEF_to_LLA_longitude(float x, float y, float z)
+	{
+		return longitude(scifir::atan2(y,x));
+	}
+
+	inline float ECEF_to_LLA_altitude(float x, float y, float z)
+	{
+		long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
+		long double e_prim_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2);
+		long double p = std::sqrt(std::pow(x,2) + std::pow(y,2));
+		long double F = 54.0f * std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) * std::pow(z,2);
+		long double G = std::pow(p,2) + (1.0f - e_square) * std::pow(z,2) - e_square * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
+		long double c = std::pow(e_square,2) * F * std::pow(p,2) / std::pow(G,3);
+		long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
+		long double k = s + 1.0f + (1.0f/s);
+		long double P = F/(3.0f * std::pow(k,2) * std::pow(G,2));
+		long double Q = std::sqrt(1.0f + 2.0f * std::pow(e_square,2) * P);
+		long double r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + std::sqrt((1.0f/2.0f) * std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * std::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * std::pow(p,2));
+		long double U = std::sqrt(std::pow(p - e_square * r0,2) + std::pow(z,2));
+		long double V = std::sqrt(std::pow(p - e_square * r0,2) + (1.0f - e_square) * std::pow(z,2));
+		return U * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V));
+	}
+
 	template<typename T = length>
 	class coordinates_3d
 	{
 		public:
+			enum type { CARTESIAN, CYLINDRICAL, SPHERICAL, GEODESIC };
+
 			coordinates_3d() : x(),y(),z()
 			{}
 
@@ -28,29 +140,43 @@ namespace scifir
 			coordinates_3d(coordinates_3d<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))
 			{}
 
-			explicit coordinates_3d(const T& new_x,const T& new_y,const T& new_z) : x(new_x),y(new_y),z(new_z)
+			explicit coordinates_3d(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z) : x(new_x),y(new_y),z(new_z)
 			{}
 
-			explicit coordinates_3d(const T& new_p,const angle& new_theta,T new_z)
+			explicit coordinates_3d(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit coordinates_3d(const T& new_r,const angle& new_theta,const angle& new_phi)
+			explicit coordinates_3d(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit coordinates_3d(const angle& new_latitude,const angle& new_longitude,const T& new_altitude) : coordinates_3d()
+			explicit coordinates_3d(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude) : coordinates_3d()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_3d(const point_3d<T>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
-			{}
-
-			explicit coordinates_3d(point_3d<T>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
-			{}
+			explicit coordinates_3d(coordinates_3d::type coordinates_type, const string& coord1, const string& coord2, const string& coord3) : coordinates_3d()
+			{
+				if (coordinates_type == coordinates_3d<>::CARTESIAN)
+				{
+					set_position(T(coord1),T(coord2),T(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::CYLINDRICAL)
+				{
+					set_position(T(coord1),angle(coord2),T(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::SPHERICAL)
+				{
+					set_position(T(coord1),angle(coord2),angle(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::GEODESIC)
+				{
+					set_position(latitude(coord1),longitude(coord2),T(coord3));
+				}
+			}
 
 			explicit coordinates_3d(const string& init_coordinates_3d) : coordinates_3d()
 			{
@@ -73,31 +199,22 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3d<T>& operator =(const point_3d<T>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				z = x_point.z;
-				return *this;
-			}
-
-			coordinates_3d<T>& operator =(point_3d<T>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
-				z = std::move(x_point.z);
-				return *this;
-			}
-
 			coordinates_3d<T>& operator =(const string& init_coordinates_3d)
 			{
 				initialize_from_string(init_coordinates_3d);
 				return *this;
 			}
 
+			static coordinates_3d<T> origin(const coordinates_3d<T>& origin,const coordinates_3d<T>& coordinates)
+			{
+				coordinates_3d<T> new_coordinates(origin);
+				new_coordinates.move(coordinates.x,coordinates.y,coordinates.z);
+				return new_coordinates;
+			}
+
 			T get_p() const
 			{
-				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
+				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2)));
 			}
 
 			angle get_theta() const
@@ -107,7 +224,7 @@ namespace scifir
 
 			T get_r() const
 			{
-				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
+				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)));
 			}
 
 			angle get_phi() const
@@ -115,29 +232,29 @@ namespace scifir
 				return angle(scifir::acos_degree(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
-				return scifir::asin(float(z/T(6317.0f,"km")));
+				return ECEF_to_LLA_latitude(x,y,z);
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
-				return scifir::atan(float(y/x));
+				return ECEF_to_LLA_longitude(x,y,z);
 			}
 
-			T get_altitude() const
+			scalar_unit get_altitude() const
 			{
-				return T();
+				return ECEF_to_LLA_altitude(x,y,z);
 			}
 
-			void set_position(const T& new_x,const T& new_y,const T& new_z)
+			void set_position(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z)
 			{
 				x = new_x;
 				y = new_y;
 				z = new_z;
 			}
 
-			void set_position(const T& new_p,const angle& new_theta,T new_z)
+			void set_position(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				new_z.change_dimensions(new_p);
 				x = T(new_p * scifir::cos(new_theta));
@@ -145,18 +262,18 @@ namespace scifir
 				z = new_z;
 			}
 
-			void set_position(const T& new_r,const angle& new_theta,const angle& new_phi)
+			void set_position(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				x = T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
 				y = T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
 				z = T(new_r * scifir::cos(new_phi));
 			}
 
-			void set_position(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
+			void set_position(const latitude& new_latitude,const longitude& new_longitude,const scalar_unit& new_altitude)
 			{
-				x = T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
-				y = T(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
-				z = T(new_altitude * scifir::sin(new_latitude));
+				x = LLA_to_ECEF_x(new_latitude,new_longitude,new_altitude);
+				y = LLA_to_ECEF_y(new_latitude,new_longitude,new_altitude);
+				z = LLA_to_ECEF_z(new_latitude,new_longitude,new_altitude);
 			}
 
 			void rotate_in_x(const angle& x_angle)
@@ -190,14 +307,14 @@ namespace scifir
 				z += x_displacement.z_projection();
 			}
 
-			void move(const T& new_x,const T& new_y,const T& new_z)
+			void move(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z)
 			{
 				x += new_x;
 				y += new_y;
 				z += new_z;
 			}
 
-			void move(const T& new_p,const angle& new_theta,T new_z)
+			void move(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				new_z.change_dimensions(new_p);
 				x += T(new_p * scifir::cos(new_theta));
@@ -205,7 +322,7 @@ namespace scifir
 				z += new_z;
 			}
 
-			void move(const T& new_r,const angle& new_theta,const angle& new_phi)
+			void move(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				x += T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
 				y += T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
@@ -214,7 +331,7 @@ namespace scifir
 
 			T distance_to_origin() const
 			{
-				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
+				return T(scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)));
 			}
 
 			string display_cartesian() const
@@ -249,7 +366,7 @@ namespace scifir
 			T y;
 			T z;
 
-		private:
+		protected:
 			void initialize_from_string(string init_coordinates_3d)
 			{
 				vector<string> values;
@@ -264,13 +381,16 @@ namespace scifir
 				boost::split(values,init_coordinates_3d,boost::is_any_of(","));
 				if (values.size() == 3)
 				{
-					if (is_angle(values[0]))
+					if (is_latitude(values[0]))
 					{
-						if (is_angle(values[1]))
+						if (is_longitude(values[1]))
 						{
 							if (!is_angle(values[2]))
 							{
-								set_position(angle(values[0]),angle(values[1]),T(values[2]));
+								cout << "values[0]: " << values[0] << endl;
+								cout << "values[1]: " << values[1] << endl;
+								cout << "values[2]: " << values[2] << endl;
+								set_position(latitude(values[0]),longitude(values[1]),T(values[2]));
 							}
 						}
 					}
@@ -330,11 +450,25 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_3d(const point_3d<float>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
-			{}
-
-			explicit coordinates_3d(point_3d<float>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
-			{}
+			explicit coordinates_3d(coordinates_3d<length>::type coordinates_type, const string& coord1, const string& coord2, const string& coord3) : coordinates_3d()
+			{
+				if (coordinates_type == coordinates_3d<length>::CARTESIAN)
+				{
+					set_position(stof(coord1),stof(coord2),stof(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<length>::CYLINDRICAL)
+				{
+					set_position(stof(coord1),angle(coord2),stof(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<length>::SPHERICAL)
+				{
+					set_position(stof(coord1),angle(coord2),angle(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<length>::GEODESIC)
+				{
+					set_position(angle(coord1),angle(coord2),stof(coord3));
+				}
+			}
 
 			explicit coordinates_3d(const string& init_coordinates_3d) : coordinates_3d()
 			{
@@ -354,22 +488,6 @@ namespace scifir
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
 				z = std::move(x_coordinates.z);
-				return *this;
-			}
-
-			coordinates_3d<float>& operator =(const point_3d<float>& x_point)
-			{
-				x = x_point.x;
-				y = x_point.y;
-				z = x_point.z;
-				return *this;
-			}
-
-			coordinates_3d<float>& operator =(point_3d<float>&& x_point)
-			{
-				x = std::move(x_point.x);
-				y = std::move(x_point.y);
-				z = std::move(x_point.z);
 				return *this;
 			}
 
@@ -399,19 +517,19 @@ namespace scifir
 				return angle(scifir::acos_degree(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
-				return scifir::asin(z/6317);
+				return ECEF_to_LLA_latitude(x,y,z);
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
-				return scifir::atan(float(y/x));
+				return ECEF_to_LLA_longitude(x,y,z);
 			}
 
 			float get_altitude() const
 			{
-				return float();
+				return ECEF_to_LLA_altitude(x,y,z);
 			}
 
 			void set_position(float new_x,float new_y,float new_z)
@@ -546,9 +664,13 @@ namespace scifir
 				boost::split(values,init_coordinates_3d,boost::is_any_of(","));
 				if (values.size() == 3)
 				{
-					if (is_angle(values[0]))
+					if (values[0] == "" or values[1] == "" or values[2] == "")
 					{
-						if (is_angle(values[1]))
+						return;
+					}
+					if (is_latitude(values[0]))
+					{
+						if (is_longitude(values[1]))
 						{
 							if (!is_angle(values[2]))
 							{
@@ -581,6 +703,8 @@ namespace scifir
 			}
 	};
 
+	string to_string(cardinale_point x);
+
 	template<typename T>
 	string to_string(const coordinates_3d<T>& x)
 	{
@@ -589,29 +713,15 @@ namespace scifir
 
 	string to_string(const coordinates_3d<float>& x);
 
+	cardinale_point create_cardinale_point(const string& x);
+
 	template<typename T,typename U>
 	T distance(const coordinates_3d<T>& x,const coordinates_3d<U>& y)
 	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
+		return T(scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2)));
 	}
 
 	float distance(const coordinates_3d<float>& x,const coordinates_3d<float>& y);
-
-	template<typename T,typename U>
-	T distance(const coordinates_3d<T>& x,const point_3d<U>& y)
-	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
-	}
-
-	float distance(const coordinates_3d<float>& x,const point_3d<float>& y);
-
-	template<typename T,typename U>
-	T distance(const point_3d<T>& x,const coordinates_3d<U>& y)
-	{
-		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
-	}
-
-	float distance(const point_3d<float>& x,const coordinates_3d<float>& y);
 
 	inline scalar_unit cartesian_3d_to_cylindrical_p(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
 	{
@@ -818,44 +928,6 @@ bool operator ==(const scifir::coordinates_3d<T>& x,const scifir::coordinates_3d
 
 template<typename T,typename U>
 bool operator !=(const scifir::coordinates_3d<T>& x,const scifir::coordinates_3d<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::coordinates_3d<T>& x,const scifir::point_3d<U>& y)
-{
-	if (x.x == y.x and x.y == y.y and x.z == y.z)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::coordinates_3d<T>& x,const scifir::point_3d<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::point_3d<T>& x,const scifir::coordinates_3d<U>& y)
-{
-	if (x.x == y.x and x.y == y.y and x.z == y.z)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::point_3d<T>& x,const scifir::coordinates_3d<U> y)
 {
 	return !(x == y);
 }

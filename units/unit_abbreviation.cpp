@@ -917,12 +917,12 @@ scifir::mole operator"" _particles(unsigned long long int x)
 	return scifir::mole((long double)x, { scifir::dimension(scifir::dimension::PARTICLES,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::scalar_unit operator"" _memo(unsigned long long int x)
+scifir::brain_memory operator"" _memo(unsigned long long int x)
 {
-	return scifir::scalar_unit((long double)x, { scifir::dimension(scifir::dimension::MEMO,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+	return scifir::brain_memory((long double)x, { scifir::dimension(scifir::dimension::MEMO,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::angle operator"" _degree(unsigned long long int x)
+scifir::angle operator"" _deg(unsigned long long int x)
 {
 	return scifir::angle((long double)x, scifir::angle::DEGREE);
 }
@@ -965,6 +965,11 @@ scifir::pixel operator"" _px(unsigned long long int x)
 scifir::abv operator"" _abv(unsigned long long int x)
 {
 	return scifir::abv((long double)x,scifir::abv::PERCENTAGE);
+}
+
+scifir::sound_power operator"" _dB(unsigned long long int x)
+{
+	return scifir::sound_power((long double)x, { scifir::dimension(scifir::dimension::DECIBEL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::length operator"" _Å(long double x)
@@ -1882,7 +1887,7 @@ scifir::scalar_unit operator"" _memo(long double x)
 	return scifir::scalar_unit(x, { scifir::dimension(scifir::dimension::MEMO,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
-scifir::angle operator"" _degree(long double x)
+scifir::angle operator"" _deg(long double x)
 {
 	return scifir::angle(x, scifir::angle::DEGREE);
 }
@@ -1925,4 +1930,9 @@ scifir::pixel operator"" _px(long double x)
 scifir::abv operator"" _abv(long double x)
 {
 	return scifir::abv(x,scifir::abv::PERCENTAGE);
+}
+
+scifir::sound_power operator"" _dB(long double x)
+{
+	return scifir::sound_power(x, { scifir::dimension(scifir::dimension::DECIBEL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }

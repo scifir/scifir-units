@@ -39,7 +39,7 @@ TEST_CASE("class size_2d<T> and size_2d<float>") {
 		size_2d<float> c2(2.0f,3.0f);
 		size_2d<float> c(std::move(c2));
 		CHECK(to_string(c) == "2 * 3");
-		size_2d d(1.0f,1.0f);
+		size_2d<float> d(1.0f,1.0f);
 		CHECK(to_string(d) == "1 * 1");
 		size_2d<float> e("1","1");
 		CHECK(to_string(e) == "1 * 1");

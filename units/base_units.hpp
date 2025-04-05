@@ -3,7 +3,7 @@
 
 #include "./prefix.hpp"
 #include "./scalar_unit.hpp"
-#include "../special_units/percentage.hpp"
+#include "../meca_number/percentage.hpp"
 
 #include <chrono>
 #include <iostream>
@@ -15,9 +15,25 @@ namespace scifir
 {
 	SCALAR_UNIT_HPP(length);
 
-	SCALAR_UNIT_HPP_BEGIN(time_duration);
+	class time_duration : public scalar_unit
+	{
 		public:
-			time_duration(const string& init_time);
+			time_duration();
+			time_duration(const scalar_unit&);
+			time_duration(scalar_unit&&);
+			explicit time_duration(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit time_duration(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit time_duration(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit time_duration(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit time_duration(float new_value, const string& init_dimensions);
+			explicit time_duration(double new_value, const string& init_dimensions);
+			explicit time_duration(long double new_value, const string& init_dimensions);
+			explicit time_duration(int new_value, const string& init_dimensions);
+			explicit time_duration(float new_value, const vector<dimension>& new_dimensions);
+			explicit time_duration(double new_value, const vector<dimension>& new_dimensions);
+			explicit time_duration(long double new_value, const vector<dimension>& new_dimensions);
+			explicit time_duration(int new_value, const vector<dimension>& new_dimensions);
+			explicit time_duration(const string& init_time);
 
 			explicit operator std::chrono::seconds() const;
 
@@ -58,7 +74,14 @@ namespace scifir
 				 return *this;
 			}
 
-	SCALAR_UNIT_HPP_END();
+			using scalar_unit::operator =;
+			using scalar_unit::operator+=;
+			using scalar_unit::operator-=;
+
+		public:
+			static const string dimensions_match;
+			static const vector<dimension> real_dimensions;
+	};
 
 	SCALAR_UNIT_HPP_BEGIN(mass);
 		public:
@@ -75,7 +98,7 @@ namespace scifir
 			mole(const percentage& new_percentage,const mole& new_mole);
 			mole(const string& init_percentage,const string& init_mole);
 
-			int number_of_particles() const;
+			int get_number_of_particles() const;
 	SCALAR_UNIT_HPP_END();
 
 	SCALAR_UNIT_HPP(light_intensity);

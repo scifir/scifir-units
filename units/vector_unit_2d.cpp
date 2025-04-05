@@ -17,7 +17,31 @@ namespace scifir
 	
 	vector_unit_2d::vector_unit_2d(vector_unit_2d&& x) : scalar_unit(std::move(x)),theta(std::move(x.theta))
 	{}
-	
+
+	vector_unit_2d::vector_unit_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta)
+	{}
+
 	vector_unit_2d::vector_unit_2d(float new_value,const string& init_dimensions,float new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
 	{}
 	
@@ -313,7 +337,7 @@ namespace scifir
 		boost::split(values,init_vector_2d,boost::is_any_of(" "));
 		if (values.size() == 3)
 		{
-			scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+			scalar_unit::initialize_from_string(values[0] + " " + values[1],vector<dimension>());
 			theta = angle(values[2]);
 		}
 	}
@@ -344,7 +368,7 @@ namespace scifir
 
 	angle angle_between(const vector_unit_2d& x,const vector_unit_2d& y)
 	{
-		return angle(radian_to_degree(std::atan2(float(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection()),float(y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()))));
+		return scifir::atan2(float(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection()),float(y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()));
 	}
 
 	bool same_direction(const vector_unit_2d& x, const vector_unit_2d& y)

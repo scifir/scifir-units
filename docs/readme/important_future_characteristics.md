@@ -1,0 +1,5 @@
+# Important future characteristics
+
+There's an important future characteristic important to explain. It's not yet implemented inside the library because it's not totally possible given the current features of the programming languages, maybe in the future there'll exist a way to implement it. That important characteristic is to have another system for storing the dimensions for the case of one simple dimension, without changing the easy implementation that the scalar_unit classes have.
+
+One possible solution for this is to have a light_scalar_unit class to handle the case of scalar unit variables that have only one dimension as member-variable in replacement of the member-variable of vector<dimension> of the scalar_unit class, and never more than one dimension. This approach has the big advantage of allowing a greather similarity with floating-point types, consuming less RAM and running faster, but with the disadvantage of having also now two different classes for variables scalar units and, then, an API that's harder to use, because now it's needed to have different functions for light_scalar_unit classes and for scalar_unit classes.

@@ -23,6 +23,14 @@ TEST_CASE("scalar_unit class") {
 		scalar_unit b2 = 100_g;
 		scalar_unit c2(std::move(b2));
 		CHECK(to_string(c2) == "100 g");
+		scalar_unit h(30.0f, dimension::PASCAL, prefix::KILO);
+		CHECK(to_string(h) == "30 kPa");
+		scalar_unit h2(30.0, dimension::PASCAL, prefix::KILO);
+		CHECK(to_string(h2) == "30 kPa");
+		scalar_unit h3(30.0l, dimension::PASCAL, prefix::KILO);
+		CHECK(to_string(h3) == "30 kPa");
+		scalar_unit h4(30, dimension::PASCAL, prefix::KILO);
+		CHECK(to_string(h4) == "30 kPa");
 		scalar_unit d(100.0f,"g");
 		CHECK(to_string(d) == "100 g");
 		scalar_unit d2(100.0,"g");
@@ -73,7 +81,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(d) == "5 K");
 	}
 
-	SECTION("Float cast")
+	SECTION("float cast")
 	{
 		scalar_unit a = 50_g;
 		CHECK(float(a) == 50.0f);
@@ -327,14 +335,25 @@ TEST_CASE("scalar_unit class") {
 		//CHECK(f.custom_display("sci") == "1000e0 m/h");
 	}
 
+	SECTION("to_latex() function of scalar_unit class")
+	{
+		scalar_unit a(100.0f,"N");
+		CHECK(bool(a.to_latex("",2,true) == "100 [N]"));
+		CHECK(bool(a.to_latex("",2,false) == "100 N"));
+		CHECK(bool(a.to_latex("kg*m/s2",2,true) == "100 [\frac{kg*m}{s^2}]"));
+		CHECK(bool(a.to_latex("kg*m/s2",2,false) == "100 \frac{kg*m}{s^2}"));
+	}
+
 	SECTION("is_scalar_unit() function")
 	{
 		CHECK(is_scalar_unit("1 m") == true);
+		CHECK(is_scalar_unit("1 [m]") == true);
 		CHECK(is_scalar_unit("7 m2") == true);
 		CHECK(is_scalar_unit("2 m/s2") == true);
 		CHECK(is_scalar_unit("5 m2/s2") == true);
 		CHECK(is_scalar_unit("2m") == false);
 		CHECK(is_scalar_unit("7 $") == false);
+		CHECK(is_scalar_unit("7 [$]") == false);
 		CHECK(is_scalar_unit("8 $2") == false);
 		CHECK(is_scalar_unit("2 m$") == false);
 		CHECK(is_scalar_unit("2 m2$") == false);

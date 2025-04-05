@@ -1,10 +1,11 @@
 #ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
 
-#include "../topology/point_nd.hpp"
 #include "../derived_units/physics_units.hpp"
 #include "../units/base_units.hpp"
 #include "../util/types.hpp"
+#include "./coordinates_2d.hpp"
+#include "./coordinates_3d.hpp"
 
 #include <iostream>
 #include <string>
@@ -27,52 +28,84 @@ namespace scifir
 			coordinates_nd(coordinates_nd<T>&& x) : values(std::move(x.values))
 			{}
 
-			explicit coordinates_nd(const vector<T>& new_values) : values(new_values)
-			{}
-
-			explicit coordinates_nd(const T& new_x) : values()
+			template<typename U>
+			explicit coordinates_nd(const vector<U>& new_values) : values()
 			{
-				values.push_back(new_x);
+				for(const U& x_value : new_values)
+				{
+					values.push_back(T(x_value));
+				}
 			}
 
-			explicit coordinates_nd(const T& new_x,const T& new_y) : values()
+			explicit coordinates_nd(const scalar_unit& new_x) : values()
 			{
-				values.push_back(new_x);
-				values.push_back(new_y);
+				values.push_back(T(new_x));
 			}
 
-			explicit coordinates_nd(const T& new_p,const angle& new_theta) : values()
+			explicit coordinates_nd(const scalar_unit& new_x,const scalar_unit& new_y) : values()
+			{
+				values.push_back(T(new_x));
+				values.push_back(T(new_y));
+			}
+
+			explicit coordinates_nd(const scalar_unit& new_p,const angle& new_theta) : values()
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit coordinates_nd(const T& new_x,const T& new_y,const T& new_z) : values()
+			explicit coordinates_nd(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z) : values()
 			{
-				values.push_back(new_x);
-				values.push_back(new_y);
-				values.push_back(new_z);
+				values.push_back(T(new_x));
+				values.push_back(T(new_y));
+				values.push_back(T(new_z));
 			}
 
-			explicit coordinates_nd(const T& new_p,const angle& new_theta,T new_z) : values()
+			explicit coordinates_nd(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z) : values()
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit coordinates_nd(const T& new_r,const angle& new_theta,const angle& new_phi) : values()
+			explicit coordinates_nd(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi) : values()
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit coordinates_nd(const angle& new_latitude,const angle& new_longitude,const T& new_altitude) : values()
+			explicit coordinates_nd(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude) : values()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_nd(const point_nd<T>& new_point) : values(new_point.values)
-			{}
+			explicit coordinates_nd(coordinates_2d<>::type coordinates_type, const string& coord1, const string& coord2) : coordinates_nd()
+			{
+				if (coordinates_type == coordinates_2d<>::CARTESIAN)
+				{
+					set_position(T(coord1),T(coord2));
+				}
+				else if (coordinates_type == coordinates_2d<>::POLAR)
+				{
+					set_position(T(coord1),angle(coord2));
+				}
+			}
 
-			explicit coordinates_nd(point_nd<T>&& new_point) : values(std::move(new_point.values))
-			{}
+			explicit coordinates_nd(coordinates_3d<>::type coordinates_type, const string& coord1, const string& coord2, const string& coord3) : coordinates_nd()
+			{
+				if (coordinates_type == coordinates_3d<>::CARTESIAN)
+				{
+					set_position(T(coord1),T(coord2),T(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::CYLINDRICAL)
+				{
+					set_position(T(coord1),angle(coord2),T(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::SPHERICAL)
+				{
+					set_position(T(coord1),angle(coord2),angle(coord3));
+				}
+				else if (coordinates_type == coordinates_3d<>::GEODESIC)
+				{
+					set_position(angle(coord1),angle(coord2),T(coord3));
+				}
+			}
 
 			explicit coordinates_nd(const string& init_coordinates_nd) : values()
 			{
@@ -91,22 +124,20 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_nd<T>& operator =(const point_nd<T>& x_point)
-			{
-				values = x_point.values;
-				return *this;
-			}
-
-			coordinates_nd<T>& operator =(point_nd<T>&& x_point)
-			{
-				values = std::move(x_point.values);
-				return *this;
-			}
-
 			coordinates_nd<T>& operator =(const string& init_coordinates_nd)
 			{
 				initialize_from_string(init_coordinates_nd);
 				return *this;
+			}
+
+			static coordinates_nd<T> origin(const coordinates_nd<T>& origin,const coordinates_nd<T>& coordinates)
+			{
+				coordinates_nd<T> new_coordinates(origin);
+				for (unsigned int i = 0; i < coordinates.values.size(); i++)
+				{
+					new_coordinates.values[i] += coordinates.values[i];
+				}
+				return new_coordinates;
 			}
 
 			bool is_nd(int i) const
@@ -123,7 +154,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2));
+					return T(scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2)));
 				}
 				else
 				{
@@ -147,7 +178,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2));
+					return T(scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)));
 				}
 				else
 				{
@@ -167,59 +198,80 @@ namespace scifir
 				}
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
-				return scifir::asin(float(values[2]/T(6317,"km")));
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_latitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return latitude();
+				}
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
-				return scifir::atan(float(values[1]/values[0]));
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_longitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return longitude();
+				}
 			}
 
-			T get_altitude() const
+			scalar_unit get_altitude() const
 			{
-				return T();
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_altitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return scalar_unit();
+				}
 			}
 
-			void set_position(const T& new_x)
+			void set_position(const scalar_unit& new_x)
 			{
 				values.clear();
-				values.push_back(new_x);
+				values.push_back(T(new_x));
 			}
 
-			void set_position(const T& new_x,const T& new_y)
+			void set_position(const scalar_unit& new_x,const scalar_unit& new_y)
 			{
 				values.clear();
-				values.push_back(new_x);
-				values.push_back(new_y);
+				values.push_back(T(new_x));
+				values.push_back(T(new_y));
 			}
 
-			void set_position(const T& new_p,const angle& new_theta)
+			void set_position(const scalar_unit& new_p,const angle& new_theta)
 			{
 				values.clear();
 				values.push_back(T(new_p * scifir::cos(new_theta)));
 				values.push_back(T(new_p * scifir::sin(new_theta)));
 			}
 
-			void set_position(const T& new_x,const T& new_y,const T& new_z)
+			void set_position(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z)
 			{
 				values.clear();
-				values.push_back(new_x);
-				values.push_back(new_y);
-				values.push_back(new_z);
+				values.push_back(T(new_x));
+				values.push_back(T(new_y));
+				values.push_back(T(new_z));
 			}
 
-			void set_position(const T& new_p,const angle& new_theta,T new_z)
+			void set_position(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				values.clear();
 				new_z.change_dimensions(new_p);
 				values.push_back(T(new_p * scifir::cos(new_theta)));
 				values.push_back(T(new_p * scifir::sin(new_theta)));
-				values.push_back(new_z);
+				values.push_back(T(new_z));
 			}
 
-			void set_position(const T& new_r,const angle& new_theta,const angle& new_phi)
+			void set_position(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				values.clear();
 				values.push_back(T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi)));
@@ -227,7 +279,7 @@ namespace scifir
 				values.push_back(T(new_r * scifir::cos(new_phi)));
 			}
 
-			void set_position(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
+			void set_position(const angle& new_latitude,const angle& new_longitude,const scalar_unit& new_altitude)
 			{
 				values.clear();
 				values.push_back(T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude)));
@@ -235,7 +287,7 @@ namespace scifir
 				values.push_back(T(new_altitude * scifir::sin(new_latitude)));
 			}
 
-			void set_position(const vector<T>& new_values)
+			void set_position(const vector<scalar_unit>& new_values)
 			{
 				values.clear();
 				values = new_values;
@@ -280,7 +332,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_x)
+			void move(const scalar_unit& new_x)
 			{
 				if (values.size() == 1)
 				{
@@ -297,7 +349,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_x,const T& new_y)
+			void move(const scalar_unit& new_x,const scalar_unit& new_y)
 			{
 				if (values.size() == 2)
 				{
@@ -306,7 +358,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_p,const angle& new_theta)
+			void move(const scalar_unit& new_p,const angle& new_theta)
 			{
 				if (values.size() == 2)
 				{
@@ -325,7 +377,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_x,const T& new_y,const T& new_z)
+			void move(const scalar_unit& new_x,const scalar_unit& new_y,const scalar_unit& new_z)
 			{
 				if (values.size() == 3)
 				{
@@ -335,7 +387,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_p,const angle& new_theta,T new_z)
+			void move(const scalar_unit& new_p,const angle& new_theta,scalar_unit new_z)
 			{
 				if (values.size() == 3)
 				{
@@ -346,7 +398,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_r,const angle& new_theta,const angle& new_phi)
+			void move(const scalar_unit& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				if (values.size() == 3)
 				{
@@ -367,7 +419,7 @@ namespace scifir
 				}
 			}
 
-			void move(const T& new_r,const vector<angle>& new_angles)
+			void move(const scalar_unit& new_r,const vector<angle>& new_angles)
 			{
 				displacement_nd x_displacement = displacement_nd(new_r,new_angles);
 				move(x_displacement);
@@ -380,7 +432,7 @@ namespace scifir
 				{
 					x_T += scifir::pow(values[i],2);
 				}
-				return scifir::sqrt(x_T);
+				return T(scifir::sqrt(x_T));
 			}
 
 			string display_cartesian_2d() const
@@ -482,6 +534,13 @@ namespace scifir
 					init_coordinates_nd.erase(init_coordinates_nd.size()-1,1);
 				}
 				boost::split(init_values,init_coordinates_nd,boost::is_any_of(","));
+				for (const string& x_value : init_values)
+				{
+					if (x_value == "")
+					{
+						return;
+					}
+				}
 				if (init_values.size() == 2)
 				{
 					if (is_angle(init_values[1]))
@@ -495,9 +554,9 @@ namespace scifir
 				}
 				else if (init_values.size() == 3)
 				{
-					if (is_angle(init_values[0]))
+					if (is_latitude(init_values[0]))
 					{
-						if (is_angle(init_values[1]))
+						if (is_longitude(init_values[1]))
 						{
 							if (!is_angle(init_values[2]))
 							{
@@ -531,7 +590,10 @@ namespace scifir
 				{
 					for (const string& x_value : init_values)
 					{
-						values.push_back(T(x_value));
+						if (x_value != "")
+						{
+							values.push_back(T(x_value));
+						}
 					}
 				}
 			}
@@ -591,12 +653,6 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_nd(const point_nd<float>& new_point) : values(new_point.values)
-			{}
-
-			explicit coordinates_nd(point_nd<float>&& new_point) : values(std::move(new_point.values))
-			{}
-
 			explicit coordinates_nd(const string& init_coordinates_nd) : values()
 			{
 				initialize_from_string(init_coordinates_nd);
@@ -611,18 +667,6 @@ namespace scifir
 			coordinates_nd<float>& operator =(coordinates_nd<float>&& x_coordinates)
 			{
 				values = std::move(x_coordinates.values);
-				return *this;
-			}
-
-			coordinates_nd<float>& operator =(const point_nd<float>& x_point)
-			{
-				values = x_point.values;
-				return *this;
-			}
-
-			coordinates_nd<float>& operator =(point_nd<float>&& x_point)
-			{
-				values = std::move(x_point.values);
 				return *this;
 			}
 
@@ -690,19 +734,40 @@ namespace scifir
 				}
 			}
 
-			angle get_latitude() const
+			latitude get_latitude() const
 			{
-				return scifir::asin(float(values[2]/6317));
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_latitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return latitude();
+				}
 			}
 
-			angle get_longitude() const
+			longitude get_longitude() const
 			{
-				return scifir::atan(float(values[1]/values[0]));
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_longitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return longitude();
+				}
 			}
 
 			float get_altitude() const
 			{
-				return 0.0f;
+				if (get_nd() == 3)
+				{
+					return ECEF_to_LLA_altitude(values[0],values[1],values[2]);
+				}
+				else
+				{
+					return 0.0f;
+				}
 			}
 
 			void set_position(float new_x)
@@ -1003,6 +1068,13 @@ namespace scifir
 					init_coordinates_nd.erase(init_coordinates_nd.size()-1,1);
 				}
 				boost::split(init_values,init_coordinates_nd,boost::is_any_of(","));
+				for (const string& x_value : init_values)
+				{
+					if (x_value == "")
+					{
+						return;
+					}
+				}
 				if (init_values.size() == 2)
 				{
 					if (is_angle(init_values[1]))
@@ -1016,9 +1088,9 @@ namespace scifir
 				}
 				else if (init_values.size() == 3)
 				{
-					if (is_angle(init_values[0]))
+					if (is_latitude(init_values[0]))
 					{
-						if (is_angle(init_values[1]))
+						if (is_longitude(init_values[1]))
 						{
 							if (!is_angle(init_values[2]))
 							{
@@ -1094,7 +1166,7 @@ namespace scifir
 			{
 				x_length += scifir::pow(x.values[i] - y.values[i],2);
 			}
-			return scifir::sqrt(x_length);
+			return T(scifir::sqrt(x_length));
 		}
 		else
 		{
@@ -1103,46 +1175,6 @@ namespace scifir
 	}
 
 	float distance(const coordinates_nd<float>& x,const coordinates_nd<float>& y);
-
-	template<typename T,typename U>
-	T distance(const coordinates_nd<T>& x,const point_nd<U>& y)
-	{
-		if (x.get_nd() == y.get_nd())
-		{
-			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x.values.size(); i++)
-			{
-				x_length += scifir::pow(x.values[i] - y.values[i],2);
-			}
-			return scifir::sqrt(x_length);
-		}
-		else
-		{
-			return T();
-		}
-	}
-
-	float distance(const coordinates_nd<float>& x,const point_nd<float>& y);
-
-	template<typename T,typename U>
-	T distance(const point_nd<T>& x,const coordinates_nd<U>& y)
-	{
-		if (x.get_nd() == y.get_nd())
-		{
-			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x.values.size(); i++)
-			{
-				x_length += scifir::pow(x.values[i] - y.values[i],2);
-			}
-			return scifir::sqrt(x_length);
-		}
-		else
-		{
-			return T();
-		}
-	}
-
-	float distance(const point_nd<float>& x,const coordinates_nd<float>& y);
 }
 
 template<typename T,typename U>
@@ -1167,58 +1199,6 @@ bool operator ==(const scifir::coordinates_nd<T>& x,const scifir::coordinates_nd
 
 template<typename T,typename U>
 bool operator !=(const scifir::coordinates_nd<T>& x,const scifir::coordinates_nd<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::coordinates_nd<T>& x,const scifir::point_nd<U>& y)
-{
-	if (x.values.size() == y.values.size())
-	{
-		for (int i = 0 ; i < x.values.size(); i++)
-		{
-			if (x.values[i] != y.values[i])
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::coordinates_nd<T>& x,const scifir::point_nd<U>& y)
-{
-	return !(x == y);
-}
-
-template<typename T,typename U>
-bool operator ==(const scifir::point_nd<T>& x,const scifir::coordinates_nd<U>& y)
-{
-	if (x.values.size() == y.values.size())
-	{
-		for (int i = 0 ; i < x.values.size(); i++)
-		{
-			if (x.values[i] != y.values[i])
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-template<typename T,typename U>
-bool operator !=(const scifir::point_nd<T>& x,const scifir::coordinates_nd<U>& y)
 {
 	return !(x == y);
 }

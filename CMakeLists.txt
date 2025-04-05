@@ -32,6 +32,10 @@ if(DEBUG_FLAGS)
 	if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zi /EHsc")
 	endif()
+	if(BUILD_TESTING AND (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
+		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
+		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --coverage -lgcov")
+	endif()
 endif()
 
 if(WARNING_FLAGS)
@@ -44,11 +48,6 @@ if(WARNING_FLAGS)
 	if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Wall")
 	endif()
-endif()
-
-if(BUILD_TESTING AND (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
-	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --coverage -lgcov")
 endif()
 
 if(DEFINED(${INCLUDE_PATH}))
@@ -84,6 +83,8 @@ endif()
 # Files to compile
 
 set(TARGET_H
+biology
+chemistry
 coordinates
 fields
 meca_number
@@ -94,7 +95,7 @@ topology
 units
 util)
 
-file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp fields/*.cpp meca_number/*.cpp nutrition/*.cpp derived_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
+file(GLOB_RECURSE TARGET_SRC biology/*.cpp chemistry/*.cpp coordinates/*.cpp fields/*.cpp meca_number/*.cpp nutrition/*.cpp derived_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
 
 # Project to build
 
@@ -188,6 +189,11 @@ if(BUILD_TESTING)
 		add_test(NAME lab_number COMMAND test_lab_number)
 		set_tests_properties(lab_number PROPERTIES LABELS tests)
 
+		add_executable(test_percentage tests/meca_number/test_percentage.cpp)
+		target_link_libraries(test_percentage PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME percentage COMMAND test_percentage)
+		set_tests_properties(percentage PROPERTIES LABELS tests)
+
 		add_executable(test_base_units tests/units/test_base_units.cpp)
 		target_link_libraries(test_base_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME base_units COMMAND test_base_units)
@@ -202,6 +208,11 @@ if(BUILD_TESTING)
 		target_link_libraries(test_unit_abbreviation PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME unit_abbreviation COMMAND test_unit_abbreviation)
 		set_tests_properties(unit_abbreviation PROPERTIES LABELS tests)
+
+		add_executable(test_address tests/coordinates/test_address.cpp)
+		target_link_libraries(test_address PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME address COMMAND test_address)
+		set_tests_properties(address PROPERTIES LABELS tests)
 
 		add_executable(test_coordinates_1d tests/coordinates/test_coordinates_1d.cpp)
 		target_link_libraries(test_coordinates_1d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
@@ -238,57 +249,42 @@ if(BUILD_TESTING)
 		add_test(NAME coordinates_ndr COMMAND test_coordinates_ndr)
 		set_tests_properties(coordinates_ndr PROPERTIES LABELS tests)
 
+		add_executable(test_latitude tests/coordinates/test_latitude.cpp)
+		target_link_libraries(test_latitude PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME latitude COMMAND test_latitude)
+		set_tests_properties(latitude PROPERTIES LABELS tests)
+
+		add_executable(test_longitude tests/coordinates/test_longitude.cpp)
+		target_link_libraries(test_longitude PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME longitude COMMAND test_longitude)
+		set_tests_properties(longitude PROPERTIES LABELS tests)
+
 		add_executable(test_direction tests/topology/test_direction.cpp)
 		target_link_libraries(test_direction PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME direction COMMAND test_direction)
 		set_tests_properties(direction PROPERTIES LABELS tests)
-
-		add_executable(test_point_1d tests/topology/test_point_1d.cpp)
-		target_link_libraries(test_point_1d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
-		add_test(NAME point_1d COMMAND test_point_1d)
-		set_tests_properties(point_1d PROPERTIES LABELS tests)
-
-		add_executable(test_point_2d tests/topology/test_point_2d.cpp)
-		target_link_libraries(test_point_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
-		add_test(NAME point_2d COMMAND test_point_2d)
-		set_tests_properties(point_2d PROPERTIES LABELS tests)
-
-		add_executable(test_point_3d tests/topology/test_point_3d.cpp)
-		target_link_libraries(test_point_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
-		add_test(NAME point_3d COMMAND test_point_3d)
-		set_tests_properties(point_3d PROPERTIES LABELS tests)
-
-		add_executable(test_point_nd tests/topology/test_point_nd.cpp)
-		target_link_libraries(test_point_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
-		add_test(NAME point_nd COMMAND test_point_nd)
-		set_tests_properties(point_nd PROPERTIES LABELS tests)
 
 		add_executable(test_aid tests/special_units/test_aid.cpp)
 		target_link_libraries(test_aid PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME aid COMMAND test_aid)
 		set_tests_properties(aid PROPERTIES LABELS tests)
 
-		add_executable(test_body tests/special_units/test_body.cpp)
+		add_executable(test_body tests/biology/test_body.cpp)
 		target_link_libraries(test_body PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME body COMMAND test_body)
 		set_tests_properties(body PROPERTIES LABELS tests)
 
-		add_executable(test_mind tests/special_units/test_mind.cpp)
+		add_executable(test_mind tests/biology/test_mind.cpp)
 		target_link_libraries(test_mind PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME mind COMMAND test_mind)
 		set_tests_properties(mind PROPERTIES LABELS tests)
 
-		add_executable(test_percentage tests/special_units/test_percentage.cpp)
-		target_link_libraries(test_percentage PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
-		add_test(NAME percentage COMMAND test_percentage)
-		set_tests_properties(percentage PROPERTIES LABELS tests)
-
-		add_executable(test_pH tests/special_units/test_pH.cpp)
+		add_executable(test_pH tests/chemistry/test_pH.cpp)
 		target_link_libraries(test_pH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME pH COMMAND test_pH)
 		set_tests_properties(pH PROPERTIES LABELS tests)
 
-		add_executable(test_pOH tests/special_units/test_pOH.cpp)
+		add_executable(test_pOH tests/chemistry/test_pOH.cpp)
 		target_link_libraries(test_pOH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME pOH COMMAND test_pOH)
 		set_tests_properties(pOH PROPERTIES LABELS tests)
@@ -337,6 +333,26 @@ if(BUILD_TESTING)
 		target_link_libraries(test_abv PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
 		add_test(NAME abv COMMAND test_abv)
 		set_tests_properties(abv PROPERTIES LABELS tests)
+
+		add_executable(test_mass_point_2d tests/physics/test_mass_point_2d.cpp)
+		target_link_libraries(test_mass_point_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME mass_point_2d COMMAND test_mass_point_2d)
+		set_tests_properties(mass_point_2d PROPERTIES LABELS tests)
+
+		add_executable(test_mass_point_3d tests/physics/test_mass_point_3d.cpp)
+		target_link_libraries(test_mass_point_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME mass_point_3d COMMAND test_mass_point_3d)
+		set_tests_properties(mass_point_3d PROPERTIES LABELS tests)
+
+		add_executable(test_charge_point_2d tests/physics/test_charge_point_2d.cpp)
+		target_link_libraries(test_charge_point_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME charge_point_2d COMMAND test_charge_point_2d)
+		set_tests_properties(charge_point_2d PROPERTIES LABELS tests)
+
+		add_executable(test_charge_point_3d tests/physics/test_charge_point_3d.cpp)
+		target_link_libraries(test_charge_point_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})
+		add_test(NAME charge_point_3d COMMAND test_charge_point_3d)
+		set_tests_properties(charge_point_3d PROPERTIES LABELS tests)
 
 		add_executable(benchmark_units tests/benchmark_units.cpp)
 		target_link_libraries(benchmark_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system ${ICU_LIBRARIES})

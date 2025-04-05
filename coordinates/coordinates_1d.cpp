@@ -14,16 +14,6 @@ namespace scifir
 	{
 		return float(std::sqrt(std::pow(x.x - y.x,2)));
 	}
-
-	float distance(const coordinates_1d<float>& x,const point_1d<float>& y)
-	{
-		return float(std::sqrt(std::pow(x.x - y.x,2)));
-	}
-
-	float distance(const point_1d<float>& x,const coordinates_1d<float>& y)
-	{
-		return float(std::sqrt(std::pow(x.x - y.x,2)));
-	}
 }
 
 ostream& operator <<(ostream& os,const scifir::coordinates_1d<float>& x)

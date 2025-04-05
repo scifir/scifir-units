@@ -29,8 +29,18 @@ TEST_CASE("angle class") {
         CHECK(g.get_value() == 5.0f);
         angle h("10°");
         CHECK(h.get_value() == 10.0f);
+        angle h2("10.768°");
+        CHECK(h2.get_value() == 10.768f);
         angle i("15º");
         CHECK(i.get_value() == 15.0f);
+        angle i2("15 deg");
+        CHECK(i2.get_value() == 15.0f);
+        angle i3("0.349 rad");
+        CHECK(i3.display() == "19.99°");
+        angle i4("200 grad");
+        CHECK(i4.display() == "180°");
+        angle i5("0.5 tr");
+        CHECK(i5.display() == "180°");
         scalar_unit j2("7 N");
         angle j(j2);
         CHECK(j.get_value() == 0.0f);
@@ -46,6 +56,22 @@ TEST_CASE("angle class") {
         CHECK(l3.display() == "19.99°");
         angle l4(5,angle::RADIAN);
         CHECK(l4.display() == "286.47°");
+        angle m1(100.0f,angle::GRADIAN);
+        CHECK(m1.display() == "90°");
+        angle m2(200.0,angle::GRADIAN);
+        CHECK(m2.display() == "180°");
+        angle m3(300.0l,angle::GRADIAN);
+        CHECK(m3.display() == "270°");
+        angle m4(350,angle::GRADIAN);
+        CHECK(m4.display() == "315°");
+        angle n1(0.25f,angle::TURN);
+        CHECK(n1.display() == "90°");
+        angle n2(0.5,angle::TURN);
+        CHECK(n2.display() == "180°");
+        angle n3(0.75l,angle::TURN);
+        CHECK(n3.display() == "270°");
+        angle n4(1,angle::TURN);
+        CHECK(n4.display() == "0°");
     }
 
     SECTION("Assignments of angle class")
@@ -154,10 +180,42 @@ TEST_CASE("angle class") {
         CHECK(to_string(c) == "60°");
     }
 
-    SECTION("is_angle function")
+    SECTION("Conversion to degrees")
+    {
+        CHECK(radian_to_degree(3.1415927f) == 180.0f);
+        CHECK(gradian_to_degree(200.0f) == 180.0f);
+        CHECK(turn_to_degree(0.5f) == 180.0f);
+    }
+
+    SECTION("Conversion to radians")
+    {
+        CHECK(degree_to_radian(180.0f) == 3.1415927f);
+        CHECK(gradian_to_radian(200.0f) == 3.1415998f);
+        CHECK(turn_to_radian(0.5f) == 3.1415927f);
+    }
+
+    SECTION("Conversion to gradians")
+    {
+        CHECK(degree_to_gradian(180.0f) == 200.0f);
+        CHECK(radian_to_gradian(3.1415927f) == 200.0f);
+        CHECK(turn_to_gradian(0.5f) == 200.0f);
+    }
+
+    SECTION("Conversion to turns")
+    {
+        CHECK(degree_to_turn(180.0f) == 0.5f);
+        CHECK(radian_to_turn(3.1415927f) == 0.5f);
+        CHECK(gradian_to_turn(200.0f) == 0.5f);
+    }
+
+    SECTION("is_angle() function")
     {
         CHECK(is_angle("10°") == true);
         CHECK(is_angle("10.0°") == true);
+        CHECK(is_angle("10 deg") == true);
+        CHECK(is_angle("10 rad") == true);
+        CHECK(is_angle("10 grad") == true);
+        CHECK(is_angle("10 tr") == true);
         CHECK(is_angle("10A°") == false);
         CHECK(is_angle("10") == false);
         CHECK(is_angle("10.0.9°") == false);

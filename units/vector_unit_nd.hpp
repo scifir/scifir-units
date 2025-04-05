@@ -4,7 +4,7 @@
 #include "./scalar_unit.hpp"
 #include "../meca_number/angle.hpp"
 #include "../util/is_number.hpp"
-#include "../topology/direction.hpp"
+#include "../coordinates/direction.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -19,10 +19,51 @@
 #define VECTOR_UNIT_ND_HPP_BEGIN(name) class name##_nd : public vector_unit_nd \
 	{	\
 		public: \
-			using vector_unit_nd::vector_unit_nd; \
 			name##_nd(); \
 			name##_nd(const name##_nd&); \
 			name##_nd(name##_nd&&); \
+			explicit name##_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles,dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(float new_value,const string& init_dimensions); \
+			explicit name##_nd(float new_value,const string& init_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(float new_value,const string& init_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(double new_value,const string& init_dimensions); \
+			explicit name##_nd(double new_value,const string& init_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(double new_value,const string& init_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(long double new_value,const string& init_dimensions); \
+			explicit name##_nd(long double new_value,const string& init_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(long double new_value,const string& init_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(int new_value,const string& init_dimensions); \
+			explicit name##_nd(int new_value,const string& init_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(int new_value,const string& init_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(float new_value,const vector<dimension>& new_dimensions); \
+			explicit name##_nd(float new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(float new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(double new_value,const vector<dimension>& new_dimensions); \
+			explicit name##_nd(double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(long double new_value,const vector<dimension>& new_dimensions); \
+			explicit name##_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(int new_value,const vector<dimension>& new_dimensions); \
+			explicit name##_nd(int new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(int new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(const scalar_unit& x); \
+			explicit name##_nd(const scalar_unit& x,const vector<float>& new_angles); \
+			explicit name##_nd(const scalar_unit& x,const vector<angle>& new_angles); \
+			explicit name##_nd(const string& init_scalar,const vector<float>& new_angles); \
+			explicit name##_nd(const string& init_scalar,const vector<angle>& new_angles); \
+			explicit name##_nd(const string& init_vector_nd); \
+			explicit name##_nd(const vector_unit_nd& x); \
+			explicit name##_nd(vector_unit_nd&& x); \
+			name##_nd& operator =(const name##_nd& x); \
+			name##_nd& operator =(name##_nd&& x); \
 			using vector_unit_nd::operator =; \
 			using vector_unit_nd::operator+=; \
 			using vector_unit_nd::operator-=
@@ -35,10 +76,51 @@
 #define VECTOR_UNIT_ND_HPP(name) class name##_nd : public vector_unit_nd \
 	{	\
 		public: \
-			using vector_unit_nd::vector_unit_nd; \
 			name##_nd(); \
 			name##_nd(const name##_nd&); \
 			name##_nd(name##_nd&&); \
+			explicit name##_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles,dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name##_nd(float new_value,const string& init_dimensions); \
+			explicit name##_nd(float new_value,const string& init_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(float new_value,const string& init_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(double new_value,const string& init_dimensions); \
+			explicit name##_nd(double new_value,const string& init_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(double new_value,const string& init_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(long double new_value,const string& init_dimensions); \
+			explicit name##_nd(long double new_value,const string& init_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(long double new_value,const string& init_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(int new_value,const string& init_dimensions); \
+			explicit name##_nd(int new_value,const string& init_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(int new_value,const string& init_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(float new_value,const vector<dimension>& new_dimensions); \
+			explicit name##_nd(float new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(float new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(double new_value,const vector<dimension>& new_dimensions); \
+			explicit name##_nd(double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(long double new_value,const vector<dimension>& new_dimensions); \
+			explicit name##_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(int new_value,const vector<dimension>& new_dimensions); \
+			explicit name##_nd(int new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles); \
+			explicit name##_nd(int new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles); \
+			explicit name##_nd(const scalar_unit& x); \
+			explicit name##_nd(const scalar_unit& x,const vector<float>& new_angles); \
+			explicit name##_nd(const scalar_unit& x,const vector<angle>& new_angles); \
+			explicit name##_nd(const string& init_scalar,const vector<float>& new_angles); \
+			explicit name##_nd(const string& init_scalar,const vector<angle>& new_angles); \
+			explicit name##_nd(const string& init_vector_nd); \
+			explicit name##_nd(const vector_unit_nd& x); \
+			explicit name##_nd(vector_unit_nd&& x); \
+			name##_nd& operator =(const name##_nd& x); \
+			name##_nd& operator =(name##_nd&& x); \
 			using vector_unit_nd::operator =; \
 			using vector_unit_nd::operator+=; \
 			using vector_unit_nd::operator-=; \
@@ -47,11 +129,278 @@
 			static const vector<dimension> real_dimensions; \
 	}
 
-#define VECTOR_UNIT_ND_CPP(name,init_dimensions) name##_nd::name##_nd() : vector_unit_nd() {} \
+#define VECTOR_UNIT_ND_CPP(name,init_real_dimensions) name##_nd::name##_nd() : vector_unit_nd() {} \
 	name##_nd::name##_nd(const name##_nd& x) : vector_unit_nd(x) {} \
 	name##_nd::name##_nd(name##_nd&& x) : vector_unit_nd(std::move(x)) {} \
-const string name##_nd::dimensions_match = init_dimensions; \
-const vector<dimension> name##_nd::real_dimensions = create_base_dimensions(init_dimensions)
+	name##_nd::name##_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position) : vector_unit_nd(new_value,new_dimension,new_prefix,new_angles,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position) : vector_unit_nd(new_value,new_dimension,new_prefix,new_angles,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position) : vector_unit_nd(new_value,new_dimension,new_prefix,new_angles,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position) : vector_unit_nd(new_value,new_dimension,new_prefix,new_angles,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position) : vector_unit_nd(new_value,new_dimension,new_prefix,new_angles,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position) : vector_unit_nd(new_value,new_dimension,new_prefix,new_angles,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position) : vector_unit_nd(new_value,new_dimension,new_prefix,new_angles,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position) : vector_unit_nd(new_value,new_dimension,new_prefix,new_angles,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(float new_value,const string& init_dimensions) : vector_unit_nd(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(float new_value,const string& init_dimensions,const vector<float>& new_angles) : vector_unit_nd(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(float new_value,const string& init_dimensions,const vector<angle>& new_angles) : vector_unit_nd(new_value,init_dimensions,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(double new_value,const string& init_dimensions) : vector_unit_nd(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(double new_value,const string& init_dimensions,const vector<float>& new_angles) : vector_unit_nd(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(double new_value,const string& init_dimensions,const vector<angle>& new_angles) : vector_unit_nd(new_value,init_dimensions,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(long double new_value,const string& init_dimensions) : vector_unit_nd(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(long double new_value,const string& init_dimensions,const vector<float>& new_angles) : vector_unit_nd(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(long double new_value,const string& init_dimensions,const vector<angle>& new_angles) : vector_unit_nd(new_value,init_dimensions,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(int new_value,const string& init_dimensions) : vector_unit_nd(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(int new_value,const string& init_dimensions,const vector<float>& new_angles) : vector_unit_nd(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(int new_value,const string& init_dimensions,const vector<angle>& new_angles) : vector_unit_nd(new_value,init_dimensions,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(float new_value,const vector<dimension>& new_dimensions) : vector_unit_nd(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(float new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles) : vector_unit_nd(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(float new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : vector_unit_nd(new_value,new_dimensions,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(double new_value,const vector<dimension>& new_dimensions) : vector_unit_nd(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles) : vector_unit_nd(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : vector_unit_nd(new_value,new_dimensions,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(long double new_value,const vector<dimension>& new_dimensions) : vector_unit_nd(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles) : vector_unit_nd(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : vector_unit_nd(new_value,new_dimensions,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(int new_value,const vector<dimension>& new_dimensions) : vector_unit_nd(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(int new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles) : vector_unit_nd(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(int new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : vector_unit_nd(new_value,new_dimensions,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(const scalar_unit& x) : vector_unit_nd(x) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(const scalar_unit& x,const vector<float>& new_angles) : vector_unit_nd(x) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(const scalar_unit& x,const vector<angle>& new_angles) : vector_unit_nd(x,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(const string& init_scalar,const vector<float>& new_angles) : vector_unit_nd(init_scalar) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+		for(const float& x_angle : new_angles) \
+		{ \
+			angles.push_back(angle(x_angle)); \
+		} \
+	} \
+\
+	name##_nd::name##_nd(const string& init_scalar,const vector<angle>& new_angles) : vector_unit_nd(init_scalar,new_angles) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(const string& init_vector_nd) : vector_unit_nd() \
+	{ \
+		vector_unit_nd::initialize_from_string(init_vector_nd); \
+	} \
+\
+	name##_nd::name##_nd(const vector_unit_nd& x) : vector_unit_nd(x) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd::name##_nd(vector_unit_nd&& x) : vector_unit_nd(x) \
+	{ \
+		scalar_unit::check_dimensions(name##_nd::real_dimensions); \
+	} \
+\
+	name##_nd& name##_nd::operator =(const name##_nd& x) \
+	{ \
+		vector_unit_nd::operator =(x); \
+		return *this; \
+	} \
+\
+	name##_nd& name##_nd::operator =(name##_nd&& x) \
+	{ \
+		vector_unit_nd::operator =(std::move(x)); \
+		return *this; \
+	} \
+const string name##_nd::dimensions_match = init_real_dimensions; \
+const vector<dimension> name##_nd::real_dimensions = create_base_dimensions(init_real_dimensions)
 
 using namespace std;
 
@@ -63,6 +412,14 @@ namespace scifir
 			vector_unit_nd();
 			vector_unit_nd(const vector_unit_nd& x);
 			vector_unit_nd(vector_unit_nd&& x);
+			explicit vector_unit_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles,dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(float new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, vector<float> new_angles, dimension::position new_position = dimension::NUMERATOR);
+			explicit vector_unit_nd(int new_value, dimension::type new_dimension, prefix::type new_prefix, const vector<angle>& new_angles, dimension::position new_position = dimension::NUMERATOR);
 			explicit vector_unit_nd(float new_value,const string& init_dimensions);
 			explicit vector_unit_nd(float new_value,const string& init_dimensions,const vector<float>& new_angles);
 			explicit vector_unit_nd(float new_value,const string& init_dimensions,const vector<angle>& new_angles);
@@ -229,7 +586,7 @@ namespace scifir
 
 			vector<angle> angles;
 
-		private:
+		protected:
 			void initialize_from_string(string init_vector_nd);
 	};
 

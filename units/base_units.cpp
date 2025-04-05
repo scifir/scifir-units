@@ -20,7 +20,65 @@ using namespace std;
 namespace scifir
 {
 	SCALAR_UNIT_CPP(length,"m");
-	SCALAR_UNIT_CPP(time_duration,"s");
+
+	time_duration::time_duration() : scalar_unit()
+	{
+		scalar_unit::dimensions = time_duration::real_dimensions;
+	}
+
+	time_duration::time_duration(const scalar_unit& x)
+	{
+		if (x.has_dimensions(time_duration::real_dimensions))
+		{
+			value = x.get_value();
+			dimensions = x.get_dimensions();
+		}
+	}
+
+	time_duration::time_duration(scalar_unit&& x)
+	{
+		if (x.has_dimensions(time_duration::real_dimensions))
+		{
+			value = std::move(x.get_value());
+			dimensions = std::move(x.get_dimensions());
+		}
+	}
+
+	time_duration::time_duration(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position)
+	{}
+
+	time_duration::time_duration(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position)
+	{}
+
+	time_duration::time_duration(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position)
+	{}
+
+	time_duration::time_duration(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position)
+	{}
+
+	time_duration::time_duration(float new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions)
+	{}
+
+	time_duration::time_duration(double new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions)
+	{}
+
+	time_duration::time_duration(long double new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions)
+	{}
+
+	time_duration::time_duration(int new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions)
+	{}
+
+	time_duration::time_duration(float new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions)
+	{}
+
+	time_duration::time_duration(double new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions)
+	{}
+
+	time_duration::time_duration(long double new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions)
+	{}
+
+	time_duration::time_duration(int new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions)
+	{}
 
 	time_duration::time_duration(const string& init_time) : scalar_unit()
 	{
@@ -82,6 +140,9 @@ namespace scifir
 			dimensions = create_dimensions("s");
 		}
 	}
+
+	const string time_duration::dimensions_match = "s";
+	const vector<dimension> time_duration::real_dimensions = create_base_dimensions("s");
 
 	time_duration::operator std::chrono::seconds() const
 	{
@@ -313,7 +374,7 @@ namespace scifir
 
 	mass::mass(const string& init_percentage,const string& init_mass) : scalar_unit()
 	{
-		initialize_from_string(init_mass);
+		initialize_from_string(init_mass,mass::real_dimensions);
 		percentage new_percentage = percentage(init_percentage);
 		value = new_percentage * value;
 	}
@@ -330,12 +391,12 @@ namespace scifir
 
 	mole::mole(const string& init_percentage,const string& init_mole) : scalar_unit()
 	{
-		initialize_from_string(init_mole);
+		initialize_from_string(init_mole,mole::real_dimensions);
 		percentage new_percentage = percentage(init_percentage);
 		value = new_percentage * value;
 	}
 
-	int mole::number_of_particles() const
+	int mole::get_number_of_particles() const
 	{
 		return 1;
 		/*if (scalar_unit::actual_dimensions.count(particles))

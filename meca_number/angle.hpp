@@ -5,9 +5,8 @@
 #include "../util/is_number.hpp"
 #include "../units/scalar_unit.hpp"
 
-#include "boost/math/constants/constants.hpp"
-
 #include <cmath>
+#include <numbers>
 #include <string>
 
 using namespace std;
@@ -16,18 +15,68 @@ namespace scifir
 {
 	inline float radian_to_degree(float x)
 	{
-		return x * 180.0f / PI;
+		return x * 180.0f / std::numbers::pi_v<float>;
+	}
+
+	inline float gradian_to_degree(float x)
+	{
+		return x * 0.9f;
+	}
+
+	inline float turn_to_degree(float x)
+	{
+		return x * 360.0f;
 	}
 
 	inline float degree_to_radian(float x)
 	{
-		return x * PI / 180.0f;
+		return x * std::numbers::pi_v<float> / 180.0f;
+	}
+
+	inline float gradian_to_radian(float x)
+	{
+		return x * 0.015708f;
+	}
+
+	inline float turn_to_radian(float x)
+	{
+		return x * 2 * std::numbers::pi_v<float>;
+	}
+
+	inline float degree_to_gradian(float x)
+	{
+		return x / 0.9f;
+	}
+
+	inline float radian_to_gradian(float x)
+	{
+		return x * 200.0f / std::numbers::pi_v<float>;
+	}
+
+	inline float turn_to_gradian(float x)
+	{
+		return x * 400.f;
+	}
+
+	inline float degree_to_turn(float x)
+	{
+		return x / 360.0f;
+	}
+
+	inline float radian_to_turn(float x)
+	{
+		return x / (2.0f * std::numbers::pi_v<float>);
+	}
+
+	inline float gradian_to_turn(float x)
+	{
+		return x / 400.0f;
 	}
 
 	class angle
 	{
 		public:
-			enum type : int8_t {DEGREE,RADIAN};
+			enum type : int8_t {DEGREE,RADIAN,GRADIAN,TURN};
 
 			angle();
 			angle(const angle& x);
@@ -159,11 +208,13 @@ namespace scifir
 				return degree_to_radian(value);
 			}
 
-		private:
+		protected:
 			float value;
 
-			void normalize_value();
 			void initialize_from_string(string init_angle);
+
+		private:
+			void normalize_value();
 	};
 
 	string to_string(const angle& x);
@@ -180,6 +231,7 @@ namespace scifir
 	angle asin(float x);
 	angle acos(float x);
 	angle atan(float x);
+	angle atan2(float y,float x);
 	float sinh(const angle& x);
 	float cosh(const angle& x);
 	float tanh(const angle& x);

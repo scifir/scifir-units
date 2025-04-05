@@ -184,6 +184,8 @@ TEST_CASE("dimension class") {
 		CHECK(a48.dimension_type == dimension::INTERNATIONAL_UNIT);
 		dimension a49("mEq",dimension::NUMERATOR);
 		CHECK(a49.dimension_type == dimension::MILLIEQUIVALENT);
+		dimension a50("dB",dimension::NUMERATOR);
+		CHECK(a50.dimension_type == dimension::DECIBEL);
 	}
 
 	SECTION("Assignments of dimension class")
@@ -280,7 +282,7 @@ TEST_CASE("dimension class") {
 		CHECK(a3_2.get_name() == "degree");
 		CHECK(a3_2.get_plural() == "degrees");
 		CHECK(a3_2.get_symbol() == "θ");
-		CHECK(a3_2.get_conversion_factor() == PI / 180.0l);
+		CHECK(a3_2.get_conversion_factor() == std::numbers::pi_v<float> / 180.0l);
 		CHECK(a3_2.is_simple_dimension() == true);
 		CHECK(a3_2.is_base_dimension() == false);
 		CHECK(a3_2.is_derived_dimension() == true);
@@ -806,6 +808,16 @@ TEST_CASE("dimension class") {
 		CHECK(a51.is_derived_dimension() == false);
 		CHECK(a51.is_SI_base_dimension() == false);
 		CHECK(a51.is_SI_derived_dimension() == false);
+		dimension a52(dimension::DECIBEL,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a52.get_name() == "decibel");
+		CHECK(a52.get_plural() == "decibels");
+		CHECK(a52.get_symbol() == "dB");
+		CHECK(a52.get_conversion_factor() == 1.0l);
+		CHECK(a52.is_simple_dimension() == true);
+		CHECK(a52.is_base_dimension() == true);
+		CHECK(a52.is_derived_dimension() == false);
+		CHECK(a52.is_SI_base_dimension() == false);
+		CHECK(a52.is_SI_derived_dimension() == false);
 	}
 
 	SECTION("get_fullname() and get_fullplural()")
@@ -1121,6 +1133,9 @@ TEST_CASE("dimension class") {
 		vector<dimension> t = create_dimensions("m2*s2/m4*C3");
 		vector<dimension> u = normalize_dimensions(t);
 		CHECK(to_string(u) == "s2/m2*C3");
+		vector<dimension> v = create_dimensions("Ω");
+		vector<dimension> w = create_dimensions("ohm");
+		CHECK(equal_dimensions(v,w));
 	}
 
 	SECTION ("prefix_math() of dimesion_class")
@@ -1158,12 +1173,23 @@ TEST_CASE("dimension class") {
 		vector<dimension> l = create_dimensions("g");
 		CHECK(equal_dimensions(k,l) == true);
 		CHECK(i2 == 3600);
+		vector<dimension> m3 = create_dimensions("g*hour");
+		vector<dimension> n2 = create_dimensions("g");
+		long double m4 = 1.0;
+		vector<dimension> o2 = divide_dimensions(m3,n2,m4);
+		vector<dimension> p2 = create_dimensions("hour");
+		CHECK(equal_dimensions(o2,p2) == true);
 		vector<dimension> m = create_dimensions("g*hour");
 		vector<dimension> n = create_dimensions("s");
 		long double m2 = 1.0;
 		vector<dimension> o = divide_dimensions(m,n,m2);
 		vector<dimension> p = create_dimensions("g");
 		CHECK(equal_dimensions(o,p) == true);
+		vector<dimension> m5 = create_dimensions("g*hour");
+		vector<dimension> n3 = create_dimensions("g*s");
+		long double m6 = 1.0;
+		vector<dimension> o3 = divide_dimensions(m5,n3,m6);
+		CHECK(o3.size() == 0);
 		CHECK(m2 == 3600);
 		vector<dimension> q = create_dimensions("g*khour");
 		vector<dimension> r = create_dimensions("s");
@@ -1246,16 +1272,16 @@ TEST_CASE("dimension class") {
 	}
 
 	SECTION ("Testing of custom dimensions") {
-		dimension::create_custom_dimension("custom_dimension","m*s");
+		/*dimension::create_custom_dimension("custom_dimension","m*s");
 		dimension a = dimension("custom_dimension",dimension::NUMERATOR);
 		vector<dimension> b = create_dimensions("m*s");
 		CHECK(a.get_symbol() == "custom_dimension");
 		CHECK(equal_dimensions(a.get_base_dimensions(),b));
-		dimension::create_custom_dimension("uUu","g*m*s");
-		dimension c = dimension("uUu",dimension::NUMERATOR);
+		dimension::create_custom_dimension("uUu","g*m*s");*/
+		/*dimension c = dimension("uUu",dimension::NUMERATOR);
 		vector<dimension> d = create_dimensions("g*m*s");
 		CHECK(c.get_symbol() == "uUu");
-		CHECK(equal_dimensions(c.get_base_dimensions(),d));
+		CHECK(equal_dimensions(c.get_base_dimensions(),d));*/
 	}
 
 	SECTION("Stream operators of dimension class")

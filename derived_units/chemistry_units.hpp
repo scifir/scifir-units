@@ -24,22 +24,6 @@ namespace scifir
 	SCALAR_UNIT_HPP(energy_density);
 	SCALAR_UNIT_HPP(catalytic_efficiency);
 
-	class cas_number
-	{
-		public:
-			cas_number(string);
-
-			inline string get_value() const
-			{
-				return value;
-			}
-
-			string display() const;
-
-		private:
-			string value;
-	};
-
 	// SUBSTANCE
 	SCALAR_UNIT_HPP(molarity);
 	SCALAR_UNIT_HPP(molality);

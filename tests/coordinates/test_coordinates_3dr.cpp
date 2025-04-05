@@ -2,6 +2,8 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../coordinates/coordinates_3dr.hpp"
+#include "../../units/special_names.hpp"
+#include "../../units/unit_abbreviation.hpp"
 
 using namespace std;
 using namespace scifir;
@@ -26,12 +28,6 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		CHECK(to_string(b3) == "(0 m,0 m,100 m;0\u00B0,0\u00B0)");
 		//coordinates_3dr<> b4(angle(0),angle(0),10_m);
 		//CHECK(to_string(b4) == "(0 m,0 m,100 m)");
-		point_3d<> c2(100_m,1_m,2_m);
-		coordinates_3dr<> c(c2,angle(0),angle(0));
-		CHECK(to_string(c) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)");
-		point_3d<> c4(100_m,1_m,2_m);
-		coordinates_3dr<> c3(std::move(c4),angle(0),angle(0));
-		CHECK(to_string(c3) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)");
 		coordinates_3d<> c5(100_m,1_m,2_m);
 		coordinates_3dr<> c6(c5,angle(0),angle(0));
 		CHECK(to_string(c6) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)");
@@ -49,6 +45,8 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		CHECK(to_string(f) == "(1.41 m,1.41 m,3 m;20\u00B0,40\u00B0)");
 		coordinates_3dr<> g("2 m,45\u00B0,20\u00B0;20\u00B0,40\u00B0");
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m;20\u00B0,40\u00B0)");
+		coordinates_3dr<> h(",,;");
+		CHECK(to_string(h) == "(0 m,0 m,0 m;0\u00B0,0\u00B0)");
 	}
 
 	SECTION("Constructors of coordinates_3dr<float> class")
@@ -69,12 +67,6 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		CHECK(to_string(b3) == "(0,0,100;0\u00B0,0\u00B0)");
 		//coordinates_3dr<float> b4(angle(0),angle(0),10_m);
 		//CHECK(to_string(b4) == "(0,0,100)");
-		point_3d<float> c2(100.0f,1.0f,2.0f);
-		coordinates_3dr<float> c(c2,angle(0),angle(0));
-		CHECK(to_string(c) == "(100,1,2;0\u00B0,0\u00B0)");
-		point_3d<float> c4(100.0f,1.0f,2.0f);
-		coordinates_3dr<float> c3(std::move(c4),angle(0),angle(0));
-		CHECK(to_string(c3) == "(100,1,2;0\u00B0,0\u00B0)");
 		coordinates_3d<float> c5(100.0f,1.0f,2.0f);
 		coordinates_3dr<float> c6(c5,angle(0),angle(0));
 		CHECK(to_string(c6) == "(100,1,2;0\u00B0,0\u00B0)");
@@ -92,6 +84,8 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		CHECK(to_string(f) == "(1.41,1.41,3;20\u00B0,40\u00B0)");
 		coordinates_3dr<float> g("2,45\u00B0,20\u00B0;20\u00B0,40\u00B0");
 		CHECK(to_string(g) == "(0.48,0.48,1.87;20\u00B0,40\u00B0)");
+		coordinates_3dr<float> h(",,;");
+		CHECK(to_string(h) == "(0,0,0;0\u00B0,0\u00B0)");
 	}
 
 	SECTION("Assignments of coordinates_3dr<> class")
@@ -105,13 +99,6 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		b = std::move(b2);
 		CHECK(to_string(b) == "(5 m,5 m,1 m;20\u00B0,30\u00B0)");
 		coordinates_3dr<> c;
-		point_3d<> c2(100_m,1_m,2_m);
-		c = c2;
-		CHECK(to_string(c) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)");
-		coordinates_3dr<> c3;
-		point_3d<> c4(100_m,1_m,2_m);
-		c3 = std::move(c4);
-		CHECK(to_string(c3) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)");
 		coordinates_3dr<> d;
 		coordinates_3d<> d2(100_m,1_m,2_m);
 		d = d2;
@@ -145,13 +132,6 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		b = std::move(b2);
 		CHECK(to_string(b) == "(5,5,1;20\u00B0,30\u00B0)");
 		coordinates_3dr<float> c;
-		point_3d<float> c2(100.0f,1.0f,2.0f);
-		c = c2;
-		CHECK(to_string(c) == "(100,1,2;0\u00B0,0\u00B0)");
-		coordinates_3dr<float> c3;
-		point_3d<float> c4(100.0f,1.0f,2.0f);
-		c3 = std::move(c4);
-		CHECK(to_string(c3) == "(100,1,2;0\u00B0,0\u00B0)");
 		coordinates_3dr<float> d;
 		coordinates_3d<float> d2(100.0f,1.0f,2.0f);
 		d = d2;
@@ -174,6 +154,15 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		CHECK(to_string(g) == "(0.48,0.48,1.87;20\u00B0,40\u00B0)");
 	}
 
+	SECTION("Origin of coordinates_3dr<> class")
+	{
+		coordinates_3dr<> a(2_m,3_m,5_m,angle(30.0f),angle(20.0f));
+		coordinates_3dr<> b = coordinates_3dr<>::origin(a,coordinates_3dr<>(1_m,8_m,3_m,30.0_deg,20.0_deg));
+		CHECK(b.x == 3_m);
+		CHECK(b.y == 11_m);
+		CHECK(b.z == 8_m);
+	}
+
 	SECTION("Values of different coordinates systems of coordinates_3dr<> class")
 	{
 		coordinates_3dr<> c(7_m,4_m,2_m,angle(20.0f),angle(30.0f));
@@ -181,9 +170,6 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		CHECK(c.get_spherical_theta().display() == "29.74\u00B0");
 		CHECK(c.get_r().display() == "8.3 m");
 		CHECK(c.get_spherical_phi().display() == "76.06\u00B0");
-		/*CHECK(c.get_latitude() == angle(0.0f));
-		CHECK(c.get_longitude() == angle(29.74f));
-		CHECK(c.get_altitude() == "0 m");*/
 	}
 
 	SECTION("Values of different coordinates systems of coordinates_3dr<float> class")
@@ -193,9 +179,22 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		CHECK(c.get_spherical_theta().display() == "29.74\u00B0");
 		CHECK(std::fabs(c.get_r() - 8.3f) < 0.01f);
 		CHECK(c.get_spherical_phi().display() == "76.06\u00B0");
-		/*CHECK(c.get_latitude() == angle(0.0f));
-		CHECK(c.get_longitude() == angle(29.74f));
-		CHECK(c.get_altitude() == "0 m");*/
+	}
+
+	SECTION("Geographic coordinates of coordinates_3dr<> class")
+	{
+		coordinates_3dr<> a(100000_m,100000_m,6371000_m,angle(50.0f),angle(20.0f));
+		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
+		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(to_string(a.get_altitude()) == "15806.6 m");
+	}
+
+	SECTION("Geographic coordinates of coordinates_3dr<float> class")
+	{
+		coordinates_3d<float> a(100000.0f,100000.0f,6371000.0f);
+		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
+		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(std::fabs(a.get_altitude() - 15806.44f) < 0.01f);
 	}
 
 	SECTION("set_position(), rotate() and move() of coordinates_3dr<> class")
@@ -309,11 +308,6 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		coordinates_3dr<> a(7_m,3_m,1_m,angle(20.0f),angle(30.0f));
 		coordinates_3dr<> b(6_m,2_m,1_m,angle(20.0f),angle(30.0f));
 		CHECK(distance(a,b).display() == "1.41 m");
-		point_3d<> c(7_m,3_m,1_m);
-		CHECK(distance(a,c).display() == "0 m");
-		CHECK(distance(c,a).display() == "0 m");
-		CHECK(distance(b,c).display() == "1.41 m");
-		CHECK(distance(c,b).display() == "1.41 m");
 		coordinates_3d<> d(7_m,3_m,1_m);
 		CHECK(distance(a,d).display() == "0 m");
 		CHECK(distance(d,a).display() == "0 m");
@@ -326,11 +320,6 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		coordinates_3dr<float> a(7.0f,3.0f,1.0f,angle(20.0f),angle(30.0f));
 		coordinates_3dr<float> b(6.0f,2.0f,1.0f,angle(20.0f),angle(30.0f));
 		CHECK(std::fabs(distance(a,b) - 1.41f) < 0.01f);
-		point_3d<float> c(7.0f,3.0f,1.0f);
-		CHECK(std::fabs(distance(a,c) - 0.0f) < 0.01f);
-		CHECK(std::fabs(distance(c,a) - 0.0f) < 0.01f);
-		CHECK(std::fabs(distance(b,c) - 1.41f) < 0.01f);
-		CHECK(std::fabs(distance(c,b) - 1.41f) < 0.01f);
 		coordinates_3d<float> d(7.0f,3.0f,1.0f);
 		CHECK(distance(a,d) == 0.0f);
 		CHECK(distance(d,a) == 0.0f);
@@ -346,12 +335,6 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
-		point_3d<> d(7_m,3_m,1_m);
-		point_3d<> e(5_m,1_m,1_m);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("Relational operators of coordinates_3dr<float> class")
@@ -362,12 +345,6 @@ TEST_CASE("class coordinates_3dr<T> and coordinates_3dr<float>")
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
-		point_3d<float> d(7.0f,3.0f,1.0f);
-		point_3d<float> e(5.0f,1.0f,1.0f);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("String operators of coordinates_3dr<> class")

@@ -11,7 +11,47 @@ using namespace std;
 using namespace scifir;
 
 TEST_CASE("Base units") {
-	SECTION("Functionalities of base units") {
+	SECTION("Constructors of base unit classes")
+	{
+		length a;
+		CHECK(to_string(a) == "0 m");
+		mass b = 100_g;
+		mass c(b);
+		CHECK(to_string(c) == "100 g");
+		mass b2 = 100_g;
+		mass c2(std::move(b2));
+		CHECK(to_string(c2) == "100 g");
+		temperature h(30.0f, dimension::KELVIN, prefix::KILO);
+		CHECK(to_string(h) == "30 kK");
+		temperature h2(30.0, dimension::KELVIN, prefix::KILO);
+		CHECK(to_string(h2) == "30 kK");
+		temperature h3(30.0l, dimension::KELVIN, prefix::KILO);
+		CHECK(to_string(h3) == "30 kK");
+		temperature h4(30, dimension::KELVIN, prefix::KILO);
+		CHECK(to_string(h4) == "30 kK");
+		mass d(100.0f,"g");
+		CHECK(to_string(d) == "100 g");
+		mass d2(100.0,"g");
+		CHECK(to_string(d2) == "100 g");
+		mass d3(100.0l,"g");
+		CHECK(to_string(d3) == "100 g");
+		mass d4(100,"g");
+		CHECK(to_string(d4) == "100 g");
+		mass e(100.0f,{dimension("g",dimension::NUMERATOR)});
+		CHECK(to_string(e) == "100 g");
+		mass e2(100.0,{dimension("g",dimension::NUMERATOR)});
+		CHECK(to_string(e2) == "100 g");
+		mass e3(100.0l,{dimension("g",dimension::NUMERATOR)});
+		CHECK(to_string(e3) == "100 g");
+		mass e4(100,{dimension("g",dimension::NUMERATOR)});
+		CHECK(to_string(e4) == "100 g");
+		mass f("100 g");
+		CHECK(to_string(f) == "100 g");
+		mass g("2E5 g");
+		CHECK(to_string(g) == "200000 g");
+	}
+
+	SECTION("Functionalities of base unit classes") {
 		mass a("10 g");
 		CHECK(to_string(a) == "10 g");
 		mass b("10 g");
@@ -44,8 +84,8 @@ TEST_CASE("Base units") {
 	}
 
 	SECTION("mole class") {
-		scifir::mole a = scifir::mole("1 ppm","1000000 g");
-		CHECK(to_string(a) == "1 g");
+		scifir::mole a = scifir::mole("1 ppm","1000000 mol");
+		CHECK(to_string(a) == "1 mol");
 	}
 
 	SECTION("Base unit literals")
@@ -75,7 +115,9 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_ym == "100 ym"));
 		CHECK(bool(100_rm == "100 rm"));
 		CHECK(bool(100_qm == "100 qm"));
-		
+		CHECK(bool(100e2_m == "10000 m"));
+		CHECK(bool(100.0e2_m == "10000 m"));
+
 		CHECK(bool(100_s == "100 s"));
 		CHECK(bool(100_ms == "100 ms"));
 		CHECK(bool(100_us == "100 us"));
@@ -87,7 +129,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_ys == "100 ys"));
 		CHECK(bool(100_rs == "100 rs"));
 		CHECK(bool(100_qs == "100 qs"));
-		
+
 		CHECK(bool(100_Qg == "100 Qg"));
 		CHECK(bool(100_Rg == "100 Rg"));
 		CHECK(bool(100_Yg == "100 Yg"));

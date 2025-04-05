@@ -1,13 +1,12 @@
 #ifndef SCIFIR_UNITS_UNITS_CONSTANTS_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_CONSTANTS_HPP_INCLUDED
 
-#include "boost/math/constants/constants.hpp"
+#include "./scalar_unit.hpp"
 
 using namespace std;
 
 namespace scifir
 {
-	constexpr float PI = boost::math::constants::pi<float>();
 	const long double HYPERFINE_TRANSITION_FREQUENCY_OF_CS = 9192631770.0l;
 	const long double SPEED_OF_LIGHT = 299792458.0l;
 	const long double PLANCK_CONSTANT = 6.62607015e-34;
@@ -23,6 +22,9 @@ namespace scifir
 	const long double VACUUM_PERMITTIVITY = 8.8541878188e-12;
 	const long double RYDBERG_CONSTANT = 1.0973731568539e7;
 	const long double FARADAY_CONSTANT = 9.64853321233100184e4;
+
+	extern const scalar_unit WGS84_EARTH_SEMIAXIS_A;
+	extern const scalar_unit WGS84_EARTH_SEMIAXIS_B;
 }
 
 #endif // SCIFIR_UNITS_UNITS_CONSTANTS_HPP_INCLUDED

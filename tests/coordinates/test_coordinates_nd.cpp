@@ -34,12 +34,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(to_string(b4) == "(100 m,50 m,20 m)");
 		//coordinates_nd<> b4(angle(0),angle(0),10_m);
 		//CHECK(to_string(b4) == "(0 m,0 m,100 m)");
-		point_nd<> c2(100_m,1_m,2_m);
-		coordinates_nd<> c(c2);
-		CHECK(to_string(c) == "(100 m,1 m,2 m)");
-		point_nd<> c4(100_m,1_m,2_m);
-		coordinates_nd<> c3(std::move(c4));
-		CHECK(to_string(c3) == "(100 m,1 m,2 m)");
 		coordinates_nd<> d("(1 m)");
 		CHECK(to_string(d) == "(1 m)");
 		coordinates_nd<> d2("(1 m,5 m)");
@@ -54,6 +48,8 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(to_string(f) == "(1.41 m,1.41 m,3 m)");
 		coordinates_nd<> g("2 m,45\u00B0,20\u00B0");
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
+		coordinates_nd<> h(",,");
+		CHECK(to_string(h) == "[empty]");
 	}
 
 	SECTION("Constructors of coordinates_nd<float> class")
@@ -76,12 +72,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(to_string(b4) == "(100,50,20)");
 		//coordinates_nd<> b4(angle(0),angle(0),10_m);
 		//CHECK(to_string(b4) == "(0 m,0 m,100 m)");
-		point_nd<float> c2(100.0f,1.0f,2.0f);
-		coordinates_nd<float> c(c2);
-		CHECK(to_string(c) == "(100,1,2)");
-		point_nd<float> c4(100.0f,1.0f,2.0f);
-		coordinates_nd<float> c3(std::move(c4));
-		CHECK(to_string(c3) == "(100,1,2)");
 		coordinates_nd<float> d("(1)");
 		CHECK(to_string(d) == "(1)");
 		coordinates_nd<float> d2("(1,5)");
@@ -96,6 +86,8 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(to_string(f) == "(1.41,1.41,3)");
 		coordinates_nd<float> g("2,45\u00B0,20\u00B0");
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
+		coordinates_nd<float> h(",,");
+		CHECK(to_string(h) == "[empty]");
 	}
 
 	SECTION("Assignments of coordinates_nd<> class")
@@ -109,13 +101,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		b = std::move(b2);
 		CHECK(to_string(b) == "(5 m,5 m,1 m)");
 		coordinates_nd<> c;
-		point_nd<> c2(100_m,1_m,2_m);
-		c = c2;
-		CHECK(to_string(c) == "(100 m,1 m,2 m)");
-		coordinates_nd<> c3;
-		point_nd<> c4(100_m,1_m,2_m);
-		c3 = std::move(c4);
-		CHECK(to_string(c3) == "(100 m,1 m,2 m)");
 		coordinates_nd<> d;
 		d = "(1 m)";
 		CHECK(to_string(d) == "(1 m)");
@@ -150,13 +135,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		b = std::move(b2);
 		CHECK(to_string(b) == "(5,5,1)");
 		coordinates_nd<float> c;
-		point_nd<float> c2(100.0f,1.0f,2.0f);
-		c = c2;
-		CHECK(to_string(c) == "(100,1,2)");
-		coordinates_nd<float> c3;
-		point_nd<float> c4(100.0f,1.0f,2.0f);
-		c3 = std::move(c4);
-		CHECK(to_string(c3) == "(100,1,2)");
 		coordinates_nd<float> d;
 		d = "(1)";
 		CHECK(to_string(d) == "(1)");
@@ -180,6 +158,16 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
 	}
 
+	SECTION("Origin of coordinates_nd<> class")
+	{
+		coordinates_nd<> a(vector<length>{2_m,3_m,5_m,4_m});
+		coordinates_nd<> b = coordinates_nd<>::origin(a,coordinates_nd<>(vector<length>{1_m,8_m,3_m,2_m}));
+		CHECK(b.values[0] == 3_m);
+		CHECK(b.values[1] == 11_m);
+		CHECK(b.values[2] == 8_m);
+		CHECK(b.values[3] == 6_m);
+	}
+
 	SECTION("Values of different coordinates systems of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(7_m,4_m,2_m);
@@ -192,9 +180,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(bool(b.get_theta() == angle()));
 		CHECK(bool(b.get_r() == length()));
 		CHECK(bool(b.get_phi() == angle()));
-		/*CHECK(c.get_latitude() == angle(0.0f));
-		CHECK(c.get_longitude() == angle(29.74f));
-		CHECK(c.get_altitude() == "0 m");*/
 	}
 
 	SECTION("Values of different coordinates systems of coordinates_nd<float> class")
@@ -209,9 +194,22 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(bool(b.get_theta() == angle()));
 		CHECK(b.get_r() == 0.0f);
 		CHECK(bool(b.get_phi() == angle()));
-		/*CHECK(c.get_latitude() == angle(0.0f));
-		CHECK(c.get_longitude() == angle(29.74f));
-		CHECK(c.get_altitude() == "0 m");*/
+	}
+
+	SECTION("Geographic coordinates of coordinates_nd<> class")
+	{
+		coordinates_nd<> a(vector<length>{100000_m,100000_m,6371000_m});
+		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
+		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(to_string(a.get_altitude()) == "15806.6 m");
+	}
+
+	SECTION("Geographic coordinates of coordinates_nd<float> class")
+	{
+		coordinates_nd<float> a(vector<float>{100000.0f,100000.0f,6371000.0f});
+		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
+		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(std::fabs(a.get_altitude() - 15806.44f) < 0.01f);
 	}
 
 	SECTION("set_position(), rotate() and move() of coordinates_nd<> class")
@@ -349,14 +347,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(distance(a,b).display() == "1.41 m");
 		coordinates_nd<> b2(6_m,2_m);
 		CHECK(bool(distance(a,b2) == length()));
-		point_nd<> c(7_m,3_m,1_m);
-		CHECK(distance(a,c).display() == "0 m");
-		CHECK(distance(c,a).display() == "0 m");
-		CHECK(distance(b,c).display() == "1.41 m");
-		CHECK(distance(c,b).display() == "1.41 m");
-		point_nd<> c2(7_m,3_m);
-		CHECK(bool(distance(a,c2) == length()));
-		CHECK(bool(distance(c2,a) == length()));
 	}
 
 	SECTION("distance() of coordinates_nd<float> class")
@@ -366,14 +356,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(std::fabs(distance(a,b) - 1.41f) < 0.01f);
 		coordinates_nd<float> b2(6.0f,2.0f);
 		CHECK(distance(a,b2) == 0.0f);
-		point_nd<float> c(7.0f,3.0f,1.0f);
-		CHECK(std::fabs(distance(a,c) - 0.0f) < 0.01f);
-		CHECK(std::fabs(distance(c,a) - 0.0f) < 0.01f);
-		CHECK(std::fabs(distance(b,c) - 1.41f) < 0.01f);
-		CHECK(std::fabs(distance(c,b) - 1.41f) < 0.01f);
-		point_nd<float> c2(7.0f,3.0f);
-		CHECK(distance(a,c2) == 0.0f);
-		CHECK(distance(c2,a) == 0.0f);
 	}
 
 	SECTION("Relational operators of coordinates_nd<> class")
@@ -386,15 +368,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK((a == c) == false);
 		CHECK((a == c2) == false);
 		CHECK(bool(a != c));
-		point_nd<> d(7_m,3_m,1_m);
-		point_nd<> e(5_m,1_m,1_m);
-		point_nd<> e2(5_m,1_m);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK((a == e2) == false);
-		CHECK((e2 == a) == false);
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("Relational operators of coordinates_nd<float> class")
@@ -405,12 +378,6 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
-		point_nd<float> d(7.0f,3.0f,1.0f);
-		point_nd<float> e(5.0f,1.0f,1.0f);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("String operators of coordinates_nd<> class")

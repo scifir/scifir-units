@@ -16,6 +16,30 @@ namespace scifir
 	vector_unit_3d::vector_unit_3d(vector_unit_3d&& x) : scalar_unit(std::move(x)),theta(std::move(x.theta)),phi(std::move(x.phi))
 	{}
 
+	vector_unit_3d::vector_unit_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(float new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, float new_theta, float new_phi, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value, dimension::type new_dimension, prefix::type new_prefix, const angle& new_theta, const angle& new_phi, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position),theta(new_theta),phi(new_phi)
+	{}
+
 	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
 	{}
 
@@ -417,7 +441,7 @@ namespace scifir
 		boost::split(values,init_vector_3d,boost::is_any_of(" "));
 		if (values.size() == 4)
 		{
-			scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+			scalar_unit::initialize_from_string(values[0] + " " + values[1],vector<dimension>());
 			theta = angle(values[2]);
 			phi = angle(values[3]);
 		}

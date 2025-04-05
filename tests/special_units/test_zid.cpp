@@ -1,8 +1,7 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch2/catch_all.hpp"
-#include "../../special_units/zid.hpp"
-#include "../../special_units/aid.hpp"
+#include "../../coordinates/zid.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -22,38 +21,38 @@ TEST_CASE("zid class") {
 		CHECK(a.zone_type == zid::NONE);
 		zid b2(aid(astronomical_body::MARS),zid::ZONE,"no-country",{"southern-highlands"},"noachis-terra");
 		zid b(b2);
-		CHECK(to_string(b.aid) == "(P)universe:milky-way:solar-system:mars");
+		CHECK(to_string(b.aid) == "(P) milky-way:solar-system:mars");
 		CHECK(b.country == "no-country");
 		CHECK(b.regions == vector<string>{"southern-highlands"});
 		CHECK(b.zone == "noachis-terra");
 		CHECK(b.zone_type == zid::ZONE);
 		zid c2(aid(astronomical_body::EARTH),zid::ZONE,"chile",{"region-metropolitana","santiago"},"providencia");
 		zid c(std::move(c2));
-		CHECK(to_string(c.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(to_string(c.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(c.country == "chile");
 		CHECK(c.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(c.zone == "providencia");
 		CHECK(c.zone_type == zid::ZONE);
 		zid d2(aid(astronomical_body::EARTH),zid::COUNTRY,"chile");
-		CHECK(to_string(d2.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(to_string(d2.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(d2.country == "chile");
 		CHECK(d2.regions.size() == 0);
 		CHECK(d2.zone == "");
 		CHECK(d2.zone_type == zid::COUNTRY);
 		zid d3(aid(astronomical_body::EARTH),"chile",{"region-metropolitana","chacabuco"});
-		CHECK(to_string(d3.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(to_string(d3.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(d3.country == "chile");
 		CHECK(d3.regions == vector<string>{"region-metropolitana","chacabuco"});
 		CHECK(d3.zone == "");
 		CHECK(d3.zone_type == zid::REGION);
 		zid d(aid(astronomical_body::EARTH),zid::ZONE,"chile",{"region-metropolitana","santiago"},"providencia");
-		CHECK(to_string(d.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(to_string(d.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(d.country == "chile");
 		CHECK(d.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(d.zone == "providencia");
 		CHECK(d.zone_type == zid::ZONE);
 		zid d4(aid(astronomical_body::EARTH),zid::SETTLEMENT,"chile",{"region-metropolitana"},"santiago");
-		CHECK(to_string(d4.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(to_string(d4.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(d4.country == "chile");
 		CHECK(d4.regions == vector<string>{"region-metropolitana"});
 		CHECK(d4.zone == "santiago");
@@ -65,37 +64,37 @@ TEST_CASE("zid class") {
 		CHECK(d5.zone == "");
 		CHECK(d5.zone_type == zid::NONE);
 		zid e(aid(astronomical_body::EARTH),"(Z) chile:region-metropolitana:santiago:providencia");
-		CHECK(to_string(e.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(to_string(e.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(e.country == "chile");
 		CHECK(e.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(e.zone == "providencia");
 		CHECK(e.zone_type == zid::ZONE);
 		zid e2(aid(astronomical_body::EARTH),"(Z)chile:region-metropolitana:santiago:providencia");
-		CHECK(to_string(e2.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(to_string(e2.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(e2.country == "chile");
 		CHECK(e2.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(e2.zone == "providencia");
 		CHECK(e2.zone_type == zid::ZONE);
 		zid e3(aid(astronomical_body::EARTH),"(C)chile:region-metropolitana:santiago:providencia");
-		CHECK(to_string(e3.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(to_string(e3.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(e3.country == "");
 		CHECK(e3.regions.size() == 0);
 		CHECK(e3.zone == "");
 		CHECK(e3.zone_type == zid::NONE);
-		zid f("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
-		CHECK(to_string(f.aid) == "(P)universe:milky-way:solar-system:earth");
+		zid f("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
+		CHECK(to_string(f.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(f.country == "chile");
 		CHECK(f.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(f.zone == "providencia");
 		CHECK(f.zone_type == zid::ZONE);
-		zid f2("(P)universe:milky-way:solar-system:earth (Z)chile:region-metropolitana:santiago:providencia");
-		CHECK(to_string(f2.aid) == "(P)universe:milky-way:solar-system:earth");
+		zid f2("(P) milky-way:solar-system:earth (Z)chile:region-metropolitana:santiago:providencia");
+		CHECK(to_string(f2.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(f2.country == "chile");
 		CHECK(f2.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(f2.zone == "providencia");
 		CHECK(f2.zone_type == zid::ZONE);
-		zid f3("(P)universe:milky-way:solar-system:earth (C)chile:region-metropolitana:santiago:providencia");
-		CHECK(to_string(f3.aid) == "(P)universe:milky-way:solar-system:earth");
+		zid f3("(P) milky-way:solar-system:earth (C)chile:region-metropolitana:santiago:providencia");
+		CHECK(to_string(f3.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(f3.country == "");
 		CHECK(f3.regions.size() == 0);
 		CHECK(f3.zone == "");
@@ -137,7 +136,7 @@ TEST_CASE("zid class") {
 		zid b;
 		zid b2(aid(astronomical_body::MARS),zid::ZONE,"no-country",{"southern-highlands"},"noachis-terra");
 		b = b2;
-		CHECK(to_string(b.aid) == "(P)universe:milky-way:solar-system:mars");
+		CHECK(to_string(b.aid) == "(P) milky-way:solar-system:mars");
 		CHECK(b.country == "no-country");
 		CHECK(b.regions == vector<string>{"southern-highlands"});
 		CHECK(b.zone == "noachis-terra");
@@ -145,14 +144,14 @@ TEST_CASE("zid class") {
 		zid c;
 		zid c2(aid(astronomical_body::EARTH),zid::ZONE,"chile",{"region-metropolitana","santiago"},"providencia");
 		c = std::move(c2);
-		CHECK(to_string(c.aid) == "(P)universe:milky-way:solar-system:earth");
+		CHECK(to_string(c.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(c.country == "chile");
 		CHECK(c.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(c.zone == "providencia");
 		CHECK(c.zone_type == zid::ZONE);
 		zid d;
-		d = "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia";
-		CHECK(to_string(d.aid) == "(P)universe:milky-way:solar-system:earth");
+		d = "(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia";
+		CHECK(to_string(d.aid) == "(P) milky-way:solar-system:earth");
 		CHECK(d.country == "chile");
 		CHECK(d.regions == vector<string>{"region-metropolitana","santiago"});
 		CHECK(d.zone == "providencia");
@@ -170,17 +169,17 @@ TEST_CASE("zid class") {
 	{
 		zid a("(R) unknown-country:big-mountains");
 		CHECK(a.has_unknown_country());
-		zid b("(P)universe:milky-way:solar-system:mars (Z) no-country:southern-highlands:noachis-terra");
+		zid b("(P) milky-way:solar-system:mars (Z) no-country:southern-highlands:noachis-terra");
 		CHECK(b.has_no_country());
-		zid c("(P)universe:milky-way:solar-system:earth (Z) argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
+		zid c("(P) milky-way:solar-system:earth (Z) argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
 		CHECK(c.has_no_country() == false);
 		CHECK(c.has_unknown_country() == false);
 	}
 
 	SECTION("display() and partial_display() of zid class")
 	{
-		zid a("(P)universe:milky-way:solar-system:earth (Z) argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
-		CHECK(a.display() == "(P)universe:milky-way:solar-system:earth (Z) argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
+		zid a("(P) milky-way:solar-system:earth (Z) argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
+		CHECK(a.display() == "(P) milky-way:solar-system:earth (Z) argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
 		CHECK(a.partial_display() == "(Z) argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
 		zid b("");
 		CHECK(b.display() == "");
@@ -192,7 +191,7 @@ TEST_CASE("zid class") {
 		zid a;
 		CHECK(to_string(a) == "");
 		zid b(aid(astronomical_body::MARS),zid::ZONE,"no-country",{"southern-highlands"},"noachis-terra");
-		CHECK(to_string(b) == "(P)universe:milky-way:solar-system:mars (Z) no-country:southern-highlands:noachis-terra");
+		CHECK(to_string(b) == "(P) milky-way:solar-system:mars (Z) no-country:southern-highlands:noachis-terra");
 	}
 
 	SECTION("to_string() of zid::type")
@@ -215,12 +214,12 @@ TEST_CASE("zid class") {
 
 	SECTION("Operators of zid class")
 	{
-		zid a("(P)universe:milky-way:solar-system:mars (Z) no-country:southern-highlands:noachis-terra");
-		zid b("(P)universe:milky-way:solar-system:mars (Z) no-country:southern-highlands:noachis-terra");
-		zid c("(P)universe:milky-way:solar-system:mars (Z) no-country:southern-highlands:hesperia-planum");
-		zid d("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
-		zid e("(P)universe:milky-way:solar-system:mars (Z) no-country:northern-lowlands:utopia-basin");
-		zid f("(P)universe:milky-way:solar-system:earth (Z) argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
+		zid a("(P) milky-way:solar-system:mars (Z) no-country:southern-highlands:noachis-terra");
+		zid b("(P) milky-way:solar-system:mars (Z) no-country:southern-highlands:noachis-terra");
+		zid c("(P) milky-way:solar-system:mars (Z) no-country:southern-highlands:hesperia-planum");
+		zid d("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
+		zid e("(P) milky-way:solar-system:mars (Z) no-country:northern-lowlands:utopia-basin");
+		zid f("(P) milky-way:solar-system:earth (Z) argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK((a == d) == false);
@@ -231,27 +230,27 @@ TEST_CASE("zid class") {
 
 	SECTION("String operators of zid class")
 	{
-		CHECK(bool(zid("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia") == "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia"));
-		CHECK(bool(zid("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia") != "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:macul"));
-		CHECK(bool("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia" == zid("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia")));
-		CHECK(bool("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia" != zid("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:macul")));
+		CHECK(bool(zid("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia") == "(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia"));
+		CHECK(bool(zid("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia") != "(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:macul"));
+		CHECK(bool("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia" == zid("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia")));
+		CHECK(bool("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia" != zid("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:macul")));
 		string a = "zid ";
-		a += zid("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
-		CHECK(a == "zid (P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
-		zid b = zid("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
-		CHECK("b " + b == "b (P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
-		CHECK(b + " b" == "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia b");
+		a += zid("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
+		CHECK(a == "zid (P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
+		zid b = zid("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
+		CHECK("b " + b == "b (P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
+		CHECK(b + " b" == "(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia b");
 	}
 
 	SECTION("Streams of zid class")
 	{
 		ostringstream a;
-        a << zid("(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
-        CHECK(a.str() == "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
+        a << zid("(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
+        CHECK(a.str() == "(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
         stringstream b;
-        b << "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia";
+        b << "(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia";
         zid b2;
         b >> b2;
-        CHECK(to_string(b2) == "(P)universe:milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
+        CHECK(to_string(b2) == "(P) milky-way:solar-system:earth (Z) chile:region-metropolitana:santiago:providencia");
 	}
 }

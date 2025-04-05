@@ -34,6 +34,14 @@ namespace scifir
 		{
 			value = radian_to_degree(new_value);
 		}
+		else if (init_type == angle::GRADIAN)
+		{
+			value = gradian_to_degree(new_value);
+		}
+		else if (init_type == angle::TURN)
+		{
+			value = turn_to_degree(new_value);
+		}
 		normalize_value();
 	}
 
@@ -46,6 +54,14 @@ namespace scifir
 		else if (init_type == angle::RADIAN)
 		{
 			value = radian_to_degree(float(new_value));
+		}
+		else if (init_type == angle::GRADIAN)
+		{
+			value = gradian_to_degree(float(new_value));
+		}
+		else if (init_type == angle::TURN)
+		{
+			value = turn_to_degree(float(new_value));
 		}
 		normalize_value();
 	}
@@ -60,6 +76,14 @@ namespace scifir
 		{
 			value = radian_to_degree(float(new_value));
 		}
+		else if (init_type == angle::GRADIAN)
+		{
+			value = gradian_to_degree(float(new_value));
+		}
+		else if (init_type == angle::TURN)
+		{
+			value = turn_to_degree(float(new_value));
+		}
 		normalize_value();
 	}
 
@@ -72,6 +96,14 @@ namespace scifir
 		else if (init_type == angle::RADIAN)
 		{
 			value = radian_to_degree(float(new_value));
+		}
+		else if (init_type == angle::GRADIAN)
+		{
+			value = gradian_to_degree(float(new_value));
+		}
+		else if (init_type == angle::TURN)
+		{
+			value = turn_to_degree(float(new_value));
 		}
 		normalize_value();
 	}
@@ -264,15 +296,36 @@ namespace scifir
 
 	void angle::initialize_from_string(string init_angle)
 	{
-		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
+		if (init_angle.length() >= 5 and init_angle.substr(init_angle.length() - 4) == " deg")
 		{
-			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
+			value = stof(init_angle.substr(0,init_angle.length() - 4));
+			normalize_value();
+			return;
 		}
-		init_angle.clear();
-		init_angle_unicode.toUTF8String(init_angle);
-		value = stof(init_angle);
-		normalize_value();
+		else if (init_angle.length() >= 5 and init_angle.substr(init_angle.length() - 4) == " rad")
+		{
+			value = radian_to_degree(stof(init_angle.substr(0,init_angle.length() - 4)));
+			normalize_value();
+			return;
+		}
+		else if (init_angle.length() >= 6 and init_angle.substr(init_angle.length() - 5) == " grad")
+		{
+			value = gradian_to_degree(stof(init_angle.substr(0,init_angle.length() - 5)));
+			normalize_value();
+			return;
+		}
+		else if (init_angle.length() >= 4 and init_angle.substr(init_angle.length() - 3) == " tr")
+		{
+			value = turn_to_degree(stof(init_angle.substr(0,init_angle.length() - 3)));
+			normalize_value();
+			return;
+		}
+		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
+		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA) or init_angle_unicode.endsWith(0x03B8) or init_angle_unicode.endsWith(0x03A6))
+		{
+			value = stof(init_angle);
+			normalize_value();
+		}
 	}
 
 	string to_string(const angle& x)
@@ -284,33 +337,55 @@ namespace scifir
 	{
 		icu::UnicodeString x_unicode = icu::UnicodeString(init_angle.c_str());
 		int total_chars = x_unicode.countChar32();
+		bool loop = false;
 		if (x_unicode[total_chars - 1] == 0x00B0 || x_unicode[total_chars - 1] == 0x00BA)
 		{
-			bool dot_present = false;
-			for (int i = 0; i < (total_chars - 1); i++)
-			{
-				if (x_unicode[i] == '.')
-				{
-					if (dot_present)
-					{
-						return false;
-					}
-					else
-					{
-						dot_present = true;
-					}
-				}
-				else if (!u_isdigit(x_unicode[i]))
-				{
-					return false;
-				}
-			}
-			return true;
+			loop = true;
 		}
-		else
+		else if (total_chars >= 5 and init_angle.substr(init_angle.length() - 4) == " deg")
+		{
+			loop = true;
+			total_chars -= 4;
+		}
+		else if (total_chars >= 5 and init_angle.substr(init_angle.length() - 4) == " rad")
+		{
+			loop = true;
+			total_chars -= 4;
+		}
+		else if (total_chars>= 6 and init_angle.substr(init_angle.length() - 5) == " grad")
+		{
+			loop = true;
+			total_chars -= 5;
+		}
+		else if (total_chars >= 4 and init_angle.substr(init_angle.length() - 3) == " tr")
+		{
+			loop = true;
+			total_chars -= 3;
+		}
+		if (loop == false)
 		{
 			return false;
 		}
+		bool dot_present = false;
+		for (int i = 0; i < (total_chars - 1); i++)
+		{
+			if (x_unicode[i] == '.')
+			{
+				if (dot_present)
+				{
+					return false;
+				}
+				else
+				{
+					dot_present = true;
+				}
+			}
+			else if (!u_isdigit(x_unicode[i]))
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 
 	bool parallel(const angle& x, const angle& y)
@@ -376,6 +451,11 @@ namespace scifir
 	angle atan(float x)
 	{
 		return angle(radian_to_degree(std::atan(x)));
+	}
+
+	angle atan2(float y,float x)
+	{
+		return angle(radian_to_degree(std::atan2(y,x)));
 	}
 
 	float sinh(const angle& x)

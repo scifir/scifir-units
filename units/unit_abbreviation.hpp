@@ -9,8 +9,9 @@
 #include "../derived_units/radiometry_units.hpp"
 #include "../derived_units/space_units.hpp"
 #include "../derived_units/chemistry_units.hpp"
+#include "../derived_units/biology_units.hpp"
 
-#include "../special_units/percentage.hpp"
+#include "../meca_number/percentage.hpp"
 #include "../special_units/pixel.hpp"
 
 #include "../nutrition/abv.hpp"
@@ -210,8 +211,8 @@ scifir::amount_of_effect operator"" _qIU(unsigned long long int);
 scifir::scalar_unit operator"" _mEq(unsigned long long int);
 
 scifir::mole operator"" _particles(unsigned long long int);
-scifir::scalar_unit operator"" _memo(unsigned long long int);
-scifir::angle operator"" _degree(unsigned long long int);
+scifir::brain_memory operator"" _memo(unsigned long long int);
+scifir::angle operator"" _deg(unsigned long long int);
 scifir::angle operator"" _rad(unsigned long long int);
 scifir::percentage operator"" _percentage(unsigned long long int);
 scifir::percentage operator"" _ppm(unsigned long long int);
@@ -220,6 +221,8 @@ scifir::percentage operator"" _ppt(unsigned long long int);
 scifir::percentage operator"" _ppq(unsigned long long int);*/
 scifir::pixel operator"" _px(unsigned long long int);
 scifir::abv operator"" _abv(unsigned long long int);
+
+scifir::sound_power operator"" _dB(unsigned long long int);
 
 scifir::length operator"" _Å(long double);
 
@@ -418,7 +421,7 @@ scifir::amount_of_effect operator"" _qIU(long double);
 scifir::scalar_unit operator"" _mEq(long double);
 
 scifir::scalar_unit operator"" _memo(long double);
-scifir::angle operator"" _degree(long double);
+scifir::angle operator"" _deg(long double);
 scifir::angle operator"" _rad(long double);
 scifir::percentage operator"" _percentage(long double);
 scifir::percentage operator"" _ppm(long double);
@@ -427,5 +430,7 @@ scifir::percentage operator"" _ppt(long double);
 scifir::percentage operator"" _ppq(long double);*/
 scifir::pixel operator"" _px(long double);
 scifir::abv operator"" _abv(long double);
+
+scifir::sound_power operator"" _dB(long double);
 
 #endif // SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED

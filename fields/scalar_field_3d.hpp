@@ -6,9 +6,9 @@
 #include "../meca_number/angle.hpp"
 #include "../coordinates/coordinates_3d.hpp"
 #include "../coordinates/coordinates_3dr.hpp"
-#include "../topology/point_3d.hpp"
 
 #include <functional>
+#include <string>
 
 using namespace std;
 
@@ -88,11 +88,6 @@ namespace scifir
                 return equation(x.x,x.y,x.z);
             }
 
-            T operator() (const point_3d<U>& x) const
-            {
-                return equation(x.x,x.y,x.z);
-            }
-
             scalar_field_3d<T,U> operator +(const scalar_field_3d<T,U>& x) const
             {
                 return scalar_field_3d<T,U>([this,x](const U& new_x,const U& new_y,const U& new_z) -> T { return equation(new_x,new_y,new_z) + x.equation(new_x,new_y,new_z); });
@@ -134,6 +129,16 @@ namespace scifir
             }
 
             function<T(const U&,const U&,const U&)> equation;
+
+            class scalar_field_3d_function : public function<T(const U&,const U&,const U&)>
+            {
+                public:
+                    scalar_field_3d_function() : function<T(const U&,const U&,const U&)>()
+                    {}
+
+                    scalar_field_3d_function(const string&) : function<T(const U&,const U&,const U&)>()
+                    {}
+            };
     };
 
     template<typename T,typename U>

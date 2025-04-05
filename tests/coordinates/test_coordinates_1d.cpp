@@ -26,16 +26,12 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		CHECK(to_string(a3) == "(5 m)");
 		coordinates_1d<> b(100_m);
 		CHECK(to_string(b) == "(100 m)");
-		point_1d<> c2(100_m);
-		coordinates_1d<> c(c2);
-		CHECK(to_string(c) == "(100 m)");
-		point_1d<> c4(100_m);
-		coordinates_1d<> c3(std::move(c4));
-		CHECK(to_string(c3) == "(100 m)");
 		coordinates_1d<> d("(1 m)");
 		CHECK(to_string(d) == "(1 m)");
 		coordinates_1d<> e("1 m");
 		CHECK(to_string(e) == "(1 m)");
+		coordinates_1d<> f("");
+		CHECK(to_string(f) == "(0 m)");
 	}
 
 	SECTION("Constructors of coordinates_1d<float> class")
@@ -51,16 +47,12 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		CHECK(to_string(a3) == "(5)");
 		coordinates_1d<float> b(100.0f);
 		CHECK(to_string(b) == "(100)");
-		point_1d<float> c2(100.0f);
-		coordinates_1d<float> c(c2);
-		CHECK(to_string(c) == "(100)");
-		point_1d<float> c4(100.0f);
-		coordinates_1d<float> c3(std::move(c4));
-		CHECK(to_string(c3) == "(100)");
 		coordinates_1d<float> d("(1)");
 		CHECK(to_string(d) == "(1)");
 		coordinates_1d<float> e("1");
 		CHECK(to_string(e) == "(1)");
+		coordinates_1d<float> f("");
+		CHECK(to_string(f) == "(0)");
 	}
 
 	SECTION("Assignments of coordinates_1d<> class")
@@ -73,14 +65,6 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		coordinates_1d<> d(30_m);
 		c = std::move(d);
 		CHECK(to_string(c) == "(30 m)");
-		coordinates_1d<> e(10_m);
-		point_1d<> f(15_m);
-		e = f;
-		CHECK(to_string(e) == "(15 m)");
-		coordinates_1d<> e2(10_m);
-		point_1d<> f2(15_m);
-		e2 = std::move(f2);
-		CHECK(to_string(e2) == "(15 m)");
 		coordinates_1d<> g;
 		g = "(1 m)";
 		CHECK(to_string(g) == "(1 m)");
@@ -100,19 +84,19 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		c = std::move(d);
 		CHECK(to_string(c) == "(30)");
 		coordinates_1d<float> e(10.0f);
-		point_1d<float> f(15.0f);
-		e = f;
-		CHECK(to_string(e) == "(15)");
-		coordinates_1d<float> e2(10.0f);
-		point_1d<float> f2(15.0f);
-		e2 = std::move(f2);
-		CHECK(to_string(e2) == "(15)");
 		coordinates_1d<float> g;
 		g = "(1)";
 		CHECK(to_string(g) == "(1)");
 		coordinates_1d<float> h;
 		h = "1";
 		CHECK(to_string(h) == "(1)");
+	}
+
+	SECTION("Origin of coordinates_1d<> class")
+	{
+		coordinates_1d<> a(2_m);
+		coordinates_1d<> b = coordinates_1d<>::origin(a,coordinates_1d<>(1_m));
+		CHECK(b.x == 3_m);
 	}
 
 	SECTION("move(), set_position() and distance_to_origin() of coordinates_1d<> class")
@@ -157,10 +141,6 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		coordinates_1d<> a(10_m);
 		coordinates_1d<> b(15_m);
 		CHECK(to_string(distance(a,b)) == "5 m");
-		coordinates_1d<> c(20_m);
-		point_1d<> d(35_m);
-		CHECK(to_string(distance(c,d)) == "15 m");
-		CHECK(to_string(distance(d,c)) == "15 m");
 	}
 
 	SECTION("distance() functions of coordinates_1d<float> class")
@@ -168,10 +148,6 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		coordinates_1d<float> a(10.0f);
 		coordinates_1d<float> b(15.0f);
 		CHECK(distance(a,b) == 5.0f);
-		coordinates_1d<float> c(20.0f);
-		point_1d<float> d(35.0f);
-		CHECK(distance(c,d) == 15.0f);
-		CHECK(distance(d,c) == 15.0f);
 	}
 
 	SECTION("Relational operators of coordinates_1d<> class")
@@ -182,12 +158,6 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
-		point_1d<> d(7_m);
-		point_1d<> e(5_m);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("Relational operators of coordinates_1d<float> class")
@@ -198,12 +168,6 @@ TEST_CASE("class coordinates_1d<T> and coordinates_1d<float>")
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
-		point_1d<float> d(7.0f);
-		point_1d<float> e(5.0f);
-		CHECK(bool(a == d));
-		CHECK(bool(a != e));
-		CHECK(bool(d == a));
-		CHECK(bool(e != a));
 	}
 
 	SECTION("String operators of coordinates_1d<> class")

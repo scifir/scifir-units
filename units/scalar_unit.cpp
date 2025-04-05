@@ -29,6 +29,18 @@ namespace scifir
 	scalar_unit::scalar_unit(scalar_unit&& x) : dimensions(std::move(x.get_dimensions())),value(std::move(x.get_value()))
 	{}
 
+	scalar_unit::scalar_unit(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : dimensions({ dimension(new_dimension,new_prefix,new_position) }),value(new_value)
+	{}
+	
+	scalar_unit::scalar_unit(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : dimensions({ dimension(new_dimension,new_prefix,new_position) }),value(float(new_value))
+	{}
+	
+	scalar_unit::scalar_unit(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : dimensions({ dimension(new_dimension,new_prefix,new_position) }),value(float(new_value))
+	{}
+	
+	scalar_unit::scalar_unit(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : dimensions({ dimension(new_dimension,new_prefix,new_position) }),value(float(new_value))
+	{}
+
 	scalar_unit::scalar_unit(float new_value, const string& init_dimensions) : dimensions(create_dimensions(init_dimensions)),value(new_value)
 	{}
 
@@ -55,8 +67,7 @@ namespace scifir
 
 	scalar_unit::scalar_unit(const string& init_scalar) : scalar_unit()
 	{
-		//static_assert(is_valid_scalar_unit("asdf"),"invalid initialization string");
-		initialize_from_string(init_scalar);
+		initialize_from_string(init_scalar,vector<dimension>());
 	}
 
 	scalar_unit& scalar_unit::operator =(const scalar_unit& x)
@@ -89,7 +100,7 @@ namespace scifir
 
 	scalar_unit& scalar_unit::operator =(const string& init_scalar)
 	{
-		initialize_from_string(init_scalar);
+		initialize_from_string(init_scalar,vector<dimension>());
 		return *this;
 	}
 
@@ -167,7 +178,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Exponent of dimensions doesn't exist" << endl;
+			cerr << "Exponent with dimensions doesn't exist" << endl;
 			return scalar_unit();
 		}
 	}
@@ -489,7 +500,6 @@ namespace scifir
 		long double new_value = get_value();
 		if (init_dimensions != "sci")
 		{
-			vector<dimension> new_dimensions = create_dimensions(init_dimensions);
 			for(const dimension& x_dimension : dimensions)
 			{
 				if (x_dimension.dimension_position == dimension::NUMERATOR)
@@ -515,6 +525,7 @@ namespace scifir
 					new_value /= x_dimension.prefix_math();
 				}
 			}
+			vector<dimension> new_dimensions = create_dimensions(init_dimensions);
 			if (dimensions.size() == 1 and new_dimensions.size() == 1)
 			{
 				if (dimensions[0].dimension_type == dimension::CELSIUS and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::KELVIN and new_dimensions[0].dimension_position == dimension::NUMERATOR)
@@ -567,6 +578,89 @@ namespace scifir
 		return output.str();
 	}
 
+	string scalar_unit::to_latex(const string& init_dimensions,int number_of_decimals,bool with_brackets) const
+	{
+		ostringstream output;
+		long double new_value = get_value();
+		if (init_dimensions != "sci")
+		{
+			vector<dimension> new_dimensions;
+			if (init_dimensions != "")
+			{
+				for(const dimension& x_dimension : dimensions)
+				{
+					if (x_dimension.dimension_position == dimension::NUMERATOR)
+					{
+						new_value *= x_dimension.get_conversion_factor();
+						new_value *= x_dimension.prefix_math();
+					}
+					else if (x_dimension.dimension_position == dimension::DENOMINATOR)
+					{
+						new_value /= x_dimension.get_conversion_factor();
+						new_value /= x_dimension.prefix_math();
+					}
+				}
+				vector<dimension> base_dimensions = create_base_dimensions(dimensions);
+				for(const dimension& x_dimension : base_dimensions)
+				{
+					if (x_dimension.dimension_position == dimension::NUMERATOR)
+					{
+						new_value *= x_dimension.prefix_math();
+					}
+					else if (x_dimension.dimension_position == dimension::DENOMINATOR)
+					{
+						new_value /= x_dimension.prefix_math();
+					}
+				}
+				new_dimensions = create_dimensions(init_dimensions);
+				if (dimensions.size() == 1 and new_dimensions.size() == 1)
+				{
+					if (dimensions[0].dimension_type == dimension::CELSIUS and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::KELVIN and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+					{
+						new_value += 273.15l;
+					}
+					else if (dimensions[0].dimension_type == dimension::KELVIN and dimensions[0].dimension_position == dimension::NUMERATOR and new_dimensions[0].dimension_type == dimension::CELSIUS and new_dimensions[0].dimension_position == dimension::NUMERATOR)
+					{
+						new_value -= 273.15l;
+					}
+				}
+				for(const dimension& x_new_dimension : new_dimensions)
+				{
+					if (x_new_dimension.dimension_position == dimension::NUMERATOR)
+					{
+						new_value /= x_new_dimension.get_conversion_factor();
+						new_value /= x_new_dimension.prefix_math();
+					}
+					else if (x_new_dimension.dimension_position == dimension::DENOMINATOR)
+					{
+						new_value *= x_new_dimension.get_conversion_factor();
+						new_value *= x_new_dimension.prefix_math();
+					}
+				}
+			}
+			else
+			{
+				new_dimensions = dimensions;
+			}
+			output << display_float(float(new_value),number_of_decimals) << " " << scifir::to_latex(new_dimensions,with_brackets);
+		}
+		else
+		{
+			for (const dimension& x_dimension : dimensions)
+			{
+				new_value *= x_dimension.prefix_math();
+			}
+			vector<dimension> new_dimensions = dimensions;
+			for (dimension& x_new_dimension : new_dimensions)
+			{
+				x_new_dimension.prefix.prefix_type = prefix::NONE;
+			}
+			int value_scale = int(log10(get_value()));
+			output << display_float(float(new_value / std::pow(10,value_scale)),number_of_decimals) << "e" << value_scale << " " << scifir::to_latex(new_dimensions,with_brackets);
+		}
+		return output.str();
+	}
+
 	void scalar_unit::add_dimension(const dimension& new_dimension)
 	{
 		if (new_dimension.dimension_position == dimension::NUMERATOR)
@@ -595,7 +689,7 @@ namespace scifir
 		}
 	}
 
-	void scalar_unit::initialize_from_string(string init_scalar)
+	void scalar_unit::initialize_from_string(string init_scalar,const vector<dimension>& real_dimensions)
 	{
 		if(!isdigit(init_scalar[0]))
 		{
@@ -624,9 +718,22 @@ namespace scifir
 			{
 				string_value.replace(search_10,4,"e");
 			}
-			stringstream ss(string_value);
-			ss >> value;
-			dimensions = create_dimensions(init_scalar.substr(i));
+			const vector<dimension> new_dimensions = create_dimensions(init_scalar.substr(i));
+			if (real_dimensions.size() == 0 or equal_dimensions(new_dimensions,real_dimensions))
+			{
+				stringstream ss(string_value);
+				ss >> value;
+				dimensions = new_dimensions;
+			}
+		}
+	}
+
+	void scalar_unit::check_dimensions(const vector<dimension>& real_dimensions)
+	{
+		if (!has_dimensions(real_dimensions))
+		{
+			value = 0;
+			dimensions.clear();
 		}
 	}
 
@@ -710,8 +817,22 @@ namespace scifir
 		{
 			return false;
 		}
+		bool brackets_present = false;
+		if (init_scalar.at(current_pos + 1) == '[')
+		{
+			if (init_scalar.at(init_scalar.size() - 1) != ']')
+			{
+				return false;
+			}
+			current_pos++;
+			brackets_present = true;
+		}
 		vector<string> values;
-		boost::split(values,init_scalar.substr(current_pos),boost::is_any_of("/"));
+		boost::split(values,init_scalar.substr(current_pos + 1,init_scalar.size() - 1),boost::is_any_of("/"));
+		if (brackets_present)
+		{
+			values[values.size() - 1] = values[values.size() - 1].substr(0,values[values.size() - 1].size() - 1);
+		}
 		if (values.size() == 1)
 		{
 			vector<string> subvalues;

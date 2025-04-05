@@ -4,8 +4,12 @@
 
 #include "boost/algorithm/string.hpp"
 
+#include "unicode/unistr.h"
+#include "unicode/uchar.h"
+
 #include <cmath>
 #include <iostream>
+#include <numbers>
 #include <set>
 #include <sstream>
 #include <string>
@@ -55,7 +59,7 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Hz" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension != "°C" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "Ω" and init_dimension != "Ohm" and init_dimension != "ohm" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "Å" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq" and init_dimension != "dB")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
@@ -280,6 +284,10 @@ namespace scifir
 		{
 			dimension_type = dimension::MILLIEQUIVALENT;
 		}
+		else if(dimension_name == "dB")
+		{
+			dimension_type = dimension::DECIBEL;
+		}
 		else if(dimension_name == "")
 		{
 			dimension_type = dimension::NONE;
@@ -461,6 +469,8 @@ namespace scifir
 				return "international-unit";
 			case dimension::MILLIEQUIVALENT:
 				return "milliequivalent";
+				case dimension::DECIBEL:
+				return "decibel";
 		}
 		return "";
 	}
@@ -584,6 +594,8 @@ namespace scifir
 				return "international-units";
 			case dimension::MILLIEQUIVALENT:
 				return "milliequivalents";
+			case dimension::DECIBEL:
+				return "decibels";
 		}
 		return "";
 	}
@@ -722,6 +734,8 @@ namespace scifir
 				return "IU";
 			case dimension::MILLIEQUIVALENT:
 				return "mEq";
+				case dimension::DECIBEL:
+				return "dB";
 		}
 		return "";
 	}
@@ -735,7 +749,7 @@ namespace scifir
 			case dimension::METRE:
 				return 1.0l;
 			case dimension::DEGREE:
-				return PI / 180.0l;
+				return std::numbers::pi_v<float> / 180.0l;
 			case dimension::RADIAN:
 				return 1.0l;
 			case dimension::STERADIAN:
@@ -839,6 +853,8 @@ namespace scifir
 			case dimension::INTERNATIONAL_UNIT:
 				return 1.0l;
 			case dimension::MILLIEQUIVALENT:
+				return 1.0l;
+			case dimension::DECIBEL:
 				return 1.0l;
 		}
 		return 1.0l;
@@ -975,6 +991,8 @@ namespace scifir
 				return true;
 			case dimension::MILLIEQUIVALENT:
 				return true;
+			case dimension::DECIBEL:
+				return true;
 		}
 		return false;
 	}
@@ -1104,6 +1122,8 @@ namespace scifir
 			case dimension::INTERNATIONAL_UNIT:
 				return true;
 			case dimension::MILLIEQUIVALENT:
+				return true;
+			case dimension::DECIBEL:
 				return true;
 		}
 		return false;
@@ -1235,6 +1255,8 @@ namespace scifir
 				return false;
 			case dimension::MILLIEQUIVALENT:
 				return false;
+			case dimension::DECIBEL:
+				return false;
 		}
 		return false;
 	}
@@ -1352,6 +1374,8 @@ namespace scifir
 			case dimension::INTERNATIONAL_UNIT:
 				return false;
 			case dimension::MILLIEQUIVALENT:
+				return false;
+			case dimension::DECIBEL:
 				return false;
 		}
 		return false;
@@ -1585,7 +1609,8 @@ namespace scifir
 				break;
 			case dimension::CUSTOM:
 			{
-				return dimension::base_dimensions[symbol];
+				//return dimension::base_dimensions[symbol];
+				break;
 			}
 			case dimension::CUSTOM_BASIC:
 			{
@@ -1594,7 +1619,8 @@ namespace scifir
 			}
 			case dimension::CUSTOM_FULL_SYMBOL:
 			{
-				return dimension::base_dimensions[dimension::get_full_symbol(symbol)];
+				break;
+				//return dimension::base_dimensions[dimension::get_full_symbol(symbol)];
 			}
 			case dimension::MONEY:
 				basic_dimensions.push_back(dimension(dimension::MONEY,prefix::NONE,dimension::NUMERATOR));
@@ -1610,6 +1636,9 @@ namespace scifir
 				break;
 			case dimension::MILLIEQUIVALENT:
 				basic_dimensions.push_back(dimension(dimension::MILLIEQUIVALENT,prefix::NONE,dimension::NUMERATOR));
+				break;
+			case dimension::DECIBEL:
+				basic_dimensions.push_back(dimension(dimension::DECIBEL,prefix::NONE,dimension::NUMERATOR));
 				break;
 		}
 		return basic_dimensions;
@@ -1750,6 +1779,145 @@ namespace scifir
 		return out.str();
 	}
 
+	string to_latex(const vector<dimension>& x_dimensions,bool with_brackets)
+	{
+		ostringstream out;
+		bool is_fraction = false;
+		if (x_dimensions.size() > 0)
+		{
+			vector<dimension::type> printed_dimensions = vector<dimension::type>();
+			map<prefix,int> counted_prefixes = map<prefix,int>();
+			bool first_print = true;
+			for (const dimension& x_dimension : x_dimensions)
+			{
+				if (x_dimension.dimension_position == dimension::NUMERATOR)
+				{
+					bool printed = false;
+					for (const dimension::type& print_dimension : printed_dimensions)
+					{
+						if (print_dimension == x_dimension.dimension_type)
+						{
+							printed = true;
+						}
+					}
+					if (printed == true)
+					{
+						continue;
+					}
+					counted_prefixes = map<prefix,int>();
+					for (const dimension& y_dimension : x_dimensions)
+					{
+						if (x_dimension.dimension_type == y_dimension.dimension_type)
+						{
+							counted_prefixes[y_dimension.prefix]++;
+						}
+					}
+					for (const auto& x_prefix : counted_prefixes)
+					{
+						if (!first_print)
+						{
+							out << "*";
+						}
+						out << x_prefix.first << x_dimension.get_symbol();
+						if (x_prefix.second > 1)
+						{
+							out << "^" << x_prefix.second;
+						}
+						first_print = false;
+					}
+					printed_dimensions.push_back(x_dimension.dimension_type);
+				}
+			}
+			printed_dimensions.clear();
+			bool first_negative_iteration = true;
+			bool first_negative_prefix = true;
+			for (const dimension& x_dimension : x_dimensions)
+			{
+				if (x_dimension.dimension_position == dimension::DENOMINATOR)
+				{
+					is_fraction = true;
+					if (first_negative_iteration == true)
+					{
+						if (first_print)
+						{
+							out << "1";
+						}
+						out << "}{";
+						first_negative_iteration = false;
+					}
+					bool printed = false;
+					for (const dimension::type& print_dimension : printed_dimensions)
+					{
+						if (print_dimension == x_dimension.dimension_type)
+						{
+							printed = true;
+						}
+					}
+					if (printed == true)
+					{
+						continue;
+					}
+					counted_prefixes = map<prefix,int>();
+					for (const dimension& y_dimension : x_dimensions)
+					{
+						if (x_dimension.dimension_type == y_dimension.dimension_type)
+						{
+							counted_prefixes[y_dimension.prefix]++;
+						}
+					}
+					for (const auto& x_prefix : counted_prefixes)
+					{
+						if (first_negative_prefix == false)
+						{
+							out << "*";
+						}
+						out << x_prefix.first << x_dimension.get_symbol();
+						if (x_prefix.second > 1)
+						{
+							out << "^" << x_prefix.second;
+						}
+						first_negative_prefix = false;
+					}
+					printed_dimensions.push_back(x_dimension.dimension_type);
+				}
+			}
+			if (is_fraction)
+			{
+				out << "}";
+			}
+			if (with_brackets)
+			{
+				out << "]";
+			}
+		}
+		else
+		{
+			out << "[empty]";
+		}
+		if (is_fraction)
+		{
+			if (with_brackets)
+			{
+				return "[\frac{" + out.str();
+			}
+			else
+			{
+				return "\frac{" + out.str();
+			}
+		}
+		else
+		{
+			if (with_brackets)
+			{
+				return "[" + out.str();
+			}
+			else
+			{
+				return out.str();
+			}
+		}
+	}
+
 	vector<dimension> create_dimensions(string init_dimensions)
 	{
 		boost::algorithm::erase_all(init_dimensions, " ");
@@ -1757,41 +1925,103 @@ namespace scifir
 		int new_scale = 1;
 		int new_size = 1;
 		int new_start = 0;
-		string new_dimension_str;
+		icu::UnicodeString new_dimension_str;
 		vector<dimension> dimensions = vector<dimension>();
-		for(unsigned int j = 0; j < init_dimensions.size(); j++)
+		icu::UnicodeString x_unicode = icu::UnicodeString(init_dimensions.c_str());
+		int total_chars = x_unicode.countChar32();
+		for(unsigned int j = 0; j < total_chars; j++)
 		{
-			if(init_dimensions[j] == '1' and init_dimensions[j + 1] == '/')
+			if(x_unicode[j] == UChar32(U'1') and x_unicode[j + 1] == UChar32(U'/'))
 			{
 				new_sign = dimension::DENOMINATOR;
 			}
-			if(isalpha(init_dimensions[j]) and (!isalpha(init_dimensions[j + 1]) or (j + 1) == init_dimensions.size()))
+			if(is_dimension_char(x_unicode[j]) and (!is_dimension_char(x_unicode[j + 1]) or (j + 1) == total_chars))
 			{
-				new_dimension_str = init_dimensions.substr(new_start, new_size);
-				if(isdigit(init_dimensions[j + 1]))
+				new_dimension_str = x_unicode.tempSubString(new_start,new_size);
+				if(u_isdigit(x_unicode[j + 1]))
 				{
-					new_scale = stoi(init_dimensions.substr(j + 1, 1));
+					new_scale = u_charDigitValue(x_unicode[j + 1]);
 				}
 			}
-			if(init_dimensions[j] == '*')
+			if(x_unicode[j] == UChar32(U'*'))
 			{
 				new_size = 0;
 				new_start = j + 1;
 			}
-			else if(init_dimensions[j] == '/')
+			else if(x_unicode[j] == UChar32(U'/'))
 			{
 				new_sign = dimension::DENOMINATOR;
 				new_size = 0;
 				new_start = j + 1;
 			}
-			if(!new_dimension_str.empty())
+			if(!new_dimension_str.countChar32() == 0)
 			{
-				dimension new_dimension = dimension(new_dimension_str,new_sign);
+				dimension new_dimension;
+				string new_dimension_str_stl2 = "";
+				new_dimension_str.toUTF8String(new_dimension_str_stl2);
+				if(new_dimension_str.countChar32() == 1)
+				{
+					if(new_dimension_str[0] == 0x03A9)
+					{
+						new_dimension = dimension(dimension::OHM,prefix::NONE,new_sign);
+					}
+					else if(new_dimension_str[0] == 0x00C5)
+					{
+						new_dimension = dimension(dimension::ANGSTROM,prefix::NONE,new_sign);
+					}
+					else if(new_dimension_str[0] == 0x03B8)
+					{
+						new_dimension = dimension(dimension::DEGREE,prefix::NONE,new_sign);
+					}
+					else
+					{
+						string new_dimension_str_stl = "";
+						new_dimension_str.toUTF8String(new_dimension_str_stl);
+						new_dimension = dimension(new_dimension_str_stl,new_sign);
+					}
+				}
+				else
+				{
+					if(new_dimension_str[new_dimension_str.countChar32() - 1] == 0x03A9)
+					{
+						string new_prefix_str = "";
+						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 1).toUTF8String(new_prefix_str);
+						prefix new_prefix(new_prefix_str);
+						new_dimension = dimension(dimension::OHM,new_prefix,new_sign);
+					}
+					else if(new_dimension_str[new_dimension_str.countChar32() - 1] == 0x00C5)
+					{
+						string new_prefix_str = "";
+						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 1).toUTF8String(new_prefix_str);
+						prefix new_prefix(new_prefix_str);
+						new_dimension = dimension(dimension::ANGSTROM,new_prefix,new_sign);
+					}
+					else if(new_dimension_str[new_dimension_str.countChar32() - 1] == 0x03B8)
+					{
+						string new_prefix_str = "";
+						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 1).toUTF8String(new_prefix_str);
+						prefix new_prefix(new_prefix_str);
+						new_dimension = dimension(dimension::DEGREE,new_prefix,new_sign);
+					}
+					else if(new_dimension_str[new_dimension_str.countChar32() - 2] == 0x00B0 && new_dimension_str[new_dimension_str.countChar32() - 1] == 0x0043)
+					{
+						string new_prefix_str = "";
+						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 2).toUTF8String(new_prefix_str);
+						prefix new_prefix(new_prefix_str);
+						new_dimension = dimension(dimension::CELSIUS,new_prefix,new_sign);
+					}
+					else
+					{
+						string new_dimension_str_stl = "";
+						new_dimension_str.toUTF8String(new_dimension_str_stl);
+						new_dimension = dimension(new_dimension_str_stl,new_sign);
+					}
+				}
 				for (int k = 0; k < new_scale; k++)
 				{
 					dimensions.push_back(new_dimension);
 				}
-				new_dimension_str.clear();
+				new_dimension_str.remove();
 				new_scale = 1;
 				new_size = 0;
 			}
@@ -1962,7 +2192,7 @@ namespace scifir
 		vector<dimension> new_dimensions = vector<dimension>();
 		for (const dimension& x_dimension: x)
 		{
-			for (int j = 1; j <= exponent; j++)
+			for (unsigned int j = 1; j <= exponent; j++)
 			{
 				new_dimensions.push_back(x_dimension);
 			}
@@ -1973,6 +2203,10 @@ namespace scifir
 	vector<dimension> normalize_dimensions(const vector<dimension>& x)
 	{
 		vector<dimension> new_x = create_base_dimensions(x);
+		if (new_x.size() == 1)
+		{
+			return x;
+		}
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -1986,6 +2220,7 @@ namespace scifir
 						if (j == skip_dimensions[k])
 						{
 							skip = true;
+							break;
 						}
 					}
 					if (skip)
@@ -2010,6 +2245,7 @@ namespace scifir
 				if (i == skip_dimensions[j])
 				{
 					skip = true;
+					break;
 				}
 			}
 			if (!skip)
@@ -2023,6 +2259,10 @@ namespace scifir
 	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<dimension> new_x = create_base_dimensions(x,value);
+		if (new_x.size() == 1)
+		{
+			return x;
+		}
 		vector<unsigned int> skip_dimensions = vector<unsigned int>();
 		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
@@ -2036,6 +2276,7 @@ namespace scifir
 						if (j == skip_dimensions[k])
 						{
 							skip = true;
+							break;
 						}
 					}
 					if (skip)
@@ -2091,6 +2332,11 @@ namespace scifir
 		return new_dimensions;
 	}
 
+	bool is_dimension_char(const UChar32& x)
+	{
+		return u_isalpha(x) || x == UChar32(U'Ω') || x == UChar32(U'Å') || x == UChar32(U'θ') || x == UChar32(U'°');
+	}
+
 	bool common_dimension(const dimension& x,const dimension& y)
 	{
 		for (const dimension& x_dimension : x.get_base_dimensions())
@@ -2119,6 +2365,10 @@ namespace scifir
 		vector<dimension> y_base_dimensions = create_base_dimensions(y);
 		if (x_base_dimensions.size() == y_base_dimensions.size())
 		{
+			if (x_base_dimensions.size() == 0)
+			{
+				return true;
+			}
 			vector<unsigned int> skip = vector<unsigned int>();
 			for (const dimension& x_dimension: x_base_dimensions)
 			{

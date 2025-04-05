@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch2/catch_all.hpp"
-#include "../../special_units/aid.hpp"
+#include "../../coordinates/aid.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -19,14 +19,14 @@ TEST_CASE("aid class") {
 		CHECK(a.galaxy == "");
 		CHECK(a.solar_system == "");
 		CHECK(a.astronomical_body == "");
-		aid b2 = aid(aid::PLANET,"universe","milky-way","solar-system","earth");
+		aid b2 = aid(aid::PLANET,"milky-way","solar-system","earth");
 		aid b(b2);
 		CHECK(b.astronomical_type == aid::PLANET);
 		CHECK(b.universe == "universe");
 		CHECK(b.galaxy == "milky-way");
 		CHECK(b.solar_system == "solar-system");
 		CHECK(b.astronomical_body == "earth");
-		aid c2 = aid(aid::PLANET,"universe","milky-way","solar-system","earth");
+		aid c2 = aid(aid::PLANET,"milky-way","solar-system","earth");
 		aid c(std::move(c2));
 		CHECK(c.astronomical_type == aid::PLANET);
 		CHECK(c.universe == "universe");
@@ -39,43 +39,43 @@ TEST_CASE("aid class") {
 		CHECK(d2.galaxy == "");
 		CHECK(d2.solar_system == "");
 		CHECK(d2.astronomical_body == "");
-		aid d("universe","milky-way");
+		aid d(aid::GALAXY,"milky-way");
 		CHECK(d.astronomical_type == aid::GALAXY);
 		CHECK(d.universe == "universe");
 		CHECK(d.galaxy == "milky-way");
 		CHECK(d.solar_system == "");
 		CHECK(d.astronomical_body == "");
-		aid e("universe","milky-way","solar-system");
+		aid e(aid::SOLAR_SYSTEM,"milky-way","solar-system");
 		CHECK(e.astronomical_type == aid::SOLAR_SYSTEM);
 		CHECK(e.universe == "universe");
 		CHECK(e.galaxy == "milky-way");
 		CHECK(e.solar_system == "solar-system");
 		CHECK(e.astronomical_body == "");
-		aid f(aid::PLANET,"universe","milky-way","solar-system","earth");
+		aid f(aid::PLANET,"milky-way","solar-system","earth");
 		CHECK(f.astronomical_type == aid::PLANET);
 		CHECK(f.universe == "universe");
 		CHECK(f.galaxy == "milky-way");
 		CHECK(f.solar_system == "solar-system");
 		CHECK(f.astronomical_body == "earth");
-		aid g("(P)universe:milky-way:solar-system:earth");
+		aid g("(P) milky-way:solar-system:earth");
 		CHECK(g.astronomical_type == aid::PLANET);
 		CHECK(g.universe == "universe");
 		CHECK(g.galaxy == "milky-way");
 		CHECK(g.solar_system == "solar-system");
 		CHECK(g.astronomical_body == "earth");
-		aid h("(G)universe:milky-way");
+		aid h("(G) milky-way");
 		CHECK(h.astronomical_type == aid::GALAXY);
 		CHECK(h.universe == "universe");
 		CHECK(h.galaxy == "milky-way");
 		CHECK(h.solar_system == "");
 		CHECK(h.astronomical_body == "");
-		aid i("(SS)universe:milky-way:solar-system");
+		aid i("(SS) milky-way:solar-system");
 		CHECK(i.astronomical_type == aid::SOLAR_SYSTEM);
 		CHECK(i.universe == "universe");
 		CHECK(i.galaxy == "milky-way");
 		CHECK(i.solar_system == "solar-system");
 		CHECK(i.astronomical_body == "");
-		aid i2("(G)universe:milky-way:solar-system");
+		aid i2("(P) milky-way:solar-system");
 		CHECK(i2.astronomical_type == aid::NONE);
 		CHECK(i2.universe == "");
 		CHECK(i2.galaxy == "");
@@ -87,13 +87,13 @@ TEST_CASE("aid class") {
 		CHECK(j.galaxy == "");
 		CHECK(j.solar_system == "");
 		CHECK(j.astronomical_body == "");
-		aid k("(SS) universe:milky-way:solar-system");
+		aid k("(SS) milky-way:solar-system");
 		CHECK(k.astronomical_type == aid::SOLAR_SYSTEM);
 		CHECK(k.universe == "universe");
 		CHECK(k.galaxy == "milky-way");
 		CHECK(k.solar_system == "solar-system");
 		CHECK(k.astronomical_body == "");
-		aid l("(G) universe:milky-way");
+		aid l("(G) milky-way");
 		CHECK(l.astronomical_type == aid::GALAXY);
 		CHECK(l.universe == "universe");
 		CHECK(l.galaxy == "milky-way");
@@ -360,7 +360,7 @@ TEST_CASE("aid class") {
 	SECTION("Assignments of aid class")
 	{
 		aid b;
-		aid b2 = aid(aid::PLANET,"universe","milky-way","solar-system","earth");
+		aid b2 = aid(aid::PLANET,"milky-way","solar-system","earth");
 		b = b2;
 		CHECK(b.astronomical_type == aid::PLANET);
 		CHECK(b.universe == "universe");
@@ -368,7 +368,7 @@ TEST_CASE("aid class") {
 		CHECK(b.solar_system == "solar-system");
 		CHECK(b.astronomical_body == "earth");
 		aid c;
-		aid c2 = aid(aid::PLANET,"universe","milky-way","solar-system","earth");
+		aid c2 = aid(aid::PLANET,"milky-way","solar-system","earth");
 		c = std::move(c2);
 		CHECK(c.astronomical_type == aid::PLANET);
 		CHECK(c.universe == "universe");
@@ -376,21 +376,21 @@ TEST_CASE("aid class") {
 		CHECK(c.solar_system == "solar-system");
 		CHECK(c.astronomical_body == "earth");
 		aid d;
-		d = "(SS)universe:milky-way:solar-system";
+		d = "(SS) milky-way:solar-system";
 		CHECK(d.astronomical_type == aid::SOLAR_SYSTEM);
 		CHECK(d.universe == "universe");
 		CHECK(d.galaxy == "milky-way");
 		CHECK(d.solar_system == "solar-system");
 		CHECK(d.astronomical_body == "");
 		aid e;
-		e = "(P)universe:milky-way:solar-system:earth";
+		e = "(P) milky-way:solar-system:earth";
 		CHECK(e.astronomical_type == aid::PLANET);
 		CHECK(e.universe == "universe");
 		CHECK(e.galaxy == "milky-way");
 		CHECK(e.solar_system == "solar-system");
 		CHECK(e.astronomical_body == "earth");
 		aid f;
-		f = "(G)universe:milky-way";
+		f = "(G) milky-way";
 		CHECK(f.astronomical_type == aid::GALAXY);
 		CHECK(f.universe == "universe");
 		CHECK(f.galaxy == "milky-way");
@@ -400,28 +400,28 @@ TEST_CASE("aid class") {
 
 	SECTION("Functions of unknown places of aid class")
 	{
-		aid a("(P)unknown-universe:unknown-galaxy:unknown-solar-system:unknown-planet");
+		aid a("(P) unknown-universe:unknown-galaxy:unknown-solar-system:unknown-planet");
 		CHECK(a.has_unknown_universe());
 		CHECK(a.has_unknown_galaxy());
 		CHECK(a.has_unknown_solar_system());
 		CHECK(a.has_unknown_planet());
 		aid a2("(P) no-universe:galaxy-123:strange-solar-system:planet-124a");
 		CHECK(a2.has_no_universe());
-		aid b("(MN)unknown-universe:unknown-galaxy:unknown-solar-system:unknown-moon");
+		aid b("(MN) unknown-universe:unknown-galaxy:unknown-solar-system:unknown-moon");
 		CHECK(b.has_unknown_universe());
 		CHECK(b.has_unknown_galaxy());
 		CHECK(b.has_unknown_solar_system());
 		CHECK(b.has_unknown_moon());
-		aid b2("(P) universe:no-galaxy:solar-system-12b:planet-45c");
+		aid b2("(P) no-galaxy:solar-system-12b:planet-45c");
 		CHECK(b2.has_no_galaxy());
-		aid c("(ST)unknown-universe:unknown-galaxy:unknown-solar-system:unknown-star");
+		aid c("(ST) unknown-universe:unknown-galaxy:unknown-solar-system:unknown-star");
 		CHECK(c.has_unknown_universe());
 		CHECK(c.has_unknown_galaxy());
 		CHECK(c.has_unknown_solar_system());
 		CHECK(c.has_unknown_star());
-		aid c2("(P) universe:milky-way:no-solar-system:unknown-planet");
+		aid c2("(P) milky-way:no-solar-system:unknown-planet");
 		CHECK(c2.has_no_solar_system());
-		aid d("(A)unknown-universe:unknown-galaxy:unknown-solar-system:unknown-asteroid");
+		aid d("(A) unknown-universe:unknown-galaxy:unknown-solar-system:unknown-asteroid");
 		CHECK(d.has_unknown_universe());
 		CHECK(d.has_unknown_galaxy());
 		CHECK(d.has_unknown_solar_system());
@@ -430,28 +430,28 @@ TEST_CASE("aid class") {
 
 	SECTION("display() of aid class")
 	{
-		aid a("(SS)universe:milky-way:solar-system");
-		CHECK(a.display() == "(SS)universe:milky-way:solar-system");
-		aid b("(U)universe");
-		CHECK(b.display() == "(U)universe");
-		aid c("(G)universe:milky-way");
-		CHECK(c.display() == "(G)universe:milky-way");
-		aid d("(P)universe:milky-way:solar-system:mars");
-		CHECK(d.display() == "(P)universe:milky-way:solar-system:mars");
+		aid a("(SS) milky-way:solar-system");
+		CHECK(a.display() == "(SS) milky-way:solar-system");
+		aid b("(U) universe");
+		CHECK(b.display() == "(U) universe");
+		aid c("(G) milky-way");
+		CHECK(c.display() == "(G) milky-way");
+		aid d("(P) milky-way:solar-system:mars");
+		CHECK(d.display() == "(P) milky-way:solar-system:mars");
 		aid e;
 		CHECK(e.display() == "");
 	}
 
 	SECTION("to_string() of aid class")
 	{
-		aid a("(SS)universe:milky-way:solar-system");
-		CHECK(to_string(a) == "(SS)universe:milky-way:solar-system");
-		aid b("(U)universe");
-		CHECK(to_string(b) == "(U)universe");
-		aid c("(G)universe:milky-way");
-		CHECK(to_string(c) == "(G)universe:milky-way");
-		aid d("(P)universe:milky-way:solar-system:mars");
-		CHECK(to_string(d) == "(P)universe:milky-way:solar-system:mars");
+		aid a("(SS) milky-way:solar-system");
+		CHECK(to_string(a) == "(SS) milky-way:solar-system");
+		aid b("(U) universe");
+		CHECK(to_string(b) == "(U) universe");
+		aid c("(G) milky-way");
+		CHECK(to_string(c) == "(G) milky-way");
+		aid d("(P) milky-way:solar-system:mars");
+		CHECK(to_string(d) == "(P) milky-way:solar-system:mars");
 		aid e;
 		CHECK(to_string(e) == "");
 	}
@@ -484,9 +484,9 @@ TEST_CASE("aid class") {
 
 	SECTION("Operators of aid class")
 	{
-		aid a("(G)universe:milky-way");
-		aid b("(G)universe:milky-way");
-		aid c("(G)universe:andromeda");
+		aid a("(G) milky-way");
+		aid b("(G) milky-way");
+		aid c("(G) andromeda");
 		CHECK(bool(a == b));
 		CHECK((a == c) == false);
 		CHECK(bool(a != c));
@@ -494,27 +494,27 @@ TEST_CASE("aid class") {
 
 	SECTION("String operators of aid class")
 	{
-		CHECK(bool(aid("(SS)universe:milky-way:solar-system") == "(SS)universe:milky-way:solar-system"));
-		CHECK(bool(aid("(SS)universe:milky-way:solar-system") != "(SS)universe:milky-way:alpha-centauri"));
-		CHECK(bool("(SS)universe:milky-way:alpha-centauri" == aid("(SS)universe:milky-way:alpha-centauri")));
-		CHECK(bool("(SS)universe:milky-way:alpha-centauri" != aid("(SS)universe:milky-way:solar-system")));
+		CHECK(bool(aid("(SS) milky-way:solar-system") == "(SS) milky-way:solar-system"));
+		CHECK(bool(aid("(SS) milky-way:solar-system") != "(SS) milky-way:alpha-centauri"));
+		CHECK(bool("(SS) milky-way:alpha-centauri" == aid("(SS) milky-way:alpha-centauri")));
+		CHECK(bool("(SS) milky-way:alpha-centauri" != aid("(SS) milky-way:solar-system")));
 		string a = "aid ";
-		a += aid("(SS)universe:milky-way:alpha-centauri");
-		CHECK(a == "aid (SS)universe:milky-way:alpha-centauri");
-		aid b = aid("(SS)universe:milky-way:alpha-centauri");
-		CHECK("b " + b == "b (SS)universe:milky-way:alpha-centauri");
-		CHECK(b + " b" == "(SS)universe:milky-way:alpha-centauri b");
+		a += aid("(SS) milky-way:alpha-centauri");
+		CHECK(a == "aid (SS) milky-way:alpha-centauri");
+		aid b = aid("(SS) milky-way:alpha-centauri");
+		CHECK("b " + b == "b (SS) milky-way:alpha-centauri");
+		CHECK(b + " b" == "(SS) milky-way:alpha-centauri b");
 	}
 
 	SECTION("Streams of aid class")
 	{
 		ostringstream a;
-        a << aid("(SS)universe:milky-way:alpha-centauri");
-        CHECK(a.str() == "(SS)universe:milky-way:alpha-centauri");
+        a << aid("(SS) milky-way:alpha-centauri");
+        CHECK(a.str() == "(SS) milky-way:alpha-centauri");
         stringstream b;
-        b << "(SS)universe:milky-way:alpha-centauri";
+        b << "(SS) milky-way:alpha-centauri";
         aid b2;
         b >> b2;
-        CHECK(to_string(b2) == "(SS)universe:milky-way:alpha-centauri");
+        CHECK(to_string(b2) == "(SS) milky-way:alpha-centauri");
 	}
 }

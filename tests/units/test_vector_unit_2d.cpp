@@ -19,6 +19,22 @@ TEST_CASE("class vector_unit_2d")
 		vector_unit_2d b2("100 g",50);
 		vector_unit_2d c2(std::move(b2));
 		CHECK(to_string(c2) == "100 g 50θ");
+		vector_unit_2d o(30.0f, dimension::PASCAL, prefix::KILO, 20.0f);
+		CHECK(to_string(o) == "30 kPa 20θ");
+		vector_unit_2d o2(30.0, dimension::PASCAL, prefix::KILO, 20.0f);
+		CHECK(to_string(o2) == "30 kPa 20θ");
+		vector_unit_2d o3(30.0l, dimension::PASCAL, prefix::KILO, 20.0f);
+		CHECK(to_string(o3) == "30 kPa 20θ");
+		vector_unit_2d o4(30, dimension::PASCAL, prefix::KILO, 20.0f);
+		CHECK(to_string(o4) == "30 kPa 20θ");
+		vector_unit_2d o5(30.0f, dimension::PASCAL, prefix::KILO, angle(20.0f));
+		CHECK(to_string(o5) == "30 kPa 20θ");
+		vector_unit_2d o6(30.0, dimension::PASCAL, prefix::KILO, angle(20.0f));
+		CHECK(to_string(o6) == "30 kPa 20θ");
+		vector_unit_2d o7(30.0l, dimension::PASCAL, prefix::KILO, angle(20.0f));
+		CHECK(to_string(o7) == "30 kPa 20θ");
+		vector_unit_2d o8(30, dimension::PASCAL, prefix::KILO, angle(20.0f));
+		CHECK(to_string(o8) == "30 kPa 20θ");
 		vector_unit_2d d(50.0f,"m",20.0f);
 		CHECK(to_string(d) == "50 m 20θ");
 		vector_unit_2d e(50.0f,"m",angle(20.0f));
@@ -60,8 +76,6 @@ TEST_CASE("class vector_unit_2d")
 		CHECK(to_string(j) == "100 g 24θ");
 		vector_unit_2d k("100 g",angle(24.0f));
 		CHECK(to_string(k) == "100 g 24θ");
-		vector_unit_2d l("100 g 20");
-		CHECK(to_string(l) == "100 g 20θ");
 		vector_unit_2d m("100 g 20º");
 		CHECK(to_string(m) == "100 g 20θ");
 		vector_unit_2d n = vector_unit_2d::cartesian_2d("m",1,1);
@@ -132,7 +146,6 @@ TEST_CASE("class vector_unit_2d")
 		CHECK(to_string(e + vector_unit_2d(100.0f,"m",20)) == "200 m 20θ");
 		CHECK(to_string(e + vector_unit_2d(100.0f,"g",20)) == "0 [empty] 0θ");
 		vector_unit_2d f(100.0f,"m",20);
-		cout << "f -: " << to_string(f - vector_unit_2d(20.0f,"m",20)) << endl;
 		CHECK(to_string(f - vector_unit_2d(20.0f,"m",20)) == "80 m 20θ");
 		CHECK(to_string(f - vector_unit_2d(100.0f,"g",20)) == "0 [empty] 0θ");
 	}

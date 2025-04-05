@@ -16,13 +16,29 @@
 #define SCALAR_UNIT_HPP_BEGIN(name) class name : public scalar_unit \
 	{	\
 		public: \
-			using scalar_unit::scalar_unit; \
 			name(); \
-			name(const scalar_unit&); \
-			name(scalar_unit&&); \
+			name(const name&); \
+			name(name&&); \
+			explicit name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(float new_value, const string& init_dimensions); \
+			explicit name(double new_value, const string& init_dimensions); \
+			explicit name(long double new_value, const string& init_dimensions); \
+			explicit name(int new_value, const string& init_dimensions); \
+			explicit name(float new_value, const vector<dimension>& new_dimensions); \
+			explicit name(double new_value, const vector<dimension>& new_dimensions); \
+			explicit name(long double new_value, const vector<dimension>& new_dimensions); \
+			explicit name(int new_value, const vector<dimension>& new_dimensions); \
+			explicit name(const string& init_scalar); \
+			explicit name(const scalar_unit&); \
+			explicit name(scalar_unit&&); \
+			name& operator =(const name&); \
+			name& operator =(name&&); \
 			using scalar_unit::operator =; \
-			using scalar_unit::operator+=; \
-			using scalar_unit::operator-=
+			using scalar_unit::operator +=; \
+			using scalar_unit::operator -=
 
 #define SCALAR_UNIT_HPP_END() \
 \
@@ -34,23 +50,116 @@
 #define SCALAR_UNIT_HPP(name) class name : public scalar_unit \
 	{	\
 		public: \
-			using scalar_unit::scalar_unit; \
 			name(); \
-			name(const scalar_unit&); \
-			name(scalar_unit&&); \
+			name(const name&); \
+			name(name&&); \
+			explicit name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR); \
+			explicit name(float new_value, const string& init_dimensions); \
+			explicit name(double new_value, const string& init_dimensions); \
+			explicit name(long double new_value, const string& init_dimensions); \
+			explicit name(int new_value, const string& init_dimensions); \
+			explicit name(float new_value, const vector<dimension>& new_dimensions); \
+			explicit name(double new_value, const vector<dimension>& new_dimensions); \
+			explicit name(long double new_value, const vector<dimension>& new_dimensions); \
+			explicit name(int new_value, const vector<dimension>& new_dimensions); \
+			explicit name(const string& init_scalar); \
+			explicit name(const scalar_unit&); \
+			explicit name(scalar_unit&&); \
+			name& operator =(const name&); \
+			name& operator =(name&&); \
 			using scalar_unit::operator =; \
-			using scalar_unit::operator+=; \
-			using scalar_unit::operator-=; \
+			using scalar_unit::operator +=; \
+			using scalar_unit::operator -=; \
 \
 			static const string dimensions_match; \
 			static const vector<dimension> real_dimensions; \
 	}
 
-#define SCALAR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() { \
+#define SCALAR_UNIT_CPP(name,init_real_dimensions) name::name() : scalar_unit() { \
 	scalar_unit::dimensions = name::real_dimensions; \
 } \
 \
-	name::name(const scalar_unit& x) \
+	name::name(const name& x) : scalar_unit()  \
+	{ \
+		value = x.get_value(); \
+		dimensions = x.get_dimensions(); \
+	} \
+\
+	name::name(name&& x) : scalar_unit() \
+	{ \
+		value = std::move(x.get_value()); \
+		dimensions = std::move(x.get_dimensions()); \
+	} \
+\
+	name::name(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position) : scalar_unit(new_value,new_dimension,new_prefix,new_position) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(float new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(double new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(long double new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(int new_value, const string& init_dimensions) : scalar_unit(new_value,init_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(float new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(double new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(long double new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(int new_value, const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions) \
+	{ \
+		scalar_unit::check_dimensions(name::real_dimensions); \
+	} \
+\
+	name::name(const string& init_scalar) : scalar_unit() \
+	{ \
+		initialize_from_string(init_scalar,name::real_dimensions); \
+	} \
+\
+	name::name(const scalar_unit& x) : scalar_unit()  \
 	{ \
 		if (x.has_dimensions(name::real_dimensions)) \
 		{ \
@@ -59,7 +168,7 @@
 		} \
 	} \
 \
-	name::name(scalar_unit&& x) \
+	name::name(scalar_unit&& x) : scalar_unit()  \
 	{ \
 		if (x.has_dimensions(name::real_dimensions)) \
 		{ \
@@ -68,8 +177,22 @@
 		} \
 	} \
 \
-const string name::dimensions_match = init_dimensions; \
-const vector<dimension> name::real_dimensions = create_base_dimensions(init_dimensions)
+	name& name::operator =(const name& x) \
+	{ \
+		value = x.get_value(); \
+		dimensions = x.get_dimensions(); \
+		return *this; \
+	} \
+\
+	name& name::operator =(name&& x) \
+	{ \
+		value = std::move(x.get_value()); \
+		dimensions = std::move(x.get_dimensions()); \
+		return *this; \
+	} \
+\
+const string name::dimensions_match = init_real_dimensions; \
+const vector<dimension> name::real_dimensions = create_base_dimensions(init_real_dimensions)
 
 using namespace std;
 
@@ -81,6 +204,10 @@ namespace scifir
 			scalar_unit();
 			scalar_unit(const scalar_unit& x);
 			scalar_unit(scalar_unit&& x);
+			explicit scalar_unit(float new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit scalar_unit(double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit scalar_unit(long double new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
+			explicit scalar_unit(int new_value, dimension::type new_dimension, prefix::type new_prefix, dimension::position new_position = dimension::NUMERATOR);
 			explicit scalar_unit(float new_value, const string& init_dimensions);
 			explicit scalar_unit(double new_value, const string& init_dimensions);
 			explicit scalar_unit(long double new_value, const string& init_dimensions);
@@ -205,13 +332,16 @@ namespace scifir
 			string base_display(int number_of_decimals = 2,bool with_brackets = false,bool use_close_prefix = false) const;
 			string custom_display(const string& init_dimensions,int number_of_decimals = 2,bool with_brackets = false) const;
 
+			string to_latex(const string& init_dimensions,int number_of_decimals = 2,bool with_brackets = false) const;
+
 		protected:
 			vector<dimension> dimensions;
 			float value;
 
 			void add_dimension(const dimension& new_dimension);
 			void remove_dimension(const dimension& old_dimension);
-			void initialize_from_string(string init_scalar);
+			void initialize_from_string(string init_scalar,const vector<dimension>& real_dimensions);
+			void check_dimensions(const vector<dimension>& real_dimensions);
 	};
 
 	string to_string(const scalar_unit& x);
