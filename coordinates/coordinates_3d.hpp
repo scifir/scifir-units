@@ -89,7 +89,7 @@ namespace scifir
 		long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
 		long double e_prim_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2);
 		long double p = std::sqrt(std::pow(x,2) + std::pow(y,2));
-		long double F = 54.0f * std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) * std::pow(z,2);
+		long double F = 54.0l * std::pow((long double)WGS84_EARTH_SEMIAXIS_B.get_value(),2) * std::pow((long double)z,2);
 		long double G = std::pow(p,2) + (1.0f - e_square) * std::pow(z,2) - e_square * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
 		long double c = std::pow(e_square,2) * F * std::pow(p,2) / std::pow(G,3);
 		long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));
@@ -98,7 +98,7 @@ namespace scifir
 		long double Q = std::sqrt(1.0f + 2.0f * std::pow(e_square,2) * P);
 		long double r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + std::sqrt((1.0f/2.0f) * std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * std::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * std::pow(p,2));
 		long double V = std::sqrt(std::pow(p - e_square * r0,2) + (1.0f - e_square) * std::pow(z,2));
-		long double z0 = std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2)*z/(WGS84_EARTH_SEMIAXIS_A.get_value() * V);
+		long double z0 = std::pow((long double)WGS84_EARTH_SEMIAXIS_B.get_value(),2) * (long double)z/((long double)WGS84_EARTH_SEMIAXIS_A.get_value() * V);
 		return latitude(scifir::atan(float((z + e_prim_square * z0)/p)));
 	}
 
@@ -112,7 +112,7 @@ namespace scifir
 		long double e_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2);
 		long double e_prim_square = (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2))/std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2);
 		long double p = std::sqrt(std::pow(x,2) + std::pow(y,2));
-		long double F = 54.0f * std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) * std::pow(z,2);
+		long double F = 54.0l * std::pow((long double)WGS84_EARTH_SEMIAXIS_B.get_value(),2) * std::pow((long double)z,2);
 		long double G = std::pow(p,2) + (1.0f - e_square) * std::pow(z,2) - e_square * (std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2));
 		long double c = std::pow(e_square,2) * F * std::pow(p,2) / std::pow(G,3);
 		long double s = std::cbrt(1.0f + c + std::sqrt(std::pow(c,2) + 2.0f * c));

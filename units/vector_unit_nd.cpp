@@ -566,7 +566,7 @@ namespace scifir
 
 	vector_unit_nd vector_unit_nd::operator *(const scalar_unit& x) const
 	{
-		long double new_value = scalar_unit::value * x.get_value();
+		long double new_value = (long double)scalar_unit::value * (long double)x.get_value();
 		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		if(is_nd(1))
 		{
@@ -924,7 +924,7 @@ namespace scifir
 
 scifir::vector_unit_nd operator *(const scifir::scalar_unit& x,const scifir::vector_unit_nd& y)
 {
-	long double new_value = y.get_value() * x.get_value();
+	long double new_value = (long double)y.get_value() * (long double)x.get_value();
 	vector<scifir::dimension> new_dimensions = multiply_dimensions(y.get_dimensions(), x.get_dimensions(),new_value);
 	if(y.is_nd(1))
 	{

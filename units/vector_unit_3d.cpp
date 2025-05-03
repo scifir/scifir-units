@@ -355,7 +355,7 @@ namespace scifir
 
 	vector_unit_3d vector_unit_3d::operator *(const scalar_unit& x) const
 	{
-		long double new_value = scalar_unit::value * x.get_value();
+		long double new_value = (long double)scalar_unit::value * (long double)x.get_value();
 		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		return vector_unit_3d(float(new_value), new_dimensions, theta, phi);
 	}
@@ -531,7 +531,7 @@ namespace scifir
 
 scifir::vector_unit_3d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_3d& y)
 {
-	long double new_value = x.get_value() * y.get_value();
+	long double new_value = (long double)x.get_value() * (long double)y.get_value();
 	vector<scifir::dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 	return scifir::vector_unit_3d(float(new_value), new_dimensions, y.theta, y.phi);
 }
