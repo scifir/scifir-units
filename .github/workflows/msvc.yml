@@ -48,7 +48,7 @@ jobs:
         uses: johnwason/vcpkg-action@v6
         id: vcpkg
         with:
-          pkgs: boost-system icu
+          #pkgs: boost-system icu
           triplet: x64-windows-release
           token: ${{ github.token }}
           github-binarycache: true
