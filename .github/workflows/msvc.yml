@@ -46,8 +46,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get -y update
-          sudo apt-get -y install libboost-system-dev libicu-dev catch2 git2cl
+          apt-get -y update
+          apt-get -y install libboost-system-dev libicu-dev catch2 git2cl
 
       - name: Configure CMake
         run: cmake --preset=linux
