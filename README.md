@@ -18,7 +18,7 @@
 Still in **beta version 2.0** (you can use it!)
 
 ```
-scifir-chemistry, scifir-biology, scifir-geometry, among others, not yet published in GitHub.
+scifir-geometry, among others, not yet published in GitHub.
 ```
 
 Welcome! **scifir-units** is a **C++ library**, **portable to other programming languages**, that's a fundamental part of the Scifir collection. It allows to create units of measurement, vectors with units of measurement, coordinates, special units of measurement like percentage and pH, among other topics related to units of measurement. The units of measurement are **very lightweight**, size similar to a float, and can be used to do any math calculation necessary for any electronic invention and digital software. The **prefixes** of the **dimensions** can be changed, in order to display the unit in the more proper dimensions. Also, all the **conversions** are supported.
