@@ -44,10 +44,14 @@ jobs:
       # - name: Build CMake
       #   run: cmake --build ${{ env.build }}
 
-      - name: Install dependencies
-        run: |
-          apt-get -y update
-          apt-get -y install libboost-system-dev libicu-dev catch2 git2cl
+      - name: vcpkg build
+        uses: johnwason/vcpkg-action@v6
+        id: vcpkg
+        with:
+          pkgs: boost-system icu
+          triplet: x64-windows-release
+          token: ${{ github.token }}
+          github-binarycache: true
 
       - name: Configure CMake
         run: cmake --preset=linux
