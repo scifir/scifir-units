@@ -1000,6 +1000,7 @@ scifir::capacitance operator"" _qF(unsigned long long int x)
 	return scifir::capacitance((long double)x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
+#ifdef IS_UNIX
 scifir::resistance operator"" _QΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
@@ -1124,6 +1125,7 @@ scifir::resistance operator"" _qΩ(unsigned long long int x)
 {
 	return scifir::resistance((long double)x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
+#endif
 
 scifir::electric_conductance operator"" _QS(unsigned long long int x)
 {
@@ -1435,10 +1437,10 @@ scifir::magnetic_flux_density operator"" _daT(unsigned long long int x)
 	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_flux_density operator"" _T(unsigned long long int x)
+/*scifir::magnetic_flux_density operator"" _T(unsigned long long int x)
 {
 	return scifir::magnetic_flux_density((long double)x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
-}
+}*/
 
 scifir::magnetic_flux_density operator"" _dT(unsigned long long int x)
 {
@@ -3380,6 +3382,7 @@ scifir::capacitance operator"" _qF(long double x)
 	return scifir::capacitance(x, { scifir::dimension(scifir::dimension::FARAD,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
+#ifdef IS_UNIX
 scifir::resistance operator"" _QΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
@@ -3504,6 +3507,7 @@ scifir::resistance operator"" _qΩ(long double x)
 {
 	return scifir::resistance(x, { scifir::dimension(scifir::dimension::OHM,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
+#endif
 
 scifir::electric_conductance operator"" _QS(long double x)
 {
@@ -3815,10 +3819,10 @@ scifir::magnetic_flux_density operator"" _daT(long double x)
 	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
-scifir::magnetic_flux_density operator"" _T(long double x)
+/*scifir::magnetic_flux_density operator"" _T(long double x)
 {
 	return scifir::magnetic_flux_density(x, { scifir::dimension(scifir::dimension::TESLA,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
-}
+}*/
 
 scifir::magnetic_flux_density operator"" _dT(long double x)
 {

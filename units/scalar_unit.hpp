@@ -275,25 +275,25 @@ namespace scifir
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
-				value += y;
+				value += float(y);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
-				value -= y;
+				value -= float(y);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator *=(T y)
 			{
-				value *= y;
+				value *= float(y);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator /=(T y)
 			{
-				value /= y;
+				value /= float(y);
 			}
 
 			scalar_unit& operator ++();

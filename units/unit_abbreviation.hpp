@@ -16,7 +16,9 @@
 
 #include "../nutrition/abv.hpp"
 
+#ifdef IS_UNIX
 scifir::length operator"" _Å(unsigned long long int);
+#endif
 
 scifir::volume operator"" _QL(unsigned long long int);
 scifir::volume operator"" _RL(unsigned long long int);
@@ -224,7 +226,9 @@ scifir::abv operator"" _abv(unsigned long long int);
 
 scifir::sound_power operator"" _dB(unsigned long long int);
 
+#ifdef IS_UNIX
 scifir::length operator"" _Å(long double);
+#endif
 
 scifir::volume operator"" _QL(long double);
 scifir::volume operator"" _RL(long double);

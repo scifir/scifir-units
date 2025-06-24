@@ -217,6 +217,7 @@ scifir::capacitance operator"" _yF(unsigned long long int);
 scifir::capacitance operator"" _rF(unsigned long long int);
 scifir::capacitance operator"" _qF(unsigned long long int);
 
+#ifdef IS_UNIX
 scifir::resistance operator"" _QΩ(unsigned long long int);
 scifir::resistance operator"" _RΩ(unsigned long long int);
 scifir::resistance operator"" _YΩ(unsigned long long int);
@@ -242,6 +243,7 @@ scifir::resistance operator"" _zΩ(unsigned long long int);
 scifir::resistance operator"" _yΩ(unsigned long long int);
 scifir::resistance operator"" _rΩ(unsigned long long int);
 scifir::resistance operator"" _qΩ(unsigned long long int);
+#endif
 
 scifir::electric_conductance operator"" _QS(unsigned long long int);
 scifir::electric_conductance operator"" _RS(unsigned long long int);
@@ -307,7 +309,7 @@ scifir::magnetic_flux_density operator"" _GT(unsigned long long int);
 scifir::magnetic_flux_density operator"" _kT(unsigned long long int);
 scifir::magnetic_flux_density operator"" _hT(unsigned long long int);
 scifir::magnetic_flux_density operator"" _daT(unsigned long long int);
-scifir::magnetic_flux_density operator"" _T(unsigned long long int);
+//scifir::magnetic_flux_density operator"" _T(unsigned long long int);
 scifir::magnetic_flux_density operator"" _dT(unsigned long long int);
 scifir::magnetic_flux_density operator"" _cT(unsigned long long int);
 scifir::magnetic_flux_density operator"" _mT(unsigned long long int);
@@ -713,6 +715,7 @@ scifir::capacitance operator"" _yF(long double);
 scifir::capacitance operator"" _rF(long double);
 scifir::capacitance operator"" _qF(long double);
 
+#ifdef IS_UNIX
 scifir::resistance operator"" _QΩ(long double);
 scifir::resistance operator"" _RΩ(long double);
 scifir::resistance operator"" _YΩ(long double);
@@ -738,6 +741,7 @@ scifir::resistance operator"" _zΩ(long double);
 scifir::resistance operator"" _yΩ(long double);
 scifir::resistance operator"" _rΩ(long double);
 scifir::resistance operator"" _qΩ(long double);
+#endif
 
 scifir::electric_conductance operator"" _QS(long double);
 scifir::electric_conductance operator"" _RS(long double);
@@ -803,7 +807,7 @@ scifir::magnetic_flux_density operator"" _GT(long double);
 scifir::magnetic_flux_density operator"" _kT(long double);
 scifir::magnetic_flux_density operator"" _hT(long double);
 scifir::magnetic_flux_density operator"" _daT(long double);
-scifir::magnetic_flux_density operator"" _T(long double);
+//scifir::magnetic_flux_density operator"" _T(long double);
 scifir::magnetic_flux_density operator"" _dT(long double);
 scifir::magnetic_flux_density operator"" _cT(long double);
 scifir::magnetic_flux_density operator"" _mT(long double);

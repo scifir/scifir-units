@@ -2,10 +2,12 @@
 
 using namespace std;
 
+#ifdef IS_UNIX
 scifir::length operator"" _Å(unsigned long long int x)
 {
 	return scifir::length((long double)x, { scifir::dimension(scifir::dimension::ANGSTROM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
+#endif
 
 scifir::volume operator"" _QL(unsigned long long int x)
 {
@@ -972,10 +974,12 @@ scifir::sound_power operator"" _dB(unsigned long long int x)
 	return scifir::sound_power((long double)x, { scifir::dimension(scifir::dimension::DECIBEL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
+#ifdef IS_UNIX
 scifir::length operator"" _Å(long double x)
 {
 	return scifir::length(x, { scifir::dimension(scifir::dimension::ANGSTROM,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
+#endif
 
 scifir::volume operator"" _QL(long double x)
 {

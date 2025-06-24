@@ -12,7 +12,9 @@ using namespace scifir;
 
 TEST_CASE("Abbreviation literals") {
 	SECTION("Abbreviation literals") {
+#ifdef IS_UNIX
 		CHECK(bool(100_Å == "100 angstrom"));
+#endif
 
 		CHECK(bool(100_QL == "100 QL"));
 		CHECK(bool(100_RL == "100 RL"));
@@ -219,7 +221,9 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_px == "100 px"));
 		CHECK(bool(100_abv == "100% ABV"));
 
+#ifdef IS_UNIX
 		CHECK(bool(100.0_Å == "100 angstrom"));
+#endif
 
 		CHECK(bool(100.0_QL == "100 QL"));
 		CHECK(bool(100.0_RL == "100 RL"));
