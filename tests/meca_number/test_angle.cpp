@@ -167,7 +167,7 @@ TEST_CASE("angle class") {
     SECTION("to_scalar_unit() function")
     {
         angle a(40.0f);
-        CHECK(bool(a.to_scalar_unit() == scalar_unit("40 degree")));
+        CHECK(bool(a.to_scalar_unit() == scalar_unit("40 deg")));
     }
 
     SECTION("Display of angles")

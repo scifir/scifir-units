@@ -201,7 +201,7 @@ TEST_CASE("scalar_unit class") {
 
 	SECTION("is_dimensionless() of scalar_unit class")
 	{
-		scalar_unit a("100 degree");
+		scalar_unit a("100 deg");
 		CHECK(a.is_dimensionless() == true);
 		scalar_unit b("6 rad");
 		CHECK(b.is_dimensionless() == true);
@@ -215,7 +215,7 @@ TEST_CASE("scalar_unit class") {
 
 	SECTION("has_simple_dimensions() and has_composite_dimensions() of scalar_unit class")
 	{
-		scalar_unit a("100 degree");
+		scalar_unit a("100 deg");
 		CHECK(a.has_simple_dimensions() == true);
 		CHECK(a.has_single_dimensions() == true);
 		CHECK(a.has_composite_dimensions() == false);

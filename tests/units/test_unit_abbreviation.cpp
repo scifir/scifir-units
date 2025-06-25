@@ -13,7 +13,7 @@ using namespace scifir;
 TEST_CASE("Abbreviation literals") {
 	SECTION("Abbreviation literals") {
 #ifdef IS_UNIX
-		CHECK(bool(100_Å == "100 angstrom"));
+		CHECK(bool(100_Å == "100 Å"));
 #endif
 
 		CHECK(bool(100_QL == "100 QL"));
@@ -32,7 +32,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_dL == "100 dL"));
 		CHECK(bool(100_cL == "100 cL"));
 		CHECK(bool(100_mL == "100 mL"));
-		CHECK(bool(100_µL == "100 uL"));
+		CHECK(bool(100_µL == "100 µL"));
 		CHECK(bool(100_nL == "100 nL"));
 		CHECK(bool(100_pL == "100 pL"));
 		CHECK(bool(100_fL == "100 fL"));
@@ -62,7 +62,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_dAU == "100 dAU"));
 		CHECK(bool(100_cAU == "100 cAU"));
 		CHECK(bool(100_mAU == "100 mAU"));
-		CHECK(bool(100_µAU == "100 uAU"));
+		CHECK(bool(100_µAU == "100 µAU"));
 		CHECK(bool(100_nAU == "100 nAU"));
 		CHECK(bool(100_pAU == "100 pAU"));
 		CHECK(bool(100_fAU == "100 fAU"));
@@ -88,7 +88,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_dpc == "100 dpc"));
 		CHECK(bool(100_cpc == "100 cpc"));
 		CHECK(bool(100_mpc == "100 mpc"));
-		CHECK(bool(100_µpc == "100 upc"));
+		CHECK(bool(100_µpc == "100 µpc"));
 		CHECK(bool(100_npc == "100 npc"));
 		CHECK(bool(100_ppc == "100 ppc"));
 		CHECK(bool(100_fpc == "100 fpc"));
@@ -114,7 +114,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_deV == "100 deV"));
 		CHECK(bool(100_ceV == "100 ceV"));
 		CHECK(bool(100_meV == "100 meV"));
-		CHECK(bool(100_µeV == "100 ueV"));
+		CHECK(bool(100_µeV == "100 µeV"));
 		CHECK(bool(100_neV == "100 neV"));
 		CHECK(bool(100_peV == "100 peV"));
 		CHECK(bool(100_feV == "100 feV"));
@@ -144,7 +144,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_dbarn == "100 dbarn"));
 		CHECK(bool(100_cbarn == "100 cbarn"));
 		CHECK(bool(100_mbarn == "100 mbarn"));
-		CHECK(bool(100_µbarn == "100 ubarn"));
+		CHECK(bool(100_µbarn == "100 µbarn"));
 		CHECK(bool(100_nbarn == "100 nbarn"));
 		CHECK(bool(100_pbarn == "100 pbarn"));
 		CHECK(bool(100_fbarn == "100 fbarn"));
@@ -170,7 +170,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_dM == "100 dM"));
 		CHECK(bool(100_cM == "100 cM"));
 		CHECK(bool(100_mM == "100 mM"));
-		CHECK(bool(100_µM == "100 uM"));
+		CHECK(bool(100_µM == "100 µM"));
 		CHECK(bool(100_nM == "100 nM"));
 		CHECK(bool(100_pM == "100 pM"));
 		CHECK(bool(100_fM == "100 fM"));
@@ -196,7 +196,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_dIU == "100 dIU"));
 		CHECK(bool(100_cIU == "100 cIU"));
 		CHECK(bool(100_mIU == "100 mIU"));
-		CHECK(bool(100_µIU == "100 uIU"));
+		CHECK(bool(100_µIU == "100 µIU"));
 		CHECK(bool(100_nIU == "100 nIU"));
 		CHECK(bool(100_pIU == "100 pIU"));
 		CHECK(bool(100_fIU == "100 fIU"));
@@ -222,7 +222,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100_abv == "100% ABV"));
 
 #ifdef IS_UNIX
-		CHECK(bool(100.0_Å == "100 angstrom"));
+		CHECK(bool(100.0_Å == "100 Å"));
 #endif
 
 		CHECK(bool(100.0_QL == "100 QL"));
@@ -241,7 +241,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_dL == "100 dL"));
 		CHECK(bool(100.0_cL == "100 cL"));
 		CHECK(bool(100.0_mL == "100 mL"));
-		CHECK(bool(100.0_µL == "100 uL"));
+		CHECK(bool(100.0_µL == "100 µL"));
 		CHECK(bool(100.0_nL == "100 nL"));
 		CHECK(bool(100.0_pL == "100 pL"));
 		CHECK(bool(100.0_fL == "100 fL"));
@@ -271,7 +271,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_dAU == "100 dAU"));
 		CHECK(bool(100.0_cAU == "100 cAU"));
 		CHECK(bool(100.0_mAU == "100 mAU"));
-		CHECK(bool(100.0_µAU == "100 uAU"));
+		CHECK(bool(100.0_µAU == "100 µAU"));
 		CHECK(bool(100.0_nAU == "100 nAU"));
 		CHECK(bool(100.0_pAU == "100 pAU"));
 		CHECK(bool(100.0_fAU == "100 fAU"));
@@ -297,7 +297,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_dpc == "100 dpc"));
 		CHECK(bool(100.0_cpc == "100 cpc"));
 		CHECK(bool(100.0_mpc == "100 mpc"));
-		CHECK(bool(100.0_µpc == "100 upc"));
+		CHECK(bool(100.0_µpc == "100 µpc"));
 		CHECK(bool(100.0_npc == "100 npc"));
 		CHECK(bool(100.0_ppc == "100 ppc"));
 		CHECK(bool(100.0_fpc == "100 fpc"));
@@ -323,7 +323,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_deV == "100 deV"));
 		CHECK(bool(100.0_ceV == "100 ceV"));
 		CHECK(bool(100.0_meV == "100 meV"));
-		CHECK(bool(100.0_µeV == "100 ueV"));
+		CHECK(bool(100.0_µeV == "100 µeV"));
 		CHECK(bool(100.0_neV == "100 neV"));
 		CHECK(bool(100.0_peV == "100 peV"));
 		CHECK(bool(100.0_feV == "100 feV"));
@@ -353,7 +353,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_dbarn == "100 dbarn"));
 		CHECK(bool(100.0_cbarn == "100 cbarn"));
 		CHECK(bool(100.0_mbarn == "100 mbarn"));
-		CHECK(bool(100.0_µbarn == "100 ubarn"));
+		CHECK(bool(100.0_µbarn == "100 µbarn"));
 		CHECK(bool(100.0_nbarn == "100 nbarn"));
 		CHECK(bool(100.0_pbarn == "100 pbarn"));
 		CHECK(bool(100.0_fbarn == "100 fbarn"));
@@ -379,7 +379,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_dM == "100 dM"));
 		CHECK(bool(100.0_cM == "100 cM"));
 		CHECK(bool(100.0_mM == "100 mM"));
-		CHECK(bool(100.0_µM == "100 uM"));
+		CHECK(bool(100.0_µM == "100 µM"));
 		CHECK(bool(100.0_nM == "100 nM"));
 		CHECK(bool(100.0_pM == "100 pM"));
 		CHECK(bool(100.0_fM == "100 fM"));
@@ -405,7 +405,7 @@ TEST_CASE("Abbreviation literals") {
 		CHECK(bool(100.0_dIU == "100 dIU"));
 		CHECK(bool(100.0_cIU == "100 cIU"));
 		CHECK(bool(100.0_mIU == "100 mIU"));
-		CHECK(bool(100.0_µIU == "100 uIU"));
+		CHECK(bool(100.0_µIU == "100 µIU"));
 		CHECK(bool(100.0_nIU == "100 nIU"));
 		CHECK(bool(100.0_pIU == "100 pIU"));
 		CHECK(bool(100.0_fIU == "100 fIU"));

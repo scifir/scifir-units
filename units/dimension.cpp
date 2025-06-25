@@ -22,7 +22,7 @@ namespace scifir
 	map<string,vector<dimension>> dimension::base_dimensions = map<string,vector<dimension>>();
 	map<int,string> dimension::full_symbols = map<int,string>();
 	int dimension::total_full_symbols = 0;
-	set<string> dimension::prefixes_options {"Q", "R", "Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "µ", "n", "p", "f", "a", "z", "y", "r", "q"};
+	set<string> dimension::prefixes_options {"Q", "R", "Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "n", "p", "f", "a", "z", "y", "r", "q"};
 
 	dimension::dimension() : prefix(),dimension_type(dimension::NONE),dimension_position(dimension::NO_POSITION),symbol()
 	{}
@@ -63,6 +63,11 @@ namespace scifir
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
+		}
+		else if(init_dimension.substr(0,2) == "µ")
+		{
+			prefix_name = "µ";
+			dimension_name = init_dimension.substr(2);
 		}
 		else if(init_dimension == "day")
 		{

@@ -29,7 +29,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dHz == "100 dHz"));
 		CHECK(bool(100_cHz == "100 cHz"));
 		CHECK(bool(100_mHz == "100 mHz"));
-		CHECK(bool(100_µHz == "100 uHz"));
+		CHECK(bool(100_µHz == "100 µHz"));
 		CHECK(bool(100_nHz == "100 nHz"));
 		CHECK(bool(100_pHz == "100 pHz"));
 		CHECK(bool(100_fHz == "100 fHz"));
@@ -55,7 +55,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dN == "100 dN"));
 		CHECK(bool(100_cN == "100 cN"));
 		CHECK(bool(100_mN == "100 mN"));
-		CHECK(bool(100_µN == "100 uN"));
+		CHECK(bool(100_µN == "100 µN"));
 		CHECK(bool(100_nN == "100 nN"));
 		CHECK(bool(100_pN == "100 pN"));
 		CHECK(bool(100_fN == "100 fN"));
@@ -81,7 +81,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dPa == "100 dPa"));
 		CHECK(bool(100_cPa == "100 cPa"));
 		CHECK(bool(100_mPa == "100 mPa"));
-		CHECK(bool(100_µPa == "100 uPa"));
+		CHECK(bool(100_µPa == "100 µPa"));
 		CHECK(bool(100_nPa == "100 nPa"));
 		CHECK(bool(100_pPa == "100 pPa"));
 		CHECK(bool(100_fPa == "100 fPa"));
@@ -107,7 +107,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dJ == "100 dJ"));
 		CHECK(bool(100_cJ == "100 cJ"));
 		CHECK(bool(100_mJ == "100 mJ"));
-		CHECK(bool(100_µJ == "100 uJ"));
+		CHECK(bool(100_µJ == "100 µJ"));
 		CHECK(bool(100_nJ == "100 nJ"));
 		CHECK(bool(100_pJ == "100 pJ"));
 		CHECK(bool(100_fJ == "100 fJ"));
@@ -133,7 +133,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dW == "100 dW"));
 		CHECK(bool(100_cW == "100 cW"));
 		CHECK(bool(100_mW == "100 mW"));
-		CHECK(bool(100_µW == "100 uW"));
+		CHECK(bool(100_µW == "100 µW"));
 		CHECK(bool(100_nW == "100 nW"));
 		CHECK(bool(100_pW == "100 pW"));
 		CHECK(bool(100_fW == "100 fW"));
@@ -159,7 +159,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dA == "100 dA"));
 		CHECK(bool(100_cA == "100 cA"));
 		CHECK(bool(100_mA == "100 mA"));
-		CHECK(bool(100_µA == "100 uA"));
+		CHECK(bool(100_µA == "100 µA"));
 		CHECK(bool(100_nA == "100 nA"));
 		CHECK(bool(100_pA == "100 pA"));
 		CHECK(bool(100_fA == "100 fA"));
@@ -185,7 +185,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dV == "100 dV"));
 		CHECK(bool(100_cV == "100 cV"));
 		CHECK(bool(100_mV == "100 mV"));
-		CHECK(bool(100_µV == "100 uV"));
+		CHECK(bool(100_µV == "100 µV"));
 		CHECK(bool(100_nV == "100 nV"));
 		CHECK(bool(100_pV == "100 pV"));
 		CHECK(bool(100_fV == "100 fV"));
@@ -211,7 +211,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dF == "100 dF"));
 		CHECK(bool(100_cF == "100 cF"));
 		CHECK(bool(100_mF == "100 mF"));
-		CHECK(bool(100_µF == "100 uF"));
+		CHECK(bool(100_µF == "100 µF"));
 		CHECK(bool(100_nF == "100 nF"));
 		CHECK(bool(100_pF == "100 pF"));
 		CHECK(bool(100_fF == "100 fF"));
@@ -222,31 +222,31 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_qF == "100 qF"));
 
 #ifdef IS_UNIX
-		CHECK(bool(100_QΩ == "100 QOhm"));
-		CHECK(bool(100_RΩ == "100 ROhm"));
-		CHECK(bool(100_YΩ == "100 YOhm"));
-		CHECK(bool(100_ZΩ == "100 ZOhm"));
-		CHECK(bool(100_EΩ == "100 EOhm"));
-		CHECK(bool(100_PΩ == "100 POhm"));
-		CHECK(bool(100_TΩ == "100 TOhm"));
-		CHECK(bool(100_GΩ == "100 GOhm"));
-		CHECK(bool(100_MΩ == "100 MOhm"));
-		CHECK(bool(100_kΩ == "100 kOhm"));
-		CHECK(bool(100_hΩ == "100 hOhm"));
-		CHECK(bool(100_daΩ == "100 daOhm"));
-		CHECK(bool(100_Ω == "100 Ohm"));
-		CHECK(bool(100_dΩ == "100 dOhm"));
-		CHECK(bool(100_cΩ == "100 cOhm"));
-		CHECK(bool(100_mΩ == "100 mOhm"));
-		CHECK(bool(100_µΩ == "100 uOhm"));
-		CHECK(bool(100_nΩ == "100 nOhm"));
-		CHECK(bool(100_pΩ == "100 pOhm"));
-		CHECK(bool(100_fΩ == "100 fOhm"));
-		CHECK(bool(100_aΩ == "100 aOhm"));
-		CHECK(bool(100_zΩ == "100 zOhm"));
-		CHECK(bool(100_yΩ == "100 yOhm"));
-		CHECK(bool(100_rΩ == "100 rOhm"));
-		CHECK(bool(100_qΩ == "100 qOhm"));
+		CHECK(bool(100_QΩ == "100 QΩ"));
+		CHECK(bool(100_RΩ == "100 RΩ"));
+		CHECK(bool(100_YΩ == "100 YΩ"));
+		CHECK(bool(100_ZΩ == "100 ZΩ"));
+		CHECK(bool(100_EΩ == "100 EΩ"));
+		CHECK(bool(100_PΩ == "100 PΩ"));
+		CHECK(bool(100_TΩ == "100 TΩ"));
+		CHECK(bool(100_GΩ == "100 GΩ"));
+		CHECK(bool(100_MΩ == "100 MΩ"));
+		CHECK(bool(100_kΩ == "100 kΩ"));
+		CHECK(bool(100_hΩ == "100 hΩ"));
+		CHECK(bool(100_daΩ == "100 daΩ"));
+		CHECK(bool(100_Ω == "100 Ω"));
+		CHECK(bool(100_dΩ == "100 dΩ"));
+		CHECK(bool(100_cΩ == "100 cΩ"));
+		CHECK(bool(100_mΩ == "100 mΩ"));
+		CHECK(bool(100_µΩ == "100 µΩ"));
+		CHECK(bool(100_nΩ == "100 nΩ"));
+		CHECK(bool(100_pΩ == "100 pΩ"));
+		CHECK(bool(100_fΩ == "100 fΩ"));
+		CHECK(bool(100_aΩ == "100 aΩ"));
+		CHECK(bool(100_zΩ == "100 zΩ"));
+		CHECK(bool(100_yΩ == "100 yΩ"));
+		CHECK(bool(100_rΩ == "100 rΩ"));
+		CHECK(bool(100_qΩ == "100 qΩ"));
 #endif
 
 		CHECK(bool(100_QS == "100 QS"));
@@ -265,7 +265,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dS == "100 dS"));
 		CHECK(bool(100_cS == "100 cS"));
 		CHECK(bool(100_mS == "100 mS"));
-		CHECK(bool(100_µS == "100 uS"));
+		CHECK(bool(100_µS == "100 µS"));
 		CHECK(bool(100_nS == "100 nS"));
 		CHECK(bool(100_pS == "100 pS"));
 		CHECK(bool(100_fS == "100 fS"));
@@ -291,7 +291,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dWb == "100 dWb"));
 		CHECK(bool(100_cWb == "100 cWb"));
 		CHECK(bool(100_mWb == "100 mWb"));
-		CHECK(bool(100_µWb == "100 uWb"));
+		CHECK(bool(100_µWb == "100 µWb"));
 		CHECK(bool(100_nWb == "100 nWb"));
 		CHECK(bool(100_pWb == "100 pWb"));
 		CHECK(bool(100_fWb == "100 fWb"));
@@ -317,7 +317,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dT == "100 dT"));
 		CHECK(bool(100_cT == "100 cT"));
 		CHECK(bool(100_mT == "100 mT"));
-		CHECK(bool(100_µT == "100 uT"));
+		CHECK(bool(100_µT == "100 µT"));
 		CHECK(bool(100_nT == "100 nT"));
 		CHECK(bool(100_pT == "100 pT"));
 		CHECK(bool(100_fT == "100 fT"));
@@ -343,7 +343,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dH == "100 dH"));
 		CHECK(bool(100_cH == "100 cH"));
 		CHECK(bool(100_mH == "100 mH"));
-		CHECK(bool(100_µH == "100 uH"));
+		CHECK(bool(100_µH == "100 µH"));
 		CHECK(bool(100_nH == "100 nH"));
 		CHECK(bool(100_pH == "100 pH"));
 		CHECK(bool(100_fH == "100 fH"));
@@ -371,7 +371,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dlm == "100 dlm"));
 		CHECK(bool(100_clm == "100 clm"));
 		CHECK(bool(100_mlm == "100 mlm"));
-		CHECK(bool(100_µlm == "100 ulm"));
+		CHECK(bool(100_µlm == "100 µlm"));
 		CHECK(bool(100_nlm == "100 nlm"));
 		CHECK(bool(100_plm == "100 plm"));
 		CHECK(bool(100_flm == "100 flm"));
@@ -397,7 +397,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dlx == "100 dlx"));
 		CHECK(bool(100_clx == "100 clx"));
 		CHECK(bool(100_mlx == "100 mlx"));
-		CHECK(bool(100_µlx == "100 ulx"));
+		CHECK(bool(100_µlx == "100 µlx"));
 		CHECK(bool(100_nlx == "100 nlx"));
 		CHECK(bool(100_plx == "100 plx"));
 		CHECK(bool(100_flx == "100 flx"));
@@ -423,7 +423,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dBq == "100 dBq"));
 		CHECK(bool(100_cBq == "100 cBq"));
 		CHECK(bool(100_mBq == "100 mBq"));
-		CHECK(bool(100_µBq == "100 uBq"));
+		CHECK(bool(100_µBq == "100 µBq"));
 		CHECK(bool(100_nBq == "100 nBq"));
 		CHECK(bool(100_pBq == "100 pBq"));
 		CHECK(bool(100_fBq == "100 fBq"));
@@ -449,7 +449,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dGy == "100 dGy"));
 		CHECK(bool(100_cGy == "100 cGy"));
 		CHECK(bool(100_mGy == "100 mGy"));
-		CHECK(bool(100_µGy == "100 uGy"));
+		CHECK(bool(100_µGy == "100 µGy"));
 		CHECK(bool(100_nGy == "100 nGy"));
 		CHECK(bool(100_pGy == "100 pGy"));
 		CHECK(bool(100_fGy == "100 fGy"));
@@ -475,7 +475,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dSv == "100 dSv"));
 		CHECK(bool(100_cSv == "100 cSv"));
 		CHECK(bool(100_mSv == "100 mSv"));
-		CHECK(bool(100_µSv == "100 uSv"));
+		CHECK(bool(100_µSv == "100 µSv"));
 		CHECK(bool(100_nSv == "100 nSv"));
 		CHECK(bool(100_pSv == "100 pSv"));
 		CHECK(bool(100_fSv == "100 fSv"));
@@ -501,7 +501,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100_dkat == "100 dkat"));
 		CHECK(bool(100_ckat == "100 ckat"));
 		CHECK(bool(100_mkat == "100 mkat"));
-		CHECK(bool(100_µkat == "100 ukat"));
+		CHECK(bool(100_µkat == "100 µkat"));
 		CHECK(bool(100_nkat == "100 nkat"));
 		CHECK(bool(100_pkat == "100 pkat"));
 		CHECK(bool(100_fkat == "100 fkat"));
@@ -527,7 +527,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dHz == "100 dHz"));
 		CHECK(bool(100.0_cHz == "100 cHz"));
 		CHECK(bool(100.0_mHz == "100 mHz"));
-		CHECK(bool(100.0_µHz == "100 uHz"));
+		CHECK(bool(100.0_µHz == "100 µHz"));
 		CHECK(bool(100.0_nHz == "100 nHz"));
 		CHECK(bool(100.0_pHz == "100 pHz"));
 		CHECK(bool(100.0_fHz == "100 fHz"));
@@ -553,7 +553,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dN == "100 dN"));
 		CHECK(bool(100.0_cN == "100 cN"));
 		CHECK(bool(100.0_mN == "100 mN"));
-		CHECK(bool(100.0_µN == "100 uN"));
+		CHECK(bool(100.0_µN == "100 µN"));
 		CHECK(bool(100.0_nN == "100 nN"));
 		CHECK(bool(100.0_pN == "100 pN"));
 		CHECK(bool(100.0_fN == "100 fN"));
@@ -579,7 +579,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dPa == "100 dPa"));
 		CHECK(bool(100.0_cPa == "100 cPa"));
 		CHECK(bool(100.0_mPa == "100 mPa"));
-		CHECK(bool(100.0_µPa == "100 uPa"));
+		CHECK(bool(100.0_µPa == "100 µPa"));
 		CHECK(bool(100.0_nPa == "100 nPa"));
 		CHECK(bool(100.0_pPa == "100 pPa"));
 		CHECK(bool(100.0_fPa == "100 fPa"));
@@ -605,7 +605,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dJ == "100 dJ"));
 		CHECK(bool(100.0_cJ == "100 cJ"));
 		CHECK(bool(100.0_mJ == "100 mJ"));
-		CHECK(bool(100.0_µJ == "100 uJ"));
+		CHECK(bool(100.0_µJ == "100 µJ"));
 		CHECK(bool(100.0_nJ == "100 nJ"));
 		CHECK(bool(100.0_pJ == "100 pJ"));
 		CHECK(bool(100.0_fJ == "100 fJ"));
@@ -631,7 +631,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dW == "100 dW"));
 		CHECK(bool(100.0_cW == "100 cW"));
 		CHECK(bool(100.0_mW == "100 mW"));
-		CHECK(bool(100.0_µW == "100 uW"));
+		CHECK(bool(100.0_µW == "100 µW"));
 		CHECK(bool(100.0_nW == "100 nW"));
 		CHECK(bool(100.0_pW == "100 pW"));
 		CHECK(bool(100.0_fW == "100 fW"));
@@ -657,7 +657,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dA == "100 dA"));
 		CHECK(bool(100.0_cA == "100 cA"));
 		CHECK(bool(100.0_mA == "100 mA"));
-		CHECK(bool(100.0_µA == "100 uA"));
+		CHECK(bool(100.0_µA == "100 µA"));
 		CHECK(bool(100.0_nA == "100 nA"));
 		CHECK(bool(100.0_pA == "100 pA"));
 		CHECK(bool(100.0_fA == "100 fA"));
@@ -683,7 +683,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dV == "100 dV"));
 		CHECK(bool(100.0_cV == "100 cV"));
 		CHECK(bool(100.0_mV == "100 mV"));
-		CHECK(bool(100.0_µV == "100 uV"));
+		CHECK(bool(100.0_µV == "100 µV"));
 		CHECK(bool(100.0_nV == "100 nV"));
 		CHECK(bool(100.0_pV == "100 pV"));
 		CHECK(bool(100.0_fV == "100 fV"));
@@ -709,7 +709,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dF == "100 dF"));
 		CHECK(bool(100.0_cF == "100 cF"));
 		CHECK(bool(100.0_mF == "100 mF"));
-		CHECK(bool(100.0_µF == "100 uF"));
+		CHECK(bool(100.0_µF == "100 µF"));
 		CHECK(bool(100.0_nF == "100 nF"));
 		CHECK(bool(100.0_pF == "100 pF"));
 		CHECK(bool(100.0_fF == "100 fF"));
@@ -720,31 +720,31 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_qF == "100 qF"));
 
 #ifdef IS_UNIX
-		CHECK(bool(100.0_QΩ == "100 QOhm"));
-		CHECK(bool(100.0_RΩ == "100 ROhm"));
-		CHECK(bool(100.0_YΩ == "100 YOhm"));
-		CHECK(bool(100.0_ZΩ == "100 ZOhm"));
-		CHECK(bool(100.0_EΩ == "100 EOhm"));
-		CHECK(bool(100.0_PΩ == "100 POhm"));
-		CHECK(bool(100.0_TΩ == "100 TOhm"));
-		CHECK(bool(100.0_GΩ == "100 GOhm"));
-		CHECK(bool(100.0_MΩ == "100 MOhm"));
-		CHECK(bool(100.0_kΩ == "100 kOhm"));
-		CHECK(bool(100.0_hΩ == "100 hOhm"));
-		CHECK(bool(100.0_daΩ == "100 daOhm"));
-		CHECK(bool(100.0_Ω == "100 Ohm"));
-		CHECK(bool(100.0_dΩ == "100 dOhm"));
-		CHECK(bool(100.0_cΩ == "100 cOhm"));
-		CHECK(bool(100.0_mΩ == "100 mOhm"));
-		CHECK(bool(100.0_µΩ == "100 uOhm"));
-		CHECK(bool(100.0_nΩ == "100 nOhm"));
-		CHECK(bool(100.0_pΩ == "100 pOhm"));
-		CHECK(bool(100.0_fΩ == "100 fOhm"));
-		CHECK(bool(100.0_aΩ == "100 aOhm"));
-		CHECK(bool(100.0_zΩ == "100 zOhm"));
-		CHECK(bool(100.0_yΩ == "100 yOhm"));
-		CHECK(bool(100.0_rΩ == "100 rOhm"));
-		CHECK(bool(100.0_qΩ == "100 qOhm"));
+		CHECK(bool(100.0_QΩ == "100 QΩ"));
+		CHECK(bool(100.0_RΩ == "100 RΩ"));
+		CHECK(bool(100.0_YΩ == "100 YΩ"));
+		CHECK(bool(100.0_ZΩ == "100 ZΩ"));
+		CHECK(bool(100.0_EΩ == "100 EΩ"));
+		CHECK(bool(100.0_PΩ == "100 PΩ"));
+		CHECK(bool(100.0_TΩ == "100 TΩ"));
+		CHECK(bool(100.0_GΩ == "100 GΩ"));
+		CHECK(bool(100.0_MΩ == "100 MΩ"));
+		CHECK(bool(100.0_kΩ == "100 kΩ"));
+		CHECK(bool(100.0_hΩ == "100 hΩ"));
+		CHECK(bool(100.0_daΩ == "100 daΩ"));
+		CHECK(bool(100.0_Ω == "100 Ω"));
+		CHECK(bool(100.0_dΩ == "100 dΩ"));
+		CHECK(bool(100.0_cΩ == "100 cΩ"));
+		CHECK(bool(100.0_mΩ == "100 mΩ"));
+		CHECK(bool(100.0_µΩ == "100 µΩ"));
+		CHECK(bool(100.0_nΩ == "100 nΩ"));
+		CHECK(bool(100.0_pΩ == "100 pΩ"));
+		CHECK(bool(100.0_fΩ == "100 fΩ"));
+		CHECK(bool(100.0_aΩ == "100 aΩ"));
+		CHECK(bool(100.0_zΩ == "100 zΩ"));
+		CHECK(bool(100.0_yΩ == "100 yΩ"));
+		CHECK(bool(100.0_rΩ == "100 rΩ"));
+		CHECK(bool(100.0_qΩ == "100 qΩ"));
 #endif
 
 		CHECK(bool(100.0_QS == "100 QS"));
@@ -763,7 +763,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dS == "100 dS"));
 		CHECK(bool(100.0_cS == "100 cS"));
 		CHECK(bool(100.0_mS == "100 mS"));
-		CHECK(bool(100.0_µS == "100 uS"));
+		CHECK(bool(100.0_µS == "100 µS"));
 		CHECK(bool(100.0_nS == "100 nS"));
 		CHECK(bool(100.0_pS == "100 pS"));
 		CHECK(bool(100.0_fS == "100 fS"));
@@ -789,7 +789,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dWb == "100 dWb"));
 		CHECK(bool(100.0_cWb == "100 cWb"));
 		CHECK(bool(100.0_mWb == "100 mWb"));
-		CHECK(bool(100.0_µWb == "100 uWb"));
+		CHECK(bool(100.0_µWb == "100 µWb"));
 		CHECK(bool(100.0_nWb == "100 nWb"));
 		CHECK(bool(100.0_pWb == "100 pWb"));
 		CHECK(bool(100.0_fWb == "100 fWb"));
@@ -815,7 +815,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dT == "100 dT"));
 		CHECK(bool(100.0_cT == "100 cT"));
 		CHECK(bool(100.0_mT == "100 mT"));
-		CHECK(bool(100.0_µT == "100 uT"));
+		CHECK(bool(100.0_µT == "100 µT"));
 		CHECK(bool(100.0_nT == "100 nT"));
 		CHECK(bool(100.0_pT == "100 pT"));
 		CHECK(bool(100.0_fT == "100 fT"));
@@ -841,7 +841,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dH == "100 dH"));
 		CHECK(bool(100.0_cH == "100 cH"));
 		CHECK(bool(100.0_mH == "100 mH"));
-		CHECK(bool(100.0_µH == "100 uH"));
+		CHECK(bool(100.0_µH == "100 µH"));
 		CHECK(bool(100.0_nH == "100 nH"));
 		CHECK(bool(100.0_pH == "100 pH"));
 		CHECK(bool(100.0_fH == "100 fH"));
@@ -869,7 +869,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dlm == "100 dlm"));
 		CHECK(bool(100.0_clm == "100 clm"));
 		CHECK(bool(100.0_mlm == "100 mlm"));
-		CHECK(bool(100.0_µlm == "100 ulm"));
+		CHECK(bool(100.0_µlm == "100 µlm"));
 		CHECK(bool(100.0_nlm == "100 nlm"));
 		CHECK(bool(100.0_plm == "100 plm"));
 		CHECK(bool(100.0_flm == "100 flm"));
@@ -895,7 +895,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dlx == "100 dlx"));
 		CHECK(bool(100.0_clx == "100 clx"));
 		CHECK(bool(100.0_mlx == "100 mlx"));
-		CHECK(bool(100.0_µlx == "100 ulx"));
+		CHECK(bool(100.0_µlx == "100 µlx"));
 		CHECK(bool(100.0_nlx == "100 nlx"));
 		CHECK(bool(100.0_plx == "100 plx"));
 		CHECK(bool(100.0_flx == "100 flx"));
@@ -921,7 +921,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dBq == "100 dBq"));
 		CHECK(bool(100.0_cBq == "100 cBq"));
 		CHECK(bool(100.0_mBq == "100 mBq"));
-		CHECK(bool(100.0_µBq == "100 uBq"));
+		CHECK(bool(100.0_µBq == "100 µBq"));
 		CHECK(bool(100.0_nBq == "100 nBq"));
 		CHECK(bool(100.0_pBq == "100 pBq"));
 		CHECK(bool(100.0_fBq == "100 fBq"));
@@ -947,7 +947,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dGy == "100 dGy"));
 		CHECK(bool(100.0_cGy == "100 cGy"));
 		CHECK(bool(100.0_mGy == "100 mGy"));
-		CHECK(bool(100.0_µGy == "100 uGy"));
+		CHECK(bool(100.0_µGy == "100 µGy"));
 		CHECK(bool(100.0_nGy == "100 nGy"));
 		CHECK(bool(100.0_pGy == "100 pGy"));
 		CHECK(bool(100.0_fGy == "100 fGy"));
@@ -973,7 +973,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dSv == "100 dSv"));
 		CHECK(bool(100.0_cSv == "100 cSv"));
 		CHECK(bool(100.0_mSv == "100 mSv"));
-		CHECK(bool(100.0_µSv == "100 uSv"));
+		CHECK(bool(100.0_µSv == "100 µSv"));
 		CHECK(bool(100.0_nSv == "100 nSv"));
 		CHECK(bool(100.0_pSv == "100 pSv"));
 		CHECK(bool(100.0_fSv == "100 fSv"));
@@ -999,7 +999,7 @@ TEST_CASE("Special names literals") {
 		CHECK(bool(100.0_dkat == "100 dkat"));
 		CHECK(bool(100.0_ckat == "100 ckat"));
 		CHECK(bool(100.0_mkat == "100 mkat"));
-		CHECK(bool(100.0_µkat == "100 ukat"));
+		CHECK(bool(100.0_µkat == "100 µkat"));
 		CHECK(bool(100.0_nkat == "100 nkat"));
 		CHECK(bool(100.0_pkat == "100 pkat"));
 		CHECK(bool(100.0_fkat == "100 fkat"));

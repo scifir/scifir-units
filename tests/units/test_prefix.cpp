@@ -64,8 +64,6 @@ TEST_CASE("prefix class") {
 		CHECK(l.prefix_type == prefix::CENTI);
 		prefix m = prefix("m");
 		CHECK(m.prefix_type == prefix::MILLI);
-		prefix n = prefix("u");
-		CHECK(n.prefix_type == prefix::MICRO);
 		prefix n2 = prefix("µ");
 		CHECK(n2.prefix_type == prefix::MICRO);
 		prefix o = prefix("n");

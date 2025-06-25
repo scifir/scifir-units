@@ -111,8 +111,12 @@ namespace scifir
 
 	bool scalar_unit::operator ==(scalar_unit x) const
 	{
+		if(!has_dimensions(x))
+		{
+			return false;
+		}
 		x.change_dimensions(*this);
-		if(get_value() == x.get_value() and has_dimensions(x))
+		if(get_value() == x.get_value())
 		{
 			return true;
 		}
@@ -286,7 +290,7 @@ namespace scifir
 
 	void scalar_unit::change_dimensions(const scalar_unit& x)
 	{
-		if(has_dimensions(x.get_dimensions()))
+		if (has_dimensions(x.get_dimensions()))
 		{
 			if (equal_dimensions_and_prefixes(dimensions,x.get_dimensions()))
 			{

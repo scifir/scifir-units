@@ -106,7 +106,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_dm == "100 dm"));
 		CHECK(bool(100_cm == "100 cm"));
 		CHECK(bool(100_mm == "100 mm"));
-		CHECK(bool(100_um == "100 um"));
+		CHECK(bool(100_µm == "100 µm"));
 		CHECK(bool(100_nm == "100 nm"));
 		CHECK(bool(100_pm == "100 pm"));
 		CHECK(bool(100_fm == "100 fm"));
@@ -120,7 +120,7 @@ TEST_CASE("Base units") {
 
 		CHECK(bool(100_s == "100 s"));
 		CHECK(bool(100_ms == "100 ms"));
-		CHECK(bool(100_us == "100 us"));
+		CHECK(bool(100_µs == "100 µs"));
 		CHECK(bool(100_ns == "100 ns"));
 		CHECK(bool(100_ps == "100 ps"));
 		CHECK(bool(100_fs == "100 fs"));
@@ -146,7 +146,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_dg == "100 dg"));
 		CHECK(bool(100_cg == "100 cg"));
 		CHECK(bool(100_mg == "100 mg"));
-		CHECK(bool(100_ug == "100 ug"));
+		CHECK(bool(100_µg == "100 µg"));
 		CHECK(bool(100_ng == "100 ng"));
 		CHECK(bool(100_pg == "100 pg"));
 		CHECK(bool(100_fg == "100 fg"));
@@ -172,7 +172,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_dC == "100 dC"));
 		CHECK(bool(100_cC == "100 cC"));
 		CHECK(bool(100_mC == "100 mC"));
-		CHECK(bool(100_uC == "100 uC"));
+		CHECK(bool(100_µC == "100 µC"));
 		CHECK(bool(100_nC == "100 nC"));
 		CHECK(bool(100_pC == "100 pC"));
 		CHECK(bool(100_fC == "100 fC"));
@@ -198,7 +198,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_dK == "100 dK"));
 		CHECK(bool(100_cK == "100 cK"));
 		CHECK(bool(100_mK == "100 mK"));
-		CHECK(bool(100_uK == "100 uK"));
+		CHECK(bool(100_µK == "100 µK"));
 		CHECK(bool(100_nK == "100 nK"));
 		CHECK(bool(100_pK == "100 pK"));
 		CHECK(bool(100_fK == "100 fK"));
@@ -224,7 +224,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_dmol == "100 dmol"));
 		CHECK(bool(100_cmol == "100 cmol"));
 		CHECK(bool(100_mmol == "100 mmol"));
-		CHECK(bool(100_umol == "100 umol"));
+		CHECK(bool(100_µmol == "100 µmol"));
 		CHECK(bool(100_nmol == "100 nmol"));
 		CHECK(bool(100_pmol == "100 pmol"));
 		CHECK(bool(100_fmol == "100 fmol"));
@@ -250,7 +250,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100_dcd == "100 dcd"));
 		CHECK(bool(100_ccd == "100 ccd"));
 		CHECK(bool(100_mcd == "100 mcd"));
-		CHECK(bool(100_ucd == "100 ucd"));
+		CHECK(bool(100_µcd == "100 µcd"));
 		CHECK(bool(100_ncd == "100 ncd"));
 		CHECK(bool(100_pcd == "100 pcd"));
 		CHECK(bool(100_fcd == "100 fcd"));
@@ -300,7 +300,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100.0_dm == "100 dm"));
 		CHECK(bool(100.0_cm == "100 cm"));
 		CHECK(bool(100.0_mm == "100 mm"));
-		CHECK(bool(100.0_um == "100 um"));
+		CHECK(bool(100.0_µm == "100 µm"));
 		CHECK(bool(100.0_nm == "100 nm"));
 		CHECK(bool(100.0_pm == "100 pm"));
 		CHECK(bool(100.0_fm == "100 fm"));
@@ -312,7 +312,7 @@ TEST_CASE("Base units") {
 		
 		CHECK(bool(100.0_s == "100 s"));
 		CHECK(bool(100.0_ms == "100 ms"));
-		CHECK(bool(100.0_us == "100 us"));
+		CHECK(bool(100.0_µs == "100 µs"));
 		CHECK(bool(100.0_ns == "100 ns"));
 		CHECK(bool(100.0_ps == "100 ps"));
 		CHECK(bool(100.0_fs == "100 fs"));
@@ -338,7 +338,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100.0_dg == "100 dg"));
 		CHECK(bool(100.0_cg == "100 cg"));
 		CHECK(bool(100.0_mg == "100 mg"));
-		CHECK(bool(100.0_ug == "100 ug"));
+		CHECK(bool(100.0_µg == "100 µg"));
 		CHECK(bool(100.0_ng == "100 ng"));
 		CHECK(bool(100.0_pg == "100 pg"));
 		CHECK(bool(100.0_fg == "100 fg"));
@@ -364,7 +364,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100.0_dC == "100 dC"));
 		CHECK(bool(100.0_cC == "100 cC"));
 		CHECK(bool(100.0_mC == "100 mC"));
-		CHECK(bool(100.0_uC == "100 uC"));
+		CHECK(bool(100.0_µC == "100 µC"));
 		CHECK(bool(100.0_nC == "100 nC"));
 		CHECK(bool(100.0_pC == "100 pC"));
 		CHECK(bool(100.0_fC == "100 fC"));
@@ -390,7 +390,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100.0_dK == "100 dK"));
 		CHECK(bool(100.0_cK == "100 cK"));
 		CHECK(bool(100.0_mK == "100 mK"));
-		CHECK(bool(100.0_uK == "100 uK"));
+		CHECK(bool(100.0_µK == "100 µK"));
 		CHECK(bool(100.0_nK == "100 nK"));
 		CHECK(bool(100.0_pK == "100 pK"));
 		CHECK(bool(100.0_fK == "100 fK"));
@@ -416,7 +416,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100.0_dmol == "100 dmol"));
 		CHECK(bool(100.0_cmol == "100 cmol"));
 		CHECK(bool(100.0_mmol == "100 mmol"));
-		CHECK(bool(100.0_umol == "100 umol"));
+		CHECK(bool(100.0_µmol == "100 µmol"));
 		CHECK(bool(100.0_nmol == "100 nmol"));
 		CHECK(bool(100.0_pmol == "100 pmol"));
 		CHECK(bool(100.0_fmol == "100 fmol"));
@@ -442,7 +442,7 @@ TEST_CASE("Base units") {
 		CHECK(bool(100.0_dcd == "100 dcd"));
 		CHECK(bool(100.0_ccd == "100 ccd"));
 		CHECK(bool(100.0_mcd == "100 mcd"));
-		CHECK(bool(100.0_ucd == "100 ucd"));
+		CHECK(bool(100.0_µcd == "100 µcd"));
 		CHECK(bool(100.0_ncd == "100 ncd"));
 		CHECK(bool(100.0_pcd == "100 pcd"));
 		CHECK(bool(100.0_fcd == "100 fcd"));
