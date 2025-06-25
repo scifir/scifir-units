@@ -698,7 +698,7 @@ namespace scifir
 		else
 		{
 			int i = 0;
-			while(isdigit(init_scalar[i]) || init_scalar[i] == '.' || init_scalar[i] == ' ' || init_scalar[i] == '*' || init_scalar[i] == '^' || init_scalar[i] == 'e' || init_scalar[i] == 'E')
+			while(isdigit(init_scalar[i]) or init_scalar[i] == '.' or init_scalar[i] == ' ' or init_scalar[i] == '*' or init_scalar[i] == '^' or init_scalar[i] == 'e' or init_scalar[i] == 'E')
 			{
 				if (init_scalar[i] == ' ')
 				{
