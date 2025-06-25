@@ -22,7 +22,7 @@ namespace scifir
 	map<string,vector<dimension>> dimension::base_dimensions = map<string,vector<dimension>>();
 	map<int,string> dimension::full_symbols = map<int,string>();
 	int dimension::total_full_symbols = 0;
-	set<string> dimension::prefixes_options {"Q", "R", "Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y", "r", "q"};
+	set<string> dimension::prefixes_options {"Q", "R", "Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "µ", "n", "p", "f", "a", "z", "y", "r", "q"};
 
 	dimension::dimension() : prefix(),dimension_type(dimension::NONE),dimension_position(dimension::NO_POSITION),symbol()
 	{}
@@ -59,7 +59,7 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Hz" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension != "°C" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "Ω" and init_dimension != "Ohm" and init_dimension != "ohm" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "Å" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq" and init_dimension != "dB")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "deg" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Hz" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension != "°C" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "Ω" and init_dimension != "ohm" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "Å" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq" and init_dimension != "dB")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
@@ -84,7 +84,7 @@ namespace scifir
 		{
 			dimension_type = dimension::METRE;
 		}
-		else if(dimension_name == "degree" or dimension_name == "θ")
+		else if(dimension_name == "deg" or dimension_name == "θ")
 		{
 			dimension_type = dimension::DEGREE;
 		}
@@ -164,7 +164,7 @@ namespace scifir
 		{
 			dimension_type = dimension::FARAD;
 		}
-		else if(dimension_name == "ohm" or dimension_name == "Ohm" or dimension_name == "Ω")
+		else if(dimension_name == "ohm" or dimension_name == "Ω")
 		{
 			dimension_type = dimension::OHM;
 		}
@@ -208,7 +208,7 @@ namespace scifir
 		{
 			dimension_type = dimension::KATAL;
 		}
-		else if(dimension_name == "angstrom" or dimension_name == "Å")
+		else if(dimension_name == "Å")
 		{
 			dimension_type = dimension::ANGSTROM;
 		}
@@ -1929,7 +1929,7 @@ namespace scifir
 		vector<dimension> dimensions = vector<dimension>();
 		icu::UnicodeString x_unicode = icu::UnicodeString(init_dimensions.c_str());
 		int total_chars = x_unicode.countChar32();
-		for(unsigned int j = 0; j < total_chars; j++)
+		for(int j = 0; j < total_chars; j++)
 		{
 			if(x_unicode[j] == UChar32(U'1') and x_unicode[j + 1] == UChar32(U'/'))
 			{
@@ -1957,8 +1957,6 @@ namespace scifir
 			if(!new_dimension_str.countChar32() == 0)
 			{
 				dimension new_dimension;
-				string new_dimension_str_stl2 = "";
-				new_dimension_str.toUTF8String(new_dimension_str_stl2);
 				if(new_dimension_str.countChar32() == 1)
 				{
 					if(new_dimension_str[0] == 0x03A9)
@@ -2192,7 +2190,7 @@ namespace scifir
 		vector<dimension> new_dimensions = vector<dimension>();
 		for (const dimension& x_dimension: x)
 		{
-			for (unsigned int j = 1; j <= exponent; j++)
+			for (int j = 1; j <= exponent; j++)
 			{
 				new_dimensions.push_back(x_dimension);
 			}
@@ -2334,7 +2332,11 @@ namespace scifir
 
 	bool is_dimension_char(const UChar32& x)
 	{
+#ifdef IS_UNIX
 		return u_isalpha(x) || x == UChar32(U'Ω') || x == UChar32(U'Å') || x == UChar32(U'θ') || x == UChar32(U'°');
+#elif IS_WINDOWS
+		return u_isalpha(x) || x == UChar32(L'Ω') || x == UChar32(L'Å') || x == UChar32(L'θ') || x == UChar32(L'°');
+#endif
 	}
 
 	bool common_dimension(const dimension& x,const dimension& y)

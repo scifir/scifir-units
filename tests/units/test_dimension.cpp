@@ -72,7 +72,7 @@ TEST_CASE("dimension class") {
 	{
 		dimension a("m",dimension::NUMERATOR);
 		CHECK(a.dimension_type == dimension::METRE);
-		dimension a1_2("degree",dimension::NUMERATOR);
+		dimension a1_2("deg",dimension::NUMERATOR);
 		CHECK(a1_2.dimension_type == dimension::DEGREE);
 		dimension a1_3("θ",dimension::NUMERATOR);
 		CHECK(a1_3.dimension_type == dimension::DEGREE);
@@ -116,8 +116,6 @@ TEST_CASE("dimension class") {
 		CHECK(a18.dimension_type == dimension::FARAD);
 		dimension a19("ohm",dimension::NUMERATOR);
 		CHECK(a19.dimension_type == dimension::OHM);
-		dimension a19_2("Ohm",dimension::NUMERATOR);
-		CHECK(a19_2.dimension_type == dimension::OHM);
 		dimension a19_3("Ω",dimension::NUMERATOR);
 		CHECK(a19_3.dimension_type == dimension::OHM);
 		dimension a20("S",dimension::NUMERATOR);
@@ -140,8 +138,6 @@ TEST_CASE("dimension class") {
 		CHECK(a28.dimension_type == dimension::SIEVERT);
 		dimension a29("kat",dimension::NUMERATOR);
 		CHECK(a29.dimension_type == dimension::KATAL);
-		dimension a30("angstrom",dimension::NUMERATOR);
-		CHECK(a30.dimension_type == dimension::ANGSTROM);
 		dimension a30_2("Å",dimension::NUMERATOR);
 		CHECK(a30_2.dimension_type == dimension::ANGSTROM);
 		dimension a31("L",dimension::NUMERATOR);
@@ -231,8 +227,6 @@ TEST_CASE("dimension class") {
 		CHECK(to_string(l) == "cm");
 		dimension m = dimension("mm",dimension::NUMERATOR);
 		CHECK(to_string(m) == "mm");
-		dimension n = dimension("um",dimension::NUMERATOR);
-		CHECK(to_string(n) == "µm");
 		dimension n2 = dimension("µm",dimension::NUMERATOR);
 		CHECK(to_string(n2) == "µm");
 		dimension o = dimension("nm",dimension::NUMERATOR);
@@ -282,7 +276,7 @@ TEST_CASE("dimension class") {
 		CHECK(a3_2.get_name() == "degree");
 		CHECK(a3_2.get_plural() == "degrees");
 		CHECK(a3_2.get_symbol() == "θ");
-		CHECK(a3_2.get_conversion_factor() == std::numbers::pi_v<float> / 180.0l);
+		CHECK(a3_2.get_conversion_factor() == (long double)(std::numbers::pi_v<float>) / 180.0l);
 		CHECK(a3_2.is_simple_dimension() == true);
 		CHECK(a3_2.is_base_dimension() == false);
 		CHECK(a3_2.is_derived_dimension() == true);
@@ -838,7 +832,7 @@ TEST_CASE("dimension class") {
 		dimension a("m",dimension::NUMERATOR);
 		vector<dimension> b = { dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a.get_base_dimensions(),b));
-		dimension a2_2("degree",dimension::NUMERATOR);
+		dimension a2_2("θ",dimension::NUMERATOR);
 		vector<dimension> b2_2 = { dimension(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a2_2.get_base_dimensions(),b2_2));
 		dimension a2("rad",dimension::NUMERATOR);
@@ -922,7 +916,7 @@ TEST_CASE("dimension class") {
 				dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR),
 				dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a18.get_base_dimensions(),b18));
-		dimension a19("Ohm",dimension::NUMERATOR);
+		dimension a19("Ω",dimension::NUMERATOR);
 		vector<dimension> b19 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
 			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
 			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
@@ -986,7 +980,7 @@ TEST_CASE("dimension class") {
 		vector<dimension> b29 = { dimension(dimension::MOLE,prefix::NONE,dimension::NUMERATOR),
 			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a29.get_base_dimensions(),b29));
-		dimension a30("angstrom",dimension::NUMERATOR);
+		dimension a30("Å",dimension::NUMERATOR);
 		vector<dimension> b30 = { dimension(dimension::ANGSTROM,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a30.get_base_dimensions(),b30));
 		dimension a31("L",dimension::NUMERATOR);
