@@ -2340,7 +2340,7 @@ namespace scifir
 #ifdef IS_UNIX
 		return u_isalpha(x) || x == UChar32(U'Ω') || x == UChar32(U'Å') || x == UChar32(U'θ') || x == UChar32(U'°');
 #elif IS_WINDOWS
-		return u_isalpha(x) || x == UChar32(L'Ω') || x == UChar32(L'Å') || x == UChar32(L'θ') || x == UChar32(L'°');
+		return u_isalpha(x) || x == UChar32(L"Ω") || x == UChar32(L"Å") || x == UChar32(L"θ") || x == UChar32(L"°");
 #endif
 	}
 
