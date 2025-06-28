@@ -3,8 +3,6 @@
 #include "catch2/catch_all.hpp"
 #include "../../units/prefix.hpp"
 
-#include "unicode/unistr.h"
-
 #include <iostream>
 #include <sstream>
 #include <string>

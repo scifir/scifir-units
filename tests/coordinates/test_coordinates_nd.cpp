@@ -38,15 +38,15 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(to_string(d) == "(1 m)");
 		coordinates_nd<> d2("(1 m,5 m)");
 		CHECK(to_string(d2) == "(1 m,5 m)");
-		coordinates_nd<> d3("(1 m,45\u00B0)");
+		coordinates_nd<> d3("(1 m,45°)");
 		CHECK(to_string(d3) == "(0.7 m,0.7 m)");
 		coordinates_nd<> d4("(1 m,5 m,2 m)");
 		CHECK(to_string(d4) == "(1 m,5 m,2 m)");
 		coordinates_nd<> e("1 m,5 m,2 m");
 		CHECK(to_string(e) == "(1 m,5 m,2 m)");
-		coordinates_nd<> f("2 m,45\u00B0,3 m");
+		coordinates_nd<> f("2 m,45°,3 m");
 		CHECK(to_string(f) == "(1.41 m,1.41 m,3 m)");
-		coordinates_nd<> g("2 m,45\u00B0,20\u00B0");
+		coordinates_nd<> g("2 m,45°,20°");
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
 		coordinates_nd<> h(",,");
 		CHECK(to_string(h) == "[empty]");
@@ -76,15 +76,15 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(to_string(d) == "(1)");
 		coordinates_nd<float> d2("(1,5)");
 		CHECK(to_string(d2) == "(1,5)");
-		coordinates_nd<float> d3("(1,45\u00B0)");
+		coordinates_nd<float> d3("(1,45°)");
 		CHECK(to_string(d3) == "(0.7,0.7)");
 		coordinates_nd<float> d4("(1,5,2)");
 		CHECK(to_string(d4) == "(1,5,2)");
 		coordinates_nd<float> e("1,5,2");
 		CHECK(to_string(e) == "(1,5,2)");
-		coordinates_nd<float> f("2,45\u00B0,3");
+		coordinates_nd<float> f("2,45°,3");
 		CHECK(to_string(f) == "(1.41,1.41,3)");
-		coordinates_nd<float> g("2,45\u00B0,20\u00B0");
+		coordinates_nd<float> g("2,45°,20°");
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
 		coordinates_nd<float> h(",,");
 		CHECK(to_string(h) == "[empty]");
@@ -108,7 +108,7 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		d2 = "(1 m,5 m)";
 		CHECK(to_string(d2) == "(1 m,5 m)");
 		coordinates_nd<> d3;
-		d3 = "(1 m,45\u00B0)";
+		d3 = "(1 m,45°)";
 		CHECK(to_string(d3) == "(0.7 m,0.7 m)");
 		coordinates_nd<> d4;
 		d4 = "(1 m,5 m,2 m)";
@@ -117,10 +117,10 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		e = "1 m,5 m,2 m";
 		CHECK(to_string(e) == "(1 m,5 m,2 m)");
 		coordinates_nd<> f;
-		f = "2 m,45\u00B0,3 m";
+		f = "2 m,45°,3 m";
 		CHECK(to_string(f) == "(1.41 m,1.41 m,3 m)");
 		coordinates_nd<> g;
-		g = "2 m,45\u00B0,20\u00B0";
+		g = "2 m,45°,20°";
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
 	}
 
@@ -142,7 +142,7 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		d2 = "(1,5)";
 		CHECK(to_string(d2) == "(1,5)");
 		coordinates_nd<float> d3;
-		d3 = "(1,45\u00B0)";
+		d3 = "(1,45°)";
 		CHECK(to_string(d3) == "(0.7,0.7)");
 		coordinates_nd<float> d4;
 		d4 = "(1,5,2)";
@@ -151,10 +151,10 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		e = "1,5,2";
 		CHECK(to_string(e) == "(1,5,2)");
 		coordinates_nd<float> f;
-		f = "2,45\u00B0,3";
+		f = "2,45°,3";
 		CHECK(to_string(f) == "(1.41,1.41,3)");
 		coordinates_nd<float> g;
-		g = "2,45\u00B0,20\u00B0";
+		g = "2,45°,20°";
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
 	}
 
@@ -172,9 +172,9 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 	{
 		coordinates_nd<> a(7_m,4_m,2_m);
 		CHECK(a.get_p().display() == "8.06 m");
-		CHECK(a.get_theta().display() == "29.74\u00B0");
+		CHECK(a.get_theta().display() == "29.74°");
 		CHECK(a.get_r().display() == "8.3 m");
-		CHECK(a.get_phi().display() == "76.06\u00B0");
+		CHECK(a.get_phi().display() == "76.06°");
 		coordinates_nd<> b(7_m);
 		CHECK(bool(b.get_p() == length()));
 		CHECK(bool(b.get_theta() == angle()));
@@ -186,9 +186,9 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 	{
 		coordinates_nd<float> c(7.0f,4.0f,2.0f);
 		CHECK(std::fabs(c.get_p() - 8.06f) < 0.01f);
-		CHECK(c.get_theta().display() == "29.74\u00B0");
+		CHECK(c.get_theta().display() == "29.74°");
 		CHECK(std::fabs(c.get_r() - 8.3f) < 0.01f);
-		CHECK(c.get_phi().display() == "76.06\u00B0");
+		CHECK(c.get_phi().display() == "76.06°");
 		coordinates_nd<float> b(7.0f);
 		CHECK(b.get_p() == 0.0f);
 		CHECK(bool(b.get_theta() == angle()));
@@ -199,16 +199,16 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 	SECTION("Geographic coordinates of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(vector<length>{100000_m,100000_m,6371000_m});
-		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
-		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(to_string(a.get_latitude()) == "88.73°");
+		CHECK(to_string(a.get_longitude()) == "45°");
 		CHECK(to_string(a.get_altitude()) == "15806.6 m");
 	}
 
 	SECTION("Geographic coordinates of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a(vector<float>{100000.0f,100000.0f,6371000.0f});
-		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
-		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(to_string(a.get_latitude()) == "88.73°");
+		CHECK(to_string(a.get_longitude()) == "45°");
 		CHECK(std::fabs(a.get_altitude() - 15806.44f) < 0.01f);
 	}
 
@@ -296,11 +296,11 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(a.display_cartesian_2d() == "[no-2d]");
 		CHECK(a.display_polar() == "[no-2d]");
 		CHECK(a.display_cartesian_3d() == "(2 m,3 m,5 m)");
-		CHECK(a.display_cylindrical() == "(3.6 m,56.3\u00B0,5 m)");
-		CHECK(a.display_spherical() == "(6.16 m,56.3\u00B0,35.79\u00B0)");
+		CHECK(a.display_cylindrical() == "(3.6 m,56.3°,5 m)");
+		CHECK(a.display_spherical() == "(6.16 m,56.3°,35.79°)");
 		coordinates_nd<> b(5_m,angle(30.0f));
 		CHECK(b.display_cartesian_2d() == "(4.33 m,2.5 m)");
-		CHECK(b.display_polar() == "(5 m,30\u00B0)");
+		CHECK(b.display_polar() == "(5 m,30°)");
 		CHECK(b.display_cartesian_3d() == "[no-3d]");
 		CHECK(b.display_cylindrical() == "[no-3d]");
 		CHECK(b.display_spherical() == "[no-3d]");
@@ -315,11 +315,11 @@ TEST_CASE("class coordinates_nd<T> and coordinates_nd<float>")
 		CHECK(a.display_cartesian_2d() == "[no-2d]");
 		CHECK(a.display_polar() == "[no-2d]");
 		CHECK(a.display_cartesian_3d() == "(2,3,5)");
-		CHECK(a.display_cylindrical() == "(3.6,56.3\u00B0,5)");
-		CHECK(a.display_spherical() == "(6.16,56.3\u00B0,35.79\u00B0)");
+		CHECK(a.display_cylindrical() == "(3.6,56.3°,5)");
+		CHECK(a.display_spherical() == "(6.16,56.3°,35.79°)");
 		coordinates_nd<float> b(5.0f,angle(30.0f));
 		CHECK(b.display_cartesian_2d() == "(4.33,2.5)");
-		CHECK(b.display_polar() == "(5,30\u00B0)");
+		CHECK(b.display_polar() == "(5,30°)");
 		CHECK(b.display_cartesian_3d() == "[no-3d]");
 		CHECK(b.display_cylindrical() == "[no-3d]");
 		CHECK(b.display_spherical() == "[no-3d]");

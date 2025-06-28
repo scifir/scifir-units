@@ -1,15 +1,19 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 195
-**Number of TODOs to release version 2:** 37
+**Number of TODOs:** 202
+**Number of TODOs to release version 2:** 44
 
 ## POSSIBLE OR MANDATORY READINGS (1)
 
 - TODO: read the ISO 80000 (mandatory)
 
-## CURRENT (9)
+## CURRENT (12)
 
+- TODO**: delete the 0x00BA in favor of the use of only 0x00B0
 - TODO**: fuse to_string() and display() in lots of cases
+- TODO: apparently there's an error with multibyte characters inside Windows
+- TODO: to_string() of dimension_type
+- TODO: prefix_string() should be create_prefix_type()
 - TODO: conversion of size_t to and int gives a warning in MSVC
 - TODO: finish testing in MSVC all tests
 - TODO: solid_angle class, with the literal "_sr" too
@@ -88,8 +92,9 @@
 - TODO: think if to add the help of Eclipse, and search if other IDEs use some help too
 - TODO: decide if to generate documentation for man, and if so, explain that inside the README.md file
 
-### DOCUMENTATION - README (14)
+### DOCUMENTATION - README (15)
 
+- TODO: explain that it Windoes doesn't supports A and ohm as symbols as string literals
 - TODO: inside README.md file add the conversion of aid::type and zid::type in their explanation
 - TODO: think on the different cases of use of coordinates and document them, including the use of an origin
 - TODO: document the coordinates for the universe, publish that too as an standard inside scifir
@@ -125,7 +130,7 @@
 - TODO: document all the NEWS file
 - TODO: write an specification of scifir-units to be implemented in any programming language. Write there too the generic method for writing bindings which is to maintain all function names and classnames equal, changing only their spelling to snake-case or camel-case as used in the programming language, and also document equivalencies like using static methods in Java inside a class instead of normal functions in C++.
 
-## C++ (10)
+## C++ (11)
 
 - TODO*: change the use of const-reference to value and std::move in constructors
 - TODO*: change the use of const-reference to value and std::move in other places
@@ -137,6 +142,7 @@
 - TODO: use constexpr and consteval to initialize units instantly, possibly use it in more parts of the code
 - TODO: use << directly with strings in replacement of ostringstream
 - TODO: maybe the operator + of scifir-units classes with strings aren't needed in favor of the use of operator <<
+- TODO: see what to do to have a data file for C++ libraries, what is the current solution in Unix environments
 
 ## CONSTANTS (3)
 
@@ -154,8 +160,8 @@
 - TODO*: test dimension class with MSVC for the uses of the special characters
 - TODO*: finish custom_basic dimensions, change values of enum::type to CUSTOM_BASE_DIMENSION, CUSTOM_DERIVED_DIMENSION and CUSTOM_DERIVED_DIMENSION_FULL_SYMBOL, respectively
 - TODO*: finish the test of custom_basic dimensions and document them in the README.md file
-- TODO*: add the Gaussian units
 - TODO*: solve the error of custom dimensions in some way
+- TODO*: add the Gaussian units
 
 - TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
 - TODO: support the binary prefixes too
@@ -224,13 +230,12 @@
 - TODO: complex_number<> should have trigonometric functions for complex numbers
 - TODO: think if to add microdegrees and millidegrees
 
-## SPECIAL UNITS (10)
+## SPECIAL UNITS (9)
 
 - TODO*: constructors of zid class should be updated to follow the constructors of aid class
 - TODO*: functions is_aid() and is_zid()
 - TODO: maybe add zoom class, which allows to work with zooms
 
-- TODO: change body and mind to biology, and pH and pOH to chemistry
 - TODO: nutrition_information
 - TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()
 - TODO: enum of movement maybe should be divided in kind of animal
@@ -249,16 +254,18 @@
 - TODO: add minutes and seconds to degrees for latitude and longitude, document that minutes and seconds are not for degrees of angles, add the function to convert degrees to sexagesimal degrees, returning a struct
 - TODO: possibly add the enum to latitude and longitude of DEGREE and SEXAGESIMAL_DEGREE values
 
-## COORDINATES - GEOGRAPHIC COORDINATES (7)
+## COORDINATES - GEOGRAPHIC COORDINATES (9)
 
+- TODO*: create astronomical_object class with the two semiaxis, intended mainly for planets
 - TODO*: string constructor for astronomical_coordinates
 - TODO*: string constructor for zone_coordinates
 - TODO*: get_altitude() can be two different functions
 - TODO*: add display functions for astronomical_coordinates_3d, with "name ()" for planetary, "Orbit of name ()" for orbital, "name ()" or "Inside name ()" for stellar, "name ()" for central galactic
-- TODO*: add the ecliptic coordinates system inside the astronomical_coordinates_3d
-- TODO*: add the variant of the ecliptic coordinates system with a selection of the planet or of the params (which is the generic case)
+- TODO*: add the astronomical coordinates systems inside the astronomical_coordinates_3d
+- TODO*: LLA_to_x and other functions for the specialized float case
 
 - TODO: add the observation_coordinates class and the observation_altitude class for telescope measurements, add observation_azimuth too
+- TODO: see what to do to support horizontal_coordinates
 
 ## MATERIAL_VECTOR_UNIT (1)
 

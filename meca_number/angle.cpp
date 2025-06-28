@@ -335,12 +335,16 @@ namespace scifir
 
 	bool is_angle(const string& init_angle)
 	{
-		icu::UnicodeString x_unicode = icu::UnicodeString(init_angle.c_str());
-		int total_chars = x_unicode.countChar32();
+		int total_chars = int(init_angle.size());
+		if (total_chars < 3)
+		{
+			return false;
+		}
 		bool loop = false;
-		if (x_unicode[total_chars - 1] == 0x00B0 || x_unicode[total_chars - 1] == 0x00BA)
+		if (total_chars >= 3 and init_angle.substr(total_chars - 2,2) == "°" || init_angle.substr(total_chars - 2,2) == "º")
 		{
 			loop = true;
+			total_chars -= 2;
 		}
 		else if (total_chars >= 5 and init_angle.substr(init_angle.length() - 4) == " deg")
 		{
@@ -367,9 +371,9 @@ namespace scifir
 			return false;
 		}
 		bool dot_present = false;
-		for (int i = 0; i < (total_chars - 1); i++)
+		for (int i = 0; i < total_chars; i++)
 		{
-			if (x_unicode[i] == '.')
+			if (init_angle[i] == '.')
 			{
 				if (dot_present)
 				{
@@ -380,7 +384,7 @@ namespace scifir
 					dot_present = true;
 				}
 			}
-			else if (!u_isdigit(x_unicode[i]))
+			else if (!isdigit(init_angle[i]))
 			{
 				return false;
 			}

@@ -147,7 +147,7 @@ namespace scifir
 
 			int get_nd() const
 			{
-				return values.size();
+				return int(values.size());
 			}
 
 			T get_p() const

@@ -179,11 +179,11 @@ namespace scifir
 
 	void pixel::initialize_from_string(const string& init_pixel)
 	{
-		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")
+		if (init_pixel.length() > 3 and init_pixel.substr(init_pixel.length() - 3,3) == " px")
 		{
 			value = stof(init_pixel.substr(0,init_pixel.length() - 3));
 		}
-		else if (init_pixel.substr(init_pixel.length() - 2,2) == "px")
+		else if (init_pixel.length() > 2 and init_pixel.substr(init_pixel.length() - 2,2) == "px")
 		{
 			value = stof(init_pixel.substr(0,init_pixel.length() - 2));
 		}
@@ -201,11 +201,11 @@ namespace scifir
 	bool is_pixel(const string& init_pixel)
 	{
 		int iteration_limit;
-		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")
+		if (init_pixel.length() > 3 and init_pixel.substr(init_pixel.length() - 3,3) == " px")
 		{
 			iteration_limit = int(init_pixel.length()) - 3;
 		}
-		else if (init_pixel.substr(init_pixel.length() - 2,2) == "px")
+		else if (init_pixel.length() > 2 and init_pixel.substr(init_pixel.length() - 2,2) == "px")
 		{
 			iteration_limit = int(init_pixel.length()) - 2;
 		}

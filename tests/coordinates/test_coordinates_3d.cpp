@@ -32,29 +32,29 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(to_string(d) == "(1 m,5 m,2 m)");
 		coordinates_3d<> e("1 m,5 m,2 m");
 		CHECK(to_string(e) == "(1 m,5 m,2 m)");
-		coordinates_3d<> f("2 m,45\u00B0,3 m");
+		coordinates_3d<> f("2 m,45°,3 m");
 		CHECK(to_string(f) == "(1.41 m,1.41 m,3 m)");
-		coordinates_3d<> g("2 m,45\u00B0,20\u00B0");
+		coordinates_3d<> g("2 m,45°,20°");
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
 		coordinates_3d<> h(",,");
 		CHECK(to_string(h) == "(0 m,0 m,0 m)");
-		coordinates_3d<> i("88.736865\u00B0N,45\u00B0E,15806.7 m");
-		CHECK(to_string(i) == "(99999.8 m,99999.8 m,6.371e+06 m)");
+		coordinates_3d<> i("88.736865°N,45°E,15806.7 m");
+		CHECK(to_string(i) == "(99999.7 m,99999.7 m,6.371e+06 m)");
 	}
 
 	SECTION("Constructors of coordinates_3d<> class with the enum of type of 3d coordinates")
 	{
 		coordinates_3d<> a(coordinates_3d<>::CARTESIAN,"1 m","5 m","3 m");
 		CHECK(to_string(a) == "(1 m,5 m,3 m)");
-		coordinates_3d<> b(coordinates_3d<>::CYLINDRICAL,"2 m","45\u00B0","3 m");
+		coordinates_3d<> b(coordinates_3d<>::CYLINDRICAL,"2 m","45°","3 m");
 		CHECK(to_string(b) == "(1.41 m,1.41 m,3 m)");
-		coordinates_3d<> c(coordinates_3d<>::SPHERICAL,"2 m","45\u00B0","20\u00B0");
+		coordinates_3d<> c(coordinates_3d<>::SPHERICAL,"2 m","45°","20°");
 		CHECK(to_string(c) == "(0.48 m,0.48 m,1.87 m)");
-		coordinates_3d<> d(coordinates_3d<>::GEODESIC,"88.736865\u00B0","45\u00B0","15806.7 m");
+		coordinates_3d<> d(coordinates_3d<>::GEODESIC,"88.736865°","45°","15806.7 m");
 		CHECK((d.x.get_value() - std::fabs(100000) < 0.01f));
 		CHECK((d.y.get_value() - std::fabs(100000) < 0.01f));
 		CHECK((d.z.get_value() - std::fabs(6371000) < 0.01f));
-		coordinates_3d<> e(coordinates_3d<>::GEODESIC,"-88.736865\u00B0","45\u00B0","15806.6 m");
+		coordinates_3d<> e(coordinates_3d<>::GEODESIC,"-88.736865°","45°","15806.6 m");
 		CHECK((e.x.get_value() - std::fabs(100000) < 0.01f));
 		CHECK((e.y.get_value() - std::fabs(100000) < 0.01f));
 		CHECK((e.z.get_value() + std::fabs(-6371000) < 0.01f));
@@ -82,9 +82,9 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		CHECK(to_string(d) == "(1,5,2)");
 		coordinates_3d<float> e("1,5,2");
 		CHECK(to_string(e) == "(1,5,2)");
-		coordinates_3d<float> f("2,45\u00B0,3");
+		coordinates_3d<float> f("2,45°,3");
 		CHECK(to_string(f) == "(1.41,1.41,3)");
-		coordinates_3d<float> g("2,45\u00B0,20\u00B0");
+		coordinates_3d<float> g("2,45°,20°");
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
 		coordinates_3d<float> h(",,");
 		CHECK(to_string(h) == "(0,0,0)");
@@ -108,10 +108,10 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		e = "1 m,5 m,2 m";
 		CHECK(to_string(e) == "(1 m,5 m,2 m)");
 		coordinates_3d<> f;
-		f = "2 m,45\u00B0,3 m";
+		f = "2 m,45°,3 m";
 		CHECK(to_string(f) == "(1.41 m,1.41 m,3 m)");
 		coordinates_3d<> g;
-		g = "2 m,45\u00B0,20\u00B0";
+		g = "2 m,45°,20°";
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
 	}
 
@@ -133,10 +133,10 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 		e = "1,5,2";
 		CHECK(to_string(e) == "(1,5,2)");
 		coordinates_3d<float> f;
-		f = "2,45\u00B0,3";
+		f = "2,45°,3";
 		CHECK(to_string(f) == "(1.41,1.41,3)");
 		coordinates_3d<float> g;
-		g = "2,45\u00B0,20\u00B0";
+		g = "2,45°,20°";
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
 	}
 
@@ -153,33 +153,33 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 	{
 		coordinates_3d<> a(7_m,4_m,2_m);
 		CHECK(a.get_p().display() == "8.06 m");
-		CHECK(a.get_theta().display() == "29.74\u00B0");
+		CHECK(a.get_theta().display() == "29.74°");
 		CHECK(a.get_r().display() == "8.3 m");
-		CHECK(a.get_phi().display() == "76.06\u00B0");
+		CHECK(a.get_phi().display() == "76.06°");
 	}
 
 	SECTION("Values of different coordinates systems of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a(7.0f,4.0f,2.0f);
 		CHECK(std::fabs(a.get_p() - 8.06f) < 0.01f);
-		CHECK(a.get_theta().display() == "29.74\u00B0");
+		CHECK(a.get_theta().display() == "29.74°");
 		CHECK(std::fabs(a.get_r() - 8.3f) < 0.01f);
-		CHECK(a.get_phi().display() == "76.06\u00B0");
+		CHECK(a.get_phi().display() == "76.06°");
 	}
 
 	SECTION("Geographic coordinates of coordinates_3d<> class")
 	{
 		coordinates_3d<> a(100000_m,100000_m,6371000_m);
-		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
-		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(to_string(a.get_latitude()) == "88.73°");
+		CHECK(to_string(a.get_longitude()) == "45°");
 		CHECK(to_string(a.get_altitude()) == "15806.6 m");
 	}
 
 	SECTION("Geographic coordinates of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a(100000.0f,100000.0f,6371000.0f);
-		CHECK(to_string(a.get_latitude()) == "88.73\u00B0");
-		CHECK(to_string(a.get_longitude()) == "45\u00B0");
+		CHECK(to_string(a.get_latitude()) == "88.73°");
+		CHECK(to_string(a.get_longitude()) == "45°");
 		CHECK(std::fabs(a.get_altitude() - 15806.44f) < 0.01f);
 	}
 
@@ -259,8 +259,8 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 	{
 		coordinates_3d<> a(2_m,3_m,5_m);
 		CHECK(a.display_cartesian() == "(2 m,3 m,5 m)");
-		CHECK(a.display_cylindrical() == "(3.6 m,56.3\u00B0,5 m)");
-		CHECK(a.display_spherical() == "(6.16 m,56.3\u00B0,35.79\u00B0)");
+		CHECK(a.display_cylindrical() == "(3.6 m,56.3°,5 m)");
+		CHECK(a.display_spherical() == "(6.16 m,56.3°,35.79°)");
 		/*coordinates_3d<> b(2_m,3_m,10000_km);
 		cout << "b display geographical: " << b.display_geographical() << endl;
 		CHECK(b.display_geographical() == "");*/
@@ -270,8 +270,8 @@ TEST_CASE("class coordinates_3d<T> and coordinates_3d<float>")
 	{
 		coordinates_3d<float> a(2.0f,3.0f,5.0f);
 		CHECK(a.display_cartesian() == "(2,3,5)");
-		CHECK(a.display_cylindrical() == "(3.6,56.3\u00B0,5)");
-		CHECK(a.display_spherical() == "(6.16,56.3\u00B0,35.79\u00B0)");
+		CHECK(a.display_cylindrical() == "(3.6,56.3°,5)");
+		CHECK(a.display_spherical() == "(6.16,56.3°,35.79°)");
 		/*coordinates_3d<> b(2_m,3_m,10000_km);
 		cout << "b display geographical: " << b.display_geographical() << endl;
 		CHECK(b.display_geographical() == "");*/

@@ -194,7 +194,7 @@ namespace scifir
 
 	bool is_longitude(const string& init_longitude)
 	{
-		if (init_longitude.length() == 0)
+		if (init_longitude.length() == 0 or init_longitude.length() < 3)
 		{
 			return false;
 		}
@@ -212,14 +212,13 @@ namespace scifir
 		{
 			start_point++;
 		}
-		icu::UnicodeString x_unicode = icu::UnicodeString(init_longitude.c_str());
-		int total_chars = x_unicode.countChar32();
+		int total_chars = int(init_longitude.size());
 		if (cardinale_point_present)
 		{
 			total_chars--;
 		}
 		bool loop = false;
-		if (x_unicode[total_chars - 1] == 0x00B0 || x_unicode[total_chars - 1] == 0x00BA)
+		if (init_longitude.substr(total_chars - 2,2) == "°" || init_longitude.substr(total_chars - 2,2) == "º")
 		{
 			loop = true;
 		}
@@ -228,9 +227,9 @@ namespace scifir
 			return false;
 		}
 		bool dot_present = false;
-		for (int i = start_point; i < (total_chars - 1); i++)
+		for (int i = start_point; i < (total_chars - 2); i++)
 		{
-			if (x_unicode[i] == '.')
+			if (init_longitude[i] == '.')
 			{
 				if (dot_present)
 				{
@@ -241,7 +240,7 @@ namespace scifir
 					dot_present = true;
 				}
 			}
-			else if (!u_isdigit(x_unicode[i]))
+			else if (!isdigit(init_longitude[i]))
 			{
 				return false;
 			}

@@ -26,14 +26,13 @@ namespace scifir
 	{
 		normalize_value();
 	}
-	
+
 	pOH::pOH(const string& init_pOH) : value(0.0f)
 	{
-		if (init_pOH.substr(0,4) == "pOH ")
+		if (init_pOH.length() > 4 and init_pOH.substr(0,4) == "pOH ")
 		{
 			value = stof(init_pOH.substr(4));
 			normalize_value();
-			return;
 		}
 	}
 

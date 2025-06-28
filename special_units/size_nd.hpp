@@ -73,7 +73,7 @@ namespace scifir
 
 			int get_nd() const
 			{
-				return widths.size();
+				return int(widths.size());
 			}
 
 			template<typename U>

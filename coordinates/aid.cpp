@@ -443,6 +443,10 @@ namespace scifir
 
 	void aid::initialize_from_string(const string& init_aid)
 	{
+		if (init_aid.size() == 0)
+		{
+			return;
+		}
 		vector<string> values;
 		boost::split(values,init_aid,boost::is_any_of(":"));
 		string aid_type;

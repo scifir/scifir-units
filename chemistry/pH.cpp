@@ -30,11 +30,10 @@ namespace scifir
 
 	pH::pH(const string& init_pH) : value(0.0f)
 	{
-		if (init_pH.substr(0,3) == "pH ")
+		if (init_pH.length() > 3 and init_pH.substr(0,3) == "pH ")
 		{
 			value = stof(init_pH.substr(3));
 			normalize_value();
-			return;
 		}
 	}
 

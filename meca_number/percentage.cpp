@@ -422,7 +422,12 @@ namespace scifir
 
 	void percentage::initialize_from_string(const string& init_percentage)
 	{
-		if (init_percentage[init_percentage.length() - 1] == '%')
+		if (init_percentage.size() == 0)
+		{
+			value = 0.0f;
+			return;
+		}
+		else if (init_percentage[init_percentage.length() - 1] == '%')
 		{
 			value = stof(init_percentage.substr(0,init_percentage.length() - 1));
 		}
@@ -494,14 +499,17 @@ namespace scifir
 		}
 		else
 		{
-			string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
-			if (percentage_unit == " ppm"/* or percentage_unit == " ppb" or percentage_unit == " ppt" or percentage_unit == " ppq"*/)
+			if (init_percentage.length() >= 5)
 			{
-				iteration_limit = int(init_percentage.length()) - 4;
+				string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
+				if (percentage_unit == " ppm"/* or percentage_unit == " ppb" or percentage_unit == " ppt" or percentage_unit == " ppq"*/)
+				{
+					iteration_limit = int(init_percentage.length()) - 4;
+				}
 			}
-			else
+			else if (init_percentage.length() >= 4)
 			{
-				percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
+				string percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
 				if (percentage_unit == "ppm"/* or percentage_unit == "ppb" or percentage_unit == "ppt" or percentage_unit == "ppq"*/)
 				{
 					iteration_limit = int(init_percentage.length()) - 3;
@@ -510,6 +518,10 @@ namespace scifir
 				{
 					return false;
 				}
+			}
+			else
+			{
+				return false;
 			}
 		}
 		bool dot_present = false;

@@ -122,7 +122,7 @@ namespace scifir
 		long double r0 = -1.0f * ((P * e_square * p)/(1.0f + Q)) + std::sqrt((1.0f/2.0f) * std::pow(WGS84_EARTH_SEMIAXIS_A.get_value(),2) * (1.0f + (1.0f / Q)) - (P * (1.0f - e_square) * std::pow(z,2))/(Q * (1.0f + Q)) - (1.0f/2.0f) * P * std::pow(p,2));
 		long double U = std::sqrt(std::pow(p - e_square * r0,2) + std::pow(z,2));
 		long double V = std::sqrt(std::pow(p - e_square * r0,2) + (1.0f - e_square) * std::pow(z,2));
-		return U * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V));
+		return float(U * (1.0f - std::pow(WGS84_EARTH_SEMIAXIS_B.get_value(),2) / (WGS84_EARTH_SEMIAXIS_A.get_value() * V)));
 	}
 
 	template<typename T = length>

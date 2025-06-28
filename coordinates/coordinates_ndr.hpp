@@ -259,7 +259,7 @@ namespace scifir
 
 			int get_nd() const
 			{
-				return values.size();
+				return int(values.size());
 			}
 
 			void change_nd(const vector<scalar_unit>& new_values,const vector<float>& new_angles)
@@ -1312,7 +1312,7 @@ namespace scifir
 
 			int get_nd() const
 			{
-				return values.size();
+				return int(values.size());
 			}
 
 			void change_nd(const vector<float>& new_values,const vector<float>& new_angles)

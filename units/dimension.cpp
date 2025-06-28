@@ -4,9 +4,6 @@
 
 #include "boost/algorithm/string.hpp"
 
-#include "unicode/unistr.h"
-#include "unicode/uchar.h"
-
 #include <cmath>
 #include <iostream>
 #include <numbers>
@@ -58,33 +55,31 @@ namespace scifir
 	dimension::dimension(const string& init_dimension,dimension::position new_position) : prefix(),dimension_type(dimension::NONE),dimension_position(new_position),symbol()
 	{
 		string dimension_name;
-		string prefix_name;
 		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "deg" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Hz" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension != "°C" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "Ω" and init_dimension != "ohm" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "Å" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq" and init_dimension != "dB")
 		{
-			prefix_name = init_dimension.substr(0,1);
+			prefix = scifir::prefix(init_dimension.substr(0,1));
 			dimension_name = init_dimension.substr(1);
 		}
 		else if(init_dimension.substr(0,2) == "µ")
 		{
-			prefix_name = "µ";
+			prefix = scifir::prefix(prefix::MICRO);
 			dimension_name = init_dimension.substr(2);
 		}
 		else if(init_dimension == "day")
 		{
-			prefix_name = "";
+			prefix = scifir::prefix();
 			dimension_name = init_dimension;
 		}
 		else if(init_dimension.substr(0,2) == "da")
 		{
-			prefix_name = "da";
+			prefix = scifir::prefix(prefix::DECA);
 			dimension_name = init_dimension.substr(2);
 		}
 		else
 		{
-			prefix_name = "";
+			prefix = scifir::prefix();
 			dimension_name = init_dimension;
 		}
-		prefix = scifir::prefix(prefix_name);
 		if(dimension_name == "m")
 		{
 			dimension_type = dimension::METRE;
@@ -1925,110 +1920,186 @@ namespace scifir
 
 	vector<dimension> create_dimensions(string init_dimensions)
 	{
+		if (init_dimensions.length() == 0)
+		{
+			return vector<dimension>();
+		}
 		boost::algorithm::erase_all(init_dimensions, " ");
 		dimension::position new_sign = dimension::NUMERATOR;
 		int new_scale = 1;
-		int new_size = 1;
-		int new_start = 0;
-		icu::UnicodeString new_dimension_str;
+		int position = 0;
+		string new_dimension_str;
 		vector<dimension> dimensions = vector<dimension>();
-		icu::UnicodeString x_unicode = icu::UnicodeString(init_dimensions.c_str());
-		int total_chars = x_unicode.countChar32();
-		for(int j = 0; j < total_chars; j++)
+		for (int i = 0; i < init_dimensions.length(); i++)
 		{
-			if(x_unicode[j] == UChar32(U'1') and x_unicode[j + 1] == UChar32(U'/'))
+			if (init_dimensions[i] == '1' and init_dimensions[i + 1] == '/')
 			{
 				new_sign = dimension::DENOMINATOR;
+				i++;
+				continue;
 			}
-			if(is_dimension_char(x_unicode[j]) and (!is_dimension_char(x_unicode[j + 1]) or (j + 1) == total_chars))
+			if (init_dimensions.substr(i,2) == "µ" or init_dimensions.substr(i,2) == "da")
 			{
-				new_dimension_str = x_unicode.tempSubString(new_start,new_size);
-				if(u_isdigit(x_unicode[j + 1]))
+				position = i + 1;
+			}
+			else
+			{
+				position = i;
+			}
+			if (std::isalpha(init_dimensions[i]) or init_dimensions.substr(i,2) == "µ" or init_dimensions.substr(i,2) == "Ω" or init_dimensions.substr(i,2) == "Å" or init_dimensions.substr(i,2) == "θ" or (init_dimensions.substr(i,2) == "°" and init_dimensions.substr(i + 2,1) == "C"))
+			{
+				if ((position + 1) < init_dimensions.length() and init_dimensions[position + 1] != '*' and init_dimensions[position + 1] != '/')
 				{
-					new_scale = u_charDigitValue(x_unicode[j + 1]);
-				}
-			}
-			if(x_unicode[j] == UChar32(U'*'))
-			{
-				new_size = 0;
-				new_start = j + 1;
-			}
-			else if(x_unicode[j] == UChar32(U'/'))
-			{
-				new_sign = dimension::DENOMINATOR;
-				new_size = 0;
-				new_start = j + 1;
-			}
-			if(!new_dimension_str.countChar32() == 0)
-			{
-				dimension new_dimension;
-				if(new_dimension_str.countChar32() == 1)
-				{
-					if(new_dimension_str[0] == 0x03A9)
+					for (int j = position + 1; j < init_dimensions.length(); j++)
 					{
-						new_dimension = dimension(dimension::OHM,prefix::NONE,new_sign);
-					}
-					else if(new_dimension_str[0] == 0x00C5)
-					{
-						new_dimension = dimension(dimension::ANGSTROM,prefix::NONE,new_sign);
-					}
-					else if(new_dimension_str[0] == 0x03B8)
-					{
-						new_dimension = dimension(dimension::DEGREE,prefix::NONE,new_sign);
-					}
-					else
-					{
-						string new_dimension_str_stl = "";
-						new_dimension_str.toUTF8String(new_dimension_str_stl);
-						new_dimension = dimension(new_dimension_str_stl,new_sign);
+						if (std::isdigit(init_dimensions[j]))
+						{
+							new_dimension_str = init_dimensions.substr(i,j - i);
+							for (int k = j; k < init_dimensions.length(); k++)
+							{
+								if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
+								{
+									new_scale = stoi(init_dimensions.substr(k,k - j + 1));
+									break;
+								}
+							}
+							break;
+						}
+						else if (init_dimensions.substr(j,2) == "Ω" or init_dimensions.substr(j,2) == "Å" or init_dimensions.substr(j,2) == "θ")
+						{
+							new_dimension_str = init_dimensions.substr(i,j + 2 - i);
+							if (std::isdigit(init_dimensions[j + 2]))
+							{
+								for (int k = (j + 2); k < init_dimensions.length(); k++)
+								{
+									if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
+									{
+										new_scale = stoi(init_dimensions.substr(k,k - j + 1));
+										break;
+									}
+								}
+							}
+							else
+							{
+								new_scale = 1;
+							}
+							break;
+						}
+						else if (init_dimensions.substr(j,2) == "°" and init_dimensions.substr(j + 2,1) == "C")
+						{
+							new_dimension_str = init_dimensions.substr(i,j + 3 - i);
+							if (std::isdigit(init_dimensions[j + 3]))
+							{
+								for (int k = (j + 3); k < init_dimensions.length(); k++)
+								{
+									if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
+									{
+										new_scale = stoi(init_dimensions.substr(k,k - j + 1));
+										break;
+									}
+								}
+							}
+							else
+							{
+								new_scale = 1;
+							}
+							break;
+						}
+						else if (std::isalpha(init_dimensions[j]))
+						{
+							if ((j + 1) == init_dimensions.length() or init_dimensions[j + 1] == '*' or init_dimensions[j + 1] == '/')
+							{
+								new_dimension_str = init_dimensions.substr(i,j - i + 1);
+								new_scale = 1;
+								break;
+							}
+							else
+							{
+								continue;
+							}
+						}
+						else if ((j + 1) == init_dimensions.length() or init_dimensions[j] == '*' or init_dimensions[j] == '/')
+						{
+							new_dimension_str = init_dimensions.substr(i,j - i + 1);
+							new_scale = 1;
+							break;
+						}
 					}
 				}
 				else
 				{
-					if(new_dimension_str[new_dimension_str.countChar32() - 1] == 0x03A9)
+					if (std::isdigit(init_dimensions[position]))
 					{
-						string new_prefix_str = "";
-						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 1).toUTF8String(new_prefix_str);
-						prefix new_prefix(new_prefix_str);
-						new_dimension = dimension(dimension::OHM,new_prefix,new_sign);
+						new_dimension_str = init_dimensions.substr(position,position - i + 1);
+						new_scale = stoi(init_dimensions.substr(position + 1,1));
 					}
-					else if(new_dimension_str[new_dimension_str.countChar32() - 1] == 0x00C5)
+					else if (init_dimensions.substr(position,2) == "Ω" or init_dimensions.substr(position,2) == "Å" or init_dimensions.substr(position,2) == "θ")
 					{
-						string new_prefix_str = "";
-						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 1).toUTF8String(new_prefix_str);
-						prefix new_prefix(new_prefix_str);
-						new_dimension = dimension(dimension::ANGSTROM,new_prefix,new_sign);
+						new_dimension_str = init_dimensions.substr(position,2);
+						new_scale = 1;
+						for (int k = (position + 2); k < init_dimensions.length(); k++)
+						{
+							if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
+							{
+								new_scale = stoi(init_dimensions.substr(k,k - position - 1));
+								break;
+							}
+						}
+						break;
 					}
-					else if(new_dimension_str[new_dimension_str.countChar32() - 1] == 0x03B8)
+					else if (std::isalpha(init_dimensions[position]))
 					{
-						string new_prefix_str = "";
-						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 1).toUTF8String(new_prefix_str);
-						prefix new_prefix(new_prefix_str);
-						new_dimension = dimension(dimension::DEGREE,new_prefix,new_sign);
-					}
-					else if(new_dimension_str[new_dimension_str.countChar32() - 2] == 0x00B0 && new_dimension_str[new_dimension_str.countChar32() - 1] == 0x0043)
-					{
-						string new_prefix_str = "";
-						new_dimension_str.tempSubString(0,new_dimension_str.countChar32() - 2).toUTF8String(new_prefix_str);
-						prefix new_prefix(new_prefix_str);
-						new_dimension = dimension(dimension::CELSIUS,new_prefix,new_sign);
+						new_dimension_str = init_dimensions.substr(position,position - i + 1);
+						new_scale = 1;
 					}
 					else
 					{
-						string new_dimension_str_stl = "";
-						new_dimension_str.toUTF8String(new_dimension_str_stl);
-						new_dimension = dimension(new_dimension_str_stl,new_sign);
+						new_dimension_str = init_dimensions.substr(position,1);
+						new_scale = 1;
 					}
 				}
-				for (int k = 0; k < new_scale; k++)
+			}
+			else if (init_dimensions[i] == '*')
+			{
+				continue;
+			}
+			else if (init_dimensions[i] == '/')
+			{
+				new_sign = dimension::DENOMINATOR;
+				continue;
+			}
+			if (!new_dimension_str.length() == 0)
+			{
+				dimension new_dimension;
+				if (new_dimension_str.substr(0,2) == "Ω")
+				{
+					new_dimension = dimension(dimension::OHM,prefix::NONE,new_sign);
+				}
+				else if (new_dimension_str.substr(0,2) == "Å")
+				{
+					new_dimension = dimension(dimension::ANGSTROM,prefix::NONE,new_sign);
+				}
+				else if (new_dimension_str.substr(0,2) == "θ")
+				{
+					new_dimension = dimension(dimension::DEGREE,prefix::NONE,new_sign);
+				}
+				else if (new_dimension_str.substr(0,2) == "°" && new_dimension_str.substr(2) == "C")
+				{
+					prefix new_prefix(new_dimension_str.substr(0,new_dimension_str.length() - 3));
+					new_dimension = dimension(dimension::CELSIUS,new_prefix,new_sign);
+				}
+				else
+				{
+					new_dimension = dimension(new_dimension_str,new_sign);
+				}
+				for (int j = 0; j < new_scale; j++)
 				{
 					dimensions.push_back(new_dimension);
 				}
-				new_dimension_str.remove();
+				i += new_dimension_str.length() - 1;
+				new_dimension_str = "";
 				new_scale = 1;
-				new_size = 0;
 			}
-			new_size++;
 		}
 		return dimensions;
 	}
@@ -2042,7 +2113,7 @@ namespace scifir
 	vector<dimension> create_base_dimensions(const vector<dimension>& x)
 	{
 		vector<dimension> new_x = vector<dimension>();
-		for(unsigned int i = 0; i < x.size(); i++)
+		for (unsigned int i = 0; i < x.size(); i++)
 		{
 			vector<dimension> x_subdimensions = x[i].get_base_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
@@ -2060,7 +2131,7 @@ namespace scifir
 	vector<dimension> create_base_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<dimension> new_x = vector<dimension>();
-		for(unsigned int i = 0; i < x.size(); i++)
+		for (unsigned int i = 0; i < x.size(); i++)
 		{
 			if (x[i].dimension_position == dimension::NUMERATOR)
 			{
@@ -2092,7 +2163,7 @@ namespace scifir
 	vector<dimension> multiply_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
 		vector<dimension> new_dimensions = x;
-		for(const dimension& y_dimension : y)
+		for (const dimension& y_dimension : y)
 		{
 			new_dimensions.push_back(y_dimension);
 		}
@@ -2101,7 +2172,7 @@ namespace scifir
 
 	vector<dimension> multiply_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value)
 	{
-		for(const dimension& y_dimension : y)
+		for (const dimension& y_dimension : y)
 		{
 			x.push_back(y_dimension);
 		}
@@ -2110,7 +2181,7 @@ namespace scifir
 
 	vector<dimension> divide_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value)
 	{
-		for(dimension y_dimension : y)
+		for (dimension y_dimension : y)
 		{
 			y_dimension.invert();
 			x.push_back(y_dimension);
@@ -2333,15 +2404,6 @@ namespace scifir
 			}
 		}
 		return new_dimensions;
-	}
-
-	bool is_dimension_char(const UChar32& x)
-	{
-#ifdef IS_UNIX
-		return u_isalpha(x) || x == UChar32(U'Ω') || x == UChar32(U'Å') || x == UChar32(U'θ') || x == UChar32(U'°');
-#elif IS_WINDOWS
-		return u_isalpha(x) || x == UChar32(L"Ω") || x == UChar32(L"Å") || x == UChar32(L"θ") || x == UChar32(L"°");
-#endif
 	}
 
 	bool common_dimension(const dimension& x,const dimension& y)
