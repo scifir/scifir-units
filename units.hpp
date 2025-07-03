@@ -31,7 +31,7 @@
 #include "./units/coordinates/coordinates_3dr.hpp"
 #include "./units/coordinates/coordinates_nd.hpp"
 #include "./units/coordinates/coordinates_ndr.hpp"
-#include "./units/coordinates/astronomical_coordinates_3d.hpp"
+//#include "./units/coordinates/astronomical_coordinates_3d.hpp"
 #include "./units/coordinates/aid.hpp"
 #include "./units/coordinates/zid.hpp"
 #include "./units/coordinates/direction.hpp"
