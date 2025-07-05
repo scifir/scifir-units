@@ -102,7 +102,7 @@ TEST_CASE("dimension class") {
 		dimension a12("N",dimension::NUMERATOR);
 		CHECK(a12.dimension_type == dimension::NEWTON);
 		dimension a13("Pa",dimension::NUMERATOR);
-		CHECK(a13.dimension_type == dimension::PASCAL);
+		CHECK(a13.dimension_type == dimension::DIMENSION_PASCAL);
 		dimension a14("J",dimension::NUMERATOR);
 		CHECK(a14.dimension_type == dimension::JOULE);
 		dimension a15("W",dimension::NUMERATOR);
@@ -414,7 +414,7 @@ TEST_CASE("dimension class") {
 		CHECK(a13.is_derived_dimension() == true);
 		CHECK(a13.is_SI_base_dimension() == false);
 		CHECK(a13.is_SI_derived_dimension() == true);
-		dimension a14(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR);
+		dimension a14(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a14.get_name() == "pascal");
 		CHECK(a14.get_plural() == "pascals");
 		CHECK(a14.get_symbol() == "Pa");

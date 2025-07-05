@@ -23,13 +23,13 @@ TEST_CASE("scalar_unit class") {
 		scalar_unit b2 = 100_g;
 		scalar_unit c2(std::move(b2));
 		CHECK(to_string(c2) == "100 g");
-		scalar_unit h(30.0f, dimension::PASCAL, prefix::KILO);
+		scalar_unit h(30.0f, dimension::DIMENSION_PASCAL, prefix::KILO);
 		CHECK(to_string(h) == "30 kPa");
-		scalar_unit h2(30.0, dimension::PASCAL, prefix::KILO);
+		scalar_unit h2(30.0, dimension::DIMENSION_PASCAL, prefix::KILO);
 		CHECK(to_string(h2) == "30 kPa");
-		scalar_unit h3(30.0l, dimension::PASCAL, prefix::KILO);
+		scalar_unit h3(30.0l, dimension::DIMENSION_PASCAL, prefix::KILO);
 		CHECK(to_string(h3) == "30 kPa");
-		scalar_unit h4(30, dimension::PASCAL, prefix::KILO);
+		scalar_unit h4(30, dimension::DIMENSION_PASCAL, prefix::KILO);
 		CHECK(to_string(h4) == "30 kPa");
 		scalar_unit d(100.0f,"g");
 		CHECK(to_string(d) == "100 g");

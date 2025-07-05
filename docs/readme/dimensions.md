@@ -98,7 +98,7 @@ Both the degree and the radian are used for measuring angles. When specifying an
 | dimension::type | Symbol | Name | Plural | Type | Equivalency | Derived dimensions | Origin | Description
 | ------ | --- | ----- | ----- | -------- | --- | -------------------- | ------------- | --------------------------
 | NEWTON | N | Newton | Newtons | Composite, derived, SI derived | - | kg * m / s2 | International Bureau of Weights and Measures (BIPM), 1948. | Measure of force. **Special name**.
-| PASCAL | Pa | Pascal | Pascals | Composite, derived, SI derived | - | kg / s2 * m | International Bureau of Weights and Measures (BIPM), 1971. | Measure of pressure. **Special name**.
+| DIMENSION_PASCAL | Pa | Pascal | Pascals | Composite, derived, SI derived | - | kg / s2 * m | International Bureau of Weights and Measures (BIPM), 1971. | Measure of pressure. **Special name**. It's called DIMENSION_PASCAL instead of PASCAL in order to have compatibility with the compiler msvc.
 
 ### Dimensions of energy
 

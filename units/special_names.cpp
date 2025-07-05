@@ -252,127 +252,127 @@ scifir::force operator"" _qN(unsigned long long int x)
 
 scifir::pressure operator"" _QPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _RPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _YPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _ZPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _EPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _PPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _TPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _GPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _MPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _kPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _hPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _daPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _Pa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _dPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _cPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _mPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _µPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _nPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _pPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _fPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _aPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _zPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _yPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _rPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _qPa(unsigned long long int x)
 {
-	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure((long double)x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _QJ(unsigned long long int x)
@@ -2634,127 +2634,127 @@ scifir::force operator"" _qN(long double x)
 
 scifir::pressure operator"" _QPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::QUETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _RPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::RONNA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _YPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::YOTTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _ZPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::ZETTA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _EPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::EXA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _PPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::PETA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _TPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::TERA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _GPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::GIGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _MPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::MEGA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _kPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::KILO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _hPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::HECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _daPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::DECA,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _Pa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::NONE,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _dPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::DECI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _cPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::CENTI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _mPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::MILLI,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _µPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::MICRO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _nPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::NANO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _pPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::PICO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _fPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::FEMTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _aPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::ATTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _zPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::ZEPTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _yPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::YOCTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _rPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::RONTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::pressure operator"" _qPa(long double x)
 {
-	return scifir::pressure(x, { scifir::dimension(scifir::dimension::PASCAL,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
+	return scifir::pressure(x, { scifir::dimension(scifir::dimension::DIMENSION_PASCAL,scifir::prefix::QUECTO,scifir::dimension::NUMERATOR) });
 }
 
 scifir::energy operator"" _QJ(long double x)

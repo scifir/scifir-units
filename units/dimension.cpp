@@ -11,6 +11,10 @@
 #include <sstream>
 #include <string>
 #include <utility>
+#include <codecvt>
+
+#ifdef IS_WINDOWS
+#endif
 
 using namespace std;
 
@@ -142,7 +146,7 @@ namespace scifir
 		}
 		else if(dimension_name == "Pa")
 		{
-			dimension_type = dimension::PASCAL;
+			dimension_type = dimension::DIMENSION_PASCAL;
 		}
 		else if(dimension_name == "J")
 		{
@@ -391,7 +395,7 @@ namespace scifir
 				return "hertz";
 			case dimension::NEWTON:
 				return "newton";
-			case dimension::PASCAL:
+			case dimension::DIMENSION_PASCAL:
 				return "pascal";
 			case dimension::JOULE:
 				return "joule";
@@ -516,7 +520,7 @@ namespace scifir
 				return "hertz";
 			case dimension::NEWTON:
 				return "newtons";
-			case dimension::PASCAL:
+			case dimension::DIMENSION_PASCAL:
 				return "pascals";
 			case dimension::JOULE:
 				return "joules";
@@ -646,7 +650,7 @@ namespace scifir
 				return "Hz";
 			case dimension::NEWTON:
 				return "N";
-			case dimension::PASCAL:
+			case dimension::DIMENSION_PASCAL:
 				return "Pa";
 			case dimension::JOULE:
 				return "J";
@@ -776,7 +780,7 @@ namespace scifir
 				return 1.0l;
 			case dimension::NEWTON:
 				return 1.0l;
-			case dimension::PASCAL:
+			case dimension::DIMENSION_PASCAL:
 				return 1.0l;
 			case dimension::JOULE:
 				return 1.0l;
@@ -913,7 +917,7 @@ namespace scifir
 				return true;
 			case dimension::NEWTON:
 				return false;
-			case dimension::PASCAL:
+			case dimension::DIMENSION_PASCAL:
 				return false;
 			case dimension::JOULE:
 				return false;
@@ -1045,7 +1049,7 @@ namespace scifir
 				return false;
 			case dimension::NEWTON:
 				return false;
-			case dimension::PASCAL:
+			case dimension::DIMENSION_PASCAL:
 				return false;
 			case dimension::JOULE:
 				return false;
@@ -1177,7 +1181,7 @@ namespace scifir
 				return false;
 			case dimension::NEWTON:
 				return false;
-			case dimension::PASCAL:
+			case dimension::DIMENSION_PASCAL:
 				return false;
 			case dimension::JOULE:
 				return false;
@@ -1297,7 +1301,7 @@ namespace scifir
 				return true;
 			case dimension::NEWTON:
 				return true;
-			case dimension::PASCAL:
+			case dimension::DIMENSION_PASCAL:
 				return true;
 			case dimension::JOULE:
 				return true;
@@ -1449,7 +1453,7 @@ namespace scifir
 				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::PASCAL:
+			case dimension::DIMENSION_PASCAL:
 				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
@@ -1938,7 +1942,7 @@ namespace scifir
 				i++;
 				continue;
 			}
-			if (init_dimensions.substr(i,2) == "µ" or init_dimensions.substr(i,2) == "da")
+			if (init_dimensions.substr(i,2).compare("µ") == 0 or init_dimensions.substr(i,2) == "da")
 			{
 				position = i + 1;
 			}
@@ -1946,35 +1950,44 @@ namespace scifir
 			{
 				position = i;
 			}
-			if (std::isalpha(init_dimensions[i]) or init_dimensions.substr(i,2) == "µ" or init_dimensions.substr(i,2) == "Ω" or init_dimensions.substr(i,2) == "Å" or init_dimensions.substr(i,2) == "θ" or (init_dimensions.substr(i,2) == "°" and init_dimensions.substr(i + 2,1) == "C"))
+			if (init_dimensions[i] == '*')
+			{
+				continue;
+			}
+			else if (init_dimensions[i] == '/')
+			{
+				new_sign = dimension::DENOMINATOR;
+				continue;
+			}
+			else if (std::isalpha(init_dimensions[i]) or ((i + 1) < init_dimensions.length() and (init_dimensions.substr(i,2).compare("µ") == 0 or init_dimensions.substr(i,2).compare("Ω") == 0 or init_dimensions.substr(i,2).compare("Å") or init_dimensions.substr(i,2).compare("θ") == 0 or (init_dimensions.substr(i,2).compare("°") == 0 and init_dimensions.substr(i + 2,1) == "C"))))
 			{
 				if ((position + 1) < init_dimensions.length() and init_dimensions[position + 1] != '*' and init_dimensions[position + 1] != '/')
 				{
 					for (int j = position + 1; j < init_dimensions.length(); j++)
 					{
-						if (std::isdigit(init_dimensions[j]))
+						if (j < init_dimensions.length() and std::isdigit(init_dimensions[j]))
 						{
 							new_dimension_str = init_dimensions.substr(i,j - i);
 							for (int k = j; k < init_dimensions.length(); k++)
 							{
 								if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
 								{
-									new_scale = stoi(init_dimensions.substr(k,k - j + 1));
+									new_scale = stoi(init_dimensions.substr(j,k - j + 1));
 									break;
 								}
 							}
 							break;
 						}
-						else if (init_dimensions.substr(j,2) == "Ω" or init_dimensions.substr(j,2) == "Å" or init_dimensions.substr(j,2) == "θ")
+						else if (init_dimensions.substr(j,2).compare("Ω") == 0 or init_dimensions.substr(j,2).compare("Å") == 0 or init_dimensions.substr(j,2).compare("θ") == 0)
 						{
 							new_dimension_str = init_dimensions.substr(i,j + 2 - i);
-							if (std::isdigit(init_dimensions[j + 2]))
+							if ((j + 2) < init_dimensions.length() and std::isdigit(init_dimensions[j + 2]))
 							{
 								for (int k = (j + 2); k < init_dimensions.length(); k++)
 								{
-									if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
+									if ((k + 1) < init_dimensions.length() and !std::isdigit(init_dimensions[k + 1]))
 									{
-										new_scale = stoi(init_dimensions.substr(k,k - j + 1));
+										new_scale = stoi(init_dimensions.substr(j + 2,k - j + 1));
 										break;
 									}
 								}
@@ -1985,16 +1998,16 @@ namespace scifir
 							}
 							break;
 						}
-						else if (init_dimensions.substr(j,2) == "°" and init_dimensions.substr(j + 2,1) == "C")
+						else if (init_dimensions.substr(j,2).compare("°") == 0 and init_dimensions.substr(j + 2,1) == "C")
 						{
 							new_dimension_str = init_dimensions.substr(i,j + 3 - i);
-							if (std::isdigit(init_dimensions[j + 3]))
+							if ((j + 3) < init_dimensions.length() and std::isdigit(init_dimensions[j + 3]))
 							{
 								for (int k = (j + 3); k < init_dimensions.length(); k++)
 								{
-									if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
+									if ((k + 1) < init_dimensions.length() and !std::isdigit(init_dimensions[k + 1]))
 									{
-										new_scale = stoi(init_dimensions.substr(k,k - j + 1));
+										new_scale = stoi(init_dimensions.substr(j + 3,k - j + 1));
 										break;
 									}
 								}
@@ -2005,7 +2018,7 @@ namespace scifir
 							}
 							break;
 						}
-						else if (std::isalpha(init_dimensions[j]))
+						else if (j < init_dimensions.length() and std::isalpha(init_dimensions[j]))
 						{
 							if ((j + 1) == init_dimensions.length() or init_dimensions[j + 1] == '*' or init_dimensions[j + 1] == '/')
 							{
@@ -2028,12 +2041,12 @@ namespace scifir
 				}
 				else
 				{
-					if (std::isdigit(init_dimensions[position]))
+					if (position < init_dimensions.length() and std::isdigit(init_dimensions[position]))
 					{
-						new_dimension_str = init_dimensions.substr(position,position - i + 1);
-						new_scale = stoi(init_dimensions.substr(position + 1,1));
+						new_dimension_str = init_dimensions.substr(i,position - i + 1);
+						new_scale = stoi(init_dimensions.substr(position,1));
 					}
-					else if (init_dimensions.substr(position,2) == "Ω" or init_dimensions.substr(position,2) == "Å" or init_dimensions.substr(position,2) == "θ")
+					else if (init_dimensions.substr(position,2).compare("Ω") == 0 or init_dimensions.substr(position,2).compare("Å") == 0 or init_dimensions.substr(position,2).compare("θ") == 0)
 					{
 						new_dimension_str = init_dimensions.substr(position,2);
 						new_scale = 1;
@@ -2041,13 +2054,13 @@ namespace scifir
 						{
 							if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
 							{
-								new_scale = stoi(init_dimensions.substr(k,k - position - 1));
+								new_scale = stoi(init_dimensions.substr(position + 2,k - position - 1));
 								break;
 							}
 						}
 						break;
 					}
-					else if (std::isalpha(init_dimensions[position]))
+					else if (position < init_dimensions.length() and std::isalpha(init_dimensions[position]))
 					{
 						new_dimension_str = init_dimensions.substr(position,position - i + 1);
 						new_scale = 1;
@@ -2059,31 +2072,22 @@ namespace scifir
 					}
 				}
 			}
-			else if (init_dimensions[i] == '*')
-			{
-				continue;
-			}
-			else if (init_dimensions[i] == '/')
-			{
-				new_sign = dimension::DENOMINATOR;
-				continue;
-			}
 			if (!new_dimension_str.length() == 0)
 			{
 				dimension new_dimension;
-				if (new_dimension_str.substr(0,2) == "Ω")
+				if (new_dimension_str.substr(0,2).compare("Ω") == 0)
 				{
 					new_dimension = dimension(dimension::OHM,prefix::NONE,new_sign);
 				}
-				else if (new_dimension_str.substr(0,2) == "Å")
+				else if (new_dimension_str.substr(0,2).compare("Å") == 0)
 				{
 					new_dimension = dimension(dimension::ANGSTROM,prefix::NONE,new_sign);
 				}
-				else if (new_dimension_str.substr(0,2) == "θ")
+				else if (new_dimension_str.substr(0,2).compare("θ") == 0)
 				{
 					new_dimension = dimension(dimension::DEGREE,prefix::NONE,new_sign);
 				}
-				else if (new_dimension_str.substr(0,2) == "°" && new_dimension_str.substr(2) == "C")
+				else if (new_dimension_str.substr(0,2).compare("°") == 0 && new_dimension_str.substr(2) == "C")
 				{
 					prefix new_prefix(new_dimension_str.substr(0,new_dimension_str.length() - 3));
 					new_dimension = dimension(dimension::CELSIUS,new_prefix,new_sign);
@@ -2096,7 +2100,11 @@ namespace scifir
 				{
 					dimensions.push_back(new_dimension);
 				}
-				i += new_dimension_str.length() - 1;
+				i += int(new_dimension_str.length()) - 1;
+				if (new_scale > 1)
+				{
+					i += int(std::to_string(new_scale).length());
+				}
 				new_dimension_str = "";
 				new_scale = 1;
 			}

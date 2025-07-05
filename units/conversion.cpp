@@ -295,31 +295,31 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
 			case conversion::BAR:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::MILLIBAR:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::CENTIBAR:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::DECIBAR:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::KILOBAR:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::MEGABAR:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::ATMOSPHERE:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::MILIMETRES_MERCURY:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::TORRICELLI:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::CUBIC_CENTIMETRES:
 				conversion_dimensions.push_back(dimension(dimension::LITRE,prefix::MILLI,dimension::NUMERATOR));
@@ -648,10 +648,10 @@ namespace scifir
 				conversion_dimensions.push_back(dimension(dimension::WATT,prefix::KILO,dimension::NUMERATOR));
 				break;
 			case conversion::US_INCH_MERCURY:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_POUND_PER_SQUARE_INCH:
-				conversion_dimensions.push_back(dimension(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR));
+				conversion_dimensions.push_back(dimension(dimension::DIMENSION_PASCAL,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case conversion::US_POUND_FOOT:
 				conversion_dimensions.push_back(dimension(dimension::NEWTON,prefix::NONE,dimension::NUMERATOR));
