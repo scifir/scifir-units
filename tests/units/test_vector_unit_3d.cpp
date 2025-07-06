@@ -79,7 +79,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(to_string(k) == "100 g 24θ 24Φ");
 		vector_unit_3d l("100 g 20θ 20Φ");
 		CHECK(to_string(l) == "100 g 20θ 20Φ");
-		vector_unit_3d m("100 g 20º 20º");
+		vector_unit_3d m("100 g 20° 20°");
 		CHECK(to_string(m) == "100 g 20θ 20Φ");
 		vector_unit_3d n = vector_unit_3d::cartesian_3d("m",1,1,1);
 		CHECK(to_string(n) == "1.73 m 45θ 54.73Φ");
@@ -322,7 +322,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(bool(scifir::cross_product(e3,e4).vectorial_display() == vector_unit_3d("1.97 kg*m2/s2 8.21θ 80.00Φ")));
 		vector_unit_3d f("2 N",10.0f,10.0f);
 		vector_unit_3d f2("1 m",20.0f,20.0f);
-		CHECK(bool(scifir::angle_between(f,f2).display() == angle("10.29\u00B0")));
+		CHECK(bool(scifir::angle_between(f,f2).display() == angle("10.29°")));
 		vector_unit_3d g("2 N",10.0f,10.0f);
 		vector_unit_3d g2("1 m",10.0f,10.0f);
 		CHECK(scifir::same_direction(g,g2) == true);

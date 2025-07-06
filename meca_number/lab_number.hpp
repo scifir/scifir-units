@@ -37,7 +37,7 @@ namespace scifir
 			explicit lab_number(const string& init_lab_number)
 			{
 				vector<string> values;
-				boost::split(values,init_lab_number,boost::is_any_of("+-,\u00B1"));
+				boost::split(values,init_lab_number,boost::is_any_of("+-,±"));
 				if (values.size() == 3)
 				{
 					boost::trim(values[0]);
@@ -102,7 +102,7 @@ namespace scifir
 			string display(int number_of_decimals = 2) const
 			{
 				ostringstream output;
-				output << value.display(number_of_decimals) << " \u00B1 " << error_value.display(number_of_decimals);
+				output << value.display(number_of_decimals) << " ± " << error_value.display(number_of_decimals);
 				return output.str();
 			}
 

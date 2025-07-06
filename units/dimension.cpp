@@ -14,6 +14,9 @@
 #include <codecvt>
 
 #ifdef IS_WINDOWS
+#include <cstring>
+//	#define UNICODE
+//	#define _UNICODE
 #endif
 
 using namespace std;
@@ -23,7 +26,11 @@ namespace scifir
 	map<string,vector<dimension>> dimension::base_dimensions = map<string,vector<dimension>>();
 	map<int,string> dimension::full_symbols = map<int,string>();
 	int dimension::total_full_symbols = 0;
-	set<string> dimension::prefixes_options {"Q", "R", "Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "n", "p", "f", "a", "z", "y", "r", "q"};
+	
+	/*bool dimension::CaseInsensitiveCompare::operator()(const std::string& a, const std::string& b) const {
+		return _stricmp(a.c_str(), b.c_str()) < 0;
+	}*/
+	vector<string> dimension::prefixes_options {"Q", "R", "Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "n", "p", "f", "a", "z", "y", "r", "q"};
 
 	dimension::dimension() : prefix(),dimension_type(dimension::NONE),dimension_position(dimension::NO_POSITION),symbol()
 	{}
@@ -59,22 +66,22 @@ namespace scifir
 	dimension::dimension(const string& init_dimension,dimension::position new_position) : prefix(),dimension_type(dimension::NONE),dimension_position(new_position),symbol()
 	{
 		string dimension_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "deg" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Hz" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension != "°C" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "Ω" and init_dimension != "ohm" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "Å" and init_dimension != "min" and init_dimension != "hour" and init_dimension != "day" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo" and init_dimension != "mEq" and init_dimension != "dB")
+		if (init_dimension.length() > 1 and std::find(dimension::prefixes_options.begin(),dimension::prefixes_options.end(),init_dimension.substr(0,1)) != dimension::prefixes_options.end() and init_dimension.compare("deg") != 0 and init_dimension.compare("rad") != 0 and init_dimension.compare("sr") != 0 and init_dimension.compare("m") != 0 and init_dimension.compare("Hz") != 0 and init_dimension.compare("Pa") != 0 and (init_dimension.length() < 2 or init_dimension.substr(0,2) != "da") and init_dimension.compare("°C") != 0 and (init_dimension.length() < 3 or init_dimension.substr(0,3) != "mol") and init_dimension.compare("cd") != 0 and init_dimension.compare("Ω") != 0 and init_dimension.compare("ohm") != 0 and init_dimension.compare("T") != 0 and init_dimension.compare("Gy") != 0 and init_dimension.compare("kat") != 0 and init_dimension.compare("Å") != 0 and init_dimension.compare("min") != 0 and init_dimension.compare("hour") != 0 and init_dimension.compare("day") != 0 and init_dimension.compare("pc") != 0 and init_dimension.compare("amu") != 0 and init_dimension.compare("M") != 0 and init_dimension.compare("particles") != 0 and init_dimension.compare("money") != 0 and init_dimension.compare("px") != 0 and init_dimension.compare("memo") != 0 and init_dimension.compare("mEq") != 0 and init_dimension.compare("dB") != 0)
 		{
 			prefix = scifir::prefix(init_dimension.substr(0,1));
 			dimension_name = init_dimension.substr(1);
 		}
-		else if(init_dimension.substr(0,2) == "µ")
+		else if (init_dimension.length() >= 2 and init_dimension.substr(0,2).compare("µ") == 0)
 		{
 			prefix = scifir::prefix(prefix::MICRO);
 			dimension_name = init_dimension.substr(2);
 		}
-		else if(init_dimension == "day")
+		else if (init_dimension == "day")
 		{
 			prefix = scifir::prefix();
 			dimension_name = init_dimension;
 		}
-		else if(init_dimension.substr(0,2) == "da")
+		else if (init_dimension.length() >= 2 and init_dimension.substr(0,2) == "da")
 		{
 			prefix = scifir::prefix(prefix::DECA);
 			dimension_name = init_dimension.substr(2);
@@ -84,215 +91,215 @@ namespace scifir
 			prefix = scifir::prefix();
 			dimension_name = init_dimension;
 		}
-		if(dimension_name == "m")
+		if (dimension_name == "m")
 		{
 			dimension_type = dimension::METRE;
 		}
-		else if(dimension_name == "deg" or dimension_name == "θ")
+		else if (dimension_name == "deg" or dimension_name.compare("θ") == 0)
 		{
 			dimension_type = dimension::DEGREE;
 		}
-		else if(dimension_name == "rad")
+		else if (dimension_name == "rad")
 		{
 			dimension_type = dimension::RADIAN;
 		}
-		else if(dimension_name == "sr")
+		else if (dimension_name == "sr")
 		{
 			dimension_type = dimension::STERADIAN;
 		}
-		else if(dimension_name == "s")
+		else if (dimension_name == "s")
 		{
 			dimension_type = dimension::SECOND;
 		}
-		else if(dimension_name == "g")
+		else if (dimension_name == "g")
 		{
 			dimension_type = dimension::GRAM;
 		}
-		else if(dimension_name == "C")
+		else if (dimension_name == "C")
 		{
 			dimension_type = dimension::COULOMB;
 		}
-		else if(dimension_name == "K")
+		else if (dimension_name == "K")
 		{
 			dimension_type = dimension::KELVIN;
 		}
-		else if(dimension_name == "°C")
+		else if (dimension_name.compare("°C") == 0)
 		{
 			dimension_type = dimension::CELSIUS;
 		}
-		else if(dimension_name == "mol")
+		else if (dimension_name == "mol")
 		{
 			dimension_type = dimension::MOLE;
 		}
-		else if(dimension_name == "cd")
+		else if (dimension_name == "cd")
 		{
 			dimension_type = dimension::CANDELA;
 		}
-		else if(dimension_name == "B")
+		else if (dimension_name == "B")
 		{
 			dimension_type = dimension::BYTE;
 		}
-		else if(dimension_name == "bit")
+		else if (dimension_name == "bit")
 		{
 			dimension_type = dimension::BIT;
 		}
-		else if(dimension_name == "Hz")
+		else if (dimension_name == "Hz")
 		{
 			dimension_type = dimension::HERTZ;
 		}
-		else if(dimension_name == "N")
+		else if (dimension_name == "N")
 		{
 			dimension_type = dimension::NEWTON;
 		}
-		else if(dimension_name == "Pa")
+		else if (dimension_name == "Pa")
 		{
 			dimension_type = dimension::DIMENSION_PASCAL;
 		}
-		else if(dimension_name == "J")
+		else if (dimension_name == "J")
 		{
 			dimension_type = dimension::JOULE;
 		}
-		else if(dimension_name == "W")
+		else if (dimension_name == "W")
 		{
 			dimension_type = dimension::WATT;
 		}
-		else if(dimension_name == "A")
+		else if (dimension_name == "A")
 		{
 			dimension_type = dimension::AMPERE;
 		}
-		else if(dimension_name == "V")
+		else if (dimension_name == "V")
 		{
 			dimension_type = dimension::VOLT;
 		}
-		else if(dimension_name == "F")
+		else if (dimension_name == "F")
 		{
 			dimension_type = dimension::FARAD;
 		}
-		else if(dimension_name == "ohm" or dimension_name == "Ω")
+		else if (dimension_name == "ohm" or dimension_name.compare("Ω") == 0)
 		{
 			dimension_type = dimension::OHM;
 		}
-		else if(dimension_name == "S")
+		else if (dimension_name == "S")
 		{
 			dimension_type = dimension::SIEMENS;
 		}
-		else if(dimension_name == "Wb")
+		else if (dimension_name == "Wb")
 		{
 			dimension_type = dimension::WEBER;
 		}
-		else if(dimension_name == "T")
+		else if (dimension_name == "T")
 		{
 			dimension_type = dimension::TESLA;
 		}
-		else if(dimension_name == "H")
+		else if (dimension_name == "H")
 		{
 			dimension_type = dimension::HENRY;
 		}
-		else if(dimension_name == "lm")
+		else if (dimension_name == "lm")
 		{
 			dimension_type = dimension::LUMEN;
 		}
-		else if(dimension_name == "lx")
+		else if (dimension_name == "lx")
 		{
 			dimension_type = dimension::LUX;
 		}
-		else if(dimension_name == "Bq")
+		else if (dimension_name == "Bq")
 		{
 			dimension_type = dimension::BECQUEREL;
 		}
-		else if(dimension_name == "Gy")
+		else if (dimension_name == "Gy")
 		{
 			dimension_type = dimension::GRAY;
 		}
-		else if(dimension_name == "Sv")
+		else if (dimension_name == "Sv")
 		{
 			dimension_type = dimension::SIEVERT;
 		}
-		else if(dimension_name == "kat")
+		else if (dimension_name == "kat")
 		{
 			dimension_type = dimension::KATAL;
 		}
-		else if(dimension_name == "Å")
+		else if (dimension_name.compare("Å") == 0)
 		{
 			dimension_type = dimension::ANGSTROM;
 		}
-		else if(dimension_name == "L")
+		else if (dimension_name == "L")
 		{
 			dimension_type = dimension::LITRE;
 		}
-		else if(dimension_name == "min")
+		else if (dimension_name == "min")
 		{
 			dimension_type = dimension::MINUTE;
 		}
-		else if(dimension_name == "hour")
+		else if (dimension_name == "hour")
 		{
 			dimension_type = dimension::HOUR;
 		}
-		else if(dimension_name == "day")
+		else if (dimension_name == "day")
 		{
 			dimension_type = dimension::DAY;
 		}
-		else if(dimension_name == "ly")
+		else if (dimension_name == "ly")
 		{
 			dimension_type = dimension::LIGHT_YEAR;
 		}
-		else if(dimension_name == "AU")
+		else if (dimension_name == "AU")
 		{
 			dimension_type = dimension::ASTRONOMICAL_UNIT;
 		}
-		else if(dimension_name == "pc")
+		else if (dimension_name == "pc")
 		{
 			dimension_type = dimension::PARSEC;
 		}
-		else if(dimension_name == "eV")
+		else if (dimension_name == "eV")
 		{
 			dimension_type = dimension::ELECTRON_VOLT;
 		}
-		else if(dimension_name == "Da")
+		else if (dimension_name == "Da")
 		{
 			dimension_type = dimension::DALTON;
 		}
-		else if(dimension_name == "amu")
+		else if (dimension_name == "amu")
 		{
 			dimension_type = dimension::ATOMIC_MASS_UNIT;
 		}
-		else if(dimension_name == "barn")
+		else if (dimension_name == "barn")
 		{
 			dimension_type = dimension::BARN;
 		}
-		else if(dimension_name == "M")
+		else if (dimension_name == "M")
 		{
 			dimension_type = dimension::MOLARITY;
 		}
-		else if(dimension_name == "particles")
+		else if (dimension_name == "particles")
 		{
 			dimension_type = dimension::PARTICLES;
 		}
-		else if(dimension_name == "money")
+		else if (dimension_name == "money")
 		{
 			dimension_type = dimension::MONEY;
 		}
-		else if(dimension_name == "px")
+		else if (dimension_name == "px")
 		{
 			dimension_type = dimension::PIXEL;
 		}
-		else if(dimension_name == "memo")
+		else if (dimension_name == "memo")
 		{
 			dimension_type = dimension::MEMO;
 		}
-		else if(dimension_name == "IU")
+		else if (dimension_name == "IU")
 		{
 			dimension_type = dimension::INTERNATIONAL_UNIT;
 		}
-		else if(dimension_name == "mEq")
+		else if (dimension_name == "mEq")
 		{
 			dimension_type = dimension::MILLIEQUIVALENT;
 		}
-		else if(dimension_name == "dB")
+		else if (dimension_name == "dB")
 		{
 			dimension_type = dimension::DECIBEL;
 		}
-		else if(dimension_name == "")
+		else if (dimension_name == "")
 		{
 			dimension_type = dimension::NONE;
 		}
@@ -1959,18 +1966,18 @@ namespace scifir
 				new_sign = dimension::DENOMINATOR;
 				continue;
 			}
-			else if (std::isalpha(init_dimensions[i]) or ((i + 1) < init_dimensions.length() and (init_dimensions.substr(i,2).compare("µ") == 0 or init_dimensions.substr(i,2).compare("Ω") == 0 or init_dimensions.substr(i,2).compare("Å") or init_dimensions.substr(i,2).compare("θ") == 0 or (init_dimensions.substr(i,2).compare("°") == 0 and init_dimensions.substr(i + 2,1) == "C"))))
+			else if ((1 <= init_dimensions[i] and init_dimensions[i] <= 255 and std::isalpha(init_dimensions[i])) or ((i + 1) < init_dimensions.length() and (init_dimensions.substr(i,2).compare("µ") == 0 or init_dimensions.substr(i,2).compare("Ω") == 0 or init_dimensions.substr(i,2).compare("Å") or init_dimensions.substr(i,2).compare("θ") == 0 or (init_dimensions.substr(i,2).compare("°") == 0 and init_dimensions.substr(i + 2,1) == "C"))))
 			{
 				if ((position + 1) < init_dimensions.length() and init_dimensions[position + 1] != '*' and init_dimensions[position + 1] != '/')
 				{
 					for (int j = position + 1; j < init_dimensions.length(); j++)
 					{
-						if (j < init_dimensions.length() and std::isdigit(init_dimensions[j]))
+						if (j < init_dimensions.length() and 1 <= init_dimensions[j] and init_dimensions[j] <= 255 and std::isdigit(init_dimensions[j]))
 						{
 							new_dimension_str = init_dimensions.substr(i,j - i);
 							for (int k = j; k < init_dimensions.length(); k++)
 							{
-								if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
+								if ((1 <= init_dimensions[k + 1] and init_dimensions[k + 1] <= 255 and !std::isdigit(init_dimensions[k + 1])) or (k + 1) == init_dimensions.length())
 								{
 									new_scale = stoi(init_dimensions.substr(j,k - j + 1));
 									break;
@@ -1981,11 +1988,11 @@ namespace scifir
 						else if (init_dimensions.substr(j,2).compare("Ω") == 0 or init_dimensions.substr(j,2).compare("Å") == 0 or init_dimensions.substr(j,2).compare("θ") == 0)
 						{
 							new_dimension_str = init_dimensions.substr(i,j + 2 - i);
-							if ((j + 2) < init_dimensions.length() and std::isdigit(init_dimensions[j + 2]))
+							if ((j + 2) < init_dimensions.length() and 1 <= init_dimensions[j + 2] and init_dimensions[j + 2] <= 255 and std::isdigit(init_dimensions[j + 2]))
 							{
 								for (int k = (j + 2); k < init_dimensions.length(); k++)
 								{
-									if ((k + 1) < init_dimensions.length() and !std::isdigit(init_dimensions[k + 1]))
+									if ((k + 1) < init_dimensions.length() and 1 <= init_dimensions[k + 1] and init_dimensions[k + 1] <= 255 and !std::isdigit(init_dimensions[k + 1]))
 									{
 										new_scale = stoi(init_dimensions.substr(j + 2,k - j + 1));
 										break;
@@ -2001,11 +2008,11 @@ namespace scifir
 						else if (init_dimensions.substr(j,2).compare("°") == 0 and init_dimensions.substr(j + 2,1) == "C")
 						{
 							new_dimension_str = init_dimensions.substr(i,j + 3 - i);
-							if ((j + 3) < init_dimensions.length() and std::isdigit(init_dimensions[j + 3]))
+							if ((j + 3) < init_dimensions.length() and 1 <= init_dimensions[j + 3] and init_dimensions[j + 3] <= 255 and std::isdigit(init_dimensions[j + 3]))
 							{
 								for (int k = (j + 3); k < init_dimensions.length(); k++)
 								{
-									if ((k + 1) < init_dimensions.length() and !std::isdigit(init_dimensions[k + 1]))
+									if ((k + 1) < init_dimensions.length() and 1 <= init_dimensions[k + 1] and init_dimensions[k + 1] <= 255 and !std::isdigit(init_dimensions[k + 1]))
 									{
 										new_scale = stoi(init_dimensions.substr(j + 3,k - j + 1));
 										break;
@@ -2018,7 +2025,7 @@ namespace scifir
 							}
 							break;
 						}
-						else if (j < init_dimensions.length() and std::isalpha(init_dimensions[j]))
+						else if (j < init_dimensions.length() and 1 <= init_dimensions[j] and init_dimensions[j] <= 255 and std::isalpha(init_dimensions[j]))
 						{
 							if ((j + 1) == init_dimensions.length() or init_dimensions[j + 1] == '*' or init_dimensions[j + 1] == '/')
 							{
@@ -2041,7 +2048,7 @@ namespace scifir
 				}
 				else
 				{
-					if (position < init_dimensions.length() and std::isdigit(init_dimensions[position]))
+					if (position < init_dimensions.length() and 1 <= init_dimensions[position] and init_dimensions[position] <= 255 and std::isdigit(init_dimensions[position]))
 					{
 						new_dimension_str = init_dimensions.substr(i,position - i + 1);
 						new_scale = stoi(init_dimensions.substr(position,1));
@@ -2052,7 +2059,7 @@ namespace scifir
 						new_scale = 1;
 						for (int k = (position + 2); k < init_dimensions.length(); k++)
 						{
-							if (!std::isdigit(init_dimensions[k + 1]) or (k + 1) == init_dimensions.length())
+							if ((1 <= init_dimensions[k + 1] and init_dimensions[k + 1] <= 255 and !std::isdigit(init_dimensions[k + 1])) or (k + 1) == init_dimensions.length())
 							{
 								new_scale = stoi(init_dimensions.substr(position + 2,k - position - 1));
 								break;
@@ -2060,7 +2067,7 @@ namespace scifir
 						}
 						break;
 					}
-					else if (position < init_dimensions.length() and std::isalpha(init_dimensions[position]))
+					else if (position < init_dimensions.length() and 1 <= init_dimensions[position] and init_dimensions[position] <= 255 and std::isalpha(init_dimensions[position]))
 					{
 						new_dimension_str = init_dimensions.substr(position,position - i + 1);
 						new_scale = 1;

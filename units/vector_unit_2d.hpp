@@ -326,7 +326,7 @@ namespace scifir
 			explicit vector_unit_2d(const scalar_unit& x,const angle& new_theta);
 			explicit vector_unit_2d(const string& init_scalar,float new_theta);
 			explicit vector_unit_2d(const string& init_scalar,const angle& new_theta);
-			explicit vector_unit_2d(const string& init_vector_2d); // Example of initialization string "1N 50º"
+			explicit vector_unit_2d(const string& init_vector_2d); // Example of initialization string "1N 50°"
 
 			static vector_unit_2d cartesian_2d(const string& init_dimensions,float new_x,float new_y)
 			{

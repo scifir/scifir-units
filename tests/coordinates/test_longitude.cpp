@@ -29,8 +29,6 @@ TEST_CASE("longitude class") {
         CHECK(g.get_value() == 5.0f);
         longitude h("10°");
         CHECK(h.get_value() == 10.0f);
-        longitude i("15º");
-        CHECK(i.get_value() == 15.0f);
 		longitude i2("35°E");
         CHECK(i2.get_value() == 35.0f);
         longitude i3("35°W");
@@ -59,9 +57,6 @@ TEST_CASE("longitude class") {
         longitude d;
         d = "10 °";
         CHECK(d.get_value() == 10.0f);
-        longitude e;
-        e = "10 º";
-        CHECK(e.get_value() == 10.0f);
         scalar_unit f2("7 N");
         scalar_unit f3("2 N");
         longitude f;

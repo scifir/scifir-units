@@ -1,20 +1,18 @@
 # SCIFIR UNITS - VERSION 2
 
-**Number of TODOs:** 202
-**Number of TODOs to release version 2:** 44
+**Number of TODOs:** 201
+**Number of TODOs to release version 2:** 43
 
 ## POSSIBLE OR MANDATORY READINGS (1)
 
 - TODO: read the ISO 80000 (mandatory)
 
-## CURRENT (12)
+## CURRENT (11)
 
-- TODO**: delete the 0x00BA in favor of the use of only 0x00B0
 - TODO**: fuse to_string() and display() in lots of cases
-- TODO: apparently there's an error with multibyte characters inside Windows
+- TODO*: test the constructor of dimension by string with a lot of combinations, maybe the algorithm should be different
 - TODO: to_string() of dimension_type
 - TODO: prefix_string() should be create_prefix_type()
-- TODO: conversion of size_t to and int gives a warning in MSVC
 - TODO: finish testing in MSVC all tests
 - TODO: solid_angle class, with the literal "_sr" too
 - TODO: explanation, with code examples, of physics and chemistry laws

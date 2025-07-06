@@ -76,7 +76,7 @@ TEST_CASE("class vector_unit_2d")
 		CHECK(to_string(j) == "100 g 24θ");
 		vector_unit_2d k("100 g",angle(24.0f));
 		CHECK(to_string(k) == "100 g 24θ");
-		vector_unit_2d m("100 g 20º");
+		vector_unit_2d m("100 g 20°");
 		CHECK(to_string(m) == "100 g 20θ");
 		vector_unit_2d n = vector_unit_2d::cartesian_2d("m",1,1);
 		CHECK(to_string(n) == "1.41 m 45θ");
@@ -238,7 +238,7 @@ TEST_CASE("class vector_unit_2d")
 		CHECK(bool(scifir::dot_product(d,d2).display() == scalar_unit("1.99 kg*m2/s2")));
 		vector_unit_2d f("2 N",10.0f);
 		vector_unit_2d f2("1 m",20.0f);
-		CHECK(bool(scifir::angle_between(f,f2).display() == angle("10\u00B0")));
+		CHECK(bool(scifir::angle_between(f,f2).display() == angle("10°")));
 		vector_unit_2d g("2 N",10.0f);
 		vector_unit_2d g2("1 m",10.0f);
 		CHECK(scifir::same_direction(g,g2) == true);

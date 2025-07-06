@@ -3,8 +3,6 @@
 #include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
-#include "unicode/unistr.h"
-#include "unicode/uchar.h"
 
 #include <cmath>
 #include <iostream>
@@ -188,8 +186,7 @@ namespace scifir
 				return;
 			}
 		}
-		icu::UnicodeString init_latitude_unicode = icu::UnicodeString(init_latitude.c_str());
-		if (init_latitude_unicode.endsWith(0x00B0) or init_latitude_unicode.endsWith(0x00BA))
+		if (init_latitude.substr(init_latitude.length() - 2).compare("°") == 0)
 		{
 			value = stof(init_latitude);
 			normalize_value();
@@ -222,7 +219,7 @@ namespace scifir
 			total_chars--;
 		}
 		bool loop = false;
-		if (init_latitude.substr(total_chars - 2,2) == "°" || init_latitude.substr(total_chars - 2,2) == "º")
+		if (init_latitude.substr(total_chars - 2,2) == "°")
 		{
 			loop = true;
 		}

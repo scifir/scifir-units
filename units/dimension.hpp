@@ -160,10 +160,14 @@ namespace scifir
 			}
 
 		private:
+			/*struct CaseInsensitiveCompare {
+				bool operator()(const std::string& a, const std::string& b) const;
+			};*/
+
 			static map<string,vector<dimension>> base_dimensions;
 			static map<int,string> full_symbols;
 			static int total_full_symbols;
-			static set<string> prefixes_options;
+			static vector<string> prefixes_options;
 	};
 
 	string to_string(const dimension& x);

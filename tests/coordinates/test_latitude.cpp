@@ -29,8 +29,6 @@ TEST_CASE("latitude class") {
         CHECK(g.get_value() == 5.0f);
         latitude h("10°");
         CHECK(h.get_value() == 10.0f);
-        latitude i("15º");
-        CHECK(i.get_value() == 15.0f);
         latitude i2("20°N");
         CHECK(i2.get_value() == 20.0f);
         latitude i3("20°S");
@@ -59,9 +57,6 @@ TEST_CASE("latitude class") {
         latitude d;
         d = "10 °";
         CHECK(d.get_value() == 10.0f);
-        latitude e;
-        e = "10 º";
-        CHECK(e.get_value() == 10.0f);
         scalar_unit f2("7 N");
         scalar_unit f3("2 N");
         latitude f;

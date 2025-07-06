@@ -492,32 +492,20 @@ namespace scifir
 
 	bool is_percentage(const string& init_percentage)
 	{
-		int iteration_limit;
+		int iteration_limit = 0;
 		if (init_percentage.back() == '%')
 		{
 			iteration_limit = int(init_percentage.length()) - 1;
 		}
 		else
 		{
-			if (init_percentage.length() >= 5)
+			if (init_percentage.length() >= 5 and init_percentage.substr(init_percentage.length() - 4,4) == " ppm"/* or percentage_unit == " ppb" or percentage_unit == " ppt" or percentage_unit == " ppq"*/)
 			{
-				string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
-				if (percentage_unit == " ppm"/* or percentage_unit == " ppb" or percentage_unit == " ppt" or percentage_unit == " ppq"*/)
-				{
-					iteration_limit = int(init_percentage.length()) - 4;
-				}
+				iteration_limit = int(init_percentage.length()) - 4;
 			}
-			else if (init_percentage.length() >= 4)
+			else if (init_percentage.length() >= 4 and init_percentage.substr(init_percentage.length() - 3,3) == "ppm")
 			{
-				string percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
-				if (percentage_unit == "ppm"/* or percentage_unit == "ppb" or percentage_unit == "ppt" or percentage_unit == "ppq"*/)
-				{
-					iteration_limit = int(init_percentage.length()) - 3;
-				}
-				else
-				{
-					return false;
-				}
+				iteration_limit = int(init_percentage.length()) - 3;
 			}
 			else
 			{

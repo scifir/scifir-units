@@ -3,8 +3,6 @@
 #include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
-#include "unicode/unistr.h"
-#include "unicode/uchar.h"
 
 #include <cmath>
 #include <iostream>
@@ -320,8 +318,7 @@ namespace scifir
 			normalize_value();
 			return;
 		}
-		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA) or init_angle_unicode.endsWith(0x03B8) or init_angle_unicode.endsWith(0x03A6))
+		if (init_angle.substr(init_angle.length() - 2).compare("°") == 0 or init_angle.substr(init_angle.length() - 2).compare("θ") == 0 or init_angle.substr(init_angle.length() - 2).compare("Φ") == 0)
 		{
 			value = stof(init_angle);
 			normalize_value();
@@ -341,7 +338,7 @@ namespace scifir
 			return false;
 		}
 		bool loop = false;
-		if (total_chars >= 3 and init_angle.substr(total_chars - 2,2) == "°" || init_angle.substr(total_chars - 2,2) == "º")
+		if (total_chars >= 3 and init_angle.substr(total_chars - 2,2) == "°")
 		{
 			loop = true;
 			total_chars -= 2;

@@ -86,6 +86,10 @@ namespace scifir
 		private:
 			void initialize_from_string(string init_coordinates_1d)
 			{
+				if (init_coordinates_1d.length() == 0)
+				{
+					return;
+				}
 				if (init_coordinates_1d.front() == '(')
 				{
 					init_coordinates_1d.erase(0,1);
@@ -164,6 +168,10 @@ namespace scifir
 		private:
 			void initialize_from_string(string init_coordinates_1d)
 			{
+				if (init_coordinates_1d.length() == 0)
+				{
+					return;
+				}
 				if (init_coordinates_1d.front() == '(')
 				{
 					init_coordinates_1d.erase(0,1);

@@ -6,10 +6,10 @@ namespace scifir
 {
 	bool is_lab_number(const string& init_lab_number)
 	{
-		if ((init_lab_number.find("\u00B1") != string::npos or init_lab_number.find("+") != string::npos or init_lab_number.find("-") != string::npos) and init_lab_number.length() > 1)
+		if ((init_lab_number.find("±") != string::npos or init_lab_number.find("+") != string::npos or init_lab_number.find("-") != string::npos) and init_lab_number.length() > 1)
 		{
 			vector<string> numbers;
-			boost::split(numbers,init_lab_number,boost::is_any_of("+-,\u00B1"));
+			boost::split(numbers,init_lab_number,boost::is_any_of("+-,±"));
 			if (numbers.size() != 3)
 			{
 				return false;

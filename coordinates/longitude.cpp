@@ -3,8 +3,6 @@
 #include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
-#include "unicode/unistr.h"
-#include "unicode/uchar.h"
 
 #include <cmath>
 #include <iostream>
@@ -184,8 +182,7 @@ namespace scifir
 				return;
 			}
 		}
-		icu::UnicodeString init_longitude_unicode = icu::UnicodeString(init_longitude.c_str());
-		if (init_longitude_unicode.endsWith(0x00B0) or init_longitude_unicode.endsWith(0x00BA))
+		if (init_longitude.substr(init_longitude.length() - 2).compare("°") == 0)
 		{
 			value = stof(init_longitude);
 			normalize_value();
@@ -218,7 +215,7 @@ namespace scifir
 			total_chars--;
 		}
 		bool loop = false;
-		if (init_longitude.substr(total_chars - 2,2) == "°" || init_longitude.substr(total_chars - 2,2) == "º")
+		if (init_longitude.substr(total_chars - 2,2) == "°")
 		{
 			loop = true;
 		}

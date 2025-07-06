@@ -149,7 +149,7 @@ All the unit classes, and also the other related classes of this library, can be
 The initialization strings are like the following examples:
 
 - **vector\<dimension\>**: "m2 / s", "J / s2 * kg"
-- **angle**: "37°" or "37º"
+- **angle**: "37°"
 - **scalar_unit**: "1 km"
 - **vector_unit_2d**: "5 km 10θ" or "5 km 10°"
 - **vector_unit_3d**: "3 km 10θ 20Φ" or "3 km 10° 20°"

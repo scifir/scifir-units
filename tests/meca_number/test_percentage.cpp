@@ -332,7 +332,7 @@ TEST_CASE("percentage class") {
 	SECTION("is_percentage() function")
 	{
 		CHECK(is_percentage("90%") == true);
-		CHECK(is_percentage("90ppm") == false);
+		CHECK(is_percentage("90ppm") == true);
 		/*CHECK(is_percentage("90ppb") == true);
 		CHECK(is_percentage("90ppt") == true);
 		CHECK(is_percentage("90ppq") == true);*/
