@@ -26,6 +26,7 @@
         "binaryDir": "${sourceDir}/build/windows",
         "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
         "cacheVariables": {
+          "PLATFORM": "windows",
           "INCLUDE_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/include",
           "LINK_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/lib",
           "Boost_INCLUDE_DIR": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/include",
